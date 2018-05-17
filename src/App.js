@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import { Header } from 'openmrs-contrib-reactcomponents';
+import { Login } from 'openmrs-contrib-reactcomponents';
 import './App.css';
-import { Header } from 'openmrs-contrib-reactcomponents'
+import createStore from './store';
+
+const store = createStore();
 
 class App extends Component {
+
   render() {
     return (
-      <div className="App">
-        <Header />
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <Header />
+          <Login />
+        </div>
+      </Provider>
     );
   }
 }
