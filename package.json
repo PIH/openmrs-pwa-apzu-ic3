@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "bootstrap": "^3.3.7",
+    "openmrs-contrib-reactcomponents": "file:../../contrib/reactcomponents/openmrs-contrib-reactcomponents-0.1.0.tgz",
     "react": "^16.3.2",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
