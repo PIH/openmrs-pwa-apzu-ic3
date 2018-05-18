@@ -12,8 +12,8 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 import { sagas as openmrsSagas, reducers as openmrsReducers } from 'openmrs-contrib-reactcomponents';
-import { reducer as reduxFormReducer } from 'redux-form'
-import sagas from './sagas/sagas'
+import { reducer as reduxFormReducer } from 'redux-form';
+import sagas from './sagas/sagas';
 // import reducers from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
