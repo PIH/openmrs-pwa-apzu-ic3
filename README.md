@@ -1,3 +1,11 @@
+
+# Setup
+
+## Linking to openmrs-react-components
+
+1) In your @openmrs/react-components directory: npm link
+2) In the top level directory of this project: npm link @openmrs/react-components
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

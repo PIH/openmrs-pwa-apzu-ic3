@@ -11,7 +11,7 @@ import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
-import { sagas as openmrsSagas, reducers as openmrsReducers } from 'openmrs-contrib-reactcomponents';
+import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/react-components';
 import { reducer as reduxFormReducer } from 'redux-form';
 import sagas from './sagas/sagas';
 // import reducers from './reducers';

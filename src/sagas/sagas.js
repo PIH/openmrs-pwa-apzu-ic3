@@ -1,6 +1,6 @@
 
 import { put, takeLatest } from 'redux-saga/effects';
-import { LOGIN_ACTIONS, SESSION_ACTIONS } from "openmrs-contrib-reactcomponents";
+import { LOGIN_ACTIONS, SESSION_ACTIONS } from "@openmrs/react-components";
 
 function* onLogin() {
   // TODO this is mainly just for a test, will likely be refactored

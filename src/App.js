@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { Header } from 'openmrs-contrib-reactcomponents';
-import { Login } from 'openmrs-contrib-reactcomponents';
+import { Header } from '@openmrs/react-components';
+import { Login } from '@openmrs/react-components';
 import './App.css';
 import createStore from './store';
 
