@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
@@ -8,20 +8,25 @@ import HomePage from './components/pages/HomePage';
 
 const store = createStore();
 
-class App extends Component {
+const App = props => {
 
-  render() {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>
-          <Switch>
-            <Route path="/login" component={LoginPage}/>
-            <AuthenticatedRoute path="/" component={HomePage}/>
-          </Switch>
-        </BrowserRouter>
-      </Provider>
-    );
-  }
-}
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          <Route
+            component={LoginPage}
+            path="/login"
+          />
+          <AuthenticatedRoute
+            component={HomePage}
+            path="/"
+          />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
+  );
+
+};
 
 export default App;
