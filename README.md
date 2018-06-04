@@ -11,14 +11,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-## Setting the URL of the server to connect to
+## Setting the URL of OpenMRS server
 
-When developing, you can customize which server the app connects to;
+When developing, you can customize which server the app connects to:
 
 Create a file ".env.local" which sets two environmental variables setting the server address and context path.  For instance:
 
+```
 REACT_APP_SERVER_ADDRESS=http://localhost:8080/
 REACT_APP_CONTEXT_PATH=openmrs
+```
 
 More information can be found in the [custom environment variables](#adding-custom-environment-variables) section below
 and here: https://github.com/openmrs/openmrs-react-components/blob/master/src/config.js#L3
