@@ -24,5 +24,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "/workflow-repo"
+  "homepage": "http://bamboo.pih-emr.org/workflow-repo"
 }
