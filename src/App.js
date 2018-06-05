@@ -10,9 +10,13 @@ const store = createStore();
 
 const App = props => {
 
+  const contextPath  = (typeof process !== 'undefined' && typeof process.env !== 'undefined' &&
+    typeof process.env.REACT_APP_CONTEXT_PATH  !== 'undefined' && process.env.REACT_APP_CONTEXT_PATH !== null) ?
+    process.env.REACT_APP_CONTEXT_PATH : "/";
+
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename={contextPath}>
         <Switch>
           <Route
             component={LoginPage}
