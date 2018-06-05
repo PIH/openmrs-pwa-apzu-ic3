@@ -5,6 +5,7 @@ import './App.css';
 import createStore from './store';
 import { AuthenticatedRoute, LoginPage } from '@openmrs/react-components';
 import HomePage from './components/pages/HomePage';
+import SearchPatient from './components/pages/SearchPatient';
 
 const store = createStore();
 
@@ -24,8 +25,12 @@ const App = props => {
           />
           <AuthenticatedRoute
             component={HomePage}
-            path="/"
+            exact path="/"
           />
+            <AuthenticatedRoute
+                component={SearchPatient}
+                path="/searchPatient"
+            />
         </Switch>
       </BrowserRouter>
     </Provider>
