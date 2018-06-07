@@ -13,22 +13,18 @@ import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/react-components';
 import { reducer as reduxFormReducer } from 'redux-form';
-import sagas from './sagas/sagas';
-// import reducers from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [sagaMiddleware];
 
 const rootReducer = combineReducers({
-  // owaNamespace: reducers,    // add your own reducers here under the namespace you chose
   openmrs: openmrsReducers,
   form: reduxFormReducer
 });
 
 const rootSagas = function* () {
   yield all([
-    sagas(),
     openmrsSagas()
   ]);
 };
