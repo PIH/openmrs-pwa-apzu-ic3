@@ -3,8 +3,7 @@ import { PatientSearch } from '@openmrs/react-components';
 
 const SearchPatient = props => {
 
-    this.state =  {
-        columnDefs: [
+    const columnDefs =  [
             {headerName: 'patientUuid', hide: true, valueGetter: 'data.uuid' },
             {headerName: 'ID', valueGetter: 'data.identifier' },
             {headerName: 'First Name', valueGetter: 'data.firstName' },
@@ -12,11 +11,10 @@ const SearchPatient = props => {
             {headerName: 'Last Name', valueGetter: 'data.lastName' },
             {headerName: 'Gender', field: 'gender' },
             {headerName: 'Age', field: 'age' }
-        ]
-    };
+        ];
 
     return(
-        <PatientSearch columnDefs={this.state.columnDefs}/>
+        <PatientSearch columnDefs={ columnDefs }/>
     )
 };
 
