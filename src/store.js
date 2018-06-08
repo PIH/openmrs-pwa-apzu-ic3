@@ -13,6 +13,7 @@ import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/react-components';
 import { reducer as reduxFormReducer } from 'redux-form';
+import bloodPressureQueueReducer from './screening/bloodPressure/bloodPressureQueueReducer'
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -20,7 +21,10 @@ const middlewares = [sagaMiddleware];
 
 const rootReducer = combineReducers({
   openmrs: openmrsReducers,
-  form: reduxFormReducer
+  form: reduxFormReducer,
+  screening: combineReducers({
+    bloodPressureQueue: bloodPressureQueueReducer
+  })
 });
 
 const rootSagas = function* () {
