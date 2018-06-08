@@ -2,6 +2,8 @@ import { VISIT_TYPES } from "@openmrs/react-components";
 
 const initialState = {};
 
+// https://redux.js.org/recipes/structuring-reducers/reusing-reducer-logic
+
 const filterPatientsByAge = (visits) => {
   return visits.filter(v => v.patient.person.age > 18);
 };
@@ -12,7 +14,7 @@ const filterPatientsByEncounter = (visits) => {
       return true;
     }
     else {
-      return !(v.encounters.some(e => e.encounterType.uuid === "55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b"));
+      return !(v.encounters.some(e => e.encounterType.uuid === "4fb47712-34a6-40d2-8ed3-e153abbd25b7"));
     }
   })
 }
