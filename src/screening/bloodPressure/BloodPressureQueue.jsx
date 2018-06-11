@@ -1,4 +1,4 @@
-import Queue from '../Queue';
+import Queue from '../../queue/Queue';
 import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
