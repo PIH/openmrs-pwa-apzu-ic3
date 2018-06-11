@@ -1,5 +1,7 @@
 import React from 'react';
 import { PatientSearch } from '@openmrs/react-components';
+import { connect } from "react-redux";
+import { Redirect } from 'react-router-dom';
 
 class SearchPatient extends React.Component {
 
@@ -13,11 +15,10 @@ class SearchPatient extends React.Component {
             {headerName: 'Gender', field: 'gender' },
             {headerName: 'Age', field: 'age' }
         ];
+
     }
 
-
     parseResults(results) {
-        console.log("parseResults callback function, length =  " + results.length);
         let patients = [];
         for (const item of results) {
             let patient = {
@@ -36,11 +37,31 @@ class SearchPatient extends React.Component {
         return patients;
     };
 
+
+    renderInfoPage = () => {
+        if (this.props.patient)  {
+         return <Redirect to='/infoPatient' />
+        }
+    };
+
     render() {
         return(
-            <PatientSearch columnDefs={ this.columnDefs } parseResults={ this.parseResults.bind(this) }/>
+            <div>
+            {this.renderInfoPage()}
+            <PatientSearch
+                columnDefs={ this.columnDefs }
+                parseResults={ this.parseResults.bind(this) }
+            />
+            </div>
         );
     }
 };
 
-export default SearchPatient;
+const mapStateToProps = (state) => {
+    return {
+        dispatch: state.dispatch,
+        patient: state.selected.patient
+    };
+};
+
+export default connect(mapStateToProps)(SearchPatient);

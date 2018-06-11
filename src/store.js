@@ -15,36 +15,38 @@ import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/rea
 import { reducer as reduxFormReducer } from 'redux-form';
 import bloodPressureQueueReducer from './screening/bloodPressure/bloodPressureQueueReducer';
 import nutritionQueueReducer from "./screening/nutrition/nutritionQueueReducer";
+import patientSelectedReducer from './components/pages/patientSelectedReducer';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [sagaMiddleware];
 
 const rootReducer = combineReducers({
-  openmrs: openmrsReducers,
-  form: reduxFormReducer,
-  screening: combineReducers({
-    bloodPressureQueue: bloodPressureQueueReducer,
-    nutritionQueue: nutritionQueueReducer
-  })
+    openmrs: openmrsReducers,
+    form: reduxFormReducer,
+    selected: patientSelectedReducer,
+    screening: combineReducers({
+        bloodPressureQueue: bloodPressureQueueReducer,
+        nutritionQueue: nutritionQueueReducer
+    })
 });
 
 const rootSagas = function* () {
-  yield all([
-    openmrsSagas()
-  ]);
+    yield all([
+        openmrsSagas()
+    ]);
 };
 
 if (process.env.NODE_ENV !== 'production') {
-  middlewares.push(logger);
+    middlewares.push(logger);
 }
 
 export default () => {
-  const store = createStore(rootReducer, compose(
-    applyMiddleware(...middlewares),
-    window.devToolsExtension && process.env.NODE_ENV !== 'production'
-      ? window.devToolsExtension() : f => f,
-  ));
-  sagaMiddleware.run(rootSagas);
-  return store;
+    const store = createStore(rootReducer, compose(
+        applyMiddleware(...middlewares),
+        window.devToolsExtension && process.env.NODE_ENV !== 'production'
+            ? window.devToolsExtension() : f => f,
+    ));
+    sagaMiddleware.run(rootSagas);
+    return store;
 };
