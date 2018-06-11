@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, ButtonGroup, Glyphicon } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import RequiredScreenings from '../../screening/RequiredScreenings';
 
 const HomePage = () => (
   <div className="App">
@@ -30,6 +31,7 @@ const HomePage = () => (
           </Button>
         </ButtonGroup>
       </Link>
+      <RequiredScreenings/>
     </div>
 
   </div>
