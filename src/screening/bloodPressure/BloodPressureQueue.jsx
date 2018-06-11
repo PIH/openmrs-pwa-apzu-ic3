@@ -1,12 +1,10 @@
 import Queue from '../Queue';
 import { connect } from "react-redux";
 
-// TODO can we skip "results" sub-mapping?
-
 const mapStateToProps = (state) => {
   return {
     dispatch: state.dispatch,
-    rowData: state.screening.bloodPressureQueue.results
+    rowData: state.screening.bloodPressureQueue.list
   };
 };
 

@@ -16,7 +16,7 @@ const createQueueReducer = (encounterTypeUuid, additionalFilters = []) =>  {
       return visits;
     }
     else {
-      return applyFilters(visits.filter(filters.pop()), filters)
+      return applyFilters(visits.filter(filters.pop()), filters);
     }
   };
 
@@ -24,7 +24,7 @@ const createQueueReducer = (encounterTypeUuid, additionalFilters = []) =>  {
     switch (action.type) {
       case VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED:
         return Object.assign({}, state, {
-          results: applyFilters(action.visits, additionalFilters.concat(patientsByEncounterFilter))
+          list: applyFilters(action.visits, additionalFilters.concat(patientsByEncounterFilter))
         });
       default: return state;
     }
