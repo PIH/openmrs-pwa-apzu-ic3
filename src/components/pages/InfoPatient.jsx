@@ -5,10 +5,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 class InfoPatient extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
+    
     render() {
         return (
             <form>
