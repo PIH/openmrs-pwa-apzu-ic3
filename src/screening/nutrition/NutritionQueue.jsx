@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 const mapStateToProps = (state) => {
   return {
     dispatch: state.dispatch,
-    rowData: state.screening.bloodPressureQueue.results
+    rowData: state.screening.nutritionQueue.results
   };
 };
 

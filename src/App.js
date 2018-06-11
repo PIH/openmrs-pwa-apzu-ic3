@@ -7,6 +7,7 @@ import { AuthenticatedRoute, LoginPage } from '@openmrs/react-components';
 import HomePage from './components/pages/HomePage';
 import SearchPatient from './components/pages/SearchPatient';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
+import NutritionQueue from "./screening/nutrition/NutritionQueue";
 
 const store = createStore();
 
@@ -35,6 +36,10 @@ const App = props => {
           <AuthenticatedRoute
             component={BloodPressureQueue}
             path="/screening/bloodPressureQueue"
+          />
+          <AuthenticatedRoute
+            component={NutritionQueue}
+            path="/screening/nutritionQueue"
           />
         </Switch>
       </BrowserRouter>

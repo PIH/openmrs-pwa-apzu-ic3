@@ -23,6 +23,13 @@ const HomePage = () => (
           </Button>
         </ButtonGroup>
       </Link>
+      <Link to="/screening/nutritionQueue">
+        <ButtonGroup>
+          <Button bsSize="large" >
+            <Glyphicon glyph="check" /> Nutrition Screening
+          </Button>
+        </ButtonGroup>
+      </Link>
     </div>
 
   </div>
