@@ -5,6 +5,8 @@ import { DataGrid } from '@openmrs/react-components';
 
 class BloodPressureQueue extends React.Component {
 
+  // TODO externalize constructors and visit actions?
+
   constructor(props) {
     super(props);
     this.columnDefs =  [
@@ -17,6 +19,7 @@ class BloodPressureQueue extends React.Component {
   }
 
   componentDidMount() {
+    this.props.dispatch(visitActions.fetchActiveVisits("custom:(patient:default,encounters:default)"));
     this.interval = setInterval(() =>
       this.props.dispatch(visitActions.fetchActiveVisits("custom:(patient:default,encounters:default)")), 10000);
   }
@@ -34,6 +37,8 @@ class BloodPressureQueue extends React.Component {
   }
 
 }
+
+// TODO can we skip "results" sub-mapping?
 
 const mapStateToProps = (state) => {
   return {
