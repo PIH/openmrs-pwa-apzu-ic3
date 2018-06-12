@@ -9,7 +9,7 @@ import InfoPatient from './components/pages/InfoPatient';
 import SearchPatient from './components/pages/SearchPatient';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
-import { ConnectedRouter } from 'connected-react-router'
+import { ConnectedRouter } from 'connected-react-router';
 
 const store = createStore();
 
@@ -46,6 +46,7 @@ const App = props => {
           <AuthenticatedRoute
             component={InfoPatient}
             path="/infoPatient"
+            redirectOnLogin="/"
           />
         </Switch>
       </ConnectedRouter>
