@@ -1,5 +1,4 @@
 import React from 'react';
-import { createBrowserHistory } from 'history';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
