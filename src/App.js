@@ -4,12 +4,13 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import createStore, { history } from './store';
 import { AuthenticatedRoute, LoginPage } from '@openmrs/react-components';
+import { ConnectedRouter } from 'connected-react-router';
 import HomePage from './components/pages/HomePage';
 import InfoPatient from './components/pages/InfoPatient';
 import SearchPatient from './components/pages/SearchPatient';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
-import { ConnectedRouter } from 'connected-react-router';
+import SampleFormPage from './components/pages/SampleFormPage';
 
 const store = createStore();
 
@@ -46,6 +47,11 @@ const App = props => {
           <AuthenticatedRoute
             component={InfoPatient}
             path="/infoPatient"
+            redirectOnLogin="/"
+          />
+          <AuthenticatedRoute
+            component={SampleFormPage}
+            path="/sampleFormPage"
             redirectOnLogin="/"
           />
         </Switch>

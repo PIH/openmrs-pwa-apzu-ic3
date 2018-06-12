@@ -5,6 +5,7 @@
   "dependencies": {
     "@openmrs/react-components": "^0.1.0",
     "babel-polyfill": "^6.26.0",
+    "bahmni-form-controls": "^0.91.10",
     "bootstrap": "^3.3.7",
     "connected-react-router": "^4.3.0",
     "history": "^4.7.2",

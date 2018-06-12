@@ -30,6 +30,13 @@ const HomePage = () => (
           </Button>
         </ButtonGroup>
       </Link>
+      <Link to="/sampleFormPage">
+        <ButtonGroup>
+          <Button bsSize="large" >
+            <Glyphicon glyph="check" /> Sample Form
+          </Button>
+        </ButtonGroup>
+      </Link>
     </div>
 
   </div>
