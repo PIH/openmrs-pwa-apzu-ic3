@@ -31,7 +31,7 @@ const HomePage = () => (
           </Button>
         </ButtonGroup>
       </Link>
-      <RequiredScreenings/>
+      <RequiredScreenings />
     </div>
 
   </div>

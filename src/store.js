@@ -22,31 +22,31 @@ const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];
 
 const rootReducer = combineReducers({
-    openmrs: openmrsReducers,
-    form: reduxFormReducer,
-    selected: patientSelectedReducer,
-    screening: combineReducers({
-        bloodPressureQueue: bloodPressureQueueReducer,
-        nutritionQueue: nutritionQueueReducer
-    })
+  openmrs: openmrsReducers,
+  form: reduxFormReducer,
+  selected: patientSelectedReducer,
+  screening: combineReducers({
+    bloodPressureQueue: bloodPressureQueueReducer,
+    nutritionQueue: nutritionQueueReducer
+  })
 });
 
 const rootSagas = function* () {
-    yield all([
-        openmrsSagas()
-    ]);
+  yield all([
+    openmrsSagas()
+  ]);
 };
 
 if (process.env.NODE_ENV !== 'production') {
-    middlewares.push(logger);
+  middlewares.push(logger);
 }
 
 export default () => {
-    const store = createStore(rootReducer, compose(
-        applyMiddleware(...middlewares),
-        window.devToolsExtension && process.env.NODE_ENV !== 'production'
-            ? window.devToolsExtension() : f => f,
-    ));
-    sagaMiddleware.run(rootSagas);
-    return store;
+  const store = createStore(rootReducer, compose(
+    applyMiddleware(...middlewares),
+    window.devToolsExtension && process.env.NODE_ENV !== 'production'
+      ? window.devToolsExtension() : f => f,
+  ));
+  sagaMiddleware.run(rootSagas);
+  return store;
 };

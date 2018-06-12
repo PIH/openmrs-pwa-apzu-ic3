@@ -28,7 +28,8 @@ const App = props => {
           />
           <AuthenticatedRoute
             component={HomePage}
-            exact path="/"
+            exact
+            path="/"
           />
           <AuthenticatedRoute
             component={SearchPatient}
@@ -45,10 +46,10 @@ const App = props => {
             path="/screening/nutritionQueue"
             redirectOnLogin="/"
           />
-            <AuthenticatedRoute
-                component={InfoPatient}
-                path="/infoPatient"
-            />
+          <AuthenticatedRoute
+            component={InfoPatient}
+            path="/infoPatient"
+          />
         </Switch>
       </BrowserRouter>
     </Provider>

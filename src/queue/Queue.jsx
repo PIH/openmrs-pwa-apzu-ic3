@@ -8,7 +8,7 @@ class Queue extends React.Component {
     super(props);
     this.columnDefs =  [
       { headerName: 'patientUuid', hide: true, field: 'uuid' },
-//      { headerName: 'ID', valueGetter: 'data.identifier' },
+      //      { headerName: 'ID', valueGetter: 'data.identifier' },
       { headerName: 'Name', field: 'patient.person.preferredName.display' },
       { headerName: 'Gender', field: 'patient.person.gender' },
       { headerName: 'Age', field: 'patient.person.age' }
@@ -27,9 +27,12 @@ class Queue extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div>
-        <DataGrid columnDefs={this.columnDefs} rowData={this.props.rowData}/>
+        <DataGrid
+          columnDefs={this.columnDefs}
+          rowData={this.props.rowData}
+        />
       </div>
     );
   }
