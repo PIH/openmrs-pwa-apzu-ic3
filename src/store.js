@@ -21,7 +21,13 @@ import patientSelectedReducer from './components/pages/patientSelectedReducer';
 // fyi, connected-react-router docs:
 // https://github.com/supasate/connected-react-router
 
-export const history = createBrowserHistory();
+const contextPath  = (typeof process !== 'undefined' && typeof process.env !== 'undefined' &&
+  typeof process.env.REACT_APP_CONTEXT_PATH  !== 'undefined' && process.env.REACT_APP_CONTEXT_PATH !== null) ?
+  process.env.REACT_APP_CONTEXT_PATH : "/";
+
+export const history = createBrowserHistory({
+  basename: contextPath
+});
 
 const sagaMiddleware = createSagaMiddleware();
 

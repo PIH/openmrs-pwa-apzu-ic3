@@ -15,13 +15,9 @@ const store = createStore();
 
 const App = props => {
 
-  const contextPath  = (typeof process !== 'undefined' && typeof process.env !== 'undefined' &&
-    typeof process.env.REACT_APP_CONTEXT_PATH  !== 'undefined' && process.env.REACT_APP_CONTEXT_PATH !== null) ?
-    process.env.REACT_APP_CONTEXT_PATH : "/";
-
   return (
     <Provider store={store}>
-      <ConnectedRouter history={history} basename={contextPath}>
+      <ConnectedRouter history={history}>
         <Switch>
           <Route
             component={LoginPage}
