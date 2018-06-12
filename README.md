@@ -1,15 +1,17 @@
 
-# Setup
+# Development Enviroment Setup
 
-## Linking to openmrs-react-components
+##
 
-1) In your @openmrs/react-components directory: npm link
-2) In the top level directory of this project: npm link @openmrs/react-components
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+1) Clone this repo locally
+2) npm install
+3) Clone the https://github.com/openmrs/openmrs-react-components locally as well
+4) npm install
+5) Link to use your local version of openmrs-react-components:
+    a) In your @openmrs/react-components directory: npm link
+    b) In the top level directory of this project: npm link @openmrs/react-components
+6) In your @openmrs/react-component directory build and watch the code: npm run build:watch
+7) In the directory where you have this project checked out: npm start
 
 ## Setting the URL of OpenMRS server
 
@@ -30,6 +32,13 @@ https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeac
 
 More information can be found in the [custom environment variables](#adding-custom-environment-variables) section below
 and here: https://github.com/openmrs/openmrs-react-components/blob/master/src/config.js#L3
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+Below you will find some information on how to perform common tasks.<br>
+You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
 
 ## Table of Contents
 
