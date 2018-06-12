@@ -21,7 +21,7 @@ Create a file ".env.local" which sets two environmental variables setting the se
 
 ```
 REACT_APP_SERVER_ADDRESS=http://localhost:8080/
-REACT_APP_CONTEXT_PATH=openmrs
+REACT_APP_SERVER_CONTEXT_PATH=openmrs
 ```
 
 ## Getting around CORS issues
