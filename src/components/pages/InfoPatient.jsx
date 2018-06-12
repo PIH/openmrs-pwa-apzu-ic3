@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
+import RequiredScreenings from '../../screening/RequiredScreenings';
+
+
 class InfoPatient extends React.Component {
 
     
@@ -81,6 +84,7 @@ class InfoPatient extends React.Component {
             </Col>
           </Row>
         </Grid>
+        <RequiredScreenings patientUuid={this.props.patient.uuid} />
       </form>
     );
   }
