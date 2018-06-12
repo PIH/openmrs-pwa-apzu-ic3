@@ -1,14 +1,16 @@
 import React from 'react';
+import { createBrowserHistory } from 'history';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import createStore from './store';
+import createStore, { history } from './store';
 import { AuthenticatedRoute, LoginPage } from '@openmrs/react-components';
 import HomePage from './components/pages/HomePage';
 import InfoPatient from './components/pages/InfoPatient';
 import SearchPatient from './components/pages/SearchPatient';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
+import { ConnectedRouter } from 'connected-react-router'
 
 const store = createStore();
 
@@ -20,7 +22,7 @@ const App = props => {
 
   return (
     <Provider store={store}>
-      <BrowserRouter basename={contextPath}>
+      <ConnectedRouter history={history} basename={contextPath}>
         <Switch>
           <Route
             component={LoginPage}
@@ -51,7 +53,7 @@ const App = props => {
             path="/infoPatient"
           />
         </Switch>
-      </BrowserRouter>
+      </ConnectedRouter>
     </Provider>
   );
 

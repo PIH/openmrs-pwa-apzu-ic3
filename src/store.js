@@ -6,20 +6,29 @@
  * Copyright (C) OpenMRS Inc. OpenMRS is a registered trademark and the OpenMRS
  * graphic logo is a trademark of OpenMRS Inc.
  */
-
+import { createBrowserHistory } from 'history';
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
-import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/react-components';
 import { reducer as reduxFormReducer } from 'redux-form';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/react-components';
 import bloodPressureQueueReducer from './screening/bloodPressure/bloodPressureQueueReducer';
 import nutritionQueueReducer from "./screening/nutrition/nutritionQueueReducer";
 import patientSelectedReducer from './components/pages/patientSelectedReducer';
 
+// fyi, connected-react-router docs:
+// https://github.com/supasate/connected-react-router
+
+export const history = createBrowserHistory();
+
 const sagaMiddleware = createSagaMiddleware();
 
-const middlewares = [sagaMiddleware];
+const middlewares = [
+  routerMiddleware(history),
+  sagaMiddleware
+];
 
 const rootReducer = combineReducers({
   openmrs: openmrsReducers,
@@ -42,11 +51,13 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export default () => {
-  const store = createStore(rootReducer, compose(
-    applyMiddleware(...middlewares),
-    window.devToolsExtension && process.env.NODE_ENV !== 'production'
-      ? window.devToolsExtension() : f => f,
-  ));
+  const store = createStore(
+    connectRouter(history)(rootReducer),
+    compose(
+      applyMiddleware(...middlewares),
+      window.devToolsExtension && process.env.NODE_ENV !== 'production'
+        ? window.devToolsExtension() : f => f,
+    ));
   sagaMiddleware.run(rootSagas);
   return store;
 };
