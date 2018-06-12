@@ -22,6 +22,12 @@ REACT_APP_SERVER_ADDRESS=http://localhost:8080/
 REACT_APP_CONTEXT_PATH=openmrs
 ```
 
+## Getting around CORS issues
+
+You can install the CORS plugin for Chrome here to get around CORS issues:
+
+https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
+
 More information can be found in the [custom environment variables](#adding-custom-environment-variables) section below
 and here: https://github.com/openmrs/openmrs-react-components/blob/master/src/config.js#L3
 
