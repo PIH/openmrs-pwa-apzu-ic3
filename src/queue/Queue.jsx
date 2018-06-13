@@ -1,4 +1,5 @@
 import React from 'react';
+import { push } from 'connected-react-router';
 import { visitActions } from '@openmrs/react-components';
 import { DataGrid } from '@openmrs/react-components';
 
@@ -26,12 +27,17 @@ class Queue extends React.Component {
     clearInterval(this.interval);
   }
 
+  redirectToInfoPageActionCreator() {
+    return push('/'); // needs to be overwritten in implementing methods
+  }
+
   render() {
     return (
       <div>
         <DataGrid
           columnDefs={this.columnDefs}
           rowData={this.props.rowData}
+          rowSelectedActionCreators={[this.redirectToInfoPageActionCreator]}
         />
       </div>
     );

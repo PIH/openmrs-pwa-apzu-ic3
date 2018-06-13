@@ -8,6 +8,7 @@ import HomePage from './components/pages/HomePage';
 import InfoPatient from './components/pages/InfoPatient';
 import SearchPatient from './components/pages/SearchPatient';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
+import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import { ConnectedRouter } from 'connected-react-router';
 
@@ -35,12 +36,17 @@ const App = props => {
           />
           <AuthenticatedRoute
             component={BloodPressureQueue}
-            path="/screening/bloodPressureQueue"
+            path="/screening/bloodPressure/queue"
+            redirectOnLogin="/"
+          />
+          <AuthenticatedRoute
+            component={BloodPressureForm}
+            path="/screening/bloodPressure/form"
             redirectOnLogin="/"
           />
           <AuthenticatedRoute
             component={NutritionQueue}
-            path="/screening/nutritionQueue"
+            path="/screening/nutrition/queue"
             redirectOnLogin="/"
           />
           <AuthenticatedRoute
