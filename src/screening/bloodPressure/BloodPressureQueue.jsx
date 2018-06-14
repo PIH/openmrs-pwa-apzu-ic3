@@ -5,7 +5,7 @@ import { push } from 'connected-react-router';
 class BloodPressureQueue extends Queue {
 
   redirectToInfoPageActionCreator() {
-    return push('/screening/bloodPresssure/form');
+    return push('/screening/bloodPressure/form');
   }
 
 }
