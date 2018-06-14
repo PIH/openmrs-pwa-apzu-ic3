@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
-import { OpenMRSForm, Submit } from '@openmrs/react-components';
+import { Grid, Row } from 'react-bootstrap';
+import { OpenMRSForm, Submit, Obs } from '@openmrs/react-components';
 import { ENCOUNTER_TYPES } from "../../constants";
 
 
@@ -12,6 +13,8 @@ class BloodPressureForm extends React.Component {
     return push('/screening/bloodPressure/queue');
   }
 
+  // TODO obviously we want to use mapping on forms, not uuid... maybe transpile??
+
   render() {
     return (
       <OpenMRSForm
@@ -19,8 +22,16 @@ class BloodPressureForm extends React.Component {
         formSubmittedActionCreator={this.redirectToQueuePageActionCreator}
         patient={this.props.patient}
         visit={this.props.visit}>
-        <p>My Blood Pressure Form</p>
-        <Submit />
+        <Grid>
+          <Row>
+            <Obs path="systolic" concept="3ce934fa-26fe-102b-80cb-0017a47871b2" />
+            /
+            <Obs path="diastolic" concept="3ce93694-26fe-102b-80cb-0017a47871b2" />
+          </Row>
+          <Row>
+            <Submit />
+          </Row>
+        </Grid>
       </OpenMRSForm>
     );
   }
