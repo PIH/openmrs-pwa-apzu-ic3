@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { CheckinForm, patientActions } from '@openmrs/react-components';
+import { patientActions } from '@openmrs/react-components';
+import CheckinForm from './CheckinForm';
 import { ENCOUNTER_TYPES, VISIT_TYPES, LOCATION_TYPES } from '../constants'
 import { push } from "connected-react-router";
 
@@ -24,7 +25,7 @@ class CheckInPage extends React.Component {
 
   render() {
     return (
-      <div style={{ padding: 15 }}>
+      <div>
         <CheckinForm
           patient={ this.props.patient }
           onSubmit={ this.handleCheckIn.bind(this) }
