@@ -1,7 +1,5 @@
-import createQueueReducer from './createQueueReducer'
+import createQueueReducer from './createQueueReducer';
 import { VISIT_TYPES } from "@openmrs/react-components";
-
-let reducer;
 
 describe('createQueueRender', () => {
 
@@ -768,7 +766,7 @@ describe('createQueueRender', () => {
         }
       ]
     }
-  ]
+  ];
 
 
   it('should return the initial state', () => {
