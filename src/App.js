@@ -7,6 +7,8 @@ import { AuthenticatedRoute, LoginPage } from '@openmrs/react-components';
 import HomePage from './components/pages/HomePage';
 import InfoPatient from './components/pages/InfoPatient';
 import SearchPatient from './components/pages/SearchPatient';
+import CheckInQueue from './checkin/CheckInQueue';
+import CheckInPage from './checkin/CheckInPage';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
@@ -33,6 +35,16 @@ const App = props => {
           <AuthenticatedRoute
             component={SearchPatient}
             path="/searchPatient"
+            redirectOnLogin="/"
+          />
+          <AuthenticatedRoute
+            component={CheckInQueue}
+            path="/checkin/checkinQueue"
+            redirectOnLogin="/"
+          />
+          <AuthenticatedRoute
+            component={CheckInPage}
+            path="/checkin/checkinPage"
             redirectOnLogin="/"
           />
           <AuthenticatedRoute

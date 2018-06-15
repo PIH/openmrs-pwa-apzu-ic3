@@ -16,6 +16,13 @@ const HomePage = () => (
           </Button>
         </ButtonGroup>
       </Link>
+      <Link to="/checkin/checkinQueue">
+        <ButtonGroup>
+          <Button bsSize="large" >
+            <Glyphicon glyph="check" /> Check-In
+          </Button>
+        </ButtonGroup>
+      </Link>
       <Link to="/screening/bloodPressure/queue">
         <ButtonGroup>
           <Button bsSize="large" >
