@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
+import { OpenMRSForm, Submit } from '@openmrs/react-components';
 import { Grid, Row } from 'react-bootstrap';
-import { OpenMRSForm, Submit, Obs } from '@openmrs/react-components';
 import Form from '../../form/Form';
 import { ENCOUNTER_TYPES } from "../../constants";
 
-class BloodPressureForm extends Form {
+class NutritionForm extends Form {
 
   formSubmittedActionCreator() {
-    return push('/screening/bloodPressure/queue');
+    return push('/screening/nutrition/queue');
   }
 
-  // TODO obviously we want to use mapping on forms, not uuid... maybe transpile??
+  // TODO correct encounter type
 
   render() {
     return (
@@ -23,9 +23,7 @@ class BloodPressureForm extends Form {
         visit={this.props.visit}>
         <Grid>
           <Row>
-            <Obs path="systolic" concept="3ce934fa-26fe-102b-80cb-0017a47871b2" />
-            /
-            <Obs path="diastolic" concept="3ce93694-26fe-102b-80cb-0017a47871b2" />
+           Add Nutrituion Form
           </Row>
           <Row>
             <Submit />
@@ -46,4 +44,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(BloodPressureForm);
+export default connect(mapStateToProps)(NutritionForm);

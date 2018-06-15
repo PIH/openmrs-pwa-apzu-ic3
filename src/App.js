@@ -10,6 +10,7 @@ import SearchPatient from './components/pages/SearchPatient';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
+import NutritionForm from "./screening/nutrition/NutritionForm"
 import { ConnectedRouter } from 'connected-react-router';
 
 const store = createStore();
@@ -47,6 +48,11 @@ const App = props => {
           <AuthenticatedRoute
             component={NutritionQueue}
             path="/screening/nutrition/queue"
+            redirectOnLogin="/"
+          />
+          <AuthenticatedRoute
+            component={NutritionForm}
+            path="/screening/nutrition/form"
             redirectOnLogin="/"
           />
           <AuthenticatedRoute
