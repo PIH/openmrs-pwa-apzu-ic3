@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: NutritionQueue renders properly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(NutritionQueue)>
+    <NutritionQueue
+      dispatch={[Function]}
+      rowData={Array []}
+    >
+      <div>
+        <Connect(DataGrid)
+          columnDefs={
+            Array [
+              Object {
+                "field": "uuid",
+                "headerName": "patientUuid",
+                "hide": true,
+              },
+              Object {
+                "field": "patient.person.preferredName.display",
+                "headerName": "Name",
+              },
+              Object {
+                "field": "patient.person.gender",
+                "headerName": "Gender",
+              },
+              Object {
+                "field": "patient.person.age",
+                "headerName": "Age",
+              },
+            ]
+          }
+          rowData={Array []}
+          rowSelectedActionCreators={
+            Array [
+              [Function],
+            ]
+          }
+        >
+          <DataGrid
+            columnDefs={
+              Array [
+                Object {
+                  "field": "uuid",
+                  "headerName": "patientUuid",
+                  "hide": true,
+                },
+                Object {
+                  "field": "patient.person.preferredName.display",
+                  "headerName": "Name",
+                },
+                Object {
+                  "field": "patient.person.gender",
+                  "headerName": "Gender",
+                },
+                Object {
+                  "field": "patient.person.age",
+                  "headerName": "Age",
+                },
+              ]
+            }
+            dispatch={[Function]}
+            rowData={Array []}
+            rowSelectedActionCreators={
+              Array [
+                [Function],
+              ]
+            }
+          >
+            <div
+              className="ag-theme-balham"
+              style={
+                Object {
+                  "height": "600px",
+                  "width": "100%",
+                }
+              }
+            >
+              <AgGridReact
+                columnDefs={
+                  Array [
+                    Object {
+                      "field": "uuid",
+                      "headerName": "patientUuid",
+                      "hide": true,
+                    },
+                    Object {
+                      "field": "patient.person.preferredName.display",
+                      "headerName": "Name",
+                    },
+                    Object {
+                      "field": "patient.person.gender",
+                      "headerName": "Gender",
+                    },
+                    Object {
+                      "field": "patient.person.age",
+                      "headerName": "Age",
+                    },
+                  ]
+                }
+                enableSorting={true}
+                id="omrsGrid"
+                onGridReady={[Function]}
+                onSelectionChanged={[Function]}
+                rowClassRules="rowClassRules"
+                rowData={Array []}
+                rowSelection="single"
+              >
+                <div
+                  style={
+                    Object {
+                      "height": "100%",
+                    }
+                  }
+                />
+              </AgGridReact>
+            </div>
+          </DataGrid>
+        </Connect(DataGrid)>
+      </div>
+    </NutritionQueue>
+  </Connect(NutritionQueue)>
+</Provider>
+`;
