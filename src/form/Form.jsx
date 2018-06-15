@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { push } from 'connected-react-router';
 
 class Form extends React.Component {

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
 import { Grid, Row } from 'react-bootstrap';
 import { OpenMRSForm, Submit, Obs } from '@openmrs/react-components';
+import PropTypes from 'prop-types';
 import Form from '../../form/Form';
 import { ENCOUNTER_TYPES } from "../../constants";
 
@@ -20,12 +21,19 @@ class BloodPressureForm extends Form {
         encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
         formSubmittedActionCreator={this.formSubmittedActionCreator}
         patient={this.props.patient}
-        visit={this.props.visit}>
+        visit={this.props.visit}
+      >
         <Grid>
           <Row>
-            <Obs path="systolic" concept="3ce934fa-26fe-102b-80cb-0017a47871b2" />
+            <Obs
+              concept="3ce934fa-26fe-102b-80cb-0017a47871b2"
+              path="systolic"
+            />
             /
-            <Obs path="diastolic" concept="3ce93694-26fe-102b-80cb-0017a47871b2" />
+            <Obs
+              concept="3ce93694-26fe-102b-80cb-0017a47871b2"
+              path="diastolic"
+            />
           </Row>
           <Row>
             <Submit />
@@ -36,6 +44,12 @@ class BloodPressureForm extends Form {
   }
 
 }
+
+BloodPressureForm.propTypes = {
+  patient: PropTypes.object.isRequired,
+  visit: PropTypes.object,
+};
+
 
 const mapStateToProps = (state) => {
   return {
