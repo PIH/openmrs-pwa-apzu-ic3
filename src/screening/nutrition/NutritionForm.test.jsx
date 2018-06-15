@@ -21,7 +21,7 @@ const nutritionForm = () => {
   return mountedComponent;
 };
 
-describe('Component: nutritionForm', () => {
+describe('Component: NutritionForm', () => {
   beforeEach(() => {
     props = {};
     store = mockStore(
