@@ -1,0 +1,327 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: nutritionForm renders properly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(NutritionForm)>
+    <NutritionForm
+      dispatch={[Function]}
+      patient={
+        Object {
+          "uuid": "abc",
+        }
+      }
+      visit={
+        Object {
+          "uuid": undefined,
+        }
+      }
+    >
+      <Connect(ReduxForm)
+        encounterType={
+          Object {
+            "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+          }
+        }
+        formSubmittedActionCreator={[Function]}
+        patient={
+          Object {
+            "uuid": "abc",
+          }
+        }
+        visit={
+          Object {
+            "uuid": undefined,
+          }
+        }
+      >
+        <ReduxForm
+          dispatch={[Function]}
+          encounterType={
+            Object {
+              "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+            }
+          }
+          formSubmittedActionCreator={[Function]}
+          patient={
+            Object {
+              "uuid": "abc",
+            }
+          }
+          visit={
+            Object {
+              "uuid": undefined,
+            }
+          }
+        >
+          <Connect(Form(OpenMRSForm))
+            destroyOnUnmount={true}
+            dispatch={[Function]}
+            enableReinitialize={false}
+            encounterType={
+              Object {
+                "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+              }
+            }
+            forceUnregisterOnUnmount={false}
+            form="openmrs-form"
+            formSubmittedActionCreator={[Function]}
+            getFormState={[Function]}
+            keepDirtyOnReinitialize={false}
+            patient={
+              Object {
+                "uuid": "abc",
+              }
+            }
+            persistentSubmitErrors={false}
+            pure={true}
+            shouldAsyncValidate={[Function]}
+            shouldError={[Function]}
+            shouldValidate={[Function]}
+            shouldWarn={[Function]}
+            touchOnBlur={true}
+            touchOnChange={false}
+            updateUnregisteredFields={false}
+            visit={
+              Object {
+                "uuid": undefined,
+              }
+            }
+          >
+            <Form(OpenMRSForm)
+              anyTouched={false}
+              array={
+                Object {
+                  "insert": [Function],
+                  "move": [Function],
+                  "pop": [Function],
+                  "push": [Function],
+                  "remove": [Function],
+                  "removeAll": [Function],
+                  "shift": [Function],
+                  "splice": [Function],
+                  "swap": [Function],
+                  "unshift": [Function],
+                }
+              }
+              arrayInsert={[Function]}
+              arrayMove={[Function]}
+              arrayPop={[Function]}
+              arrayPush={[Function]}
+              arrayRemove={[Function]}
+              arrayRemoveAll={[Function]}
+              arrayShift={[Function]}
+              arraySplice={[Function]}
+              arraySwap={[Function]}
+              arrayUnshift={[Function]}
+              asyncValidating={false}
+              autofill={[Function]}
+              blur={[Function]}
+              change={[Function]}
+              clearAsyncError={[Function]}
+              clearFields={[Function]}
+              clearSubmit={[Function]}
+              clearSubmitErrors={[Function]}
+              destroy={[Function]}
+              destroyOnUnmount={true}
+              dirty={false}
+              dispatch={[Function]}
+              enableReinitialize={false}
+              encounterType={
+                Object {
+                  "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                }
+              }
+              focus={[Function]}
+              forceUnregisterOnUnmount={false}
+              form="openmrs-form"
+              formSubmittedActionCreator={[Function]}
+              getFormState={[Function]}
+              initialize={[Function]}
+              initialized={false}
+              invalid={false}
+              keepDirtyOnReinitialize={false}
+              patient={
+                Object {
+                  "uuid": "abc",
+                }
+              }
+              persistentSubmitErrors={false}
+              pristine={true}
+              pure={true}
+              registerField={[Function]}
+              reset={[Function]}
+              resetSection={[Function]}
+              setSubmitFailed={[Function]}
+              setSubmitSucceeded={[Function]}
+              shouldAsyncValidate={[Function]}
+              shouldError={[Function]}
+              shouldValidate={[Function]}
+              shouldWarn={[Function]}
+              startAsyncValidation={[Function]}
+              startSubmit={[Function]}
+              stopAsyncValidation={[Function]}
+              stopSubmit={[Function]}
+              submit={[Function]}
+              submitFailed={false}
+              submitSucceeded={false}
+              submitting={false}
+              syncErrors={Object {}}
+              syncWarnings={Object {}}
+              touch={[Function]}
+              touchOnBlur={true}
+              touchOnChange={false}
+              unregisterField={[Function]}
+              untouch={[Function]}
+              updateSyncErrors={[Function]}
+              updateSyncWarnings={[Function]}
+              updateUnregisteredFields={false}
+              valid={true}
+              validExceptSubmit={true}
+              values={Object {}}
+              visit={
+                Object {
+                  "uuid": undefined,
+                }
+              }
+            >
+              <OpenMRSForm
+                anyTouched={false}
+                array={
+                  Object {
+                    "insert": [Function],
+                    "move": [Function],
+                    "pop": [Function],
+                    "push": [Function],
+                    "remove": [Function],
+                    "removeAll": [Function],
+                    "shift": [Function],
+                    "splice": [Function],
+                    "swap": [Function],
+                    "unshift": [Function],
+                  }
+                }
+                asyncValidate={[Function]}
+                asyncValidating={false}
+                autofill={[Function]}
+                blur={[Function]}
+                change={[Function]}
+                clearAsyncError={[Function]}
+                clearFields={[Function]}
+                clearSubmit={[Function]}
+                clearSubmitErrors={[Function]}
+                destroy={[Function]}
+                dirty={false}
+                dispatch={[Function]}
+                encounterType={
+                  Object {
+                    "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                  }
+                }
+                form="openmrs-form"
+                formSubmittedActionCreator={[Function]}
+                handleSubmit={[Function]}
+                initialize={[Function]}
+                initialized={false}
+                invalid={false}
+                patient={
+                  Object {
+                    "uuid": "abc",
+                  }
+                }
+                pristine={true}
+                pure={true}
+                reset={[Function]}
+                resetSection={[Function]}
+                submit={[Function]}
+                submitFailed={false}
+                submitSucceeded={false}
+                submitting={false}
+                touch={[Function]}
+                untouch={[Function]}
+                valid={true}
+                visit={
+                  Object {
+                    "uuid": undefined,
+                  }
+                }
+              >
+                <Form
+                  bsClass="form"
+                  componentClass="form"
+                  horizontal={true}
+                  inline={false}
+                  onSubmit={[Function]}
+                >
+                  <form
+                    className="form-horizontal"
+                    onSubmit={[Function]}
+                  >
+                    <Grid
+                      bsClass="container"
+                      componentClass="div"
+                      fluid={false}
+                    >
+                      <div
+                        className="container"
+                      >
+                        <Row
+                          bsClass="row"
+                          componentClass="div"
+                        >
+                          <div
+                            className="row"
+                          >
+                            Add Nutrituion Form
+                          </div>
+                        </Row>
+                        <Row
+                          bsClass="row"
+                          componentClass="div"
+                        >
+                          <div
+                            className="row"
+                          >
+                            <Submit>
+                              <Button
+                                active={false}
+                                block={false}
+                                bsClass="btn"
+                                bsStyle="success"
+                                disabled={false}
+                                type="submit"
+                              >
+                                <button
+                                  className="btn btn-success"
+                                  disabled={false}
+                                  type="submit"
+                                >
+                                  Submit
+                                </button>
+                              </Button>
+                            </Submit>
+                          </div>
+                        </Row>
+                      </div>
+                    </Grid>
+                  </form>
+                </Form>
+              </OpenMRSForm>
+            </Form(OpenMRSForm)>
+          </Connect(Form(OpenMRSForm))>
+        </ReduxForm>
+      </Connect(ReduxForm)>
+    </NutritionForm>
+  </Connect(NutritionForm)>
+</Provider>
+`;
