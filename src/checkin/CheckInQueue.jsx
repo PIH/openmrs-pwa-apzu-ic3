@@ -47,8 +47,8 @@ class CheckInQueue extends React.Component {
         <PatientSearch
           columnDefs={this.columnDefs}
           parseResults={this.parseResults.bind(this)}
-          searchQuery="Malunga"
           rowSelectedActionCreators={[this.redirectToCheckinPageActionCreator]}
+          searchQuery="Malunga"
         />
       </div>
     );

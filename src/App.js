@@ -9,65 +9,75 @@ import InfoPatient from './components/pages/InfoPatient';
 import SearchPatient from './components/pages/SearchPatient';
 import CheckInQueue from './checkin/CheckInQueue';
 import CheckInPage from './checkin/CheckInPage';
+import Navigation from './components/pages/Navigation';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
-import NutritionForm from "./screening/nutrition/NutritionForm"
+import NutritionForm from "./screening/nutrition/NutritionForm";
 import { ConnectedRouter } from 'connected-react-router';
 
 const store = createStore();
 
 const App = props => {
 
+  const AuthenticatedLayout = props => {
+    return (
+      <div>
+        <Navigation />
+        <AuthenticatedRoute {...props} />
+      </div>
+    );
+  };
+
   return (
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
+    <Provider store={store}>    
+      <ConnectedRouter history={history}>      
         <Switch>
           <Route
             component={LoginPage}
             path="/login"
           />
-          <AuthenticatedRoute
+          <AuthenticatedLayout
             component={HomePage}
             exact
             path="/"
           />
-          <AuthenticatedRoute
+          <AuthenticatedLayout
             component={SearchPatient}
             path="/searchPatient"
             redirectOnLogin="/"
           />
-          <AuthenticatedRoute
+          <AuthenticatedLayout
             component={CheckInQueue}
             path="/checkin/checkinQueue"
             redirectOnLogin="/"
           />
-          <AuthenticatedRoute
+          <AuthenticatedLayout
             component={CheckInPage}
             path="/checkin/checkinPage"
             redirectOnLogin="/"
           />
-          <AuthenticatedRoute
+          <AuthenticatedLayout
             component={BloodPressureQueue}
             path="/screening/bloodPressure/queue"
             redirectOnLogin="/"
           />
-          <AuthenticatedRoute
+          <AuthenticatedLayout
             component={BloodPressureForm}
             path="/screening/bloodPressure/form"
             redirectOnLogin="/"
           />
-          <AuthenticatedRoute
+          <AuthenticatedLayout
             component={NutritionQueue}
             path="/screening/nutrition/queue"
             redirectOnLogin="/"
           />
-          <AuthenticatedRoute
+          <AuthenticatedLayout
             component={NutritionForm}
             path="/screening/nutrition/form"
             redirectOnLogin="/"
           />
-          <AuthenticatedRoute
+          <AuthenticatedLayout
             component={InfoPatient}
             path="/infoPatient"
             redirectOnLogin="/"

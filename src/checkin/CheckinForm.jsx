@@ -11,60 +11,103 @@ let CheckinForm = props => {
   return (
     <div>
       <h3><Label>Check-in</Label></h3>
-      <Form horizontal onSubmit={ handleSubmit }>
+      <Form
+        horizontal
+        onSubmit={handleSubmit}
+      >
         <Grid>
 
           <Row>
             <FormGroup controlId="formIdentifier">
-              <Col componentClass={ControlLabel} sm={2}>
+              <Col
+                componentClass={ControlLabel}
+                sm={2}
+              >
                 Identifier
               </Col>
               <Col sm={4}>
-                <Field name="identifier" type='text' component={FieldInput} placeholder="Identifier"  />
+                <Field
+                  component={FieldInput}
+                  name="identifier"
+                  placeholder="Identifier"
+                  type='text'
+                />
               </Col>
             </FormGroup>
           </Row>
 
           <Row>
             <FormGroup controlId="formFirstName">
-              <Col componentClass={ControlLabel} sm={2}>
+              <Col
+                componentClass={ControlLabel}
+                sm={2}
+              >
                 First Name
               </Col>
               <Col sm={4}>
-                <Field name="firstName" type='text' component={FieldInput} placeholder="First Name"  />
+                <Field
+                  component={FieldInput}
+                  name="firstName"
+                  placeholder="First Name"
+                  type='text'
+                />
               </Col>
             </FormGroup>
           </Row>
 
           <Row>
             <FormGroup controlId="formLastName">
-              <Col componentClass={ControlLabel} sm={2}>
+              <Col
+                componentClass={ControlLabel}
+                sm={2}
+              >
                 Last Name
               </Col>
               <Col sm={4}>
-                <Field name="lastName" type='text' component={FieldInput} placeholder="Last Name"  />
+                <Field
+                  component={FieldInput}
+                  name="lastName"
+                  placeholder="Last Name"
+                  type='text'
+                />
               </Col>
             </FormGroup>
           </Row>
 
           <Row>
             <FormGroup controlId="formGender">
-              <Col componentClass={ControlLabel} sm={2}>
+              <Col
+                componentClass={ControlLabel}
+                sm={2}
+              >
                 Gender
               </Col>
               <Col sm={4}>
-                <Field name="gender" type='text' component={FieldInput} placeholder="Gender"  />
+                <Field
+                  component={FieldInput}
+                  name="gender"
+                  placeholder="Gender"
+                  type='text'
+                />
               </Col>
             </FormGroup>
           </Row>
 
           <Row>
             <FormGroup controlId="formAge">
-              <Col componentClass={ControlLabel} sm={2}>
+              <Col
+                componentClass={ControlLabel}
+                sm={2}
+              >
                 Age
               </Col>
               <Col sm={4}>
-                <Field name="age" type='number' component={FieldInput} placeholder="Age"  />
+                <Field
+                  component={FieldInput}
+                  name="age"
+                  placeholder="Age"
+                  type='number'
+                />
               </Col>
             </FormGroup>
           </Row>
@@ -73,12 +116,15 @@ let CheckinForm = props => {
 
           <Row>
             <FormGroup controlId="formSubmit">
-              <Col smOffset={2} sm={4}>
+              <Col
+                sm={4}
+                smOffset={2}
+              >
                 <ButtonToolbar>
                   <Button
-                    bsStyle="success"
                     bsSize="large"
-                    disabled={ submitting }
+                    bsStyle="success"
+                    disabled={submitting}
                     type="submit"
                   >
                     Check-in
@@ -86,8 +132,8 @@ let CheckinForm = props => {
 
 
                   <Button
-                    bsStyle="danger"
                     bsSize="large"
+                    bsStyle="danger"
                     disabled={pristine || submitting}
                     onClick={reset}
                   >
