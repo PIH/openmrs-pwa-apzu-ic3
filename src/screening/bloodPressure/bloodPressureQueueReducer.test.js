@@ -3,7 +3,7 @@ import { VISIT_TYPES } from "@openmrs/react-components";
 
 describe('bloodPressureQueueReducer', () => {
 
-  const sampleVisits =[
+  const sampleVisits = [
     {
       "uuid": "af02b757-eb0a-4e64-b872-0091ad1d9b8a",
       "patient": {
