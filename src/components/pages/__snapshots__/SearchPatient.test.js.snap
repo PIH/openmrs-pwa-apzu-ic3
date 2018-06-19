@@ -1,0 +1,709 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: SearchPatient renders properly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(SearchPatient)
+    columnDefs={Array []}
+  >
+    <SearchPatient
+      columnDefs={Array []}
+      dispatch={[Function]}
+      patient={Object {}}
+    >
+      <div>
+        <Connect(PatientSearch)
+          columnDefs={
+            Array [
+              Object {
+                "headerName": "patientUuid",
+                "hide": true,
+                "valueGetter": "data.uuid",
+              },
+              Object {
+                "headerName": "ID",
+                "valueGetter": "data.identifier",
+              },
+              Object {
+                "headerName": "First Name",
+                "valueGetter": "data.firstName",
+              },
+              Object {
+                "headerName": "Last Name",
+                "valueGetter": "data.lastName",
+              },
+              Object {
+                "field": "gender",
+                "headerName": "Gender",
+              },
+              Object {
+                "field": "age",
+                "headerName": "Age",
+              },
+            ]
+          }
+          parseResults={[Function]}
+          rowSelectedActionCreators={
+            Array [
+              [Function],
+            ]
+          }
+        >
+          <PatientSearch
+            columnDefs={
+              Array [
+                Object {
+                  "headerName": "patientUuid",
+                  "hide": true,
+                  "valueGetter": "data.uuid",
+                },
+                Object {
+                  "headerName": "ID",
+                  "valueGetter": "data.identifier",
+                },
+                Object {
+                  "headerName": "First Name",
+                  "valueGetter": "data.firstName",
+                },
+                Object {
+                  "headerName": "Last Name",
+                  "valueGetter": "data.lastName",
+                },
+                Object {
+                  "field": "gender",
+                  "headerName": "Gender",
+                },
+                Object {
+                  "field": "age",
+                  "headerName": "Age",
+                },
+              ]
+            }
+            dispatch={[Function]}
+            parseResults={[Function]}
+            representation="custom:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,names,addresses,attributes))"
+            rowSelectedActionCreators={
+              Array [
+                [Function],
+              ]
+            }
+          >
+            <div>
+              <ReduxForm
+                onSubmit={[Function]}
+              >
+                <Connect(Form(PatientSearchForm))
+                  destroyOnUnmount={true}
+                  enableReinitialize={false}
+                  forceUnregisterOnUnmount={false}
+                  form="search-form"
+                  getFormState={[Function]}
+                  keepDirtyOnReinitialize={false}
+                  onSubmit={[Function]}
+                  persistentSubmitErrors={false}
+                  pure={true}
+                  shouldAsyncValidate={[Function]}
+                  shouldError={[Function]}
+                  shouldValidate={[Function]}
+                  shouldWarn={[Function]}
+                  touchOnBlur={true}
+                  touchOnChange={false}
+                  updateUnregisteredFields={false}
+                >
+                  <Form(PatientSearchForm)
+                    anyTouched={false}
+                    array={
+                      Object {
+                        "insert": [Function],
+                        "move": [Function],
+                        "pop": [Function],
+                        "push": [Function],
+                        "remove": [Function],
+                        "removeAll": [Function],
+                        "shift": [Function],
+                        "splice": [Function],
+                        "swap": [Function],
+                        "unshift": [Function],
+                      }
+                    }
+                    arrayInsert={[Function]}
+                    arrayMove={[Function]}
+                    arrayPop={[Function]}
+                    arrayPush={[Function]}
+                    arrayRemove={[Function]}
+                    arrayRemoveAll={[Function]}
+                    arrayShift={[Function]}
+                    arraySplice={[Function]}
+                    arraySwap={[Function]}
+                    arrayUnshift={[Function]}
+                    asyncValidating={false}
+                    autofill={[Function]}
+                    blur={[Function]}
+                    change={[Function]}
+                    clearAsyncError={[Function]}
+                    clearFields={[Function]}
+                    clearSubmit={[Function]}
+                    clearSubmitErrors={[Function]}
+                    destroy={[Function]}
+                    destroyOnUnmount={true}
+                    dirty={false}
+                    dispatch={[Function]}
+                    enableReinitialize={false}
+                    focus={[Function]}
+                    forceUnregisterOnUnmount={false}
+                    form="search-form"
+                    getFormState={[Function]}
+                    initialize={[Function]}
+                    initialized={false}
+                    invalid={false}
+                    keepDirtyOnReinitialize={false}
+                    onSubmit={[Function]}
+                    persistentSubmitErrors={false}
+                    pristine={true}
+                    pure={true}
+                    registerField={[Function]}
+                    reset={[Function]}
+                    resetSection={[Function]}
+                    setSubmitFailed={[Function]}
+                    setSubmitSucceeded={[Function]}
+                    shouldAsyncValidate={[Function]}
+                    shouldError={[Function]}
+                    shouldValidate={[Function]}
+                    shouldWarn={[Function]}
+                    startAsyncValidation={[Function]}
+                    startSubmit={[Function]}
+                    stopAsyncValidation={[Function]}
+                    stopSubmit={[Function]}
+                    submit={[Function]}
+                    submitFailed={false}
+                    submitSucceeded={false}
+                    submitting={false}
+                    syncErrors={Object {}}
+                    syncWarnings={Object {}}
+                    touch={[Function]}
+                    touchOnBlur={true}
+                    touchOnChange={false}
+                    unregisterField={[Function]}
+                    untouch={[Function]}
+                    updateSyncErrors={[Function]}
+                    updateSyncWarnings={[Function]}
+                    updateUnregisteredFields={false}
+                    valid={true}
+                    validExceptSubmit={true}
+                    values={Object {}}
+                  >
+                    <PatientSearchForm
+                      anyTouched={false}
+                      array={
+                        Object {
+                          "insert": [Function],
+                          "move": [Function],
+                          "pop": [Function],
+                          "push": [Function],
+                          "remove": [Function],
+                          "removeAll": [Function],
+                          "shift": [Function],
+                          "splice": [Function],
+                          "swap": [Function],
+                          "unshift": [Function],
+                        }
+                      }
+                      asyncValidate={[Function]}
+                      asyncValidating={false}
+                      autofill={[Function]}
+                      blur={[Function]}
+                      change={[Function]}
+                      clearAsyncError={[Function]}
+                      clearFields={[Function]}
+                      clearSubmit={[Function]}
+                      clearSubmitErrors={[Function]}
+                      destroy={[Function]}
+                      dirty={false}
+                      dispatch={[Function]}
+                      form="search-form"
+                      handleSubmit={[Function]}
+                      initialize={[Function]}
+                      initialized={false}
+                      invalid={false}
+                      onSubmit={[Function]}
+                      pristine={true}
+                      pure={true}
+                      reset={[Function]}
+                      resetSection={[Function]}
+                      submit={[Function]}
+                      submitFailed={false}
+                      submitSucceeded={false}
+                      submitting={false}
+                      touch={[Function]}
+                      untouch={[Function]}
+                      valid={true}
+                    >
+                      <form
+                        onSubmit={[Function]}
+                      >
+                        <Grid
+                          bsClass="container"
+                          componentClass="div"
+                          fluid={false}
+                        >
+                          <div
+                            className="container"
+                          >
+                            <Row
+                              bsClass="row"
+                              componentClass="div"
+                            >
+                              <div
+                                className="row"
+                              >
+                                <Col
+                                  bsClass="col"
+                                  componentClass="div"
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    <label>
+                                      Search: 
+                                    </label>
+                                    <Field
+                                      component="input"
+                                      name="query"
+                                      type="text"
+                                    >
+                                      <Connect(ConnectedField)
+                                        _reduxForm={
+                                          Object {
+                                            "anyTouched": false,
+                                            "array": Object {
+                                              "insert": [Function],
+                                              "move": [Function],
+                                              "pop": [Function],
+                                              "push": [Function],
+                                              "remove": [Function],
+                                              "removeAll": [Function],
+                                              "shift": [Function],
+                                              "splice": [Function],
+                                              "swap": [Function],
+                                              "unshift": [Function],
+                                            },
+                                            "arrayInsert": [Function],
+                                            "arrayMove": [Function],
+                                            "arrayPop": [Function],
+                                            "arrayPush": [Function],
+                                            "arrayRemove": [Function],
+                                            "arrayRemoveAll": [Function],
+                                            "arrayShift": [Function],
+                                            "arraySplice": [Function],
+                                            "arraySwap": [Function],
+                                            "arrayUnshift": [Function],
+                                            "asyncErrors": undefined,
+                                            "asyncValidate": [Function],
+                                            "asyncValidating": false,
+                                            "autofill": [Function],
+                                            "blur": [Function],
+                                            "change": [Function],
+                                            "clearAsyncError": [Function],
+                                            "clearFields": [Function],
+                                            "clearSubmit": [Function],
+                                            "clearSubmitErrors": [Function],
+                                            "destroy": [Function],
+                                            "destroyOnUnmount": true,
+                                            "dirty": false,
+                                            "dispatch": [Function],
+                                            "enableReinitialize": false,
+                                            "error": undefined,
+                                            "focus": [Function],
+                                            "forceUnregisterOnUnmount": false,
+                                            "form": "search-form",
+                                            "getFormState": [Function],
+                                            "getValues": [Function],
+                                            "initialValues": undefined,
+                                            "initialize": [Function],
+                                            "initialized": false,
+                                            "invalid": false,
+                                            "keepDirtyOnReinitialize": false,
+                                            "onSubmit": [Function],
+                                            "persistentSubmitErrors": false,
+                                            "pristine": true,
+                                            "pure": true,
+                                            "register": [Function],
+                                            "registerField": [Function],
+                                            "registerInnerOnSubmit": [Function],
+                                            "registeredFields": undefined,
+                                            "reset": [Function],
+                                            "resetSection": [Function],
+                                            "sectionPrefix": undefined,
+                                            "setSubmitFailed": [Function],
+                                            "setSubmitSucceeded": [Function],
+                                            "shouldAsyncValidate": [Function],
+                                            "shouldError": [Function],
+                                            "shouldValidate": [Function],
+                                            "shouldWarn": [Function],
+                                            "startAsyncValidation": [Function],
+                                            "startSubmit": [Function],
+                                            "stopAsyncValidation": [Function],
+                                            "stopSubmit": [Function],
+                                            "submit": [Function],
+                                            "submitFailed": false,
+                                            "submitSucceeded": false,
+                                            "submitting": false,
+                                            "syncErrors": Object {},
+                                            "syncWarnings": Object {},
+                                            "touch": [Function],
+                                            "touchOnBlur": true,
+                                            "touchOnChange": false,
+                                            "triggerSubmit": undefined,
+                                            "unregister": [Function],
+                                            "unregisterField": [Function],
+                                            "untouch": [Function],
+                                            "updateSyncErrors": [Function],
+                                            "updateSyncWarnings": [Function],
+                                            "updateUnregisteredFields": false,
+                                            "valid": true,
+                                            "validExceptSubmit": true,
+                                            "values": Object {},
+                                            "warning": undefined,
+                                          }
+                                        }
+                                        component="input"
+                                        name="query"
+                                        normalize={[Function]}
+                                        type="text"
+                                      >
+                                        <ConnectedField
+                                          _reduxForm={
+                                            Object {
+                                              "anyTouched": false,
+                                              "array": Object {
+                                                "insert": [Function],
+                                                "move": [Function],
+                                                "pop": [Function],
+                                                "push": [Function],
+                                                "remove": [Function],
+                                                "removeAll": [Function],
+                                                "shift": [Function],
+                                                "splice": [Function],
+                                                "swap": [Function],
+                                                "unshift": [Function],
+                                              },
+                                              "arrayInsert": [Function],
+                                              "arrayMove": [Function],
+                                              "arrayPop": [Function],
+                                              "arrayPush": [Function],
+                                              "arrayRemove": [Function],
+                                              "arrayRemoveAll": [Function],
+                                              "arrayShift": [Function],
+                                              "arraySplice": [Function],
+                                              "arraySwap": [Function],
+                                              "arrayUnshift": [Function],
+                                              "asyncErrors": undefined,
+                                              "asyncValidate": [Function],
+                                              "asyncValidating": false,
+                                              "autofill": [Function],
+                                              "blur": [Function],
+                                              "change": [Function],
+                                              "clearAsyncError": [Function],
+                                              "clearFields": [Function],
+                                              "clearSubmit": [Function],
+                                              "clearSubmitErrors": [Function],
+                                              "destroy": [Function],
+                                              "destroyOnUnmount": true,
+                                              "dirty": false,
+                                              "dispatch": [Function],
+                                              "enableReinitialize": false,
+                                              "error": undefined,
+                                              "focus": [Function],
+                                              "forceUnregisterOnUnmount": false,
+                                              "form": "search-form",
+                                              "getFormState": [Function],
+                                              "getValues": [Function],
+                                              "initialValues": undefined,
+                                              "initialize": [Function],
+                                              "initialized": false,
+                                              "invalid": false,
+                                              "keepDirtyOnReinitialize": false,
+                                              "onSubmit": [Function],
+                                              "persistentSubmitErrors": false,
+                                              "pristine": true,
+                                              "pure": true,
+                                              "register": [Function],
+                                              "registerField": [Function],
+                                              "registerInnerOnSubmit": [Function],
+                                              "registeredFields": undefined,
+                                              "reset": [Function],
+                                              "resetSection": [Function],
+                                              "sectionPrefix": undefined,
+                                              "setSubmitFailed": [Function],
+                                              "setSubmitSucceeded": [Function],
+                                              "shouldAsyncValidate": [Function],
+                                              "shouldError": [Function],
+                                              "shouldValidate": [Function],
+                                              "shouldWarn": [Function],
+                                              "startAsyncValidation": [Function],
+                                              "startSubmit": [Function],
+                                              "stopAsyncValidation": [Function],
+                                              "stopSubmit": [Function],
+                                              "submit": [Function],
+                                              "submitFailed": false,
+                                              "submitSucceeded": false,
+                                              "submitting": false,
+                                              "syncErrors": Object {},
+                                              "syncWarnings": Object {},
+                                              "touch": [Function],
+                                              "touchOnBlur": true,
+                                              "touchOnChange": false,
+                                              "triggerSubmit": undefined,
+                                              "unregister": [Function],
+                                              "unregisterField": [Function],
+                                              "untouch": [Function],
+                                              "updateSyncErrors": [Function],
+                                              "updateSyncWarnings": [Function],
+                                              "updateUnregisteredFields": false,
+                                              "valid": true,
+                                              "validExceptSubmit": true,
+                                              "values": Object {},
+                                              "warning": undefined,
+                                            }
+                                          }
+                                          asyncValidating={false}
+                                          component="input"
+                                          dirty={false}
+                                          dispatch={[Function]}
+                                          name="query"
+                                          normalize={[Function]}
+                                          pristine={true}
+                                          type="text"
+                                        >
+                                          <input
+                                            name="query"
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            onDragStart={[Function]}
+                                            onDrop={[Function]}
+                                            onFocus={[Function]}
+                                            type="text"
+                                            value=""
+                                          />
+                                        </ConnectedField>
+                                      </Connect(ConnectedField)>
+                                    </Field>
+                                  </div>
+                                </Col>
+                              </div>
+                            </Row>
+                            <Row
+                              bsClass="row"
+                              componentClass="div"
+                            >
+                              <div
+                                className="row"
+                              >
+                                <Col
+                                  bsClass="col"
+                                  componentClass="div"
+                                >
+                                  <div
+                                    className=""
+                                  >
+                                    <ButtonToolbar
+                                      bsClass="btn-toolbar"
+                                    >
+                                      <div
+                                        className="btn-toolbar"
+                                        role="toolbar"
+                                      >
+                                        <Button
+                                          active={false}
+                                          block={false}
+                                          bsClass="btn"
+                                          bsStyle="success"
+                                          disabled={true}
+                                          type="submit"
+                                        >
+                                          <button
+                                            className="btn btn-success"
+                                            disabled={true}
+                                            type="submit"
+                                          >
+                                            Search
+                                          </button>
+                                        </Button>
+                                        <Button
+                                          active={false}
+                                          block={false}
+                                          bsClass="btn"
+                                          bsStyle="danger"
+                                          disabled={true}
+                                          onClick={[Function]}
+                                        >
+                                          <button
+                                            className="btn btn-danger"
+                                            disabled={true}
+                                            onClick={[Function]}
+                                            type="button"
+                                          >
+                                            Clear Values
+                                          </button>
+                                        </Button>
+                                      </div>
+                                    </ButtonToolbar>
+                                  </div>
+                                </Col>
+                              </div>
+                            </Row>
+                          </div>
+                        </Grid>
+                      </form>
+                    </PatientSearchForm>
+                  </Form(PatientSearchForm)>
+                </Connect(Form(PatientSearchForm))>
+              </ReduxForm>
+              <Connect(DataGrid)
+                columnDefs={
+                  Array [
+                    Object {
+                      "headerName": "patientUuid",
+                      "hide": true,
+                      "valueGetter": "data.uuid",
+                    },
+                    Object {
+                      "headerName": "ID",
+                      "valueGetter": "data.identifier",
+                    },
+                    Object {
+                      "headerName": "First Name",
+                      "valueGetter": "data.firstName",
+                    },
+                    Object {
+                      "headerName": "Last Name",
+                      "valueGetter": "data.lastName",
+                    },
+                    Object {
+                      "field": "gender",
+                      "headerName": "Gender",
+                    },
+                    Object {
+                      "field": "age",
+                      "headerName": "Age",
+                    },
+                  ]
+                }
+                rowSelectedActionCreators={
+                  Array [
+                    [Function],
+                  ]
+                }
+              >
+                <DataGrid
+                  columnDefs={
+                    Array [
+                      Object {
+                        "headerName": "patientUuid",
+                        "hide": true,
+                        "valueGetter": "data.uuid",
+                      },
+                      Object {
+                        "headerName": "ID",
+                        "valueGetter": "data.identifier",
+                      },
+                      Object {
+                        "headerName": "First Name",
+                        "valueGetter": "data.firstName",
+                      },
+                      Object {
+                        "headerName": "Last Name",
+                        "valueGetter": "data.lastName",
+                      },
+                      Object {
+                        "field": "gender",
+                        "headerName": "Gender",
+                      },
+                      Object {
+                        "field": "age",
+                        "headerName": "Age",
+                      },
+                    ]
+                  }
+                  dispatch={[Function]}
+                  rowSelectedActionCreators={
+                    Array [
+                      [Function],
+                    ]
+                  }
+                >
+                  <div
+                    className="ag-theme-balham"
+                    style={
+                      Object {
+                        "height": "600px",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <AgGridReact
+                      columnDefs={
+                        Array [
+                          Object {
+                            "headerName": "patientUuid",
+                            "hide": true,
+                            "valueGetter": "data.uuid",
+                          },
+                          Object {
+                            "headerName": "ID",
+                            "valueGetter": "data.identifier",
+                          },
+                          Object {
+                            "headerName": "First Name",
+                            "valueGetter": "data.firstName",
+                          },
+                          Object {
+                            "headerName": "Last Name",
+                            "valueGetter": "data.lastName",
+                          },
+                          Object {
+                            "field": "gender",
+                            "headerName": "Gender",
+                          },
+                          Object {
+                            "field": "age",
+                            "headerName": "Age",
+                          },
+                        ]
+                      }
+                      enableSorting={true}
+                      id="omrsGrid"
+                      onGridReady={[Function]}
+                      onSelectionChanged={[Function]}
+                      rowClassRules="rowClassRules"
+                      rowSelection="single"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "height": "100%",
+                          }
+                        }
+                      />
+                    </AgGridReact>
+                  </div>
+                </DataGrid>
+              </Connect(DataGrid)>
+            </div>
+          </PatientSearch>
+        </Connect(PatientSearch)>
+      </div>
+    </SearchPatient>
+  </Connect(SearchPatient)>
+</Provider>
+`;
