@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: CheckInQueue renders properly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(CheckInQueue)>
+    <CheckInQueue
+      dispatch={[Function]}
+      representation="custom:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,names,addresses,attributes))"
+    >
+      <div>
+        <Connect(DataGrid)
+          columnDefs={
+            Array [
+              Object {
+                "headerName": "patientUuid",
+                "hide": true,
+                "valueGetter": "data.uuid",
+              },
+              Object {
+                "headerName": "ID",
+                "valueGetter": "data.identifier",
+              },
+              Object {
+                "headerName": "First Name",
+                "valueGetter": "data.firstName",
+              },
+              Object {
+                "headerName": "Last Name",
+                "valueGetter": "data.lastName",
+              },
+              Object {
+                "field": "gender",
+                "headerName": "Gender",
+              },
+              Object {
+                "field": "age",
+                "headerName": "Age",
+              },
+            ]
+          }
+          rowSelectedActionCreators={
+            Array [
+              [Function],
+            ]
+          }
+        >
+          <DataGrid
+            columnDefs={
+              Array [
+                Object {
+                  "headerName": "patientUuid",
+                  "hide": true,
+                  "valueGetter": "data.uuid",
+                },
+                Object {
+                  "headerName": "ID",
+                  "valueGetter": "data.identifier",
+                },
+                Object {
+                  "headerName": "First Name",
+                  "valueGetter": "data.firstName",
+                },
+                Object {
+                  "headerName": "Last Name",
+                  "valueGetter": "data.lastName",
+                },
+                Object {
+                  "field": "gender",
+                  "headerName": "Gender",
+                },
+                Object {
+                  "field": "age",
+                  "headerName": "Age",
+                },
+              ]
+            }
+            dispatch={[Function]}
+            rowSelectedActionCreators={
+              Array [
+                [Function],
+              ]
+            }
+          >
+            <div
+              className="ag-theme-balham"
+              style={
+                Object {
+                  "height": "600px",
+                  "width": "100%",
+                }
+              }
+            >
+              <AgGridReact
+                columnDefs={
+                  Array [
+                    Object {
+                      "headerName": "patientUuid",
+                      "hide": true,
+                      "valueGetter": "data.uuid",
+                    },
+                    Object {
+                      "headerName": "ID",
+                      "valueGetter": "data.identifier",
+                    },
+                    Object {
+                      "headerName": "First Name",
+                      "valueGetter": "data.firstName",
+                    },
+                    Object {
+                      "headerName": "Last Name",
+                      "valueGetter": "data.lastName",
+                    },
+                    Object {
+                      "field": "gender",
+                      "headerName": "Gender",
+                    },
+                    Object {
+                      "field": "age",
+                      "headerName": "Age",
+                    },
+                  ]
+                }
+                enableSorting={true}
+                id="omrsGrid"
+                onGridReady={[Function]}
+                onSelectionChanged={[Function]}
+                rowClassRules="rowClassRules"
+                rowSelection="single"
+              >
+                <div
+                  style={
+                    Object {
+                      "height": "100%",
+                    }
+                  }
+                />
+              </AgGridReact>
+            </div>
+          </DataGrid>
+        </Connect(DataGrid)>
+      </div>
+    </CheckInQueue>
+  </Connect(CheckInQueue)>
+</Provider>
+`;
