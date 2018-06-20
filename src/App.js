@@ -22,16 +22,18 @@ const App = props => {
 
   const AuthenticatedLayout = props => {
     return (
-      <div>
+      <div id="outer-container">
         <Navigation />
-        <AuthenticatedRoute {...props} />
+        <main id="page-wrap">
+          <AuthenticatedRoute {...props} />
+        </main>
       </div>
     );
   };
 
   return (
-    <Provider store={store}>    
-      <ConnectedRouter history={history}>      
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
         <Switch>
           <Route
             component={LoginPage}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PatientSearch } from '@openmrs/react-components';
+import { patientSearchActions, DataGrid } from '@openmrs/react-components';
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
 
@@ -41,24 +41,34 @@ class CheckInQueue extends React.Component {
     return push('/checkin/checkinPage');
   }
 
+  componentDidMount() {
+    this.props.dispatch(patientSearchActions.patientSearch(
+      'Foster',
+      this.parseResults.bind(this),
+      this.props.representation));
+  }
+
   render() {
     return (
       <div>
-        <PatientSearch
+        <DataGrid
           columnDefs={this.columnDefs}
-          parseResults={this.parseResults.bind(this)}
+          rowData={this.props.rowData}
           rowSelectedActionCreators={[this.redirectToCheckinPageActionCreator]}
-          searchQuery="Malunga"
         />
       </div>
     );
   }
 }
 
+CheckInQueue.defaultProps = {
+  representation: "custom:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,names,addresses,attributes))"
+};
+
 const mapStateToProps = (state) => {
   return {
     dispatch: state.dispatch,
-    patient: state.selected.patient
+    rowData: state.openmrs.patientSearch.results
   };
 };
 
