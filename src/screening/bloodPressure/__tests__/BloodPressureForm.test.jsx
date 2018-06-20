@@ -1,27 +1,27 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { OpenMRSForm } from '@openmrs/react-components';
-import NutritionForm from './NutritionForm';
+import BloodPressureForm from '../BloodPressureForm';
 
 let props, store;
 let mountedComponent;
 
 const mockStore = configureMockStore();
 
-const nutritionForm = () => {
+const bloodPressureForm = () => {
   if (!mountedComponent) {
     mountedComponent = mount(
       <Provider store={store}>
-        <NutritionForm {...props} />
+        <BloodPressureForm {...props} />
       </Provider>);
   }
   return mountedComponent;
 };
 
-describe('Component: NutritionForm', () => {
+describe('Component: BloodPressureForm', () => {
   beforeEach(() => {
     props = {};
     store = mockStore(
@@ -41,8 +41,8 @@ describe('Component: NutritionForm', () => {
   });
 
   it('renders properly', () => {
-    expect(toJson(nutritionForm())).toMatchSnapshot();
-    expect(nutritionForm().find(OpenMRSForm).length).toBe(1);
+    expect(toJson(bloodPressureForm())).toMatchSnapshot();
+    expect(bloodPressureForm().find(OpenMRSForm).length).toBe(1);
   });
 
 });

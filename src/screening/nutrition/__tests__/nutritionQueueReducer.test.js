@@ -1,4 +1,4 @@
-import reducer from './nutritionQueueReducer';
+import reducer from '../nutritionQueueReducer';
 
 describe('nutritionQueueReducer', () => {
 

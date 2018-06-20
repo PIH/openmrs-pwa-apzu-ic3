@@ -5,7 +5,7 @@ import { spy } from 'sinon';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { DataGrid } from '@openmrs/react-components';
-import Queue from './Queue';
+import Queue from '../Queue';
 
 let props, store;
 let mountedComponent;

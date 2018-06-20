@@ -1,4 +1,4 @@
-import reducer from './bloodPressureQueueReducer';
+import reducer from '../bloodPressureQueueReducer';
 import { VISIT_TYPES } from "@openmrs/react-components";
 
 describe('bloodPressureQueueReducer', () => {

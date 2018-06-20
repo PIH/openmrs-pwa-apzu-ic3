@@ -1,4 +1,4 @@
-import createQueueReducer from './createQueueReducer';
+import createQueueReducer from '../createQueueReducer';
 import { VISIT_TYPES } from "@openmrs/react-components";
 
 describe('createQueueRender', () => {

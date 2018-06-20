@@ -4,31 +4,31 @@ import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { DataGrid } from '@openmrs/react-components';
-import BloodPressureQueue from './BloodPressureQueue';
+import NutritionQueue from '../NutritionQueue';
 
 let props, store;
 let mountedComponent;
 
 const mockStore = configureMockStore();
 
-const bloodPressureQueue = () => {
+const nutritionQueue = () => {
   if (!mountedComponent) {
     mountedComponent = mount(
       <Provider store={store}>
-        <BloodPressureQueue {...props} />
+        <NutritionQueue {...props} />
       </Provider>);
   }
   return mountedComponent;
 };
 
-describe('Component: BloodPressureQueue', () => {
+describe('Component: NutritionQueue', () => {
   beforeEach(() => {
     props = {};
     store = mockStore(
       {
         dispatch: {},
         screening: {
-          bloodPressureQueue: {
+          nutritionQueue: {
             list: []
           }
         }
@@ -37,11 +37,11 @@ describe('Component: BloodPressureQueue', () => {
   });
 
   it('renders properly', () => {
-    expect(toJson(bloodPressureQueue())).toMatchSnapshot();
-    expect(bloodPressureQueue().find(DataGrid).length).toBe(1);
-    expect(bloodPressureQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
-    expect(bloodPressureQueue().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToInfoPageActionCreator");
-    expect(bloodPressureQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/screening/bloodPressure/form");
+    expect(toJson(nutritionQueue())).toMatchSnapshot();
+    expect(nutritionQueue().find(DataGrid).length).toBe(1);
+    expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
+    expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToInfoPageActionCreator");
+    expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/screening/nutrition/form");
   });
 
 });
