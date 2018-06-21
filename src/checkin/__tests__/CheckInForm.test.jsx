@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import CheckInForm from './CheckinForm';
+import CheckInForm from '../CheckinForm';
 
 let props, store;
 let mountedComponent;
