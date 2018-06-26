@@ -10,8 +10,8 @@ class Header extends React.Component {
       <div>
         <Navbar>
           <PatientHeader />
+          <Menu />
         </Navbar>
-        <Menu />
       </div>
     );
   }
