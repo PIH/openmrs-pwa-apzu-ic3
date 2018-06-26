@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, NavItem, MenuItem } from 'react-bootstrap';
-import PatientHeader from './PatientHeader';
+import PatientHeader from '../patient/PatientHeader';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import { slide as BurgerMenu } from 'react-burger-menu';

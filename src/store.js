@@ -16,7 +16,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/react-components';
 import bloodPressureQueueReducer from './screening/bloodPressure/bloodPressureQueueReducer';
 import nutritionQueueReducer from "./screening/nutrition/nutritionQueueReducer";
-import patientSelectedReducer from './components/pages/patientSelectedReducer';
+import patientSelectedReducer from './search/patientSelectedReducer';
 
 // fyi, connected-react-router docs:
 // https://github.com/supasate/connected-react-router

@@ -4,7 +4,7 @@ import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { DataGrid, PatientSearch } from '@openmrs/react-components';
-import SearchPatient from './SearchPatient';
+import SearchPatient from '../SearchPatient';
 
 let props, store;
 let mountedComponent;

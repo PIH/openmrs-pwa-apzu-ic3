@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { PatientInfo } from '@openmrs/react-components';
 import { gridActions } from '@openmrs/react-components';
-import RequiredScreenings from '../../screening/RequiredScreenings';
+import RequiredScreenings from '../screening/RequiredScreenings';
 
 
 class InfoPatient extends React.Component {
