@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => (
   <div className="App">
-
-    <b>Home Page</b>
-    <br />
-    <br />
     <div>
       <Link to="/searchPatient">
         <ButtonGroup>
