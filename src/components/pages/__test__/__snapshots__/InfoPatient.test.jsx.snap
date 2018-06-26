@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: InfoPatient renders properly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(InfoPatient)>
+    <InfoPatient
+      dispatch={[Function]}
+      patient={
+        Object {
+          "age": 25,
+          "firstName": "Dessin",
+          "gender": "M",
+          "id": 1,
+          "lastName": "Wilkin",
+        }
+      }
+    >
+      <form>
+        <Grid
+          bsClass="container"
+          componentClass="div"
+          fluid={false}
+        >
+          <div
+            className="container"
+          >
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <div
+                className="row"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                >
+                  <div
+                    className=""
+                  >
+                    <label>
+                      ID: 
+                    </label>
+                    <input
+                      defaultValue={1}
+                      name="patientId"
+                      type="text"
+                    />
+                  </div>
+                </Col>
+              </div>
+            </Row>
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <div
+                className="row"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                >
+                  <div
+                    className=""
+                  >
+                    <label>
+                      UUID: 
+                    </label>
+                    <input
+                      name="uuid"
+                      type="text"
+                    />
+                  </div>
+                </Col>
+              </div>
+            </Row>
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <div
+                className="row"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                >
+                  <div
+                    className=""
+                  >
+                    <label>
+                      Identifier: 
+                    </label>
+                    <input
+                      name="uuid"
+                      type="text"
+                    />
+                  </div>
+                </Col>
+              </div>
+            </Row>
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <div
+                className="row"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                >
+                  <div
+                    className=""
+                  >
+                    <label>
+                      First Name: 
+                    </label>
+                    <input
+                      defaultValue="Dessin"
+                      name="patientId"
+                      type="text"
+                    />
+                  </div>
+                </Col>
+              </div>
+            </Row>
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <div
+                className="row"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                >
+                  <div
+                    className=""
+                  >
+                    <label>
+                      Last Name: 
+                    </label>
+                    <input
+                      defaultValue="Wilkin"
+                      name="patientId"
+                      type="text"
+                    />
+                  </div>
+                </Col>
+              </div>
+            </Row>
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <div
+                className="row"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                >
+                  <div
+                    className=""
+                  >
+                    <label>
+                      Gender: 
+                    </label>
+                    <input
+                      defaultValue="M"
+                      name="patientId"
+                      type="text"
+                    />
+                  </div>
+                </Col>
+              </div>
+            </Row>
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <div
+                className="row"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                >
+                  <div
+                    className=""
+                  >
+                    <label>
+                      Age: 
+                    </label>
+                    <input
+                      defaultValue={25}
+                      name="patientId"
+                      type="text"
+                    />
+                  </div>
+                </Col>
+              </div>
+            </Row>
+          </div>
+        </Grid>
+      </form>
+    </InfoPatient>
+  </Connect(InfoPatient)>
+</Provider>
+`;

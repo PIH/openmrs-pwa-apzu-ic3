@@ -1,0 +1,2 @@
+REACT_APP_SERVER_ADDRESS=http://humci.pih-emr.org/
+REACT_APP_CONTEXT_PATH=mirebalais
