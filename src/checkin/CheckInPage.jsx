@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { patientActions } from '@openmrs/react-components';
+import { patientActions, gridActions } from '@openmrs/react-components';
 import CheckinForm from './CheckinForm';
 import { ENCOUNTER_TYPES, VISIT_TYPES, LOCATION_TYPES } from '../constants';
 import { push } from "connected-react-router";
@@ -21,6 +21,9 @@ class CheckInPage extends React.Component {
         LOCATION_TYPES.NenoDistrictHospital,
         this.redirectToQueuePageActionCreator
       ));
+  }
+  componentWillUnmount(){
+    this.props.dispatch(gridActions.clearSelection());
   }
 
   render() {
