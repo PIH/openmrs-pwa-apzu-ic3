@@ -53,7 +53,7 @@ class PatientHeader extends React.Component {
       );
     } else {
       return (
-        <div className="patient-header " />
+        <div/>
       );
     }
 

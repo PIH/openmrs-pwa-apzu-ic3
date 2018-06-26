@@ -27,6 +27,8 @@
   to { transform: rotate(360deg); }
 }
 
+/* BURGER MENU styling */
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
