@@ -9,7 +9,7 @@ import InfoPatient from './patient/InfoPatient';
 import SearchPatient from './search/SearchPatient';
 import CheckInQueue from './checkin/CheckInQueue';
 import CheckInPage from './checkin/CheckInPage';
-import Navigation from './header/Navigation';
+import Header from './header/Header';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
@@ -23,7 +23,7 @@ const App = props => {
   const AuthenticatedLayout = props => {
     return (
       <div id="outer-container">
-        <Navigation />
+        <Header />
         <main id="page-wrap">
           <AuthenticatedRoute {...props} />
         </main>
