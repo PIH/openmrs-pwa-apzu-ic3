@@ -18,9 +18,9 @@ class Queue extends React.Component {
 
   // TODO make this potentially come from props so we can override it?
   componentDidMount() {
-    this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:default,encounters:default)"));
+    this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:full,encounters:default)"));
     this.interval = setInterval(() =>
-      this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:default,encounters:default)")), 10000);
+      this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:full,encounters:default)")), 10000);
   }
 
   componentWillUnmount() {

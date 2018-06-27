@@ -1,4 +1,4 @@
-import { VISIT_TYPES } from "@openmrs/react-components";
+import { Patient, VISIT_TYPES } from "@openmrs/react-components";
 
 const createQueueReducer = (encounterTypeUuid, additionalFilters = []) =>  {
 
@@ -20,11 +20,25 @@ const createQueueReducer = (encounterTypeUuid, additionalFilters = []) =>  {
     }
   };
 
+  const convertPatientRestRepToPatientObj = (visits) => {
+
+    return visits.map((visit) => {
+      return { ...visit, patient: Patient.createFromRestRep(visit.patient) };
+    });
+
+  };
+
+  const mapVisitsToPatients = (visits) => {
+    return visits.map((visit) => {
+      return visit.patient;
+    });
+  };
+
   return (state = {}, action) => {
     switch (action.type) {
       case VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED:
         return Object.assign({}, state, {
-          list: applyFilters(action.visits, additionalFilters.concat(patientsByEncounterFilter))
+          list: mapVisitsToPatients(applyFilters(convertPatientRestRepToPatientObj(action.visits), additionalFilters.concat(patientsByEncounterFilter)))
         });
       default: return state;
     }

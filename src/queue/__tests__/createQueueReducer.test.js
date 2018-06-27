@@ -1,315 +1,1276 @@
 import createQueueReducer from '../createQueueReducer';
 import { VISIT_TYPES } from "@openmrs/react-components";
 
-describe('createQueueRender', () => {
+describe('createQueueReducer', () => {
 
-  const sampleVisits =[
+  const sampleVisits = [
     {
-      "uuid": "af02b757-eb0a-4e64-b872-0091ad1d9b8a",
+      "uuid": "6501cbf1-42f3-4b2f-83bc-ed562e019af8",
       "patient": {
-        "uuid": "a46864ac-4cee-4e3a-a920-7b5799f1dc9a",
-        "display": "Y2A73V - Bob Dylan",
+        "uuid": "8f28ffff-c7e8-4e80-990a-e022e014f953",
+        "display": "Y2CAGV - Bob Dylan",
         "identifiers": [
           {
-            "uuid": "df3309c3-012f-47ad-b372-15c4f78563ec",
-            "display": "ZL EMR ID = Y2A73V",
+            "display": "ZL EMR ID = Y2CAGV",
+            "uuid": "5f0eaa88-68f2-4810-859d-dc16160d41b9",
+            "identifier": "Y2CAGV",
+            "identifierType": {
+              "uuid": "a541af1e-105c-40bf-b345-ba1fd6a59b85",
+              "display": "ID ZL EMR",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/a541af1e-105c-40bf-b345-ba1fd6a59b85"
+                }
+              ]
+            },
+            "location": {
+              "uuid": "376b3e7e-f7c0-4268-a98d-c2bddfee8bcf",
+              "display": "Centre de Santé de Thomonde",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/376b3e7e-f7c0-4268-a98d-c2bddfee8bcf"
+                }
+              ]
+            },
+            "preferred": true,
+            "voided": false,
             "links": [
               {
                 "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/a46864ac-4cee-4e3a-a920-7b5799f1dc9a/identifier/df3309c3-012f-47ad-b372-15c4f78563ec"
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/5f0eaa88-68f2-4810-859d-dc16160d41b9"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/5f0eaa88-68f2-4810-859d-dc16160d41b9?v=full"
               }
-            ]
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "Nimewo Dosye = TH000001",
+            "uuid": "e41fa5cf-5ef1-4882-8c04-ca6a8b1992b9",
+            "identifier": "TH000001",
+            "identifierType": {
+              "uuid": "e66645eb-03a8-4991-b4ce-e87318e37566",
+              "display": "Numéro de dossier",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/e66645eb-03a8-4991-b4ce-e87318e37566"
+                }
+              ]
+            },
+            "location": {
+              "uuid": "376b3e7e-f7c0-4268-a98d-c2bddfee8bcf",
+              "display": "Centre de Santé de Thomonde",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/376b3e7e-f7c0-4268-a98d-c2bddfee8bcf"
+                }
+              ]
+            },
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/e41fa5cf-5ef1-4882-8c04-ca6a8b1992b9"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/e41fa5cf-5ef1-4882-8c04-ca6a8b1992b9?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "ZL EMR ID = Y2CEU3",
+            "uuid": "3f538755-6f7a-45aa-8b0f-ea0554301cf8",
+            "identifier": "Y2CEU3",
+            "identifierType": {
+              "uuid": "a541af1e-105c-40bf-b345-ba1fd6a59b85",
+              "display": "ID ZL EMR",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/a541af1e-105c-40bf-b345-ba1fd6a59b85"
+                }
+              ]
+            },
+            "location": {
+              "uuid": "376b3e7e-f7c0-4268-a98d-c2bddfee8bcf",
+              "display": "Centre de Santé de Thomonde",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/376b3e7e-f7c0-4268-a98d-c2bddfee8bcf"
+                }
+              ]
+            },
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/3f538755-6f7a-45aa-8b0f-ea0554301cf8"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/3f538755-6f7a-45aa-8b0f-ea0554301cf8?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "Nimewo Dosye = TH000009",
+            "uuid": "7ae8216b-95e9-4939-87c3-099ec6123469",
+            "identifier": "TH000009",
+            "identifierType": {
+              "uuid": "e66645eb-03a8-4991-b4ce-e87318e37566",
+              "display": "Numéro de dossier",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/e66645eb-03a8-4991-b4ce-e87318e37566"
+                }
+              ]
+            },
+            "location": {
+              "uuid": "376b3e7e-f7c0-4268-a98d-c2bddfee8bcf",
+              "display": "Centre de Santé de Thomonde",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/376b3e7e-f7c0-4268-a98d-c2bddfee8bcf"
+                }
+              ]
+            },
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/7ae8216b-95e9-4939-87c3-099ec6123469"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/7ae8216b-95e9-4939-87c3-099ec6123469?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "ZL EMR ID = Y2A4AG",
+            "uuid": "473f0706-cdb5-4d6e-a291-eb935a3710b9",
+            "identifier": "Y2A4AG",
+            "identifierType": {
+              "uuid": "a541af1e-105c-40bf-b345-ba1fd6a59b85",
+              "display": "ID ZL EMR",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/a541af1e-105c-40bf-b345-ba1fd6a59b85"
+                }
+              ]
+            },
+            "location": {
+              "uuid": "376b3e7e-f7c0-4268-a98d-c2bddfee8bcf",
+              "display": "Centre de Santé de Thomonde",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/376b3e7e-f7c0-4268-a98d-c2bddfee8bcf"
+                }
+              ]
+            },
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/473f0706-cdb5-4d6e-a291-eb935a3710b9"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/473f0706-cdb5-4d6e-a291-eb935a3710b9?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "Nimewo Dosye = TH000011",
+            "uuid": "7db0be36-c7fa-4706-8e64-39c4f96df00f",
+            "identifier": "TH000011",
+            "identifierType": {
+              "uuid": "e66645eb-03a8-4991-b4ce-e87318e37566",
+              "display": "Numéro de dossier",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/e66645eb-03a8-4991-b4ce-e87318e37566"
+                }
+              ]
+            },
+            "location": {
+              "uuid": "376b3e7e-f7c0-4268-a98d-c2bddfee8bcf",
+              "display": "Centre de Santé de Thomonde",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/376b3e7e-f7c0-4268-a98d-c2bddfee8bcf"
+                }
+              ]
+            },
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/7db0be36-c7fa-4706-8e64-39c4f96df00f"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/7db0be36-c7fa-4706-8e64-39c4f96df00f?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "HIVEMR-V1 = AA",
+            "uuid": "60bccb61-5369-4d1c-a543-3498bd56b111",
+            "identifier": "AA",
+            "identifierType": {
+              "uuid": "139766e8-15f5-102d-96e4-000c29c2a5d7",
+              "display": "HIVEMR-V1",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/139766e8-15f5-102d-96e4-000c29c2a5d7"
+                }
+              ]
+            },
+            "location": null,
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/60bccb61-5369-4d1c-a543-3498bd56b111"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/60bccb61-5369-4d1c-a543-3498bd56b111?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "Numéro d'identité fiscale (NIF) = BBB",
+            "uuid": "7647dac5-3a4a-468c-90a0-1e76145e0393",
+            "identifier": "BBB",
+            "identifierType": {
+              "uuid": "e797f826-8e8f-11e7-bb31-be2e44b06b34",
+              "display": "Numéro d'identité fiscale (NIF)",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/e797f826-8e8f-11e7-bb31-be2e44b06b34"
+                }
+              ]
+            },
+            "location": null,
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/7647dac5-3a4a-468c-90a0-1e76145e0393"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/7647dac5-3a4a-468c-90a0-1e76145e0393?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "Carte d'identification nationale = BBBB",
+            "uuid": "6264c025-d89b-4faa-a6c3-915a27a2ca70",
+            "identifier": "BBBB",
+            "identifierType": {
+              "uuid": "e797face-8e8f-11e7-bb31-be2e44b06b34",
+              "display": "Carte d'identification nationale",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/e797face-8e8f-11e7-bb31-be2e44b06b34"
+                }
+              ]
+            },
+            "location": null,
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/6264c025-d89b-4faa-a6c3-915a27a2ca70"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953/identifier/6264c025-d89b-4faa-a6c3-915a27a2ca70?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
           }
         ],
         "person": {
-          "uuid": "a46864ac-4cee-4e3a-a920-7b5799f1dc9a",
+          "uuid": "8f28ffff-c7e8-4e80-990a-e022e014f953",
           "display": "Bob Dylan",
           "gender": "M",
-          "age": 22,
-          "birthdate": "1996-01-01T00:00:00.000-0500",
+          "age": 46,
+          "birthdate": "1972-01-01T00:00:00.000-0500",
           "birthdateEstimated": true,
           "dead": false,
           "deathDate": null,
           "causeOfDeath": null,
           "preferredName": {
-            "uuid": "0f985ec6-5698-463e-a5a8-bbd19f3e01e1",
             "display": "Dylan, Bob",
+            "uuid": "11cbfc38-17fc-40b4-aae8-88694be7f517",
+            "givenName": "Bob",
+            "middleName": null,
+            "familyName": "Dylan",
+            "familyName2": null,
+            "voided": false,
             "links": [
               {
                 "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/a46864ac-4cee-4e3a-a920-7b5799f1dc9a/name/0f985ec6-5698-463e-a5a8-bbd19f3e01e1"
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/name/11cbfc38-17fc-40b4-aae8-88694be7f517"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/name/11cbfc38-17fc-40b4-aae8-88694be7f517?v=full"
               }
-            ]
+            ],
+            "resourceVersion": "1.8"
           },
           "preferredAddress": {
-            "uuid": "cd5e6826-7820-4ad8-8f30-e7ab5392e876",
             "display": "Cange",
+            "uuid": "c10c4cbe-a13a-43cf-aec4-85daead8e5e4",
+            "preferred": true,
+            "address1": "Cange",
+            "address2": null,
+            "cityVillage": "Cerca Cavajal",
+            "stateProvince": "Centre",
+            "country": "Haiti",
+            "postalCode": null,
+            "countyDistrict": null,
+            "address3": "1Ã¨re Rang",
+            "address4": null,
+            "address5": null,
+            "address6": null,
+            "startDate": null,
+            "endDate": null,
+            "latitude": null,
+            "longitude": null,
+            "voided": false,
+            "address7": null,
+            "address8": null,
+            "address9": null,
+            "address10": null,
+            "address11": null,
+            "address12": null,
+            "address13": null,
+            "address14": null,
+            "address15": null,
             "links": [
               {
                 "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/a46864ac-4cee-4e3a-a920-7b5799f1dc9a/address/cd5e6826-7820-4ad8-8f30-e7ab5392e876"
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/address/c10c4cbe-a13a-43cf-aec4-85daead8e5e4"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/address/c10c4cbe-a13a-43cf-aec4-85daead8e5e4?v=full"
               }
-            ]
+            ],
+            "resourceVersion": "2.0"
           },
-          "attributes": [
+          "names": [
             {
-              "uuid": "31438a6a-a459-4ef6-a388-4a442ee0dfe1",
-              "display": "First Name of Mother = test",
+              "display": "Dylan, Bob",
+              "uuid": "11cbfc38-17fc-40b4-aae8-88694be7f517",
+              "givenName": "Bob",
+              "middleName": null,
+              "familyName": "Dylan",
+              "familyName2": null,
+              "voided": false,
               "links": [
                 {
                   "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/a46864ac-4cee-4e3a-a920-7b5799f1dc9a/attribute/31438a6a-a459-4ef6-a388-4a442ee0dfe1"
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/name/11cbfc38-17fc-40b4-aae8-88694be7f517"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/name/11cbfc38-17fc-40b4-aae8-88694be7f517?v=full"
                 }
-              ]
+              ],
+              "resourceVersion": "1.8"
+            },
+            {
+              "display": "Bob, Baby",
+              "uuid": "7d30f9bc-64a5-40c5-8921-db0c9b4fda4d",
+              "givenName": "Baby",
+              "middleName": null,
+              "familyName": "Bob",
+              "familyName2": null,
+              "voided": false,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/name/7d30f9bc-64a5-40c5-8921-db0c9b4fda4d"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/name/7d30f9bc-64a5-40c5-8921-db0c9b4fda4d?v=full"
+                }
+              ],
+              "resourceVersion": "1.8"
+            },
+            {
+              "display": "test, tset",
+              "uuid": "2e024163-b69e-4e9f-b1f2-856441c49461",
+              "givenName": "tset",
+              "middleName": null,
+              "familyName": "test",
+              "familyName2": null,
+              "voided": false,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/name/2e024163-b69e-4e9f-b1f2-856441c49461"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/name/2e024163-b69e-4e9f-b1f2-856441c49461?v=full"
+                }
+              ],
+              "resourceVersion": "1.8"
+            }
+          ],
+          "addresses": [
+            {
+              "display": "Cange",
+              "uuid": "c10c4cbe-a13a-43cf-aec4-85daead8e5e4",
+              "preferred": true,
+              "address1": "Cange",
+              "address2": null,
+              "cityVillage": "Cerca Cavajal",
+              "stateProvince": "Centre",
+              "country": "Haiti",
+              "postalCode": null,
+              "countyDistrict": null,
+              "address3": "1Ã¨re Rang",
+              "address4": null,
+              "address5": null,
+              "address6": null,
+              "startDate": null,
+              "endDate": null,
+              "latitude": null,
+              "longitude": null,
+              "voided": false,
+              "address7": null,
+              "address8": null,
+              "address9": null,
+              "address10": null,
+              "address11": null,
+              "address12": null,
+              "address13": null,
+              "address14": null,
+              "address15": null,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/address/c10c4cbe-a13a-43cf-aec4-85daead8e5e4"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/address/c10c4cbe-a13a-43cf-aec4-85daead8e5e4?v=full"
+                }
+              ],
+              "resourceVersion": "2.0"
+            },
+            {
+              "display": "Cange",
+              "uuid": "c5571541-c0fb-4e86-bc29-a7b71a2d5864",
+              "preferred": false,
+              "address1": "Cange",
+              "address2": null,
+              "cityVillage": "Cerca Cavajal",
+              "stateProvince": "Centre",
+              "country": "Haiti",
+              "postalCode": null,
+              "countyDistrict": null,
+              "address3": "1ère Rang",
+              "address4": null,
+              "address5": null,
+              "address6": null,
+              "startDate": null,
+              "endDate": null,
+              "latitude": null,
+              "longitude": null,
+              "voided": false,
+              "address7": null,
+              "address8": null,
+              "address9": null,
+              "address10": null,
+              "address11": null,
+              "address12": null,
+              "address13": null,
+              "address14": null,
+              "address15": null,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/address/c5571541-c0fb-4e86-bc29-a7b71a2d5864"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/address/c5571541-c0fb-4e86-bc29-a7b71a2d5864?v=full"
+                }
+              ],
+              "resourceVersion": "2.0"
+            }
+          ],
+          "attributes": [
+            {
+              "display": "First Name of Mother = test",
+              "uuid": "1913c276-5219-44bf-8d01-02f821658524",
+              "value": "test",
+              "attributeType": {
+                "uuid": "8d871d18-c2cc-11de-8d13-0010c6dffd0f",
+                "display": "Mother's First Name",
+                "links": [
+                  {
+                    "rel": "self",
+                    "uri": "http://localhost:8080/openmrs/ws/rest/v1/personattributetype/8d871d18-c2cc-11de-8d13-0010c6dffd0f"
+                  }
+                ]
+              },
+              "voided": false,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/attribute/1913c276-5219-44bf-8d01-02f821658524"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/attribute/1913c276-5219-44bf-8d01-02f821658524?v=full"
+                }
+              ],
+              "resourceVersion": "1.8"
+            },
+            {
+              "display": "Telephone Number = 232",
+              "uuid": "8974e0dd-49b3-486a-81ac-1b68fd3447e5",
+              "value": "232",
+              "attributeType": {
+                "uuid": "14d4f066-15f5-102d-96e4-000c29c2a5d7",
+                "display": "Numéro de téléphone",
+                "links": [
+                  {
+                    "rel": "self",
+                    "uri": "http://localhost:8080/openmrs/ws/rest/v1/personattributetype/14d4f066-15f5-102d-96e4-000c29c2a5d7"
+                  }
+                ]
+              },
+              "voided": false,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/attribute/8974e0dd-49b3-486a-81ac-1b68fd3447e5"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953/attribute/8974e0dd-49b3-486a-81ac-1b68fd3447e5?v=full"
+                }
+              ],
+              "resourceVersion": "1.8"
             }
           ],
           "voided": false,
+          "auditInfo": {
+            "creator": {
+              "uuid": "3a3482ac-8880-40f0-adda-81b2cff19b78",
+              "display": "manager",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/user/3a3482ac-8880-40f0-adda-81b2cff19b78"
+                }
+              ]
+            },
+            "dateCreated": "2016-08-15T17:28:39.000-0400",
+            "changedBy": {
+              "uuid": "28a60719-097d-4ddf-a803-7575cbe6f865",
+              "display": "mgoodrich",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/user/28a60719-097d-4ddf-a803-7575cbe6f865"
+                }
+              ]
+            },
+            "dateChanged": "2017-09-26T13:17:02.000-0400"
+          },
           "deathdateEstimated": false,
           "birthtime": null,
           "links": [
             {
               "rel": "self",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/a46864ac-4cee-4e3a-a920-7b5799f1dc9a"
-            },
-            {
-              "rel": "full",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/a46864ac-4cee-4e3a-a920-7b5799f1dc9a?v=full"
+              "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/8f28ffff-c7e8-4e80-990a-e022e014f953"
             }
           ],
           "resourceVersion": "1.11"
         },
         "voided": false,
+        "auditInfo": {
+          "creator": {
+            "uuid": "3a3482ac-8880-40f0-adda-81b2cff19b78",
+            "display": "manager",
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/user/3a3482ac-8880-40f0-adda-81b2cff19b78"
+              }
+            ]
+          },
+          "dateCreated": "2016-08-15T17:28:39.000-0400",
+          "changedBy": {
+            "uuid": "28a60719-097d-4ddf-a803-7575cbe6f865",
+            "display": "mgoodrich",
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/user/28a60719-097d-4ddf-a803-7575cbe6f865"
+              }
+            ]
+          },
+          "dateChanged": "2017-09-26T13:17:02.000-0400"
+        },
         "links": [
           {
             "rel": "self",
-            "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/a46864ac-4cee-4e3a-a920-7b5799f1dc9a"
+            "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/8f28ffff-c7e8-4e80-990a-e022e014f953"
+          }
+        ],
+        "resourceVersion": "1.8"
+      },
+      "encounters": []
+    },
+    {
+      "uuid": "e81fe098-5b7f-4085-bc76-39918c8df2f6",
+      "patient": {
+        "uuid": "cda61f89-c342-4caf-88c3-d0f829a7b43a",
+        "display": "Y2A5H1 - Neil Young",
+        "identifiers": [
+          {
+            "display": "ZL EMR ID = Y2A5H1",
+            "uuid": "51992797-39df-4f73-8f03-45f908e18927",
+            "identifier": "Y2A5H1",
+            "identifierType": {
+              "uuid": "a541af1e-105c-40bf-b345-ba1fd6a59b85",
+              "display": "ID ZL EMR",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/a541af1e-105c-40bf-b345-ba1fd6a59b85"
+                }
+              ]
+            },
+            "location": {
+              "uuid": "376b3e7e-f7c0-4268-a98d-c2bddfee8bcf",
+              "display": "Centre de Santé de Thomonde",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/376b3e7e-f7c0-4268-a98d-c2bddfee8bcf"
+                }
+              ]
+            },
+            "preferred": true,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/51992797-39df-4f73-8f03-45f908e18927"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/51992797-39df-4f73-8f03-45f908e18927?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
           },
           {
-            "rel": "full",
-            "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/a46864ac-4cee-4e3a-a920-7b5799f1dc9a?v=full"
+            "display": "Nimewo Dosye = TH000002",
+            "uuid": "4bfb79ad-8735-4c0a-b86b-24a0844842b1",
+            "identifier": "TH000002",
+            "identifierType": {
+              "uuid": "e66645eb-03a8-4991-b4ce-e87318e37566",
+              "display": "Numéro de dossier",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/e66645eb-03a8-4991-b4ce-e87318e37566"
+                }
+              ]
+            },
+            "location": {
+              "uuid": "376b3e7e-f7c0-4268-a98d-c2bddfee8bcf",
+              "display": "Centre de Santé de Thomonde",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/376b3e7e-f7c0-4268-a98d-c2bddfee8bcf"
+                }
+              ]
+            },
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/4bfb79ad-8735-4c0a-b86b-24a0844842b1"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/4bfb79ad-8735-4c0a-b86b-24a0844842b1?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "ZL EMR ID = Y2A8D7",
+            "uuid": "2afce7d2-7b84-4bfb-97df-09272d545878",
+            "identifier": "Y2A8D7",
+            "identifierType": {
+              "uuid": "a541af1e-105c-40bf-b345-ba1fd6a59b85",
+              "display": "ID ZL EMR",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/a541af1e-105c-40bf-b345-ba1fd6a59b85"
+                }
+              ]
+            },
+            "location": {
+              "uuid": "376b3e7e-f7c0-4268-a98d-c2bddfee8bcf",
+              "display": "Centre de Santé de Thomonde",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/376b3e7e-f7c0-4268-a98d-c2bddfee8bcf"
+                }
+              ]
+            },
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/2afce7d2-7b84-4bfb-97df-09272d545878"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/2afce7d2-7b84-4bfb-97df-09272d545878?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "Nimewo Dosye = TH000013",
+            "uuid": "eafc1afa-17e2-42d7-adeb-d22f0f606c5b",
+            "identifier": "TH000013",
+            "identifierType": {
+              "uuid": "e66645eb-03a8-4991-b4ce-e87318e37566",
+              "display": "Numéro de dossier",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/e66645eb-03a8-4991-b4ce-e87318e37566"
+                }
+              ]
+            },
+            "location": {
+              "uuid": "376b3e7e-f7c0-4268-a98d-c2bddfee8bcf",
+              "display": "Centre de Santé de Thomonde",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/376b3e7e-f7c0-4268-a98d-c2bddfee8bcf"
+                }
+              ]
+            },
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/eafc1afa-17e2-42d7-adeb-d22f0f606c5b"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/eafc1afa-17e2-42d7-adeb-d22f0f606c5b?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "Numéro d'identité fiscale (NIF) = 3",
+            "uuid": "fcdb2bc1-1535-44bb-8fa0-4b69ec77a752",
+            "identifier": "3",
+            "identifierType": {
+              "uuid": "e797f826-8e8f-11e7-bb31-be2e44b06b34",
+              "display": "Numéro d'identité fiscale (NIF)",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/e797f826-8e8f-11e7-bb31-be2e44b06b34"
+                }
+              ]
+            },
+            "location": null,
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/fcdb2bc1-1535-44bb-8fa0-4b69ec77a752"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/fcdb2bc1-1535-44bb-8fa0-4b69ec77a752?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "Carte d'identification nationale = 2",
+            "uuid": "7e30a11d-abc0-4088-aed8-125a7bc2485b",
+            "identifier": "2",
+            "identifierType": {
+              "uuid": "e797face-8e8f-11e7-bb31-be2e44b06b34",
+              "display": "Carte d'identification nationale",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/e797face-8e8f-11e7-bb31-be2e44b06b34"
+                }
+              ]
+            },
+            "location": null,
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/7e30a11d-abc0-4088-aed8-125a7bc2485b"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/7e30a11d-abc0-4088-aed8-125a7bc2485b?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          {
+            "display": "HIVEMR-V1 = A",
+            "uuid": "4302fb7f-febc-4190-8954-276c5b79ee3a",
+            "identifier": "A",
+            "identifierType": {
+              "uuid": "139766e8-15f5-102d-96e4-000c29c2a5d7",
+              "display": "HIVEMR-V1",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/patientidentifiertype/139766e8-15f5-102d-96e4-000c29c2a5d7"
+                }
+              ]
+            },
+            "location": null,
+            "preferred": false,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/4302fb7f-febc-4190-8954-276c5b79ee3a"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a/identifier/4302fb7f-febc-4190-8954-276c5b79ee3a?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          }
+        ],
+        "person": {
+          "uuid": "cda61f89-c342-4caf-88c3-d0f829a7b43a",
+          "display": "Neil Young",
+          "gender": "M",
+          "age": 14,
+          "birthdate": "1994-01-01T00:00:00.000-0500",
+          "birthdateEstimated": true,
+          "dead": false,
+          "deathDate": null,
+          "causeOfDeath": null,
+          "preferredName": {
+            "display": "Young, Neil",
+            "uuid": "23aba271-277d-4c16-9b11-db45488cc65a",
+            "givenName": "Neil",
+            "middleName": null,
+            "familyName": "Young",
+            "familyName2": null,
+            "voided": false,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/name/23aba271-277d-4c16-9b11-db45488cc65a"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/name/23aba271-277d-4c16-9b11-db45488cc65a?v=full"
+              }
+            ],
+            "resourceVersion": "1.8"
+          },
+          "preferredAddress": {
+            "display": "Cange",
+            "uuid": "846726d6-52b2-4351-b296-3ce8b2eff6aa",
+            "preferred": true,
+            "address1": "Cange",
+            "address2": null,
+            "cityVillage": "Cerca Cavajal",
+            "stateProvince": "Centre",
+            "country": "Haiti",
+            "postalCode": null,
+            "countyDistrict": null,
+            "address3": "1Ã¨re Rang",
+            "address4": null,
+            "address5": null,
+            "address6": null,
+            "startDate": null,
+            "endDate": null,
+            "latitude": null,
+            "longitude": null,
+            "voided": false,
+            "address7": null,
+            "address8": null,
+            "address9": null,
+            "address10": null,
+            "address11": null,
+            "address12": null,
+            "address13": null,
+            "address14": null,
+            "address15": null,
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/address/846726d6-52b2-4351-b296-3ce8b2eff6aa"
+              },
+              {
+                "rel": "full",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/address/846726d6-52b2-4351-b296-3ce8b2eff6aa?v=full"
+              }
+            ],
+            "resourceVersion": "2.0"
+          },
+          "names": [
+            {
+              "display": "Young, Neil",
+              "uuid": "23aba271-277d-4c16-9b11-db45488cc65a",
+              "givenName": "Neil",
+              "middleName": null,
+              "familyName": "Young",
+              "familyName2": null,
+              "voided": false,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/name/23aba271-277d-4c16-9b11-db45488cc65a"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/name/23aba271-277d-4c16-9b11-db45488cc65a?v=full"
+                }
+              ],
+              "resourceVersion": "1.8"
+            },
+            {
+              "display": "Bob, Dylan",
+              "uuid": "32f11125-83e2-4d3a-bb4d-12fadcad31c6",
+              "givenName": "Dylan",
+              "middleName": null,
+              "familyName": "Bob",
+              "familyName2": null,
+              "voided": false,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/name/32f11125-83e2-4d3a-bb4d-12fadcad31c6"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/name/32f11125-83e2-4d3a-bb4d-12fadcad31c6?v=full"
+                }
+              ],
+              "resourceVersion": "1.8"
+            }
+          ],
+          "addresses": [
+            {
+              "display": "Cange",
+              "uuid": "846726d6-52b2-4351-b296-3ce8b2eff6aa",
+              "preferred": true,
+              "address1": "Cange",
+              "address2": null,
+              "cityVillage": "Cerca Cavajal",
+              "stateProvince": "Centre",
+              "country": "Haiti",
+              "postalCode": null,
+              "countyDistrict": null,
+              "address3": "1Ã¨re Rang",
+              "address4": null,
+              "address5": null,
+              "address6": null,
+              "startDate": null,
+              "endDate": null,
+              "latitude": null,
+              "longitude": null,
+              "voided": false,
+              "address7": null,
+              "address8": null,
+              "address9": null,
+              "address10": null,
+              "address11": null,
+              "address12": null,
+              "address13": null,
+              "address14": null,
+              "address15": null,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/address/846726d6-52b2-4351-b296-3ce8b2eff6aa"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/address/846726d6-52b2-4351-b296-3ce8b2eff6aa?v=full"
+                }
+              ],
+              "resourceVersion": "2.0"
+            },
+            {
+              "display": "Cange",
+              "uuid": "3bfb2eda-90e8-4ebf-baac-96fbd42af492",
+              "preferred": false,
+              "address1": "Cange",
+              "address2": null,
+              "cityVillage": "Cerca Cavajal",
+              "stateProvince": "Centre",
+              "country": "Haiti",
+              "postalCode": null,
+              "countyDistrict": null,
+              "address3": "1ère Rang",
+              "address4": null,
+              "address5": null,
+              "address6": null,
+              "startDate": null,
+              "endDate": null,
+              "latitude": null,
+              "longitude": null,
+              "voided": false,
+              "address7": null,
+              "address8": null,
+              "address9": null,
+              "address10": null,
+              "address11": null,
+              "address12": null,
+              "address13": null,
+              "address14": null,
+              "address15": null,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/address/3bfb2eda-90e8-4ebf-baac-96fbd42af492"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/address/3bfb2eda-90e8-4ebf-baac-96fbd42af492?v=full"
+                }
+              ],
+              "resourceVersion": "2.0"
+            }
+          ],
+          "attributes": [
+            {
+              "display": "First Name of Mother = test",
+              "uuid": "19155a95-5085-49d8-aa29-6a80f63a54fc",
+              "value": "test",
+              "attributeType": {
+                "uuid": "8d871d18-c2cc-11de-8d13-0010c6dffd0f",
+                "display": "Mother's First Name",
+                "links": [
+                  {
+                    "rel": "self",
+                    "uri": "http://localhost:8080/openmrs/ws/rest/v1/personattributetype/8d871d18-c2cc-11de-8d13-0010c6dffd0f"
+                  }
+                ]
+              },
+              "voided": false,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/attribute/19155a95-5085-49d8-aa29-6a80f63a54fc"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/attribute/19155a95-5085-49d8-aa29-6a80f63a54fc?v=full"
+                }
+              ],
+              "resourceVersion": "1.8"
+            },
+            {
+              "display": "Telephone Number = 23",
+              "uuid": "f02c681f-3229-4fb2-986f-f37084f07634",
+              "value": "23",
+              "attributeType": {
+                "uuid": "14d4f066-15f5-102d-96e4-000c29c2a5d7",
+                "display": "Numéro de téléphone",
+                "links": [
+                  {
+                    "rel": "self",
+                    "uri": "http://localhost:8080/openmrs/ws/rest/v1/personattributetype/14d4f066-15f5-102d-96e4-000c29c2a5d7"
+                  }
+                ]
+              },
+              "voided": false,
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/attribute/f02c681f-3229-4fb2-986f-f37084f07634"
+                },
+                {
+                  "rel": "full",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a/attribute/f02c681f-3229-4fb2-986f-f37084f07634?v=full"
+                }
+              ],
+              "resourceVersion": "1.8"
+            }
+          ],
+          "voided": false,
+          "auditInfo": {
+            "creator": {
+              "uuid": "3a3482ac-8880-40f0-adda-81b2cff19b78",
+              "display": "manager",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/user/3a3482ac-8880-40f0-adda-81b2cff19b78"
+                }
+              ]
+            },
+            "dateCreated": "2016-08-16T13:30:24.000-0400",
+            "changedBy": {
+              "uuid": "28a60719-097d-4ddf-a803-7575cbe6f865",
+              "display": "mgoodrich",
+              "links": [
+                {
+                  "rel": "self",
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/user/28a60719-097d-4ddf-a803-7575cbe6f865"
+                }
+              ]
+            },
+            "dateChanged": "2017-09-26T13:17:28.000-0400"
+          },
+          "deathdateEstimated": false,
+          "birthtime": null,
+          "links": [
+            {
+              "rel": "self",
+              "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/cda61f89-c342-4caf-88c3-d0f829a7b43a"
+            }
+          ],
+          "resourceVersion": "1.11"
+        },
+        "voided": false,
+        "auditInfo": {
+          "creator": {
+            "uuid": "3a3482ac-8880-40f0-adda-81b2cff19b78",
+            "display": "manager",
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/user/3a3482ac-8880-40f0-adda-81b2cff19b78"
+              }
+            ]
+          },
+          "dateCreated": "2016-08-16T13:30:24.000-0400",
+          "changedBy": {
+            "uuid": "28a60719-097d-4ddf-a803-7575cbe6f865",
+            "display": "mgoodrich",
+            "links": [
+              {
+                "rel": "self",
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/user/28a60719-097d-4ddf-a803-7575cbe6f865"
+              }
+            ]
+          },
+          "dateChanged": "2017-09-26T13:17:28.000-0400"
+        },
+        "links": [
+          {
+            "rel": "self",
+            "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a"
           }
         ],
         "resourceVersion": "1.8"
       },
       "encounters": [
         {
-          "uuid": "c8e6b96e-ba0c-4f25-81c1-2d00dcb7cf16",
-          "display": "Inscription 15/06/2018",
-          "encounterDatetime": "2018-06-15T14:58:36.000-0400",
+          "uuid": "0e44fde2-759b-461e-9dfd-cb29997a4554",
+          "display": "Signes vitaux 26/06/2018",
+          "encounterDatetime": "2018-06-26T15:12:27.000-0400",
           "patient": {
-            "uuid": "a46864ac-4cee-4e3a-a920-7b5799f1dc9a",
-            "display": "Y2A73V - Bob Dylan",
+            "uuid": "cda61f89-c342-4caf-88c3-d0f829a7b43a",
+            "display": "Y2A5H1 - Neil Young",
             "links": [
               {
                 "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/a46864ac-4cee-4e3a-a920-7b5799f1dc9a"
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/cda61f89-c342-4caf-88c3-d0f829a7b43a"
               }
             ]
           },
           "location": {
-            "uuid": "9e212720-eeab-43ef-a6c0-95c3881052bc",
-            "display": "CDI Klinik Ekstèn Jeneral Famasi",
+            "uuid": "376b3e7e-f7c0-4268-a98d-c2bddfee8bcf",
+            "display": "Centre de Santé de Thomonde",
             "links": [
               {
                 "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/9e212720-eeab-43ef-a6c0-95c3881052bc"
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/376b3e7e-f7c0-4268-a98d-c2bddfee8bcf"
               }
             ]
           },
           "form": {
-            "uuid": "8757a568-23d1-4e18-907b-728b56ca7756",
-            "display": "Inscription",
+            "uuid": "68728aa6-4985-11e2-8815-657001b58a90",
+            "display": "Signes vitaux",
             "links": [
               {
                 "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/form/8757a568-23d1-4e18-907b-728b56ca7756"
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/form/68728aa6-4985-11e2-8815-657001b58a90"
               }
             ]
           },
-          "encounterType": {
-            "uuid": "55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b",
-            "display": "Inscription",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/encountertype/55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b"
-              }
-            ]
-          },
-          "obs": [
-            {
-              "uuid": "f9b05663-009f-403f-bd58-990e1a60d180",
-              "display": "Informations sur le règlement: 100,0",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/f9b05663-009f-403f-bd58-990e1a60d180"
-                }
-              ]
-            },
-            {
-              "uuid": "c10fe376-3671-4a64-bc56-f082a0c3dc91",
-              "display": "Type de visite: Pharmacie uniquement",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/c10fe376-3671-4a64-bc56-f082a0c3dc91"
-                }
-              ]
-            }
-          ],
-          "orders": [],
-          "voided": false,
-          "visit": {
-            "uuid": "af02b757-eb0a-4e64-b872-0091ad1d9b8a",
-            "display": "Clinic or Hospital Visit @ Hôpital Universitaire de Mirebalais - 15/06/2018 11:35",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/visit/af02b757-eb0a-4e64-b872-0091ad1d9b8a"
-              }
-            ]
-          },
-          "encounterProviders": [
-            {
-              "uuid": "2ca35183-c515-4694-a637-12326c3a89ef",
-              "display": "Mark Goodrich: Administrative Clerk",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/c8e6b96e-ba0c-4f25-81c1-2d00dcb7cf16/encounterprovider/2ca35183-c515-4694-a637-12326c3a89ef"
-                }
-              ]
-            }
-          ],
-          "links": [
-            {
-              "rel": "self",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/c8e6b96e-ba0c-4f25-81c1-2d00dcb7cf16"
-            },
-            {
-              "rel": "full",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/c8e6b96e-ba0c-4f25-81c1-2d00dcb7cf16?v=full"
-            }
-          ],
-          "resourceVersion": "1.9"
-        }
-      ]
-    },
-    {
-      "uuid": "44892810-75e5-49fc-b1a1-dc1732f424fb",
-      "patient": {
-        "uuid": "e3d9220d-8b08-4218-956d-825687719936",
-        "display": "Y2DJKC - Neil Young",
-        "identifiers": [
-          {
-            "uuid": "6ca3e9af-4c3c-461d-9cdf-602b8bb24f5f",
-            "display": "ZL EMR ID = Y2DJKC",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/e3d9220d-8b08-4218-956d-825687719936/identifier/6ca3e9af-4c3c-461d-9cdf-602b8bb24f5f"
-              }
-            ]
-          }
-        ],
-        "person": {
-          "uuid": "e3d9220d-8b08-4218-956d-825687719936",
-          "display": "Neil Young",
-          "gender": "M",
-          "age": 77,
-          "birthdate": "1941-01-01T00:00:00.000-0500",
-          "birthdateEstimated": true,
-          "dead": false,
-          "deathDate": null,
-          "causeOfDeath": null,
-          "preferredName": {
-            "uuid": "5efe10ed-02a0-40b4-89c2-618a7daf3684",
-            "display": "Young, Neil",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/e3d9220d-8b08-4218-956d-825687719936/name/5efe10ed-02a0-40b4-89c2-618a7daf3684"
-              }
-            ]
-          },
-          "preferredAddress": {
-            "uuid": "c8b8813c-6b08-40a6-8c10-87463ac02b7c",
-            "display": "Cange",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/e3d9220d-8b08-4218-956d-825687719936/address/c8b8813c-6b08-40a6-8c10-87463ac02b7c"
-              }
-            ]
-          },
-          "attributes": [
-            {
-              "uuid": "e2ed1245-762d-4e0e-b26b-11836aceb27c",
-              "display": "First Name of Mother = test",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/e3d9220d-8b08-4218-956d-825687719936/attribute/e2ed1245-762d-4e0e-b26b-11836aceb27c"
-                }
-              ]
-            },
-            {
-              "uuid": "b547c500-1f36-4137-8cad-a247bd0c0629",
-              "display": "Telephone Number = tet",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/e3d9220d-8b08-4218-956d-825687719936/attribute/b547c500-1f36-4137-8cad-a247bd0c0629"
-                }
-              ]
-            }
-          ],
-          "voided": false,
-          "deathdateEstimated": false,
-          "birthtime": null,
-          "links": [
-            {
-              "rel": "self",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/e3d9220d-8b08-4218-956d-825687719936"
-            },
-            {
-              "rel": "full",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/person/e3d9220d-8b08-4218-956d-825687719936?v=full"
-            }
-          ],
-          "resourceVersion": "1.11"
-        },
-        "voided": false,
-        "links": [
-          {
-            "rel": "self",
-            "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/e3d9220d-8b08-4218-956d-825687719936"
-          },
-          {
-            "rel": "full",
-            "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/e3d9220d-8b08-4218-956d-825687719936?v=full"
-          }
-        ],
-        "resourceVersion": "1.8"
-      },
-      "encounters": [
-        {
-          "uuid": "1efcede6-912e-49ea-8965-1f97f0f95002",
-          "display": "Signes vitaux 14/06/2018",
-          "encounterDatetime": "2018-06-14T17:22:48.000-0400",
-          "patient": {
-            "uuid": "e3d9220d-8b08-4218-956d-825687719936",
-            "display": "Y2DJKC - Neil Young",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/e3d9220d-8b08-4218-956d-825687719936"
-              }
-            ]
-          },
-          "location": null,
-          "form": null,
           "encounterType": {
             "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
             "display": "Signes vitaux",
@@ -322,22 +1283,22 @@ describe('createQueueRender', () => {
           },
           "obs": [
             {
-              "uuid": "3929cb33-1460-4d78-a88a-b8e94b3fcb1b",
-              "display": "Pression systolique: 120,0",
+              "uuid": "9740c0c9-3cbf-4fd6-ba60-6c85daec9e90",
+              "display": "Taille (cm): 127,0",
               "links": [
                 {
                   "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/3929cb33-1460-4d78-a88a-b8e94b3fcb1b"
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/9740c0c9-3cbf-4fd6-ba60-6c85daec9e90"
                 }
               ]
             },
             {
-              "uuid": "22939be6-4310-4d5d-b053-98d1cc71fc64",
-              "display": "Pression diastolique: 140,0",
+              "uuid": "1a892234-b120-4371-b080-3343c90c9c10",
+              "display": "Poids (kg): 45,5",
               "links": [
                 {
                   "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/22939be6-4310-4d5d-b053-98d1cc71fc64"
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/1a892234-b120-4371-b080-3343c90c9c10"
                 }
               ]
             }
@@ -345,104 +1306,23 @@ describe('createQueueRender', () => {
           "orders": [],
           "voided": false,
           "visit": {
-            "uuid": "44892810-75e5-49fc-b1a1-dc1732f424fb",
-            "display": "Clinic or Hospital Visit @ Hôpital Universitaire de Mirebalais - 12/03/2018 15:06",
+            "uuid": "e81fe098-5b7f-4085-bc76-39918c8df2f6",
+            "display": "Clinic or Hospital Visit @ Centre de Santé de Thomonde - 26/06/2018 13:11",
             "links": [
               {
                 "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/visit/44892810-75e5-49fc-b1a1-dc1732f424fb"
-              }
-            ]
-          },
-          "encounterProviders": [],
-          "links": [
-            {
-              "rel": "self",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/1efcede6-912e-49ea-8965-1f97f0f95002"
-            },
-            {
-              "rel": "full",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/1efcede6-912e-49ea-8965-1f97f0f95002?v=full"
-            }
-          ],
-          "resourceVersion": "1.9"
-        },
-        {
-          "uuid": "f767d819-52d2-4e78-9845-a9fa399cfa75",
-          "display": "Admission aux soins hospitaliers 12/03/2018",
-          "encounterDatetime": "2018-03-12T15:24:14.000-0400",
-          "patient": {
-            "uuid": "e3d9220d-8b08-4218-956d-825687719936",
-            "display": "Y2DJKC - Neil Young",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/e3d9220d-8b08-4218-956d-825687719936"
-              }
-            ]
-          },
-          "location": {
-            "uuid": "950852f3-8a96-4d82-a5f8-a68a92043164",
-            "display": "Sal Aprè Akouchman",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/950852f3-8a96-4d82-a5f8-a68a92043164"
-              }
-            ]
-          },
-          "form": {
-            "uuid": "43acf930-eb1b-11e2-91e2-0800200c9a66",
-            "display": "Admission",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/form/43acf930-eb1b-11e2-91e2-0800200c9a66"
-              }
-            ]
-          },
-          "encounterType": {
-            "uuid": "260566e1-c909-4d61-a96f-c1019291a09d",
-            "display": "Admission aux soins hospitaliers",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/encountertype/260566e1-c909-4d61-a96f-c1019291a09d"
-              }
-            ]
-          },
-          "obs": [
-            {
-              "uuid": "009939c3-1733-42ee-b76c-e5647ba9ff00",
-              "display": "Visit Diagnoses: Présumé, Primaire, Hémorragie gastro-intestinale",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/009939c3-1733-42ee-b76c-e5647ba9ff00"
-                }
-              ]
-            }
-          ],
-          "orders": [],
-          "voided": false,
-          "visit": {
-            "uuid": "44892810-75e5-49fc-b1a1-dc1732f424fb",
-            "display": "Clinic or Hospital Visit @ Hôpital Universitaire de Mirebalais - 12/03/2018 15:06",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/visit/44892810-75e5-49fc-b1a1-dc1732f424fb"
+                "uri": "http://localhost:8080/openmrs/ws/rest/v1/visit/e81fe098-5b7f-4085-bc76-39918c8df2f6"
               }
             ]
           },
           "encounterProviders": [
             {
-              "uuid": "2451f28f-892e-4696-844d-e75d35b2ac5c",
-              "display": "Mark Goodrich: Consulting Clinician",
+              "uuid": "2deaccd1-cc38-41a3-8a82-2011d95625e7",
+              "display": "Mark Goodrich: Nurse",
               "links": [
                 {
                   "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/f767d819-52d2-4e78-9845-a9fa399cfa75/encounterprovider/2451f28f-892e-4696-844d-e75d35b2ac5c"
+                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/0e44fde2-759b-461e-9dfd-cb29997a4554/encounterprovider/2deaccd1-cc38-41a3-8a82-2011d95625e7"
                 }
               ]
             }
@@ -450,316 +1330,11 @@ describe('createQueueRender', () => {
           "links": [
             {
               "rel": "self",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/f767d819-52d2-4e78-9845-a9fa399cfa75"
+              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/0e44fde2-759b-461e-9dfd-cb29997a4554"
             },
             {
               "rel": "full",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/f767d819-52d2-4e78-9845-a9fa399cfa75?v=full"
-            }
-          ],
-          "resourceVersion": "1.9"
-        },
-        {
-          "uuid": "f58998f1-b03b-4936-95c8-2a0a565917a4",
-          "display": "Primary Care Adult Initial Consult 12/03/2018",
-          "encounterDatetime": "2018-03-12T15:23:14.000-0400",
-          "patient": {
-            "uuid": "e3d9220d-8b08-4218-956d-825687719936",
-            "display": "Y2DJKC - Neil Young",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/e3d9220d-8b08-4218-956d-825687719936"
-              }
-            ]
-          },
-          "location": {
-            "uuid": "083e75b0-5959-11e4-8ed6-0800200c9a66",
-            "display": "CDI Klinik Ekstèn Jeneral",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/083e75b0-5959-11e4-8ed6-0800200c9a66"
-              }
-            ]
-          },
-          "form": {
-            "uuid": "40f51770-0267-11e6-a837-0800200c9a66",
-            "display": "Primary Care Peds Initial",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/form/40f51770-0267-11e6-a837-0800200c9a66"
-              }
-            ]
-          },
-          "encounterType": {
-            "uuid": "27d3a180-031b-11e6-a837-0800200c9a66",
-            "display": "Consultation externe initiale adulte",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/encountertype/27d3a180-031b-11e6-a837-0800200c9a66"
-              }
-            ]
-          },
-          "obs": [
-            {
-              "uuid": "2e675bc7-af4c-4b8b-8989-7ed52c8fb2a8",
-              "display": "Laboratory test ordered, coded: Hématocrite",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/2e675bc7-af4c-4b8b-8989-7ed52c8fb2a8"
-                }
-              ]
-            },
-            {
-              "uuid": "a24c6148-5450-4b90-8fe6-4ee463645ec3",
-              "display": "Laboratory test ordered, coded: Hémoglobine",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/a24c6148-5450-4b90-8fe6-4ee463645ec3"
-                }
-              ]
-            },
-            {
-              "uuid": "e9558a04-8946-460c-9048-e1c4ddc22a07",
-              "display": "Clinical management plan comment: test",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/e9558a04-8946-460c-9048-e1c4ddc22a07"
-                }
-              ]
-            },
-            {
-              "uuid": "60875864-39b9-47ee-9d45-faf81119fc0f",
-              "display": "HUM Disposition construct: Admettre à l'hôpital, 41",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/60875864-39b9-47ee-9d45-faf81119fc0f"
-                }
-              ]
-            }
-          ],
-          "orders": [],
-          "voided": false,
-          "visit": {
-            "uuid": "44892810-75e5-49fc-b1a1-dc1732f424fb",
-            "display": "Clinic or Hospital Visit @ Hôpital Universitaire de Mirebalais - 12/03/2018 15:06",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/visit/44892810-75e5-49fc-b1a1-dc1732f424fb"
-              }
-            ]
-          },
-          "encounterProviders": [
-            {
-              "uuid": "6e19c210-5eea-4afe-8143-6b6ac36c00ed",
-              "display": "Mark Goodrich: Consulting Clinician",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/f58998f1-b03b-4936-95c8-2a0a565917a4/encounterprovider/6e19c210-5eea-4afe-8143-6b6ac36c00ed"
-                }
-              ]
-            }
-          ],
-          "links": [
-            {
-              "rel": "self",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/f58998f1-b03b-4936-95c8-2a0a565917a4"
-            },
-            {
-              "rel": "full",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/f58998f1-b03b-4936-95c8-2a0a565917a4?v=full"
-            }
-          ],
-          "resourceVersion": "1.9"
-        },
-        {
-          "uuid": "57c7466f-b3e9-4a0b-a473-f839030609f1",
-          "display": "Primary Care Adult Followup Consult 12/03/2018",
-          "encounterDatetime": "2018-03-12T15:23:09.000-0400",
-          "patient": {
-            "uuid": "e3d9220d-8b08-4218-956d-825687719936",
-            "display": "Y2DJKC - Neil Young",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/e3d9220d-8b08-4218-956d-825687719936"
-              }
-            ]
-          },
-          "location": {
-            "uuid": "083e75b0-5959-11e4-8ed6-0800200c9a66",
-            "display": "CDI Klinik Ekstèn Jeneral",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/083e75b0-5959-11e4-8ed6-0800200c9a66"
-              }
-            ]
-          },
-          "form": {
-            "uuid": "343ba950-0324-11e6-a837-0800200c9a66",
-            "display": "Primary Care Peds Initial",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/form/343ba950-0324-11e6-a837-0800200c9a66"
-              }
-            ]
-          },
-          "encounterType": {
-            "uuid": "27d3a181-031b-11e6-a837-0800200c9a66",
-            "display": "Consultation externe de suivi adulte",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/encountertype/27d3a181-031b-11e6-a837-0800200c9a66"
-              }
-            ]
-          },
-          "obs": [],
-          "orders": [],
-          "voided": false,
-          "visit": {
-            "uuid": "44892810-75e5-49fc-b1a1-dc1732f424fb",
-            "display": "Clinic or Hospital Visit @ Hôpital Universitaire de Mirebalais - 12/03/2018 15:06",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/visit/44892810-75e5-49fc-b1a1-dc1732f424fb"
-              }
-            ]
-          },
-          "encounterProviders": [
-            {
-              "uuid": "c974dd79-81cc-469b-87a2-42c5d02483d5",
-              "display": "Mark Goodrich: Consulting Clinician",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/57c7466f-b3e9-4a0b-a473-f839030609f1/encounterprovider/c974dd79-81cc-469b-87a2-42c5d02483d5"
-                }
-              ]
-            }
-          ],
-          "links": [
-            {
-              "rel": "self",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/57c7466f-b3e9-4a0b-a473-f839030609f1"
-            },
-            {
-              "rel": "full",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/57c7466f-b3e9-4a0b-a473-f839030609f1?v=full"
-            }
-          ],
-          "resourceVersion": "1.9"
-        },
-        {
-          "uuid": "70e17b29-a68d-496a-99dc-78bf2a0c7f88",
-          "display": "Inscription 12/03/2018",
-          "encounterDatetime": "2018-03-12T15:06:58.000-0400",
-          "patient": {
-            "uuid": "e3d9220d-8b08-4218-956d-825687719936",
-            "display": "Y2DJKC - Neil Young",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/patient/e3d9220d-8b08-4218-956d-825687719936"
-              }
-            ]
-          },
-          "location": {
-            "uuid": "11857d80-5959-11e4-8ed6-0800200c9a66",
-            "display": "CDI Klinik Ekstèn Jeneral Biwo Randevou",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/location/11857d80-5959-11e4-8ed6-0800200c9a66"
-              }
-            ]
-          },
-          "form": {
-            "uuid": "8757a568-23d1-4e18-907b-728b56ca7756",
-            "display": "Inscription",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/form/8757a568-23d1-4e18-907b-728b56ca7756"
-              }
-            ]
-          },
-          "encounterType": {
-            "uuid": "55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b",
-            "display": "Inscription",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/encountertype/55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b"
-              }
-            ]
-          },
-          "obs": [
-            {
-              "uuid": "b3907823-50cb-42c7-94f5-e7e795746233",
-              "display": "Informations sur le règlement: 232, 50,0",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/b3907823-50cb-42c7-94f5-e7e795746233"
-                }
-              ]
-            },
-            {
-              "uuid": "9d9feb18-64e3-4aea-85d0-7f64f24777f5",
-              "display": "Type de visite: Laboratoire uniquement",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/obs/9d9feb18-64e3-4aea-85d0-7f64f24777f5"
-                }
-              ]
-            }
-          ],
-          "orders": [],
-          "voided": false,
-          "visit": {
-            "uuid": "44892810-75e5-49fc-b1a1-dc1732f424fb",
-            "display": "Clinic or Hospital Visit @ Hôpital Universitaire de Mirebalais - 12/03/2018 15:06",
-            "links": [
-              {
-                "rel": "self",
-                "uri": "http://localhost:8080/openmrs/ws/rest/v1/visit/44892810-75e5-49fc-b1a1-dc1732f424fb"
-              }
-            ]
-          },
-          "encounterProviders": [
-            {
-              "uuid": "f43d5281-854d-4e1d-a82f-1842d29478e5",
-              "display": "Mark Goodrich: Administrative Clerk",
-              "links": [
-                {
-                  "rel": "self",
-                  "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/70e17b29-a68d-496a-99dc-78bf2a0c7f88/encounterprovider/f43d5281-854d-4e1d-a82f-1842d29478e5"
-                }
-              ]
-            }
-          ],
-          "links": [
-            {
-              "rel": "self",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/70e17b29-a68d-496a-99dc-78bf2a0c7f88"
-            },
-            {
-              "rel": "full",
-              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/70e17b29-a68d-496a-99dc-78bf2a0c7f88?v=full"
+              "uri": "http://localhost:8080/openmrs/ws/rest/v1/encounter/0e44fde2-759b-461e-9dfd-cb29997a4554?v=full"
             }
           ],
           "resourceVersion": "1.9"
@@ -783,8 +1358,11 @@ describe('createQueueRender', () => {
     });
 
     expect(queue.list.length).toBe(2);
-    expect(queue.list[0].patient.display).toBe("Y2A73V - Bob Dylan");
-    expect(queue.list[1].patient.display).toBe("Y2DJKC - Neil Young");
+    expect(queue.list[0].getName().givenName).toBe("Bob");
+    expect(queue.list[0].getName().familyName).toBe("Dylan");
+    expect(queue.list[1].getName().givenName).toBe("Neil");
+    expect(queue.list[1].getName().familyName).toBe("Young");
+
 
   });
 
@@ -797,7 +1375,8 @@ describe('createQueueRender', () => {
     });
 
     expect(queue.list.length).toBe(1);
-    expect(queue.list[0].patient.display).toBe("Y2A73V - Bob Dylan");
+    expect(queue.list[0].getName().givenName).toBe("Bob");
+    expect(queue.list[0].getName().familyName).toBe("Dylan");
 
   });
 });
