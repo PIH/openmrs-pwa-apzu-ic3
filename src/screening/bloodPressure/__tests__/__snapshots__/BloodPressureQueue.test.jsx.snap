@@ -24,19 +24,23 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
             Array [
               Object {
                 "field": "uuid",
-                "headerName": "patientUuid",
+                "headerName": "uuid",
                 "hide": true,
               },
               Object {
-                "field": "patient.person.preferredName.display",
-                "headerName": "Name",
+                "field": "name.givenName",
+                "headerName": "Given Name",
               },
               Object {
-                "field": "patient.person.gender",
+                "field": "name.familyName",
+                "headerName": "Family Name",
+              },
+              Object {
+                "field": "gender",
                 "headerName": "Gender",
               },
               Object {
-                "field": "patient.person.age",
+                "field": "age",
                 "headerName": "Age",
               },
             ]
@@ -53,19 +57,23 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
               Array [
                 Object {
                   "field": "uuid",
-                  "headerName": "patientUuid",
+                  "headerName": "uuid",
                   "hide": true,
                 },
                 Object {
-                  "field": "patient.person.preferredName.display",
-                  "headerName": "Name",
+                  "field": "name.givenName",
+                  "headerName": "Given Name",
                 },
                 Object {
-                  "field": "patient.person.gender",
+                  "field": "name.familyName",
+                  "headerName": "Family Name",
+                },
+                Object {
+                  "field": "gender",
                   "headerName": "Gender",
                 },
                 Object {
-                  "field": "patient.person.age",
+                  "field": "age",
                   "headerName": "Age",
                 },
               ]
@@ -92,19 +100,23 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                   Array [
                     Object {
                       "field": "uuid",
-                      "headerName": "patientUuid",
+                      "headerName": "uuid",
                       "hide": true,
                     },
                     Object {
-                      "field": "patient.person.preferredName.display",
-                      "headerName": "Name",
+                      "field": "name.givenName",
+                      "headerName": "Given Name",
                     },
                     Object {
-                      "field": "patient.person.gender",
+                      "field": "name.familyName",
+                      "headerName": "Family Name",
+                    },
+                    Object {
+                      "field": "gender",
                       "headerName": "Gender",
                     },
                     Object {
-                      "field": "patient.person.age",
+                      "field": "age",
                       "headerName": "Age",
                     },
                   ]

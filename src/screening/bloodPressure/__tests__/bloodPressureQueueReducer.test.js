@@ -1356,6 +1356,9 @@ describe('bloodPressureQueueReducer', () => {
     expect(queue.list.length).toBe(1);
     expect(queue.list[0].getName().givenName).toBe("Bob");
     expect(queue.list[0].getName().familyName).toBe("Dylan");
+
+    console.log(queue);
+
   });
 
 });

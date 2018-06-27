@@ -1360,8 +1360,10 @@ describe('createQueueReducer', () => {
     expect(queue.list.length).toBe(2);
     expect(queue.list[0].getName().givenName).toBe("Bob");
     expect(queue.list[0].getName().familyName).toBe("Dylan");
+    expect(queue.list[0].activeVisit).toBe("6501cbf1-42f3-4b2f-83bc-ed562e019af8");
     expect(queue.list[1].getName().givenName).toBe("Neil");
     expect(queue.list[1].getName().familyName).toBe("Young");
+    expect(queue.list[1].activeVisit).toBe("e81fe098-5b7f-4085-bc76-39918c8df2f6");
 
 
   });
@@ -1377,6 +1379,7 @@ describe('createQueueReducer', () => {
     expect(queue.list.length).toBe(1);
     expect(queue.list[0].getName().givenName).toBe("Bob");
     expect(queue.list[0].getName().familyName).toBe("Dylan");
+    expect(queue.list[0].activeVisit).toBe("6501cbf1-42f3-4b2f-83bc-ed562e019af8");
 
   });
 });

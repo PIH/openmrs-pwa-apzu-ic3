@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import dateFns from 'date-fns';
+//import dateFns from 'date-fns';
 
 class PatientHeader extends React.Component {
 
@@ -14,20 +14,20 @@ class PatientHeader extends React.Component {
           <div className="demographics">
             <h1 className="name">
               <span>
-                <span className="PersonName-givenName">{this.props.patient.firstName}&nbsp;&nbsp;</span>
+                <span className="PersonName-givenName">{this.props.patient.name.givenName}&nbsp;&nbsp;</span>
                 <em>Given</em>
               </span>
 
               {
                 this.props.patient.middleName &&
                 <span>
-                  <span className="PersonName-middleName">{this.props.patient.middleName}&nbsp;&nbsp;</span>
+                  <span className="PersonName-middleName">{this.props.patient.name.middleName}&nbsp;&nbsp;</span>
                   <em>Middle</em>
                 </span>
               }
 
               <span>
-                <span className="PersonName-familyName">{this.props.patient.lastName}</span>
+                <span className="PersonName-familyName">{this.props.patient.name.familyName}</span>
                 <em>Family Name</em>
               </span>
 
@@ -35,19 +35,19 @@ class PatientHeader extends React.Component {
               <span className="gender-age">
                 <span>{this.props.patient.gender === 'M' ? "Male" : "Female"}&nbsp;</span>
                 <span>
-                  {this.props.patient.age} year(s) ({dateFns.format(new Date(this.props.patient.birthdate), 'DD[.]MMM[.]YYYY')})
+                  {this.props.patient.age} year(s) {/*({dateFns.format(new Date(this.props.patient.birthdate), 'DD[.]MMM[.]YYYY')})*/}
                 </span>
               </span>
             </h1>
           </div>
-
+{/*
           <span>
             <div className="identifiers">
               <em>Patient ID</em>
               <span>{this.props.patient.identifier}</span>
               <br />
             </div>
-          </span>
+          </span>*/}
         </div>
 
       );

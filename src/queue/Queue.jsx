@@ -8,11 +8,12 @@ class Queue extends React.Component {
   constructor(props) {
     super(props);
     this.columnDefs =  [
-      { headerName: 'patientUuid', hide: true, field: 'uuid' },
-      //      { headerName: 'ID', valueGetter: 'data.identifier' },
-      { headerName: 'Name', field: 'patient.person.preferredName.display' },
-      { headerName: 'Gender', field: 'patient.person.gender' },
-      { headerName: 'Age', field: 'patient.person.age' }
+      { headerName: 'uuid', hide: true, field: 'uuid' },
+     /* { headerName: 'ID', valueGetter: 'data.identifier' },*/
+      { headerName: 'Given Name', field: 'name.givenName' },
+      { headerName: 'Family Name', field: 'name.familyName' },
+      { headerName: 'Gender', field: 'gender' },
+      { headerName: 'Age', field: 'age' }
     ];
   }
 

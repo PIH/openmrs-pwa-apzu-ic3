@@ -18,7 +18,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
       dispatch={[Function]}
       patient={
         Object {
-          "uuid": "abc",
+          "patient": Object {
+            "uuid": "abc",
+          },
+          "visit": Object {
+            "uuid": "def",
+          },
         }
       }
       visit={
@@ -36,7 +41,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
         formSubmittedActionCreator={[Function]}
         patient={
           Object {
-            "uuid": "abc",
+            "patient": Object {
+              "uuid": "abc",
+            },
+            "visit": Object {
+              "uuid": "def",
+            },
           }
         }
         visit={
@@ -55,7 +65,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           formSubmittedActionCreator={[Function]}
           patient={
             Object {
-              "uuid": "abc",
+              "patient": Object {
+                "uuid": "abc",
+              },
+              "visit": Object {
+                "uuid": "def",
+              },
             }
           }
           visit={
@@ -80,7 +95,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
             keepDirtyOnReinitialize={false}
             patient={
               Object {
-                "uuid": "abc",
+                "patient": Object {
+                  "uuid": "abc",
+                },
+                "visit": Object {
+                  "uuid": "def",
+                },
               }
             }
             persistentSubmitErrors={false}
@@ -153,7 +173,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
               keepDirtyOnReinitialize={false}
               patient={
                 Object {
-                  "uuid": "abc",
+                  "patient": Object {
+                    "uuid": "abc",
+                  },
+                  "visit": Object {
+                    "uuid": "def",
+                  },
                 }
               }
               persistentSubmitErrors={false}
@@ -236,7 +261,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 invalid={false}
                 patient={
                   Object {
-                    "uuid": "abc",
+                    "patient": Object {
+                      "uuid": "abc",
+                    },
+                    "visit": Object {
+                      "uuid": "def",
+                    },
                   }
                 }
                 pristine={true}
@@ -374,7 +404,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                       "invalid": false,
                                       "keepDirtyOnReinitialize": false,
                                       "patient": Object {
-                                        "uuid": "abc",
+                                        "patient": Object {
+                                          "uuid": "abc",
+                                        },
+                                        "visit": Object {
+                                          "uuid": "def",
+                                        },
                                       },
                                       "persistentSubmitErrors": false,
                                       "pristine": true,
@@ -509,7 +544,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                         "invalid": false,
                                         "keepDirtyOnReinitialize": false,
                                         "patient": Object {
-                                          "uuid": "abc",
+                                          "patient": Object {
+                                            "uuid": "abc",
+                                          },
+                                          "visit": Object {
+                                            "uuid": "def",
+                                          },
                                         },
                                         "persistentSubmitErrors": false,
                                         "pristine": true,
@@ -711,7 +751,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                       "invalid": false,
                                       "keepDirtyOnReinitialize": false,
                                       "patient": Object {
-                                        "uuid": "abc",
+                                        "patient": Object {
+                                          "uuid": "abc",
+                                        },
+                                        "visit": Object {
+                                          "uuid": "def",
+                                        },
                                       },
                                       "persistentSubmitErrors": false,
                                       "pristine": true,
@@ -846,7 +891,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                         "invalid": false,
                                         "keepDirtyOnReinitialize": false,
                                         "patient": Object {
-                                          "uuid": "abc",
+                                          "patient": Object {
+                                            "uuid": "abc",
+                                          },
+                                          "visit": Object {
+                                            "uuid": "def",
+                                          },
                                         },
                                         "persistentSubmitErrors": false,
                                         "pristine": true,

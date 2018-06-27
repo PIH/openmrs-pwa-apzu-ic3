@@ -5,7 +5,7 @@ import './App.css';
 import createStore, { history } from './store';
 import { AuthenticatedRoute, LoginPage } from '@openmrs/react-components';
 import HomePage from './home/HomePage';
-import InfoPatient from './patient/InfoPatient';
+import InfoPatient from './patient/PatientInfo';
 import SearchPatient from './search/SearchPatient';
 import CheckInQueue from './checkin/CheckInQueue';
 import CheckInPage from './checkin/CheckInPage';

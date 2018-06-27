@@ -37,9 +37,9 @@ class NutritionForm extends Form {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selected.patient.patient,  // TODO update this when we fix the organization of the patient object
-    visit: {  // TODO update this when we fix the organization of the patient object
-      uuid: state.selected.patient.uuid
+    patient: state.selected.patient,
+    visit: {
+      uuid: state.selected.patient.activeVisit
     }
   };
 };
