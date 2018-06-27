@@ -26,21 +26,17 @@ exports[`Component: SearchPatient renders properly 1`] = `
           columnDefs={
             Array [
               Object {
-                "headerName": "patientUuid",
+                "field": "uuid",
+                "headerName": "uuid",
                 "hide": true,
-                "valueGetter": "data.uuid",
               },
               Object {
-                "headerName": "ID",
-                "valueGetter": "data.identifier",
+                "field": "name.givenName",
+                "headerName": "Given Name",
               },
               Object {
-                "headerName": "First Name",
-                "valueGetter": "data.firstName",
-              },
-              Object {
-                "headerName": "Last Name",
-                "valueGetter": "data.lastName",
+                "field": "name.familyName",
+                "headerName": "Family Name",
               },
               Object {
                 "field": "gender",
@@ -63,21 +59,17 @@ exports[`Component: SearchPatient renders properly 1`] = `
             columnDefs={
               Array [
                 Object {
-                  "headerName": "patientUuid",
+                  "field": "uuid",
+                  "headerName": "uuid",
                   "hide": true,
-                  "valueGetter": "data.uuid",
                 },
                 Object {
-                  "headerName": "ID",
-                  "valueGetter": "data.identifier",
+                  "field": "name.givenName",
+                  "headerName": "Given Name",
                 },
                 Object {
-                  "headerName": "First Name",
-                  "valueGetter": "data.firstName",
-                },
-                Object {
-                  "headerName": "Last Name",
-                  "valueGetter": "data.lastName",
+                  "field": "name.familyName",
+                  "headerName": "Family Name",
                 },
                 Object {
                   "field": "gender",
@@ -91,7 +83,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
             }
             dispatch={[Function]}
             parseResults={[Function]}
-            representation="custom:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,names,addresses,attributes))"
+            representation="full"
             rowSelectedActionCreators={
               Array [
                 [Function],
@@ -573,21 +565,17 @@ exports[`Component: SearchPatient renders properly 1`] = `
                 columnDefs={
                   Array [
                     Object {
-                      "headerName": "patientUuid",
+                      "field": "uuid",
+                      "headerName": "uuid",
                       "hide": true,
-                      "valueGetter": "data.uuid",
                     },
                     Object {
-                      "headerName": "ID",
-                      "valueGetter": "data.identifier",
+                      "field": "name.givenName",
+                      "headerName": "Given Name",
                     },
                     Object {
-                      "headerName": "First Name",
-                      "valueGetter": "data.firstName",
-                    },
-                    Object {
-                      "headerName": "Last Name",
-                      "valueGetter": "data.lastName",
+                      "field": "name.familyName",
+                      "headerName": "Family Name",
                     },
                     Object {
                       "field": "gender",
@@ -609,21 +597,17 @@ exports[`Component: SearchPatient renders properly 1`] = `
                   columnDefs={
                     Array [
                       Object {
-                        "headerName": "patientUuid",
+                        "field": "uuid",
+                        "headerName": "uuid",
                         "hide": true,
-                        "valueGetter": "data.uuid",
                       },
                       Object {
-                        "headerName": "ID",
-                        "valueGetter": "data.identifier",
+                        "field": "name.givenName",
+                        "headerName": "Given Name",
                       },
                       Object {
-                        "headerName": "First Name",
-                        "valueGetter": "data.firstName",
-                      },
-                      Object {
-                        "headerName": "Last Name",
-                        "valueGetter": "data.lastName",
+                        "field": "name.familyName",
+                        "headerName": "Family Name",
                       },
                       Object {
                         "field": "gender",
@@ -655,21 +639,17 @@ exports[`Component: SearchPatient renders properly 1`] = `
                       columnDefs={
                         Array [
                           Object {
-                            "headerName": "patientUuid",
+                            "field": "uuid",
+                            "headerName": "uuid",
                             "hide": true,
-                            "valueGetter": "data.uuid",
                           },
                           Object {
-                            "headerName": "ID",
-                            "valueGetter": "data.identifier",
+                            "field": "name.givenName",
+                            "headerName": "Given Name",
                           },
                           Object {
-                            "headerName": "First Name",
-                            "valueGetter": "data.firstName",
-                          },
-                          Object {
-                            "headerName": "Last Name",
-                            "valueGetter": "data.lastName",
+                            "field": "name.familyName",
+                            "headerName": "Family Name",
                           },
                           Object {
                             "field": "gender",
