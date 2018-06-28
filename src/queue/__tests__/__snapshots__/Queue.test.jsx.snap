@@ -18,6 +18,18 @@ exports[`Component: Queue renders properly 1`] = `
     rowData={Array []}
   >
     <div>
+      <h3>
+        <Label
+          bsClass="label"
+          bsStyle="default"
+        >
+          <span
+            className="label label-default"
+          >
+            Queue
+          </span>
+        </Label>
+      </h3>
       <Connect(DataGrid)
         columnDefs={
           Array [

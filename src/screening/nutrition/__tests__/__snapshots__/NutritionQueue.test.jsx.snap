@@ -19,6 +19,18 @@ exports[`Component: NutritionQueue renders properly 1`] = `
       rowData={Array []}
     >
       <div>
+        <h3>
+          <Label
+            bsClass="label"
+            bsStyle="default"
+          >
+            <span
+              className="label label-default"
+            >
+              Nutrition Queue
+            </span>
+          </Label>
+        </h3>
         <Connect(DataGrid)
           columnDefs={
             Array [

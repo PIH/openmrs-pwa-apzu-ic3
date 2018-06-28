@@ -22,6 +22,18 @@ exports[`Component: SearchPatient renders properly 1`] = `
       patient={Object {}}
     >
       <div>
+        <h3>
+          <Label
+            bsClass="label"
+            bsStyle="default"
+          >
+            <span
+              className="label label-default"
+            >
+              Patient Search
+            </span>
+          </Label>
+        </h3>
         <Connect(PatientSearch)
           columnDefs={
             Array [

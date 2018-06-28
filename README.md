@@ -24,6 +24,12 @@ REACT_APP_SERVER_ADDRESS=http://localhost:8080/
 REACT_APP_SERVER_CONTEXT_PATH=openmrs
 ```
 
+## Debugging on a tablet
+
+Need to set Android to remote debugging using the "magic" steps here:
+
+https://developers.google.com/web/tools/chrome-devtools/remote-debugging/?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3
+
 ## Getting around CORS issues
 
 You can install the CORS plugin for Chrome here to get around CORS issues:
