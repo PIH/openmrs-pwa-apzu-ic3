@@ -8,6 +8,11 @@ class Menu extends React.Component {
   render() {
     return (
       <BurgerMenu right noOverlay pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
+        <Link to="/">
+          <Button bsSize="large" block>
+            Home
+          </Button>
+        </Link>
         <Link to="/searchPatient">
           <Button bsSize="large" block>
             Search Patient

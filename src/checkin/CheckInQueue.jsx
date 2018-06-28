@@ -1,7 +1,9 @@
 import React from 'react';
+import { Label } from 'react-bootstrap';
 import { patientSearchActions, DataGrid } from '@openmrs/react-components';
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
+import patientActions from '../patient/patientActions';
 
 class CheckInQueue extends React.Component {
 
@@ -42,6 +44,7 @@ class CheckInQueue extends React.Component {
   }
 
   componentDidMount() {
+    this.props.dispatch(patientActions.clearPatientSelected());
     this.props.dispatch(patientSearchActions.patientSearch(
       'Foster',
       this.parseResults.bind(this),
@@ -51,6 +54,7 @@ class CheckInQueue extends React.Component {
   render() {
     return (
       <div>
+        <h3><Label>Check In Queue</Label></h3>
         <DataGrid
           columnDefs={this.columnDefs}
           rowData={this.props.rowData}

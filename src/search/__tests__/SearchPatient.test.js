@@ -4,18 +4,22 @@ import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { DataGrid, PatientSearch } from '@openmrs/react-components';
+import { spy } from 'sinon';
 import SearchPatient from '../SearchPatient';
+import patientActions from '../../patient/patientActions';
 
 let props, store;
 let mountedComponent;
 
 const mockStore = configureMockStore();
 
+spy(SearchPatient.prototype, 'componentDidMount');
+
 const searchPatient = () => {
   if (!mountedComponent) {
     mountedComponent = mount(
       <Provider store={store}>
-          <SearchPatient {...props}></SearchPatient>
+        <SearchPatient {...props}></SearchPatient>
       </Provider>);
   }
   return mountedComponent;
@@ -45,6 +49,8 @@ describe('Component: SearchPatient', () => {
     expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
     expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToInfoPageActionCreator");
     expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/infoPatient");
+    expect(SearchPatient.prototype.componentDidMount.calledOnce).toBe(true);
+    expect(store.getActions()).toContainEqual(patientActions.clearPatientSelected());
   });
 
 });

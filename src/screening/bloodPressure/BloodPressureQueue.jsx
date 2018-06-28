@@ -8,6 +8,10 @@ class BloodPressureQueue extends Queue {
     return push('/screening/bloodPressure/form');
   }
 
+  title() {
+    return "Blood Pressure Queue";
+  }
+
 }
 
 const mapStateToProps = (state) => {

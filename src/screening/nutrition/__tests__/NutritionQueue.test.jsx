@@ -3,8 +3,9 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import { DataGrid } from '@openmrs/react-components';
+import { DataGrid, visitActions } from '@openmrs/react-components';
 import NutritionQueue from '../NutritionQueue';
+import patientActions from '../../../patient/patientActions';
 
 let props, store;
 let mountedComponent;
@@ -42,6 +43,8 @@ describe('Component: NutritionQueue', () => {
     expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
     expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToInfoPageActionCreator");
     expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/screening/nutrition/form");
+    expect(store.getActions()).toContainEqual(patientActions.clearPatientSelected());
+    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits("custom:(uuid,patient:full,encounters:default)"));
   });
 
 });

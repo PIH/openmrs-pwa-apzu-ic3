@@ -8,6 +8,10 @@ class NutritionQueue extends Queue {
     return push('/screening/nutrition/form');
   }
 
+  title() {
+    return "Nutrition Queue";
+  }
+
 }
 
 const mapStateToProps = (state) => {

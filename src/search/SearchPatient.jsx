@@ -1,7 +1,9 @@
 import React from 'react';
+import { Label } from 'react-bootstrap';
 import { Patient, PatientSearch } from '@openmrs/react-components';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
+import patientActions from '../patient/patientActions';
 
 
 class SearchPatient extends React.Component {
@@ -19,6 +21,10 @@ class SearchPatient extends React.Component {
     ];
   }
 
+  componentDidMount() {
+    this.props.dispatch(patientActions.clearPatientSelected());
+  }
+
   redirectToInfoPageActionCreator() {
     return push('/infoPatient');
   }
@@ -33,6 +39,7 @@ class SearchPatient extends React.Component {
   render() {
     return (
       <div>
+        <h3><Label>Patient Search</Label></h3>
         <PatientSearch
           columnDefs={this.columnDefs}
           parseResults={this.parseResults.bind(this)}

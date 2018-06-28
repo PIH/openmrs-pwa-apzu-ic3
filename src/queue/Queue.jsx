@@ -1,7 +1,9 @@
 import React from 'react';
 import { push } from 'connected-react-router';
+import { Label } from 'react-bootstrap';
 import { visitActions } from '@openmrs/react-components';
 import { DataGrid } from '@openmrs/react-components';
+import patientActions from '../patient/patientActions';
 
 class Queue extends React.Component {
 
@@ -19,6 +21,7 @@ class Queue extends React.Component {
 
   // TODO make this potentially come from props so we can override it?
   componentDidMount() {
+    this.props.dispatch(patientActions.clearPatientSelected());
     this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:full,encounters:default)"));
     this.interval = setInterval(() =>
       this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:full,encounters:default)")), 10000);
@@ -32,9 +35,14 @@ class Queue extends React.Component {
     return push('/'); // needs to be overwritten in implementing methods
   }
 
+  title() {
+    return "Queue";
+  }
+
   render() {
     return (
       <div>
+        <h3><Label>{this.title()}</Label></h3>
         <DataGrid
           columnDefs={this.columnDefs}
           rowData={this.props.rowData}

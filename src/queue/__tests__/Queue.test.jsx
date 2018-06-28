@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { DataGrid } from '@openmrs/react-components';
 import Queue from '../Queue';
+import patientActions from '../../patient/patientActions';
 
 let props, store;
 let mountedComponent;
