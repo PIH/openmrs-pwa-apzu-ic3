@@ -12,8 +12,8 @@ class CheckInQueue extends React.Component {
     this.columnDefs =  [
       { headerName: 'patientUuid', hide: true, valueGetter: 'data.uuid' },
       { headerName: 'ID', valueGetter: 'data.identifier' },
-      { headerName: 'First Name', valueGetter: 'data.firstName' },
-      { headerName: 'Last Name', valueGetter: 'data.lastName' },
+      { headerName: 'First Name', valueGetter: 'data.name.givenName' },
+      { headerName: 'Last Name', valueGetter: 'data.name.familyName' },
       { headerName: 'Gender', field: 'gender' },
       { headerName: 'Age', field: 'age' }
     ];
@@ -26,8 +26,11 @@ class CheckInQueue extends React.Component {
       let patient = {
         uuid: item.uuid,
         id: item.id,
-        firstName: item.person.names[0].givenName,
-        lastName: item.person.names[0].familyName,
+        name: {
+          givenName: item.person.names[0].givenName,
+          middleName: item.person.names[0].middleName,
+          familyName: item.person.names[0].familyName
+        },
         gender: item.person.gender,
         age: item.person.age,
         identifier: item.identifiers[0].identifier,
@@ -46,7 +49,7 @@ class CheckInQueue extends React.Component {
   componentDidMount() {
     this.props.dispatch(patientActions.clearPatientSelected());
     this.props.dispatch(patientSearchActions.patientSearch(
-      'Foster',
+      'Dave',
       this.parseResults.bind(this),
       this.props.representation));
   }
