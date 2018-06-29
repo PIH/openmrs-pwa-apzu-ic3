@@ -1,41 +1,59 @@
 import React from 'react';
 import { Button, ButtonGroup, Glyphicon } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import patientActions from '../patient/patientActions';
 
-const HomePage = () => (
-  <div className="App">
-    <div>
-      <Link to="/searchPatient">
-        <ButtonGroup>
-          <Button bsSize="large" >
-            <Glyphicon glyph="check" /> Search Patient
-          </Button>
-        </ButtonGroup>
-      </Link>
-      <Link to="/checkin/checkinQueue">
-        <ButtonGroup>
-          <Button bsSize="large" >
-            <Glyphicon glyph="check" /> Check-In
-          </Button>
-        </ButtonGroup>
-      </Link>
-      <Link to="/screening/bloodPressure/queue">
-        <ButtonGroup>
-          <Button bsSize="large" >
-            <Glyphicon glyph="check" /> Blood Pressure Screening
-          </Button>
-        </ButtonGroup>
-      </Link>
-      <Link to="/screening/nutrition/queue">
-        <ButtonGroup>
-          <Button bsSize="large" >
-            <Glyphicon glyph="check" /> Nutrition Screening
-          </Button>
-        </ButtonGroup>
-      </Link>
-    </div>
+class HomePage extends React.Component {
 
-  </div>
-);
+  componentDidMount() {
+    this.props.dispatch(patientActions.clearPatientSelected());
+  }
 
-export default HomePage;
+  render() {
+    return (
+      <div className="App">
+        <div>
+          <Link to="/searchPatient">
+            <ButtonGroup>
+              <Button bsSize="large" >
+                <Glyphicon glyph="check" /> Search Patient
+              </Button>
+            </ButtonGroup>
+          </Link>
+          <Link to="/checkin/checkinQueue">
+            <ButtonGroup>
+              <Button bsSize="large" >
+                <Glyphicon glyph="check" /> Check-In
+              </Button>
+            </ButtonGroup>
+          </Link>
+          <Link to="/screening/bloodPressure/queue">
+            <ButtonGroup>
+              <Button bsSize="large" >
+                <Glyphicon glyph="check" /> Blood Pressure Screening
+              </Button>
+            </ButtonGroup>
+          </Link>
+          <Link to="/screening/nutrition/queue">
+            <ButtonGroup>
+              <Button bsSize="large" >
+                <Glyphicon glyph="check" /> Nutrition Screening
+              </Button>
+            </ButtonGroup>
+          </Link>
+        </div>
+
+      </div>
+    )
+  }
+}
+
+
+const mapStateToProps = (state) => {
+  return {
+    dispatch: state.dispatch
+  };
+};
+
+export default connect(mapStateToProps)(HomePage);

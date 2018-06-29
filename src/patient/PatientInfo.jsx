@@ -1,15 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { gridActions } from '@openmrs/react-components'
 import { Form, FormGroup, FormControl, ControlLabel, Label, Col } from 'react-bootstrap';
 import RequiredScreenings from '../screening/RequiredScreenings';
 
-
 class InfoPatient extends React.Component {
-
-  componentWillUnmount(){
-    this.props.dispatch(gridActions.clearSelection());
-  }
 
   render() {
     return (
