@@ -13,99 +13,80 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
     }
   }
 >
-  <Connect(BloodPressureForm)>
-    <BloodPressureForm
-      dispatch={[Function]}
-      patient={
-        Object {
-          "patient": Object {
-            "uuid": "abc",
-          },
-          "visit": Object {
-            "uuid": "def",
-          },
+  <MockRouter
+    createHref={[Function]}
+    location=""
+    params={Object {}}
+    path=""
+    push={[Function]}
+    replace={[Function]}
+    url=""
+  >
+    <Connect(BloodPressureForm)>
+      <BloodPressureForm
+        dispatch={[Function]}
+        patient={
+          Object {
+            "patient": Object {
+              "uuid": "abc",
+            },
+            "visit": Object {
+              "uuid": "def",
+            },
+          }
         }
-      }
-      visit={
-        Object {
-          "uuid": undefined,
+        visit={
+          Object {
+            "uuid": undefined,
+          }
         }
-      }
-    >
-      <div>
-        <h3>
-          <Label
-            bsClass="label"
-            bsStyle="default"
+      >
+        <div>
+          <Link
+            replace={false}
+            to="/screening/bloodPressure/queue"
           >
-            <span
-              className="label label-default"
+            <a
+              onClick={[Function]}
             >
-              Blood Pressure
-            </span>
-          </Label>
-        </h3>
-        <Connect(ReduxForm)
-          encounterType={
-            Object {
-              "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
-            }
-          }
-          formSubmittedActionCreator={[Function]}
-          patient={
-            Object {
-              "patient": Object {
-                "uuid": "abc",
-              },
-              "visit": Object {
-                "uuid": "def",
-              },
-            }
-          }
-          visit={
-            Object {
-              "uuid": undefined,
-            }
-          }
-        >
-          <ReduxForm
-            dispatch={[Function]}
-            encounterType={
-              Object {
-                "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
-              }
-            }
-            formSubmittedActionCreator={[Function]}
-            patient={
-              Object {
-                "patient": Object {
-                  "uuid": "abc",
-                },
-                "visit": Object {
-                  "uuid": "def",
-                },
-              }
-            }
-            visit={
-              Object {
-                "uuid": undefined,
-              }
-            }
-          >
-            <Connect(Form(OpenMRSForm))
-              destroyOnUnmount={true}
-              dispatch={[Function]}
-              enableReinitialize={false}
+              <Button
+                active={false}
+                block={false}
+                bsClass="btn"
+                bsSize="large"
+                bsStyle="default"
+                disabled={false}
+              >
+                <button
+                  className="btn btn-lg btn-default"
+                  disabled={false}
+                  type="button"
+                >
+                  Back to Queue
+                </button>
+              </Button>
+            </a>
+          </Link>
+          <div>
+            <h3>
+              <Label
+                bsClass="label"
+                bsStyle="default"
+              >
+                <span
+                  className="label label-default"
+                >
+                  Blood Pressure
+                </span>
+              </Label>
+            </h3>
+            <Connect(ReduxForm)
               encounterType={
                 Object {
                   "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
                 }
               }
-              forceUnregisterOnUnmount={false}
-              form="openmrs-form"
               formSubmittedActionCreator={[Function]}
-              getFormState={[Function]}
-              keepDirtyOnReinitialize={false}
               patient={
                 Object {
                   "patient": Object {
@@ -116,74 +97,20 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   },
                 }
               }
-              persistentSubmitErrors={false}
-              pure={true}
-              shouldAsyncValidate={[Function]}
-              shouldError={[Function]}
-              shouldValidate={[Function]}
-              shouldWarn={[Function]}
-              touchOnBlur={true}
-              touchOnChange={false}
-              updateUnregisteredFields={false}
               visit={
                 Object {
                   "uuid": undefined,
                 }
               }
             >
-              <Form(OpenMRSForm)
-                anyTouched={false}
-                array={
-                  Object {
-                    "insert": [Function],
-                    "move": [Function],
-                    "pop": [Function],
-                    "push": [Function],
-                    "remove": [Function],
-                    "removeAll": [Function],
-                    "shift": [Function],
-                    "splice": [Function],
-                    "swap": [Function],
-                    "unshift": [Function],
-                  }
-                }
-                arrayInsert={[Function]}
-                arrayMove={[Function]}
-                arrayPop={[Function]}
-                arrayPush={[Function]}
-                arrayRemove={[Function]}
-                arrayRemoveAll={[Function]}
-                arrayShift={[Function]}
-                arraySplice={[Function]}
-                arraySwap={[Function]}
-                arrayUnshift={[Function]}
-                asyncValidating={false}
-                autofill={[Function]}
-                blur={[Function]}
-                change={[Function]}
-                clearAsyncError={[Function]}
-                clearFields={[Function]}
-                clearSubmit={[Function]}
-                clearSubmitErrors={[Function]}
-                destroy={[Function]}
-                destroyOnUnmount={true}
-                dirty={false}
+              <ReduxForm
                 dispatch={[Function]}
-                enableReinitialize={false}
                 encounterType={
                   Object {
                     "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
                   }
                 }
-                focus={[Function]}
-                forceUnregisterOnUnmount={false}
-                form="openmrs-form"
                 formSubmittedActionCreator={[Function]}
-                getFormState={[Function]}
-                initialize={[Function]}
-                initialized={false}
-                invalid={false}
-                keepDirtyOnReinitialize={false}
                 patient={
                   Object {
                     "patient": Object {
@@ -194,84 +121,26 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     },
                   }
                 }
-                persistentSubmitErrors={false}
-                pristine={true}
-                pure={true}
-                registerField={[Function]}
-                reset={[Function]}
-                resetSection={[Function]}
-                setSubmitFailed={[Function]}
-                setSubmitSucceeded={[Function]}
-                shouldAsyncValidate={[Function]}
-                shouldError={[Function]}
-                shouldValidate={[Function]}
-                shouldWarn={[Function]}
-                startAsyncValidation={[Function]}
-                startSubmit={[Function]}
-                stopAsyncValidation={[Function]}
-                stopSubmit={[Function]}
-                submit={[Function]}
-                submitFailed={false}
-                submitSucceeded={false}
-                submitting={false}
-                syncErrors={Object {}}
-                syncWarnings={Object {}}
-                touch={[Function]}
-                touchOnBlur={true}
-                touchOnChange={false}
-                unregisterField={[Function]}
-                untouch={[Function]}
-                updateSyncErrors={[Function]}
-                updateSyncWarnings={[Function]}
-                updateUnregisteredFields={false}
-                valid={true}
-                validExceptSubmit={true}
-                values={Object {}}
                 visit={
                   Object {
                     "uuid": undefined,
                   }
                 }
               >
-                <OpenMRSForm
-                  anyTouched={false}
-                  array={
-                    Object {
-                      "insert": [Function],
-                      "move": [Function],
-                      "pop": [Function],
-                      "push": [Function],
-                      "remove": [Function],
-                      "removeAll": [Function],
-                      "shift": [Function],
-                      "splice": [Function],
-                      "swap": [Function],
-                      "unshift": [Function],
-                    }
-                  }
-                  asyncValidate={[Function]}
-                  asyncValidating={false}
-                  autofill={[Function]}
-                  blur={[Function]}
-                  change={[Function]}
-                  clearAsyncError={[Function]}
-                  clearFields={[Function]}
-                  clearSubmit={[Function]}
-                  clearSubmitErrors={[Function]}
-                  destroy={[Function]}
-                  dirty={false}
+                <Connect(Form(OpenMRSForm))
+                  destroyOnUnmount={true}
                   dispatch={[Function]}
+                  enableReinitialize={false}
                   encounterType={
                     Object {
                       "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
                     }
                   }
+                  forceUnregisterOnUnmount={false}
                   form="openmrs-form"
                   formSubmittedActionCreator={[Function]}
-                  handleSubmit={[Function]}
-                  initialize={[Function]}
-                  initialized={false}
-                  invalid={false}
+                  getFormState={[Function]}
+                  keepDirtyOnReinitialize={false}
                   patient={
                     Object {
                       "patient": Object {
@@ -282,782 +151,950 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       },
                     }
                   }
-                  pristine={true}
+                  persistentSubmitErrors={false}
                   pure={true}
-                  reset={[Function]}
-                  resetSection={[Function]}
-                  submit={[Function]}
-                  submitFailed={false}
-                  submitSucceeded={false}
-                  submitting={false}
-                  touch={[Function]}
-                  untouch={[Function]}
-                  valid={true}
+                  shouldAsyncValidate={[Function]}
+                  shouldError={[Function]}
+                  shouldValidate={[Function]}
+                  shouldWarn={[Function]}
+                  touchOnBlur={true}
+                  touchOnChange={false}
+                  updateUnregisteredFields={false}
                   visit={
                     Object {
                       "uuid": undefined,
                     }
                   }
                 >
-                  <Form
-                    bsClass="form"
-                    componentClass="form"
-                    horizontal={true}
-                    inline={false}
-                    onSubmit={[Function]}
+                  <Form(OpenMRSForm)
+                    anyTouched={false}
+                    array={
+                      Object {
+                        "insert": [Function],
+                        "move": [Function],
+                        "pop": [Function],
+                        "push": [Function],
+                        "remove": [Function],
+                        "removeAll": [Function],
+                        "shift": [Function],
+                        "splice": [Function],
+                        "swap": [Function],
+                        "unshift": [Function],
+                      }
+                    }
+                    arrayInsert={[Function]}
+                    arrayMove={[Function]}
+                    arrayPop={[Function]}
+                    arrayPush={[Function]}
+                    arrayRemove={[Function]}
+                    arrayRemoveAll={[Function]}
+                    arrayShift={[Function]}
+                    arraySplice={[Function]}
+                    arraySwap={[Function]}
+                    arrayUnshift={[Function]}
+                    asyncValidating={false}
+                    autofill={[Function]}
+                    blur={[Function]}
+                    change={[Function]}
+                    clearAsyncError={[Function]}
+                    clearFields={[Function]}
+                    clearSubmit={[Function]}
+                    clearSubmitErrors={[Function]}
+                    destroy={[Function]}
+                    destroyOnUnmount={true}
+                    dirty={false}
+                    dispatch={[Function]}
+                    enableReinitialize={false}
+                    encounterType={
+                      Object {
+                        "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                      }
+                    }
+                    focus={[Function]}
+                    forceUnregisterOnUnmount={false}
+                    form="openmrs-form"
+                    formSubmittedActionCreator={[Function]}
+                    getFormState={[Function]}
+                    initialize={[Function]}
+                    initialized={false}
+                    invalid={false}
+                    keepDirtyOnReinitialize={false}
+                    patient={
+                      Object {
+                        "patient": Object {
+                          "uuid": "abc",
+                        },
+                        "visit": Object {
+                          "uuid": "def",
+                        },
+                      }
+                    }
+                    persistentSubmitErrors={false}
+                    pristine={true}
+                    pure={true}
+                    registerField={[Function]}
+                    reset={[Function]}
+                    resetSection={[Function]}
+                    setSubmitFailed={[Function]}
+                    setSubmitSucceeded={[Function]}
+                    shouldAsyncValidate={[Function]}
+                    shouldError={[Function]}
+                    shouldValidate={[Function]}
+                    shouldWarn={[Function]}
+                    startAsyncValidation={[Function]}
+                    startSubmit={[Function]}
+                    stopAsyncValidation={[Function]}
+                    stopSubmit={[Function]}
+                    submit={[Function]}
+                    submitFailed={false}
+                    submitSucceeded={false}
+                    submitting={false}
+                    syncErrors={Object {}}
+                    syncWarnings={Object {}}
+                    touch={[Function]}
+                    touchOnBlur={true}
+                    touchOnChange={false}
+                    unregisterField={[Function]}
+                    untouch={[Function]}
+                    updateSyncErrors={[Function]}
+                    updateSyncWarnings={[Function]}
+                    updateUnregisteredFields={false}
+                    valid={true}
+                    validExceptSubmit={true}
+                    values={Object {}}
+                    visit={
+                      Object {
+                        "uuid": undefined,
+                      }
+                    }
                   >
-                    <form
-                      className="form-horizontal"
-                      onSubmit={[Function]}
+                    <OpenMRSForm
+                      anyTouched={false}
+                      array={
+                        Object {
+                          "insert": [Function],
+                          "move": [Function],
+                          "pop": [Function],
+                          "push": [Function],
+                          "remove": [Function],
+                          "removeAll": [Function],
+                          "shift": [Function],
+                          "splice": [Function],
+                          "swap": [Function],
+                          "unshift": [Function],
+                        }
+                      }
+                      asyncValidate={[Function]}
+                      asyncValidating={false}
+                      autofill={[Function]}
+                      blur={[Function]}
+                      change={[Function]}
+                      clearAsyncError={[Function]}
+                      clearFields={[Function]}
+                      clearSubmit={[Function]}
+                      clearSubmitErrors={[Function]}
+                      destroy={[Function]}
+                      dirty={false}
+                      dispatch={[Function]}
+                      encounterType={
+                        Object {
+                          "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                        }
+                      }
+                      form="openmrs-form"
+                      formSubmittedActionCreator={[Function]}
+                      handleSubmit={[Function]}
+                      initialize={[Function]}
+                      initialized={false}
+                      invalid={false}
+                      patient={
+                        Object {
+                          "patient": Object {
+                            "uuid": "abc",
+                          },
+                          "visit": Object {
+                            "uuid": "def",
+                          },
+                        }
+                      }
+                      pristine={true}
+                      pure={true}
+                      reset={[Function]}
+                      resetSection={[Function]}
+                      submit={[Function]}
+                      submitFailed={false}
+                      submitSucceeded={false}
+                      submitting={false}
+                      touch={[Function]}
+                      untouch={[Function]}
+                      valid={true}
+                      visit={
+                        Object {
+                          "uuid": undefined,
+                        }
+                      }
                     >
-                      <Grid
-                        bsClass="container"
-                        componentClass="div"
-                        fluid={false}
+                      <Form
+                        bsClass="form"
+                        componentClass="form"
+                        horizontal={true}
+                        inline={false}
+                        onSubmit={[Function]}
                       >
-                        <div
-                          className="container"
+                        <form
+                          className="form-horizontal"
+                          onSubmit={[Function]}
                         >
-                          <Row
-                            bsClass="row"
+                          <Grid
+                            bsClass="container"
                             componentClass="div"
+                            fluid={false}
                           >
                             <div
-                              className="row"
+                              className="container"
                             >
-                              <Obs
-                                concept="3ce934fa-26fe-102b-80cb-0017a47871b2"
-                                path="systolic"
+                              <Row
+                                bsClass="row"
+                                componentClass="div"
                               >
-                                <Field
-                                  component={[Function]}
-                                  name="obs|path=systolic|concept=3ce934fa-26fe-102b-80cb-0017a47871b2"
-                                  type="text"
+                                <div
+                                  className="row"
                                 >
-                                  <Connect(ConnectedField)
-                                    _reduxForm={
-                                      Object {
-                                        "anyTouched": false,
-                                        "array": Object {
-                                          "insert": [Function],
-                                          "move": [Function],
-                                          "pop": [Function],
-                                          "push": [Function],
-                                          "remove": [Function],
-                                          "removeAll": [Function],
-                                          "shift": [Function],
-                                          "splice": [Function],
-                                          "swap": [Function],
-                                          "unshift": [Function],
-                                        },
-                                        "arrayInsert": [Function],
-                                        "arrayMove": [Function],
-                                        "arrayPop": [Function],
-                                        "arrayPush": [Function],
-                                        "arrayRemove": [Function],
-                                        "arrayRemoveAll": [Function],
-                                        "arrayShift": [Function],
-                                        "arraySplice": [Function],
-                                        "arraySwap": [Function],
-                                        "arrayUnshift": [Function],
-                                        "asyncErrors": undefined,
-                                        "asyncValidate": [Function],
-                                        "asyncValidating": false,
-                                        "autofill": [Function],
-                                        "blur": [Function],
-                                        "change": [Function],
-                                        "children": <Grid
-                                          bsClass="container"
-                                          componentClass="div"
-                                          fluid={false}
-                                      >
-                                          <Row
-                                              bsClass="row"
-                                              componentClass="div"
-                                          >
-                                              <Obs
-                                                  concept="3ce934fa-26fe-102b-80cb-0017a47871b2"
-                                                  path="systolic"
-                                              />
-                                              /
-                                              <Obs
-                                                  concept="3ce93694-26fe-102b-80cb-0017a47871b2"
-                                                  path="diastolic"
-                                              />
-                                          </Row>
-                                          <Row
-                                              bsClass="row"
-                                              componentClass="div"
-                                          >
-                                              <Submit />
-                                          </Row>
-                                      </Grid>,
-                                        "clearAsyncError": [Function],
-                                        "clearFields": [Function],
-                                        "clearSubmit": [Function],
-                                        "clearSubmitErrors": [Function],
-                                        "destroy": [Function],
-                                        "destroyOnUnmount": true,
-                                        "dirty": false,
-                                        "dispatch": [Function],
-                                        "enableReinitialize": false,
-                                        "encounterType": Object {
-                                          "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
-                                        },
-                                        "error": undefined,
-                                        "focus": [Function],
-                                        "forceUnregisterOnUnmount": false,
-                                        "form": "openmrs-form",
-                                        "formSubmittedActionCreator": [Function],
-                                        "getFormState": [Function],
-                                        "getValues": [Function],
-                                        "initialValues": undefined,
-                                        "initialize": [Function],
-                                        "initialized": false,
-                                        "invalid": false,
-                                        "keepDirtyOnReinitialize": false,
-                                        "patient": Object {
-                                          "patient": Object {
-                                            "uuid": "abc",
-                                          },
-                                          "visit": Object {
-                                            "uuid": "def",
-                                          },
-                                        },
-                                        "persistentSubmitErrors": false,
-                                        "pristine": true,
-                                        "pure": true,
-                                        "register": [Function],
-                                        "registerField": [Function],
-                                        "registerInnerOnSubmit": [Function],
-                                        "registeredFields": undefined,
-                                        "reset": [Function],
-                                        "resetSection": [Function],
-                                        "sectionPrefix": undefined,
-                                        "setSubmitFailed": [Function],
-                                        "setSubmitSucceeded": [Function],
-                                        "shouldAsyncValidate": [Function],
-                                        "shouldError": [Function],
-                                        "shouldValidate": [Function],
-                                        "shouldWarn": [Function],
-                                        "startAsyncValidation": [Function],
-                                        "startSubmit": [Function],
-                                        "stopAsyncValidation": [Function],
-                                        "stopSubmit": [Function],
-                                        "submit": [Function],
-                                        "submitFailed": false,
-                                        "submitSucceeded": false,
-                                        "submitting": false,
-                                        "syncErrors": Object {},
-                                        "syncWarnings": Object {},
-                                        "touch": [Function],
-                                        "touchOnBlur": true,
-                                        "touchOnChange": false,
-                                        "triggerSubmit": undefined,
-                                        "unregister": [Function],
-                                        "unregisterField": [Function],
-                                        "untouch": [Function],
-                                        "updateSyncErrors": [Function],
-                                        "updateSyncWarnings": [Function],
-                                        "updateUnregisteredFields": false,
-                                        "valid": true,
-                                        "validExceptSubmit": true,
-                                        "values": Object {},
-                                        "visit": Object {
-                                          "uuid": undefined,
-                                        },
-                                        "warning": undefined,
-                                      }
-                                    }
-                                    component={[Function]}
-                                    name="obs|path=systolic|concept=3ce934fa-26fe-102b-80cb-0017a47871b2"
-                                    normalize={[Function]}
-                                    type="text"
+                                  <Obs
+                                    concept="3ce934fa-26fe-102b-80cb-0017a47871b2"
+                                    path="systolic"
                                   >
-                                    <ConnectedField
-                                      _reduxForm={
-                                        Object {
-                                          "anyTouched": false,
-                                          "array": Object {
-                                            "insert": [Function],
-                                            "move": [Function],
-                                            "pop": [Function],
-                                            "push": [Function],
-                                            "remove": [Function],
-                                            "removeAll": [Function],
-                                            "shift": [Function],
-                                            "splice": [Function],
-                                            "swap": [Function],
-                                            "unshift": [Function],
-                                          },
-                                          "arrayInsert": [Function],
-                                          "arrayMove": [Function],
-                                          "arrayPop": [Function],
-                                          "arrayPush": [Function],
-                                          "arrayRemove": [Function],
-                                          "arrayRemoveAll": [Function],
-                                          "arrayShift": [Function],
-                                          "arraySplice": [Function],
-                                          "arraySwap": [Function],
-                                          "arrayUnshift": [Function],
-                                          "asyncErrors": undefined,
-                                          "asyncValidate": [Function],
-                                          "asyncValidating": false,
-                                          "autofill": [Function],
-                                          "blur": [Function],
-                                          "change": [Function],
-                                          "children": <Grid
-                                            bsClass="container"
-                                            componentClass="div"
-                                            fluid={false}
-                                        >
-                                            <Row
-                                                bsClass="row"
-                                                componentClass="div"
-                                            >
-                                                <Obs
-                                                    concept="3ce934fa-26fe-102b-80cb-0017a47871b2"
-                                                    path="systolic"
-                                                />
-                                                /
-                                                <Obs
-                                                    concept="3ce93694-26fe-102b-80cb-0017a47871b2"
-                                                    path="diastolic"
-                                                />
-                                            </Row>
-                                            <Row
-                                                bsClass="row"
-                                                componentClass="div"
-                                            >
-                                                <Submit />
-                                            </Row>
-                                        </Grid>,
-                                          "clearAsyncError": [Function],
-                                          "clearFields": [Function],
-                                          "clearSubmit": [Function],
-                                          "clearSubmitErrors": [Function],
-                                          "destroy": [Function],
-                                          "destroyOnUnmount": true,
-                                          "dirty": false,
-                                          "dispatch": [Function],
-                                          "enableReinitialize": false,
-                                          "encounterType": Object {
-                                            "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
-                                          },
-                                          "error": undefined,
-                                          "focus": [Function],
-                                          "forceUnregisterOnUnmount": false,
-                                          "form": "openmrs-form",
-                                          "formSubmittedActionCreator": [Function],
-                                          "getFormState": [Function],
-                                          "getValues": [Function],
-                                          "initialValues": undefined,
-                                          "initialize": [Function],
-                                          "initialized": false,
-                                          "invalid": false,
-                                          "keepDirtyOnReinitialize": false,
-                                          "patient": Object {
-                                            "patient": Object {
-                                              "uuid": "abc",
-                                            },
-                                            "visit": Object {
-                                              "uuid": "def",
-                                            },
-                                          },
-                                          "persistentSubmitErrors": false,
-                                          "pristine": true,
-                                          "pure": true,
-                                          "register": [Function],
-                                          "registerField": [Function],
-                                          "registerInnerOnSubmit": [Function],
-                                          "registeredFields": undefined,
-                                          "reset": [Function],
-                                          "resetSection": [Function],
-                                          "sectionPrefix": undefined,
-                                          "setSubmitFailed": [Function],
-                                          "setSubmitSucceeded": [Function],
-                                          "shouldAsyncValidate": [Function],
-                                          "shouldError": [Function],
-                                          "shouldValidate": [Function],
-                                          "shouldWarn": [Function],
-                                          "startAsyncValidation": [Function],
-                                          "startSubmit": [Function],
-                                          "stopAsyncValidation": [Function],
-                                          "stopSubmit": [Function],
-                                          "submit": [Function],
-                                          "submitFailed": false,
-                                          "submitSucceeded": false,
-                                          "submitting": false,
-                                          "syncErrors": Object {},
-                                          "syncWarnings": Object {},
-                                          "touch": [Function],
-                                          "touchOnBlur": true,
-                                          "touchOnChange": false,
-                                          "triggerSubmit": undefined,
-                                          "unregister": [Function],
-                                          "unregisterField": [Function],
-                                          "untouch": [Function],
-                                          "updateSyncErrors": [Function],
-                                          "updateSyncWarnings": [Function],
-                                          "updateUnregisteredFields": false,
-                                          "valid": true,
-                                          "validExceptSubmit": true,
-                                          "values": Object {},
-                                          "visit": Object {
-                                            "uuid": undefined,
-                                          },
-                                          "warning": undefined,
-                                        }
-                                      }
-                                      asyncValidating={false}
+                                    <Field
                                       component={[Function]}
-                                      dirty={false}
-                                      dispatch={[Function]}
                                       name="obs|path=systolic|concept=3ce934fa-26fe-102b-80cb-0017a47871b2"
-                                      normalize={[Function]}
-                                      pristine={true}
                                       type="text"
                                     >
-                                      <FieldInput
-                                        input={
+                                      <Connect(ConnectedField)
+                                        _reduxForm={
                                           Object {
-                                            "name": "obs|path=systolic|concept=3ce934fa-26fe-102b-80cb-0017a47871b2",
-                                            "onBlur": [Function],
-                                            "onChange": [Function],
-                                            "onDragStart": [Function],
-                                            "onDrop": [Function],
-                                            "onFocus": [Function],
-                                            "value": "",
-                                          }
-                                        }
-                                        meta={
-                                          Object {
-                                            "active": false,
+                                            "anyTouched": false,
+                                            "array": Object {
+                                              "insert": [Function],
+                                              "move": [Function],
+                                              "pop": [Function],
+                                              "push": [Function],
+                                              "remove": [Function],
+                                              "removeAll": [Function],
+                                              "shift": [Function],
+                                              "splice": [Function],
+                                              "swap": [Function],
+                                              "unshift": [Function],
+                                            },
+                                            "arrayInsert": [Function],
+                                            "arrayMove": [Function],
+                                            "arrayPop": [Function],
+                                            "arrayPush": [Function],
+                                            "arrayRemove": [Function],
+                                            "arrayRemoveAll": [Function],
+                                            "arrayShift": [Function],
+                                            "arraySplice": [Function],
+                                            "arraySwap": [Function],
+                                            "arrayUnshift": [Function],
+                                            "asyncErrors": undefined,
+                                            "asyncValidate": [Function],
                                             "asyncValidating": false,
-                                            "autofilled": false,
+                                            "autofill": [Function],
+                                            "blur": [Function],
+                                            "change": [Function],
+                                            "children": <Grid
+                                              bsClass="container"
+                                              componentClass="div"
+                                              fluid={false}
+                                          >
+                                              <Row
+                                                  bsClass="row"
+                                                  componentClass="div"
+                                              >
+                                                  <Obs
+                                                      concept="3ce934fa-26fe-102b-80cb-0017a47871b2"
+                                                      path="systolic"
+                                                  />
+                                                  /
+                                                  <Obs
+                                                      concept="3ce93694-26fe-102b-80cb-0017a47871b2"
+                                                      path="diastolic"
+                                                  />
+                                              </Row>
+                                              <Row
+                                                  bsClass="row"
+                                                  componentClass="div"
+                                              >
+                                                  <Submit />
+                                              </Row>
+                                          </Grid>,
+                                            "clearAsyncError": [Function],
+                                            "clearFields": [Function],
+                                            "clearSubmit": [Function],
+                                            "clearSubmitErrors": [Function],
+                                            "destroy": [Function],
+                                            "destroyOnUnmount": true,
                                             "dirty": false,
                                             "dispatch": [Function],
+                                            "enableReinitialize": false,
+                                            "encounterType": Object {
+                                              "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                                            },
                                             "error": undefined,
+                                            "focus": [Function],
+                                            "forceUnregisterOnUnmount": false,
                                             "form": "openmrs-form",
-                                            "initial": undefined,
+                                            "formSubmittedActionCreator": [Function],
+                                            "getFormState": [Function],
+                                            "getValues": [Function],
+                                            "initialValues": undefined,
+                                            "initialize": [Function],
+                                            "initialized": false,
                                             "invalid": false,
-                                            "pristine": true,
-                                            "submitFailed": false,
-                                            "submitting": false,
-                                            "touched": false,
-                                            "valid": true,
-                                            "visited": false,
-                                            "warning": undefined,
-                                          }
-                                        }
-                                        type="text"
-                                      >
-                                        <FormControl
-                                          bsClass="form-control"
-                                          componentClass="input"
-                                          onChange={[Function]}
-                                          type="text"
-                                          value=""
-                                        >
-                                          <input
-                                            className="form-control"
-                                            onChange={[Function]}
-                                            type="text"
-                                            value=""
-                                          />
-                                        </FormControl>
-                                      </FieldInput>
-                                    </ConnectedField>
-                                  </Connect(ConnectedField)>
-                                </Field>
-                              </Obs>
-                              /
-                              <Obs
-                                concept="3ce93694-26fe-102b-80cb-0017a47871b2"
-                                path="diastolic"
-                              >
-                                <Field
-                                  component={[Function]}
-                                  name="obs|path=diastolic|concept=3ce93694-26fe-102b-80cb-0017a47871b2"
-                                  type="text"
-                                >
-                                  <Connect(ConnectedField)
-                                    _reduxForm={
-                                      Object {
-                                        "anyTouched": false,
-                                        "array": Object {
-                                          "insert": [Function],
-                                          "move": [Function],
-                                          "pop": [Function],
-                                          "push": [Function],
-                                          "remove": [Function],
-                                          "removeAll": [Function],
-                                          "shift": [Function],
-                                          "splice": [Function],
-                                          "swap": [Function],
-                                          "unshift": [Function],
-                                        },
-                                        "arrayInsert": [Function],
-                                        "arrayMove": [Function],
-                                        "arrayPop": [Function],
-                                        "arrayPush": [Function],
-                                        "arrayRemove": [Function],
-                                        "arrayRemoveAll": [Function],
-                                        "arrayShift": [Function],
-                                        "arraySplice": [Function],
-                                        "arraySwap": [Function],
-                                        "arrayUnshift": [Function],
-                                        "asyncErrors": undefined,
-                                        "asyncValidate": [Function],
-                                        "asyncValidating": false,
-                                        "autofill": [Function],
-                                        "blur": [Function],
-                                        "change": [Function],
-                                        "children": <Grid
-                                          bsClass="container"
-                                          componentClass="div"
-                                          fluid={false}
-                                      >
-                                          <Row
-                                              bsClass="row"
-                                              componentClass="div"
-                                          >
-                                              <Obs
-                                                  concept="3ce934fa-26fe-102b-80cb-0017a47871b2"
-                                                  path="systolic"
-                                              />
-                                              /
-                                              <Obs
-                                                  concept="3ce93694-26fe-102b-80cb-0017a47871b2"
-                                                  path="diastolic"
-                                              />
-                                          </Row>
-                                          <Row
-                                              bsClass="row"
-                                              componentClass="div"
-                                          >
-                                              <Submit />
-                                          </Row>
-                                      </Grid>,
-                                        "clearAsyncError": [Function],
-                                        "clearFields": [Function],
-                                        "clearSubmit": [Function],
-                                        "clearSubmitErrors": [Function],
-                                        "destroy": [Function],
-                                        "destroyOnUnmount": true,
-                                        "dirty": false,
-                                        "dispatch": [Function],
-                                        "enableReinitialize": false,
-                                        "encounterType": Object {
-                                          "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
-                                        },
-                                        "error": undefined,
-                                        "focus": [Function],
-                                        "forceUnregisterOnUnmount": false,
-                                        "form": "openmrs-form",
-                                        "formSubmittedActionCreator": [Function],
-                                        "getFormState": [Function],
-                                        "getValues": [Function],
-                                        "initialValues": undefined,
-                                        "initialize": [Function],
-                                        "initialized": false,
-                                        "invalid": false,
-                                        "keepDirtyOnReinitialize": false,
-                                        "patient": Object {
-                                          "patient": Object {
-                                            "uuid": "abc",
-                                          },
-                                          "visit": Object {
-                                            "uuid": "def",
-                                          },
-                                        },
-                                        "persistentSubmitErrors": false,
-                                        "pristine": true,
-                                        "pure": true,
-                                        "register": [Function],
-                                        "registerField": [Function],
-                                        "registerInnerOnSubmit": [Function],
-                                        "registeredFields": undefined,
-                                        "reset": [Function],
-                                        "resetSection": [Function],
-                                        "sectionPrefix": undefined,
-                                        "setSubmitFailed": [Function],
-                                        "setSubmitSucceeded": [Function],
-                                        "shouldAsyncValidate": [Function],
-                                        "shouldError": [Function],
-                                        "shouldValidate": [Function],
-                                        "shouldWarn": [Function],
-                                        "startAsyncValidation": [Function],
-                                        "startSubmit": [Function],
-                                        "stopAsyncValidation": [Function],
-                                        "stopSubmit": [Function],
-                                        "submit": [Function],
-                                        "submitFailed": false,
-                                        "submitSucceeded": false,
-                                        "submitting": false,
-                                        "syncErrors": Object {},
-                                        "syncWarnings": Object {},
-                                        "touch": [Function],
-                                        "touchOnBlur": true,
-                                        "touchOnChange": false,
-                                        "triggerSubmit": undefined,
-                                        "unregister": [Function],
-                                        "unregisterField": [Function],
-                                        "untouch": [Function],
-                                        "updateSyncErrors": [Function],
-                                        "updateSyncWarnings": [Function],
-                                        "updateUnregisteredFields": false,
-                                        "valid": true,
-                                        "validExceptSubmit": true,
-                                        "values": Object {},
-                                        "visit": Object {
-                                          "uuid": undefined,
-                                        },
-                                        "warning": undefined,
-                                      }
-                                    }
-                                    component={[Function]}
-                                    name="obs|path=diastolic|concept=3ce93694-26fe-102b-80cb-0017a47871b2"
-                                    normalize={[Function]}
-                                    type="text"
-                                  >
-                                    <ConnectedField
-                                      _reduxForm={
-                                        Object {
-                                          "anyTouched": false,
-                                          "array": Object {
-                                            "insert": [Function],
-                                            "move": [Function],
-                                            "pop": [Function],
-                                            "push": [Function],
-                                            "remove": [Function],
-                                            "removeAll": [Function],
-                                            "shift": [Function],
-                                            "splice": [Function],
-                                            "swap": [Function],
-                                            "unshift": [Function],
-                                          },
-                                          "arrayInsert": [Function],
-                                          "arrayMove": [Function],
-                                          "arrayPop": [Function],
-                                          "arrayPush": [Function],
-                                          "arrayRemove": [Function],
-                                          "arrayRemoveAll": [Function],
-                                          "arrayShift": [Function],
-                                          "arraySplice": [Function],
-                                          "arraySwap": [Function],
-                                          "arrayUnshift": [Function],
-                                          "asyncErrors": undefined,
-                                          "asyncValidate": [Function],
-                                          "asyncValidating": false,
-                                          "autofill": [Function],
-                                          "blur": [Function],
-                                          "change": [Function],
-                                          "children": <Grid
-                                            bsClass="container"
-                                            componentClass="div"
-                                            fluid={false}
-                                        >
-                                            <Row
-                                                bsClass="row"
-                                                componentClass="div"
-                                            >
-                                                <Obs
-                                                    concept="3ce934fa-26fe-102b-80cb-0017a47871b2"
-                                                    path="systolic"
-                                                />
-                                                /
-                                                <Obs
-                                                    concept="3ce93694-26fe-102b-80cb-0017a47871b2"
-                                                    path="diastolic"
-                                                />
-                                            </Row>
-                                            <Row
-                                                bsClass="row"
-                                                componentClass="div"
-                                            >
-                                                <Submit />
-                                            </Row>
-                                        </Grid>,
-                                          "clearAsyncError": [Function],
-                                          "clearFields": [Function],
-                                          "clearSubmit": [Function],
-                                          "clearSubmitErrors": [Function],
-                                          "destroy": [Function],
-                                          "destroyOnUnmount": true,
-                                          "dirty": false,
-                                          "dispatch": [Function],
-                                          "enableReinitialize": false,
-                                          "encounterType": Object {
-                                            "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
-                                          },
-                                          "error": undefined,
-                                          "focus": [Function],
-                                          "forceUnregisterOnUnmount": false,
-                                          "form": "openmrs-form",
-                                          "formSubmittedActionCreator": [Function],
-                                          "getFormState": [Function],
-                                          "getValues": [Function],
-                                          "initialValues": undefined,
-                                          "initialize": [Function],
-                                          "initialized": false,
-                                          "invalid": false,
-                                          "keepDirtyOnReinitialize": false,
-                                          "patient": Object {
+                                            "keepDirtyOnReinitialize": false,
                                             "patient": Object {
-                                              "uuid": "abc",
+                                              "patient": Object {
+                                                "uuid": "abc",
+                                              },
+                                              "visit": Object {
+                                                "uuid": "def",
+                                              },
                                             },
-                                            "visit": Object {
-                                              "uuid": "def",
-                                            },
-                                          },
-                                          "persistentSubmitErrors": false,
-                                          "pristine": true,
-                                          "pure": true,
-                                          "register": [Function],
-                                          "registerField": [Function],
-                                          "registerInnerOnSubmit": [Function],
-                                          "registeredFields": undefined,
-                                          "reset": [Function],
-                                          "resetSection": [Function],
-                                          "sectionPrefix": undefined,
-                                          "setSubmitFailed": [Function],
-                                          "setSubmitSucceeded": [Function],
-                                          "shouldAsyncValidate": [Function],
-                                          "shouldError": [Function],
-                                          "shouldValidate": [Function],
-                                          "shouldWarn": [Function],
-                                          "startAsyncValidation": [Function],
-                                          "startSubmit": [Function],
-                                          "stopAsyncValidation": [Function],
-                                          "stopSubmit": [Function],
-                                          "submit": [Function],
-                                          "submitFailed": false,
-                                          "submitSucceeded": false,
-                                          "submitting": false,
-                                          "syncErrors": Object {},
-                                          "syncWarnings": Object {},
-                                          "touch": [Function],
-                                          "touchOnBlur": true,
-                                          "touchOnChange": false,
-                                          "triggerSubmit": undefined,
-                                          "unregister": [Function],
-                                          "unregisterField": [Function],
-                                          "untouch": [Function],
-                                          "updateSyncErrors": [Function],
-                                          "updateSyncWarnings": [Function],
-                                          "updateUnregisteredFields": false,
-                                          "valid": true,
-                                          "validExceptSubmit": true,
-                                          "values": Object {},
-                                          "visit": Object {
-                                            "uuid": undefined,
-                                          },
-                                          "warning": undefined,
-                                        }
-                                      }
-                                      asyncValidating={false}
-                                      component={[Function]}
-                                      dirty={false}
-                                      dispatch={[Function]}
-                                      name="obs|path=diastolic|concept=3ce93694-26fe-102b-80cb-0017a47871b2"
-                                      normalize={[Function]}
-                                      pristine={true}
-                                      type="text"
-                                    >
-                                      <FieldInput
-                                        input={
-                                          Object {
-                                            "name": "obs|path=diastolic|concept=3ce93694-26fe-102b-80cb-0017a47871b2",
-                                            "onBlur": [Function],
-                                            "onChange": [Function],
-                                            "onDragStart": [Function],
-                                            "onDrop": [Function],
-                                            "onFocus": [Function],
-                                            "value": "",
-                                          }
-                                        }
-                                        meta={
-                                          Object {
-                                            "active": false,
-                                            "asyncValidating": false,
-                                            "autofilled": false,
-                                            "dirty": false,
-                                            "dispatch": [Function],
-                                            "error": undefined,
-                                            "form": "openmrs-form",
-                                            "initial": undefined,
-                                            "invalid": false,
+                                            "persistentSubmitErrors": false,
                                             "pristine": true,
+                                            "pure": true,
+                                            "register": [Function],
+                                            "registerField": [Function],
+                                            "registerInnerOnSubmit": [Function],
+                                            "registeredFields": undefined,
+                                            "reset": [Function],
+                                            "resetSection": [Function],
+                                            "sectionPrefix": undefined,
+                                            "setSubmitFailed": [Function],
+                                            "setSubmitSucceeded": [Function],
+                                            "shouldAsyncValidate": [Function],
+                                            "shouldError": [Function],
+                                            "shouldValidate": [Function],
+                                            "shouldWarn": [Function],
+                                            "startAsyncValidation": [Function],
+                                            "startSubmit": [Function],
+                                            "stopAsyncValidation": [Function],
+                                            "stopSubmit": [Function],
+                                            "submit": [Function],
                                             "submitFailed": false,
+                                            "submitSucceeded": false,
                                             "submitting": false,
-                                            "touched": false,
+                                            "syncErrors": Object {},
+                                            "syncWarnings": Object {},
+                                            "touch": [Function],
+                                            "touchOnBlur": true,
+                                            "touchOnChange": false,
+                                            "triggerSubmit": undefined,
+                                            "unregister": [Function],
+                                            "unregisterField": [Function],
+                                            "untouch": [Function],
+                                            "updateSyncErrors": [Function],
+                                            "updateSyncWarnings": [Function],
+                                            "updateUnregisteredFields": false,
                                             "valid": true,
-                                            "visited": false,
+                                            "validExceptSubmit": true,
+                                            "values": Object {},
+                                            "visit": Object {
+                                              "uuid": undefined,
+                                            },
                                             "warning": undefined,
                                           }
                                         }
+                                        component={[Function]}
+                                        name="obs|path=systolic|concept=3ce934fa-26fe-102b-80cb-0017a47871b2"
+                                        normalize={[Function]}
                                         type="text"
                                       >
-                                        <FormControl
-                                          bsClass="form-control"
-                                          componentClass="input"
-                                          onChange={[Function]}
+                                        <ConnectedField
+                                          _reduxForm={
+                                            Object {
+                                              "anyTouched": false,
+                                              "array": Object {
+                                                "insert": [Function],
+                                                "move": [Function],
+                                                "pop": [Function],
+                                                "push": [Function],
+                                                "remove": [Function],
+                                                "removeAll": [Function],
+                                                "shift": [Function],
+                                                "splice": [Function],
+                                                "swap": [Function],
+                                                "unshift": [Function],
+                                              },
+                                              "arrayInsert": [Function],
+                                              "arrayMove": [Function],
+                                              "arrayPop": [Function],
+                                              "arrayPush": [Function],
+                                              "arrayRemove": [Function],
+                                              "arrayRemoveAll": [Function],
+                                              "arrayShift": [Function],
+                                              "arraySplice": [Function],
+                                              "arraySwap": [Function],
+                                              "arrayUnshift": [Function],
+                                              "asyncErrors": undefined,
+                                              "asyncValidate": [Function],
+                                              "asyncValidating": false,
+                                              "autofill": [Function],
+                                              "blur": [Function],
+                                              "change": [Function],
+                                              "children": <Grid
+                                                bsClass="container"
+                                                componentClass="div"
+                                                fluid={false}
+                                            >
+                                                <Row
+                                                    bsClass="row"
+                                                    componentClass="div"
+                                                >
+                                                    <Obs
+                                                        concept="3ce934fa-26fe-102b-80cb-0017a47871b2"
+                                                        path="systolic"
+                                                    />
+                                                    /
+                                                    <Obs
+                                                        concept="3ce93694-26fe-102b-80cb-0017a47871b2"
+                                                        path="diastolic"
+                                                    />
+                                                </Row>
+                                                <Row
+                                                    bsClass="row"
+                                                    componentClass="div"
+                                                >
+                                                    <Submit />
+                                                </Row>
+                                            </Grid>,
+                                              "clearAsyncError": [Function],
+                                              "clearFields": [Function],
+                                              "clearSubmit": [Function],
+                                              "clearSubmitErrors": [Function],
+                                              "destroy": [Function],
+                                              "destroyOnUnmount": true,
+                                              "dirty": false,
+                                              "dispatch": [Function],
+                                              "enableReinitialize": false,
+                                              "encounterType": Object {
+                                                "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                                              },
+                                              "error": undefined,
+                                              "focus": [Function],
+                                              "forceUnregisterOnUnmount": false,
+                                              "form": "openmrs-form",
+                                              "formSubmittedActionCreator": [Function],
+                                              "getFormState": [Function],
+                                              "getValues": [Function],
+                                              "initialValues": undefined,
+                                              "initialize": [Function],
+                                              "initialized": false,
+                                              "invalid": false,
+                                              "keepDirtyOnReinitialize": false,
+                                              "patient": Object {
+                                                "patient": Object {
+                                                  "uuid": "abc",
+                                                },
+                                                "visit": Object {
+                                                  "uuid": "def",
+                                                },
+                                              },
+                                              "persistentSubmitErrors": false,
+                                              "pristine": true,
+                                              "pure": true,
+                                              "register": [Function],
+                                              "registerField": [Function],
+                                              "registerInnerOnSubmit": [Function],
+                                              "registeredFields": undefined,
+                                              "reset": [Function],
+                                              "resetSection": [Function],
+                                              "sectionPrefix": undefined,
+                                              "setSubmitFailed": [Function],
+                                              "setSubmitSucceeded": [Function],
+                                              "shouldAsyncValidate": [Function],
+                                              "shouldError": [Function],
+                                              "shouldValidate": [Function],
+                                              "shouldWarn": [Function],
+                                              "startAsyncValidation": [Function],
+                                              "startSubmit": [Function],
+                                              "stopAsyncValidation": [Function],
+                                              "stopSubmit": [Function],
+                                              "submit": [Function],
+                                              "submitFailed": false,
+                                              "submitSucceeded": false,
+                                              "submitting": false,
+                                              "syncErrors": Object {},
+                                              "syncWarnings": Object {},
+                                              "touch": [Function],
+                                              "touchOnBlur": true,
+                                              "touchOnChange": false,
+                                              "triggerSubmit": undefined,
+                                              "unregister": [Function],
+                                              "unregisterField": [Function],
+                                              "untouch": [Function],
+                                              "updateSyncErrors": [Function],
+                                              "updateSyncWarnings": [Function],
+                                              "updateUnregisteredFields": false,
+                                              "valid": true,
+                                              "validExceptSubmit": true,
+                                              "values": Object {},
+                                              "visit": Object {
+                                                "uuid": undefined,
+                                              },
+                                              "warning": undefined,
+                                            }
+                                          }
+                                          asyncValidating={false}
+                                          component={[Function]}
+                                          dirty={false}
+                                          dispatch={[Function]}
+                                          name="obs|path=systolic|concept=3ce934fa-26fe-102b-80cb-0017a47871b2"
+                                          normalize={[Function]}
+                                          pristine={true}
                                           type="text"
-                                          value=""
                                         >
-                                          <input
-                                            className="form-control"
-                                            onChange={[Function]}
+                                          <FieldInput
+                                            input={
+                                              Object {
+                                                "name": "obs|path=systolic|concept=3ce934fa-26fe-102b-80cb-0017a47871b2",
+                                                "onBlur": [Function],
+                                                "onChange": [Function],
+                                                "onDragStart": [Function],
+                                                "onDrop": [Function],
+                                                "onFocus": [Function],
+                                                "value": "",
+                                              }
+                                            }
+                                            meta={
+                                              Object {
+                                                "active": false,
+                                                "asyncValidating": false,
+                                                "autofilled": false,
+                                                "dirty": false,
+                                                "dispatch": [Function],
+                                                "error": undefined,
+                                                "form": "openmrs-form",
+                                                "initial": undefined,
+                                                "invalid": false,
+                                                "pristine": true,
+                                                "submitFailed": false,
+                                                "submitting": false,
+                                                "touched": false,
+                                                "valid": true,
+                                                "visited": false,
+                                                "warning": undefined,
+                                              }
+                                            }
                                             type="text"
-                                            value=""
-                                          />
-                                        </FormControl>
-                                      </FieldInput>
-                                    </ConnectedField>
-                                  </Connect(ConnectedField)>
-                                </Field>
-                              </Obs>
-                            </div>
-                          </Row>
-                          <Row
-                            bsClass="row"
-                            componentClass="div"
-                          >
-                            <div
-                              className="row"
-                            >
-                              <Submit>
-                                <Button
-                                  active={false}
-                                  block={false}
-                                  bsClass="btn"
-                                  bsStyle="success"
-                                  disabled={false}
-                                  type="submit"
-                                >
-                                  <button
-                                    className="btn btn-success"
-                                    disabled={false}
-                                    type="submit"
+                                          >
+                                            <FormControl
+                                              bsClass="form-control"
+                                              componentClass="input"
+                                              onChange={[Function]}
+                                              type="text"
+                                              value=""
+                                            >
+                                              <input
+                                                className="form-control"
+                                                onChange={[Function]}
+                                                type="text"
+                                                value=""
+                                              />
+                                            </FormControl>
+                                          </FieldInput>
+                                        </ConnectedField>
+                                      </Connect(ConnectedField)>
+                                    </Field>
+                                  </Obs>
+                                  /
+                                  <Obs
+                                    concept="3ce93694-26fe-102b-80cb-0017a47871b2"
+                                    path="diastolic"
                                   >
-                                    Submit
-                                  </button>
-                                </Button>
-                              </Submit>
+                                    <Field
+                                      component={[Function]}
+                                      name="obs|path=diastolic|concept=3ce93694-26fe-102b-80cb-0017a47871b2"
+                                      type="text"
+                                    >
+                                      <Connect(ConnectedField)
+                                        _reduxForm={
+                                          Object {
+                                            "anyTouched": false,
+                                            "array": Object {
+                                              "insert": [Function],
+                                              "move": [Function],
+                                              "pop": [Function],
+                                              "push": [Function],
+                                              "remove": [Function],
+                                              "removeAll": [Function],
+                                              "shift": [Function],
+                                              "splice": [Function],
+                                              "swap": [Function],
+                                              "unshift": [Function],
+                                            },
+                                            "arrayInsert": [Function],
+                                            "arrayMove": [Function],
+                                            "arrayPop": [Function],
+                                            "arrayPush": [Function],
+                                            "arrayRemove": [Function],
+                                            "arrayRemoveAll": [Function],
+                                            "arrayShift": [Function],
+                                            "arraySplice": [Function],
+                                            "arraySwap": [Function],
+                                            "arrayUnshift": [Function],
+                                            "asyncErrors": undefined,
+                                            "asyncValidate": [Function],
+                                            "asyncValidating": false,
+                                            "autofill": [Function],
+                                            "blur": [Function],
+                                            "change": [Function],
+                                            "children": <Grid
+                                              bsClass="container"
+                                              componentClass="div"
+                                              fluid={false}
+                                          >
+                                              <Row
+                                                  bsClass="row"
+                                                  componentClass="div"
+                                              >
+                                                  <Obs
+                                                      concept="3ce934fa-26fe-102b-80cb-0017a47871b2"
+                                                      path="systolic"
+                                                  />
+                                                  /
+                                                  <Obs
+                                                      concept="3ce93694-26fe-102b-80cb-0017a47871b2"
+                                                      path="diastolic"
+                                                  />
+                                              </Row>
+                                              <Row
+                                                  bsClass="row"
+                                                  componentClass="div"
+                                              >
+                                                  <Submit />
+                                              </Row>
+                                          </Grid>,
+                                            "clearAsyncError": [Function],
+                                            "clearFields": [Function],
+                                            "clearSubmit": [Function],
+                                            "clearSubmitErrors": [Function],
+                                            "destroy": [Function],
+                                            "destroyOnUnmount": true,
+                                            "dirty": false,
+                                            "dispatch": [Function],
+                                            "enableReinitialize": false,
+                                            "encounterType": Object {
+                                              "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                                            },
+                                            "error": undefined,
+                                            "focus": [Function],
+                                            "forceUnregisterOnUnmount": false,
+                                            "form": "openmrs-form",
+                                            "formSubmittedActionCreator": [Function],
+                                            "getFormState": [Function],
+                                            "getValues": [Function],
+                                            "initialValues": undefined,
+                                            "initialize": [Function],
+                                            "initialized": false,
+                                            "invalid": false,
+                                            "keepDirtyOnReinitialize": false,
+                                            "patient": Object {
+                                              "patient": Object {
+                                                "uuid": "abc",
+                                              },
+                                              "visit": Object {
+                                                "uuid": "def",
+                                              },
+                                            },
+                                            "persistentSubmitErrors": false,
+                                            "pristine": true,
+                                            "pure": true,
+                                            "register": [Function],
+                                            "registerField": [Function],
+                                            "registerInnerOnSubmit": [Function],
+                                            "registeredFields": undefined,
+                                            "reset": [Function],
+                                            "resetSection": [Function],
+                                            "sectionPrefix": undefined,
+                                            "setSubmitFailed": [Function],
+                                            "setSubmitSucceeded": [Function],
+                                            "shouldAsyncValidate": [Function],
+                                            "shouldError": [Function],
+                                            "shouldValidate": [Function],
+                                            "shouldWarn": [Function],
+                                            "startAsyncValidation": [Function],
+                                            "startSubmit": [Function],
+                                            "stopAsyncValidation": [Function],
+                                            "stopSubmit": [Function],
+                                            "submit": [Function],
+                                            "submitFailed": false,
+                                            "submitSucceeded": false,
+                                            "submitting": false,
+                                            "syncErrors": Object {},
+                                            "syncWarnings": Object {},
+                                            "touch": [Function],
+                                            "touchOnBlur": true,
+                                            "touchOnChange": false,
+                                            "triggerSubmit": undefined,
+                                            "unregister": [Function],
+                                            "unregisterField": [Function],
+                                            "untouch": [Function],
+                                            "updateSyncErrors": [Function],
+                                            "updateSyncWarnings": [Function],
+                                            "updateUnregisteredFields": false,
+                                            "valid": true,
+                                            "validExceptSubmit": true,
+                                            "values": Object {},
+                                            "visit": Object {
+                                              "uuid": undefined,
+                                            },
+                                            "warning": undefined,
+                                          }
+                                        }
+                                        component={[Function]}
+                                        name="obs|path=diastolic|concept=3ce93694-26fe-102b-80cb-0017a47871b2"
+                                        normalize={[Function]}
+                                        type="text"
+                                      >
+                                        <ConnectedField
+                                          _reduxForm={
+                                            Object {
+                                              "anyTouched": false,
+                                              "array": Object {
+                                                "insert": [Function],
+                                                "move": [Function],
+                                                "pop": [Function],
+                                                "push": [Function],
+                                                "remove": [Function],
+                                                "removeAll": [Function],
+                                                "shift": [Function],
+                                                "splice": [Function],
+                                                "swap": [Function],
+                                                "unshift": [Function],
+                                              },
+                                              "arrayInsert": [Function],
+                                              "arrayMove": [Function],
+                                              "arrayPop": [Function],
+                                              "arrayPush": [Function],
+                                              "arrayRemove": [Function],
+                                              "arrayRemoveAll": [Function],
+                                              "arrayShift": [Function],
+                                              "arraySplice": [Function],
+                                              "arraySwap": [Function],
+                                              "arrayUnshift": [Function],
+                                              "asyncErrors": undefined,
+                                              "asyncValidate": [Function],
+                                              "asyncValidating": false,
+                                              "autofill": [Function],
+                                              "blur": [Function],
+                                              "change": [Function],
+                                              "children": <Grid
+                                                bsClass="container"
+                                                componentClass="div"
+                                                fluid={false}
+                                            >
+                                                <Row
+                                                    bsClass="row"
+                                                    componentClass="div"
+                                                >
+                                                    <Obs
+                                                        concept="3ce934fa-26fe-102b-80cb-0017a47871b2"
+                                                        path="systolic"
+                                                    />
+                                                    /
+                                                    <Obs
+                                                        concept="3ce93694-26fe-102b-80cb-0017a47871b2"
+                                                        path="diastolic"
+                                                    />
+                                                </Row>
+                                                <Row
+                                                    bsClass="row"
+                                                    componentClass="div"
+                                                >
+                                                    <Submit />
+                                                </Row>
+                                            </Grid>,
+                                              "clearAsyncError": [Function],
+                                              "clearFields": [Function],
+                                              "clearSubmit": [Function],
+                                              "clearSubmitErrors": [Function],
+                                              "destroy": [Function],
+                                              "destroyOnUnmount": true,
+                                              "dirty": false,
+                                              "dispatch": [Function],
+                                              "enableReinitialize": false,
+                                              "encounterType": Object {
+                                                "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                                              },
+                                              "error": undefined,
+                                              "focus": [Function],
+                                              "forceUnregisterOnUnmount": false,
+                                              "form": "openmrs-form",
+                                              "formSubmittedActionCreator": [Function],
+                                              "getFormState": [Function],
+                                              "getValues": [Function],
+                                              "initialValues": undefined,
+                                              "initialize": [Function],
+                                              "initialized": false,
+                                              "invalid": false,
+                                              "keepDirtyOnReinitialize": false,
+                                              "patient": Object {
+                                                "patient": Object {
+                                                  "uuid": "abc",
+                                                },
+                                                "visit": Object {
+                                                  "uuid": "def",
+                                                },
+                                              },
+                                              "persistentSubmitErrors": false,
+                                              "pristine": true,
+                                              "pure": true,
+                                              "register": [Function],
+                                              "registerField": [Function],
+                                              "registerInnerOnSubmit": [Function],
+                                              "registeredFields": undefined,
+                                              "reset": [Function],
+                                              "resetSection": [Function],
+                                              "sectionPrefix": undefined,
+                                              "setSubmitFailed": [Function],
+                                              "setSubmitSucceeded": [Function],
+                                              "shouldAsyncValidate": [Function],
+                                              "shouldError": [Function],
+                                              "shouldValidate": [Function],
+                                              "shouldWarn": [Function],
+                                              "startAsyncValidation": [Function],
+                                              "startSubmit": [Function],
+                                              "stopAsyncValidation": [Function],
+                                              "stopSubmit": [Function],
+                                              "submit": [Function],
+                                              "submitFailed": false,
+                                              "submitSucceeded": false,
+                                              "submitting": false,
+                                              "syncErrors": Object {},
+                                              "syncWarnings": Object {},
+                                              "touch": [Function],
+                                              "touchOnBlur": true,
+                                              "touchOnChange": false,
+                                              "triggerSubmit": undefined,
+                                              "unregister": [Function],
+                                              "unregisterField": [Function],
+                                              "untouch": [Function],
+                                              "updateSyncErrors": [Function],
+                                              "updateSyncWarnings": [Function],
+                                              "updateUnregisteredFields": false,
+                                              "valid": true,
+                                              "validExceptSubmit": true,
+                                              "values": Object {},
+                                              "visit": Object {
+                                                "uuid": undefined,
+                                              },
+                                              "warning": undefined,
+                                            }
+                                          }
+                                          asyncValidating={false}
+                                          component={[Function]}
+                                          dirty={false}
+                                          dispatch={[Function]}
+                                          name="obs|path=diastolic|concept=3ce93694-26fe-102b-80cb-0017a47871b2"
+                                          normalize={[Function]}
+                                          pristine={true}
+                                          type="text"
+                                        >
+                                          <FieldInput
+                                            input={
+                                              Object {
+                                                "name": "obs|path=diastolic|concept=3ce93694-26fe-102b-80cb-0017a47871b2",
+                                                "onBlur": [Function],
+                                                "onChange": [Function],
+                                                "onDragStart": [Function],
+                                                "onDrop": [Function],
+                                                "onFocus": [Function],
+                                                "value": "",
+                                              }
+                                            }
+                                            meta={
+                                              Object {
+                                                "active": false,
+                                                "asyncValidating": false,
+                                                "autofilled": false,
+                                                "dirty": false,
+                                                "dispatch": [Function],
+                                                "error": undefined,
+                                                "form": "openmrs-form",
+                                                "initial": undefined,
+                                                "invalid": false,
+                                                "pristine": true,
+                                                "submitFailed": false,
+                                                "submitting": false,
+                                                "touched": false,
+                                                "valid": true,
+                                                "visited": false,
+                                                "warning": undefined,
+                                              }
+                                            }
+                                            type="text"
+                                          >
+                                            <FormControl
+                                              bsClass="form-control"
+                                              componentClass="input"
+                                              onChange={[Function]}
+                                              type="text"
+                                              value=""
+                                            >
+                                              <input
+                                                className="form-control"
+                                                onChange={[Function]}
+                                                type="text"
+                                                value=""
+                                              />
+                                            </FormControl>
+                                          </FieldInput>
+                                        </ConnectedField>
+                                      </Connect(ConnectedField)>
+                                    </Field>
+                                  </Obs>
+                                </div>
+                              </Row>
+                              <Row
+                                bsClass="row"
+                                componentClass="div"
+                              >
+                                <div
+                                  className="row"
+                                >
+                                  <Submit>
+                                    <Button
+                                      active={false}
+                                      block={false}
+                                      bsClass="btn"
+                                      bsStyle="success"
+                                      disabled={false}
+                                      type="submit"
+                                    >
+                                      <button
+                                        className="btn btn-success"
+                                        disabled={false}
+                                        type="submit"
+                                      >
+                                        Submit
+                                      </button>
+                                    </Button>
+                                  </Submit>
+                                </div>
+                              </Row>
                             </div>
-                          </Row>
-                        </div>
-                      </Grid>
-                    </form>
-                  </Form>
-                </OpenMRSForm>
-              </Form(OpenMRSForm)>
-            </Connect(Form(OpenMRSForm))>
-          </ReduxForm>
-        </Connect(ReduxForm)>
-      </div>
-    </BloodPressureForm>
-  </Connect(BloodPressureForm)>
+                          </Grid>
+                        </form>
+                      </Form>
+                    </OpenMRSForm>
+                  </Form(OpenMRSForm)>
+                </Connect(Form(OpenMRSForm))>
+              </ReduxForm>
+            </Connect(ReduxForm)>
+          </div>
+        </div>
+      </BloodPressureForm>
+    </Connect(BloodPressureForm)>
+  </MockRouter>
 </Provider>
 `;

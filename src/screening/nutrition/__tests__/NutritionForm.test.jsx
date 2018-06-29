@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
+import MockRouter from 'react-mock-router';
 import { OpenMRSForm } from '@openmrs/react-components';
 import NutritionForm from '../NutritionForm';
 
@@ -15,7 +16,9 @@ const nutritionForm = () => {
   if (!mountedComponent) {
     mountedComponent = mount(
       <Provider store={store}>
-        <NutritionForm {...props} />
+        <MockRouter>
+          <NutritionForm {...props} />
+        </MockRouter>
       </Provider>);
   }
   return mountedComponent;

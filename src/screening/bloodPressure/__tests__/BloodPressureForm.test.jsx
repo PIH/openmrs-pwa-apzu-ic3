@@ -2,9 +2,11 @@ import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
+import MockRouter from 'react-mock-router';
 import { Provider } from 'react-redux';
 import { OpenMRSForm } from '@openmrs/react-components';
 import BloodPressureForm from '../BloodPressureForm';
+
 
 let props, store;
 let mountedComponent;
@@ -15,7 +17,9 @@ const bloodPressureForm = () => {
   if (!mountedComponent) {
     mountedComponent = mount(
       <Provider store={store}>
-        <BloodPressureForm {...props} />
+        <MockRouter>
+          <BloodPressureForm {...props} />
+        </MockRouter>
       </Provider>);
   }
   return mountedComponent;
