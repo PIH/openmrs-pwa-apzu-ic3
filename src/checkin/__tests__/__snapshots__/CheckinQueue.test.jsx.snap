@@ -45,11 +45,11 @@ exports[`Component: CheckInQueue renders properly 1`] = `
               },
               Object {
                 "headerName": "First Name",
-                "valueGetter": "data.firstName",
+                "valueGetter": "data.name.givenName",
               },
               Object {
                 "headerName": "Last Name",
-                "valueGetter": "data.lastName",
+                "valueGetter": "data.name.familyName",
               },
               Object {
                 "field": "gender",
@@ -81,11 +81,11 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                 },
                 Object {
                   "headerName": "First Name",
-                  "valueGetter": "data.firstName",
+                  "valueGetter": "data.name.givenName",
                 },
                 Object {
                   "headerName": "Last Name",
-                  "valueGetter": "data.lastName",
+                  "valueGetter": "data.name.familyName",
                 },
                 Object {
                   "field": "gender",
@@ -127,11 +127,11 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                     },
                     Object {
                       "headerName": "First Name",
-                      "valueGetter": "data.firstName",
+                      "valueGetter": "data.name.givenName",
                     },
                     Object {
                       "headerName": "Last Name",
-                      "valueGetter": "data.lastName",
+                      "valueGetter": "data.name.familyName",
                     },
                     Object {
                       "field": "gender",
