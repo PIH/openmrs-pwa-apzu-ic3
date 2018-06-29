@@ -16,7 +16,7 @@ exports[`Component: CheckInQueue renders properly 1`] = `
   <Connect(CheckInQueue)>
     <CheckInQueue
       dispatch={[Function]}
-      representation="custom:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,names,addresses,attributes))"
+      representation="full"
     >
       <div>
         <h3>
@@ -35,21 +35,17 @@ exports[`Component: CheckInQueue renders properly 1`] = `
           columnDefs={
             Array [
               Object {
-                "headerName": "patientUuid",
+                "field": "uuid",
+                "headerName": "uuid",
                 "hide": true,
-                "valueGetter": "data.uuid",
               },
               Object {
-                "headerName": "ID",
-                "valueGetter": "data.identifier",
+                "field": "name.givenName",
+                "headerName": "Given Name",
               },
               Object {
-                "headerName": "First Name",
-                "valueGetter": "data.name.givenName",
-              },
-              Object {
-                "headerName": "Last Name",
-                "valueGetter": "data.name.familyName",
+                "field": "name.familyName",
+                "headerName": "Family Name",
               },
               Object {
                 "field": "gender",
@@ -71,21 +67,17 @@ exports[`Component: CheckInQueue renders properly 1`] = `
             columnDefs={
               Array [
                 Object {
-                  "headerName": "patientUuid",
+                  "field": "uuid",
+                  "headerName": "uuid",
                   "hide": true,
-                  "valueGetter": "data.uuid",
                 },
                 Object {
-                  "headerName": "ID",
-                  "valueGetter": "data.identifier",
+                  "field": "name.givenName",
+                  "headerName": "Given Name",
                 },
                 Object {
-                  "headerName": "First Name",
-                  "valueGetter": "data.name.givenName",
-                },
-                Object {
-                  "headerName": "Last Name",
-                  "valueGetter": "data.name.familyName",
+                  "field": "name.familyName",
+                  "headerName": "Family Name",
                 },
                 Object {
                   "field": "gender",
@@ -117,21 +109,17 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                 columnDefs={
                   Array [
                     Object {
-                      "headerName": "patientUuid",
+                      "field": "uuid",
+                      "headerName": "uuid",
                       "hide": true,
-                      "valueGetter": "data.uuid",
                     },
                     Object {
-                      "headerName": "ID",
-                      "valueGetter": "data.identifier",
+                      "field": "name.givenName",
+                      "headerName": "Given Name",
                     },
                     Object {
-                      "headerName": "First Name",
-                      "valueGetter": "data.name.givenName",
-                    },
-                    Object {
-                      "headerName": "Last Name",
-                      "valueGetter": "data.name.familyName",
+                      "field": "name.familyName",
+                      "headerName": "Family Name",
                     },
                     Object {
                       "field": "gender",

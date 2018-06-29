@@ -17,7 +17,7 @@ let CheckinForm = props => {
       >
         <Grid>
 
-          <Row>
+        {/*  <Row>
             <FormGroup controlId="formIdentifier">
               <Col
                 componentClass={ControlLabel}
@@ -34,7 +34,7 @@ let CheckinForm = props => {
                 />
               </Col>
             </FormGroup>
-          </Row>
+          </Row>*/}
 
           <Row>
             <FormGroup controlId="formFirstName">
@@ -47,7 +47,7 @@ let CheckinForm = props => {
               <Col sm={4}>
                 <Field
                   component={FieldInput}
-                  name="firstName"
+                  name="name.givenName"
                   placeholder="First Name"
                   type='text'
                 />
@@ -66,7 +66,7 @@ let CheckinForm = props => {
               <Col sm={4}>
                 <Field
                   component={FieldInput}
-                  name="lastName"
+                  name="name.familyName"
                   placeholder="Last Name"
                   type='text'
                 />

@@ -251,346 +251,6 @@ exports[`Component: CheckInForm renders properly 1`] = `
                         >
                           <FormGroup
                             bsClass="form-group"
-                            controlId="formIdentifier"
-                          >
-                            <div
-                              className="form-group"
-                            >
-                              <Col
-                                bsClass="col"
-                                componentClass={[Function]}
-                                sm={2}
-                              >
-                                <ControlLabel
-                                  bsClass="control-label"
-                                  className="col-sm-2"
-                                  srOnly={false}
-                                >
-                                  <label
-                                    className="col-sm-2 control-label"
-                                    htmlFor="formIdentifier"
-                                  >
-                                    Identifier
-                                  </label>
-                                </ControlLabel>
-                              </Col>
-                              <Col
-                                bsClass="col"
-                                componentClass="div"
-                                sm={4}
-                              >
-                                <div
-                                  className="col-sm-4"
-                                >
-                                  <Field
-                                    component={[Function]}
-                                    name="identifier"
-                                    placeholder="Identifier"
-                                    type="text"
-                                  >
-                                    <Connect(ConnectedField)
-                                      _reduxForm={
-                                        Object {
-                                          "anyTouched": false,
-                                          "array": Object {
-                                            "insert": [Function],
-                                            "move": [Function],
-                                            "pop": [Function],
-                                            "push": [Function],
-                                            "remove": [Function],
-                                            "removeAll": [Function],
-                                            "shift": [Function],
-                                            "splice": [Function],
-                                            "swap": [Function],
-                                            "unshift": [Function],
-                                          },
-                                          "arrayInsert": [Function],
-                                          "arrayMove": [Function],
-                                          "arrayPop": [Function],
-                                          "arrayPush": [Function],
-                                          "arrayRemove": [Function],
-                                          "arrayRemoveAll": [Function],
-                                          "arrayShift": [Function],
-                                          "arraySplice": [Function],
-                                          "arraySwap": [Function],
-                                          "arrayUnshift": [Function],
-                                          "asyncErrors": undefined,
-                                          "asyncValidate": [Function],
-                                          "asyncValidating": false,
-                                          "autofill": [Function],
-                                          "blur": [Function],
-                                          "change": [Function],
-                                          "clearAsyncError": [Function],
-                                          "clearFields": [Function],
-                                          "clearSubmit": [Function],
-                                          "clearSubmitErrors": [Function],
-                                          "destroy": [Function],
-                                          "destroyOnUnmount": true,
-                                          "dirty": false,
-                                          "dispatch": [Function],
-                                          "enableReinitialize": false,
-                                          "error": undefined,
-                                          "focus": [Function],
-                                          "forceUnregisterOnUnmount": false,
-                                          "form": "checkInForm",
-                                          "getFormState": [Function],
-                                          "getValues": [Function],
-                                          "initialValues": Object {
-                                            "patient": Object {
-                                              "uuid": "abc",
-                                            },
-                                            "visit": Object {
-                                              "uuid": "def",
-                                            },
-                                          },
-                                          "initialize": [Function],
-                                          "initialized": false,
-                                          "invalid": false,
-                                          "keepDirtyOnReinitialize": false,
-                                          "persistentSubmitErrors": false,
-                                          "pristine": true,
-                                          "pure": true,
-                                          "register": [Function],
-                                          "registerField": [Function],
-                                          "registerInnerOnSubmit": [Function],
-                                          "registeredFields": undefined,
-                                          "reset": [Function],
-                                          "resetSection": [Function],
-                                          "sectionPrefix": undefined,
-                                          "setSubmitFailed": [Function],
-                                          "setSubmitSucceeded": [Function],
-                                          "shouldAsyncValidate": [Function],
-                                          "shouldError": [Function],
-                                          "shouldValidate": [Function],
-                                          "shouldWarn": [Function],
-                                          "startAsyncValidation": [Function],
-                                          "startSubmit": [Function],
-                                          "stopAsyncValidation": [Function],
-                                          "stopSubmit": [Function],
-                                          "submit": [Function],
-                                          "submitFailed": false,
-                                          "submitSucceeded": false,
-                                          "submitting": false,
-                                          "syncErrors": Object {},
-                                          "syncWarnings": Object {},
-                                          "touch": [Function],
-                                          "touchOnBlur": true,
-                                          "touchOnChange": false,
-                                          "triggerSubmit": undefined,
-                                          "unregister": [Function],
-                                          "unregisterField": [Function],
-                                          "untouch": [Function],
-                                          "updateSyncErrors": [Function],
-                                          "updateSyncWarnings": [Function],
-                                          "updateUnregisteredFields": false,
-                                          "valid": true,
-                                          "validExceptSubmit": true,
-                                          "values": Object {
-                                            "patient": Object {
-                                              "uuid": "abc",
-                                            },
-                                            "visit": Object {
-                                              "uuid": "def",
-                                            },
-                                          },
-                                          "warning": undefined,
-                                        }
-                                      }
-                                      component={[Function]}
-                                      name="identifier"
-                                      normalize={[Function]}
-                                      placeholder="Identifier"
-                                      type="text"
-                                    >
-                                      <ConnectedField
-                                        _reduxForm={
-                                          Object {
-                                            "anyTouched": false,
-                                            "array": Object {
-                                              "insert": [Function],
-                                              "move": [Function],
-                                              "pop": [Function],
-                                              "push": [Function],
-                                              "remove": [Function],
-                                              "removeAll": [Function],
-                                              "shift": [Function],
-                                              "splice": [Function],
-                                              "swap": [Function],
-                                              "unshift": [Function],
-                                            },
-                                            "arrayInsert": [Function],
-                                            "arrayMove": [Function],
-                                            "arrayPop": [Function],
-                                            "arrayPush": [Function],
-                                            "arrayRemove": [Function],
-                                            "arrayRemoveAll": [Function],
-                                            "arrayShift": [Function],
-                                            "arraySplice": [Function],
-                                            "arraySwap": [Function],
-                                            "arrayUnshift": [Function],
-                                            "asyncErrors": undefined,
-                                            "asyncValidate": [Function],
-                                            "asyncValidating": false,
-                                            "autofill": [Function],
-                                            "blur": [Function],
-                                            "change": [Function],
-                                            "clearAsyncError": [Function],
-                                            "clearFields": [Function],
-                                            "clearSubmit": [Function],
-                                            "clearSubmitErrors": [Function],
-                                            "destroy": [Function],
-                                            "destroyOnUnmount": true,
-                                            "dirty": false,
-                                            "dispatch": [Function],
-                                            "enableReinitialize": false,
-                                            "error": undefined,
-                                            "focus": [Function],
-                                            "forceUnregisterOnUnmount": false,
-                                            "form": "checkInForm",
-                                            "getFormState": [Function],
-                                            "getValues": [Function],
-                                            "initialValues": Object {
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "visit": Object {
-                                                "uuid": "def",
-                                              },
-                                            },
-                                            "initialize": [Function],
-                                            "initialized": false,
-                                            "invalid": false,
-                                            "keepDirtyOnReinitialize": false,
-                                            "persistentSubmitErrors": false,
-                                            "pristine": true,
-                                            "pure": true,
-                                            "register": [Function],
-                                            "registerField": [Function],
-                                            "registerInnerOnSubmit": [Function],
-                                            "registeredFields": undefined,
-                                            "reset": [Function],
-                                            "resetSection": [Function],
-                                            "sectionPrefix": undefined,
-                                            "setSubmitFailed": [Function],
-                                            "setSubmitSucceeded": [Function],
-                                            "shouldAsyncValidate": [Function],
-                                            "shouldError": [Function],
-                                            "shouldValidate": [Function],
-                                            "shouldWarn": [Function],
-                                            "startAsyncValidation": [Function],
-                                            "startSubmit": [Function],
-                                            "stopAsyncValidation": [Function],
-                                            "stopSubmit": [Function],
-                                            "submit": [Function],
-                                            "submitFailed": false,
-                                            "submitSucceeded": false,
-                                            "submitting": false,
-                                            "syncErrors": Object {},
-                                            "syncWarnings": Object {},
-                                            "touch": [Function],
-                                            "touchOnBlur": true,
-                                            "touchOnChange": false,
-                                            "triggerSubmit": undefined,
-                                            "unregister": [Function],
-                                            "unregisterField": [Function],
-                                            "untouch": [Function],
-                                            "updateSyncErrors": [Function],
-                                            "updateSyncWarnings": [Function],
-                                            "updateUnregisteredFields": false,
-                                            "valid": true,
-                                            "validExceptSubmit": true,
-                                            "values": Object {
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "visit": Object {
-                                                "uuid": "def",
-                                              },
-                                            },
-                                            "warning": undefined,
-                                          }
-                                        }
-                                        asyncValidating={false}
-                                        component={[Function]}
-                                        dirty={false}
-                                        dispatch={[Function]}
-                                        name="identifier"
-                                        normalize={[Function]}
-                                        placeholder="Identifier"
-                                        pristine={true}
-                                        type="text"
-                                      >
-                                        <FieldInput
-                                          input={
-                                            Object {
-                                              "name": "identifier",
-                                              "onBlur": [Function],
-                                              "onChange": [Function],
-                                              "onDragStart": [Function],
-                                              "onDrop": [Function],
-                                              "onFocus": [Function],
-                                              "value": "",
-                                            }
-                                          }
-                                          meta={
-                                            Object {
-                                              "active": false,
-                                              "asyncValidating": false,
-                                              "autofilled": false,
-                                              "dirty": false,
-                                              "dispatch": [Function],
-                                              "error": undefined,
-                                              "form": "checkInForm",
-                                              "initial": undefined,
-                                              "invalid": false,
-                                              "pristine": true,
-                                              "submitFailed": false,
-                                              "submitting": false,
-                                              "touched": false,
-                                              "valid": true,
-                                              "visited": false,
-                                              "warning": undefined,
-                                            }
-                                          }
-                                          placeholder="Identifier"
-                                          type="text"
-                                        >
-                                          <FormControl
-                                            bsClass="form-control"
-                                            componentClass="input"
-                                            onChange={[Function]}
-                                            placeholder="Identifier"
-                                            type="text"
-                                            value=""
-                                          >
-                                            <input
-                                              className="form-control"
-                                              id="formIdentifier"
-                                              onChange={[Function]}
-                                              placeholder="Identifier"
-                                              type="text"
-                                              value=""
-                                            />
-                                          </FormControl>
-                                        </FieldInput>
-                                      </ConnectedField>
-                                    </Connect(ConnectedField)>
-                                  </Field>
-                                </div>
-                              </Col>
-                            </div>
-                          </FormGroup>
-                        </div>
-                      </Row>
-                      <Row
-                        bsClass="row"
-                        componentClass="div"
-                      >
-                        <div
-                          className="row"
-                        >
-                          <FormGroup
-                            bsClass="form-group"
                             controlId="formFirstName"
                           >
                             <div
@@ -624,7 +284,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                 >
                                   <Field
                                     component={[Function]}
-                                    name="firstName"
+                                    name="name.givenName"
                                     placeholder="First Name"
                                     type="text"
                                   >
@@ -737,7 +397,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         }
                                       }
                                       component={[Function]}
-                                      name="firstName"
+                                      name="name.givenName"
                                       normalize={[Function]}
                                       placeholder="First Name"
                                       type="text"
@@ -854,7 +514,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         component={[Function]}
                                         dirty={false}
                                         dispatch={[Function]}
-                                        name="firstName"
+                                        name="name.givenName"
                                         normalize={[Function]}
                                         placeholder="First Name"
                                         pristine={true}
@@ -863,7 +523,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         <FieldInput
                                           input={
                                             Object {
-                                              "name": "firstName",
+                                              "name": "name.givenName",
                                               "onBlur": [Function],
                                               "onChange": [Function],
                                               "onDragStart": [Function],
@@ -964,7 +624,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                 >
                                   <Field
                                     component={[Function]}
-                                    name="lastName"
+                                    name="name.familyName"
                                     placeholder="Last Name"
                                     type="text"
                                   >
@@ -1077,7 +737,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         }
                                       }
                                       component={[Function]}
-                                      name="lastName"
+                                      name="name.familyName"
                                       normalize={[Function]}
                                       placeholder="Last Name"
                                       type="text"
@@ -1194,7 +854,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         component={[Function]}
                                         dirty={false}
                                         dispatch={[Function]}
-                                        name="lastName"
+                                        name="name.familyName"
                                         normalize={[Function]}
                                         placeholder="Last Name"
                                         pristine={true}
@@ -1203,7 +863,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         <FieldInput
                                           input={
                                             Object {
-                                              "name": "lastName",
+                                              "name": "name.familyName",
                                               "onBlur": [Function],
                                               "onChange": [Function],
                                               "onDragStart": [Function],

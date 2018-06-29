@@ -22,6 +22,7 @@ class Queue extends React.Component {
   componentDidMount() {
     this.props.dispatch(patientActions.clearPatientSelected());
     // TODO make this potentially come from props so we can override it?
+    // TODO can we get away from having to get a "full" rep of a patient?
     this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:full,encounters:default)"));
     this.interval = setInterval(() =>
       this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:full,encounters:default)")), 10000);
