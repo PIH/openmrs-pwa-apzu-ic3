@@ -3,11 +3,12 @@ import { Patient, VISIT_TYPES } from "@openmrs/react-components";
 const createQueueReducer = (encounterTypeUuid, additionalFilters = []) =>  {
 
   const filterByEncounterType = (visit) => {
-    if (encounterTypeUuid && (!visit.encounters || visit.encounters.size === 0)) {
+
+    if (!encounterTypeUuid || !visit.encounters || visit.encounters.size === 0) {
       return true;
     }
     else {
-      return !(visit.encounters.some(e => e.encounterType.uuid === encounterTypeUuid));
+      return !(visit.encounters.some(e => e.encounterType.uuid === encounterTypeUuid && !e.voided));
     }
   };
 
