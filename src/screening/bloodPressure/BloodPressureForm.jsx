@@ -11,7 +11,6 @@ class BloodPressureForm extends Form {
   queueLink() {
     return "/screening/bloodPressure/queue";
   }
-
   // TODO obviously we want to use mapping on forms, not uuid... maybe transpile??
 
   formContent() {
@@ -20,7 +19,7 @@ class BloodPressureForm extends Form {
         <h3><Label>Blood Pressure</Label></h3>
         <OpenMRSForm
           encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
-          formSubmittedActionCreator={this.formSubmittedActionCreator.bind(this)}
+          formSubmittedActionCreator={this.formSubmittedActionCreators}
           patient={this.props.patient}
           visit={this.props.visit}
         >

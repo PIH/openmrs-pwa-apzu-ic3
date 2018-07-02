@@ -12,6 +12,7 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 import { reducer as reduxFormReducer } from 'redux-form';
+import {reducer as toastrReducer} from 'react-redux-toastr'
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/react-components';
 import bloodPressureQueueReducer from './screening/bloodPressure/bloodPressureQueueReducer';
@@ -39,6 +40,7 @@ const middlewares = [
 const rootReducer = combineReducers({
   openmrs: openmrsReducers,
   form: reduxFormReducer,
+  toastr: toastrReducer,
   selected: patientSelectedReducer,
   screening: combineReducers({
     bloodPressureQueue: bloodPressureQueueReducer,

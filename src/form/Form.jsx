@@ -2,8 +2,15 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { push } from 'connected-react-router';
+import { actions as toastrActions } from 'react-redux-toastr';
 
 class Form extends React.Component {
+
+  // https://github.com/diegoddox/react-redux-toastr
+  formSubmittedActionCreators = [
+    () => toastrActions.add({ title: "Form Saved", type: "success" }),
+    () => push(this.queueLink())
+  ];
 
   queueLink() {
     return "/";  // needs to be overwritten in implementing methods
@@ -11,10 +18,6 @@ class Form extends React.Component {
 
   formContent() {
     return null;  // needs to be overwritten in implementing methods
-  }
-
-  formSubmittedActionCreator() {
-    return push(this.queueLink());
   }
 
   render() {

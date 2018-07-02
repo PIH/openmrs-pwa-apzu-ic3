@@ -19,7 +19,7 @@ class NutritionForm extends Form {
         <h3><Label>Nutrition</Label></h3>
         <OpenMRSForm
           encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
-          formSubmittedActionCreator={this.formSubmittedActionCreator.bind(this)}
+          formSubmittedActionCreator={this.formSubmittedActionCreators}
           patient={this.props.patient}
           visit={this.props.visit}>
           <Grid>

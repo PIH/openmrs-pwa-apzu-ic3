@@ -86,7 +86,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
                 }
               }
-              formSubmittedActionCreator={[Function]}
+              formSubmittedActionCreator={
+                Array [
+                  [Function],
+                  [Function],
+                ]
+              }
               patient={
                 Object {
                   "patient": Object {
@@ -110,7 +115,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
                   }
                 }
-                formSubmittedActionCreator={[Function]}
+                formSubmittedActionCreator={
+                  Array [
+                    [Function],
+                    [Function],
+                  ]
+                }
                 patient={
                   Object {
                     "patient": Object {
@@ -138,7 +148,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   }
                   forceUnregisterOnUnmount={false}
                   form="openmrs-form"
-                  formSubmittedActionCreator={[Function]}
+                  formSubmittedActionCreator={
+                    Array [
+                      [Function],
+                      [Function],
+                    ]
+                  }
                   getFormState={[Function]}
                   keepDirtyOnReinitialize={false}
                   patient={
@@ -213,7 +228,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     focus={[Function]}
                     forceUnregisterOnUnmount={false}
                     form="openmrs-form"
-                    formSubmittedActionCreator={[Function]}
+                    formSubmittedActionCreator={
+                      Array [
+                        [Function],
+                        [Function],
+                      ]
+                    }
                     getFormState={[Function]}
                     initialize={[Function]}
                     initialized={false}
@@ -302,7 +322,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                         }
                       }
                       form="openmrs-form"
-                      formSubmittedActionCreator={[Function]}
+                      formSubmittedActionCreator={
+                        Array [
+                          [Function],
+                          [Function],
+                        ]
+                      }
                       handleSubmit={[Function]}
                       initialize={[Function]}
                       initialized={false}
@@ -443,7 +468,10 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                             "focus": [Function],
                                             "forceUnregisterOnUnmount": false,
                                             "form": "openmrs-form",
-                                            "formSubmittedActionCreator": [Function],
+                                            "formSubmittedActionCreator": Array [
+                                              [Function],
+                                              [Function],
+                                            ],
                                             "getFormState": [Function],
                                             "getValues": [Function],
                                             "initialValues": undefined,
@@ -583,7 +611,10 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                               "focus": [Function],
                                               "forceUnregisterOnUnmount": false,
                                               "form": "openmrs-form",
-                                              "formSubmittedActionCreator": [Function],
+                                              "formSubmittedActionCreator": Array [
+                                                [Function],
+                                                [Function],
+                                              ],
                                               "getFormState": [Function],
                                               "getValues": [Function],
                                               "initialValues": undefined,
@@ -790,7 +821,10 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                             "focus": [Function],
                                             "forceUnregisterOnUnmount": false,
                                             "form": "openmrs-form",
-                                            "formSubmittedActionCreator": [Function],
+                                            "formSubmittedActionCreator": Array [
+                                              [Function],
+                                              [Function],
+                                            ],
                                             "getFormState": [Function],
                                             "getValues": [Function],
                                             "initialValues": undefined,
@@ -930,7 +964,10 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                               "focus": [Function],
                                               "forceUnregisterOnUnmount": false,
                                               "form": "openmrs-form",
-                                              "formSubmittedActionCreator": [Function],
+                                              "formSubmittedActionCreator": Array [
+                                                [Function],
+                                                [Function],
+                                              ],
                                               "getFormState": [Function],
                                               "getValues": [Function],
                                               "initialValues": undefined,

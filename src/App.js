@@ -1,9 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
+import ReduxToastr from 'react-redux-toastr';
+import { AuthenticatedRoute, LoginPage } from '@openmrs/react-components';
 import './App.css';
 import createStore, { history } from './store';
-import { AuthenticatedRoute, LoginPage } from '@openmrs/react-components';
 import HomePage from './home/HomePage';
 import InfoPatient from './patient/PatientInfo';
 import SearchPatient from './search/SearchPatient';
@@ -23,6 +24,7 @@ const App = props => {
   const AuthenticatedLayout = props => {
     return (
       <div id="outer-container">
+        <ReduxToastr/>
         <Header />
         <main id="page-wrap">
           <AuthenticatedRoute {...props} />
