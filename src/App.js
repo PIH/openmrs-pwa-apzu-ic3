@@ -23,7 +23,7 @@ const App = props => {
 
   const AuthenticatedLayout = props => {
     return (
-      <div id="outer-container">
+      <div id="outer-container" className="ag-theme-material">
         <ReduxToastr/>
         <Header />
         <main id="page-wrap">
