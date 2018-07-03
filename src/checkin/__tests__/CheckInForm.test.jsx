@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
+import MockRouter from 'react-mock-router';
 import CheckInForm from '../CheckinForm';
 
 let props, store;
@@ -14,7 +15,9 @@ const checkInForm = () => {
   if (!mountedComponent) {
     mountedComponent = mount(
       <Provider store={store}>
-        <CheckInForm {...props} />
+        <MockRouter>
+          <CheckInForm {...props} />
+        </MockRouter>
       </Provider>);
   }
   return mountedComponent;
