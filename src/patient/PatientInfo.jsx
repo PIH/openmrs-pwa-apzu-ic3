@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Form, FormGroup, FormControl, ControlLabel, Label, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Button, Form, FormGroup, FormControl, ControlLabel, Label, Col } from 'react-bootstrap';
 import RequiredScreenings from '../screening/RequiredScreenings';
 
 class InfoPatient extends React.Component {
@@ -9,6 +10,11 @@ class InfoPatient extends React.Component {
     return (
 
       <div>
+        <Link to="/searchPatient">
+          <Button bsSize='large' bsStyle='danger'>
+            Back to Search
+          </Button>
+        </Link>
         <h3><Label>Patient Info</Label></h3>
         <Form horizontal>
 

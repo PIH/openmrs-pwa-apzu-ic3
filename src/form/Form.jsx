@@ -24,7 +24,7 @@ class Form extends React.Component {
     return (
       <div>
         <Link to={this.queueLink()}>
-          <Button bsSize='large'>
+          <Button bsSize='large' bsStyle='danger'>
             Back to Queue
           </Button>
         </Link>

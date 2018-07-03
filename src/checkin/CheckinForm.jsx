@@ -1,15 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 import { FieldInput } from '@openmrs/react-components';
 import { Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
 
 let CheckinForm = props => {
 
-  const { handleSubmit, pristine, reset, submitting } = props;
+  const { handleSubmit, submitting } = props;
 
   return (
     <div>
+      <Link to="/checkin/checkinQueue">
+        <Button bsSize='large' bsStyle='danger'>
+          Back to Queue
+        </Button>
+      </Link>
       <h3><Label>Check-in</Label></h3>
       <Form
         horizontal
@@ -130,15 +136,6 @@ let CheckinForm = props => {
                     Check-in
                   </Button>
 
-
-                  <Button
-                    bsSize="large"
-                    bsStyle="danger"
-                    disabled={pristine || submitting}
-                    onClick={reset}
-                  >
-                    Cancel
-                  </Button>
                 </ButtonToolbar>
               </Col>
             </FormGroup>
