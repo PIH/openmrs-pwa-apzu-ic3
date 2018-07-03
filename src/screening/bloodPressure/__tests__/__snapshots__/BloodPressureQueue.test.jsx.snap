@@ -99,7 +99,6 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
             }
           >
             <div
-              className="ag-theme-balham"
               style={
                 Object {
                   "height": "600px",

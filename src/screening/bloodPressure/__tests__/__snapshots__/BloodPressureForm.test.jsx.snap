@@ -54,11 +54,11 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 block={false}
                 bsClass="btn"
                 bsSize="large"
-                bsStyle="default"
+                bsStyle="danger"
                 disabled={false}
               >
                 <button
-                  className="btn btn-lg btn-default"
+                  className="btn btn-lg btn-danger"
                   disabled={false}
                   type="button"
                 >
@@ -1104,12 +1104,13 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                       active={false}
                                       block={false}
                                       bsClass="btn"
+                                      bsSize="large"
                                       bsStyle="success"
                                       disabled={false}
                                       type="submit"
                                     >
                                       <button
-                                        className="btn btn-success"
+                                        className="btn btn-lg btn-success"
                                         disabled={false}
                                         type="submit"
                                       >
