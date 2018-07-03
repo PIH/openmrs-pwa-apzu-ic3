@@ -16,7 +16,6 @@ class BloodPressureQueue extends Queue {
 
 const mapStateToProps = (state) => {
   return {
-    dispatch: state.dispatch,
     rowData: state.screening.bloodPressureQueue.list
   };
 };

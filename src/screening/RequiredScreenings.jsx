@@ -47,7 +47,6 @@ RequiredScreenings.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    dispatch: state.dispatch,
     screening: state.screening
   };
 };

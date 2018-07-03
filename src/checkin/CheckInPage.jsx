@@ -40,7 +40,6 @@ class CheckInPage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    dispatch: state.dispatch,
     patient: state.selected.patient
   };
 };

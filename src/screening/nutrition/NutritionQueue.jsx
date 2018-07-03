@@ -16,7 +16,6 @@ class NutritionQueue extends Queue {
 
 const mapStateToProps = (state) => {
   return {
-    dispatch: state.dispatch,
     rowData: state.screening.nutritionQueue.list
   };
 };

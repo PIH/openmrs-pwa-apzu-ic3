@@ -49,11 +49,4 @@ class HomePage extends React.Component {
   }
 }
 
-
-const mapStateToProps = (state) => {
-  return {
-    dispatch: state.dispatch
-  };
-};
-
-export default connect(mapStateToProps)(HomePage);
+export default connect()(HomePage);

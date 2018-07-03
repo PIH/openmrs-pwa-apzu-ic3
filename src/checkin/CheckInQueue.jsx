@@ -59,7 +59,6 @@ CheckInQueue.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    dispatch: state.dispatch,
     rowData: state.openmrs.patientSearch.results
   };
 };
