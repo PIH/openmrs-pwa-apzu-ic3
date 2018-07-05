@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { gridActions } from '@openmrs/react-components';
 import CheckinForm from './CheckInForm';
 import checkInActions from './checkInActions';
 import { ENCOUNTER_TYPES, VISIT_TYPES, LOCATION_TYPES } from '../constants';
@@ -9,7 +8,7 @@ import { push } from "connected-react-router";
 class CheckInPage extends React.Component {
 
   redirectToQueuePageActionCreator() {
-    return push('/checkin/checkinQueue');
+    return push('/checkin/checkInComplete');
   }
 
   handleCheckIn(values) {
@@ -21,9 +20,6 @@ class CheckInPage extends React.Component {
         LOCATION_TYPES.UnknownLocation,
         this.redirectToQueuePageActionCreator
       ));
-  }
-  componentWillUnmount(){
-    this.props.dispatch(gridActions.clearSelection());
   }
 
   render() {

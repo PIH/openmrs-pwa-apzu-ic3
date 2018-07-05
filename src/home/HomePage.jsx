@@ -21,7 +21,7 @@ class HomePage extends React.Component {
               </Button>
             </ButtonGroup>
           </Link>
-          <Link to="/checkin/checkinQueue">
+          <Link to="/checkin/checkInQueue">
             <ButtonGroup>
               <Button bsSize="large" >
                 <Glyphicon glyph="check" /> Check-In

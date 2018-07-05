@@ -18,7 +18,7 @@ class Menu extends React.Component {
             Search Patient
           </Button>
         </Link>
-        <Link to="/checkin/checkinQueue">
+        <Link to="/checkin/checkInQueue">
           <Button bsSize="large" block>
             Check-In
           </Button>

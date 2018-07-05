@@ -11,7 +11,7 @@ let CheckinForm = props => {
 
   return (
     <div>
-      <Link to="/checkin/checkinQueue">
+      <Link to="/checkin/checkInQueue">
         <Button bsSize='large' bsStyle='danger'>
           Back to Queue
         </Button>

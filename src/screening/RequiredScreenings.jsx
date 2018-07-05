@@ -20,7 +20,7 @@ class RequiredScreenings extends React.Component {
       // find any of the queues that have the patient in them
       return Object.entries(this.props.screening).filter((queue) => {
         return queue[1].list && queue[1].list.some((elem) => {
-          return (elem.patient && elem.patient.uuid === this.props.patientUuid);
+          return (elem && elem.uuid === this.props.patientUuid);
         });
       }).map((queue) => this.nameMappings[queue[0]]);
     }
@@ -33,7 +33,7 @@ class RequiredScreenings extends React.Component {
     return (
       <div>
         <ul>
-          { this.findScreeningsForPatient().map((e) => <li>{e}</li>) }
+          { this.findScreeningsForPatient().map((e, i) => <li key={i}>{e}</li>) }
         </ul>
       </div>
     );

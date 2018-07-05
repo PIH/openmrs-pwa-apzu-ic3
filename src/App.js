@@ -10,6 +10,7 @@ import InfoPatient from './patient/PatientInfo';
 import SearchPatient from './search/SearchPatient';
 import CheckInQueue from './checkin/CheckInQueue';
 import CheckInPage from './checkin/CheckInPage';
+import CheckInComplete from './checkin/CheckInComplete';
 import Header from './header/Header';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
@@ -53,12 +54,17 @@ const App = props => {
           />
           <AuthenticatedLayout
             component={CheckInQueue}
-            path="/checkin/checkinQueue"
+            path="/checkin/checkInQueue"
             redirectOnLogin="/"
           />
           <AuthenticatedLayout
             component={CheckInPage}
-            path="/checkin/checkinPage"
+            path="/checkin/checkInPage"
+            redirectOnLogin="/"
+          />
+          <AuthenticatedLayout
+            component={CheckInComplete}
+            path="/checkin/checkInComplete"
             redirectOnLogin="/"
           />
           <AuthenticatedLayout

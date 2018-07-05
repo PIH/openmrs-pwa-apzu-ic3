@@ -42,7 +42,7 @@ describe('Component: CheckInQueue', () => {
     expect(toJson(checkInQueue())).toMatchSnapshot();
     expect(checkInQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
     expect(checkInQueue().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToCheckinPageActionCreator");
-    expect(checkInQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/checkin/checkinPage");
+    expect(checkInQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/checkin/checkInPage");
   });
 
 });

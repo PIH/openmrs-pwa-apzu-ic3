@@ -222,7 +222,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
               <div>
                 <Link
                   replace={false}
-                  to="/checkin/checkinQueue"
+                  to="/checkin/checkInQueue"
                 >
                   <a
                     onClick={[Function]}

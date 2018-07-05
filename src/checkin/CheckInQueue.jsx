@@ -28,7 +28,7 @@ class CheckInQueue extends React.Component {
   };
 
   redirectToCheckinPageActionCreator() {
-    return push('/checkin/checkinPage');
+    return push('/checkin/checkInPage');
   }
 
   componentDidMount() {
