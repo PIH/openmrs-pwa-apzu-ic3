@@ -8,7 +8,7 @@ class Form extends React.Component {
 
   // https://github.com/diegoddox/react-redux-toastr
   formSubmittedActionCreators = [
-    () => toastrActions.add({ title: "Form Saved", type: "success" }),
+    () => toastrActions.add({ title: "Data Saved", type: "success" }),
     () => push(this.queueLink())
   ];
 

@@ -12,12 +12,13 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 import { reducer as reduxFormReducer } from 'redux-form';
-import {reducer as toastrReducer} from 'react-redux-toastr'
+import { reducer as toastrReducer } from 'react-redux-toastr';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/react-components';
 import bloodPressureQueueReducer from './screening/bloodPressure/bloodPressureQueueReducer';
 import nutritionQueueReducer from "./screening/nutrition/nutritionQueueReducer";
 import patientSelectedReducer from './patient/patientSelectedReducer';
+import checkInSagas from './checkin/checkInSagas';
 
 // fyi, connected-react-router docs:
 // https://github.com/supasate/connected-react-router
@@ -50,7 +51,8 @@ const rootReducer = combineReducers({
 
 const rootSagas = function* () {
   yield all([
-    openmrsSagas()
+    openmrsSagas(),
+    checkInSagas()
   ]);
 };
 

@@ -4,7 +4,7 @@ import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import MockRouter from 'react-mock-router';
-import CheckInForm from '../CheckinForm';
+import CheckInForm from '../CheckInForm';
 
 let props, store;
 let mountedComponent;

@@ -83,7 +83,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
             <Connect(ReduxForm)
               encounterType={
                 Object {
-                  "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                  "uuid": "55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b",
                 }
               }
               formSubmittedActionCreator={
@@ -112,7 +112,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                 dispatch={[Function]}
                 encounterType={
                   Object {
-                    "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                    "uuid": "55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b",
                   }
                 }
                 formSubmittedActionCreator={
@@ -143,7 +143,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   enableReinitialize={false}
                   encounterType={
                     Object {
-                      "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                      "uuid": "55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b",
                     }
                   }
                   forceUnregisterOnUnmount={false}
@@ -222,7 +222,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     enableReinitialize={false}
                     encounterType={
                       Object {
-                        "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                        "uuid": "55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b",
                       }
                     }
                     focus={[Function]}
@@ -318,7 +318,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       dispatch={[Function]}
                       encounterType={
                         Object {
-                          "uuid": "4fb47712-34a6-40d2-8ed3-e153abbd25b7",
+                          "uuid": "55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b",
                         }
                       }
                       form="openmrs-form"
