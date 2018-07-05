@@ -8,7 +8,7 @@ export const ENCOUNTER_TYPES = {
     uuid: '4fb47712-34a6-40d2-8ed3-e153abbd25b7'  // TODO: change to proper uuid!
   },
   'NutritionEncounterType': {
-    uuid: '55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b'  // TODO: change to proper uuid!
+    uuid: '92fd09b4-5335-4f7e-9f63-b2a663fd09a6'  // TODO: change to proper uuid!
   },
   'CheckInEncounterType': {
     uuid: '55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b'
