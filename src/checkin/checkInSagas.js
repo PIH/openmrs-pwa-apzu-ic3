@@ -9,12 +9,10 @@ function* checkIn(action) {
 
   try {
 
-   // let encounterUuid = uuidv4();
-    let today = new Date();
-    // create visit with encounter
+    // let encounterUuid = uuidv4();
+    // create visit (defaults to current datetime to handle time zone issue on tablets)
     let visit = {
       patient: action.patient.uuid ? action.patient.uuid : action.patient,
-      startDatetime: today,
       location: action.location.uuid ? action.location.uuid : action.location,
       visitType: action.visitType.uuid ? action.visitType.uuid: action.visitType,
       // TODO figure out why creating encounter isn't working
