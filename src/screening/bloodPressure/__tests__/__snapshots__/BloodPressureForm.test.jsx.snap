@@ -425,7 +425,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                             <Field
                                               component={[Function]}
                                               name="obs|path=Systolic|concept=3ce934fa-26fe-102b-80cb-0017a47871b2"
-                                              type="text"
+                                              type="number"
                                             >
                                               <Connect(ConnectedField)
                                                 _reduxForm={
@@ -608,7 +608,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                 component={[Function]}
                                                 name="obs|path=Systolic|concept=3ce934fa-26fe-102b-80cb-0017a47871b2"
                                                 normalize={[Function]}
-                                                type="text"
+                                                type="number"
                                               >
                                                 <ConnectedField
                                                   _reduxForm={
@@ -795,7 +795,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                   name="obs|path=Systolic|concept=3ce934fa-26fe-102b-80cb-0017a47871b2"
                                                   normalize={[Function]}
                                                   pristine={true}
-                                                  type="text"
+                                                  type="number"
                                                 >
                                                   <FieldInput
                                                     input={
@@ -829,20 +829,20 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "warning": undefined,
                                                       }
                                                     }
-                                                    type="text"
+                                                    type="number"
                                                   >
                                                     <FormControl
                                                       bsClass="form-control"
                                                       componentClass="input"
                                                       onChange={[Function]}
-                                                      type="text"
+                                                      type="number"
                                                       value=""
                                                     >
                                                       <input
                                                         className="form-control"
                                                         id="formSystolic"
                                                         onChange={[Function]}
-                                                        type="text"
+                                                        type="number"
                                                         value=""
                                                       />
                                                     </FormControl>
@@ -904,7 +904,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                             <Field
                                               component={[Function]}
                                               name="obs|path=Diastolic|concept=3ce93694-26fe-102b-80cb-0017a47871b2"
-                                              type="text"
+                                              type="number"
                                             >
                                               <Connect(ConnectedField)
                                                 _reduxForm={
@@ -1087,7 +1087,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                 component={[Function]}
                                                 name="obs|path=Diastolic|concept=3ce93694-26fe-102b-80cb-0017a47871b2"
                                                 normalize={[Function]}
-                                                type="text"
+                                                type="number"
                                               >
                                                 <ConnectedField
                                                   _reduxForm={
@@ -1274,7 +1274,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                   name="obs|path=Diastolic|concept=3ce93694-26fe-102b-80cb-0017a47871b2"
                                                   normalize={[Function]}
                                                   pristine={true}
-                                                  type="text"
+                                                  type="number"
                                                 >
                                                   <FieldInput
                                                     input={
@@ -1308,20 +1308,20 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "warning": undefined,
                                                       }
                                                     }
-                                                    type="text"
+                                                    type="number"
                                                   >
                                                     <FormControl
                                                       bsClass="form-control"
                                                       componentClass="input"
                                                       onChange={[Function]}
-                                                      type="text"
+                                                      type="number"
                                                       value=""
                                                     >
                                                       <input
                                                         className="form-control"
                                                         id="formDiastolic"
                                                         onChange={[Function]}
-                                                        type="text"
+                                                        type="number"
                                                         value=""
                                                       />
                                                     </FormControl>
