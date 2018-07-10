@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-//import dateFns from 'date-fns';
+import dateFns from 'date-fns';
 
 class PatientHeader extends React.Component {
 
@@ -35,7 +35,7 @@ class PatientHeader extends React.Component {
               <span className="gender-age">
                 <span>{this.props.patient.gender === 'M' ? "Male" : "Female"}&nbsp;</span>
                 <span>
-                  {this.props.patient.age} year(s) {/*({dateFns.format(new Date(this.props.patient.birthdate), 'DD[.]MMM[.]YYYY')})*/}
+                  {this.props.patient.age} year(s) ({dateFns.format(new Date(this.props.patient.birthdate), 'DD[.]MMM[.]YYYY')})
                 </span>
               </span>
             </h1>
