@@ -20,6 +20,24 @@ const visitRest = {
 
 };
 
+const encounterRest = {
+
+  createEncounter: (params) => {
+
+    if (params.encounter.encounterType === 'invalid_encounter_type') {
+      throw {
+        name: 'Mock Exception',
+        message: 'Unable to Submit'
+      };
+    }
+    else {
+      return;
+    }
+  }
+
+};
+
 export {
-  visitRest
+  visitRest,
+  encounterRest
 };

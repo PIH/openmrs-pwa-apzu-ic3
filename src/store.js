@@ -19,6 +19,7 @@ import bloodPressureQueueReducer from './screening/bloodPressure/bloodPressureQu
 import nutritionQueueReducer from "./screening/nutrition/nutritionQueueReducer";
 import patientSelectedReducer from './patient/patientSelectedReducer';
 import checkInSagas from './checkin/checkInSagas';
+import formSagas from './form/formSagas';
 
 // fyi, connected-react-router docs:
 // https://github.com/supasate/connected-react-router
@@ -52,7 +53,8 @@ const rootReducer = combineReducers({
 const rootSagas = function* () {
   yield all([
     openmrsSagas(),
-    checkInSagas()
+    checkInSagas(),
+    formSagas()
   ]);
 };
 

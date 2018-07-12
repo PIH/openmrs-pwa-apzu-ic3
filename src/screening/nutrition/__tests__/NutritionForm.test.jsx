@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import MockRouter from 'react-mock-router';
-import { OpenMRSForm } from '@openmrs/react-components';
+import { Container } from 'bahmni-form-controls';
 import NutritionForm from '../NutritionForm';
 
 let props, store;
@@ -45,7 +45,7 @@ describe('Component: NutritionForm', () => {
 
   it('renders properly', () => {
     expect(toJson(nutritionForm())).toMatchSnapshot();
-    expect(nutritionForm().find(OpenMRSForm).length).toBe(1);
+    expect(nutritionForm().find(Container).length).toBe(1);
   });
 
 });

@@ -17,7 +17,6 @@ import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import NutritionForm from "./screening/nutrition/NutritionForm";
 import { ConnectedRouter } from 'connected-react-router';
-import SampleFormPage from './components/pages/SampleFormPage';
 
 const store = createStore();
 
@@ -91,11 +90,6 @@ const App = props => {
           <AuthenticatedLayout
             component={InfoPatient}
             path="/infoPatient"
-            redirectOnLogin="/"
-          />
-          <AuthenticatedRoute
-            component={SampleFormPage}
-            path="/sampleFormPage"
             redirectOnLogin="/"
           />
         </Switch>
