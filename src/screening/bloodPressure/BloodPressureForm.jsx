@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { OpenMRSForm, Submit, Obs } from '@openmrs/react-components';
 import PropTypes from 'prop-types';
 import Form from '../../form/Form';
 import { ENCOUNTER_TYPES } from "../../constants";
