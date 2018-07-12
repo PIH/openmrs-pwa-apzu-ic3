@@ -39,11 +39,11 @@ class NutritionForm extends Form {
           "answers": [],
           "properties": { "allowDecimal": false }
         },
-        "units": null,
+        "units": "kg",
         "hiNormal": null,
         "lowNormal": null,
-        "hiAbsolute": null,
-        "lowAbsolute": null
+        "hiAbsolute": 250.0,
+        "lowAbsolute": 0.1
       },
       {
         "type": "obsControl",
@@ -67,11 +67,11 @@ class NutritionForm extends Form {
           "answers": [],
           "properties": { "allowDecimal": false }
         },
-        "units": null,
+        "units": "cm",
         "hiNormal": null,
         "lowNormal": null,
-        "hiAbsolute": null,
-        "lowAbsolute": null
+        "hiAbsolute": 228.0,
+        "lowAbsolute": 10.0
       }],
       "events": {},
       //"translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations"

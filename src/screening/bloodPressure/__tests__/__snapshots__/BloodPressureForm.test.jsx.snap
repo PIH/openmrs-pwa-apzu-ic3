@@ -96,7 +96,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       },
                       "uuid": "3ce934fa-26fe-102b-80cb-0017a47871b2",
                     },
-                    "hiAbsolute": null,
+                    "hiAbsolute": 300,
                     "hiNormal": null,
                     "id": "2",
                     "label": Object {
@@ -106,7 +106,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       "units": "",
                       "value": "SYSTOLIC",
                     },
-                    "lowAbsolute": null,
+                    "lowAbsolute": 30,
                     "lowNormal": null,
                     "properties": Object {
                       "abnormal": false,
@@ -121,7 +121,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       "notes": false,
                     },
                     "type": "obsControl",
-                    "units": null,
+                    "units": "mmHg",
                   },
                   Object {
                     "concept": Object {
@@ -135,7 +135,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       },
                       "uuid": "3ce93694-26fe-102b-80cb-0017a47871b2",
                     },
-                    "hiAbsolute": null,
+                    "hiAbsolute": 150,
                     "hiNormal": null,
                     "id": "3",
                     "label": Object {
@@ -145,7 +145,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       "units": "",
                       "value": "DIASTOLIC",
                     },
-                    "lowAbsolute": null,
+                    "lowAbsolute": 20,
                     "lowNormal": null,
                     "properties": Object {
                       "abnormal": false,
@@ -160,7 +160,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       "notes": false,
                     },
                     "type": "obsControl",
-                    "units": null,
+                    "units": "mmHg",
                   },
                 ],
                 "defaultLocale": "en",
@@ -271,7 +271,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             },
                             "uuid": "3ce934fa-26fe-102b-80cb-0017a47871b2",
                           },
-                          "hiAbsolute": null,
+                          "hiAbsolute": 300,
                           "hiNormal": null,
                           "id": "2",
                           "label": Object {
@@ -281,7 +281,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "units": "",
                             "value": "SYSTOLIC",
                           },
-                          "lowAbsolute": null,
+                          "lowAbsolute": 30,
                           "lowNormal": null,
                           "properties": Object {
                             "abnormal": false,
@@ -296,7 +296,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "notes": false,
                           },
                           "type": "obsControl",
-                          "units": null,
+                          "units": "mmHg",
                         },
                         "dataSource": Object {
                           "concept": Object {
@@ -353,7 +353,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             },
                             "uuid": "3ce93694-26fe-102b-80cb-0017a47871b2",
                           },
-                          "hiAbsolute": null,
+                          "hiAbsolute": 150,
                           "hiNormal": null,
                           "id": "3",
                           "label": Object {
@@ -363,7 +363,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "units": "",
                             "value": "DIASTOLIC",
                           },
-                          "lowAbsolute": null,
+                          "lowAbsolute": 20,
                           "lowNormal": null,
                           "properties": Object {
                             "abnormal": false,
@@ -378,7 +378,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "notes": false,
                           },
                           "type": "obsControl",
-                          "units": null,
+                          "units": "mmHg",
                         },
                         "dataSource": Object {
                           "concept": Object {
@@ -502,7 +502,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                           },
                           "uuid": "3ce934fa-26fe-102b-80cb-0017a47871b2",
                         },
-                        "hiAbsolute": null,
+                        "hiAbsolute": 300,
                         "hiNormal": null,
                         "id": "2",
                         "label": Object {
@@ -512,7 +512,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                           "units": "",
                           "value": "SYSTOLIC",
                         },
-                        "lowAbsolute": null,
+                        "lowAbsolute": 30,
                         "lowNormal": null,
                         "properties": Object {
                           "abnormal": false,
@@ -527,7 +527,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                           "notes": false,
                         },
                         "type": "obsControl",
-                        "units": null,
+                        "units": "mmHg",
                       },
                     ]
                   }
@@ -601,7 +601,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             },
                             "uuid": "3ce934fa-26fe-102b-80cb-0017a47871b2",
                           },
-                          "hiAbsolute": null,
+                          "hiAbsolute": 300,
                           "hiNormal": null,
                           "id": "2",
                           "label": Object {
@@ -611,7 +611,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "units": "",
                             "value": "SYSTOLIC",
                           },
-                          "lowAbsolute": null,
+                          "lowAbsolute": 30,
                           "lowNormal": null,
                           "properties": Object {
                             "abnormal": false,
@@ -626,7 +626,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "notes": false,
                           },
                           "type": "obsControl",
-                          "units": null,
+                          "units": "mmHg",
                         },
                         "dataSource": Object {
                           "concept": Object {
@@ -683,7 +683,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             },
                             "uuid": "3ce93694-26fe-102b-80cb-0017a47871b2",
                           },
-                          "hiAbsolute": null,
+                          "hiAbsolute": 150,
                           "hiNormal": null,
                           "id": "3",
                           "label": Object {
@@ -693,7 +693,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "units": "",
                             "value": "DIASTOLIC",
                           },
-                          "lowAbsolute": null,
+                          "lowAbsolute": 20,
                           "lowNormal": null,
                           "properties": Object {
                             "abnormal": false,
@@ -708,7 +708,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "notes": false,
                           },
                           "type": "obsControl",
-                          "units": null,
+                          "units": "mmHg",
                         },
                         "dataSource": Object {
                           "concept": Object {
@@ -783,7 +783,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                               },
                               "uuid": "3ce934fa-26fe-102b-80cb-0017a47871b2",
                             },
-                            "hiAbsolute": null,
+                            "hiAbsolute": 300,
                             "hiNormal": null,
                             "id": "2",
                             "label": Object {
@@ -793,7 +793,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                               "units": "",
                               "value": "SYSTOLIC",
                             },
-                            "lowAbsolute": null,
+                            "lowAbsolute": 30,
                             "lowNormal": null,
                             "properties": Object {
                               "abnormal": false,
@@ -808,7 +808,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                               "notes": false,
                             },
                             "type": "obsControl",
-                            "units": null,
+                            "units": "mmHg",
                           }
                         }
                         onControlAdd={[Function]}
@@ -840,7 +840,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                   "id": "2",
                                   "translationKey": "SYSTOLIC_2",
                                   "type": "label",
-                                  "units": "",
+                                  "units": "(mmHg)",
                                   "value": "SYSTOLIC",
                                 }
                               }
@@ -857,6 +857,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                     SYSTOLIC
                                   </span>
                                 </FormattedMessage>
+                                 (mmHg)
                               </label>
                             </Label>
                           </div>
@@ -865,10 +866,10 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             conceptHandler={null}
                             enabled={true}
                             formFieldPath="Blood Pressure Form.undefined/2-0"
-                            hiAbsolute={null}
+                            hiAbsolute={300}
                             hiNormal={null}
                             hidden={false}
-                            lowAbsolute={null}
+                            lowAbsolute={30}
                             lowNormal={null}
                             onChange={[Function]}
                             onControlAdd={[Function]}
@@ -926,7 +927,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                           },
                           "uuid": "3ce93694-26fe-102b-80cb-0017a47871b2",
                         },
-                        "hiAbsolute": null,
+                        "hiAbsolute": 150,
                         "hiNormal": null,
                         "id": "3",
                         "label": Object {
@@ -936,7 +937,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                           "units": "",
                           "value": "DIASTOLIC",
                         },
-                        "lowAbsolute": null,
+                        "lowAbsolute": 20,
                         "lowNormal": null,
                         "properties": Object {
                           "abnormal": false,
@@ -951,7 +952,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                           "notes": false,
                         },
                         "type": "obsControl",
-                        "units": null,
+                        "units": "mmHg",
                       },
                     ]
                   }
@@ -1025,7 +1026,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             },
                             "uuid": "3ce934fa-26fe-102b-80cb-0017a47871b2",
                           },
-                          "hiAbsolute": null,
+                          "hiAbsolute": 300,
                           "hiNormal": null,
                           "id": "2",
                           "label": Object {
@@ -1035,7 +1036,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "units": "",
                             "value": "SYSTOLIC",
                           },
-                          "lowAbsolute": null,
+                          "lowAbsolute": 30,
                           "lowNormal": null,
                           "properties": Object {
                             "abnormal": false,
@@ -1050,7 +1051,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "notes": false,
                           },
                           "type": "obsControl",
-                          "units": null,
+                          "units": "mmHg",
                         },
                         "dataSource": Object {
                           "concept": Object {
@@ -1107,7 +1108,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             },
                             "uuid": "3ce93694-26fe-102b-80cb-0017a47871b2",
                           },
-                          "hiAbsolute": null,
+                          "hiAbsolute": 150,
                           "hiNormal": null,
                           "id": "3",
                           "label": Object {
@@ -1117,7 +1118,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "units": "",
                             "value": "DIASTOLIC",
                           },
-                          "lowAbsolute": null,
+                          "lowAbsolute": 20,
                           "lowNormal": null,
                           "properties": Object {
                             "abnormal": false,
@@ -1132,7 +1133,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "notes": false,
                           },
                           "type": "obsControl",
-                          "units": null,
+                          "units": "mmHg",
                         },
                         "dataSource": Object {
                           "concept": Object {
@@ -1207,7 +1208,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                               },
                               "uuid": "3ce93694-26fe-102b-80cb-0017a47871b2",
                             },
-                            "hiAbsolute": null,
+                            "hiAbsolute": 150,
                             "hiNormal": null,
                             "id": "3",
                             "label": Object {
@@ -1217,7 +1218,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                               "units": "",
                               "value": "DIASTOLIC",
                             },
-                            "lowAbsolute": null,
+                            "lowAbsolute": 20,
                             "lowNormal": null,
                             "properties": Object {
                               "abnormal": false,
@@ -1232,7 +1233,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                               "notes": false,
                             },
                             "type": "obsControl",
-                            "units": null,
+                            "units": "mmHg",
                           }
                         }
                         onControlAdd={[Function]}
@@ -1264,7 +1265,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                   "id": "3",
                                   "translationKey": "DIASTOLIC_2",
                                   "type": "label",
-                                  "units": "",
+                                  "units": "(mmHg)",
                                   "value": "DIASTOLIC",
                                 }
                               }
@@ -1281,6 +1282,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                     DIASTOLIC
                                   </span>
                                 </FormattedMessage>
+                                 (mmHg)
                               </label>
                             </Label>
                           </div>
@@ -1289,10 +1291,10 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             conceptHandler={null}
                             enabled={true}
                             formFieldPath="Blood Pressure Form.undefined/3-0"
-                            hiAbsolute={null}
+                            hiAbsolute={150}
                             hiNormal={null}
                             hidden={false}
-                            lowAbsolute={null}
+                            lowAbsolute={20}
                             lowNormal={null}
                             onChange={[Function]}
                             onControlAdd={[Function]}

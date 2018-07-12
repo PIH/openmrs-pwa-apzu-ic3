@@ -39,11 +39,11 @@ class BloodPressureForm extends Form {
           "answers": [],
           "properties": { "allowDecimal": false }
         },
-        "units": null,
+        "units": "mmHg",
         "hiNormal": null,
         "lowNormal": null,
-        "hiAbsolute": null,
-        "lowAbsolute": null
+        "hiAbsolute": 300.0,
+        "lowAbsolute": 30.0
       },
       {
         "type": "obsControl",
@@ -67,11 +67,11 @@ class BloodPressureForm extends Form {
           "answers": [],
           "properties": { "allowDecimal": false }
         },
-        "units": null,
+        "units": "mmHg",
         "hiNormal": null,
         "lowNormal": null,
-        "hiAbsolute": null,
-        "lowAbsolute": null
+        "hiAbsolute": 150.0,
+        "lowAbsolute": 20.0
       }],
       "events": {},
       //"translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations"
