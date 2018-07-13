@@ -39,6 +39,10 @@ exports[`Component: Queue renders properly 1`] = `
               "hide": true,
             },
             Object {
+              "field": "id",
+              "headerName": "patientId",
+            },
+            Object {
               "field": "name.givenName",
               "headerName": "Given Name",
             },
@@ -70,6 +74,10 @@ exports[`Component: Queue renders properly 1`] = `
                 "field": "uuid",
                 "headerName": "uuid",
                 "hide": true,
+              },
+              Object {
+                "field": "id",
+                "headerName": "patientId",
               },
               Object {
                 "field": "name.givenName",
@@ -112,6 +120,10 @@ exports[`Component: Queue renders properly 1`] = `
                     "field": "uuid",
                     "headerName": "uuid",
                     "hide": true,
+                  },
+                  Object {
+                    "field": "id",
+                    "headerName": "patientId",
                   },
                   Object {
                     "field": "name.givenName",

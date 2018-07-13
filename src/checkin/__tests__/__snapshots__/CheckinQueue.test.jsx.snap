@@ -16,7 +16,7 @@ exports[`Component: CheckInQueue renders properly 1`] = `
   <Connect(CheckInQueue)>
     <CheckInQueue
       dispatch={[Function]}
-      representation="full"
+      representation="custom:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,names,preferredName,addresses,attributes))"
     >
       <div>
         <h3>
@@ -40,6 +40,10 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                 "hide": true,
               },
               Object {
+                "field": "id",
+                "headerName": "patientId",
+              },
+              Object {
                 "field": "name.givenName",
                 "headerName": "Given Name",
               },
@@ -54,6 +58,10 @@ exports[`Component: CheckInQueue renders properly 1`] = `
               Object {
                 "field": "age",
                 "headerName": "Age",
+              },
+              Object {
+                "headerName": "Checked-in Time",
+                "valueGetter": [Function],
               },
             ]
           }
@@ -72,6 +80,10 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                   "hide": true,
                 },
                 Object {
+                  "field": "id",
+                  "headerName": "patientId",
+                },
+                Object {
                   "field": "name.givenName",
                   "headerName": "Given Name",
                 },
@@ -86,6 +98,10 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                 Object {
                   "field": "age",
                   "headerName": "Age",
+                },
+                Object {
+                  "headerName": "Checked-in Time",
+                  "valueGetter": [Function],
                 },
               ]
             }
@@ -113,6 +129,10 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                       "hide": true,
                     },
                     Object {
+                      "field": "id",
+                      "headerName": "patientId",
+                    },
+                    Object {
                       "field": "name.givenName",
                       "headerName": "Given Name",
                     },
@@ -127,6 +147,10 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                     Object {
                       "field": "age",
                       "headerName": "Age",
+                    },
+                    Object {
+                      "headerName": "Checked-in Time",
+                      "valueGetter": [Function],
                     },
                   ]
                 }

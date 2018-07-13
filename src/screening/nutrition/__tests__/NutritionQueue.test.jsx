@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { DataGrid, visitActions } from '@openmrs/react-components';
 import NutritionQueue from '../NutritionQueue';
 import patientActions from '../../../patient/patientActions';
+import {ENCOUNTER_REPRESENTATION, PATIENT_REPRESENTATION} from "../../../constants";
 
 let props, store;
 let mountedComponent;
@@ -44,7 +45,7 @@ describe('Component: NutritionQueue', () => {
     expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToInfoPageActionCreator");
     expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/screening/nutrition/form");
     expect(store.getActions()).toContainEqual(patientActions.clearPatientSelected());
-    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits("custom:(uuid,patient:full,encounters:default)"));
+    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits("custom:(uuid,patient:" + PATIENT_REPRESENTATION + ",encounters:" + ENCOUNTER_REPRESENTATION + ")"));
   });
 
 });
