@@ -4,6 +4,7 @@ import { Label } from 'react-bootstrap';
 import { visitActions } from '@openmrs/react-components';
 import { DataGrid } from '@openmrs/react-components';
 import patientActions from '../patient/patientActions';
+import { PATIENT_REPRESENTATION, ENCOUNTER_REPRESENTATION } from '../constants';
 
 class Queue extends React.Component {
 
@@ -11,7 +12,7 @@ class Queue extends React.Component {
     super(props);
     this.columnDefs =  [
       { headerName: 'uuid', hide: true, field: 'uuid' },
-     /* { headerName: 'ID', valueGetter: 'data.identifier' },*/
+      { headerName: 'patientId', field: 'id' },
       { headerName: 'Given Name', field: 'name.givenName' },
       { headerName: 'Family Name', field: 'name.familyName' },
       { headerName: 'Gender', field: 'gender' },
@@ -23,9 +24,9 @@ class Queue extends React.Component {
     this.props.dispatch(patientActions.clearPatientSelected());
     // TODO make this potentially come from props so we can override it?
     // TODO can we get away from having to get a "full" rep of a patient?
-    this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:full,encounters:default)"));
+    this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:" + PATIENT_REPRESENTATION + ",encounters:" + ENCOUNTER_REPRESENTATION + ")"));
     this.interval = setInterval(() =>
-      this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:full,encounters:default)")), 10000);
+      this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:" + PATIENT_REPRESENTATION + ",encounters:" + ENCOUNTER_REPRESENTATION + ")")), 10000);
   }
 
   componentWillUnmount() {

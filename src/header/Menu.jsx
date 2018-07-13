@@ -33,6 +33,11 @@ class Menu extends React.Component {
             Nutrition
           </Button>
         </Link>
+        <Link to="/visit/queue">
+          <Button bsSize="large" block>
+            Active Visits
+          </Button>
+        </Link>
       </BurgerMenu>
     );
   }

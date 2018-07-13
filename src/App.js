@@ -16,6 +16,7 @@ import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import NutritionForm from "./screening/nutrition/NutritionForm";
+import ActiveVisitsQueue from "./visit/ActiveVisitsQueue";
 import { ConnectedRouter } from 'connected-react-router';
 
 const store = createStore();
@@ -90,6 +91,11 @@ const App = props => {
           <AuthenticatedLayout
             component={InfoPatient}
             path="/infoPatient"
+            redirectOnLogin="/"
+          />
+          <AuthenticatedLayout
+            component={ActiveVisitsQueue}
+            path="/visit/queue"
             redirectOnLogin="/"
           />
         </Switch>

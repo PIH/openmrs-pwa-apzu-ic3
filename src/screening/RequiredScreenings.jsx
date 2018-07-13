@@ -2,12 +2,13 @@ import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import { visitActions } from '@openmrs/react-components';
+import { PATIENT_REPRESENTATION } from '../constants';
 
 class RequiredScreenings extends React.Component {
 
   // TODO make this potentially come from props so we can override it? or a generic action to "fetch queues"?
   componentDidMount() {
-    this.props.dispatch(visitActions.fetchActiveVisits("custom:(patient:default,encounters:default)"));
+    this.props.dispatch(visitActions.fetchActiveVisits("custom:(patient:" + PATIENT_REPRESENTATION + ",encounters:default)"));
   }
 
   nameMappings = {

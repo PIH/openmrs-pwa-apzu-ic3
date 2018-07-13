@@ -24,7 +24,7 @@ const createQueueReducer = (encounterTypeUuid, additionalFilters = []) =>  {
   const convertPatientRestRepToPatientObj = (visits) => {
 
     return visits.map((visit) => {
-      return { ...visit, patient: Patient.createFromRestRep(visit.patient) };
+      return { ...visit, patient: Patient.createFromRestRep(visit.patient, visit.encounters) };
     });
 
   };
@@ -43,7 +43,7 @@ const createQueueReducer = (encounterTypeUuid, additionalFilters = []) =>  {
         // given an list of active visits this:
         // 1) converts the "patient" component of each active visit from a rest rep to our Patient domain object (from react-components)
         // 2) applies the the "filter by encounter type filter", as well as any additionally provided filters, to the active visits list
-        // 3) maps the active visits file to a list of Patients, adding the uuid of the visit as a property of the patient
+        // 3) maps the active visits list to a list of Patients, adding the uuid of the visit as a property of the patient
 
         return Object.assign({}, state, {
           list: mapVisitsToPatients(applyFilters(convertPatientRestRepToPatientObj(action.visits), additionalFilters.concat(filterByEncounterType)))

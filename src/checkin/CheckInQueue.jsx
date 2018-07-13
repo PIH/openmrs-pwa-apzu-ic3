@@ -4,6 +4,8 @@ import { patientSearchActions, DataGrid, Patient } from '@openmrs/react-componen
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
 import patientActions from '../patient/patientActions';
+import { PATIENT_REPRESENTATION } from '../constants';
+import utils from "../utils";
 
 class CheckInQueue extends React.Component {
 
@@ -11,11 +13,15 @@ class CheckInQueue extends React.Component {
     super(props);
     this.columnDefs =  [
       { headerName: 'uuid', hide: true, field: 'uuid' },
-      /* { headerName: 'ID', valueGetter: 'data.identifier' },*/
+      { headerName: 'patientId', field: 'id' },
       { headerName: 'Given Name', field: 'name.givenName' },
       { headerName: 'Family Name', field: 'name.familyName' },
       { headerName: 'Gender', field: 'gender' },
-      { headerName: 'Age', field: 'age' }
+      { headerName: 'Age', field: 'age' },
+      { headerName: 'Checked-in Time', valueGetter: function getCheckedInTime(params) {
+          return utils.getPatientCheckedInTime(params.data);
+        }
+      }
     ];
 
   }
@@ -54,7 +60,7 @@ class CheckInQueue extends React.Component {
 }
 
 CheckInQueue.defaultProps = {
-  representation: "full"
+  representation: "custom:" + PATIENT_REPRESENTATION
 };
 
 const mapStateToProps = (state) => {
