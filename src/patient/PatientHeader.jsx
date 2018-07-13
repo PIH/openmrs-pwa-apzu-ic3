@@ -44,7 +44,7 @@ class PatientHeader extends React.Component {
           <span>
             <div className="identifiers">
               <em>Patient ID</em>
-              <span>{this.props.patient.preferredIdentifiers[0].identifier}</span>
+              <span>{this.props.patient.identifiers[0].identifier}</span>
               <br />
             </div>
           </span>
