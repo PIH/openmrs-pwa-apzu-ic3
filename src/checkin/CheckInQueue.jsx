@@ -1,9 +1,10 @@
 import React from 'react';
 import { Label } from 'react-bootstrap';
-import { patientSearchActions, DataGrid, Patient } from '@openmrs/react-components';
+import { DataGrid, Patient } from '@openmrs/react-components';
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
 import patientActions from '../patient/patientActions';
+import checkInActions from './checkInActions';
 import { PATIENT_REPRESENTATION } from '../constants';
 import utils from "../utils";
 
@@ -19,8 +20,8 @@ class CheckInQueue extends React.Component {
       { headerName: 'Gender', field: 'gender' },
       { headerName: 'Age', field: 'age' },
       { headerName: 'Checked-in Time', valueGetter: function getCheckedInTime(params) {
-          return utils.getPatientCheckedInTime(params.data);
-        }
+        return utils.getPatientCheckedInTime(params.data);
+      }
       }
     ];
 
@@ -39,10 +40,7 @@ class CheckInQueue extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(patientActions.clearPatientSelected());
-    this.props.dispatch(patientSearchActions.patientSearch(
-      'Bob',
-      this.parseResults.bind(this),
-      this.props.representation));
+    this.props.dispatch(checkInActions.checkForVisits());
   }
 
   render() {
@@ -65,7 +63,7 @@ CheckInQueue.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    rowData: state.openmrs.patientSearch.results
+    rowData: state.expectedCheckIn.patients
   };
 };
 

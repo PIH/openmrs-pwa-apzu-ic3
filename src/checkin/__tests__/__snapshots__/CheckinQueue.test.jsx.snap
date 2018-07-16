@@ -17,6 +17,7 @@ exports[`Component: CheckInQueue renders properly 1`] = `
     <CheckInQueue
       dispatch={[Function]}
       representation="custom:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,names,preferredName,addresses,attributes))"
+      rowData={Array []}
     >
       <div>
         <h3>
@@ -65,6 +66,7 @@ exports[`Component: CheckInQueue renders properly 1`] = `
               },
             ]
           }
+          rowData={Array []}
           rowSelectedActionCreators={
             Array [
               [Function],
@@ -106,6 +108,7 @@ exports[`Component: CheckInQueue renders properly 1`] = `
               ]
             }
             dispatch={[Function]}
+            rowData={Array []}
             rowSelectedActionCreators={
               Array [
                 [Function],
@@ -159,6 +162,7 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                 onGridReady={[Function]}
                 onSelectionChanged={[Function]}
                 rowClassRules="rowClassRules"
+                rowData={Array []}
                 rowSelection="single"
               >
                 <div

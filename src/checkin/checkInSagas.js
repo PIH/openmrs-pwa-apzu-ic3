@@ -1,8 +1,9 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { visitRest } from '@openmrs/react-components';
+import { Patient, patientRest, visitRest } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
 import uuidv4 from 'uuid/v4';
+import { PATIENT_REPRESENTATION } from "../constants";
 
 
 function* checkIn(action) {
@@ -37,11 +38,49 @@ function* checkIn(action) {
     yield put(checkInActions.checkInFailed(e.message));
   }
 
+}
+
+function* checkForActiveVisits(action) {
+
+  try {
+    // for now, just get a random list of patients
+    let response = yield call(patientRest.findPatient, {
+      query: 'Bob',
+      representation: "custom:" + PATIENT_REPRESENTATION
+    });
+    // get a list of active visits
+    let visitResponse = yield call(visitRest.getActiveVisits, {
+      representation: "custom:(uuid,patient:" + PATIENT_REPRESENTATION + ")"
+    });
+
+    // exclude from the random list of patients fetched above the patients who have an active visit
+    let expectedPatients = response.results.filter(function(patient) {
+      let activeVisit = visitResponse.results.find(function(visit) {
+        return visit.patient.uuid === patient.uuid;
+      });
+      if (typeof activeVisit === 'undefined') {
+        return true;
+      } else {
+        return false;
+      }
+    });
+
+    let patients = expectedPatients.map((result) => {
+      return Patient.createFromRestRep(result);
+    });
+
+    yield put(checkInActions.expectedToCheckIn(patients));
+
+  } catch (e) {
+    yield put(checkInActions.checkForVisitsFailed(e.message));
+  }
+
 
 }
 
 function *checkInSagas() {
   yield takeEvery(CHECK_IN_TYPES.SUBMIT, checkIn);
+  yield takeEvery(CHECK_IN_TYPES.CHECK_FOR_ACTIVE_VISITS, checkForActiveVisits);
 }
 
 export default checkInSagas;

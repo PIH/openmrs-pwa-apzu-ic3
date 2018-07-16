@@ -28,8 +28,8 @@ describe('Component: CheckInQueue', () => {
     store = mockStore(
       {
         dispatch: {},
-        openmrs: {
-          patientSearch: {}
+        expectedCheckIn: {
+          patients: []
         },
         selected: {
           patient: {}
