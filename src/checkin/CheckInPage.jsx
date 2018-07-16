@@ -8,7 +8,12 @@ import { push } from "connected-react-router";
 class CheckInPage extends React.Component {
 
   redirectToQueuePageActionCreator() {
-    return push('/checkin/checkInComplete');
+    return push({
+      pathname: '/checkin/checkInComplete',
+      state: {
+        queueLink: '/checkin/checkInQueue'
+      }
+    });
   }
 
   handleCheckIn(values) {
