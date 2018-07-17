@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Form from '../../form/Form';
-import { ENCOUNTER_TYPES } from "../../constants";
+import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 
 class BloodPressureForm extends Form {
 
@@ -32,7 +32,7 @@ class BloodPressureForm extends Form {
         "id": "2",
         "concept": {
           "name": "SYSTOLIC",
-          "uuid": "3ce934fa-26fe-102b-80cb-0017a47871b2",
+          "uuid": CONCEPTS.SystolicBloodPressure.uuid,
           "datatype": "Numeric",
           "conceptClass": "Misc",
           "conceptHandler": null,
@@ -60,7 +60,7 @@ class BloodPressureForm extends Form {
         "id": "3",
         "concept": {
           "name": "DIASTOLIC",
-          "uuid": "3ce93694-26fe-102b-80cb-0017a47871b2",
+          "uuid": CONCEPTS.DiastolicBloodPressure.uuid,
           "datatype": "Numeric",
           "conceptClass": "Misc",
           "conceptHandler": null,
