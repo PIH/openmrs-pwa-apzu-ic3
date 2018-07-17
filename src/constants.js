@@ -35,5 +35,11 @@ export const CONCEPTS = {
   },
   'DiastolicBloodPressure' : {
     uuid: '6569c116-977f-11e1-8993-905e29aff6c1'
+  },
+  'Height': {
+    uuid: '6569c562-977f-11e1-8993-905e29aff6c1'
+  },
+  'Weight': {
+    uuid: '6569c44a-977f-11e1-8993-905e29aff6c1'
   }
 };
