@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Form from '../../form/Form';
-import { ENCOUNTER_TYPES } from "../../constants";
+import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 
 class NutritionForm extends Form {
 
@@ -32,7 +32,7 @@ class NutritionForm extends Form {
         "id": "2",
         "concept": {
           "name": "WEIGHT",
-          "uuid": "3ce93b62-26fe-102b-80cb-0017a47871b2",
+          "uuid": CONCEPTS.Weight.uuid,
           "datatype": "Numeric",
           "conceptClass": "Misc",
           "conceptHandler": null,
@@ -60,7 +60,7 @@ class NutritionForm extends Form {
         "id": "3",
         "concept": {
           "name": "HEIGHT",
-          "uuid": "3ce93cf2-26fe-102b-80cb-0017a47871b2",
+          "uuid": CONCEPTS.Height.uuid,
           "datatype": "Numeric",
           "conceptClass": "Misc",
           "conceptHandler": null,
