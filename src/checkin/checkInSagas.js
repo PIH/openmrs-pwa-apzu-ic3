@@ -40,7 +40,7 @@ function* checkIn(action) {
 
 }
 
-function* checkForActiveVisits(action) {
+function* getExpectedToCheckIn(action) {
 
   try {
     // for now, just get a random list of patients
@@ -72,7 +72,7 @@ function* checkForActiveVisits(action) {
     yield put(checkInActions.expectedToCheckIn(patients));
 
   } catch (e) {
-    yield put(checkInActions.checkForVisitsFailed(e.message));
+    yield put(checkInActions.getExpectedToCheckInFailed(e.message));
   }
 
 
@@ -80,7 +80,7 @@ function* checkForActiveVisits(action) {
 
 function *checkInSagas() {
   yield takeEvery(CHECK_IN_TYPES.SUBMIT, checkIn);
-  yield takeEvery(CHECK_IN_TYPES.CHECK_FOR_ACTIVE_VISITS, checkForActiveVisits);
+  yield takeEvery(CHECK_IN_TYPES.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
 }
 
 export default checkInSagas;

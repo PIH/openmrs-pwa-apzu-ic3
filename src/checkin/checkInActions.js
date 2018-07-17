@@ -26,12 +26,12 @@ const expectedToCheckIn = (results) => ( {
   results: results
 });
 
-const checkForVisits = () => ( {
-  type: CHECK_IN_TYPES.CHECK_FOR_ACTIVE_VISITS
+const getExpectedToCheckIn = () => ( {
+  type: CHECK_IN_TYPES.GET_EXPECTED_PATIENTS_TO_CHECKIN
 });
 
-const checkForVisitsFailed = (message) => ( {
-  type: CHECK_IN_TYPES.CHECK_FOR_VISITS_FAILED,
+const getExpectedToCheckInFailed = (message) => ( {
+  type: CHECK_IN_TYPES.GET_EXPECTED_TO_CHECKIN_FAILED,
   message: message
 });
 
@@ -39,7 +39,7 @@ export default {
   checkInSubmitted,
   checkInSucceeded,
   checkInFailed,
-  checkForVisits,
+  getExpectedToCheckIn,
   expectedToCheckIn,
-  checkForVisitsFailed
+  getExpectedToCheckInFailed
 };

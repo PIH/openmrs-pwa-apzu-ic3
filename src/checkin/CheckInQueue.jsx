@@ -1,6 +1,6 @@
 import React from 'react';
 import { Label } from 'react-bootstrap';
-import { DataGrid, Patient } from '@openmrs/react-components';
+import { DataGrid } from '@openmrs/react-components';
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
 import patientActions from '../patient/patientActions';
@@ -27,12 +27,6 @@ class CheckInQueue extends React.Component {
 
   }
 
-  parseResults(results) {
-    // convert results to the patient domain object
-    return results.map((result) => {
-      return Patient.createFromRestRep(result);
-    });
-  };
 
   redirectToCheckinPageActionCreator() {
     return push('/checkin/checkInPage');
@@ -40,7 +34,7 @@ class CheckInQueue extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(patientActions.clearPatientSelected());
-    this.props.dispatch(checkInActions.checkForVisits());
+    this.props.dispatch(checkInActions.getExpectedToCheckIn());
   }
 
   render() {
