@@ -28,7 +28,7 @@ describe('Component: CheckInForm', () => {
     props = {};
     store = mockStore(
       {
-        selected: {
+        selectedPatient: {
           patient: {
             patient: {
               uuid: "abc"

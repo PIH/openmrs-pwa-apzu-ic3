@@ -46,7 +46,7 @@ const rootReducer = combineReducers({
   openmrs: openmrsReducers,
   form: reduxFormReducer,
   toastr: toastrReducer,
-  selected: combineReducers({
+  selectedPatient: combineReducers({
     patient: patientSelectedReducer,
     visit: visitReducer
   }),

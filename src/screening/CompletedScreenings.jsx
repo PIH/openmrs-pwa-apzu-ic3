@@ -42,7 +42,7 @@ CompletedScreenings.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    activeVisit: state.selected.visit.activeVisit ? state.selected.visit.activeVisit : { "encounters" : [] }
+    activeVisit: state.selectedPatient.visit.activeVisit ? state.selectedPatient.visit.activeVisit : { "encounters" : [] }
   };
 };
 

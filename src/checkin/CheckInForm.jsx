@@ -154,7 +154,7 @@ CheckinForm = reduxForm({
 
 CheckinForm = connect(
   state => ({
-    initialValues: state.selected.patient.patient,
+    initialValues: state.selectedPatient.patient.patient,
   })
 )(CheckinForm);
 

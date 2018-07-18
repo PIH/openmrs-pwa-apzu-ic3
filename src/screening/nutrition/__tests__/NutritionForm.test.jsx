@@ -29,7 +29,7 @@ describe('Component: NutritionForm', () => {
     props = {};
     store = mockStore(
       {
-        selected: {
+        selectedPatient: {
           patient: {
             patient: {
               uuid: "abc"

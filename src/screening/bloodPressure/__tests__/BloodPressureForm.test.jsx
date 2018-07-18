@@ -30,7 +30,7 @@ describe('Component: BloodPressureForm', () => {
     props = {};
     store = mockStore(
       {
-        selected: {
+        selectedPatient: {
           patient: {
             patient: {
               uuid: "abc"

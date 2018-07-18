@@ -36,7 +36,7 @@ describe('Component: SearchPatient', () => {
         openmrs: {
           patientSearch: {}
         },
-        selected: {
+        selectedPatient: {
           patient: {}
         }
       });
