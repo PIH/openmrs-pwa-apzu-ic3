@@ -28,7 +28,7 @@ describe('Component: CheckInQueue', () => {
     store = mockStore(
       {
         dispatch: {},
-        expectedCheckIn: {
+        expectedCheckInsList: {
           patients: []
         },
         selected: {

@@ -4,7 +4,7 @@ import utils from '../utils';
 import {push} from "connected-react-router";
 
 class ActiveVisitsQueue extends Queue {
-  
+
   redirectToInfoPageActionCreator() {
     return push({
       pathname: '/checkin/checkInComplete',

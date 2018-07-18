@@ -62,7 +62,7 @@ class PatientHeader extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selected.patient
+    patient: state.selected.patient.patient
   };
 };
 

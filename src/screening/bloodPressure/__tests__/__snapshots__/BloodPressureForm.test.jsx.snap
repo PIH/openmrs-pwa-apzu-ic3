@@ -27,12 +27,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
         dispatch={[Function]}
         patient={
           Object {
-            "patient": Object {
-              "uuid": "abc",
-            },
-            "visit": Object {
-              "uuid": "def",
-            },
+            "uuid": "abc",
           }
         }
         visit={

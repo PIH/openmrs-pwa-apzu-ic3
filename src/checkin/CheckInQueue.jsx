@@ -57,7 +57,7 @@ CheckInQueue.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    rowData: state.expectedCheckIn.patients
+    rowData: state.expectedCheckInsList.patients
   };
 };
 

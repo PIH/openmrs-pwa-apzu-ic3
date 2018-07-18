@@ -27,12 +27,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
         dispatch={[Function]}
         initialValues={
           Object {
-            "patient": Object {
-              "uuid": "abc",
-            },
-            "visit": Object {
-              "uuid": "def",
-            },
+            "uuid": "abc",
           }
         }
       >
@@ -45,12 +40,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
           getFormState={[Function]}
           initialValues={
             Object {
-              "patient": Object {
-                "uuid": "abc",
-              },
-              "visit": Object {
-                "uuid": "def",
-              },
+              "uuid": "abc",
             }
           }
           keepDirtyOnReinitialize={false}
@@ -109,12 +99,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
             getFormState={[Function]}
             initialValues={
               Object {
-                "patient": Object {
-                  "uuid": "abc",
-                },
-                "visit": Object {
-                  "uuid": "def",
-                },
+                "uuid": "abc",
               }
             }
             initialize={[Function]}
@@ -155,12 +140,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
             validExceptSubmit={true}
             values={
               Object {
-                "patient": Object {
-                  "uuid": "abc",
-                },
-                "visit": Object {
-                  "uuid": "def",
-                },
+                "uuid": "abc",
               }
             }
           >
@@ -196,12 +176,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
               handleSubmit={[Function]}
               initialValues={
                 Object {
-                  "patient": Object {
-                    "uuid": "abc",
-                  },
-                  "visit": Object {
-                    "uuid": "def",
-                  },
+                  "uuid": "abc",
                 }
               }
               initialize={[Function]}
@@ -370,12 +345,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "getFormState": [Function],
                                             "getValues": [Function],
                                             "initialValues": Object {
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "visit": Object {
-                                                "uuid": "def",
-                                              },
+                                              "uuid": "abc",
                                             },
                                             "initialize": [Function],
                                             "initialized": false,
@@ -420,12 +390,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "valid": true,
                                             "validExceptSubmit": true,
                                             "values": Object {
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "visit": Object {
-                                                "uuid": "def",
-                                              },
+                                              "uuid": "abc",
                                             },
                                             "warning": undefined,
                                           }
@@ -484,12 +449,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "getFormState": [Function],
                                               "getValues": [Function],
                                               "initialValues": Object {
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "visit": Object {
-                                                  "uuid": "def",
-                                                },
+                                                "uuid": "abc",
                                               },
                                               "initialize": [Function],
                                               "initialized": false,
@@ -534,12 +494,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "valid": true,
                                               "validExceptSubmit": true,
                                               "values": Object {
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "visit": Object {
-                                                  "uuid": "def",
-                                                },
+                                                "uuid": "abc",
                                               },
                                               "warning": undefined,
                                             }
@@ -710,12 +665,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "getFormState": [Function],
                                             "getValues": [Function],
                                             "initialValues": Object {
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "visit": Object {
-                                                "uuid": "def",
-                                              },
+                                              "uuid": "abc",
                                             },
                                             "initialize": [Function],
                                             "initialized": false,
@@ -760,12 +710,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "valid": true,
                                             "validExceptSubmit": true,
                                             "values": Object {
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "visit": Object {
-                                                "uuid": "def",
-                                              },
+                                              "uuid": "abc",
                                             },
                                             "warning": undefined,
                                           }
@@ -824,12 +769,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "getFormState": [Function],
                                               "getValues": [Function],
                                               "initialValues": Object {
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "visit": Object {
-                                                  "uuid": "def",
-                                                },
+                                                "uuid": "abc",
                                               },
                                               "initialize": [Function],
                                               "initialized": false,
@@ -874,12 +814,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "valid": true,
                                               "validExceptSubmit": true,
                                               "values": Object {
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "visit": Object {
-                                                  "uuid": "def",
-                                                },
+                                                "uuid": "abc",
                                               },
                                               "warning": undefined,
                                             }
@@ -1050,12 +985,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "getFormState": [Function],
                                             "getValues": [Function],
                                             "initialValues": Object {
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "visit": Object {
-                                                "uuid": "def",
-                                              },
+                                              "uuid": "abc",
                                             },
                                             "initialize": [Function],
                                             "initialized": false,
@@ -1100,12 +1030,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "valid": true,
                                             "validExceptSubmit": true,
                                             "values": Object {
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "visit": Object {
-                                                "uuid": "def",
-                                              },
+                                              "uuid": "abc",
                                             },
                                             "warning": undefined,
                                           }
@@ -1164,12 +1089,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "getFormState": [Function],
                                               "getValues": [Function],
                                               "initialValues": Object {
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "visit": Object {
-                                                  "uuid": "def",
-                                                },
+                                                "uuid": "abc",
                                               },
                                               "initialize": [Function],
                                               "initialized": false,
@@ -1214,12 +1134,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "valid": true,
                                               "validExceptSubmit": true,
                                               "values": Object {
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "visit": Object {
-                                                  "uuid": "def",
-                                                },
+                                                "uuid": "abc",
                                               },
                                               "warning": undefined,
                                             }
@@ -1390,12 +1305,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "getFormState": [Function],
                                             "getValues": [Function],
                                             "initialValues": Object {
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "visit": Object {
-                                                "uuid": "def",
-                                              },
+                                              "uuid": "abc",
                                             },
                                             "initialize": [Function],
                                             "initialized": false,
@@ -1440,12 +1350,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "valid": true,
                                             "validExceptSubmit": true,
                                             "values": Object {
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "visit": Object {
-                                                "uuid": "def",
-                                              },
+                                              "uuid": "abc",
                                             },
                                             "warning": undefined,
                                           }
@@ -1504,12 +1409,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "getFormState": [Function],
                                               "getValues": [Function],
                                               "initialValues": Object {
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "visit": Object {
-                                                  "uuid": "def",
-                                                },
+                                                "uuid": "abc",
                                               },
                                               "initialize": [Function],
                                               "initialized": false,
@@ -1554,12 +1454,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "valid": true,
                                               "validExceptSubmit": true,
                                               "values": Object {
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "visit": Object {
-                                                  "uuid": "def",
-                                                },
+                                                "uuid": "abc",
                                               },
                                               "warning": undefined,
                                             }

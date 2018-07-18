@@ -96,9 +96,9 @@ BloodPressureForm.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selected.patient,
+    patient: state.selected.patient.patient,
     visit: {
-      uuid: state.selected.patient.activeVisit
+      uuid: state.selected.patient.patient.activeVisit
     }
   };
 };
