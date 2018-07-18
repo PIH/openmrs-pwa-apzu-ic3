@@ -45,7 +45,7 @@ function* getExpectedToCheckIn(action) {
   try {
     // for now, just get a random list of patients
     let response = yield call(patientRest.findPatient, {
-      query: 'Bob',
+      query: 'Tom',
       representation: "custom:" + PATIENT_REPRESENTATION
     });
     // get a list of active visits

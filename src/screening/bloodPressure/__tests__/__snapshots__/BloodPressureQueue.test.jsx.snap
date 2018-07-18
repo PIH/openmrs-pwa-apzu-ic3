@@ -59,6 +59,10 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                 "field": "age",
                 "headerName": "Age",
               },
+              Object {
+                "headerName": "Checked-in Time",
+                "valueGetter": [Function],
+              },
             ]
           }
           rowData={Array []}
@@ -95,6 +99,10 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                 Object {
                   "field": "age",
                   "headerName": "Age",
+                },
+                Object {
+                  "headerName": "Checked-in Time",
+                  "valueGetter": [Function],
                 },
               ]
             }
@@ -141,6 +149,10 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                     Object {
                       "field": "age",
                       "headerName": "Age",
+                    },
+                    Object {
+                      "headerName": "Checked-in Time",
+                      "valueGetter": [Function],
                     },
                   ]
                 }

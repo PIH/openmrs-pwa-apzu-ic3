@@ -5,6 +5,7 @@ import { visitActions } from '@openmrs/react-components';
 import { DataGrid } from '@openmrs/react-components';
 import patientActions from '../patient/patientActions';
 import { PATIENT_REPRESENTATION, ENCOUNTER_REPRESENTATION } from '../constants';
+import utils from "../utils";
 
 class Queue extends React.Component {
 
@@ -16,7 +17,12 @@ class Queue extends React.Component {
       { headerName: 'Given Name', field: 'name.givenName' },
       { headerName: 'Family Name', field: 'name.familyName' },
       { headerName: 'Gender', field: 'gender' },
-      { headerName: 'Age', field: 'age' }
+      { headerName: 'Age', field: 'age' },
+      {
+        headerName: 'Checked-in Time', valueGetter: function getCheckedInTime(params) {
+          return utils.getPatientCheckedInTime(params.data);
+        }
+      }
     ];
   }
 

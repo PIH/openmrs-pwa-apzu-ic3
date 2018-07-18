@@ -4,22 +4,7 @@ import utils from '../utils';
 import {push} from "connected-react-router";
 
 class ActiveVisitsQueue extends Queue {
-  constructor(props) {
-    super(props);
-    this.columnDefs =  [
-      { headerName: 'uuid', hide: true, field: 'uuid' },
-      { headerName: 'patientId', field: 'id' },
-      { headerName: 'Given Name', field: 'name.givenName' },
-      { headerName: 'Family Name', field: 'name.familyName' },
-      { headerName: 'Gender', field: 'gender' },
-      { headerName: 'Age', field: 'age' },
-      { headerName: 'Checked-in Time', valueGetter: function getCheckedInTime(params) {
-        return utils.getPatientCheckedInTime(params.data);
-      }
-      }
-    ];
-  }
-
+  
   redirectToInfoPageActionCreator() {
     return push({
       pathname: '/checkin/checkInComplete',
