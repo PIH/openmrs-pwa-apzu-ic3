@@ -18,6 +18,7 @@ import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/rea
 import activeVisitsReducer from './visit/activeVisitsQueueReducer';
 import bloodPressureQueueReducer from './screening/bloodPressure/bloodPressureQueueReducer';
 import nutritionQueueReducer from "./screening/nutrition/nutritionQueueReducer";
+import nurseQueueReducer from "./screening/nurse/nurseQueueReducer";
 import patientSelectedReducer from './patient/patientSelectedReducer';
 import checkInReducer from './checkin/checkInReducers';
 import visitReducer from './screening/visitReducers';
@@ -54,7 +55,8 @@ const rootReducer = combineReducers({
   screening: combineReducers({
     activeVisitsQueue: activeVisitsReducer,
     bloodPressureQueue: bloodPressureQueueReducer,
-    nutritionQueue: nutritionQueueReducer
+    nutritionQueue: nutritionQueueReducer,
+    nurseQueue: nurseQueueReducer
   })
 });
 

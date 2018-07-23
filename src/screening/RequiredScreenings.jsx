@@ -13,7 +13,8 @@ class RequiredScreenings extends React.Component {
 
   nameMappings = {
     bloodPressureQueue: "Blood Pressure Screening",
-    nutritionQueue: "Nutrition Screening"
+    nutritionQueue: "Nutrition Screening",
+    nurseQueue: "Nurse Station"
   };
 
   findScreeningsForPatient() {

@@ -28,6 +28,13 @@ class HomePage extends React.Component {
               </Button>
             </ButtonGroup>
           </Link>
+          <Link to="/visit/queue">
+            <ButtonGroup>
+              <Button bsSize="large" >
+                <Glyphicon glyph="check" /> Active Visits
+              </Button>
+            </ButtonGroup>
+          </Link>
           <Link to="/screening/bloodPressure/queue">
             <ButtonGroup>
               <Button bsSize="large" >
@@ -39,6 +46,13 @@ class HomePage extends React.Component {
             <ButtonGroup>
               <Button bsSize="large" >
                 <Glyphicon glyph="check" /> Nutrition Screening
+              </Button>
+            </ButtonGroup>
+          </Link>
+          <Link to="/screening/nurse/queue">
+            <ButtonGroup>
+              <Button bsSize="large" >
+                <Glyphicon glyph="check" /> Nurse Evaluation
               </Button>
             </ButtonGroup>
           </Link>
