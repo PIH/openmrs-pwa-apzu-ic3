@@ -17,7 +17,7 @@ import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import NutritionForm from "./screening/nutrition/NutritionForm";
 import NurseQueue from "./screening/nurse/NurseQueue";
-import ActiveVisitsQueue from "./visit/ActiveVisitsQueue";
+import ActiveVisitsQueue from "./visit/ActiveVisits";
 import { ConnectedRouter } from 'connected-react-router';
 
 const store = createStore();

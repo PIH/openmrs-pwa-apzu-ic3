@@ -2,7 +2,7 @@ import Queue from '../queue/Queue';
 import { connect } from "react-redux";
 import {push} from "connected-react-router";
 
-class ActiveVisitsQueue extends Queue {
+class ActiveVisits extends Queue {
 
   redirectToInfoPageActionCreator() {
     return push({
@@ -20,8 +20,8 @@ class ActiveVisitsQueue extends Queue {
 
 const mapStateToProps = (state) => {
   return {
-    rowData: state.screening.activeVisitsQueue.list
+    rowData: state.activeVisits.list
   };
 };
 
-export default connect(mapStateToProps)(ActiveVisitsQueue);
+export default connect(mapStateToProps)(ActiveVisits);
