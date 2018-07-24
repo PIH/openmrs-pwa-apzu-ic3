@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import { visitActions } from '@openmrs/react-components';
 import { VISIT_REPRESENTATION } from '../constants';
-
+import utils from "../utils";
 
 class CompletedScreenings extends React.Component {
 
@@ -17,7 +17,7 @@ class CompletedScreenings extends React.Component {
     let encounters = this.props.activeVisit.encounters.map((encounter, i) => {
       return (
         <div key={encounter.id}>
-          <h4>{encounter.display}</h4>
+          <h4>{encounter.display} @ { utils.formatTime(encounter.encounterDatetime) }</h4>
           <ul>{encounter.obs.map((observation) => {
             return (
               <li key={observation.id}>{observation.display}</li>

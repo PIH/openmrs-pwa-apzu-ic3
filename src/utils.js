@@ -3,6 +3,10 @@ import { ENCOUNTER_TYPES } from "./constants";
 
 const utils = {
 
+  formatTime: (datetime) => {
+    return dateFns.format(new Date(datetime), 'h[:]mma');
+  },
+
   getPatientCheckedInTime: (patient) => {
 
     let checkedInTime = null;
@@ -15,7 +19,7 @@ const utils = {
         checkedInEncounters.sort(function (a, b) {
           return +new Date(a.encounterDatetime) - +new Date(b.encounterDatetime);
         });
-        checkedInTime = dateFns.format(new Date(checkedInEncounters[0].encounterDatetime), 'D[-]MMM[-]YY H[:]mm');
+        checkedInTime = utils.formatTime(checkedInEncounters[0].encounterDatetime);
       }
     }
 
@@ -23,6 +27,5 @@ const utils = {
 
   }
 };
-
 
 export default utils;
