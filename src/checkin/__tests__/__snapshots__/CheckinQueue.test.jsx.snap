@@ -41,6 +41,10 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                 "hide": true,
               },
               Object {
+                "headerName": "Id",
+                "valueGetter": "data.identifiers[0].identifier",
+              },
+              Object {
                 "field": "id",
                 "headerName": "patientId",
               },
@@ -80,6 +84,10 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                   "field": "uuid",
                   "headerName": "uuid",
                   "hide": true,
+                },
+                Object {
+                  "headerName": "Id",
+                  "valueGetter": "data.identifiers[0].identifier",
                 },
                 Object {
                   "field": "id",
@@ -130,6 +138,10 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                       "field": "uuid",
                       "headerName": "uuid",
                       "hide": true,
+                    },
+                    Object {
+                      "headerName": "Id",
+                      "valueGetter": "data.identifiers[0].identifier",
                     },
                     Object {
                       "field": "id",

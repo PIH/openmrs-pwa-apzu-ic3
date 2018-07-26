@@ -42,6 +42,10 @@ exports[`Component: SearchPatient renders properly 1`] = `
                 "hide": true,
               },
               Object {
+                "headerName": "Id",
+                "valueGetter": "data.identifiers[0].identifier",
+              },
+              Object {
                 "field": "name.givenName",
                 "headerName": "Given Name",
               },
@@ -73,6 +77,10 @@ exports[`Component: SearchPatient renders properly 1`] = `
                   "field": "uuid",
                   "headerName": "uuid",
                   "hide": true,
+                },
+                Object {
+                  "headerName": "Id",
+                  "valueGetter": "data.identifiers[0].identifier",
                 },
                 Object {
                   "field": "name.givenName",
@@ -622,6 +630,10 @@ exports[`Component: SearchPatient renders properly 1`] = `
                       "hide": true,
                     },
                     Object {
+                      "headerName": "Id",
+                      "valueGetter": "data.identifiers[0].identifier",
+                    },
+                    Object {
                       "field": "name.givenName",
                       "headerName": "Given Name",
                     },
@@ -653,6 +665,10 @@ exports[`Component: SearchPatient renders properly 1`] = `
                         "field": "uuid",
                         "headerName": "uuid",
                         "hide": true,
+                      },
+                      Object {
+                        "headerName": "Id",
+                        "valueGetter": "data.identifiers[0].identifier",
                       },
                       Object {
                         "field": "name.givenName",
@@ -695,6 +711,10 @@ exports[`Component: SearchPatient renders properly 1`] = `
                             "field": "uuid",
                             "headerName": "uuid",
                             "hide": true,
+                          },
+                          Object {
+                            "headerName": "Id",
+                            "valueGetter": "data.identifiers[0].identifier",
                           },
                           Object {
                             "field": "name.givenName",

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Label } from 'react-bootstrap';
 import { Patient, PatientSearch } from '@openmrs/react-components';
+import { visitActions } from '@openmrs/react-components';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
 import patientActions from '../patient/patientActions';
+import {ENCOUNTER_REPRESENTATION, PATIENT_REPRESENTATION} from "../constants";
 
 
 class SearchPatient extends React.Component {
@@ -13,7 +15,7 @@ class SearchPatient extends React.Component {
 
     this.columnDefs =  [
       { headerName: 'uuid', hide: true, field: 'uuid' },
-      /* { headerName: 'ID', valueGetter: 'data.identifier' },*/
+      { headerName: 'Id', valueGetter: 'data.identifiers[0].identifier' },
       { headerName: 'Given Name', field: 'name.givenName' },
       { headerName: 'Family Name', field: 'name.familyName' },
       { headerName: 'Gender', field: 'gender' },
@@ -22,11 +24,13 @@ class SearchPatient extends React.Component {
   }
 
   componentDidMount() {
+    this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:" + PATIENT_REPRESENTATION + ",encounters:" + ENCOUNTER_REPRESENTATION + ")"));
     this.props.dispatch(patientActions.clearPatientSelected());
   }
 
   redirectToInfoPageActionCreator() {
-    return push('/infoPatient');
+    // console.log("SearchPatient.jsx before navigating to checkInPage: patient = " + this.props.patient.uuid);
+    return push('/checkin/checkInPage');
   }
 
   parseResults(results) {

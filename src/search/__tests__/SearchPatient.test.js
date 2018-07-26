@@ -48,7 +48,7 @@ describe('Component: SearchPatient', () => {
     expect(searchPatient().find(PatientSearch).length).toBe(1);
     expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
     expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToInfoPageActionCreator");
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/infoPatient");
+    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/checkin/checkInPage");
     expect(SearchPatient.prototype.componentDidMount.calledOnce).toBe(true);
     expect(store.getActions()).toContainEqual(patientActions.clearPatientSelected());
   });

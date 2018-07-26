@@ -2,10 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 import CheckinForm from './CheckInForm';
 import checkInActions from './checkInActions';
-import { ENCOUNTER_TYPES, VISIT_TYPES, LOCATION_TYPES } from '../constants';
+import { visitActions } from '@openmrs/react-components';
+import {ENCOUNTER_TYPES, VISIT_TYPES, LOCATION_TYPES, VISIT_REPRESENTATION} from '../constants';
 import { push } from "connected-react-router";
 
 class CheckInPage extends React.Component {
+
+  componentDidMount() {
+    this.props.dispatch(visitActions.fetchPatientActiveVisit(this.props.patient.patient.uuid,
+      "custom:" + VISIT_REPRESENTATION));
+  }
 
   redirectToQueuePageActionCreator() {
     return push({
@@ -19,10 +25,10 @@ class CheckInPage extends React.Component {
   handleCheckIn(values) {
     this.props.dispatch(
       checkInActions.checkInSubmitted(
-        this.props.patient,
+        this.props.patient.patient,
         VISIT_TYPES.ClinicVisitType,
         ENCOUNTER_TYPES.CheckInEncounterType,
-        LOCATION_TYPES.UnknownLocation,
+        this.props.location,
         this.redirectToQueuePageActionCreator
       ));
   }
@@ -41,7 +47,8 @@ class CheckInPage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient.patient.patient
+    patient: state.selectedPatient.patient,
+    location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation
   };
 };
 

@@ -32,11 +32,18 @@ describe('Component: CheckInForm', () => {
           patient: {
             patient: {
               uuid: "abc"
-            },
-            visit: {
-              uuid: "def"
             }
           },
+          visit: {
+            activeVisit: {
+              uuid: "3a80",
+              encounters: [],
+              patient: {
+                uuid: "abc"
+              }
+            },
+            uuid: "def"
+          }
         }
       });
     mountedComponent = undefined;

@@ -2,12 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
+import CompletedScreenings from "../screening/CompletedScreenings";
 import { FieldInput } from '@openmrs/react-components';
 import { Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
 
 let CheckinForm = props => {
 
-  const { handleSubmit, submitting } = props;
+  const { handleSubmit, submitting, activeVisit } = props;
 
   return (
     <div>
@@ -22,25 +23,6 @@ let CheckinForm = props => {
         onSubmit={handleSubmit}
       >
         <Grid>
-
-        {/*  <Row>
-            <FormGroup controlId="formIdentifier">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                Identifier
-              </Col>
-              <Col sm={4}>
-                <Field
-                  component={FieldInput}
-                  name="identifier"
-                  placeholder="Identifier"
-                  type='text'
-                />
-              </Col>
-            </FormGroup>
-          </Row>*/}
 
           <Row>
             <FormGroup controlId="formFirstName">
@@ -119,7 +101,7 @@ let CheckinForm = props => {
           </Row>
 
 
-
+          { !(typeof activeVisit !== 'undefined' && typeof activeVisit.encounters !== 'undefined' ) &&
           <Row>
             <FormGroup controlId="formSubmit">
               <Col
@@ -140,7 +122,14 @@ let CheckinForm = props => {
               </Col>
             </FormGroup>
           </Row>
+          }
 
+          { (typeof activeVisit !== 'undefined' && typeof activeVisit.encounters !== 'undefined' ) &&
+            <div>
+              <h3><Label>Completed Screenings</Label></h3>
+              <CompletedScreenings patientUuid={ activeVisit.patient.uuid } />
+            </div>
+          }
         </Grid>
       </Form>
     </div>
@@ -155,6 +144,7 @@ CheckinForm = reduxForm({
 CheckinForm = connect(
   state => ({
     initialValues: state.selectedPatient.patient.patient,
+    activeVisit: state.selectedPatient.visit.activeVisit
   })
 )(CheckinForm);
 

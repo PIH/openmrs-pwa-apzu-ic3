@@ -37,7 +37,7 @@ class CompletedScreenings extends React.Component {
 
 CompletedScreenings.propTypes = {
   patientUuid: PropTypes.string.isRequired,
-  activeVisit: PropTypes.array
+  activeVisit: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {
