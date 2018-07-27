@@ -1344,19 +1344,8 @@ describe('bloodPressureQueueReducer', () => {
   ];
 
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual({});
+    expect(reducer(undefined, [])).toEqual([]);
   });
-
- /* it('should filter out non-adult patients', () => {
-    const queue = reducer([], {
-      type:VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED,
-      visits: sampleVisits
-    });
-
-    expect(queue.list.length).toBe(1);
-    expect(queue.list[0].getName().givenName).toBe("Bob");
-    expect(queue.list[0].getName().familyName).toBe("Dylan");
-  });*/
 
 });
 

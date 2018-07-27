@@ -2025,7 +2025,7 @@ describe('createListReducer', () => {
 
   it('should return the initial state', () => {
     const reducer = createListReducer();
-    expect(reducer(undefined, {})).toEqual({});
+    expect(reducer(undefined, [])).toEqual([]);
   });
 
   it('should return all patients if encounter type not specified', () => {
@@ -2039,13 +2039,13 @@ describe('createListReducer', () => {
       visits: sampleVisits
     });
 
-    expect(queue.list.length).toBe(2);
-    expect(queue.list[0].getName().givenName).toBe("Bob");
-    expect(queue.list[0].getName().familyName).toBe("Dylan");
-    expect(queue.list[0].activeVisit.uuid).toBe("6501cbf1-42f3-4b2f-83bc-ed562e019af8");
-    expect(queue.list[1].getName().givenName).toBe("Neil");
-    expect(queue.list[1].getName().familyName).toBe("Young");
-    expect(queue.list[1].activeVisit.uuid).toBe("e81fe098-5b7f-4085-bc76-39918c8df2f6");
+    expect(queue.length).toBe(2);
+    expect(queue[0].getName().givenName).toBe("Bob");
+    expect(queue[0].getName().familyName).toBe("Dylan");
+    expect(queue[0].activeVisit.uuid).toBe("6501cbf1-42f3-4b2f-83bc-ed562e019af8");
+    expect(queue[1].getName().givenName).toBe("Neil");
+    expect(queue[1].getName().familyName).toBe("Young");
+    expect(queue[1].activeVisit.uuid).toBe("e81fe098-5b7f-4085-bc76-39918c8df2f6");
 
   });
 
@@ -2061,10 +2061,10 @@ describe('createListReducer', () => {
       visits: sampleVisits
     });
 
-    expect(queue.list.length).toBe(1);
-    expect(queue.list[0].getName().givenName).toBe("Bob");
-    expect(queue.list[0].getName().familyName).toBe("Dylan");
-    expect(queue.list[0].activeVisit.uuid).toBe("6501cbf1-42f3-4b2f-83bc-ed562e019af8");
+    expect(queue.length).toBe(1);
+    expect(queue[0].getName().givenName).toBe("Bob");
+    expect(queue[0].getName().familyName).toBe("Dylan");
+    expect(queue[0].activeVisit.uuid).toBe("6501cbf1-42f3-4b2f-83bc-ed562e019af8");
 
   });
 
@@ -2080,10 +2080,10 @@ describe('createListReducer', () => {
       visits: sampleVisitWithVoidedEncounter    // this second sample data set has just Neil Young with a voided vitals encounter
     });
 
-    expect(queue.list.length).toBe(1);
-    expect(queue.list[0].getName().givenName).toBe("Neil");
-    expect(queue.list[0].getName().familyName).toBe("Young");
-    expect(queue.list[0].activeVisit.uuid).toBe("e81fe098-5b7f-4085-bc76-39918c8df2f6");
+    expect(queue.length).toBe(1);
+    expect(queue[0].getName().givenName).toBe("Neil");
+    expect(queue[0].getName().familyName).toBe("Young");
+    expect(queue[0].activeVisit.uuid).toBe("e81fe098-5b7f-4085-bc76-39918c8df2f6");
 
   });
 

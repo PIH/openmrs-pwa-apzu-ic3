@@ -30,9 +30,7 @@ describe('Component: NutritionQueue', () => {
       {
         dispatch: {},
         screening: {
-          nutritionQueue: {
-            list: []
-          }
+          nutritionQueue: []
         }
       });
     mountedComponent = undefined;

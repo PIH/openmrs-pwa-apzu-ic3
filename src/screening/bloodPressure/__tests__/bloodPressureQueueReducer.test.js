@@ -1344,7 +1344,7 @@ describe('bloodPressureQueueReducer', () => {
   ];
 
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual({});
+    expect(reducer(undefined, [])).toEqual([]);
   });
 
   it('should filter out non-adult patients', () => {
@@ -1353,9 +1353,9 @@ describe('bloodPressureQueueReducer', () => {
       visits: sampleVisits
     });
 
-    expect(queue.list.length).toBe(1);
-    expect(queue.list[0].getName().givenName).toBe("Bob");
-    expect(queue.list[0].getName().familyName).toBe("Dylan");
+    expect(queue.length).toBe(1);
+    expect(queue[0].getName().givenName).toBe("Bob");
+    expect(queue[0].getName().familyName).toBe("Dylan");
   });
 
 });

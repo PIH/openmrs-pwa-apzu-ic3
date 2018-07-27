@@ -1,5 +1,5 @@
 
-const createListReducer = (actionType, actionProperty = 'patients', converters = [], filters = []) =>  {
+const createListReducer = (actionType = '', actionProperty = 'patients', converters = [], filters = []) =>  {
 
   // TODO add test cases for new test mappings
 
