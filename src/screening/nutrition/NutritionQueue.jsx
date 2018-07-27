@@ -1,7 +1,6 @@
-import List from '../../list/List';
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
-import { visitActions } from '@openmrs/react-components';
+import { visitActions, List } from '@openmrs/react-components';
 import patientActions from '../../patient/patientActions';
 import utils from "../../utils";
 import { PATIENT_REPRESENTATION, ENCOUNTER_REPRESENTATION } from '../../constants';
