@@ -5,29 +5,29 @@ import { spy } from 'sinon';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { DataGrid } from '@openmrs/react-components';
-import Queue from '../List';
+import List from '../List';
 
 let props, store;
 let mountedComponent;
 
 const mockStore = configureMockStore();
 
-spy(Queue.prototype, 'componentDidMount');
+spy(List.prototype, 'componentDidMount');
 
-const queue = () => {
+const list = () => {
   if (!mountedComponent) {
     mountedComponent = mount(
       <Provider store={store}>
-        <Queue {... props} />
+        <List {... props} />
       </Provider>
     );
   }
   return mountedComponent;
 };
 
-describe('Component: Queue', () => {
+describe('Component: List', () => {
   beforeEach(() => {
-    // in an actual implementation of a queue, these would be mapped in
+    // in an actual implementation of a list, these would be mapped in
     props = {
       rowData: [],
       dispatch: () => {}
@@ -37,11 +37,11 @@ describe('Component: Queue', () => {
   });
 
   it('renders properly', () => {
-    expect(toJson(queue())).toMatchSnapshot();
-    expect(queue().find(DataGrid).length).toBe(1);
-    expect(queue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
-    expect(queue().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToInfoPageActionCreator");
-    expect(queue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/");
-    expect(Queue.prototype.componentDidMount.calledOnce).toBe(true);
+    expect(toJson(list())).toMatchSnapshot();
+    expect(list().find(DataGrid).length).toBe(1);
+    expect(list().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
+    expect(list().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToInfoPageActionCreator");
+    expect(list().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/");
+    expect(List.prototype.componentDidMount.calledOnce).toBe(true);
   });
 });

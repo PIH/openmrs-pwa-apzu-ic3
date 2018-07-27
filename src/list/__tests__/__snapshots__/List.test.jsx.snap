@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component: Queue renders properly 1`] = `
+exports[`Component: List renders properly 1`] = `
 <Provider
   store={
     Object {

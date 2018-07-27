@@ -1,8 +1,8 @@
-import Queue from '../../list/List';
+import List from '../../list/List';
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 
-class NurseQueue extends Queue {
+class NurseQueue extends List {
 
   redirectToInfoPageActionCreator() {
     return push('');

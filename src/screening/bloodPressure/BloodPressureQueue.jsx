@@ -1,8 +1,8 @@
-import Queue from '../../list/List';
+import List from '../../list/List';
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 
-class BloodPressureQueue extends Queue {
+class BloodPressureQueue extends List {
 
   redirectToInfoPageActionCreator() {
     return push('/screening/bloodPressure/form');
