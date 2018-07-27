@@ -7,7 +7,7 @@ import patientActions from '../patient/patientActions';
 import { PATIENT_REPRESENTATION, ENCOUNTER_REPRESENTATION } from '../constants';
 import utils from "../utils";
 
-class Queue extends React.Component {
+class List extends React.Component {
 
   constructor(props) {
     super(props);
@@ -70,4 +70,4 @@ class Queue extends React.Component {
 
 }
 
-export default Queue;
+export default List;
