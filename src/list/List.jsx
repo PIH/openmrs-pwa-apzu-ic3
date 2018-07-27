@@ -11,6 +11,9 @@ class Queue extends React.Component {
 
   constructor(props) {
     super(props);
+
+    // TOODO: allow this to be passed in as a prop
+
     this.columnDefs =  [
       { headerName: 'uuid', hide: true, field: 'uuid' },
       { headerName: 'Id', valueGetter: 'data.identifiers[0].identifier' },
@@ -31,13 +34,17 @@ class Queue extends React.Component {
     this.props.dispatch(patientActions.clearPatientSelected());
     // TODO make this potentially come from props so we can override it?
     // TODO can we get away from having to get a "full" rep of a patient?
-    this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:" + PATIENT_REPRESENTATION + ",encounters:" + ENCOUNTER_REPRESENTATION + ")"));
+    this.props.dispatch(this.fetchListAction());
     this.interval = setInterval(() =>
-      this.props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:" + PATIENT_REPRESENTATION + ",encounters:" + ENCOUNTER_REPRESENTATION + ")")), 10000);
+      this.props.dispatch(this.fetchListAction()), 10000);
   }
 
   componentWillUnmount() {
     clearInterval(this.interval);
+  }
+
+  fetchListAction() {
+    return visitActions.fetchActiveVisits("custom:(uuid,patient:" + PATIENT_REPRESENTATION + ",encounters:" + ENCOUNTER_REPRESENTATION + ")");
   }
 
   redirectToInfoPageActionCreator() {
@@ -45,7 +52,7 @@ class Queue extends React.Component {
   }
 
   title() {
-    return "Queue";
+    return "List";
   }
 
   render() {

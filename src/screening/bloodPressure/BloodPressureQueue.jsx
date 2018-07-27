@@ -1,4 +1,4 @@
-import Queue from '../../queue/Queue';
+import Queue from '../../list/List';
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 
@@ -16,7 +16,7 @@ class BloodPressureQueue extends Queue {
 
 const mapStateToProps = (state) => {
   return {
-    rowData: state.screening.bloodPressureQueue.list
+    rowData: state.screening.bloodPressureQueue
   };
 };
 

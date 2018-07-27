@@ -98,7 +98,7 @@ const mapStateToProps = (state) => {
   return {
     patient: state.selectedPatient.patient.patient,
     visit: {
-      uuid: state.selectedPatient.patient.patient.activeVisit
+      uuid: state.selectedPatient.patient.patient.activeVisit.uuid
     }
   };
 };

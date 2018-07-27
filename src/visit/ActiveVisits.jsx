@@ -1,4 +1,4 @@
-import Queue from '../queue/Queue';
+import Queue from '../list/List';
 import { connect } from "react-redux";
 import {push} from "connected-react-router";
 
@@ -20,7 +20,7 @@ class ActiveVisits extends Queue {
 
 const mapStateToProps = (state) => {
   return {
-    rowData: state.activeVisits.list
+    rowData: state.activeVisits
   };
 };
 

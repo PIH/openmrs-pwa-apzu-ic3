@@ -1,7 +1,9 @@
-import createQueueReducer from '../createQueueReducer';
+import createListReducer from '../createListReducer';
+import visitRestRepToPatientObjConverter from '../converter/visitRestRepToPatientObjConverter';
+import byEncounterTypeFilter from '../filter/byEncounterTypeFilter';
 import { VISIT_TYPES } from "@openmrs/react-components";
 
-describe('createQueueReducer', () => {
+describe('createListReducer', () => {
 
   const sampleVisits = [
     {
@@ -2022,13 +2024,16 @@ describe('createQueueReducer', () => {
 
 
   it('should return the initial state', () => {
-    const reducer = createQueueReducer();
+    const reducer = createListReducer();
     expect(reducer(undefined, {})).toEqual({});
   });
 
   it('should return all patients if encounter type not specified', () => {
 
-    const reducer = createQueueReducer();
+    const reducer = createListReducer(VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED,
+      'visits',
+      [visitRestRepToPatientObjConverter()]);
+
     const queue = reducer([], {
       type:VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED,
       visits: sampleVisits
@@ -2037,16 +2042,20 @@ describe('createQueueReducer', () => {
     expect(queue.list.length).toBe(2);
     expect(queue.list[0].getName().givenName).toBe("Bob");
     expect(queue.list[0].getName().familyName).toBe("Dylan");
-    expect(queue.list[0].activeVisit).toBe("6501cbf1-42f3-4b2f-83bc-ed562e019af8");
+    expect(queue.list[0].activeVisit.uuid).toBe("6501cbf1-42f3-4b2f-83bc-ed562e019af8");
     expect(queue.list[1].getName().givenName).toBe("Neil");
     expect(queue.list[1].getName().familyName).toBe("Young");
-    expect(queue.list[1].activeVisit).toBe("e81fe098-5b7f-4085-bc76-39918c8df2f6");
+    expect(queue.list[1].activeVisit.uuid).toBe("e81fe098-5b7f-4085-bc76-39918c8df2f6");
 
   });
 
   it('should exclude patients who already have encounter of certain type', () => {
 
-    const reducer = createQueueReducer('4fb47712-34a6-40d2-8ed3-e153abbd25b7');
+    const reducer = createListReducer(VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED,
+      'visits',
+      [visitRestRepToPatientObjConverter()],
+      [byEncounterTypeFilter('4fb47712-34a6-40d2-8ed3-e153abbd25b7')]);
+
     const queue = reducer([], {
       type:VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED,
       visits: sampleVisits
@@ -2055,13 +2064,17 @@ describe('createQueueReducer', () => {
     expect(queue.list.length).toBe(1);
     expect(queue.list[0].getName().givenName).toBe("Bob");
     expect(queue.list[0].getName().familyName).toBe("Dylan");
-    expect(queue.list[0].activeVisit).toBe("6501cbf1-42f3-4b2f-83bc-ed562e019af8");
+    expect(queue.list[0].activeVisit.uuid).toBe("6501cbf1-42f3-4b2f-83bc-ed562e019af8");
 
   });
 
   it('should not include voided encounters when determined patients to exclude', () => {
 
-    const reducer = createQueueReducer('4fb47712-34a6-40d2-8ed3-e153abbd25b7');
+    const reducer = createListReducer(VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED,
+      'visits',
+      [visitRestRepToPatientObjConverter()],
+      [byEncounterTypeFilter('4fb47712-34a6-40d2-8ed3-e153abbd25b7')]);
+
     const queue = reducer([], {
       type:VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED,
       visits: sampleVisitWithVoidedEncounter    // this second sample data set has just Neil Young with a voided vitals encounter
@@ -2070,7 +2083,7 @@ describe('createQueueReducer', () => {
     expect(queue.list.length).toBe(1);
     expect(queue.list[0].getName().givenName).toBe("Neil");
     expect(queue.list[0].getName().familyName).toBe("Young");
-    expect(queue.list[0].activeVisit).toBe("e81fe098-5b7f-4085-bc76-39918c8df2f6");
+    expect(queue.list[0].activeVisit.uuid).toBe("e81fe098-5b7f-4085-bc76-39918c8df2f6");
 
   });
 

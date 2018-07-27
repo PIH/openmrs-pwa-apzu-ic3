@@ -10,9 +10,9 @@ const utils = {
   getPatientCheckedInTime: (patient) => {
 
     let checkedInTime = null;
-    if (typeof patient.encounters !== 'undefined') {
+    if (typeof patient.activeVisit !== 'undefined' && typeof patient.activeVisit.encounters !== 'undefined') {
       //filter by CheckIn encounter
-      let checkedInEncounters = patient.encounters.filter(encounter =>
+      let checkedInEncounters = patient.activeVisit.encounters.filter(encounter =>
         encounter.encounterType.uuid === ENCOUNTER_TYPES.CheckInEncounterType.uuid);
 
       if (checkedInEncounters.length >  0 ) {
