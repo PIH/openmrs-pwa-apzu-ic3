@@ -39,14 +39,6 @@ exports[`Component: List renders properly 1`] = `
               "hide": true,
             },
             Object {
-              "headerName": "Id",
-              "valueGetter": "data.identifiers[0].identifier",
-            },
-            Object {
-              "field": "id",
-              "headerName": "patientId",
-            },
-            Object {
               "field": "name.givenName",
               "headerName": "Given Name",
             },
@@ -61,10 +53,6 @@ exports[`Component: List renders properly 1`] = `
             Object {
               "field": "age",
               "headerName": "Age",
-            },
-            Object {
-              "headerName": "Checked-in Time",
-              "valueGetter": [Function],
             },
           ]
         }
@@ -84,14 +72,6 @@ exports[`Component: List renders properly 1`] = `
                 "hide": true,
               },
               Object {
-                "headerName": "Id",
-                "valueGetter": "data.identifiers[0].identifier",
-              },
-              Object {
-                "field": "id",
-                "headerName": "patientId",
-              },
-              Object {
                 "field": "name.givenName",
                 "headerName": "Given Name",
               },
@@ -106,10 +86,6 @@ exports[`Component: List renders properly 1`] = `
               Object {
                 "field": "age",
                 "headerName": "Age",
-              },
-              Object {
-                "headerName": "Checked-in Time",
-                "valueGetter": [Function],
               },
             ]
           }
@@ -138,14 +114,6 @@ exports[`Component: List renders properly 1`] = `
                     "hide": true,
                   },
                   Object {
-                    "headerName": "Id",
-                    "valueGetter": "data.identifiers[0].identifier",
-                  },
-                  Object {
-                    "field": "id",
-                    "headerName": "patientId",
-                  },
-                  Object {
                     "field": "name.givenName",
                     "headerName": "Given Name",
                   },
@@ -160,10 +128,6 @@ exports[`Component: List renders properly 1`] = `
                   Object {
                     "field": "age",
                     "headerName": "Age",
-                  },
-                  Object {
-                    "headerName": "Checked-in Time",
-                    "valueGetter": [Function],
                   },
                 ]
               }
