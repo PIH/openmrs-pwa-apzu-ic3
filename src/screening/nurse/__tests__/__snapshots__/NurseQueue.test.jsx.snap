@@ -19,19 +19,7 @@ exports[`Component: NurseQueue renders properly 1`] = `
       rowData={Array []}
     >
       <div>
-        <h3>
-          <Label
-            bsClass="label"
-            bsStyle="default"
-          >
-            <span
-              className="label label-default"
-            >
-              Nurse Evaluation
-            </span>
-          </Label>
-        </h3>
-        <Connect(DataGrid)
+        <ScreeningQueue
           columnDefs={
             Array [
               Object {
@@ -69,124 +57,242 @@ exports[`Component: NurseQueue renders properly 1`] = `
               },
             ]
           }
+          dispatch={[Function]}
           rowData={Array []}
           rowSelectedActionCreators={
             Array [
               [Function],
             ]
           }
+          title="Nurse Queue"
         >
-          <DataGrid
-            columnDefs={
-              Array [
-                Object {
-                  "field": "uuid",
-                  "headerName": "uuid",
-                  "hide": true,
-                },
-                Object {
-                  "headerName": "Id",
-                  "valueGetter": "data.identifiers[0].identifier",
-                },
-                Object {
-                  "field": "id",
-                  "headerName": "patientId",
-                },
-                Object {
-                  "field": "name.givenName",
-                  "headerName": "Given Name",
-                },
-                Object {
-                  "field": "name.familyName",
-                  "headerName": "Family Name",
-                },
-                Object {
-                  "field": "gender",
-                  "headerName": "Gender",
-                },
-                Object {
-                  "field": "age",
-                  "headerName": "Age",
-                },
-                Object {
-                  "headerName": "Checked-in Time",
-                  "valueGetter": [Function],
-                },
-              ]
-            }
-            dispatch={[Function]}
-            rowData={Array []}
-            rowSelectedActionCreators={
-              Array [
-                [Function],
-              ]
-            }
-          >
-            <div
-              style={
-                Object {
-                  "height": "600px",
-                  "width": "100%",
-                }
+          <div>
+            <List
+              columnDefs={
+                Array [
+                  Object {
+                    "field": "uuid",
+                    "headerName": "uuid",
+                    "hide": true,
+                  },
+                  Object {
+                    "headerName": "Id",
+                    "valueGetter": "data.identifiers[0].identifier",
+                  },
+                  Object {
+                    "field": "id",
+                    "headerName": "patientId",
+                  },
+                  Object {
+                    "field": "name.givenName",
+                    "headerName": "Given Name",
+                  },
+                  Object {
+                    "field": "name.familyName",
+                    "headerName": "Family Name",
+                  },
+                  Object {
+                    "field": "gender",
+                    "headerName": "Gender",
+                  },
+                  Object {
+                    "field": "age",
+                    "headerName": "Age",
+                  },
+                  Object {
+                    "headerName": "Checked-in Time",
+                    "valueGetter": [Function],
+                  },
+                ]
               }
+              delayInterval={10000}
+              fetchListActionCreator={[Function]}
+              onMountOtherActionCreators={
+                Array [
+                  [Function],
+                ]
+              }
+              rowData={Array []}
+              rowSelectedActionCreators={
+                Array [
+                  [Function],
+                ]
+              }
+              title="Nurse Queue"
             >
-              <AgGridReact
-                columnDefs={
-                  Array [
-                    Object {
-                      "field": "uuid",
-                      "headerName": "uuid",
-                      "hide": true,
-                    },
-                    Object {
-                      "headerName": "Id",
-                      "valueGetter": "data.identifiers[0].identifier",
-                    },
-                    Object {
-                      "field": "id",
-                      "headerName": "patientId",
-                    },
-                    Object {
-                      "field": "name.givenName",
-                      "headerName": "Given Name",
-                    },
-                    Object {
-                      "field": "name.familyName",
-                      "headerName": "Family Name",
-                    },
-                    Object {
-                      "field": "gender",
-                      "headerName": "Gender",
-                    },
-                    Object {
-                      "field": "age",
-                      "headerName": "Age",
-                    },
-                    Object {
-                      "headerName": "Checked-in Time",
-                      "valueGetter": [Function],
-                    },
-                  ]
-                }
-                enableSorting={true}
-                id="omrsGrid"
-                onGridReady={[Function]}
-                onSelectionChanged={[Function]}
-                rowClassRules="rowClassRules"
-                rowData={Array []}
-                rowSelection="single"
-              >
-                <div
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
+              <div>
+                <h3>
+                  <Label
+                    bsClass="label"
+                    bsStyle="default"
+                  >
+                    <span
+                      className="label label-default"
+                    >
+                      Nurse Queue
+                    </span>
+                  </Label>
+                </h3>
+                <Connect(DataGrid)
+                  columnDefs={
+                    Array [
+                      Object {
+                        "field": "uuid",
+                        "headerName": "uuid",
+                        "hide": true,
+                      },
+                      Object {
+                        "headerName": "Id",
+                        "valueGetter": "data.identifiers[0].identifier",
+                      },
+                      Object {
+                        "field": "id",
+                        "headerName": "patientId",
+                      },
+                      Object {
+                        "field": "name.givenName",
+                        "headerName": "Given Name",
+                      },
+                      Object {
+                        "field": "name.familyName",
+                        "headerName": "Family Name",
+                      },
+                      Object {
+                        "field": "gender",
+                        "headerName": "Gender",
+                      },
+                      Object {
+                        "field": "age",
+                        "headerName": "Age",
+                      },
+                      Object {
+                        "headerName": "Checked-in Time",
+                        "valueGetter": [Function],
+                      },
+                    ]
                   }
-                />
-              </AgGridReact>
-            </div>
-          </DataGrid>
-        </Connect(DataGrid)>
+                  rowData={Array []}
+                  rowSelectedActionCreators={
+                    Array [
+                      [Function],
+                    ]
+                  }
+                >
+                  <DataGrid
+                    columnDefs={
+                      Array [
+                        Object {
+                          "field": "uuid",
+                          "headerName": "uuid",
+                          "hide": true,
+                        },
+                        Object {
+                          "headerName": "Id",
+                          "valueGetter": "data.identifiers[0].identifier",
+                        },
+                        Object {
+                          "field": "id",
+                          "headerName": "patientId",
+                        },
+                        Object {
+                          "field": "name.givenName",
+                          "headerName": "Given Name",
+                        },
+                        Object {
+                          "field": "name.familyName",
+                          "headerName": "Family Name",
+                        },
+                        Object {
+                          "field": "gender",
+                          "headerName": "Gender",
+                        },
+                        Object {
+                          "field": "age",
+                          "headerName": "Age",
+                        },
+                        Object {
+                          "headerName": "Checked-in Time",
+                          "valueGetter": [Function],
+                        },
+                      ]
+                    }
+                    dispatch={[Function]}
+                    rowData={Array []}
+                    rowSelectedActionCreators={
+                      Array [
+                        [Function],
+                      ]
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "height": "600px",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <AgGridReact
+                        columnDefs={
+                          Array [
+                            Object {
+                              "field": "uuid",
+                              "headerName": "uuid",
+                              "hide": true,
+                            },
+                            Object {
+                              "headerName": "Id",
+                              "valueGetter": "data.identifiers[0].identifier",
+                            },
+                            Object {
+                              "field": "id",
+                              "headerName": "patientId",
+                            },
+                            Object {
+                              "field": "name.givenName",
+                              "headerName": "Given Name",
+                            },
+                            Object {
+                              "field": "name.familyName",
+                              "headerName": "Family Name",
+                            },
+                            Object {
+                              "field": "gender",
+                              "headerName": "Gender",
+                            },
+                            Object {
+                              "field": "age",
+                              "headerName": "Age",
+                            },
+                            Object {
+                              "headerName": "Checked-in Time",
+                              "valueGetter": [Function],
+                            },
+                          ]
+                        }
+                        enableSorting={true}
+                        id="omrsGrid"
+                        onGridReady={[Function]}
+                        onSelectionChanged={[Function]}
+                        rowClassRules="rowClassRules"
+                        rowData={Array []}
+                        rowSelection="single"
+                      >
+                        <div
+                          style={
+                            Object {
+                              "height": "100%",
+                            }
+                          }
+                        />
+                      </AgGridReact>
+                    </div>
+                  </DataGrid>
+                </Connect(DataGrid)>
+              </div>
+            </List>
+          </div>
+        </ScreeningQueue>
       </div>
     </NurseQueue>
   </Connect(NurseQueue)>

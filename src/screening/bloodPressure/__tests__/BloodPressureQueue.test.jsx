@@ -40,7 +40,6 @@ describe('Component: BloodPressureQueue', () => {
     expect(toJson(bloodPressureQueue())).toMatchSnapshot();
     expect(bloodPressureQueue().find(DataGrid).length).toBe(1);
     expect(bloodPressureQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
-    expect(bloodPressureQueue().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToInfoPageActionCreator");
     expect(bloodPressureQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/screening/bloodPressure/form");
     expect(store.getActions()).toContainEqual(patientActions.clearPatientSelected());
     expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits("custom:(uuid,patient:" + PATIENT_REPRESENTATION + ",encounters:" + ENCOUNTER_REPRESENTATION + ")"));

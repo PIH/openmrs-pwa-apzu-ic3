@@ -6,6 +6,8 @@ import patientActions from '../patient/patientActions';
 import utils from "../utils";
 import { PATIENT_REPRESENTATION, ENCOUNTER_REPRESENTATION } from '../constants';
 
+// TODO: should this extend the ScreeningQueue?
+
 let ActiveVisits = props => {
 
   const columnDefs = [
