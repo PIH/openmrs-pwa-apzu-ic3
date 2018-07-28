@@ -21,7 +21,7 @@ class RequiredScreenings extends React.Component {
     if (this.props.screening) {
       // find any of the queues that have the patient in them
       return Object.entries(this.props.screening).filter((queue) => {
-        return queue[1].list && queue[1].list.some((elem) => {
+        return queue[1] && queue[1].some((elem) => {
           return (elem && elem.uuid === this.props.patientUuid);
         });
       }).map((queue) => this.nameMappings[queue[0]]);
