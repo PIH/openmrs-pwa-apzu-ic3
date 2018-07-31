@@ -131,6 +131,13 @@ exports[`Component: CheckInQueue renders properly 1`] = `
                 }
               }
             >
+              <label>
+                Search:
+                <input
+                  onChange={[Function]}
+                  type="text"
+                />
+              </label>
               <AgGridReact
                 columnDefs={
                   Array [
