@@ -4,7 +4,7 @@ import { push } from 'connected-react-router';
 import { visitActions, List } from '@openmrs/react-components';
 import patientActions from '../patient/patientActions';
 import utils from "../utils";
-import { PATIENT_REPRESENTATION, ENCOUNTER_REPRESENTATION, VISIT_REPRESENTATION } from '../constants';
+import { VISIT_REPRESENTATION } from '../constants';
 
 // TODO: should this extend the ScreeningQueue?
 
