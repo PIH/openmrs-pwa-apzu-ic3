@@ -1,5 +1,4 @@
 import React from 'react';
-import { Label } from 'react-bootstrap';
 import { DataGrid } from '@openmrs/react-components';
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
@@ -41,7 +40,6 @@ class CheckInQueue extends React.Component {
   render() {
     return (
       <div>
-        <h3><Label>Check In Queue</Label></h3>
         <DataGrid
           columnDefs={this.columnDefs}
           rowData={this.props.rowData}

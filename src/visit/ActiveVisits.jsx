@@ -49,7 +49,7 @@ let ActiveVisits = props => {
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
         rowSelectedActionCreators={rowSelectedActionCreators}
-        title="Active Vists"
+        title=""
       />
     </div>
   );

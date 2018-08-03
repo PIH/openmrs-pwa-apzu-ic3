@@ -9,6 +9,7 @@ import HomePage from './home/HomePage';
 import InfoPatient from './patient/PatientInfo';
 import SearchPatient from './search/SearchPatient';
 import CheckInQueue from './checkin/CheckInQueue';
+import CheckInTabs from './checkin/CheckInTabs';
 import CheckInPage from './checkin/CheckInPage';
 import CheckInComplete from './checkin/CheckInComplete';
 import Header from './header/Header';
@@ -52,6 +53,11 @@ const App = props => {
           <AuthenticatedLayout
             component={SearchPatient}
             path="/searchPatient"
+            redirectOnLogin="/"
+          />
+          <AuthenticatedLayout
+            component={CheckInTabs}
+            path="/checkin/checkInTabs"
             redirectOnLogin="/"
           />
           <AuthenticatedLayout

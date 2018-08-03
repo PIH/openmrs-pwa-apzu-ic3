@@ -20,18 +20,6 @@ exports[`Component: CheckInQueue renders properly 1`] = `
       rowData={Array []}
     >
       <div>
-        <h3>
-          <Label
-            bsClass="label"
-            bsStyle="default"
-          >
-            <span
-              className="label label-default"
-            >
-              Check In Queue
-            </span>
-          </Label>
-        </h3>
         <Connect(DataGrid)
           columnDefs={
             Array [
