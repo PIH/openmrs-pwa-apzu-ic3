@@ -4,7 +4,7 @@
 
 export const PATIENT_REPRESENTATION = '(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,names,preferredName,addresses,attributes))';
 export const ENCOUNTER_REPRESENTATION = '(id,uuid,encounterDatetime,location:(id,uuid,name),encounterType:(id,uuid,name))';
-export const VISIT_REPRESENTATION = '(uuid,patient:(uuid,id,display),encounters:(id,uuid,display,encounterDatetime,location:(id,uuid,name),encounterType:(id,uuid,name),obs:(id,uuid,display)))';
+export const VISIT_REPRESENTATION = '(uuid,location:(uuid,display,name),startDatetime,stopDatetime,patient:' + PATIENT_REPRESENTATION + ',encounters:(id,uuid,display,encounterDatetime,location:(id,uuid,name),encounterType:(id,uuid,name),obs:(id,uuid,display)))';
 
 export const ENCOUNTER_TYPES = {
   'BloodPressureEncounterType': {
