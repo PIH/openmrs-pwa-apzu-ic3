@@ -11,6 +11,7 @@ import SearchPatient from './search/SearchPatient';
 import CheckInQueue from './checkin/CheckInQueue';
 import CheckInTabs from './checkin/CheckInTabs';
 import CheckInPage from './checkin/CheckInPage';
+import NursePage from './screening/nurse/NursePage';
 import CheckInComplete from './checkin/CheckInComplete';
 import Header from './header/Header';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
@@ -108,6 +109,11 @@ const App = props => {
           <AuthenticatedLayout
             component={NurseQueue}
             path="/screening/nurse/queue"
+            redirectOnLogin="/"
+          />
+          <AuthenticatedLayout
+            component={NursePage}
+            path="/nurse/nursePage"
             redirectOnLogin="/"
           />
         </Switch>

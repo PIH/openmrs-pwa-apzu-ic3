@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { DataGrid, visitActions } from '@openmrs/react-components';
 import BloodPressureQueue from '../BloodPressureQueue';
 import patientActions from '../../../patient/patientActions';
-import {ENCOUNTER_REPRESENTATION, PATIENT_REPRESENTATION} from "../../../constants";
+import { VISIT_REPRESENTATION } from "../../../constants";
 
 let props, store;
 let mountedComponent;
@@ -25,10 +25,23 @@ const bloodPressureQueue = () => {
 
 describe('Component: BloodPressureQueue', () => {
   beforeEach(() => {
-    props = {};
+    props = {
+      session: {
+        sessionLocation: {
+          uuid: 'abc'
+        }
+      }
+    };
     store = mockStore(
       {
         dispatch: {},
+        openmrs: {
+          session: {
+            sessionLocation: {
+              uuid: 'abc'
+            }
+          }
+        },
         screening: {
           bloodPressureQueue: []
         }
@@ -42,7 +55,7 @@ describe('Component: BloodPressureQueue', () => {
     expect(bloodPressureQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
     expect(bloodPressureQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/screening/bloodPressure/form");
     expect(store.getActions()).toContainEqual(patientActions.clearPatientSelected());
-    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits("custom:(uuid,patient:" + PATIENT_REPRESENTATION + ",encounters:" + ENCOUNTER_REPRESENTATION + ")"));
+    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits("custom:" + VISIT_REPRESENTATION, props.session.sessionLocation.uuid));
   });
 
 });

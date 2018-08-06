@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { visitActions, List } from '@openmrs/react-components';
 import patientActions from '../patient/patientActions';
 import utils from "../utils";
-import { PATIENT_REPRESENTATION, ENCOUNTER_REPRESENTATION } from '../constants';
+import { VISIT_REPRESENTATION } from '../constants';
+import {connect} from "react-redux";
 
 let ScreeningQueue = props => {
 
   const fetchListActionCreator = props.fetchListActionCreator ? this.props.fetchListActionCreator :
-    () => props.dispatch(visitActions.fetchActiveVisits("custom:(uuid,patient:" + PATIENT_REPRESENTATION + ",encounters:" + ENCOUNTER_REPRESENTATION + ")"));
+    () => props.dispatch(visitActions.fetchActiveVisits("custom:" + VISIT_REPRESENTATION, props.session.sessionLocation.uuid));
 
   const onMountOtherActionCreators = props.onMountOtherActionCreators ? this.props.onMountOtherActionCreators :
     [
@@ -54,4 +55,10 @@ ScreeningQueue.defaultProps = {
   ]
 };
 
-export default ScreeningQueue;
+const mapStateToProps = (state) => {
+  return {
+    session: state.openmrs.session,
+  };
+};
+
+export default connect(mapStateToProps)(ScreeningQueue);

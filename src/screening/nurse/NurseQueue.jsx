@@ -8,7 +8,12 @@ import ScreeningQueue from "../ScreeningQueue";
 let NurseQueue = props => {
 
   const rowSelectedActionCreators = [
-    () => push('') // TODO: add form!
+    () => push({
+      pathname: '/nurse/nursePage',
+      state: {
+        queueLink: '/screening/nurse/queue'
+      }
+    })
   ];
 
   return (

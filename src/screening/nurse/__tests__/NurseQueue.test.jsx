@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { DataGrid, visitActions } from '@openmrs/react-components';
 import NurseQueue from '../NurseQueue';
 import patientActions from '../../../patient/patientActions';
-import {ENCOUNTER_REPRESENTATION, PATIENT_REPRESENTATION} from "../../../constants";
+import {ENCOUNTER_REPRESENTATION, PATIENT_REPRESENTATION, VISIT_REPRESENTATION} from "../../../constants";
 
 let props, store;
 let mountedComponent;
@@ -25,10 +25,23 @@ const nurseQueue = () => {
 
 describe('Component: NurseQueue', () => {
   beforeEach(() => {
-    props = {};
+    props = {
+      session: {
+        sessionLocation: {
+          uuid: 'abc'
+        }
+      }
+    };
     store = mockStore(
       {
         dispatch: {},
+        openmrs: {
+          session: {
+            sessionLocation: {
+              uuid: 'abc'
+            }
+          }
+        },
         screening: {
           nurseQueue: []
         }
@@ -40,9 +53,15 @@ describe('Component: NurseQueue', () => {
     expect(toJson(nurseQueue())).toMatchSnapshot();
     expect(nurseQueue().find(DataGrid).length).toBe(1);
     expect(nurseQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
-    expect(nurseQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("");
+    let rowSelectedAction = {
+      "pathname": '/nurse/nursePage',
+      "state": {
+        "queueLink": '/screening/nurse/queue'
+      }
+    };
+    expect(nurseQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toEqual(rowSelectedAction);
     expect(store.getActions()).toContainEqual(patientActions.clearPatientSelected());
-    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits("custom:(uuid,patient:" + PATIENT_REPRESENTATION + ",encounters:" + ENCOUNTER_REPRESENTATION + ")"));
+    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits("custom:" + VISIT_REPRESENTATION, props.session.sessionLocation.uuid));
   });
 
 });

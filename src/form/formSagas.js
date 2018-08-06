@@ -18,7 +18,8 @@ function* submit(action) {
       // TODO: handle encounter date if submitted
       patient: action.patient.uuid,
       encounterType: action.encounterType.uuid,
-      visit: action.visit ? action.visit.uuid : null
+      visit: action.visit ? action.visit.uuid : null,
+      location: (action.visit && action.visit.location) ? action.visit.location.uuid : null
     };
 
     let obs = [];
