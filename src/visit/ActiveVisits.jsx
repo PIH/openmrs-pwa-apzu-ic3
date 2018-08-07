@@ -13,7 +13,6 @@ let ActiveVisits = props => {
   const columnDefs = [
     { headerName: 'uuid', hide: true, field: 'uuid' },
     { headerName: 'Id', valueGetter: 'data.identifiers[0].identifier' },  // TODO needs to be replaced with actual preferred identifier
-    { headerName: 'patientId', field: 'id' },
     { headerName: 'Given Name', field: 'name.givenName' },
     { headerName: 'Family Name', field: 'name.familyName' },
     { headerName: 'Gender', field: 'gender' },
