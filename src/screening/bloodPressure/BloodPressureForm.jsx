@@ -19,7 +19,7 @@ class BloodPressureForm extends Form {
         "id": "1"
       }, {
         "type": "obsControl",
-        "label": { "translationKey": "SYSTOLIC_2", "id": "2", "units": "", "type": "label", "value": "SYSTOLIC" },
+        "label": { "translationKey": "SYSTOLIC_2", "id": "2", "units": "", "type": "label", "value": "Systolic Blood Pressure" },
         "properties": {
           "mandatory": false,
           "notes": false,
@@ -47,7 +47,7 @@ class BloodPressureForm extends Form {
       },
       {
         "type": "obsControl",
-        "label": { "translationKey": "DIASTOLIC_2", "id": "3", "units": "", "type": "label", "value": "DIASTOLIC" },
+        "label": { "translationKey": "DIASTOLIC_2", "id": "3", "units": "", "type": "label", "value": "Diastolic Blood Pressure" },
         "properties": {
           "mandatory": false,
           "notes": false,
