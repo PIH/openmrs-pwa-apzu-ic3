@@ -6,7 +6,7 @@ describe('check in actions', () => {
   it('should create a check-in submitted action', () => {
 
     const expectedAction = {
-      type: CHECK_IN_TYPES.SUBMIT,
+      type: CHECK_IN_TYPES.CHECK_IN.SUBMIT,
       patient: "some_patient",
       visitType: "some_visit_type",
       encounterType: "some_encounter_type",
@@ -21,7 +21,7 @@ describe('check in actions', () => {
   it('should create a check-in succeeded action', () => {
 
     const expectedAction = {
-      type: CHECK_IN_TYPES.SUCCEEDED,
+      type: CHECK_IN_TYPES.CHECK_IN.SUCCEEDED,
     };
 
     expect(checkInActions.checkInSucceeded()).toEqual(expectedAction);
@@ -31,7 +31,7 @@ describe('check in actions', () => {
   it('should create a check-in failed action', () => {
 
     const expectedAction = {
-      type: CHECK_IN_TYPES.FAILED,
+      type: CHECK_IN_TYPES.CHECK_IN.FAILED,
       error: {
         message: "some_message"
       }

@@ -79,8 +79,8 @@ function* getExpectedToCheckIn(action) {
 }
 
 function *checkInSagas() {
-  yield takeEvery(CHECK_IN_TYPES.SUBMIT, checkIn);
-  yield takeEvery(CHECK_IN_TYPES.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
+  yield takeEvery(CHECK_IN_TYPES.CHECK_IN.SUBMIT, checkIn);
+  yield takeEvery(CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
 }
 
 export default checkInSagas;
