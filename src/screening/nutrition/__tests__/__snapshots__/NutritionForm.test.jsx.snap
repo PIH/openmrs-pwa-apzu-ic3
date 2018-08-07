@@ -60,7 +60,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   disabled={false}
                   type="button"
                 >
-                  Back to Queue
+                  Back
                 </button>
               </Button>
             </a>

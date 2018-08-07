@@ -60,7 +60,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   disabled={false}
                   type="button"
                 >
-                  Back to Queue
+                  Back
                 </button>
               </Button>
             </a>
@@ -102,7 +102,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       "translationKey": "SYSTOLIC_2",
                       "type": "label",
                       "units": "",
-                      "value": "SYSTOLIC",
+                      "value": "Systolic Blood Pressure",
                     },
                     "lowAbsolute": 30,
                     "lowNormal": null,
@@ -141,7 +141,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       "translationKey": "DIASTOLIC_2",
                       "type": "label",
                       "units": "",
-                      "value": "DIASTOLIC",
+                      "value": "Diastolic Blood Pressure",
                     },
                     "lowAbsolute": 20,
                     "lowNormal": null,
@@ -277,7 +277,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "translationKey": "SYSTOLIC_2",
                             "type": "label",
                             "units": "",
-                            "value": "SYSTOLIC",
+                            "value": "Systolic Blood Pressure",
                           },
                           "lowAbsolute": 30,
                           "lowNormal": null,
@@ -359,7 +359,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "translationKey": "DIASTOLIC_2",
                             "type": "label",
                             "units": "",
-                            "value": "DIASTOLIC",
+                            "value": "Diastolic Blood Pressure",
                           },
                           "lowAbsolute": 20,
                           "lowNormal": null,
@@ -508,7 +508,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                           "translationKey": "SYSTOLIC_2",
                           "type": "label",
                           "units": "",
-                          "value": "SYSTOLIC",
+                          "value": "Systolic Blood Pressure",
                         },
                         "lowAbsolute": 30,
                         "lowNormal": null,
@@ -607,7 +607,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "translationKey": "SYSTOLIC_2",
                             "type": "label",
                             "units": "",
-                            "value": "SYSTOLIC",
+                            "value": "Systolic Blood Pressure",
                           },
                           "lowAbsolute": 30,
                           "lowNormal": null,
@@ -689,7 +689,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "translationKey": "DIASTOLIC_2",
                             "type": "label",
                             "units": "",
-                            "value": "DIASTOLIC",
+                            "value": "Diastolic Blood Pressure",
                           },
                           "lowAbsolute": 20,
                           "lowNormal": null,
@@ -789,7 +789,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                               "translationKey": "SYSTOLIC_2",
                               "type": "label",
                               "units": "",
-                              "value": "SYSTOLIC",
+                              "value": "Systolic Blood Pressure",
                             },
                             "lowAbsolute": 30,
                             "lowNormal": null,
@@ -839,7 +839,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                   "translationKey": "SYSTOLIC_2",
                                   "type": "label",
                                   "units": "(mmHg)",
-                                  "value": "SYSTOLIC",
+                                  "value": "Systolic Blood Pressure",
                                 }
                               }
                             >
@@ -847,12 +847,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                 className=""
                               >
                                 <FormattedMessage
-                                  defaultMessage="SYSTOLIC"
+                                  defaultMessage="Systolic Blood Pressure"
                                   id="SYSTOLIC_2"
                                   values={Object {}}
                                 >
                                   <span>
-                                    SYSTOLIC
+                                    Systolic Blood Pressure
                                   </span>
                                 </FormattedMessage>
                                  (mmHg)
@@ -933,7 +933,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                           "translationKey": "DIASTOLIC_2",
                           "type": "label",
                           "units": "",
-                          "value": "DIASTOLIC",
+                          "value": "Diastolic Blood Pressure",
                         },
                         "lowAbsolute": 20,
                         "lowNormal": null,
@@ -1032,7 +1032,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "translationKey": "SYSTOLIC_2",
                             "type": "label",
                             "units": "",
-                            "value": "SYSTOLIC",
+                            "value": "Systolic Blood Pressure",
                           },
                           "lowAbsolute": 30,
                           "lowNormal": null,
@@ -1114,7 +1114,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "translationKey": "DIASTOLIC_2",
                             "type": "label",
                             "units": "",
-                            "value": "DIASTOLIC",
+                            "value": "Diastolic Blood Pressure",
                           },
                           "lowAbsolute": 20,
                           "lowNormal": null,
@@ -1214,7 +1214,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                               "translationKey": "DIASTOLIC_2",
                               "type": "label",
                               "units": "",
-                              "value": "DIASTOLIC",
+                              "value": "Diastolic Blood Pressure",
                             },
                             "lowAbsolute": 20,
                             "lowNormal": null,
@@ -1264,7 +1264,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                   "translationKey": "DIASTOLIC_2",
                                   "type": "label",
                                   "units": "(mmHg)",
-                                  "value": "DIASTOLIC",
+                                  "value": "Diastolic Blood Pressure",
                                 }
                               }
                             >
@@ -1272,12 +1272,12 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                 className=""
                               >
                                 <FormattedMessage
-                                  defaultMessage="DIASTOLIC"
+                                  defaultMessage="Diastolic Blood Pressure"
                                   id="DIASTOLIC_2"
                                   values={Object {}}
                                 >
                                   <span>
-                                    DIASTOLIC
+                                    Diastolic Blood Pressure
                                   </span>
                                 </FormattedMessage>
                                  (mmHg)
