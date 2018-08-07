@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { Container } from 'bahmni-form-controls';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -11,50 +12,36 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
-  }
-
-  encounterType() {
-    return null;  // needs to be overwritten in implementing methods
-  }
-
-  formDetails() {
-    return null;  // needs to be overwritten in implementing methods
-  }
-
-  // https://github.com/diegoddox/react-redux-toastr
-  formSubmittedActionCreators() {
-    return [
-      () => toastrActions.add({ title: "Data Saved", type: "success" }),
-      () => push(this.queueLink())
-    ];
+    // https://github.com/diegoddox/react-redux-toastr
+    this.formSubmittedActionCreators =
+      [
+        () => toastrActions.add({ title: "Data Saved", type: "success" }),
+        () => push(this.props.afterSubmitLink)
+      ];
   }
 
   onClick() {
     this.props.dispatch(formActions.formSubmitted(
       this.containerRef.current.getValue(),
       this.props.patient,
-      this.encounterType(),
+      this.props.encounterType,
       this.props.visit,
-      this.formSubmittedActionCreators()
+      this.formSubmittedActionCreators
     ));
-  }
-
-  queueLink() {
-    return "/";  // needs to be overwritten in implementing methods
   }
 
   render() {
     return (
       <div>
-        <Link to={this.queueLink()}>
+        <Link to={this.props.backLink}>
           <Button bsSize='large' bsStyle='danger'>
-            Back to Queue
+            Back
           </Button>
         </Link>
         <Container
           ref={this.containerRef}
           collapse={ false }
-          metadata={this.formDetails()}
+          metadata={this.props.formDetails}
           observations={[]}
           translations={{}}
         />
@@ -62,8 +49,16 @@ class Form extends React.Component {
       </div>
     );
   }
-
-
 }
+
+Form.propTypes = {
+  afterSubmitLink: PropTypes.string.isRequired,
+  backLink: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  encounterType: PropTypes.object.isRequired,
+  formDetails: PropTypes.object.isRequired,
+  patient: PropTypes.object.isRequired,
+  visit: PropTypes.object
+};
 
 export default Form;

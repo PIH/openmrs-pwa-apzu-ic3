@@ -39,180 +39,277 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           }
         }
       >
-        <div>
-          <Link
-            replace={false}
-            to="/screening/bloodPressure/queue"
-          >
-            <a
-              onClick={[Function]}
-            >
-              <Button
-                active={false}
-                block={false}
-                bsClass="btn"
-                bsSize="large"
-                bsStyle="danger"
-                disabled={false}
-              >
-                <button
-                  className="btn btn-lg btn-danger"
-                  disabled={false}
-                  type="button"
-                >
-                  Back
-                </button>
-              </Button>
-            </a>
-          </Link>
-          <Container
-            collapse={false}
-            metadata={
-              Object {
-                "controls": Array [
-                  Object {
-                    "id": "1",
-                    "properties": Object {
-                      "location": Object {
-                        "column": 0,
-                        "row": 0,
-                      },
-                    },
-                    "translationKey": "LABEL_1",
-                    "type": "label",
-                    "value": "Blood Pressure Form",
-                  },
-                  Object {
-                    "concept": Object {
-                      "answers": Array [],
-                      "conceptClass": "Misc",
-                      "conceptHandler": null,
-                      "datatype": "Numeric",
-                      "name": "SYSTOLIC",
-                      "properties": Object {
-                        "allowDecimal": false,
-                      },
-                      "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                    },
-                    "hiAbsolute": 300,
-                    "hiNormal": null,
-                    "id": "2",
-                    "label": Object {
-                      "id": "2",
-                      "translationKey": "SYSTOLIC_2",
-                      "type": "label",
-                      "units": "",
-                      "value": "Systolic Blood Pressure",
-                    },
-                    "lowAbsolute": 30,
-                    "lowNormal": null,
-                    "properties": Object {
-                      "abnormal": false,
-                      "addMore": false,
-                      "controlEvent": false,
-                      "hideLabel": false,
-                      "location": Object {
-                        "column": 0,
-                        "row": 1,
-                      },
-                      "mandatory": false,
-                      "notes": false,
-                    },
-                    "type": "obsControl",
-                    "units": "mmHg",
-                  },
-                  Object {
-                    "concept": Object {
-                      "answers": Array [],
-                      "conceptClass": "Misc",
-                      "conceptHandler": null,
-                      "datatype": "Numeric",
-                      "name": "DIASTOLIC",
-                      "properties": Object {
-                        "allowDecimal": false,
-                      },
-                      "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                    },
-                    "hiAbsolute": 150,
-                    "hiNormal": null,
-                    "id": "3",
-                    "label": Object {
-                      "id": "3",
-                      "translationKey": "DIASTOLIC_2",
-                      "type": "label",
-                      "units": "",
-                      "value": "Diastolic Blood Pressure",
-                    },
-                    "lowAbsolute": 20,
-                    "lowNormal": null,
-                    "properties": Object {
-                      "abnormal": false,
-                      "addMore": false,
-                      "controlEvent": false,
-                      "hideLabel": false,
-                      "location": Object {
-                        "column": 0,
-                        "row": 2,
-                      },
-                      "mandatory": false,
-                      "notes": false,
-                    },
-                    "type": "obsControl",
-                    "units": "mmHg",
-                  },
-                ],
-                "defaultLocale": "en",
-                "events": Object {},
-                "id": 2,
-                "name": "Blood Pressure Form",
-                "uuid": "b57712e7-f89b-43a4-8a27-3a626e0785ba",
-              }
+        <Form
+          afterSubmitLink="/screening/bloodPressure/queue"
+          backLink="/screening/bloodPressure/queue"
+          dispatch={[Function]}
+          encounterType={
+            Object {
+              "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
             }
-            observations={Array []}
-            translations={Object {}}
-          >
-            <IntlProvider
-              locale="en"
-              messages={Object {}}
+          }
+          formDetails={
+            Object {
+              "controls": Array [
+                Object {
+                  "id": "1",
+                  "properties": Object {
+                    "location": Object {
+                      "column": 0,
+                      "row": 0,
+                    },
+                  },
+                  "translationKey": "LABEL_1",
+                  "type": "label",
+                  "value": "Blood Pressure Form",
+                },
+                Object {
+                  "concept": Object {
+                    "answers": Array [],
+                    "conceptClass": "Misc",
+                    "conceptHandler": null,
+                    "datatype": "Numeric",
+                    "name": "SYSTOLIC",
+                    "properties": Object {
+                      "allowDecimal": false,
+                    },
+                    "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
+                  },
+                  "hiAbsolute": 300,
+                  "hiNormal": null,
+                  "id": "2",
+                  "label": Object {
+                    "id": "2",
+                    "translationKey": "SYSTOLIC_2",
+                    "type": "label",
+                    "units": "",
+                    "value": "Systolic Blood Pressure",
+                  },
+                  "lowAbsolute": 30,
+                  "lowNormal": null,
+                  "properties": Object {
+                    "abnormal": false,
+                    "addMore": false,
+                    "controlEvent": false,
+                    "hideLabel": false,
+                    "location": Object {
+                      "column": 0,
+                      "row": 1,
+                    },
+                    "mandatory": false,
+                    "notes": false,
+                  },
+                  "type": "obsControl",
+                  "units": "mmHg",
+                },
+                Object {
+                  "concept": Object {
+                    "answers": Array [],
+                    "conceptClass": "Misc",
+                    "conceptHandler": null,
+                    "datatype": "Numeric",
+                    "name": "DIASTOLIC",
+                    "properties": Object {
+                      "allowDecimal": false,
+                    },
+                    "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
+                  },
+                  "hiAbsolute": 150,
+                  "hiNormal": null,
+                  "id": "3",
+                  "label": Object {
+                    "id": "3",
+                    "translationKey": "DIASTOLIC_2",
+                    "type": "label",
+                    "units": "",
+                    "value": "Diastolic Blood Pressure",
+                  },
+                  "lowAbsolute": 20,
+                  "lowNormal": null,
+                  "properties": Object {
+                    "abnormal": false,
+                    "addMore": false,
+                    "controlEvent": false,
+                    "hideLabel": false,
+                    "location": Object {
+                      "column": 0,
+                      "row": 2,
+                    },
+                    "mandatory": false,
+                    "notes": false,
+                  },
+                  "type": "obsControl",
+                  "units": "mmHg",
+                },
+              ],
+              "defaultLocale": "en",
+              "events": Object {},
+              "id": 2,
+              "name": "Blood Pressure Form",
+              "uuid": "b57712e7-f89b-43a4-8a27-3a626e0785ba",
+            }
+          }
+          patient={
+            Object {
+              "activeVisit": Object {
+                "uuid": "def",
+              },
+              "uuid": "abc",
+            }
+          }
+          visit={
+            Object {
+              "uuid": "def",
+            }
+          }
+        >
+          <div>
+            <Link
+              replace={false}
+              to="/screening/bloodPressure/queue"
             >
-              <div>
-                <NotificationContainer
-                  notification={Object {}}
+              <a
+                onClick={[Function]}
+              >
+                <Button
+                  active={false}
+                  block={false}
+                  bsClass="btn"
+                  bsSize="large"
+                  bsStyle="danger"
+                  disabled={false}
                 >
-                  <div />
-                </NotificationContainer>
-                <Row
-                  collapse={false}
-                  controls={
-                    Array [
-                      Object {
-                        "id": "1",
-                        "properties": Object {
-                          "location": Object {
-                            "column": 0,
-                            "row": 0,
-                          },
+                  <button
+                    className="btn btn-lg btn-danger"
+                    disabled={false}
+                    type="button"
+                  >
+                    Back
+                  </button>
+                </Button>
+              </a>
+            </Link>
+            <Container
+              collapse={false}
+              metadata={
+                Object {
+                  "controls": Array [
+                    Object {
+                      "id": "1",
+                      "properties": Object {
+                        "location": Object {
+                          "column": 0,
+                          "row": 0,
                         },
-                        "translationKey": "LABEL_1",
-                        "type": "label",
-                        "value": "Blood Pressure Form",
                       },
-                    ]
-                  }
-                  errors={Array []}
-                  formName="Blood Pressure Form"
-                  id={0}
-                  key="0"
-                  onControlAdd={[Function]}
-                  onControlRemove={[Function]}
-                  onEventTrigger={[Function]}
-                  onValueChanged={[Function]}
-                  records={
-                    Array [
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
+                      "translationKey": "LABEL_1",
+                      "type": "label",
+                      "value": "Blood Pressure Form",
+                    },
+                    Object {
+                      "concept": Object {
+                        "answers": Array [],
+                        "conceptClass": "Misc",
+                        "conceptHandler": null,
+                        "datatype": "Numeric",
+                        "name": "SYSTOLIC",
+                        "properties": Object {
+                          "allowDecimal": false,
+                        },
+                        "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
+                      },
+                      "hiAbsolute": 300,
+                      "hiNormal": null,
+                      "id": "2",
+                      "label": Object {
+                        "id": "2",
+                        "translationKey": "SYSTOLIC_2",
+                        "type": "label",
+                        "units": "",
+                        "value": "Systolic Blood Pressure",
+                      },
+                      "lowAbsolute": 30,
+                      "lowNormal": null,
+                      "properties": Object {
+                        "abnormal": false,
+                        "addMore": false,
+                        "controlEvent": false,
+                        "hideLabel": false,
+                        "location": Object {
+                          "column": 0,
+                          "row": 1,
+                        },
+                        "mandatory": false,
+                        "notes": false,
+                      },
+                      "type": "obsControl",
+                      "units": "mmHg",
+                    },
+                    Object {
+                      "concept": Object {
+                        "answers": Array [],
+                        "conceptClass": "Misc",
+                        "conceptHandler": null,
+                        "datatype": "Numeric",
+                        "name": "DIASTOLIC",
+                        "properties": Object {
+                          "allowDecimal": false,
+                        },
+                        "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
+                      },
+                      "hiAbsolute": 150,
+                      "hiNormal": null,
+                      "id": "3",
+                      "label": Object {
+                        "id": "3",
+                        "translationKey": "DIASTOLIC_2",
+                        "type": "label",
+                        "units": "",
+                        "value": "Diastolic Blood Pressure",
+                      },
+                      "lowAbsolute": 20,
+                      "lowNormal": null,
+                      "properties": Object {
+                        "abnormal": false,
+                        "addMore": false,
+                        "controlEvent": false,
+                        "hideLabel": false,
+                        "location": Object {
+                          "column": 0,
+                          "row": 2,
+                        },
+                        "mandatory": false,
+                        "notes": false,
+                      },
+                      "type": "obsControl",
+                      "units": "mmHg",
+                    },
+                  ],
+                  "defaultLocale": "en",
+                  "events": Object {},
+                  "id": 2,
+                  "name": "Blood Pressure Form",
+                  "uuid": "b57712e7-f89b-43a4-8a27-3a626e0785ba",
+                }
+              }
+              observations={Array []}
+              translations={Object {}}
+            >
+              <IntlProvider
+                locale="en"
+                messages={Object {}}
+              >
+                <div>
+                  <NotificationContainer
+                    notification={Object {}}
+                  >
+                    <div />
+                  </NotificationContainer>
+                  <Row
+                    collapse={false}
+                    controls={
+                      Array [
+                        Object {
                           "id": "1",
                           "properties": Object {
                             "location": Object {
@@ -224,222 +321,22 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                           "type": "label",
                           "value": "Blood Pressure Form",
                         },
-                        "dataSource": Object {
-                          "concept": undefined,
-                          "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "SYSTOLIC",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 300,
-                          "hiNormal": null,
-                          "id": "2",
-                          "label": Object {
-                            "id": "2",
-                            "translationKey": "SYSTOLIC_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "Systolic Blood Pressure",
-                          },
-                          "lowAbsolute": 30,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 1,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "mmHg",
-                        },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "SYSTOLIC",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "DIASTOLIC",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 150,
-                          "hiNormal": null,
-                          "id": "3",
-                          "label": Object {
-                            "id": "3",
-                            "translationKey": "DIASTOLIC_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "Diastolic Blood Pressure",
-                          },
-                          "lowAbsolute": 20,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 2,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "mmHg",
-                        },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "DIASTOLIC",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                    ]
-                  }
-                  showNotification={[Function]}
-                >
-                  <div
-                    className="form-builder-row"
-                  >
-                    <div
-                      className="form-builder-column form-builder-column-0-index0"
-                      key="Blood Pressure Form.undefined/1-0"
-                    >
-                      <Label
-                        collapse={false}
-                        enabled={true}
-                        errors={Array []}
-                        formFieldPath="Blood Pressure Form.undefined/1-0"
-                        formName="Blood Pressure Form"
-                        hidden={false}
-                        id={0}
-                        key="1"
-                        metadata={
-                          Object {
+                      ]
+                    }
+                    errors={Array []}
+                    formName="Blood Pressure Form"
+                    id={0}
+                    key="0"
+                    onControlAdd={[Function]}
+                    onControlRemove={[Function]}
+                    onEventTrigger={[Function]}
+                    onValueChanged={[Function]}
+                    records={
+                      Array [
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
                             "id": "1",
                             "properties": Object {
                               "location": Object {
@@ -450,326 +347,41 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "translationKey": "LABEL_1",
                             "type": "label",
                             "value": "Blood Pressure Form",
-                          }
-                        }
-                        onControlAdd={[Function]}
-                        onControlRemove={[Function]}
-                        onEventTrigger={[Function]}
-                        onValueChanged={[Function]}
-                        showAddMore={true}
-                        showNotification={[Function]}
-                        showRemove={false}
-                        value={
-                          Object {
+                          },
+                          "dataSource": Object {
+                            "concept": undefined,
+                            "formFieldPath": "Blood Pressure Form.undefined/1-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Blood Pressure Form.undefined/1-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
                             "comment": undefined,
                             "interpretation": undefined,
                             "value": undefined,
-                          }
-                        }
-                      >
-                        <label
-                          className=""
-                        >
-                          <FormattedMessage
-                            defaultMessage="Blood Pressure Form"
-                            id="LABEL_1"
-                            values={Object {}}
-                          >
-                            <span>
-                              Blood Pressure Form
-                            </span>
-                          </FormattedMessage>
-                        </label>
-                      </Label>
-                    </div>
-                  </div>
-                </Row>
-                <Row
-                  collapse={false}
-                  controls={
-                    Array [
-                      Object {
-                        "concept": Object {
-                          "answers": Array [],
-                          "conceptClass": "Misc",
-                          "conceptHandler": null,
-                          "datatype": "Numeric",
-                          "name": "SYSTOLIC",
-                          "properties": Object {
-                            "allowDecimal": false,
                           },
-                          "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
+                          "valueMapper": undefined,
                         },
-                        "hiAbsolute": 300,
-                        "hiNormal": null,
-                        "id": "2",
-                        "label": Object {
-                          "id": "2",
-                          "translationKey": "SYSTOLIC_2",
-                          "type": "label",
-                          "units": "",
-                          "value": "Systolic Blood Pressure",
-                        },
-                        "lowAbsolute": 30,
-                        "lowNormal": null,
-                        "properties": Object {
-                          "abnormal": false,
-                          "addMore": false,
-                          "controlEvent": false,
-                          "hideLabel": false,
-                          "location": Object {
-                            "column": 0,
-                            "row": 1,
-                          },
-                          "mandatory": false,
-                          "notes": false,
-                        },
-                        "type": "obsControl",
-                        "units": "mmHg",
-                      },
-                    ]
-                  }
-                  errors={Array []}
-                  formName="Blood Pressure Form"
-                  id={1}
-                  key="1"
-                  onControlAdd={[Function]}
-                  onControlRemove={[Function]}
-                  onEventTrigger={[Function]}
-                  onValueChanged={[Function]}
-                  records={
-                    Array [
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "id": "1",
-                          "properties": Object {
-                            "location": Object {
-                              "column": 0,
-                              "row": 0,
-                            },
-                          },
-                          "translationKey": "LABEL_1",
-                          "type": "label",
-                          "value": "Blood Pressure Form",
-                        },
-                        "dataSource": Object {
-                          "concept": undefined,
-                          "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "SYSTOLIC",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 300,
-                          "hiNormal": null,
-                          "id": "2",
-                          "label": Object {
-                            "id": "2",
-                            "translationKey": "SYSTOLIC_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "Systolic Blood Pressure",
-                          },
-                          "lowAbsolute": 30,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 1,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "mmHg",
-                        },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "SYSTOLIC",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "DIASTOLIC",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 150,
-                          "hiNormal": null,
-                          "id": "3",
-                          "label": Object {
-                            "id": "3",
-                            "translationKey": "DIASTOLIC_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "Diastolic Blood Pressure",
-                          },
-                          "lowAbsolute": 20,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 2,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "mmHg",
-                        },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "DIASTOLIC",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                    ]
-                  }
-                  showNotification={[Function]}
-                >
-                  <div
-                    className="form-builder-row"
-                  >
-                    <div
-                      className="form-builder-column form-builder-column-0-index0"
-                      key="Blood Pressure Form.undefined/2-0"
-                    >
-                      <ObsControl
-                        collapse={false}
-                        enabled={true}
-                        errors={Array []}
-                        formFieldPath="Blood Pressure Form.undefined/2-0"
-                        formName="Blood Pressure Form"
-                        hidden={false}
-                        id={1}
-                        key="2"
-                        metadata={
-                          Object {
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
                             "concept": Object {
                               "answers": Array [],
                               "conceptClass": "Misc",
@@ -807,212 +419,200 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             },
                             "type": "obsControl",
                             "units": "mmHg",
-                          }
-                        }
-                        onControlAdd={[Function]}
-                        onControlRemove={[Function]}
-                        onEventTrigger={[Function]}
-                        onValueChanged={[Function]}
-                        showAddMore={true}
-                        showNotification={[Function]}
-                        showRemove={false}
-                        value={
-                          Object {
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "SYSTOLIC",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Blood Pressure Form.undefined/2-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Blood Pressure Form.undefined/2-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
                             "comment": undefined,
                             "interpretation": undefined,
                             "value": undefined,
-                          }
-                        }
+                          },
+                          "valueMapper": undefined,
+                        },
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "DIASTOLIC",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "hiAbsolute": 150,
+                            "hiNormal": null,
+                            "id": "3",
+                            "label": Object {
+                              "id": "3",
+                              "translationKey": "DIASTOLIC_2",
+                              "type": "label",
+                              "units": "",
+                              "value": "Diastolic Blood Pressure",
+                            },
+                            "lowAbsolute": 20,
+                            "lowNormal": null,
+                            "properties": Object {
+                              "abnormal": false,
+                              "addMore": false,
+                              "controlEvent": false,
+                              "hideLabel": false,
+                              "location": Object {
+                                "column": 0,
+                                "row": 2,
+                              },
+                              "mandatory": false,
+                              "notes": false,
+                            },
+                            "type": "obsControl",
+                            "units": "mmHg",
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "DIASTOLIC",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Blood Pressure Form.undefined/3-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Blood Pressure Form.undefined/3-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
+                        },
+                      ]
+                    }
+                    showNotification={[Function]}
+                  >
+                    <div
+                      className="form-builder-row"
+                    >
+                      <div
+                        className="form-builder-column form-builder-column-0-index0"
+                        key="Blood Pressure Form.undefined/1-0"
                       >
-                        <div
-                          className="form-field-wrap clearfix"
-                        >
-                          <div
-                            className="label-wrap fl"
-                          >
-                            <Label
-                              enabled={true}
-                              hidden={false}
-                              metadata={
-                                Object {
-                                  "id": "2",
-                                  "translationKey": "SYSTOLIC_2",
-                                  "type": "label",
-                                  "units": "(mmHg)",
-                                  "value": "Systolic Blood Pressure",
-                                }
-                              }
-                            >
-                              <label
-                                className=""
-                              >
-                                <FormattedMessage
-                                  defaultMessage="Systolic Blood Pressure"
-                                  id="SYSTOLIC_2"
-                                  values={Object {}}
-                                >
-                                  <span>
-                                    Systolic Blood Pressure
-                                  </span>
-                                </FormattedMessage>
-                                 (mmHg)
-                              </label>
-                            </Label>
-                          </div>
-                          <NumericBox
-                            conceptClass="Misc"
-                            conceptHandler={null}
-                            enabled={true}
-                            formFieldPath="Blood Pressure Form.undefined/2-0"
-                            hiAbsolute={300}
-                            hiNormal={null}
-                            hidden={false}
-                            lowAbsolute={30}
-                            lowNormal={null}
-                            onChange={[Function]}
-                            onControlAdd={[Function]}
-                            options={Array []}
-                            properties={
-                              Object {
-                                "abnormal": false,
-                                "addMore": false,
-                                "controlEvent": false,
-                                "hideLabel": false,
+                        <Label
+                          collapse={false}
+                          enabled={true}
+                          errors={Array []}
+                          formFieldPath="Blood Pressure Form.undefined/1-0"
+                          formName="Blood Pressure Form"
+                          hidden={false}
+                          id={0}
+                          key="1"
+                          metadata={
+                            Object {
+                              "id": "1",
+                              "properties": Object {
                                 "location": Object {
                                   "column": 0,
-                                  "row": 1,
+                                  "row": 0,
                                 },
-                                "mandatory": false,
-                                "notes": false,
-                              }
+                              },
+                              "translationKey": "LABEL_1",
+                              "type": "label",
+                              "value": "Blood Pressure Form",
                             }
-                            showNotification={[Function]}
-                            validations={
-                              Array [
-                                "allowDecimal",
-                              ]
+                          }
+                          onControlAdd={[Function]}
+                          onControlRemove={[Function]}
+                          onEventTrigger={[Function]}
+                          onValueChanged={[Function]}
+                          showAddMore={true}
+                          showNotification={[Function]}
+                          showRemove={false}
+                          value={
+                            Object {
+                              "comment": undefined,
+                              "interpretation": undefined,
+                              "value": undefined,
                             }
+                          }
+                        >
+                          <label
+                            className=""
                           >
-                            <div
-                              className="fl"
+                            <FormattedMessage
+                              defaultMessage="Blood Pressure Form"
+                              id="LABEL_1"
+                              values={Object {}}
                             >
-                              <input
-                                className=""
-                                disabled={false}
-                                onChange={[Function]}
-                                type="number"
-                              />
-                            </div>
-                          </NumericBox>
-                        </div>
-                      </ObsControl>
+                              <span>
+                                Blood Pressure Form
+                              </span>
+                            </FormattedMessage>
+                          </label>
+                        </Label>
+                      </div>
                     </div>
-                  </div>
-                </Row>
-                <Row
-                  collapse={false}
-                  controls={
-                    Array [
-                      Object {
-                        "concept": Object {
-                          "answers": Array [],
-                          "conceptClass": "Misc",
-                          "conceptHandler": null,
-                          "datatype": "Numeric",
-                          "name": "DIASTOLIC",
-                          "properties": Object {
-                            "allowDecimal": false,
-                          },
-                          "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                        },
-                        "hiAbsolute": 150,
-                        "hiNormal": null,
-                        "id": "3",
-                        "label": Object {
-                          "id": "3",
-                          "translationKey": "DIASTOLIC_2",
-                          "type": "label",
-                          "units": "",
-                          "value": "Diastolic Blood Pressure",
-                        },
-                        "lowAbsolute": 20,
-                        "lowNormal": null,
-                        "properties": Object {
-                          "abnormal": false,
-                          "addMore": false,
-                          "controlEvent": false,
-                          "hideLabel": false,
-                          "location": Object {
-                            "column": 0,
-                            "row": 2,
-                          },
-                          "mandatory": false,
-                          "notes": false,
-                        },
-                        "type": "obsControl",
-                        "units": "mmHg",
-                      },
-                    ]
-                  }
-                  errors={Array []}
-                  formName="Blood Pressure Form"
-                  id={2}
-                  key="2"
-                  onControlAdd={[Function]}
-                  onControlRemove={[Function]}
-                  onEventTrigger={[Function]}
-                  onValueChanged={[Function]}
-                  records={
-                    Array [
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "id": "1",
-                          "properties": Object {
-                            "location": Object {
-                              "column": 0,
-                              "row": 0,
-                            },
-                          },
-                          "translationKey": "LABEL_1",
-                          "type": "label",
-                          "value": "Blood Pressure Form",
-                        },
-                        "dataSource": Object {
-                          "concept": undefined,
-                          "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
+                  </Row>
+                  <Row
+                    collapse={false}
+                    controls={
+                      Array [
+                        Object {
                           "concept": Object {
                             "answers": Array [],
                             "conceptClass": "Misc",
@@ -1051,50 +651,393 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                           "type": "obsControl",
                           "units": "mmHg",
                         },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "SYSTOLIC",
+                      ]
+                    }
+                    errors={Array []}
+                    formName="Blood Pressure Form"
+                    id={1}
+                    key="1"
+                    onControlAdd={[Function]}
+                    onControlRemove={[Function]}
+                    onEventTrigger={[Function]}
+                    onValueChanged={[Function]}
+                    records={
+                      Array [
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "id": "1",
                             "properties": Object {
-                              "allowDecimal": false,
+                              "location": Object {
+                                "column": 0,
+                                "row": 0,
+                              },
                             },
-                            "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
+                            "translationKey": "LABEL_1",
+                            "type": "label",
+                            "value": "Blood Pressure Form",
                           },
+                          "dataSource": Object {
+                            "concept": undefined,
+                            "formFieldPath": "Blood Pressure Form.undefined/1-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Blood Pressure Form.undefined/1-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
+                        },
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "SYSTOLIC",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "hiAbsolute": 300,
+                            "hiNormal": null,
+                            "id": "2",
+                            "label": Object {
+                              "id": "2",
+                              "translationKey": "SYSTOLIC_2",
+                              "type": "label",
+                              "units": "",
+                              "value": "Systolic Blood Pressure",
+                            },
+                            "lowAbsolute": 30,
+                            "lowNormal": null,
+                            "properties": Object {
+                              "abnormal": false,
+                              "addMore": false,
+                              "controlEvent": false,
+                              "hideLabel": false,
+                              "location": Object {
+                                "column": 0,
+                                "row": 1,
+                              },
+                              "mandatory": false,
+                              "notes": false,
+                            },
+                            "type": "obsControl",
+                            "units": "mmHg",
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "SYSTOLIC",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Blood Pressure Form.undefined/2-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
                           "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
                         },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "DIASTOLIC",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "hiAbsolute": 150,
+                            "hiNormal": null,
+                            "id": "3",
+                            "label": Object {
+                              "id": "3",
+                              "translationKey": "DIASTOLIC_2",
+                              "type": "label",
+                              "units": "",
+                              "value": "Diastolic Blood Pressure",
+                            },
+                            "lowAbsolute": 20,
+                            "lowNormal": null,
+                            "properties": Object {
+                              "abnormal": false,
+                              "addMore": false,
+                              "controlEvent": false,
+                              "hideLabel": false,
+                              "location": Object {
+                                "column": 0,
+                                "row": 2,
+                              },
+                              "mandatory": false,
+                              "notes": false,
+                            },
+                            "type": "obsControl",
+                            "units": "mmHg",
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "DIASTOLIC",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Blood Pressure Form.undefined/3-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Blood Pressure Form.undefined/3-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
                         },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
+                      ]
+                    }
+                    showNotification={[Function]}
+                  >
+                    <div
+                      className="form-builder-row"
+                    >
+                      <div
+                        className="form-builder-column form-builder-column-0-index0"
+                        key="Blood Pressure Form.undefined/2-0"
+                      >
+                        <ObsControl
+                          collapse={false}
+                          enabled={true}
+                          errors={Array []}
+                          formFieldPath="Blood Pressure Form.undefined/2-0"
+                          formName="Blood Pressure Form"
+                          hidden={false}
+                          id={1}
+                          key="2"
+                          metadata={
+                            Object {
+                              "concept": Object {
+                                "answers": Array [],
+                                "conceptClass": "Misc",
+                                "conceptHandler": null,
+                                "datatype": "Numeric",
+                                "name": "SYSTOLIC",
+                                "properties": Object {
+                                  "allowDecimal": false,
+                                },
+                                "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
+                              },
+                              "hiAbsolute": 300,
+                              "hiNormal": null,
+                              "id": "2",
+                              "label": Object {
+                                "id": "2",
+                                "translationKey": "SYSTOLIC_2",
+                                "type": "label",
+                                "units": "",
+                                "value": "Systolic Blood Pressure",
+                              },
+                              "lowAbsolute": 30,
+                              "lowNormal": null,
+                              "properties": Object {
+                                "abnormal": false,
+                                "addMore": false,
+                                "controlEvent": false,
+                                "hideLabel": false,
+                                "location": Object {
+                                  "column": 0,
+                                  "row": 1,
+                                },
+                                "mandatory": false,
+                                "notes": false,
+                              },
+                              "type": "obsControl",
+                              "units": "mmHg",
+                            }
+                          }
+                          onControlAdd={[Function]}
+                          onControlRemove={[Function]}
+                          onEventTrigger={[Function]}
+                          onValueChanged={[Function]}
+                          showAddMore={true}
+                          showNotification={[Function]}
+                          showRemove={false}
+                          value={
+                            Object {
+                              "comment": undefined,
+                              "interpretation": undefined,
+                              "value": undefined,
+                            }
+                          }
+                        >
+                          <div
+                            className="form-field-wrap clearfix"
+                          >
+                            <div
+                              className="label-wrap fl"
+                            >
+                              <Label
+                                enabled={true}
+                                hidden={false}
+                                metadata={
+                                  Object {
+                                    "id": "2",
+                                    "translationKey": "SYSTOLIC_2",
+                                    "type": "label",
+                                    "units": "(mmHg)",
+                                    "value": "Systolic Blood Pressure",
+                                  }
+                                }
+                              >
+                                <label
+                                  className=""
+                                >
+                                  <FormattedMessage
+                                    defaultMessage="Systolic Blood Pressure"
+                                    id="SYSTOLIC_2"
+                                    values={Object {}}
+                                  >
+                                    <span>
+                                      Systolic Blood Pressure
+                                    </span>
+                                  </FormattedMessage>
+                                   (mmHg)
+                                </label>
+                              </Label>
+                            </div>
+                            <NumericBox
+                              conceptClass="Misc"
+                              conceptHandler={null}
+                              enabled={true}
+                              formFieldPath="Blood Pressure Form.undefined/2-0"
+                              hiAbsolute={300}
+                              hiNormal={null}
+                              hidden={false}
+                              lowAbsolute={30}
+                              lowNormal={null}
+                              onChange={[Function]}
+                              onControlAdd={[Function]}
+                              options={Array []}
+                              properties={
+                                Object {
+                                  "abnormal": false,
+                                  "addMore": false,
+                                  "controlEvent": false,
+                                  "hideLabel": false,
+                                  "location": Object {
+                                    "column": 0,
+                                    "row": 1,
+                                  },
+                                  "mandatory": false,
+                                  "notes": false,
+                                }
+                              }
+                              showNotification={[Function]}
+                              validations={
+                                Array [
+                                  "allowDecimal",
+                                ]
+                              }
+                            >
+                              <div
+                                className="fl"
+                              >
+                                <input
+                                  className=""
+                                  disabled={false}
+                                  onChange={[Function]}
+                                  type="number"
+                                />
+                              </div>
+                            </NumericBox>
+                          </div>
+                        </ObsControl>
+                      </div>
+                    </div>
+                  </Row>
+                  <Row
+                    collapse={false}
+                    controls={
+                      Array [
+                        Object {
                           "concept": Object {
                             "answers": Array [],
                             "conceptClass": "Misc",
@@ -1133,68 +1076,149 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                           "type": "obsControl",
                           "units": "mmHg",
                         },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "DIASTOLIC",
+                      ]
+                    }
+                    errors={Array []}
+                    formName="Blood Pressure Form"
+                    id={2}
+                    key="2"
+                    onControlAdd={[Function]}
+                    onControlRemove={[Function]}
+                    onEventTrigger={[Function]}
+                    onValueChanged={[Function]}
+                    records={
+                      Array [
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "id": "1",
                             "properties": Object {
-                              "allowDecimal": false,
+                              "location": Object {
+                                "column": 0,
+                                "row": 0,
+                              },
                             },
-                            "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
+                            "translationKey": "LABEL_1",
+                            "type": "label",
+                            "value": "Blood Pressure Form",
                           },
-                          "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
+                          "dataSource": Object {
+                            "concept": undefined,
+                            "formFieldPath": "Blood Pressure Form.undefined/1-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Blood Pressure Form.undefined/1-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
                         },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "SYSTOLIC",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "hiAbsolute": 300,
+                            "hiNormal": null,
+                            "id": "2",
+                            "label": Object {
+                              "id": "2",
+                              "translationKey": "SYSTOLIC_2",
+                              "type": "label",
+                              "units": "",
+                              "value": "Systolic Blood Pressure",
+                            },
+                            "lowAbsolute": 30,
+                            "lowNormal": null,
+                            "properties": Object {
+                              "abnormal": false,
+                              "addMore": false,
+                              "controlEvent": false,
+                              "hideLabel": false,
+                              "location": Object {
+                                "column": 0,
+                                "row": 1,
+                              },
+                              "mandatory": false,
+                              "notes": false,
+                            },
+                            "type": "obsControl",
+                            "units": "mmHg",
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "SYSTOLIC",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Blood Pressure Form.undefined/2-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Blood Pressure Form.undefined/2-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
                         },
-                        "valueMapper": undefined,
-                      },
-                    ]
-                  }
-                  showNotification={[Function]}
-                >
-                  <div
-                    className="form-builder-row"
-                  >
-                    <div
-                      className="form-builder-column form-builder-column-0-index0"
-                      key="Blood Pressure Form.undefined/3-0"
-                    >
-                      <ObsControl
-                        collapse={false}
-                        enabled={true}
-                        errors={Array []}
-                        formFieldPath="Blood Pressure Form.undefined/3-0"
-                        formName="Blood Pressure Form"
-                        hidden={false}
-                        id={2}
-                        key="3"
-                        metadata={
-                          Object {
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
                             "concept": Object {
                               "answers": Array [],
                               "conceptClass": "Misc",
@@ -1232,73 +1256,93 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             },
                             "type": "obsControl",
                             "units": "mmHg",
-                          }
-                        }
-                        onControlAdd={[Function]}
-                        onControlRemove={[Function]}
-                        onEventTrigger={[Function]}
-                        onValueChanged={[Function]}
-                        showAddMore={true}
-                        showNotification={[Function]}
-                        showRemove={false}
-                        value={
-                          Object {
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "DIASTOLIC",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Blood Pressure Form.undefined/3-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Blood Pressure Form.undefined/3-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
                             "comment": undefined,
                             "interpretation": undefined,
                             "value": undefined,
-                          }
-                        }
+                          },
+                          "valueMapper": undefined,
+                        },
+                      ]
+                    }
+                    showNotification={[Function]}
+                  >
+                    <div
+                      className="form-builder-row"
+                    >
+                      <div
+                        className="form-builder-column form-builder-column-0-index0"
+                        key="Blood Pressure Form.undefined/3-0"
                       >
-                        <div
-                          className="form-field-wrap clearfix"
-                        >
-                          <div
-                            className="label-wrap fl"
-                          >
-                            <Label
-                              enabled={true}
-                              hidden={false}
-                              metadata={
-                                Object {
-                                  "id": "3",
-                                  "translationKey": "DIASTOLIC_2",
-                                  "type": "label",
-                                  "units": "(mmHg)",
-                                  "value": "Diastolic Blood Pressure",
-                                }
-                              }
-                            >
-                              <label
-                                className=""
-                              >
-                                <FormattedMessage
-                                  defaultMessage="Diastolic Blood Pressure"
-                                  id="DIASTOLIC_2"
-                                  values={Object {}}
-                                >
-                                  <span>
-                                    Diastolic Blood Pressure
-                                  </span>
-                                </FormattedMessage>
-                                 (mmHg)
-                              </label>
-                            </Label>
-                          </div>
-                          <NumericBox
-                            conceptClass="Misc"
-                            conceptHandler={null}
-                            enabled={true}
-                            formFieldPath="Blood Pressure Form.undefined/3-0"
-                            hiAbsolute={150}
-                            hiNormal={null}
-                            hidden={false}
-                            lowAbsolute={20}
-                            lowNormal={null}
-                            onChange={[Function]}
-                            onControlAdd={[Function]}
-                            options={Array []}
-                            properties={
-                              Object {
+                        <ObsControl
+                          collapse={false}
+                          enabled={true}
+                          errors={Array []}
+                          formFieldPath="Blood Pressure Form.undefined/3-0"
+                          formName="Blood Pressure Form"
+                          hidden={false}
+                          id={2}
+                          key="3"
+                          metadata={
+                            Object {
+                              "concept": Object {
+                                "answers": Array [],
+                                "conceptClass": "Misc",
+                                "conceptHandler": null,
+                                "datatype": "Numeric",
+                                "name": "DIASTOLIC",
+                                "properties": Object {
+                                  "allowDecimal": false,
+                                },
+                                "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
+                              },
+                              "hiAbsolute": 150,
+                              "hiNormal": null,
+                              "id": "3",
+                              "label": Object {
+                                "id": "3",
+                                "translationKey": "DIASTOLIC_2",
+                                "type": "label",
+                                "units": "",
+                                "value": "Diastolic Blood Pressure",
+                              },
+                              "lowAbsolute": 20,
+                              "lowNormal": null,
+                              "properties": Object {
                                 "abnormal": false,
                                 "addMore": false,
                                 "controlEvent": false,
@@ -1309,53 +1353,134 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                 },
                                 "mandatory": false,
                                 "notes": false,
-                              }
+                              },
+                              "type": "obsControl",
+                              "units": "mmHg",
                             }
-                            showNotification={[Function]}
-                            validations={
-                              Array [
-                                "allowDecimal",
-                              ]
+                          }
+                          onControlAdd={[Function]}
+                          onControlRemove={[Function]}
+                          onEventTrigger={[Function]}
+                          onValueChanged={[Function]}
+                          showAddMore={true}
+                          showNotification={[Function]}
+                          showRemove={false}
+                          value={
+                            Object {
+                              "comment": undefined,
+                              "interpretation": undefined,
+                              "value": undefined,
                             }
+                          }
+                        >
+                          <div
+                            className="form-field-wrap clearfix"
                           >
                             <div
-                              className="fl"
+                              className="label-wrap fl"
                             >
-                              <input
-                                className=""
-                                disabled={false}
-                                onChange={[Function]}
-                                type="number"
-                              />
+                              <Label
+                                enabled={true}
+                                hidden={false}
+                                metadata={
+                                  Object {
+                                    "id": "3",
+                                    "translationKey": "DIASTOLIC_2",
+                                    "type": "label",
+                                    "units": "(mmHg)",
+                                    "value": "Diastolic Blood Pressure",
+                                  }
+                                }
+                              >
+                                <label
+                                  className=""
+                                >
+                                  <FormattedMessage
+                                    defaultMessage="Diastolic Blood Pressure"
+                                    id="DIASTOLIC_2"
+                                    values={Object {}}
+                                  >
+                                    <span>
+                                      Diastolic Blood Pressure
+                                    </span>
+                                  </FormattedMessage>
+                                   (mmHg)
+                                </label>
+                              </Label>
                             </div>
-                          </NumericBox>
-                        </div>
-                      </ObsControl>
+                            <NumericBox
+                              conceptClass="Misc"
+                              conceptHandler={null}
+                              enabled={true}
+                              formFieldPath="Blood Pressure Form.undefined/3-0"
+                              hiAbsolute={150}
+                              hiNormal={null}
+                              hidden={false}
+                              lowAbsolute={20}
+                              lowNormal={null}
+                              onChange={[Function]}
+                              onControlAdd={[Function]}
+                              options={Array []}
+                              properties={
+                                Object {
+                                  "abnormal": false,
+                                  "addMore": false,
+                                  "controlEvent": false,
+                                  "hideLabel": false,
+                                  "location": Object {
+                                    "column": 0,
+                                    "row": 2,
+                                  },
+                                  "mandatory": false,
+                                  "notes": false,
+                                }
+                              }
+                              showNotification={[Function]}
+                              validations={
+                                Array [
+                                  "allowDecimal",
+                                ]
+                              }
+                            >
+                              <div
+                                className="fl"
+                              >
+                                <input
+                                  className=""
+                                  disabled={false}
+                                  onChange={[Function]}
+                                  type="number"
+                                />
+                              </div>
+                            </NumericBox>
+                          </div>
+                        </ObsControl>
+                      </div>
                     </div>
-                  </div>
-                </Row>
-              </div>
-            </IntlProvider>
-          </Container>
-          <Button
-            active={false}
-            block={false}
-            bsClass="btn"
-            bsSize="large"
-            bsStyle="success"
-            disabled={false}
-            onClick={[Function]}
-          >
-            <button
-              className="btn btn-lg btn-success"
+                  </Row>
+                </div>
+              </IntlProvider>
+            </Container>
+            <Button
+              active={false}
+              block={false}
+              bsClass="btn"
+              bsSize="large"
+              bsStyle="success"
               disabled={false}
               onClick={[Function]}
-              type="button"
             >
-              Submit
-            </button>
-          </Button>
-        </div>
+              <button
+                className="btn btn-lg btn-success"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Submit
+              </button>
+            </Button>
+          </div>
+        </Form>
       </BloodPressureForm>
     </Connect(BloodPressureForm)>
   </MockRouter>

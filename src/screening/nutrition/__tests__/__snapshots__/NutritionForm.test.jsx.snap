@@ -39,180 +39,277 @@ exports[`Component: NutritionForm renders properly 1`] = `
           }
         }
       >
-        <div>
-          <Link
-            replace={false}
-            to="/screening/nutrition/queue"
-          >
-            <a
-              onClick={[Function]}
-            >
-              <Button
-                active={false}
-                block={false}
-                bsClass="btn"
-                bsSize="large"
-                bsStyle="danger"
-                disabled={false}
-              >
-                <button
-                  className="btn btn-lg btn-danger"
-                  disabled={false}
-                  type="button"
-                >
-                  Back
-                </button>
-              </Button>
-            </a>
-          </Link>
-          <Container
-            collapse={false}
-            metadata={
-              Object {
-                "controls": Array [
-                  Object {
-                    "id": "1",
-                    "properties": Object {
-                      "location": Object {
-                        "column": 0,
-                        "row": 0,
-                      },
-                    },
-                    "translationKey": "LABEL_1",
-                    "type": "label",
-                    "value": "Nutrition Form",
-                  },
-                  Object {
-                    "concept": Object {
-                      "answers": Array [],
-                      "conceptClass": "Misc",
-                      "conceptHandler": null,
-                      "datatype": "Numeric",
-                      "name": "WEIGHT",
-                      "properties": Object {
-                        "allowDecimal": false,
-                      },
-                      "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
-                    },
-                    "hiAbsolute": 250,
-                    "hiNormal": null,
-                    "id": "2",
-                    "label": Object {
-                      "id": "2",
-                      "translationKey": "WEIGHT_2",
-                      "type": "label",
-                      "units": "",
-                      "value": "WEIGHT",
-                    },
-                    "lowAbsolute": 0.1,
-                    "lowNormal": null,
-                    "properties": Object {
-                      "abnormal": false,
-                      "addMore": false,
-                      "controlEvent": false,
-                      "hideLabel": false,
-                      "location": Object {
-                        "column": 0,
-                        "row": 1,
-                      },
-                      "mandatory": false,
-                      "notes": false,
-                    },
-                    "type": "obsControl",
-                    "units": "kg",
-                  },
-                  Object {
-                    "concept": Object {
-                      "answers": Array [],
-                      "conceptClass": "Misc",
-                      "conceptHandler": null,
-                      "datatype": "Numeric",
-                      "name": "HEIGHT",
-                      "properties": Object {
-                        "allowDecimal": false,
-                      },
-                      "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
-                    },
-                    "hiAbsolute": 228,
-                    "hiNormal": null,
-                    "id": "3",
-                    "label": Object {
-                      "id": "3",
-                      "translationKey": "HEIGHT_2",
-                      "type": "label",
-                      "units": "",
-                      "value": "HEIGHT",
-                    },
-                    "lowAbsolute": 10,
-                    "lowNormal": null,
-                    "properties": Object {
-                      "abnormal": false,
-                      "addMore": false,
-                      "controlEvent": false,
-                      "hideLabel": false,
-                      "location": Object {
-                        "column": 0,
-                        "row": 2,
-                      },
-                      "mandatory": false,
-                      "notes": false,
-                    },
-                    "type": "obsControl",
-                    "units": "cm",
-                  },
-                ],
-                "defaultLocale": "en",
-                "events": Object {},
-                "id": 2,
-                "name": "Nutrition Form",
-                "uuid": "e5c201c8-cfa8-4214-8e16-79129fbc5e6c",
-              }
+        <Form
+          afterSubmitLink="/screening/nutrition/queue"
+          backLink="/screening/nutrition/queue"
+          dispatch={[Function]}
+          encounterType={
+            Object {
+              "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
             }
-            observations={Array []}
-            translations={Object {}}
-          >
-            <IntlProvider
-              locale="en"
-              messages={Object {}}
+          }
+          formDetails={
+            Object {
+              "controls": Array [
+                Object {
+                  "id": "1",
+                  "properties": Object {
+                    "location": Object {
+                      "column": 0,
+                      "row": 0,
+                    },
+                  },
+                  "translationKey": "LABEL_1",
+                  "type": "label",
+                  "value": "Nutrition Form",
+                },
+                Object {
+                  "concept": Object {
+                    "answers": Array [],
+                    "conceptClass": "Misc",
+                    "conceptHandler": null,
+                    "datatype": "Numeric",
+                    "name": "WEIGHT",
+                    "properties": Object {
+                      "allowDecimal": false,
+                    },
+                    "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
+                  },
+                  "hiAbsolute": 250,
+                  "hiNormal": null,
+                  "id": "2",
+                  "label": Object {
+                    "id": "2",
+                    "translationKey": "WEIGHT_2",
+                    "type": "label",
+                    "units": "",
+                    "value": "Weight",
+                  },
+                  "lowAbsolute": 0.1,
+                  "lowNormal": null,
+                  "properties": Object {
+                    "abnormal": false,
+                    "addMore": false,
+                    "controlEvent": false,
+                    "hideLabel": false,
+                    "location": Object {
+                      "column": 0,
+                      "row": 1,
+                    },
+                    "mandatory": false,
+                    "notes": false,
+                  },
+                  "type": "obsControl",
+                  "units": "kg",
+                },
+                Object {
+                  "concept": Object {
+                    "answers": Array [],
+                    "conceptClass": "Misc",
+                    "conceptHandler": null,
+                    "datatype": "Numeric",
+                    "name": "HEIGHT",
+                    "properties": Object {
+                      "allowDecimal": false,
+                    },
+                    "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
+                  },
+                  "hiAbsolute": 228,
+                  "hiNormal": null,
+                  "id": "3",
+                  "label": Object {
+                    "id": "3",
+                    "translationKey": "HEIGHT_2",
+                    "type": "label",
+                    "units": "",
+                    "value": "Height",
+                  },
+                  "lowAbsolute": 10,
+                  "lowNormal": null,
+                  "properties": Object {
+                    "abnormal": false,
+                    "addMore": false,
+                    "controlEvent": false,
+                    "hideLabel": false,
+                    "location": Object {
+                      "column": 0,
+                      "row": 2,
+                    },
+                    "mandatory": false,
+                    "notes": false,
+                  },
+                  "type": "obsControl",
+                  "units": "cm",
+                },
+              ],
+              "defaultLocale": "en",
+              "events": Object {},
+              "id": 2,
+              "name": "Nutrition Form",
+              "uuid": "e5c201c8-cfa8-4214-8e16-79129fbc5e6c",
+            }
+          }
+          patient={
+            Object {
+              "activeVisit": Object {
+                "uuid": "def",
+              },
+              "uuid": "abc",
+            }
+          }
+          visit={
+            Object {
+              "uuid": "def",
+            }
+          }
+        >
+          <div>
+            <Link
+              replace={false}
+              to="/screening/nutrition/queue"
             >
-              <div>
-                <NotificationContainer
-                  notification={Object {}}
+              <a
+                onClick={[Function]}
+              >
+                <Button
+                  active={false}
+                  block={false}
+                  bsClass="btn"
+                  bsSize="large"
+                  bsStyle="danger"
+                  disabled={false}
                 >
-                  <div />
-                </NotificationContainer>
-                <Row
-                  collapse={false}
-                  controls={
-                    Array [
-                      Object {
-                        "id": "1",
-                        "properties": Object {
-                          "location": Object {
-                            "column": 0,
-                            "row": 0,
-                          },
+                  <button
+                    className="btn btn-lg btn-danger"
+                    disabled={false}
+                    type="button"
+                  >
+                    Back
+                  </button>
+                </Button>
+              </a>
+            </Link>
+            <Container
+              collapse={false}
+              metadata={
+                Object {
+                  "controls": Array [
+                    Object {
+                      "id": "1",
+                      "properties": Object {
+                        "location": Object {
+                          "column": 0,
+                          "row": 0,
                         },
-                        "translationKey": "LABEL_1",
-                        "type": "label",
-                        "value": "Nutrition Form",
                       },
-                    ]
-                  }
-                  errors={Array []}
-                  formName="Nutrition Form"
-                  id={0}
-                  key="0"
-                  onControlAdd={[Function]}
-                  onControlRemove={[Function]}
-                  onEventTrigger={[Function]}
-                  onValueChanged={[Function]}
-                  records={
-                    Array [
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
+                      "translationKey": "LABEL_1",
+                      "type": "label",
+                      "value": "Nutrition Form",
+                    },
+                    Object {
+                      "concept": Object {
+                        "answers": Array [],
+                        "conceptClass": "Misc",
+                        "conceptHandler": null,
+                        "datatype": "Numeric",
+                        "name": "WEIGHT",
+                        "properties": Object {
+                          "allowDecimal": false,
+                        },
+                        "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
+                      },
+                      "hiAbsolute": 250,
+                      "hiNormal": null,
+                      "id": "2",
+                      "label": Object {
+                        "id": "2",
+                        "translationKey": "WEIGHT_2",
+                        "type": "label",
+                        "units": "",
+                        "value": "Weight",
+                      },
+                      "lowAbsolute": 0.1,
+                      "lowNormal": null,
+                      "properties": Object {
+                        "abnormal": false,
+                        "addMore": false,
+                        "controlEvent": false,
+                        "hideLabel": false,
+                        "location": Object {
+                          "column": 0,
+                          "row": 1,
+                        },
+                        "mandatory": false,
+                        "notes": false,
+                      },
+                      "type": "obsControl",
+                      "units": "kg",
+                    },
+                    Object {
+                      "concept": Object {
+                        "answers": Array [],
+                        "conceptClass": "Misc",
+                        "conceptHandler": null,
+                        "datatype": "Numeric",
+                        "name": "HEIGHT",
+                        "properties": Object {
+                          "allowDecimal": false,
+                        },
+                        "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
+                      },
+                      "hiAbsolute": 228,
+                      "hiNormal": null,
+                      "id": "3",
+                      "label": Object {
+                        "id": "3",
+                        "translationKey": "HEIGHT_2",
+                        "type": "label",
+                        "units": "",
+                        "value": "Height",
+                      },
+                      "lowAbsolute": 10,
+                      "lowNormal": null,
+                      "properties": Object {
+                        "abnormal": false,
+                        "addMore": false,
+                        "controlEvent": false,
+                        "hideLabel": false,
+                        "location": Object {
+                          "column": 0,
+                          "row": 2,
+                        },
+                        "mandatory": false,
+                        "notes": false,
+                      },
+                      "type": "obsControl",
+                      "units": "cm",
+                    },
+                  ],
+                  "defaultLocale": "en",
+                  "events": Object {},
+                  "id": 2,
+                  "name": "Nutrition Form",
+                  "uuid": "e5c201c8-cfa8-4214-8e16-79129fbc5e6c",
+                }
+              }
+              observations={Array []}
+              translations={Object {}}
+            >
+              <IntlProvider
+                locale="en"
+                messages={Object {}}
+              >
+                <div>
+                  <NotificationContainer
+                    notification={Object {}}
+                  >
+                    <div />
+                  </NotificationContainer>
+                  <Row
+                    collapse={false}
+                    controls={
+                      Array [
+                        Object {
                           "id": "1",
                           "properties": Object {
                             "location": Object {
@@ -224,222 +321,22 @@ exports[`Component: NutritionForm renders properly 1`] = `
                           "type": "label",
                           "value": "Nutrition Form",
                         },
-                        "dataSource": Object {
-                          "concept": undefined,
-                          "formFieldPath": "Nutrition Form.undefined/1-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Nutrition Form.undefined/1-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "WEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 250,
-                          "hiNormal": null,
-                          "id": "2",
-                          "label": Object {
-                            "id": "2",
-                            "translationKey": "WEIGHT_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "WEIGHT",
-                          },
-                          "lowAbsolute": 0.1,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 1,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "kg",
-                        },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "WEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "formFieldPath": "Nutrition Form.undefined/2-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Nutrition Form.undefined/2-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "HEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 228,
-                          "hiNormal": null,
-                          "id": "3",
-                          "label": Object {
-                            "id": "3",
-                            "translationKey": "HEIGHT_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "HEIGHT",
-                          },
-                          "lowAbsolute": 10,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 2,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "cm",
-                        },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "HEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "formFieldPath": "Nutrition Form.undefined/3-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Nutrition Form.undefined/3-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                    ]
-                  }
-                  showNotification={[Function]}
-                >
-                  <div
-                    className="form-builder-row"
-                  >
-                    <div
-                      className="form-builder-column form-builder-column-0-index0"
-                      key="Nutrition Form.undefined/1-0"
-                    >
-                      <Label
-                        collapse={false}
-                        enabled={true}
-                        errors={Array []}
-                        formFieldPath="Nutrition Form.undefined/1-0"
-                        formName="Nutrition Form"
-                        hidden={false}
-                        id={0}
-                        key="1"
-                        metadata={
-                          Object {
+                      ]
+                    }
+                    errors={Array []}
+                    formName="Nutrition Form"
+                    id={0}
+                    key="0"
+                    onControlAdd={[Function]}
+                    onControlRemove={[Function]}
+                    onEventTrigger={[Function]}
+                    onValueChanged={[Function]}
+                    records={
+                      Array [
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
                             "id": "1",
                             "properties": Object {
                               "location": Object {
@@ -450,326 +347,41 @@ exports[`Component: NutritionForm renders properly 1`] = `
                             "translationKey": "LABEL_1",
                             "type": "label",
                             "value": "Nutrition Form",
-                          }
-                        }
-                        onControlAdd={[Function]}
-                        onControlRemove={[Function]}
-                        onEventTrigger={[Function]}
-                        onValueChanged={[Function]}
-                        showAddMore={true}
-                        showNotification={[Function]}
-                        showRemove={false}
-                        value={
-                          Object {
+                          },
+                          "dataSource": Object {
+                            "concept": undefined,
+                            "formFieldPath": "Nutrition Form.undefined/1-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Nutrition Form.undefined/1-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
                             "comment": undefined,
                             "interpretation": undefined,
                             "value": undefined,
-                          }
-                        }
-                      >
-                        <label
-                          className=""
-                        >
-                          <FormattedMessage
-                            defaultMessage="Nutrition Form"
-                            id="LABEL_1"
-                            values={Object {}}
-                          >
-                            <span>
-                              Nutrition Form
-                            </span>
-                          </FormattedMessage>
-                        </label>
-                      </Label>
-                    </div>
-                  </div>
-                </Row>
-                <Row
-                  collapse={false}
-                  controls={
-                    Array [
-                      Object {
-                        "concept": Object {
-                          "answers": Array [],
-                          "conceptClass": "Misc",
-                          "conceptHandler": null,
-                          "datatype": "Numeric",
-                          "name": "WEIGHT",
-                          "properties": Object {
-                            "allowDecimal": false,
                           },
-                          "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
+                          "valueMapper": undefined,
                         },
-                        "hiAbsolute": 250,
-                        "hiNormal": null,
-                        "id": "2",
-                        "label": Object {
-                          "id": "2",
-                          "translationKey": "WEIGHT_2",
-                          "type": "label",
-                          "units": "",
-                          "value": "WEIGHT",
-                        },
-                        "lowAbsolute": 0.1,
-                        "lowNormal": null,
-                        "properties": Object {
-                          "abnormal": false,
-                          "addMore": false,
-                          "controlEvent": false,
-                          "hideLabel": false,
-                          "location": Object {
-                            "column": 0,
-                            "row": 1,
-                          },
-                          "mandatory": false,
-                          "notes": false,
-                        },
-                        "type": "obsControl",
-                        "units": "kg",
-                      },
-                    ]
-                  }
-                  errors={Array []}
-                  formName="Nutrition Form"
-                  id={1}
-                  key="1"
-                  onControlAdd={[Function]}
-                  onControlRemove={[Function]}
-                  onEventTrigger={[Function]}
-                  onValueChanged={[Function]}
-                  records={
-                    Array [
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "id": "1",
-                          "properties": Object {
-                            "location": Object {
-                              "column": 0,
-                              "row": 0,
-                            },
-                          },
-                          "translationKey": "LABEL_1",
-                          "type": "label",
-                          "value": "Nutrition Form",
-                        },
-                        "dataSource": Object {
-                          "concept": undefined,
-                          "formFieldPath": "Nutrition Form.undefined/1-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Nutrition Form.undefined/1-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "WEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 250,
-                          "hiNormal": null,
-                          "id": "2",
-                          "label": Object {
-                            "id": "2",
-                            "translationKey": "WEIGHT_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "WEIGHT",
-                          },
-                          "lowAbsolute": 0.1,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 1,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "kg",
-                        },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "WEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "formFieldPath": "Nutrition Form.undefined/2-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Nutrition Form.undefined/2-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "HEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 228,
-                          "hiNormal": null,
-                          "id": "3",
-                          "label": Object {
-                            "id": "3",
-                            "translationKey": "HEIGHT_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "HEIGHT",
-                          },
-                          "lowAbsolute": 10,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 2,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "cm",
-                        },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "HEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "formFieldPath": "Nutrition Form.undefined/3-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Nutrition Form.undefined/3-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                    ]
-                  }
-                  showNotification={[Function]}
-                >
-                  <div
-                    className="form-builder-row"
-                  >
-                    <div
-                      className="form-builder-column form-builder-column-0-index0"
-                      key="Nutrition Form.undefined/2-0"
-                    >
-                      <ObsControl
-                        collapse={false}
-                        enabled={true}
-                        errors={Array []}
-                        formFieldPath="Nutrition Form.undefined/2-0"
-                        formName="Nutrition Form"
-                        hidden={false}
-                        id={1}
-                        key="2"
-                        metadata={
-                          Object {
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
                             "concept": Object {
                               "answers": Array [],
                               "conceptClass": "Misc",
@@ -789,7 +401,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                               "translationKey": "WEIGHT_2",
                               "type": "label",
                               "units": "",
-                              "value": "WEIGHT",
+                              "value": "Weight",
                             },
                             "lowAbsolute": 0.1,
                             "lowNormal": null,
@@ -807,394 +419,51 @@ exports[`Component: NutritionForm renders properly 1`] = `
                             },
                             "type": "obsControl",
                             "units": "kg",
-                          }
-                        }
-                        onControlAdd={[Function]}
-                        onControlRemove={[Function]}
-                        onEventTrigger={[Function]}
-                        onValueChanged={[Function]}
-                        showAddMore={true}
-                        showNotification={[Function]}
-                        showRemove={false}
-                        value={
-                          Object {
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "WEIGHT",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Nutrition Form.undefined/2-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Nutrition Form.undefined/2-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
                             "comment": undefined,
                             "interpretation": undefined,
                             "value": undefined,
-                          }
-                        }
-                      >
-                        <div
-                          className="form-field-wrap clearfix"
-                        >
-                          <div
-                            className="label-wrap fl"
-                          >
-                            <Label
-                              enabled={true}
-                              hidden={false}
-                              metadata={
-                                Object {
-                                  "id": "2",
-                                  "translationKey": "WEIGHT_2",
-                                  "type": "label",
-                                  "units": "(kg)",
-                                  "value": "WEIGHT",
-                                }
-                              }
-                            >
-                              <label
-                                className=""
-                              >
-                                <FormattedMessage
-                                  defaultMessage="WEIGHT"
-                                  id="WEIGHT_2"
-                                  values={Object {}}
-                                >
-                                  <span>
-                                    WEIGHT
-                                  </span>
-                                </FormattedMessage>
-                                 (kg)
-                              </label>
-                            </Label>
-                          </div>
-                          <NumericBox
-                            conceptClass="Misc"
-                            conceptHandler={null}
-                            enabled={true}
-                            formFieldPath="Nutrition Form.undefined/2-0"
-                            hiAbsolute={250}
-                            hiNormal={null}
-                            hidden={false}
-                            lowAbsolute={0.1}
-                            lowNormal={null}
-                            onChange={[Function]}
-                            onControlAdd={[Function]}
-                            options={Array []}
-                            properties={
-                              Object {
-                                "abnormal": false,
-                                "addMore": false,
-                                "controlEvent": false,
-                                "hideLabel": false,
-                                "location": Object {
-                                  "column": 0,
-                                  "row": 1,
-                                },
-                                "mandatory": false,
-                                "notes": false,
-                              }
-                            }
-                            showNotification={[Function]}
-                            validations={
-                              Array [
-                                "allowDecimal",
-                              ]
-                            }
-                          >
-                            <div
-                              className="fl"
-                            >
-                              <input
-                                className=""
-                                disabled={false}
-                                onChange={[Function]}
-                                type="number"
-                              />
-                            </div>
-                          </NumericBox>
-                        </div>
-                      </ObsControl>
-                    </div>
-                  </div>
-                </Row>
-                <Row
-                  collapse={false}
-                  controls={
-                    Array [
-                      Object {
-                        "concept": Object {
-                          "answers": Array [],
-                          "conceptClass": "Misc",
-                          "conceptHandler": null,
-                          "datatype": "Numeric",
-                          "name": "HEIGHT",
-                          "properties": Object {
-                            "allowDecimal": false,
                           },
-                          "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
+                          "valueMapper": undefined,
                         },
-                        "hiAbsolute": 228,
-                        "hiNormal": null,
-                        "id": "3",
-                        "label": Object {
-                          "id": "3",
-                          "translationKey": "HEIGHT_2",
-                          "type": "label",
-                          "units": "",
-                          "value": "HEIGHT",
-                        },
-                        "lowAbsolute": 10,
-                        "lowNormal": null,
-                        "properties": Object {
-                          "abnormal": false,
-                          "addMore": false,
-                          "controlEvent": false,
-                          "hideLabel": false,
-                          "location": Object {
-                            "column": 0,
-                            "row": 2,
-                          },
-                          "mandatory": false,
-                          "notes": false,
-                        },
-                        "type": "obsControl",
-                        "units": "cm",
-                      },
-                    ]
-                  }
-                  errors={Array []}
-                  formName="Nutrition Form"
-                  id={2}
-                  key="2"
-                  onControlAdd={[Function]}
-                  onControlRemove={[Function]}
-                  onEventTrigger={[Function]}
-                  onValueChanged={[Function]}
-                  records={
-                    Array [
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "id": "1",
-                          "properties": Object {
-                            "location": Object {
-                              "column": 0,
-                              "row": 0,
-                            },
-                          },
-                          "translationKey": "LABEL_1",
-                          "type": "label",
-                          "value": "Nutrition Form",
-                        },
-                        "dataSource": Object {
-                          "concept": undefined,
-                          "formFieldPath": "Nutrition Form.undefined/1-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Nutrition Form.undefined/1-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "WEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 250,
-                          "hiNormal": null,
-                          "id": "2",
-                          "label": Object {
-                            "id": "2",
-                            "translationKey": "WEIGHT_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "WEIGHT",
-                          },
-                          "lowAbsolute": 0.1,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 1,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "kg",
-                        },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "WEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "formFieldPath": "Nutrition Form.undefined/2-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Nutrition Form.undefined/2-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                      Object {
-                        "active": true,
-                        "children": undefined,
-                        "control": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "HEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 228,
-                          "hiNormal": null,
-                          "id": "3",
-                          "label": Object {
-                            "id": "3",
-                            "translationKey": "HEIGHT_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "HEIGHT",
-                          },
-                          "lowAbsolute": 10,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 2,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "cm",
-                        },
-                        "dataSource": Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "HEIGHT",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "formFieldPath": "Nutrition Form.undefined/3-0",
-                          "formNamespace": "Bahmni",
-                          "voided": true,
-                        },
-                        "enabled": true,
-                        "errors": Array [],
-                        "formFieldPath": "Nutrition Form.undefined/3-0",
-                        "getActive": [Function],
-                        "getConceptName": [Function],
-                        "getConceptType": [Function],
-                        "getControlId": [Function],
-                        "getErrors": [Function],
-                        "getEventScripts": [Function],
-                        "getLabelName": [Function],
-                        "getObject": [Function],
-                        "getValue": [Function],
-                        "hidden": false,
-                        "setValue": [Function],
-                        "showAddMore": true,
-                        "showRemove": false,
-                        "update": [Function],
-                        "value": Object {
-                          "comment": undefined,
-                          "interpretation": undefined,
-                          "value": undefined,
-                        },
-                        "valueMapper": undefined,
-                      },
-                    ]
-                  }
-                  showNotification={[Function]}
-                >
-                  <div
-                    className="form-builder-row"
-                  >
-                    <div
-                      className="form-builder-column form-builder-column-0-index0"
-                      key="Nutrition Form.undefined/3-0"
-                    >
-                      <ObsControl
-                        collapse={false}
-                        enabled={true}
-                        errors={Array []}
-                        formFieldPath="Nutrition Form.undefined/3-0"
-                        formName="Nutrition Form"
-                        hidden={false}
-                        id={2}
-                        key="3"
-                        metadata={
-                          Object {
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
                             "concept": Object {
                               "answers": Array [],
                               "conceptClass": "Misc",
@@ -1214,7 +483,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                               "translationKey": "HEIGHT_2",
                               "type": "label",
                               "units": "",
-                              "value": "HEIGHT",
+                              "value": "Height",
                             },
                             "lowAbsolute": 10,
                             "lowNormal": null,
@@ -1232,73 +501,848 @@ exports[`Component: NutritionForm renders properly 1`] = `
                             },
                             "type": "obsControl",
                             "units": "cm",
-                          }
-                        }
-                        onControlAdd={[Function]}
-                        onControlRemove={[Function]}
-                        onEventTrigger={[Function]}
-                        onValueChanged={[Function]}
-                        showAddMore={true}
-                        showNotification={[Function]}
-                        showRemove={false}
-                        value={
-                          Object {
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "HEIGHT",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Nutrition Form.undefined/3-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Nutrition Form.undefined/3-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
                             "comment": undefined,
                             "interpretation": undefined,
                             "value": undefined,
-                          }
-                        }
+                          },
+                          "valueMapper": undefined,
+                        },
+                      ]
+                    }
+                    showNotification={[Function]}
+                  >
+                    <div
+                      className="form-builder-row"
+                    >
+                      <div
+                        className="form-builder-column form-builder-column-0-index0"
+                        key="Nutrition Form.undefined/1-0"
                       >
-                        <div
-                          className="form-field-wrap clearfix"
+                        <Label
+                          collapse={false}
+                          enabled={true}
+                          errors={Array []}
+                          formFieldPath="Nutrition Form.undefined/1-0"
+                          formName="Nutrition Form"
+                          hidden={false}
+                          id={0}
+                          key="1"
+                          metadata={
+                            Object {
+                              "id": "1",
+                              "properties": Object {
+                                "location": Object {
+                                  "column": 0,
+                                  "row": 0,
+                                },
+                              },
+                              "translationKey": "LABEL_1",
+                              "type": "label",
+                              "value": "Nutrition Form",
+                            }
+                          }
+                          onControlAdd={[Function]}
+                          onControlRemove={[Function]}
+                          onEventTrigger={[Function]}
+                          onValueChanged={[Function]}
+                          showAddMore={true}
+                          showNotification={[Function]}
+                          showRemove={false}
+                          value={
+                            Object {
+                              "comment": undefined,
+                              "interpretation": undefined,
+                              "value": undefined,
+                            }
+                          }
+                        >
+                          <label
+                            className=""
+                          >
+                            <FormattedMessage
+                              defaultMessage="Nutrition Form"
+                              id="LABEL_1"
+                              values={Object {}}
+                            >
+                              <span>
+                                Nutrition Form
+                              </span>
+                            </FormattedMessage>
+                          </label>
+                        </Label>
+                      </div>
+                    </div>
+                  </Row>
+                  <Row
+                    collapse={false}
+                    controls={
+                      Array [
+                        Object {
+                          "concept": Object {
+                            "answers": Array [],
+                            "conceptClass": "Misc",
+                            "conceptHandler": null,
+                            "datatype": "Numeric",
+                            "name": "WEIGHT",
+                            "properties": Object {
+                              "allowDecimal": false,
+                            },
+                            "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
+                          },
+                          "hiAbsolute": 250,
+                          "hiNormal": null,
+                          "id": "2",
+                          "label": Object {
+                            "id": "2",
+                            "translationKey": "WEIGHT_2",
+                            "type": "label",
+                            "units": "",
+                            "value": "Weight",
+                          },
+                          "lowAbsolute": 0.1,
+                          "lowNormal": null,
+                          "properties": Object {
+                            "abnormal": false,
+                            "addMore": false,
+                            "controlEvent": false,
+                            "hideLabel": false,
+                            "location": Object {
+                              "column": 0,
+                              "row": 1,
+                            },
+                            "mandatory": false,
+                            "notes": false,
+                          },
+                          "type": "obsControl",
+                          "units": "kg",
+                        },
+                      ]
+                    }
+                    errors={Array []}
+                    formName="Nutrition Form"
+                    id={1}
+                    key="1"
+                    onControlAdd={[Function]}
+                    onControlRemove={[Function]}
+                    onEventTrigger={[Function]}
+                    onValueChanged={[Function]}
+                    records={
+                      Array [
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "id": "1",
+                            "properties": Object {
+                              "location": Object {
+                                "column": 0,
+                                "row": 0,
+                              },
+                            },
+                            "translationKey": "LABEL_1",
+                            "type": "label",
+                            "value": "Nutrition Form",
+                          },
+                          "dataSource": Object {
+                            "concept": undefined,
+                            "formFieldPath": "Nutrition Form.undefined/1-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Nutrition Form.undefined/1-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
+                        },
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "WEIGHT",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "hiAbsolute": 250,
+                            "hiNormal": null,
+                            "id": "2",
+                            "label": Object {
+                              "id": "2",
+                              "translationKey": "WEIGHT_2",
+                              "type": "label",
+                              "units": "",
+                              "value": "Weight",
+                            },
+                            "lowAbsolute": 0.1,
+                            "lowNormal": null,
+                            "properties": Object {
+                              "abnormal": false,
+                              "addMore": false,
+                              "controlEvent": false,
+                              "hideLabel": false,
+                              "location": Object {
+                                "column": 0,
+                                "row": 1,
+                              },
+                              "mandatory": false,
+                              "notes": false,
+                            },
+                            "type": "obsControl",
+                            "units": "kg",
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "WEIGHT",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Nutrition Form.undefined/2-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Nutrition Form.undefined/2-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
+                        },
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "HEIGHT",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "hiAbsolute": 228,
+                            "hiNormal": null,
+                            "id": "3",
+                            "label": Object {
+                              "id": "3",
+                              "translationKey": "HEIGHT_2",
+                              "type": "label",
+                              "units": "",
+                              "value": "Height",
+                            },
+                            "lowAbsolute": 10,
+                            "lowNormal": null,
+                            "properties": Object {
+                              "abnormal": false,
+                              "addMore": false,
+                              "controlEvent": false,
+                              "hideLabel": false,
+                              "location": Object {
+                                "column": 0,
+                                "row": 2,
+                              },
+                              "mandatory": false,
+                              "notes": false,
+                            },
+                            "type": "obsControl",
+                            "units": "cm",
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "HEIGHT",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Nutrition Form.undefined/3-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Nutrition Form.undefined/3-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
+                        },
+                      ]
+                    }
+                    showNotification={[Function]}
+                  >
+                    <div
+                      className="form-builder-row"
+                    >
+                      <div
+                        className="form-builder-column form-builder-column-0-index0"
+                        key="Nutrition Form.undefined/2-0"
+                      >
+                        <ObsControl
+                          collapse={false}
+                          enabled={true}
+                          errors={Array []}
+                          formFieldPath="Nutrition Form.undefined/2-0"
+                          formName="Nutrition Form"
+                          hidden={false}
+                          id={1}
+                          key="2"
+                          metadata={
+                            Object {
+                              "concept": Object {
+                                "answers": Array [],
+                                "conceptClass": "Misc",
+                                "conceptHandler": null,
+                                "datatype": "Numeric",
+                                "name": "WEIGHT",
+                                "properties": Object {
+                                  "allowDecimal": false,
+                                },
+                                "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
+                              },
+                              "hiAbsolute": 250,
+                              "hiNormal": null,
+                              "id": "2",
+                              "label": Object {
+                                "id": "2",
+                                "translationKey": "WEIGHT_2",
+                                "type": "label",
+                                "units": "",
+                                "value": "Weight",
+                              },
+                              "lowAbsolute": 0.1,
+                              "lowNormal": null,
+                              "properties": Object {
+                                "abnormal": false,
+                                "addMore": false,
+                                "controlEvent": false,
+                                "hideLabel": false,
+                                "location": Object {
+                                  "column": 0,
+                                  "row": 1,
+                                },
+                                "mandatory": false,
+                                "notes": false,
+                              },
+                              "type": "obsControl",
+                              "units": "kg",
+                            }
+                          }
+                          onControlAdd={[Function]}
+                          onControlRemove={[Function]}
+                          onEventTrigger={[Function]}
+                          onValueChanged={[Function]}
+                          showAddMore={true}
+                          showNotification={[Function]}
+                          showRemove={false}
+                          value={
+                            Object {
+                              "comment": undefined,
+                              "interpretation": undefined,
+                              "value": undefined,
+                            }
+                          }
                         >
                           <div
-                            className="label-wrap fl"
+                            className="form-field-wrap clearfix"
                           >
-                            <Label
+                            <div
+                              className="label-wrap fl"
+                            >
+                              <Label
+                                enabled={true}
+                                hidden={false}
+                                metadata={
+                                  Object {
+                                    "id": "2",
+                                    "translationKey": "WEIGHT_2",
+                                    "type": "label",
+                                    "units": "(kg)",
+                                    "value": "Weight",
+                                  }
+                                }
+                              >
+                                <label
+                                  className=""
+                                >
+                                  <FormattedMessage
+                                    defaultMessage="Weight"
+                                    id="WEIGHT_2"
+                                    values={Object {}}
+                                  >
+                                    <span>
+                                      Weight
+                                    </span>
+                                  </FormattedMessage>
+                                   (kg)
+                                </label>
+                              </Label>
+                            </div>
+                            <NumericBox
+                              conceptClass="Misc"
+                              conceptHandler={null}
                               enabled={true}
+                              formFieldPath="Nutrition Form.undefined/2-0"
+                              hiAbsolute={250}
+                              hiNormal={null}
                               hidden={false}
-                              metadata={
+                              lowAbsolute={0.1}
+                              lowNormal={null}
+                              onChange={[Function]}
+                              onControlAdd={[Function]}
+                              options={Array []}
+                              properties={
                                 Object {
-                                  "id": "3",
-                                  "translationKey": "HEIGHT_2",
-                                  "type": "label",
-                                  "units": "(cm)",
-                                  "value": "HEIGHT",
+                                  "abnormal": false,
+                                  "addMore": false,
+                                  "controlEvent": false,
+                                  "hideLabel": false,
+                                  "location": Object {
+                                    "column": 0,
+                                    "row": 1,
+                                  },
+                                  "mandatory": false,
+                                  "notes": false,
                                 }
                               }
+                              showNotification={[Function]}
+                              validations={
+                                Array [
+                                  "allowDecimal",
+                                ]
+                              }
                             >
-                              <label
-                                className=""
+                              <div
+                                className="fl"
                               >
-                                <FormattedMessage
-                                  defaultMessage="HEIGHT"
-                                  id="HEIGHT_2"
-                                  values={Object {}}
-                                >
-                                  <span>
-                                    HEIGHT
-                                  </span>
-                                </FormattedMessage>
-                                 (cm)
-                              </label>
-                            </Label>
+                                <input
+                                  className=""
+                                  disabled={false}
+                                  onChange={[Function]}
+                                  type="number"
+                                />
+                              </div>
+                            </NumericBox>
                           </div>
-                          <NumericBox
-                            conceptClass="Misc"
-                            conceptHandler={null}
-                            enabled={true}
-                            formFieldPath="Nutrition Form.undefined/3-0"
-                            hiAbsolute={228}
-                            hiNormal={null}
-                            hidden={false}
-                            lowAbsolute={10}
-                            lowNormal={null}
-                            onChange={[Function]}
-                            onControlAdd={[Function]}
-                            options={Array []}
-                            properties={
-                              Object {
+                        </ObsControl>
+                      </div>
+                    </div>
+                  </Row>
+                  <Row
+                    collapse={false}
+                    controls={
+                      Array [
+                        Object {
+                          "concept": Object {
+                            "answers": Array [],
+                            "conceptClass": "Misc",
+                            "conceptHandler": null,
+                            "datatype": "Numeric",
+                            "name": "HEIGHT",
+                            "properties": Object {
+                              "allowDecimal": false,
+                            },
+                            "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
+                          },
+                          "hiAbsolute": 228,
+                          "hiNormal": null,
+                          "id": "3",
+                          "label": Object {
+                            "id": "3",
+                            "translationKey": "HEIGHT_2",
+                            "type": "label",
+                            "units": "",
+                            "value": "Height",
+                          },
+                          "lowAbsolute": 10,
+                          "lowNormal": null,
+                          "properties": Object {
+                            "abnormal": false,
+                            "addMore": false,
+                            "controlEvent": false,
+                            "hideLabel": false,
+                            "location": Object {
+                              "column": 0,
+                              "row": 2,
+                            },
+                            "mandatory": false,
+                            "notes": false,
+                          },
+                          "type": "obsControl",
+                          "units": "cm",
+                        },
+                      ]
+                    }
+                    errors={Array []}
+                    formName="Nutrition Form"
+                    id={2}
+                    key="2"
+                    onControlAdd={[Function]}
+                    onControlRemove={[Function]}
+                    onEventTrigger={[Function]}
+                    onValueChanged={[Function]}
+                    records={
+                      Array [
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "id": "1",
+                            "properties": Object {
+                              "location": Object {
+                                "column": 0,
+                                "row": 0,
+                              },
+                            },
+                            "translationKey": "LABEL_1",
+                            "type": "label",
+                            "value": "Nutrition Form",
+                          },
+                          "dataSource": Object {
+                            "concept": undefined,
+                            "formFieldPath": "Nutrition Form.undefined/1-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Nutrition Form.undefined/1-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
+                        },
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "WEIGHT",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "hiAbsolute": 250,
+                            "hiNormal": null,
+                            "id": "2",
+                            "label": Object {
+                              "id": "2",
+                              "translationKey": "WEIGHT_2",
+                              "type": "label",
+                              "units": "",
+                              "value": "Weight",
+                            },
+                            "lowAbsolute": 0.1,
+                            "lowNormal": null,
+                            "properties": Object {
+                              "abnormal": false,
+                              "addMore": false,
+                              "controlEvent": false,
+                              "hideLabel": false,
+                              "location": Object {
+                                "column": 0,
+                                "row": 1,
+                              },
+                              "mandatory": false,
+                              "notes": false,
+                            },
+                            "type": "obsControl",
+                            "units": "kg",
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "WEIGHT",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c44a-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Nutrition Form.undefined/2-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Nutrition Form.undefined/2-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
+                        },
+                        Object {
+                          "active": true,
+                          "children": undefined,
+                          "control": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "HEIGHT",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "hiAbsolute": 228,
+                            "hiNormal": null,
+                            "id": "3",
+                            "label": Object {
+                              "id": "3",
+                              "translationKey": "HEIGHT_2",
+                              "type": "label",
+                              "units": "",
+                              "value": "Height",
+                            },
+                            "lowAbsolute": 10,
+                            "lowNormal": null,
+                            "properties": Object {
+                              "abnormal": false,
+                              "addMore": false,
+                              "controlEvent": false,
+                              "hideLabel": false,
+                              "location": Object {
+                                "column": 0,
+                                "row": 2,
+                              },
+                              "mandatory": false,
+                              "notes": false,
+                            },
+                            "type": "obsControl",
+                            "units": "cm",
+                          },
+                          "dataSource": Object {
+                            "concept": Object {
+                              "answers": Array [],
+                              "conceptClass": "Misc",
+                              "conceptHandler": null,
+                              "datatype": "Numeric",
+                              "name": "HEIGHT",
+                              "properties": Object {
+                                "allowDecimal": false,
+                              },
+                              "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
+                            },
+                            "formFieldPath": "Nutrition Form.undefined/3-0",
+                            "formNamespace": "Bahmni",
+                            "voided": true,
+                          },
+                          "enabled": true,
+                          "errors": Array [],
+                          "formFieldPath": "Nutrition Form.undefined/3-0",
+                          "getActive": [Function],
+                          "getConceptName": [Function],
+                          "getConceptType": [Function],
+                          "getControlId": [Function],
+                          "getErrors": [Function],
+                          "getEventScripts": [Function],
+                          "getLabelName": [Function],
+                          "getObject": [Function],
+                          "getValue": [Function],
+                          "hidden": false,
+                          "setValue": [Function],
+                          "showAddMore": true,
+                          "showRemove": false,
+                          "update": [Function],
+                          "value": Object {
+                            "comment": undefined,
+                            "interpretation": undefined,
+                            "value": undefined,
+                          },
+                          "valueMapper": undefined,
+                        },
+                      ]
+                    }
+                    showNotification={[Function]}
+                  >
+                    <div
+                      className="form-builder-row"
+                    >
+                      <div
+                        className="form-builder-column form-builder-column-0-index0"
+                        key="Nutrition Form.undefined/3-0"
+                      >
+                        <ObsControl
+                          collapse={false}
+                          enabled={true}
+                          errors={Array []}
+                          formFieldPath="Nutrition Form.undefined/3-0"
+                          formName="Nutrition Form"
+                          hidden={false}
+                          id={2}
+                          key="3"
+                          metadata={
+                            Object {
+                              "concept": Object {
+                                "answers": Array [],
+                                "conceptClass": "Misc",
+                                "conceptHandler": null,
+                                "datatype": "Numeric",
+                                "name": "HEIGHT",
+                                "properties": Object {
+                                  "allowDecimal": false,
+                                },
+                                "uuid": "6569c562-977f-11e1-8993-905e29aff6c1",
+                              },
+                              "hiAbsolute": 228,
+                              "hiNormal": null,
+                              "id": "3",
+                              "label": Object {
+                                "id": "3",
+                                "translationKey": "HEIGHT_2",
+                                "type": "label",
+                                "units": "",
+                                "value": "Height",
+                              },
+                              "lowAbsolute": 10,
+                              "lowNormal": null,
+                              "properties": Object {
                                 "abnormal": false,
                                 "addMore": false,
                                 "controlEvent": false,
@@ -1309,53 +1353,134 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                 },
                                 "mandatory": false,
                                 "notes": false,
-                              }
+                              },
+                              "type": "obsControl",
+                              "units": "cm",
                             }
-                            showNotification={[Function]}
-                            validations={
-                              Array [
-                                "allowDecimal",
-                              ]
+                          }
+                          onControlAdd={[Function]}
+                          onControlRemove={[Function]}
+                          onEventTrigger={[Function]}
+                          onValueChanged={[Function]}
+                          showAddMore={true}
+                          showNotification={[Function]}
+                          showRemove={false}
+                          value={
+                            Object {
+                              "comment": undefined,
+                              "interpretation": undefined,
+                              "value": undefined,
                             }
+                          }
+                        >
+                          <div
+                            className="form-field-wrap clearfix"
                           >
                             <div
-                              className="fl"
+                              className="label-wrap fl"
                             >
-                              <input
-                                className=""
-                                disabled={false}
-                                onChange={[Function]}
-                                type="number"
-                              />
+                              <Label
+                                enabled={true}
+                                hidden={false}
+                                metadata={
+                                  Object {
+                                    "id": "3",
+                                    "translationKey": "HEIGHT_2",
+                                    "type": "label",
+                                    "units": "(cm)",
+                                    "value": "Height",
+                                  }
+                                }
+                              >
+                                <label
+                                  className=""
+                                >
+                                  <FormattedMessage
+                                    defaultMessage="Height"
+                                    id="HEIGHT_2"
+                                    values={Object {}}
+                                  >
+                                    <span>
+                                      Height
+                                    </span>
+                                  </FormattedMessage>
+                                   (cm)
+                                </label>
+                              </Label>
                             </div>
-                          </NumericBox>
-                        </div>
-                      </ObsControl>
+                            <NumericBox
+                              conceptClass="Misc"
+                              conceptHandler={null}
+                              enabled={true}
+                              formFieldPath="Nutrition Form.undefined/3-0"
+                              hiAbsolute={228}
+                              hiNormal={null}
+                              hidden={false}
+                              lowAbsolute={10}
+                              lowNormal={null}
+                              onChange={[Function]}
+                              onControlAdd={[Function]}
+                              options={Array []}
+                              properties={
+                                Object {
+                                  "abnormal": false,
+                                  "addMore": false,
+                                  "controlEvent": false,
+                                  "hideLabel": false,
+                                  "location": Object {
+                                    "column": 0,
+                                    "row": 2,
+                                  },
+                                  "mandatory": false,
+                                  "notes": false,
+                                }
+                              }
+                              showNotification={[Function]}
+                              validations={
+                                Array [
+                                  "allowDecimal",
+                                ]
+                              }
+                            >
+                              <div
+                                className="fl"
+                              >
+                                <input
+                                  className=""
+                                  disabled={false}
+                                  onChange={[Function]}
+                                  type="number"
+                                />
+                              </div>
+                            </NumericBox>
+                          </div>
+                        </ObsControl>
+                      </div>
                     </div>
-                  </div>
-                </Row>
-              </div>
-            </IntlProvider>
-          </Container>
-          <Button
-            active={false}
-            block={false}
-            bsClass="btn"
-            bsSize="large"
-            bsStyle="success"
-            disabled={false}
-            onClick={[Function]}
-          >
-            <button
-              className="btn btn-lg btn-success"
+                  </Row>
+                </div>
+              </IntlProvider>
+            </Container>
+            <Button
+              active={false}
+              block={false}
+              bsClass="btn"
+              bsSize="large"
+              bsStyle="success"
               disabled={false}
               onClick={[Function]}
-              type="button"
             >
-              Submit
-            </button>
-          </Button>
-        </div>
+              <button
+                className="btn btn-lg btn-success"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Submit
+              </button>
+            </Button>
+          </div>
+        </Form>
       </NutritionForm>
     </Connect(NutritionForm)>
   </MockRouter>
