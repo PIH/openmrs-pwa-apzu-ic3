@@ -9,7 +9,10 @@ import {connect} from "react-redux";
 let ScreeningQueue = props => {
 
   const fetchListActionCreator = props.fetchListActionCreator ? this.props.fetchListActionCreator :
-    () => props.dispatch(visitActions.fetchActiveVisits("custom:" + VISIT_REPRESENTATION, props.session.sessionLocation.uuid));
+    () => props.dispatch(visitActions.fetchActiveVisits(
+      "custom:" + VISIT_REPRESENTATION,
+      (props.session.sessionLocation ? props.session.sessionLocation.uuid : null)
+    ));
 
   const onMountOtherActionCreators = props.onMountOtherActionCreators ? this.props.onMountOtherActionCreators :
     [
