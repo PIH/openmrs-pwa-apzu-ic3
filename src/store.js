@@ -24,7 +24,6 @@ import checkInReducer from './checkin/checkInReducers';
 import visitReducer from './screening/visitReducers';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
-import formSagas from './form/formSagas';
 
 // fyi, connected-react-router docs:
 // https://github.com/supasate/connected-react-router
@@ -65,8 +64,7 @@ const rootSagas = function* () {
   yield all([
     openmrsSagas(),
     checkInSagas(),
-    checkOutSagas(),
-    formSagas()
+    checkOutSagas()
   ]);
 };
 
