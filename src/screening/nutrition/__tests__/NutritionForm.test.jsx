@@ -30,12 +30,10 @@ describe('Component: NutritionForm', () => {
     store = mockStore(
       {
         selectedPatient: {
-            patient: {
               uuid: "abc",
               visit: {
                 uuid: "def"
               }
-            }
         }
       });
     mountedComponent = undefined;

@@ -98,8 +98,8 @@ NutritionForm.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient.patient,
-    visit: state.selectedPatient.patient.visit
+    patient: state.selectedPatient,
+    visit: state.selectedPatient.visit
   };
 };
 

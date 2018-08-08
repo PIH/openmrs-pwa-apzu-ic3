@@ -19,7 +19,11 @@ exports[`Component: SearchPatient renders properly 1`] = `
     <SearchPatient
       columnDefs={Array []}
       dispatch={[Function]}
-      patient={Object {}}
+      patient={
+        Object {
+          "patient": Object {},
+        }
+      }
     >
       <div>
         <h3>

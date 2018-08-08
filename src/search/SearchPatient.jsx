@@ -56,7 +56,7 @@ class SearchPatient extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient.patient
+    patient: state.selectedPatient
   };
 };
 

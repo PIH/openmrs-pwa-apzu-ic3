@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import { Patient, patientRest, visitRest } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
@@ -79,8 +79,8 @@ function* getExpectedToCheckIn(action) {
 }
 
 function *checkInSagas() {
-  yield takeEvery(CHECK_IN_TYPES.CHECK_IN.SUBMIT, checkIn);
-  yield takeEvery(CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
+  yield takeLatest(CHECK_IN_TYPES.CHECK_IN.SUBMIT, checkIn);
+  yield takeLatest(CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
 }
 
 export default checkInSagas;

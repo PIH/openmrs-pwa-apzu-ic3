@@ -9,7 +9,7 @@ import { push } from "connected-react-router";
 class CheckInPage extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(visitActions.fetchPatientActiveVisit(this.props.patient.patient.uuid,
+    this.props.dispatch(visitActions.fetchPatientActiveVisit(this.props.patient.uuid,
       "custom:" + VISIT_REPRESENTATION));
   }
 
@@ -25,7 +25,7 @@ class CheckInPage extends React.Component {
   handleCheckIn(values) {
     this.props.dispatch(
       checkInActions.checkInSubmitted(
-        this.props.patient.patient,
+        this.props.patient,
         VISIT_TYPES.ClinicVisitType,
         ENCOUNTER_TYPES.CheckInEncounterType,
         this.props.location,
@@ -47,7 +47,7 @@ class CheckInPage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient.patient,
+    patient: state.selectedPatient,
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation
   };
 };

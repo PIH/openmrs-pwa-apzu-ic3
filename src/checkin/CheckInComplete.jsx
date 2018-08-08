@@ -32,7 +32,7 @@ class CheckInComplete extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient.patient
+    patient: state.selectedPatient
   };
 };
 

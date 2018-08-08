@@ -16,9 +16,7 @@ describe('patient selected reducer', () => {
     expect(reducers(undefined, {
       type: GRID_TYPES.ROW_SELECTED,
       row: patient
-    })).toEqual({
-      patient: patient
-    });
+    })).toEqual(patient);
 
   });
 
@@ -29,7 +27,8 @@ describe('patient selected reducer', () => {
     expect(reducers({ patient: patient }, {
       type: GRID_TYPES.CLEAR_SELECTED,
     })).toEqual({
-      patient: null
+      patient: {},
+      uuid: null
     });
 
   });
@@ -41,7 +40,8 @@ describe('patient selected reducer', () => {
     expect(reducers({ patient: patient }, {
       type: PATIENT_TYPES.CLEAR_SELECTED,
     })).toEqual({
-      patient: null
+      patient: {},
+      uuid: null
     });
 
   });
