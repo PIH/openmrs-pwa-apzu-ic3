@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import { Container } from 'bahmni-form-controls';
-import { Button } from 'react-bootstrap';
+import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { push } from 'connected-react-router';
 import { actions as toastrActions } from 'react-redux-toastr';
@@ -33,11 +33,6 @@ class Form extends React.Component {
   render() {
     return (
       <div>
-        <Link to={this.props.backLink}>
-          <Button bsSize='large' bsStyle='danger'>
-            Back
-          </Button>
-        </Link>
         <Container
           ref={this.containerRef}
           collapse={ false }
@@ -45,7 +40,12 @@ class Form extends React.Component {
           observations={[]}
           translations={{}}
         />
-        <Button bsSize='large' bsStyle='success' onClick={this.onClick.bind(this)}>Submit</Button>
+        <Button size='large'  variant="contained"onClick={this.onClick.bind(this)}>Submit</Button>
+        <Link to={this.props.backLink}>
+          <Button size='large' variant="contained">
+            Cancel
+          </Button>
+        </Link>
       </div>
     );
   }

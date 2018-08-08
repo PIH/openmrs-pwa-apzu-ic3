@@ -17,7 +17,7 @@ class CheckInPage extends React.Component {
     return push({
       pathname: '/checkin/checkInComplete',
       state: {
-        queueLink: '/checkin/checkInQueue'
+        queueLink: '/checkin/checkInTabs'
       }
     });
   }

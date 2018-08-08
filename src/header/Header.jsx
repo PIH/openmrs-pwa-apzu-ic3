@@ -1,6 +1,6 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
-import Menu from './Menu';
+import AppBar from '@material-ui/core/AppBar';
+import NavMenu from './NavMenu';
 import PatientHeader from '../patient/PatientHeader';
 
 class Header extends React.Component {
@@ -8,10 +8,10 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar>
+        <AppBar position="static">
+          <NavMenu />
           <PatientHeader />
-          <Menu />
-        </Navbar>
+        </AppBar>
       </div>
     );
   }

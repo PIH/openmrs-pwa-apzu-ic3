@@ -1,5 +1,7 @@
 import React from 'react';
-import { Label } from 'react-bootstrap';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 import { Patient, PatientSearch } from '@openmrs/react-components';
 import { visitActions } from '@openmrs/react-components';
 import { connect } from 'react-redux';
@@ -43,12 +45,16 @@ class SearchPatient extends React.Component {
   render() {
     return (
       <div>
-        <h3><Label>Patient Search</Label></h3>
-        <PatientSearch
-          columnDefs={this.columnDefs}
-          parseResults={this.parseResults.bind(this)}
-          rowSelectedActionCreators={[this.redirectToInfoPageActionCreator]}
-        />
+        <Card>
+          <CardContent>
+            <Typography variant="title">Patient Search</Typography>
+            <PatientSearch
+              columnDefs={this.columnDefs}
+              parseResults={this.parseResults.bind(this)}
+              rowSelectedActionCreators={[this.redirectToInfoPageActionCreator]}
+            />
+          </CardContent>
+        </Card>
       </div>
     );
   }

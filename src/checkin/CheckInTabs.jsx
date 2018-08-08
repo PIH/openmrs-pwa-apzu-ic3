@@ -1,35 +1,47 @@
 import React from 'react';
-import { Label, Tabs, Tab } from 'react-bootstrap';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
+import Typography from '@material-ui/core/Typography';
 import CheckInQueue from './CheckInQueue';
 import ActiveVisits from '../visit/ActiveVisits';
 import CompletedVisits from '../visit/CompletedVisits';
 
 class CheckInTabs extends React.Component {
 
+  state = {
+    value: 0,
+  };
 
-  handleSelect(eventKey) {
-    console.log("selected = " + eventKey);
-  }
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
 
   render() {
+
+    const { value } = this.state;
+
     return (
       <div>
-        <h3><Label>Check In Queue</Label></h3>
+        <Card>
+          <CardContent>
+            <Typography variant="title">
+              Check In Queue
+            </Typography>
 
-        <Tabs defaultActiveKey="1" id="checkin-tabs">
-          <Tab eventKey="1" title="Expected">
-            <CheckInQueue />
-          </Tab>
+            <Tabs value={value} onChange={this.handleChange}>
+              <Tab label="Expected" />
+              <Tab label="Waiting" />
+              <Tab label="Completed"/>
+            </Tabs>
 
-          <Tab eventKey="2" title="Waiting">
-            <ActiveVisits />
-          </Tab>
+            {value === 0 && <CheckInQueue />}
+            {value === 1 && <ActiveVisits />}
+            {value === 2 && <CompletedVisits />}
 
-          <Tab eventKey="3" title="Completed">
-            <CompletedVisits />
-          </Tab>
-
-        </Tabs>
+          </CardContent>
+        </Card>
       </div>
     );
   }

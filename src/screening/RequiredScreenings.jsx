@@ -2,6 +2,9 @@ import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import { visitActions } from '@openmrs/react-components';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Typography from '@material-ui/core/Typography';
 import { PATIENT_REPRESENTATION } from '../constants';
 
 class RequiredScreenings extends React.Component {
@@ -34,9 +37,9 @@ class RequiredScreenings extends React.Component {
   render() {
     return (
       <div>
-        <ul>
-          { this.findScreeningsForPatient().map((e, i) => <li key={i}>{e}</li>) }
-        </ul>
+        <List>
+          { this.findScreeningsForPatient().map((e, i) => <ListItem key={i}><Typography variant="subheading">{e}</Typography></ListItem>) }
+        </List>
       </div>
     );
   }

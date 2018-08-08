@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, ButtonGroup, Glyphicon } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { connect } from "react-redux";
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import {Link} from 'react-router-dom';
+import {connect} from "react-redux";
 import patientActions from '../patient/patientActions';
 
 class HomePage extends React.Component {
@@ -13,53 +14,42 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <Link to="/searchPatient">
-            <ButtonGroup>
-              <Button bsSize="large" >
-                <Glyphicon glyph="check" /> Search Patient
+        <Grid>
+          <div>
+            <Link to="/searchPatient">
+              <Button size="large" variant="contained">
+                Search Patient
               </Button>
-            </ButtonGroup>
-          </Link>
-          <Link to="/checkin/checkInTabs">
-            <ButtonGroup>
-              <Button bsSize="large" >
-                <Glyphicon glyph="check" /> Check-In
+            </Link>
+            <Link to="/checkin/checkInTabs">
+              <Button size="large" variant="contained">
+                Check-In
               </Button>
-            </ButtonGroup>
-          </Link>
-          <Link to="/visit/queue">
-            <ButtonGroup>
-              <Button bsSize="large" >
-                <Glyphicon glyph="check" /> Active Visits
+            </Link>
+            <Link to="/visit/queue">
+              <Button size="large" variant="contained">
+                Active Visits
               </Button>
-            </ButtonGroup>
-          </Link>
-          <Link to="/screening/bloodPressure/queue">
-            <ButtonGroup>
-              <Button bsSize="large" >
-                <Glyphicon glyph="check" /> Blood Pressure Screening
+            </Link>
+            <Link to="/screening/bloodPressure/queue">
+              <Button size="large" variant="contained">
+                Blood Pressure Screening
               </Button>
-            </ButtonGroup>
-          </Link>
-          <Link to="/screening/nutrition/queue">
-            <ButtonGroup>
-              <Button bsSize="large" >
-                <Glyphicon glyph="check" /> Nutrition Screening
+            </Link>
+            <Link to="/screening/nutrition/queue">
+              <Button size="large" variant="contained">
+                Nutrition Screening
               </Button>
-            </ButtonGroup>
-          </Link>
-          <Link to="/screening/nurse/queue">
-            <ButtonGroup>
-              <Button bsSize="large" >
-                <Glyphicon glyph="check" /> Nurse Evaluation
+            </Link>
+            <Link to="/screening/nurse/queue">
+              <Button size="large" variant="contained">
+                Nurse Evaluation
               </Button>
-            </ButtonGroup>
-          </Link>
-        </div>
-
+            </Link>
+          </div>
+        </Grid>
       </div>
-    )
+    );
   }
 }
 

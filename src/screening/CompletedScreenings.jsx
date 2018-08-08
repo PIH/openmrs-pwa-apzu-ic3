@@ -2,6 +2,9 @@ import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import { visitActions } from '@openmrs/react-components';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Typography from '@material-ui/core/Typography';
 import { VISIT_REPRESENTATION } from '../constants';
 import utils from "../utils";
 
@@ -16,20 +19,22 @@ class CompletedScreenings extends React.Component {
 
     let encounters = this.props.activeVisit.encounters.map((encounter, i) => {
       return (
-        <div key={encounter.id}>
-          <h4>{encounter.display} @ { utils.formatTime(encounter.encounterDatetime) }</h4>
-          <ul>{encounter.obs.map((observation) => {
+        <ListItem key={encounter.id}>
+          <Typography variant="subheading">{encounter.display} @ { utils.formatTime(encounter.encounterDatetime) }</Typography>
+          <List>{encounter.obs.map((observation) => {
             return (
-              <li key={observation.id}>{observation.display}</li>
+              <ListItem key={observation.id}><Typography variant="subheading">{observation.display}</Typography></ListItem>
             );
-          })}</ul>
-        </div>
+          })}</List>
+        </ListItem>
       );
     });
 
     return (
       <div>
-        { encounters }
+        <List>
+          { encounters }
+        </List>
       </div>
     );
   }

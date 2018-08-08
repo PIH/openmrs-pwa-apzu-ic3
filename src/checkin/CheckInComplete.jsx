@@ -1,7 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Label, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 import RequiredScreenings from '../screening/RequiredScreenings';
 import patientActions from '../patient/patientActions';
 import CompletedScreenings from "../screening/CompletedScreenings";
@@ -16,15 +19,23 @@ class CheckInComplete extends React.Component {
   render() {
     return (
       <div>
-        <Link to={this.props.location.state.queueLink}>
-          <Button bsSize='large' bsStyle='danger'>
-            Back to Queue
-          </Button>
-        </Link>
-        <h3><Label>Completed Screenings</Label></h3>
-        <CompletedScreenings patientUuid={this.props.patient.uuid} />
-        <h3><Label>Next steps</Label></h3>
-        <RequiredScreenings patientUuid={this.props.patient.uuid} />
+        <Card>
+          <CardContent>
+            <Typography variant="headline">
+              Completed Screenings
+            </Typography>
+            <CompletedScreenings patientUuid={this.props.patient.uuid} />
+            <Typography variant="headline">
+              Next Steps
+            </Typography>
+            <RequiredScreenings patientUuid={this.props.patient.uuid} />
+            <Link to={this.props.location.state.queueLink}>
+              <Button size='large' variant="contained">
+                Back to Queue
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
       </div>
     );
   }

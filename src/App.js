@@ -8,7 +8,6 @@ import createStore, { history } from './store';
 import HomePage from './home/HomePage';
 import InfoPatient from './patient/PatientInfo';
 import SearchPatient from './search/SearchPatient';
-import CheckInQueue from './checkin/CheckInQueue';
 import CheckInTabs from './checkin/CheckInTabs';
 import CheckInPage from './checkin/CheckInPage';
 import NursePage from './screening/nurse/NursePage';
@@ -19,7 +18,6 @@ import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import NutritionForm from "./screening/nutrition/NutritionForm";
 import NurseQueue from "./screening/nurse/NurseQueue";
-import ActiveVisitsQueue from "./visit/ActiveVisits";
 import CompletedVisitsQueue from "./visit/CompletedVisits";
 import { ConnectedRouter } from 'connected-react-router';
 
@@ -63,11 +61,6 @@ const App = props => {
             redirectOnLogin="/"
           />
           <AuthenticatedLayout
-            component={CheckInQueue}
-            path="/checkin/checkInQueue"
-            redirectOnLogin="/"
-          />
-          <AuthenticatedLayout
             component={CheckInPage}
             path="/checkin/checkInPage"
             redirectOnLogin="/"
@@ -100,11 +93,6 @@ const App = props => {
           <AuthenticatedLayout
             component={InfoPatient}
             path="/infoPatient"
-            redirectOnLogin="/"
-          />
-          <AuthenticatedLayout
-            component={ActiveVisitsQueue}
-            path="/visit/queue"
             redirectOnLogin="/"
           />
           <AuthenticatedLayout
