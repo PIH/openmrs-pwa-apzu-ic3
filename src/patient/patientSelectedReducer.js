@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
     case PATIENT_TYPES.CLEAR_SELECTED:
       return Object.assign({}, state, {
         uuid: null
-        }
+      }
       );
     default: return state;
   }

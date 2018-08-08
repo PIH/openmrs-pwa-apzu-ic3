@@ -1,4 +1,4 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { Patient, patientRest, visitRest } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
