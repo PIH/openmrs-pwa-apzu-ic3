@@ -57,10 +57,6 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                   "valueGetter": "data.identifiers[0].identifier",
                 },
                 Object {
-                  "field": "id",
-                  "headerName": "patientId",
-                },
-                Object {
                   "field": "name.givenName",
                   "headerName": "Given Name",
                 },
@@ -110,10 +106,6 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                     Object {
                       "headerName": "Id",
                       "valueGetter": "data.identifiers[0].identifier",
-                    },
-                    Object {
-                      "field": "id",
-                      "headerName": "patientId",
                     },
                     Object {
                       "field": "name.givenName",
@@ -178,10 +170,6 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                           "valueGetter": "data.identifiers[0].identifier",
                         },
                         Object {
-                          "field": "id",
-                          "headerName": "patientId",
-                        },
-                        Object {
                           "field": "name.givenName",
                           "headerName": "Given Name",
                         },
@@ -221,10 +209,6 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                           Object {
                             "headerName": "Id",
                             "valueGetter": "data.identifiers[0].identifier",
-                          },
-                          Object {
-                            "field": "id",
-                            "headerName": "patientId",
                           },
                           Object {
                             "field": "name.givenName",
@@ -282,10 +266,6 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                               Object {
                                 "headerName": "Id",
                                 "valueGetter": "data.identifiers[0].identifier",
-                              },
-                              Object {
-                                "field": "id",
-                                "headerName": "patientId",
                               },
                               Object {
                                 "field": "name.givenName",
