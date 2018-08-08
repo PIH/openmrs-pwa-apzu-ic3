@@ -63,7 +63,7 @@ class NursePage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient.patient.patient
+    patient: state.selectedPatient.patient
   }
 };
 

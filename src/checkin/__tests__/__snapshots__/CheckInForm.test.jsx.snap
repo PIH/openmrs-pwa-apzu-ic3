@@ -24,32 +24,16 @@ exports[`Component: CheckInForm renders properly 1`] = `
   >
     <Connect(ReduxForm)>
       <ReduxForm
-        activeVisit={
-          Object {
-            "encounters": Array [],
-            "patient": Object {
-              "uuid": "abc",
-            },
-            "uuid": "3a80",
-          }
-        }
         dispatch={[Function]}
         initialValues={
           Object {
-            "uuid": "abc",
+            "patient": Object {
+              "uuid": "abc",
+            },
           }
         }
       >
         <Connect(Form(CheckinForm))
-          activeVisit={
-            Object {
-              "encounters": Array [],
-              "patient": Object {
-                "uuid": "abc",
-              },
-              "uuid": "3a80",
-            }
-          }
           destroyOnUnmount={true}
           dispatch={[Function]}
           enableReinitialize={false}
@@ -58,7 +42,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
           getFormState={[Function]}
           initialValues={
             Object {
-              "uuid": "abc",
+              "patient": Object {
+                "uuid": "abc",
+              },
             }
           }
           keepDirtyOnReinitialize={false}
@@ -73,15 +59,6 @@ exports[`Component: CheckInForm renders properly 1`] = `
           updateUnregisteredFields={false}
         >
           <Form(CheckinForm)
-            activeVisit={
-              Object {
-                "encounters": Array [],
-                "patient": Object {
-                  "uuid": "abc",
-                },
-                "uuid": "3a80",
-              }
-            }
             anyTouched={false}
             array={
               Object {
@@ -126,7 +103,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
             getFormState={[Function]}
             initialValues={
               Object {
-                "uuid": "abc",
+                "patient": Object {
+                  "uuid": "abc",
+                },
               }
             }
             initialize={[Function]}
@@ -167,20 +146,13 @@ exports[`Component: CheckInForm renders properly 1`] = `
             validExceptSubmit={true}
             values={
               Object {
-                "uuid": "abc",
+                "patient": Object {
+                  "uuid": "abc",
+                },
               }
             }
           >
             <CheckinForm
-              activeVisit={
-                Object {
-                  "encounters": Array [],
-                  "patient": Object {
-                    "uuid": "abc",
-                  },
-                  "uuid": "3a80",
-                }
-              }
               anyTouched={false}
               array={
                 Object {
@@ -212,7 +184,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
               handleSubmit={[Function]}
               initialValues={
                 Object {
-                  "uuid": "abc",
+                  "patient": Object {
+                    "uuid": "abc",
+                  },
                 }
               }
               initialize={[Function]}
@@ -336,13 +310,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                       <Connect(ConnectedField)
                                         _reduxForm={
                                           Object {
-                                            "activeVisit": Object {
-                                              "encounters": Array [],
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "uuid": "3a80",
-                                            },
+                                            "activeVisit": undefined,
                                             "anyTouched": false,
                                             "array": Object {
                                               "insert": [Function],
@@ -388,7 +356,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "getFormState": [Function],
                                             "getValues": [Function],
                                             "initialValues": Object {
-                                              "uuid": "abc",
+                                              "patient": Object {
+                                                "uuid": "abc",
+                                              },
                                             },
                                             "initialize": [Function],
                                             "initialized": false,
@@ -433,7 +403,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "valid": true,
                                             "validExceptSubmit": true,
                                             "values": Object {
-                                              "uuid": "abc",
+                                              "patient": Object {
+                                                "uuid": "abc",
+                                              },
                                             },
                                             "warning": undefined,
                                           }
@@ -447,13 +419,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         <ConnectedField
                                           _reduxForm={
                                             Object {
-                                              "activeVisit": Object {
-                                                "encounters": Array [],
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "uuid": "3a80",
-                                              },
+                                              "activeVisit": undefined,
                                               "anyTouched": false,
                                               "array": Object {
                                                 "insert": [Function],
@@ -499,7 +465,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "getFormState": [Function],
                                               "getValues": [Function],
                                               "initialValues": Object {
-                                                "uuid": "abc",
+                                                "patient": Object {
+                                                  "uuid": "abc",
+                                                },
                                               },
                                               "initialize": [Function],
                                               "initialized": false,
@@ -544,7 +512,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "valid": true,
                                               "validExceptSubmit": true,
                                               "values": Object {
-                                                "uuid": "abc",
+                                                "patient": Object {
+                                                  "uuid": "abc",
+                                                },
                                               },
                                               "warning": undefined,
                                             }
@@ -670,13 +640,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                       <Connect(ConnectedField)
                                         _reduxForm={
                                           Object {
-                                            "activeVisit": Object {
-                                              "encounters": Array [],
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "uuid": "3a80",
-                                            },
+                                            "activeVisit": undefined,
                                             "anyTouched": false,
                                             "array": Object {
                                               "insert": [Function],
@@ -722,7 +686,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "getFormState": [Function],
                                             "getValues": [Function],
                                             "initialValues": Object {
-                                              "uuid": "abc",
+                                              "patient": Object {
+                                                "uuid": "abc",
+                                              },
                                             },
                                             "initialize": [Function],
                                             "initialized": false,
@@ -767,7 +733,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "valid": true,
                                             "validExceptSubmit": true,
                                             "values": Object {
-                                              "uuid": "abc",
+                                              "patient": Object {
+                                                "uuid": "abc",
+                                              },
                                             },
                                             "warning": undefined,
                                           }
@@ -781,13 +749,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         <ConnectedField
                                           _reduxForm={
                                             Object {
-                                              "activeVisit": Object {
-                                                "encounters": Array [],
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "uuid": "3a80",
-                                              },
+                                              "activeVisit": undefined,
                                               "anyTouched": false,
                                               "array": Object {
                                                 "insert": [Function],
@@ -833,7 +795,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "getFormState": [Function],
                                               "getValues": [Function],
                                               "initialValues": Object {
-                                                "uuid": "abc",
+                                                "patient": Object {
+                                                  "uuid": "abc",
+                                                },
                                               },
                                               "initialize": [Function],
                                               "initialized": false,
@@ -878,7 +842,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "valid": true,
                                               "validExceptSubmit": true,
                                               "values": Object {
-                                                "uuid": "abc",
+                                                "patient": Object {
+                                                  "uuid": "abc",
+                                                },
                                               },
                                               "warning": undefined,
                                             }
@@ -1004,13 +970,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                       <Connect(ConnectedField)
                                         _reduxForm={
                                           Object {
-                                            "activeVisit": Object {
-                                              "encounters": Array [],
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "uuid": "3a80",
-                                            },
+                                            "activeVisit": undefined,
                                             "anyTouched": false,
                                             "array": Object {
                                               "insert": [Function],
@@ -1056,7 +1016,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "getFormState": [Function],
                                             "getValues": [Function],
                                             "initialValues": Object {
-                                              "uuid": "abc",
+                                              "patient": Object {
+                                                "uuid": "abc",
+                                              },
                                             },
                                             "initialize": [Function],
                                             "initialized": false,
@@ -1101,7 +1063,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "valid": true,
                                             "validExceptSubmit": true,
                                             "values": Object {
-                                              "uuid": "abc",
+                                              "patient": Object {
+                                                "uuid": "abc",
+                                              },
                                             },
                                             "warning": undefined,
                                           }
@@ -1115,13 +1079,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         <ConnectedField
                                           _reduxForm={
                                             Object {
-                                              "activeVisit": Object {
-                                                "encounters": Array [],
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "uuid": "3a80",
-                                              },
+                                              "activeVisit": undefined,
                                               "anyTouched": false,
                                               "array": Object {
                                                 "insert": [Function],
@@ -1167,7 +1125,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "getFormState": [Function],
                                               "getValues": [Function],
                                               "initialValues": Object {
-                                                "uuid": "abc",
+                                                "patient": Object {
+                                                  "uuid": "abc",
+                                                },
                                               },
                                               "initialize": [Function],
                                               "initialized": false,
@@ -1212,7 +1172,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "valid": true,
                                               "validExceptSubmit": true,
                                               "values": Object {
-                                                "uuid": "abc",
+                                                "patient": Object {
+                                                  "uuid": "abc",
+                                                },
                                               },
                                               "warning": undefined,
                                             }
@@ -1338,13 +1300,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                       <Connect(ConnectedField)
                                         _reduxForm={
                                           Object {
-                                            "activeVisit": Object {
-                                              "encounters": Array [],
-                                              "patient": Object {
-                                                "uuid": "abc",
-                                              },
-                                              "uuid": "3a80",
-                                            },
+                                            "activeVisit": undefined,
                                             "anyTouched": false,
                                             "array": Object {
                                               "insert": [Function],
@@ -1390,7 +1346,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "getFormState": [Function],
                                             "getValues": [Function],
                                             "initialValues": Object {
-                                              "uuid": "abc",
+                                              "patient": Object {
+                                                "uuid": "abc",
+                                              },
                                             },
                                             "initialize": [Function],
                                             "initialized": false,
@@ -1435,7 +1393,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "valid": true,
                                             "validExceptSubmit": true,
                                             "values": Object {
-                                              "uuid": "abc",
+                                              "patient": Object {
+                                                "uuid": "abc",
+                                              },
                                             },
                                             "warning": undefined,
                                           }
@@ -1449,13 +1409,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         <ConnectedField
                                           _reduxForm={
                                             Object {
-                                              "activeVisit": Object {
-                                                "encounters": Array [],
-                                                "patient": Object {
-                                                  "uuid": "abc",
-                                                },
-                                                "uuid": "3a80",
-                                              },
+                                              "activeVisit": undefined,
                                               "anyTouched": false,
                                               "array": Object {
                                                 "insert": [Function],
@@ -1501,7 +1455,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "getFormState": [Function],
                                               "getValues": [Function],
                                               "initialValues": Object {
-                                                "uuid": "abc",
+                                                "patient": Object {
+                                                  "uuid": "abc",
+                                                },
                                               },
                                               "initialize": [Function],
                                               "initialized": false,
@@ -1546,7 +1502,9 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                               "valid": true,
                                               "validExceptSubmit": true,
                                               "values": Object {
-                                                "uuid": "abc",
+                                                "patient": Object {
+                                                  "uuid": "abc",
+                                                },
                                               },
                                               "warning": undefined,
                                             }
@@ -1623,39 +1581,61 @@ exports[`Component: CheckInForm renders properly 1`] = `
                             </FormGroup>
                           </div>
                         </Row>
-                        <div>
-                          <h3>
-                            <Label
-                              bsClass="label"
-                              bsStyle="default"
-                            >
-                              <span
-                                className="label label-default"
-                              >
-                                Completed Screenings
-                              </span>
-                            </Label>
-                          </h3>
-                          <Connect(CompletedScreenings)
-                            patientUuid="abc"
+                        <Row
+                          bsClass="row"
+                          componentClass="div"
+                        >
+                          <div
+                            className="row"
                           >
-                            <CompletedScreenings
-                              activeVisit={
-                                Object {
-                                  "encounters": Array [],
-                                  "patient": Object {
-                                    "uuid": "abc",
-                                  },
-                                  "uuid": "3a80",
-                                }
-                              }
-                              dispatch={[Function]}
-                              patientUuid="abc"
+                            <FormGroup
+                              bsClass="form-group"
+                              controlId="formSubmit"
                             >
-                              <div />
-                            </CompletedScreenings>
-                          </Connect(CompletedScreenings)>
-                        </div>
+                              <div
+                                className="form-group"
+                              >
+                                <Col
+                                  bsClass="col"
+                                  componentClass="div"
+                                  sm={4}
+                                  smOffset={2}
+                                >
+                                  <div
+                                    className="col-sm-4 col-sm-offset-2"
+                                  >
+                                    <ButtonToolbar
+                                      bsClass="btn-toolbar"
+                                    >
+                                      <div
+                                        className="btn-toolbar"
+                                        role="toolbar"
+                                      >
+                                        <Button
+                                          active={false}
+                                          block={false}
+                                          bsClass="btn"
+                                          bsSize="large"
+                                          bsStyle="success"
+                                          disabled={false}
+                                          type="submit"
+                                        >
+                                          <button
+                                            className="btn btn-lg btn-success"
+                                            disabled={false}
+                                            type="submit"
+                                          >
+                                            Check-in
+                                          </button>
+                                        </Button>
+                                      </div>
+                                    </ButtonToolbar>
+                                  </div>
+                                </Col>
+                              </div>
+                            </FormGroup>
+                          </div>
+                        </Row>
                       </div>
                     </Grid>
                   </form>

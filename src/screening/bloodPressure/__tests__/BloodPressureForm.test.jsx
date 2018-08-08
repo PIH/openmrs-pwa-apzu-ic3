@@ -31,15 +31,13 @@ describe('Component: BloodPressureForm', () => {
     store = mockStore(
       {
         selectedPatient: {
-          patient: {
             patient: {
               uuid: "abc",
               visit: {
                 uuid: "def"
               }
             }
-          },
-        }
+          }
       });
     mountedComponent = undefined;
   });

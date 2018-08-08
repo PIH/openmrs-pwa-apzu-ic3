@@ -22,7 +22,6 @@ import nutritionQueueReducer from "./screening/nutrition/nutritionQueueReducer";
 import nurseQueueReducer from "./screening/nurse/nurseQueueReducer";
 import patientSelectedReducer from './patient/patientSelectedReducer';
 import checkInReducer from './checkin/checkInReducers';
-import visitReducer from './screening/visitReducers';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
 import formSagas from './form/formSagas';
@@ -49,10 +48,7 @@ const rootReducer = combineReducers({
   openmrs: openmrsReducers,
   form: reduxFormReducer,
   toastr: toastrReducer,
-  selectedPatient: combineReducers({
-    patient: patientSelectedReducer,
-    visit: visitReducer
-  }),
+  selectedPatient: patientSelectedReducer,
   expectedCheckInsList: checkInReducer,
   activeVisits: activeVisitsReducer,
   completedVisits: completedVisitsReducer,
