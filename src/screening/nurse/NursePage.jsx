@@ -27,7 +27,7 @@ class NursePage extends React.Component {
     this.props.dispatch(
       checkOutActions.checkOutSubmitted(
         this.props.patient,
-        this.props.patient.activeVisit,
+        this.props.patient.visit,
         this.checkOutSubmittedActionCreators()
       )
     );

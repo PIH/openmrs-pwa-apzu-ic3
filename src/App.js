@@ -20,6 +20,7 @@ import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import NutritionForm from "./screening/nutrition/NutritionForm";
 import NurseQueue from "./screening/nurse/NurseQueue";
 import ActiveVisitsQueue from "./visit/ActiveVisits";
+import CompletedVisitsQueue from "./visit/CompletedVisits";
 import { ConnectedRouter } from 'connected-react-router';
 
 const store = createStore();
@@ -104,6 +105,11 @@ const App = props => {
           <AuthenticatedLayout
             component={ActiveVisitsQueue}
             path="/visit/queue"
+            redirectOnLogin="/"
+          />
+          <AuthenticatedLayout
+            component={CompletedVisitsQueue}
+            path="/visit/completedVisits"
             redirectOnLogin="/"
           />
           <AuthenticatedLayout

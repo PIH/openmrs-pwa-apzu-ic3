@@ -34,7 +34,7 @@ describe('Component: BloodPressureForm', () => {
           patient: {
             patient: {
               uuid: "abc",
-              activeVisit: {
+              visit: {
                 uuid: "def"
               }
             }
