@@ -7,12 +7,20 @@ const utils = {
     return dateFns.format(new Date(datetime), 'h[:]mma');
   },
 
+  formatRestDate: (datetime) => {
+    return dateFns.format(datetime, 'YYYY-MM-DDTHH:mm:ss.SSSZ');
+  },
+
+  getEndOfYesterday: () => {
+    return utils.formatRestDate(dateFns.endOfYesterday());
+  },
+
   getPatientCheckedInTime: (patient) => {
 
     let checkedInTime = null;
-    if (typeof patient.activeVisit !== 'undefined' && typeof patient.activeVisit.encounters !== 'undefined') {
+    if (typeof patient.visit !== 'undefined' && typeof patient.visit.encounters !== 'undefined') {
       //filter by CheckIn encounter
-      let checkedInEncounters = patient.activeVisit.encounters.filter(encounter =>
+      let checkedInEncounters = patient.visit.encounters.filter(encounter =>
         encounter.encounterType.uuid === ENCOUNTER_TYPES.CheckInEncounterType.uuid);
 
       if (checkedInEncounters.length >  0 ) {
@@ -24,6 +32,16 @@ const utils = {
     }
 
     return checkedInTime;
+
+  },
+  getPatientCheckOutTime: (patient) => {
+
+    let checkOutTime = null;
+    if (typeof patient.visit !== 'undefined' && patient.visit.stopDatetime !== null) {
+        checkOutTime = utils.formatTime(patient.visit.stopDatetime);
+    }
+
+    return checkOutTime;
 
   }
 };

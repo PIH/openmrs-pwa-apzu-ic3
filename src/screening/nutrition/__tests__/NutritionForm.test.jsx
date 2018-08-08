@@ -33,7 +33,7 @@ describe('Component: NutritionForm', () => {
           patient: {
             patient: {
               uuid: "abc",
-              activeVisit: {
+              visit: {
                 uuid: "def"
               }
             }

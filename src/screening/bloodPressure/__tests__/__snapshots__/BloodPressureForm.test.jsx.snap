@@ -27,10 +27,10 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
         dispatch={[Function]}
         patient={
           Object {
-            "activeVisit": Object {
+            "uuid": "abc",
+            "visit": Object {
               "uuid": "def",
             },
-            "uuid": "abc",
           }
         }
         visit={
@@ -151,10 +151,10 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           }
           patient={
             Object {
-              "activeVisit": Object {
+              "uuid": "abc",
+              "visit": Object {
                 "uuid": "def",
               },
-              "uuid": "abc",
             }
           }
           visit={
