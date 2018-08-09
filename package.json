@@ -29,7 +29,8 @@
     "redux-form": "^7.3.0",
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.3",
-    "redux-saga": "^0.16.0"
+    "redux-saga": "^0.16.0",
+    "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
