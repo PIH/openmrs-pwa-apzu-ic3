@@ -26,11 +26,6 @@ class HomePage extends React.Component {
                 Check-In
               </Button>
             </Link>
-            <Link to="/visit/queue">
-              <Button size="large" variant="contained">
-                Active Visits
-              </Button>
-            </Link>
             <Link to="/screening/bloodPressure/queue">
               <Button size="large" variant="contained">
                 Blood Pressure Screening

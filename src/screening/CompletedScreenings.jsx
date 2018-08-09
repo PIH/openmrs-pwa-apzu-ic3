@@ -23,7 +23,7 @@ class CompletedScreenings extends React.Component {
           <Typography variant="subheading">{encounter.display} @ { utils.formatTime(encounter.encounterDatetime) }</Typography>
           <List>{encounter.obs.map((observation) => {
             return (
-              <ListItem key={observation.id}><Typography variant="subheading">{observation.display}</Typography></ListItem>
+              <ListItem key="observation.id"><Typography key={observation.id} variant="body1">{observation.display}</Typography></ListItem>
             );
           })}</List>
         </ListItem>
