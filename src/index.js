@@ -1,4 +1,3 @@
-import 'typeface-roboto';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import 'ag-grid/dist/styles/ag-grid.css';
