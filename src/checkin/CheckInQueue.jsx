@@ -54,7 +54,7 @@ class CheckInQueue extends React.Component {
 
   };
 
-  static redirectToCheckinPageActionCreator() {
+  redirectToCheckinPageActionCreator() {
     return push('/checkin/checkInPage');
   }
 
