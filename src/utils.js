@@ -11,6 +11,13 @@ const utils = {
     return dateFns.format(datetime, 'YYYY-MM-DDTHH:mm:ss.SSSZ');
   },
 
+  formatReportRestDate: (datetime) => {
+    return dateFns.format(datetime, 'YYYY-MM-DD');
+  },
+  getTodaysDate: () => {
+    return dateFns.format(new Date(), 'YYYY-MM-DD');
+  },
+
   getEndOfYesterday: () => {
     return utils.formatRestDate(dateFns.endOfYesterday());
   },

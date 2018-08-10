@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { Patient, patientRest, visitRest } from '@openmrs/react-components';
+import { Patient, visitRest,  reportingRest } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
 import uuidv4 from 'uuid/v4';
@@ -43,18 +43,21 @@ function* checkIn(action) {
 function* getExpectedToCheckIn(action) {
 
   try {
-    // for now, just get a random list of patients
-    let response = yield call(patientRest.findPatient, {
-      query: 'Tom',
-      representation: "custom:" + PATIENT_REPRESENTATION
+
+    // get the appointment report for today at this location
+    let apptRestResponse = yield call(reportingRest.getDataSet, {
+      datasetName: 'pihmalawi.dataset.ic3AppointmentData',
+      location: action.location,
+      endDate:  action.endDate
     });
+
     // get a list of active visits
     let visitResponse = yield call(visitRest.getActiveVisits, {
       representation: "custom:(uuid,patient:" + PATIENT_REPRESENTATION + ")"
     });
 
     // exclude from the random list of patients fetched above the patients who have an active visit
-    let expectedPatients = response.results.filter(function(patient) {
+    let expectedPatients = apptRestResponse.rows.filter(function(patient) {
       let activeVisit = visitResponse.results.find(function(visit) {
         return visit.patient.uuid === patient.uuid;
       });
@@ -66,7 +69,7 @@ function* getExpectedToCheckIn(action) {
     });
 
     let patients = expectedPatients.map((result) => {
-      return Patient.createFromRestRep(result);
+      return Patient.createFromReportingRestRep(result);
     });
 
     yield put(checkInActions.expectedToCheckIn(patients));

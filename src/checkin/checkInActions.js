@@ -26,8 +26,10 @@ const expectedToCheckIn = (results) => ( {
   results: results });
 
 
-const getExpectedToCheckIn = () => ( {
-  type: CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN
+const getExpectedToCheckIn = (location, endDate) => ( {
+  type: CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN,
+  location: location,
+  endDate: endDate
 });
 
 const getExpectedToCheckInFailed = (message) => ( {
