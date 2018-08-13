@@ -23,11 +23,6 @@ class Menu extends React.Component {
             Check-In
           </Button>
         </Link>
-        <Link to="/visit/queue">
-          <Button bsSize="large" block>
-            Active Visits
-          </Button>
-        </Link>
         <Link to="/screening/bloodPressure/queue">
           <Button bsSize="large" block>
             Blood Pressure

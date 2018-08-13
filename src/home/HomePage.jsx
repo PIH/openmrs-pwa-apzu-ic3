@@ -28,13 +28,6 @@ class HomePage extends React.Component {
               </Button>
             </ButtonGroup>
           </Link>
-          <Link to="/visit/queue">
-            <ButtonGroup>
-              <Button bsSize="large" >
-                <Glyphicon glyph="check" /> Active Visits
-              </Button>
-            </ButtonGroup>
-          </Link>
           <Link to="/screening/bloodPressure/queue">
             <ButtonGroup>
               <Button bsSize="large" >
