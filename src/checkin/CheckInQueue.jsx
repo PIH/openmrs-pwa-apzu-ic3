@@ -51,7 +51,7 @@ class CheckInQueue extends React.Component {
   };
 
   fetchListActionCreator() {
-    this.props.dispatch(checkInActions.getExpectedToCheckIn(this.props.location, utils.formatReportRestDate(this.state.appointmentDate)));
+    this.getAppointmentReport();
   }
 
   onMountOtherActionCreators() {
@@ -119,7 +119,7 @@ CheckInQueue.defaultProps = {
 const mapStateToProps = (state) => {
   return {
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,
-    rowData: state.expectedCheckInsList ? state.expectedCheckInsList : []
+    rowData: state.expectedCheckInsList
   };
 };
 
