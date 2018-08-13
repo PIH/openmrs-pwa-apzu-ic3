@@ -8,9 +8,9 @@
 3) Clone the https://github.com/openmrs/openmrs-react-components locally as well
 4) npm install
 5) Link to use your local version of openmrs-react-components:
-    a) In your @openmrs/react-components directory: npm link
+    a) In your openmrs-react-components directory: npm link
     b) In the top level directory of this project: npm link @openmrs/react-components
-6) In your @openmrs/react-component directory build and watch the code: npm run build:watch
+6) In your openmrs-react-components directory build and watch the code: npm run build:watch
 7) In the directory where you have this project checked out: npm start
 
 ## Setting the URL of OpenMRS server
