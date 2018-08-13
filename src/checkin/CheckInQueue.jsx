@@ -105,7 +105,7 @@ class CheckInQueue extends React.Component {
           onMountOtherActionCreators={ [this.onMountOtherActionCreators.bind(this)] }
           rowData={ this.props.rowData }
           rowSelectedActionCreators={ [this.redirectToCheckinPageActionCreator.bind(this)] }
-          title="Active Visits"
+          title=""
         />
       </div>
     );
