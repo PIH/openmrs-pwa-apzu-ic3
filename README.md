@@ -17,7 +17,7 @@
 
 When developing, you can customize which server the app connects to:
 
-Create a file ".env.local" which sets two environmental variables setting the server address and context path.  For instance:
+Create a file ".env.local" at the root level of this repo which sets two environmental variables setting the server address and context path.  For instance:
 
 ```
 REACT_APP_SERVER_ADDRESS=http://localhost:8080/
