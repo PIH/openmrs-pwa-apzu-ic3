@@ -1,7 +1,7 @@
 import React from 'react';
 import DatePicker from 'react-16-bootstrap-date-picker';
 import { Button, ButtonToolbar, Grid, Row, Col,FormGroup, ControlLabel } from 'react-bootstrap';
-import { DataGrid } from '@openmrs/react-components';
+import { List } from '@openmrs/react-components';
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
 import patientActions from '../patient/patientActions';
@@ -37,10 +37,6 @@ class CheckInQueue extends React.Component {
 
   }
 
-  componentDidMount() {
-    this.props.dispatch(patientActions.clearPatientSelected());
-    this.props.dispatch(checkInActions.getExpectedToCheckIn(this.props.location, utils.formatReportRestDate(this.state.appointmentDate)));
-  }
 
   handleAppointmentDateChange(value, formattedValue) {
     this.setState(() => ({
@@ -54,6 +50,13 @@ class CheckInQueue extends React.Component {
 
   };
 
+  fetchListActionCreator() {
+    this.props.dispatch(checkInActions.getExpectedToCheckIn(this.props.location, utils.formatReportRestDate(this.state.appointmentDate)));
+  }
+
+  onMountOtherActionCreators() {
+    this.props.dispatch(patientActions.clearPatientSelected());
+  }
   redirectToCheckinPageActionCreator() {
     return push('/checkin/checkInPage');
   }
@@ -94,10 +97,15 @@ class CheckInQueue extends React.Component {
         </Grid>
 
         <br />
-        <DataGrid
-          columnDefs={this.columnDefs}
-          rowData={this.props.rowData}
-          rowSelectedActionCreators={[this.redirectToCheckinPageActionCreator]}
+
+        <List
+          columnDefs={ this.columnDefs }
+          fetchListActionCreator={ this.fetchListActionCreator.bind(this) }
+          delayInterval={ 60000 }
+          onMountOtherActionCreators={ [this.onMountOtherActionCreators.bind(this)] }
+          rowData={ this.props.rowData }
+          rowSelectedActionCreators={ [this.redirectToCheckinPageActionCreator.bind(this)] }
+          title="Active Visits"
         />
       </div>
     );
@@ -111,7 +119,7 @@ CheckInQueue.defaultProps = {
 const mapStateToProps = (state) => {
   return {
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,
-    rowData: state.expectedCheckInsList.patients
+    rowData: state.expectedCheckInsList ? state.expectedCheckInsList : []
   };
 };
 

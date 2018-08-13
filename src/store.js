@@ -21,7 +21,7 @@ import bloodPressureQueueReducer from './screening/bloodPressure/bloodPressureQu
 import nutritionQueueReducer from "./screening/nutrition/nutritionQueueReducer";
 import nurseQueueReducer from "./screening/nurse/nurseQueueReducer";
 import patientSelectedReducer from './patient/patientSelectedReducer';
-import checkInReducer from './checkin/checkInReducers';
+import expectedToCheckInReducer from './checkin/expectedToCheckInReducers';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
 import formSagas from './form/formSagas';
@@ -49,7 +49,7 @@ const rootReducer = combineReducers({
   form: reduxFormReducer,
   toastr: toastrReducer,
   selectedPatient: patientSelectedReducer,
-  expectedCheckInsList: checkInReducer,
+  expectedCheckInsList: expectedToCheckInReducer,
   activeVisits: activeVisitsReducer,
   completedVisits: completedVisitsReducer,
   screening: combineReducers({

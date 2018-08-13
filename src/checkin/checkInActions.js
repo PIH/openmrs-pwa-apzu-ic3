@@ -23,7 +23,7 @@ const checkInFailed = (message) => ( {
 
 const expectedToCheckIn = (results) => ( {
   type: CHECK_IN_TYPES.CHECK_IN.EXPECTED_TO_CHECK_IN,
-  results: results });
+  patients: results });
 
 
 const getExpectedToCheckIn = (location, endDate) => ( {

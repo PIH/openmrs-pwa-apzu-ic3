@@ -35,9 +35,7 @@ describe('Component: CheckInQueue', () => {
             }
           }
         },
-        expectedCheckInsList: {
-          patients: []
-        },
+        expectedCheckInsList: [],
         selected: {
           patient: {}
         }
