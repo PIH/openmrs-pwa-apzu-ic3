@@ -1,7 +1,7 @@
 import { VISIT_TYPES, createListReducer, visitRestRepToPatientObjConverter, patientObjByEncounterTypeFilter  } from "@openmrs/react-components";
 import { ENCOUNTER_TYPES } from "../../constants";
 
-const ageFilter = patient => patient.age > 18;   // only adults
+const ageFilter = patient => patient.age >= 18;   // only adults
 
 // TODO remove this and fix the tests
 
