@@ -8,4 +8,4 @@ const ageFilter = patient => patient.age > 18;   // only adults
 export default createListReducer(VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED,
   'visits',
   [visitRestRepToPatientObjConverter()],
-  [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.BloodPressureEncounterType.uuid), ageFilter]);
+  [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.BloodPressureEncounterType.uuid, 'exclude'), ageFilter]);

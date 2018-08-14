@@ -16,6 +16,7 @@ export default (state = new Map(), action) => {
       return state;
 
     case VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED:
+      // TODO can you update one element in a Map
       state = new Map(state);
       action.visits.forEach((v) => {
         if (state.has(v.patient.uuid)) {
