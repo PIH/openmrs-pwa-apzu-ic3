@@ -4,7 +4,6 @@ import { Label, ButtonToolbar, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import patientActions from "../../patient/patientActions";
 import checkOutActions from "../../checkin/checkOutActions";
-import RequiredScreenings from '../RequiredScreenings';
 import CompletedScreenings from "../CompletedScreenings";
 import {push} from "connected-react-router";
 import {actions as toastrActions} from "react-redux-toastr";

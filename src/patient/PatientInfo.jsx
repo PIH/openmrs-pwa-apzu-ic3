@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, FormControl, ControlLabel, Label, Col } from 'react-bootstrap';
-import RequiredScreenings from '../screening/RequiredScreenings';
 
 class PatientInfo extends React.Component {
 

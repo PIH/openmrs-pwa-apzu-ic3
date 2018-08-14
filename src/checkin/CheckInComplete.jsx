@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { Label, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import RequiredScreenings from '../screening/RequiredScreenings';
 import patientActions from '../patient/patientActions';
 import CompletedScreenings from "../screening/CompletedScreenings";
 
