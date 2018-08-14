@@ -15,11 +15,7 @@ import { reducer as reduxFormReducer } from 'redux-form';
 import { reducer as toastrReducer } from 'react-redux-toastr';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/react-components';
-import activeVisitsReducer from './visit/activeVisitsReducer';
 import completedVisitsReducer from './visit/completedVisitsReducer';
-import bloodPressureQueueReducer from './screening/bloodPressure/bloodPressureQueueReducer';
-import nutritionQueueReducer from "./screening/nutrition/nutritionQueueReducer";
-import nurseQueueReducer from "./screening/nurse/nurseQueueReducer";
 import patientSelectedReducer from './patient/patientSelectedReducer';
 import patientListReducer from './patient/patientListReducer';
 import expectedToCheckInReducer from './checkin/expectedToCheckInReducers';
@@ -58,10 +54,9 @@ const rootReducer = combineReducers({
   openmrs: openmrsReducers,
   form: reduxFormReducer,
   toastr: toastrReducer,
-  patientList: patientListReducer,
+  patients: patientListReducer,
   selectedPatient: patientSelectedReducer,
   expectedCheckInsList: expectedToCheckInReducer,
-  activeVisits: activeVisitsReducer,
   completedVisits: completedVisitsReducer,
 });
 

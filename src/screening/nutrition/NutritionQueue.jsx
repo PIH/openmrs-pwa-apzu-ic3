@@ -17,7 +17,7 @@ let NutritionQueue = props => {
       <ScreeningQueue
         dispatch={props.dispatch}
         filters={nutritionFilters}
-        rowData={props.rowData}
+        rowData={Array.from(props.patients.values())}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="Nutrition Queue"
       />
@@ -27,7 +27,7 @@ let NutritionQueue = props => {
 
 const mapStateToProps = (state) => {
   return {
-    rowData: state.patientList,
+    patients: state.patients,
   };
 };
 

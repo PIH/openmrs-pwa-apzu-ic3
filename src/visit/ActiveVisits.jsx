@@ -46,7 +46,7 @@ let ActiveVisits = props => {
         columnDefs={columnDefs}
         fetchListActionCreator={fetchListActionCreator}
         onMountOtherActionCreators={onMountOtherActionCreators}
-        rowData={props.rowData}
+        rowData={Array.from(props.patients.values())}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title=""
       />
@@ -56,7 +56,7 @@ let ActiveVisits = props => {
 
 const mapStateToProps = (state) => {
   return {
-    rowData: state.activeVisits,
+    patients: state.patients,
     session: state.openmrs.session
   };
 };

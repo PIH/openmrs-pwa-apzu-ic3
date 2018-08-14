@@ -17,7 +17,7 @@ let BloodPressureQueue = props => {
       <ScreeningQueue
         dispatch={props.dispatch}
         filters={bloodPressureFilters}
-        rowData={props.rowData}
+        rowData={Array.from(props.patients.values())}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="Blood Pressure Queue"
       />
@@ -27,7 +27,7 @@ let BloodPressureQueue = props => {
 
 const mapStateToProps = (state) => {
   return {
-    rowData: state.patientList,
+    patients: state.patients,
   };
 };
 

@@ -22,7 +22,7 @@ let NurseQueue = props => {
       <ScreeningQueue
         dispatch={props.dispatch}
         filters={nurseFilters}
-        rowData={props.rowData}
+        rowData={Array.from(props.patients.values())}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="Nurse Queue"
       />
@@ -32,7 +32,7 @@ let NurseQueue = props => {
 
 const mapStateToProps = (state) => {
   return {
-    rowData: state.patientList,
+    patients: state.patients,
   };
 };
 
