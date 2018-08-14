@@ -5,6 +5,7 @@ import { visitActions, List } from '@openmrs/react-components';
 import patientActions from '../patient/patientActions';
 import utils from "../utils";
 import { VISIT_REPRESENTATION } from '../constants';
+import actionVisitFilters from './activeVisitsFilters';
 
 // TODO: should this extend the ScreeningQueue?
 
@@ -45,6 +46,7 @@ let ActiveVisits = props => {
       <List
         columnDefs={columnDefs}
         fetchListActionCreator={fetchListActionCreator}
+        filters={actionVisitFilters}
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={Array.from(props.patients.values())}
         rowSelectedActionCreators={rowSelectedActionCreators}

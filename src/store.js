@@ -18,7 +18,6 @@ import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/rea
 import completedVisitsReducer from './visit/completedVisitsReducer';
 import patientSelectedReducer from './patient/patientSelectedReducer';
 import patientListReducer from './patient/patientListReducer';
-import expectedToCheckInReducer from './checkin/expectedToCheckInReducers';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
 import formSagas from './form/formSagas';
@@ -56,7 +55,6 @@ const rootReducer = combineReducers({
   toastr: toastrReducer,
   patients: patientListReducer,
   selectedPatient: patientSelectedReducer,
-  expectedCheckInsList: expectedToCheckInReducer,
   completedVisits: completedVisitsReducer,
 });
 

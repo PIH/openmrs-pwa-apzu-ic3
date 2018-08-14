@@ -24,6 +24,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
   >
     <BloodPressureQueue
       dispatch={[Function]}
+      patients={Array []}
       session={
         Object {
           "sessionLocation": Object {
@@ -39,8 +40,10 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
             Array [
               [Function],
               [Function],
+              [Function],
             ]
           }
+          rowData={Array []}
           rowSelectedActionCreators={
             Array [
               [Function],
@@ -87,8 +90,10 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
               Array [
                 [Function],
                 [Function],
+                [Function],
               ]
             }
+            rowData={Array []}
             rowSelectedActionCreators={
               Array [
                 [Function],
@@ -140,12 +145,19 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                 }
                 delayInterval={10000}
                 fetchListActionCreator={[Function]}
-                filters={Array []}
+                filters={
+                  Array [
+                    [Function],
+                    [Function],
+                    [Function],
+                  ]
+                }
                 onMountOtherActionCreators={
                   Array [
                     [Function],
                   ]
                 }
+                rowData={Array []}
                 rowSelectedActionCreators={
                   Array [
                     [Function],
@@ -200,6 +212,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                         },
                       ]
                     }
+                    rowData={Array []}
                     rowSelectedActionCreators={
                       Array [
                         [Function],
@@ -241,6 +254,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                         ]
                       }
                       dispatch={[Function]}
+                      rowData={Array []}
                       rowSelectedActionCreators={
                         Array [
                           [Function],
@@ -301,6 +315,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                           onGridReady={[Function]}
                           onSelectionChanged={[Function]}
                           rowClassRules="rowClassRules"
+                          rowData={Array []}
                           rowSelection="single"
                         >
                           <div

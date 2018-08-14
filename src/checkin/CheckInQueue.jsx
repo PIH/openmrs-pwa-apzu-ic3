@@ -8,6 +8,7 @@ import patientActions from '../patient/patientActions';
 import checkInActions from './checkInActions';
 import { LOCATION_TYPES, PATIENT_REPRESENTATION } from '../constants';
 import utils from "../utils";
+import checkInFilters from './checkInFilters';
 
 class CheckInQueue extends React.Component {
 
@@ -49,10 +50,6 @@ class CheckInQueue extends React.Component {
     this.props.dispatch(checkInActions.getExpectedToCheckIn(this.props.location, utils.formatReportRestDate(this.state.appointmentDate)));
 
   };
-
-  fetchListActionCreator() {
-    this.getAppointmentReport();
-  }
 
   onMountOtherActionCreators() {
     this.props.dispatch(patientActions.clearPatientSelected());
@@ -100,10 +97,9 @@ class CheckInQueue extends React.Component {
 
         <List
           columnDefs={ this.columnDefs }
-          fetchListActionCreator={ this.fetchListActionCreator.bind(this) }
-          delayInterval={ 60000 }
+          filters={checkInFilters}
           onMountOtherActionCreators={ [this.onMountOtherActionCreators.bind(this)] }
-          rowData={ this.props.rowData }
+          rowData={Array.from(this.props.patients.values())}
           rowSelectedActionCreators={ [this.redirectToCheckinPageActionCreator.bind(this)] }
           title=""
         />
@@ -119,7 +115,7 @@ CheckInQueue.defaultProps = {
 const mapStateToProps = (state) => {
   return {
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,
-    rowData: state.expectedCheckInsList
+    patients: state.patients
   };
 };
 
