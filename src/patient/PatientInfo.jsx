@@ -64,7 +64,7 @@ class PatientInfo extends React.Component {
           </FormGroup>
 
         </Form>
-        <RequiredScreenings patientUuid={this.props.patient.uuid} />
+  {/*      <RequiredScreenings patientUuid={this.props.patient.uuid} />*/}
       </div>
 
     );

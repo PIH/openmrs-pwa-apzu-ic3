@@ -24,6 +24,7 @@ let ScreeningQueue = props => {
       <List
         columnDefs={props.columnDefs}
         fetchListActionCreator={fetchListActionCreator}
+        filters={props.filters}
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
         rowSelectedActionCreators={props.rowSelectedActionCreators}
@@ -36,6 +37,7 @@ let ScreeningQueue = props => {
 ScreeningQueue.propTypes = {
   columnDefs: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
+  filters: PropTypes.array,
   rowData: PropTypes.array.isRequired,
   rowSelectedActionCreators: PropTypes.array,
   title: PropTypes.string.isRequired

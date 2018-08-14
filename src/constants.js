@@ -16,7 +16,7 @@ export const ENCOUNTER_TYPES = {
   'CheckInEncounterType': {
     uuid: '55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b'
   },
-  'NurseEvalationEncounterType': {
+  'NurseEvaluationEncounterType': {
     uuid: '1e2f8be8-8ae3-41f1-b908-84f168f26325'
   },
 };

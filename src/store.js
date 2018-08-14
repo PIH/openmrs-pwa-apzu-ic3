@@ -21,6 +21,7 @@ import bloodPressureQueueReducer from './screening/bloodPressure/bloodPressureQu
 import nutritionQueueReducer from "./screening/nutrition/nutritionQueueReducer";
 import nurseQueueReducer from "./screening/nurse/nurseQueueReducer";
 import patientSelectedReducer from './patient/patientSelectedReducer';
+import patientListReducer from './patient/patientListReducer';
 import expectedToCheckInReducer from './checkin/expectedToCheckInReducers';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
@@ -44,19 +45,24 @@ const middlewares = [
   sagaMiddleware
 ];
 
+/**
+ * Elements in the store:
+ *
+ * openmrs: wires in the reducers provided by the openmrs-reactcomponents module
+ * form: used by redux-form when rendering forms
+ * selectedPatient: the currently selected patient; show always be a "Patient" domain object with attached active visit
+ * expectedCheckInLists:
+ */
+
 const rootReducer = combineReducers({
   openmrs: openmrsReducers,
   form: reduxFormReducer,
   toastr: toastrReducer,
+  patientList: patientListReducer,
   selectedPatient: patientSelectedReducer,
   expectedCheckInsList: expectedToCheckInReducer,
   activeVisits: activeVisitsReducer,
   completedVisits: completedVisitsReducer,
-  screening: combineReducers({
-    bloodPressureQueue: bloodPressureQueueReducer,
-    nutritionQueue: nutritionQueueReducer,
-    nurseQueue: nurseQueueReducer
-  })
 });
 
 const rootSagas = function* () {

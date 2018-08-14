@@ -24,7 +24,7 @@ class CheckInComplete extends React.Component {
         <h3><Label>Completed Screenings</Label></h3>
         <CompletedScreenings patientUuid={this.props.patient.uuid} />
         <h3><Label>Next steps</Label></h3>
-        <RequiredScreenings patientUuid={this.props.patient.uuid} />
+{/*        <RequiredScreenings patientUuid={this.props.patient.uuid} />*/}
       </div>
     );
   }
