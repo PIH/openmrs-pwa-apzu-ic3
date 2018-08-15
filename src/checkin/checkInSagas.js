@@ -3,6 +3,8 @@ import { Patient, visitRest,  reportingRest } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
 import uuidv4 from 'uuid/v4';
+import { REHYDRATE } from "redux-persist";
+import utils from "../utils";
 
 const createFromReportingRestRep =  (restRep) => {
   let patient = new Patient();
@@ -90,12 +92,19 @@ function* getExpectedToCheckIn(action) {
     yield put(checkInActions.getExpectedToCheckInFailed(e.message));
   }
 
+}
 
+function* initiateGetExpectedToCheckIn(action) {
+  if (action.payload && action.payload.openmrs.session && action.payload.openmrs.session.sessionLocation.uuid){
+    yield put(checkInActions.getExpectedToCheckIn(action.payload.openmrs.session.sessionLocation.uuid,
+                                                  utils.formatReportRestDate(new Date())));
+  }
 }
 
 function *checkInSagas() {
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.SUBMIT, checkIn);
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
+  yield takeLatest(REHYDRATE, initiateGetExpectedToCheckIn);
 }
 
 export default checkInSagas;

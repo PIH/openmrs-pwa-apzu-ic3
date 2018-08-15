@@ -21,6 +21,9 @@ import patientListReducer from './patient/patientListReducer';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
 import formSagas from './form/formSagas';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 // fyi, connected-react-router docs:
 // https://github.com/supasate/connected-react-router
@@ -58,6 +61,15 @@ const rootReducer = combineReducers({
   completedVisits: completedVisitsReducer,
 });
 
+const persistConfig = {
+  key: 'root',
+  storage: storage,
+  stateReconciler: autoMergeLevel2,
+  whitelist: ['openmrs', 'router', 'selectedpatient']
+};
+
+const pReducer = persistReducer(persistConfig, rootReducer);
+
 const rootSagas = function* () {
   yield all([
     openmrsSagas(),
@@ -73,12 +85,14 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default () => {
   const store = createStore(
-    connectRouter(history)(rootReducer),
+    connectRouter(history)(pReducer),
     compose(
       applyMiddleware(...middlewares),
       window.devToolsExtension && process.env.NODE_ENV !== 'production'
         ? window.devToolsExtension() : f => f,
     ));
   sagaMiddleware.run(rootSagas);
-  return store;
+  const persistor = persistStore(store);
+  return { store, persistor };
 };
+
