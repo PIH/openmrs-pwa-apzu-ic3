@@ -144,6 +144,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                 filters={
                   Array [
                     [Function],
+                    [Function],
                   ]
                 }
                 onMountOtherActionCreators={

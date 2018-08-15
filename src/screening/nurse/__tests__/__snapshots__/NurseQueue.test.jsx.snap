@@ -144,6 +144,7 @@ exports[`Component: NurseQueue renders properly 1`] = `
                 filters={
                   Array [
                     [Function],
+                    [Function],
                   ]
                 }
                 onMountOtherActionCreators={
