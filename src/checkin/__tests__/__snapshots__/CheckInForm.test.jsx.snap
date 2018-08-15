@@ -313,31 +313,24 @@ exports[`Component: CheckInForm renders properly 1`] = `
               valid={true}
             >
               <div>
-                <Link
-                  replace={false}
-                  to="/checkin/checkInQueue"
+                <Button
+                  active={false}
+                  block={false}
+                  bsClass="btn"
+                  bsSize="large"
+                  bsStyle="danger"
+                  disabled={false}
+                  onClick={[Function]}
                 >
-                  <a
+                  <button
+                    className="btn btn-lg btn-danger"
+                    disabled={false}
                     onClick={[Function]}
+                    type="button"
                   >
-                    <Button
-                      active={false}
-                      block={false}
-                      bsClass="btn"
-                      bsSize="large"
-                      bsStyle="danger"
-                      disabled={false}
-                    >
-                      <button
-                        className="btn btn-lg btn-danger"
-                        disabled={false}
-                        type="button"
-                      >
-                        Back to Queue
-                      </button>
-                    </Button>
-                  </a>
-                </Link>
+                    Back
+                  </button>
+                </Button>
                 <h3>
                   <Label
                     bsClass="label"
