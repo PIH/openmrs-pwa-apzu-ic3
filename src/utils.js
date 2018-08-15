@@ -41,16 +41,17 @@ const utils = {
     return checkedInTime;
 
   },
+
   getPatientCheckOutTime: (patient) => {
 
     let checkOutTime = null;
     if (typeof patient.visit !== 'undefined' && patient.visit.stopDatetime !== null) {
-        checkOutTime = utils.formatTime(patient.visit.stopDatetime);
+      checkOutTime = utils.formatTime(patient.visit.stopDatetime);
     }
 
     return checkOutTime;
+  },
 
-  }
 };
 
 export default utils;
