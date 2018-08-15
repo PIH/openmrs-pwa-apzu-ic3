@@ -12,7 +12,7 @@ describe('bloodPressureFilters', () => {
     }
   };
 
-  it('should filter out non-adult patients', () => {
+  it('required: should filter out non-adult patients', () => {
 
     const results = applyFilters([
       {
@@ -41,75 +41,13 @@ describe('bloodPressureFilters', () => {
           ]
         }
       },
-    ], bloodPressureFilters);
+    ], bloodPressureFilters.required);
 
     expect(results.length).toBe(1);
     expect(results[0].uuid).toBe("abcd");
   });
 
-
-  it('should filter out patients without visit', () => {
-
-    const results = applyFilters([
-      {
-        uuid: 'abcd',
-        age: 20
-      },
-      {
-        uuid: '5678',
-        age: 20,
-        visit: {
-          encounters: [
-            {
-              encounterType: {
-                uuid: ENCOUNTER_TYPES.CheckInEncounterType.uuid
-              }
-            }
-          ]
-        }
-      },
-    ], bloodPressureFilters);
-
-    expect(results.length).toBe(1);
-    expect(results[0].uuid).toBe("5678");
-  });
-
-  it('should filter out patients without check-in', () => {
-
-    const results = applyFilters([
-      {
-        uuid: 'abcd',
-        age: 20,
-        visit: {
-          encounters: [
-            {
-              encounterType: {
-                uuid: ENCOUNTER_TYPES.CheckInEncounterType.uuid
-              }
-            }
-          ]
-        }
-      },
-      {
-        uuid: '5678',
-        age: 30,
-        visit: {
-          encounters: [
-            {
-              encounterType: {
-                uuid: 'not-check-in-type'
-              }
-            }
-          ]
-        }
-      },
-    ], bloodPressureFilters);
-
-    expect(results.length).toBe(1);
-    expect(results[0].uuid).toBe("abcd");
-  });
-
-  it('should filter out patients with blood pressure encounter', () => {
+  it('required: should filter out patients with blood pressure encounter', () => {
 
     const results = applyFilters([
       {
@@ -143,10 +81,50 @@ describe('bloodPressureFilters', () => {
           ]
         }
       },
-    ], bloodPressureFilters);
+    ], bloodPressureFilters.required);
 
     expect(results.length).toBe(1);
     expect(results[0].uuid).toBe("5678");
+  });
+
+  it('completed: should filter out patients without blood pressure encounter', () => {
+
+    const results = applyFilters([
+      {
+        uuid: 'abcd',
+        age: 20,
+        visit: {
+          encounters: [
+            {
+              encounterType: {
+                uuid: ENCOUNTER_TYPES.CheckInEncounterType.uuid
+              }
+            },
+            {
+              encounterType: {
+                uuid: ENCOUNTER_TYPES.BloodPressureEncounterType.uuid
+              }
+            }
+          ]
+        }
+      },
+      {
+        uuid: '5678',
+        age: 30,
+        visit: {
+          encounters: [
+            {
+              encounterType: {
+                uuid: ENCOUNTER_TYPES.CheckInEncounterType.uuid
+              }
+            }
+          ]
+        }
+      },
+    ], bloodPressureFilters.completed);
+
+    expect(results.length).toBe(1);
+    expect(results[0].uuid).toBe("abcd");
   });
 
 

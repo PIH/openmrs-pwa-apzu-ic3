@@ -40,7 +40,6 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
             Array [
               [Function],
               [Function],
-              [Function],
             ]
           }
           rowData={Array []}
@@ -88,7 +87,6 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
             dispatch={[Function]}
             filters={
               Array [
-                [Function],
                 [Function],
                 [Function],
               ]
@@ -147,7 +145,6 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                 fetchListActionCreator={[Function]}
                 filters={
                   Array [
-                    [Function],
                     [Function],
                     [Function],
                   ]

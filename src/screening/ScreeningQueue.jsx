@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { visitActions, List } from '@openmrs/react-components';
+import { visitActions, List, patientObjByEncounterTypeFilter } from '@openmrs/react-components';
 import patientActions from '../patient/patientActions';
 import utils from "../utils";
-import { VISIT_REPRESENTATION } from '../constants';
+import { VISIT_REPRESENTATION, ENCOUNTER_TYPES } from '../constants';
 import {connect} from "react-redux";
 
 let ScreeningQueue = props => {
@@ -24,7 +24,7 @@ let ScreeningQueue = props => {
       <List
         columnDefs={props.columnDefs}
         fetchListActionCreator={fetchListActionCreator}
-        filters={props.filters}
+        filters={[...props.filters, patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'include')]}
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
         rowSelectedActionCreators={props.rowSelectedActionCreators}
@@ -55,8 +55,9 @@ ScreeningQueue.defaultProps = {
       valueGetter: function getCheckedInTime(params) {
         return utils.getPatientCheckedInTime(params.data);
       }
-    }
-  ]
+    },
+  ],
+  filters: []
 };
 
 const mapStateToProps = (state) => {

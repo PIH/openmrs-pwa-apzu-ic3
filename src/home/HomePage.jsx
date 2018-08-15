@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import { LOCATION_TYPES } from '../constants';
