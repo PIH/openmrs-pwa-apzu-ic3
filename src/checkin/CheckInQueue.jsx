@@ -99,7 +99,7 @@ class CheckInQueue extends React.Component {
           columnDefs={ this.columnDefs }
           filters={checkInFilters}
           onMountOtherActionCreators={ [this.onMountOtherActionCreators.bind(this)] }
-          rowData={Array.from(this.props.patients.values())}
+          rowData={Object.values(this.props.patients)}
           rowSelectedActionCreators={ [this.redirectToCheckinPageActionCreator.bind(this)] }
           title=""
         />

@@ -49,7 +49,7 @@ let ActiveVisits = props => {
         fetchListActionCreator={fetchListActionCreator}
         filters={actionVisitFilters}
         onMountOtherActionCreators={onMountOtherActionCreators}
-        rowData={Array.from(props.patients.values())}
+        rowData={Object.values(props.patients)}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title=""
       />

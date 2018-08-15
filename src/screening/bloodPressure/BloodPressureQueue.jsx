@@ -17,7 +17,7 @@ let BloodPressureQueue = props => {
       <ScreeningQueue
         dispatch={props.dispatch}
         filters={bloodPressureFilters}
-        rowData={Array.from(props.patients.values())}
+        rowData={Object.values(props.patients)}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="Blood Pressure Queue"
       />

@@ -22,7 +22,7 @@ let NurseQueue = props => {
       <ScreeningQueue
         dispatch={props.dispatch}
         filters={nurseFilters}
-        rowData={Array.from(props.patients.values())}
+        rowData={Object.values(props.patients)}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="Nurse Queue"
       />
