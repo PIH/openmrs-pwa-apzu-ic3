@@ -5,18 +5,21 @@ import { Link } from 'react-router-dom';
 import CompletedScreenings from "../screening/CompletedScreenings";
 import { FieldInput } from '@openmrs/react-components';
 import { Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
+import { goBack } from 'connected-react-router';
 
 let CheckinForm = props => {
 
   const { handleSubmit, submitting, activeVisit } = props;
 
+  const historyBack = () => {
+    props.dispatch(goBack());
+  }
+
   return (
     <div>
-      <Link to="/checkin/checkInQueue">
-        <Button bsSize='large' bsStyle='danger'>
-          Back to Queue
-        </Button>
-      </Link>
+      <Button bsSize='large' bsStyle='danger' onClick={historyBack.bind(this)}>
+        Back
+      </Button>
       <h3><Label>Check-in</Label></h3>
       <Form
         horizontal

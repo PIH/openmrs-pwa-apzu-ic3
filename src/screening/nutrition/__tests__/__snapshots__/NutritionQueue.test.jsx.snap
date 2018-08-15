@@ -24,7 +24,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
   >
     <NutritionQueue
       dispatch={[Function]}
-      rowData={Array []}
+      patients={Array []}
       session={
         Object {
           "sessionLocation": Object {
@@ -36,6 +36,12 @@ exports[`Component: NutritionQueue renders properly 1`] = `
       <div>
         <Connect(ScreeningQueue)
           dispatch={[Function]}
+          filters={
+            Array [
+              [Function],
+              [Function],
+            ]
+          }
           rowData={Array []}
           rowSelectedActionCreators={
             Array [
@@ -79,6 +85,12 @@ exports[`Component: NutritionQueue renders properly 1`] = `
               ]
             }
             dispatch={[Function]}
+            filters={
+              Array [
+                [Function],
+                [Function],
+              ]
+            }
             rowData={Array []}
             rowSelectedActionCreators={
               Array [
@@ -131,6 +143,12 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                 }
                 delayInterval={10000}
                 fetchListActionCreator={[Function]}
+                filters={
+                  Array [
+                    [Function],
+                    [Function],
+                  ]
+                }
                 onMountOtherActionCreators={
                   Array [
                     [Function],
@@ -244,7 +262,6 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                         style={
                           Object {
                             "height": "600px",
-                            "width": "100%",
                           }
                         }
                       >

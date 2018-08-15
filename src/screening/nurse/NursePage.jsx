@@ -4,7 +4,6 @@ import { Label, ButtonToolbar, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import patientActions from "../../patient/patientActions";
 import checkOutActions from "../../checkin/checkOutActions";
-import RequiredScreenings from '../RequiredScreenings';
 import CompletedScreenings from "../CompletedScreenings";
 import {push} from "connected-react-router";
 import {actions as toastrActions} from "react-redux-toastr";
@@ -44,7 +43,7 @@ class NursePage extends React.Component {
         <h3><Label>Completed Screenings</Label></h3>
         <CompletedScreenings patientUuid={this.props.patient.uuid} />
         <h3><Label>Next steps</Label></h3>
-        <RequiredScreenings patientUuid={this.props.patient.uuid} />
+{/*        <RequiredScreenings patientUuid={this.props.patient.uuid} />*/}
         <ButtonToolbar>
           <Button
             bsSize="large"

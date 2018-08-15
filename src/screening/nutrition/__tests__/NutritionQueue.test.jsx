@@ -41,9 +41,7 @@ describe('Component: NutritionQueue', () => {
             }
           }
         },
-        screening: {
-          nutritionQueue: []
-        }
+        patients: []
       });
     mountedComponent = undefined;
   });

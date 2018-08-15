@@ -3,7 +3,36 @@ import { Patient, visitRest,  reportingRest } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
 import uuidv4 from 'uuid/v4';
-import { PATIENT_REPRESENTATION } from "../constants";
+
+const createFromReportingRestRep =  (restRep) => {
+  let patient = new Patient();
+
+  patient.uuid = restRep.patient_uuid;
+  patient.gender = restRep.gender;
+  patient.age = restRep.age;
+  patient.birthdate = restRep.birthdate;
+
+  patient.name =  {
+    givenName: restRep.first_name,
+    familyName: restRep.last_name
+  } ;
+
+
+  // TODO these all should be modified to conform to the proper Patient format?
+  patient.identifiers = {
+    artNumber: restRep.art_number,
+    eidNumber: restRep.eid_number,
+    ncdNumber: restRep.ncd_number
+  };
+
+  // TODO how do we get these in a proper format
+  patient.chw = restRep.vhw;
+  patient.village = restRep.village;
+  patient.actions = restRep.actions;
+  patient.alert = restRep.alert;
+
+  return patient;
+}
 
 
 function* checkIn(action) {
@@ -51,25 +80,8 @@ function* getExpectedToCheckIn(action) {
       endDate:  action.endDate
     });
 
-    // get a list of active visits
-    let visitResponse = yield call(visitRest.getActiveVisits, {
-      representation: "custom:(uuid,patient:" + PATIENT_REPRESENTATION + ")"
-    });
-
-    // exclude from the random list of patients fetched above the patients who have an active visit
-    let expectedPatients = apptRestResponse.rows.filter(function(patient) {
-      let activeVisit = visitResponse.results.find(function(visit) {
-        return visit.patient.uuid === patient.uuid;
-      });
-      if (typeof activeVisit === 'undefined') {
-        return true;
-      } else {
-        return false;
-      }
-    });
-
-    let patients = expectedPatients.map((result) => {
-      return Patient.createFromReportingRestRep(result);
+    let patients = apptRestResponse.rows.map((result) => {
+      return createFromReportingRestRep(result);
     });
 
     yield put(checkInActions.expectedToCheckIn(patients));

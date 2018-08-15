@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { Label, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import RequiredScreenings from '../screening/RequiredScreenings';
 import patientActions from '../patient/patientActions';
 import CompletedScreenings from "../screening/CompletedScreenings";
 
@@ -24,7 +23,7 @@ class CheckInComplete extends React.Component {
         <h3><Label>Completed Screenings</Label></h3>
         <CompletedScreenings patientUuid={this.props.patient.uuid} />
         <h3><Label>Next steps</Label></h3>
-        <RequiredScreenings patientUuid={this.props.patient.uuid} />
+{/*        <RequiredScreenings patientUuid={this.props.patient.uuid} />*/}
       </div>
     );
   }

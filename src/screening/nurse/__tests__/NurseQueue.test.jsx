@@ -42,9 +42,7 @@ describe('Component: NurseQueue', () => {
             }
           }
         },
-        screening: {
-          nurseQueue: []
-        }
+        patients: []
       });
     mountedComponent = undefined;
   });

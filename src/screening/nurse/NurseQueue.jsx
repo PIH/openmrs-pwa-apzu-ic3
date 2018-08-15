@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 import ScreeningQueue from "../ScreeningQueue";
+import nurseFilters from './nurseFilters';
 
 // TODO can we figure out a better way to do this without passing dispatch all the way through?
 
@@ -20,7 +21,8 @@ let NurseQueue = props => {
     <div>
       <ScreeningQueue
         dispatch={props.dispatch}
-        rowData={props.rowData}
+        filters={nurseFilters}
+        rowData={Array.from(props.patients.values())}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="Nurse Queue"
       />
@@ -30,7 +32,7 @@ let NurseQueue = props => {
 
 const mapStateToProps = (state) => {
   return {
-    rowData: state.screening.nurseQueue,
+    patients: state.patients,
   };
 };
 

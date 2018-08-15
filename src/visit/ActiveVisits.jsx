@@ -5,6 +5,7 @@ import { visitActions, List } from '@openmrs/react-components';
 import patientActions from '../patient/patientActions';
 import utils from "../utils";
 import { VISIT_REPRESENTATION } from '../constants';
+import actionVisitFilters from './activeVisitsFilters';
 
 // TODO: should this extend the ScreeningQueue?
 
@@ -25,7 +26,8 @@ let ActiveVisits = props => {
   ];
 
   const fetchListActionCreator =
-    () => props.dispatch(visitActions.fetchActiveVisits("custom:" + VISIT_REPRESENTATION, props.session.sessionLocation.uuid));
+    () => props.dispatch(visitActions.fetchActiveVisits("custom:" + VISIT_REPRESENTATION,
+      props.session.sessionLocation ? props.session.sessionLocation.uuid : null));
 
   const onMountOtherActionCreators = [
     () => props.dispatch(patientActions.clearPatientSelected())
@@ -45,8 +47,9 @@ let ActiveVisits = props => {
       <List
         columnDefs={columnDefs}
         fetchListActionCreator={fetchListActionCreator}
+        filters={actionVisitFilters}
         onMountOtherActionCreators={onMountOtherActionCreators}
-        rowData={props.rowData}
+        rowData={Array.from(props.patients.values())}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title=""
       />
@@ -56,7 +59,7 @@ let ActiveVisits = props => {
 
 const mapStateToProps = (state) => {
   return {
-    rowData: state.activeVisits,
+    patients: state.patients,
     session: state.openmrs.session
   };
 };

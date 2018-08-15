@@ -42,9 +42,7 @@ describe('Component: BloodPressureQueue', () => {
             }
           }
         },
-        screening: {
-          bloodPressureQueue: []
-        }
+        patients: []
       });
     mountedComponent = undefined;
   });

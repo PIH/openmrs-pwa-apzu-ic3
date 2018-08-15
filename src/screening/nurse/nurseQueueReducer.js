@@ -5,6 +5,6 @@ import { ENCOUNTER_TYPES } from "../../constants";
 export default createListReducer(VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED,
   'visits',
   [visitRestRepToPatientObjConverter()],
-  [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.NurseEvalationEncounterType.uuid)]);
+  [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.NurseEvaluationEncounterType.uuid)]);
 
 

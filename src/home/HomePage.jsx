@@ -2,11 +2,17 @@ import React from 'react';
 import { Button, ButtonGroup, Glyphicon } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
+import { LOCATION_TYPES } from '../constants';
 import patientActions from '../patient/patientActions';
+import checkInActions from  '../checkin/checkInActions';
+import utils from "../utils";
 
 class HomePage extends React.Component {
 
   componentDidMount() {
+    // TODO this could really be after log-in, if this isn't going to change?
+    this.props.dispatch(checkInActions.getExpectedToCheckIn(this.props.location,  utils.formatReportRestDate(new Date())));
+
     this.props.dispatch(patientActions.clearPatientSelected());
   }
 
@@ -56,4 +62,11 @@ class HomePage extends React.Component {
   }
 }
 
-export default connect()(HomePage);
+const mapStateToProps = (state) => {
+  return {
+    location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation
+  };
+};
+
+
+export default connect(mapStateToProps)(HomePage);

@@ -33,7 +33,7 @@ let CompletedVisits = props => {
     () => props.dispatch(visitActions.fetchInactiveVisits(
       "custom:" + VISIT_REPRESENTATION,
       utils.getEndOfYesterday(),
-      props.session.sessionLocation.uuid));
+      props.session.sessionLocation ? props.session.sessionLocation.uuid : null));
 
   const onMountOtherActionCreators = [
     () => props.dispatch(patientActions.clearPatientSelected())
