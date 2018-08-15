@@ -4,26 +4,6 @@ import CHECK_IN_TYPES from '../checkin/checkInTypes';
 
 export default (state = {}, action) => {
 
-  // TODO should this really copy a patient instead of mutating an existing one?
-  const addVisitIfFound = (patient, visits) => {
-
-    if (visits == null) {
-      return patient;
-    }
-    else {
-      const visit = visits.find((v) => {
-        return patient.uuid === v.patient.uuid;
-      });
-
-      if (visit != null) {
-        patient.visit = visit;
-      }
-
-      return patient;
-    }
-
-  };
-
   switch (action.type) {
 
     case CHECK_IN_TYPES.CHECK_IN.EXPECTED_TO_CHECK_IN:
@@ -40,9 +20,14 @@ export default (state = {}, action) => {
 
     case VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED:
 
+      // TODO do we want to copy over other information (demographics, etc?) if found?
       return mapObjIndexed((patient) => {
-        addVisitIfFound(patient, action.visits);
-        return patient;
+        return {
+          ...patient,
+          visit: action.visits != null ? action.visits.find((v) => {
+            return patient.uuid === v.patient.uuid;
+          }) : undefined
+        };
       }, state);
 
     default: return state;
