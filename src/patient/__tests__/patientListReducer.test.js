@@ -24,6 +24,13 @@ describe('patient list reducer', () => {
     }
   };
 
+  const newPatientSampleVisit = {
+    uuid: 'qrst-7890',
+    patient: {
+      uuid: 'ijkl-9012',
+    }
+  };
+
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual({});
   });
@@ -91,6 +98,28 @@ describe('patient list reducer', () => {
 
     expect(patients['abcd-1234']).toEqual({ "uuid": "abcd-1234" });
     expect(patients['efgh-5678']).toEqual({ "uuid": "efgh-5678" });
+  });
+
+  it('should add patient with active visit but not in Object map', () => {
+    const patients = reducer({
+      'abcd-1234': { "uuid": "abcd-1234" },
+      'efgh-5678': { "uuid": "efgh-5678" },
+    }, {
+      type: VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED,
+      visits: [newPatientSampleVisit]
+    });
+
+    expect(patients['ijkl-9012']).toEqual(
+      { "uuid": "ijkl-9012",
+        "visit":
+          {
+            "patient":
+              {
+                "uuid": "ijkl-9012"
+              },
+            "uuid": "qrst-7890"
+          }
+      });
   });
 
 });
