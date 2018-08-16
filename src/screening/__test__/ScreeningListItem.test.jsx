@@ -36,7 +36,7 @@ describe('Component: Screening', () => {
     };
 
     expect(screening().find('div').length).toBe(1);
-    expect(screening().find('div').text()).toBe("Blood Pressure");
+    expect(screening().find('div').text()).toContain("Blood Pressure");
   });
 
   it('renders checkmark when screening completed', () => {
@@ -66,7 +66,7 @@ describe('Component: Screening', () => {
     };
 
     expect(screening().find('div').length).toBe(1);
-    expect(screening().find('div').text()).toBe("Blood Pressure");
+    expect(screening().find('div').text()).toContain("Blood Pressure");
     expect(screening().find(FontAwesomeIcon).length).toBe(1);
     expect(screening().find(FontAwesomeIcon).props().icon).toBe("check");
 
@@ -94,7 +94,7 @@ describe('Component: Screening', () => {
     };
 
     expect(screening().find('div').length).toBe(1);
-    expect(screening().find('div').text()).toBe("Blood Pressure");
+    expect(screening().find('div').text()).toContain("Blood Pressure");
     expect(screening().find(FontAwesomeIcon).length).toBe(1);
     expect(screening().find(FontAwesomeIcon).props().icon).toBe("arrow-right");
 
@@ -123,7 +123,7 @@ describe('Component: Screening', () => {
     };
 
     expect(screening().find('div').length).toBe(1);
-    expect(screening().find('div').text()).toBe("Blood Pressure");
+    expect(screening().find('div').text()).toContain("Blood Pressure");
     expect(screening().find(FontAwesomeIcon).length).toBe(0);
 
   });

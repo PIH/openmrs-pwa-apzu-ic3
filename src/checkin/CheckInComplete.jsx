@@ -15,7 +15,7 @@ class CheckInComplete extends React.Component {
   render() {
     return (
       <div>
-        <Link to={this.props.location.state.queueLink}>
+        <Link to='/checkin/checkInTabs'>
           <Button bsSize='large' bsStyle='danger'>
             Back to Queue
           </Button>

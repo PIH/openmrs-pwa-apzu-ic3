@@ -23,7 +23,7 @@ let ScreeningListItem = props => {
       { required && !completed &&
         <FontAwesomeIcon icon="arrow-right"/>
       }
-      {props.title}
+      &nbsp;{props.title}
     </div>
   );
 
@@ -33,7 +33,7 @@ let ScreeningListItem = props => {
 ScreeningListItem.propTypes = {
   completedFilters: PropTypes.array.isRequired,
  // entryLink: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   patient: PropTypes.object.isRequired,
   requiredFilters: PropTypes.array.isRequired,
   //summaryLink: PropTypes.string.isRequired

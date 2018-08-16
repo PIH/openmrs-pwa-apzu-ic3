@@ -1,12 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import ReduxToastr from 'react-redux-toastr';
-import { AuthenticatedRoute, LoginPage, Logout, LoadingView } from '@openmrs/react-components';
+import { LoginPage, Logout, LoadingView } from '@openmrs/react-components';
 import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core';
 import { faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import setupStoreAndPersistor, { history } from './store';
+import Layout from './layout/Layout';
 import HomePage from './home/HomePage';
 import InfoPatient from './patient/PatientInfo';
 import SearchPatient from './search/SearchPatient';
@@ -15,7 +15,6 @@ import CheckInTabs from './checkin/CheckInTabs';
 import CheckInPage from './checkin/CheckInPage';
 import NursePage from './screening/nurse/NursePage';
 import CheckInComplete from './checkin/CheckInComplete';
-import Header from './header/Header';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
@@ -32,18 +31,6 @@ fontAwesomeLibrary.add(faCheck, faArrowRight);
 
 const App = props => {
 
-  const AuthenticatedLayout = props => {
-    return (
-      <div id="outer-container" className="ag-theme-material">
-        <ReduxToastr/>
-        <Header />
-        <main id="page-wrap">
-          <AuthenticatedRoute {...props} />
-        </main>
-      </div>
-    );
-  };
-
   return (
     <Provider store={store}>
       <PersistGate loading={<LoadingView />} persistor={persistor}>
@@ -57,77 +44,77 @@ const App = props => {
               component={Logout}
               path="/logout"
             />
-            <AuthenticatedLayout
+            <Layout
               component={HomePage}
               exact
               path="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={SearchPatient}
               path="/searchPatient"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={CheckInTabs}
               path="/checkin/checkInTabs"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={CheckInQueue}
               path="/checkin/checkInQueue"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={CheckInPage}
               path="/checkin/checkInPage"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={CheckInComplete}
               path="/checkin/checkInComplete"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={BloodPressureQueue}
               path="/screening/bloodPressure/queue"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={BloodPressureForm}
               path="/screening/bloodPressure/form"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={NutritionQueue}
               path="/screening/nutrition/queue"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={NutritionForm}
               path="/screening/nutrition/form"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={InfoPatient}
               path="/infoPatient"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={ActiveVisitsQueue}
               path="/visit/queue"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={CompletedVisitsQueue}
               path="/visit/completedVisits"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={NurseQueue}
               path="/screening/nurse/queue"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={NursePage}
               path="/nurse/nursePage"
               redirectOnLogin="/"
