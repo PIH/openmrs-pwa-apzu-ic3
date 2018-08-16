@@ -37,7 +37,29 @@ const encounterRest = {
 
 };
 
+const BASIC_TYPES = [
+  'FETCH_SUCCEEDED',
+  'FETCH_PENDING',
+  'SET_SUCCEEDED',
+  'SET_REQUESTED',
+  'SET_FAILED',
+  'FETCH_FAILED',
+  'FETCH_REQUESTED',
+  'SUCCEEDED',
+  'PENDING',
+  'FAILED',
+  'REQUESTED'
+];
+
+const LOGIN_TYPES = {
+  LOGIN: BASIC_TYPES,
+  LOGIN_LOCATIONS: BASIC_TYPES,
+  LOGOUT: BASIC_TYPES
+}
+
+
 export {
   visitRest,
-  encounterRest
+  encounterRest,
+  LOGIN_TYPES
 };

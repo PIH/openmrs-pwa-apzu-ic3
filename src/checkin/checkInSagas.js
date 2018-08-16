@@ -1,10 +1,13 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest, select } from 'redux-saga/effects';
 import { Patient, visitRest,  reportingRest } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
+import patientActions from '../patient/patientActions';
 import uuidv4 from 'uuid/v4';
 import { REHYDRATE } from "redux-persist";
+import { LOGIN_TYPES } from '@openmrs/react-components';
 import utils from "../utils";
+import * as R from 'ramda';
 
 const createFromReportingRestRep =  (restRep) => {
   let patient = new Patient();
@@ -95,9 +98,11 @@ function* getExpectedToCheckIn(action) {
 }
 
 function* initiateGetExpectedToCheckIn(action) {
-  if (action.payload && action.payload.openmrs.session && action.payload.openmrs.session.sessionLocation.uuid){
-    yield put(checkInActions.getExpectedToCheckIn(action.payload.openmrs.session.sessionLocation.uuid,
+  var state = R.pathOr(yield select(), ['payload'], action);
+  if (R.path(['openmrs', 'session', 'authenticated'], state)){
+    yield put(checkInActions.getExpectedToCheckIn(R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
                                                   utils.formatReportRestDate(new Date())));
+    yield put(patientActions.clearPatientSelected());
   }
 }
 
@@ -105,6 +110,7 @@ function *checkInSagas() {
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.SUBMIT, checkIn);
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
   yield takeLatest(REHYDRATE, initiateGetExpectedToCheckIn);
+  yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetExpectedToCheckIn);
 }
 
 export default checkInSagas;

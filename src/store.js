@@ -14,7 +14,7 @@ import { all } from 'redux-saga/effects';
 import { reducer as reduxFormReducer } from 'redux-form';
 import { reducer as toastrReducer } from 'react-redux-toastr';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
-import { sagas as openmrsSagas, reducers as openmrsReducers } from '@openmrs/react-components';
+import { sagas as openmrsSagas, reducers as openmrsReducers, LOGIN_TYPES } from '@openmrs/react-components';
 import completedVisitsReducer from './visit/completedVisitsReducer';
 import patientSelectedReducer from './patient/patientSelectedReducer';
 import patientListReducer from './patient/patientListReducer';
@@ -22,7 +22,7 @@ import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
 import formSagas from './form/formSagas';
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import storageSession from 'redux-persist/lib/storage/session';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 // fyi, connected-react-router docs:
@@ -52,7 +52,7 @@ const middlewares = [
  * expectedCheckInLists:
  */
 
-const rootReducer = combineReducers({
+const combinedReducer = combineReducers({
   openmrs: openmrsReducers,
   form: reduxFormReducer,
   toastr: toastrReducer,
@@ -61,9 +61,16 @@ const rootReducer = combineReducers({
   completedVisits: completedVisitsReducer,
 });
 
+const rootReducer = (state, action) => {
+  if (action.type === LOGIN_TYPES.LOGOUT.SUCCEEDED) {
+    state = undefined;
+  }
+  return combinedReducer(state, action)
+}
+
 const persistConfig = {
   key: 'root',
-  storage: storage,
+  storage: storageSession,
   stateReconciler: autoMergeLevel2,
   whitelist: ['openmrs', 'router', 'selectedpatient']
 };

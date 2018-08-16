@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import ReduxToastr from 'react-redux-toastr';
-import { AuthenticatedRoute, LoginPage, LoadingView } from '@openmrs/react-components';
+import { AuthenticatedRoute, LoginPage, Logout, LoadingView } from '@openmrs/react-components';
 import './App.css';
 import setupStoreAndPersistor, { history } from './store';
 import HomePage from './home/HomePage';
@@ -49,6 +49,10 @@ const App = props => {
             <Route
               component={LoginPage}
               path="/login"
+            />
+            <Route
+              component={Logout}
+              path="/logout"
             />
             <AuthenticatedLayout
               component={HomePage}

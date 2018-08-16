@@ -38,6 +38,11 @@ class Menu extends React.Component {
             Nurse
           </Button>
         </Link>
+        <Link to="/logout">
+          <Button bsSize="large" block>
+            Logout
+          </Button>
+        </Link>
       </BurgerMenu>
     );
   }
