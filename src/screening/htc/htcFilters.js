@@ -7,5 +7,7 @@ const htcFilter = patient => {
 };
 
 
-export default [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'include'),
-  patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.HTCEncounterType.uuid, 'exclude'), htcFilter];
+export default {
+  required: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.HTCEncounterType.uuid, 'exclude'), htcFilter],
+  completed: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.HTCEncounterType.uuid, 'include')]
+};

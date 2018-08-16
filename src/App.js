@@ -98,17 +98,17 @@ const App = props => {
               path="/screening/nutrition/form"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={HtcQueue}
               path="/screening/htc/queue"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={HtcPage}
               path="/screening/htc/page"
               redirectOnLogin="/"
             />
-            <AuthenticatedLayout
+            <Layout
               component={HtcForm}
               path="/screening/htc/form"
               redirectOnLogin="/"

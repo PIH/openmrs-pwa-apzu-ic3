@@ -34,7 +34,7 @@ let HtcQueue = props => {
       <ScreeningQueue
         dispatch={ props.dispatch }
         columnDefs = { columnDefs }
-        filters={ htcFilters }
+        filters={ htcFilters.required }
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="HTC Queue"
