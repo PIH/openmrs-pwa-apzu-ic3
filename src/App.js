@@ -19,6 +19,9 @@ import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import NutritionForm from "./screening/nutrition/NutritionForm";
+import HtcQueue from "./screening/htc/HtcQueue";
+import HtcPage from "./screening/htc/HtcPage";
+import HtcForm from "./screening/htc/HtcForm";
 import NurseQueue from "./screening/nurse/NurseQueue";
 import ActiveVisitsQueue from "./visit/ActiveVisits";
 import CompletedVisitsQueue from "./visit/CompletedVisits";
@@ -33,6 +36,7 @@ const App = props => {
 
   return (
     <Provider store={store}>
+
       <PersistGate loading={<LoadingView />} persistor={persistor}>
         <ConnectedRouter history={history}>
           <Switch>
@@ -94,6 +98,21 @@ const App = props => {
               path="/screening/nutrition/form"
               redirectOnLogin="/"
             />
+            <AuthenticatedLayout
+              component={HtcQueue}
+              path="/screening/htc/queue"
+              redirectOnLogin="/"
+            />
+            <AuthenticatedLayout
+              component={HtcPage}
+              path="/screening/htc/page"
+              redirectOnLogin="/"
+            />
+            <AuthenticatedLayout
+              component={HtcForm}
+              path="/screening/htc/form"
+              redirectOnLogin="/"
+            />
             <Layout
               component={InfoPatient}
               path="/infoPatient"
@@ -122,6 +141,7 @@ const App = props => {
           </Switch>
         </ConnectedRouter>
       </PersistGate>
+
     </Provider>
   );
 

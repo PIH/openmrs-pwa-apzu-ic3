@@ -19,6 +19,9 @@ export const ENCOUNTER_TYPES = {
   'NurseEvaluationEncounterType': {
     uuid: '1e2f8be8-8ae3-41f1-b908-84f168f26325'
   },
+  'HTCEncounterType': {
+    uuid: '5B7238C1-23C6-4214-957F-7912A5BE87A9'
+  },
 };
 
 
