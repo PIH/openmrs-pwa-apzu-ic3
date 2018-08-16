@@ -1,5 +1,5 @@
 import SagaTester from 'redux-saga-tester';
-import { visitRest } from '@openmrs/react-components';
+import { visitRest, LOGIN_TYPES} from '@openmrs/react-components';
 import checkInSagas from '../checkInSagas';
 import checkInActions from '../checkInActions';
 

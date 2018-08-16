@@ -3,6 +3,8 @@ import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import ReduxToastr from 'react-redux-toastr';
 import { AuthenticatedRoute, LoginPage, Logout, LoadingView } from '@openmrs/react-components';
+import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core';
+import { faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import setupStoreAndPersistor, { history } from './store';
 import HomePage from './home/HomePage';
@@ -26,6 +28,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 
 const { store, persistor } = setupStoreAndPersistor();
 
+fontAwesomeLibrary.add(faCheck, faArrowRight);
 
 const App = props => {
 

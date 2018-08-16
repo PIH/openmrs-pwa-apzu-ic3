@@ -1,11 +1,10 @@
 import { call, put, takeLatest, select } from 'redux-saga/effects';
-import { Patient, visitRest,  reportingRest } from '@openmrs/react-components';
+import { Patient, visitRest,  reportingRest, LOGIN_TYPES } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
 import patientActions from '../patient/patientActions';
 import uuidv4 from 'uuid/v4';
 import { REHYDRATE } from "redux-persist";
-import { LOGIN_TYPES } from '@openmrs/react-components';
 import utils from "../utils";
 import * as R from 'ramda';
 

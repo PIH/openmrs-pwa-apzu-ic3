@@ -39,7 +39,6 @@ exports[`Component: NurseQueue renders properly 1`] = `
           filters={
             Array [
               [Function],
-              [Function],
             ]
           }
           rowData={Array []}
@@ -87,7 +86,6 @@ exports[`Component: NurseQueue renders properly 1`] = `
             dispatch={[Function]}
             filters={
               Array [
-                [Function],
                 [Function],
               ]
             }
