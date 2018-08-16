@@ -6,7 +6,7 @@
  * Copyright (C) OpenMRS Inc. OpenMRS is a registered trademark and the OpenMRS
  * graphic logo is a trademark of OpenMRS Inc.
  */
-import { createBrowserHistory } from 'history';
+import { createHashHistory } from 'history';
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
@@ -32,7 +32,7 @@ const contextPath  = (typeof process !== 'undefined' && typeof process.env !== '
   typeof process.env.REACT_APP_CONTEXT_PATH  !== 'undefined' && process.env.REACT_APP_CONTEXT_PATH !== null) ?
   process.env.REACT_APP_CONTEXT_PATH : "/";
 
-export const history = createBrowserHistory({
+export const history = createHashHistory({
   basename: contextPath
 });
 
