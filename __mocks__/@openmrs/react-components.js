@@ -1,4 +1,4 @@
-
+import types from 'redux-types';
 // mock methods
 
 const visitRest = {
@@ -52,9 +52,9 @@ const BASIC_TYPES = [
 ];
 
 const LOGIN_TYPES = {
-  LOGIN: BASIC_TYPES,
-  LOGIN_LOCATIONS: BASIC_TYPES,
-  LOGOUT: BASIC_TYPES
+  LOGIN: types('login', BASIC_TYPES),
+  LOGIN_LOCATIONS: types('login_locations', BASIC_TYPES),
+  LOGOUT: types('logout', BASIC_TYPES)
 }
 
 
