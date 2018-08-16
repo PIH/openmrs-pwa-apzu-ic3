@@ -30,7 +30,45 @@ Need to set Android to remote debugging using the "magic" steps here:
 
 https://developers.google.com/web/tools/chrome-devtools/remote-debugging/?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3
 
-## Getting around CORS issues
+## CORS Configuration on TomCat7 Server
+
+A CORS filter was added to web.xml at /usr/local/~project-folder~/config/web.xml.
+
+```
+<filter>
+  <filter-name>CorsFilter</filter-name>
+  <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+  <init-param>
+    <param-name>cors.allowed.origins</param-name>
+    <param-value>http://localhost:3000</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.allowed.methods</param-name>
+    <param-value>GET,POST,HEAD,OPTIONS,PUT,DELETE</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.allowed.headers</param-name>
+    <param-value>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Date,Server,Set-Cookie,Allow,ETag,Cont$
+  </init-param>
+  <init-param>
+    <param-name>cors.support.credentials</param-name>
+    <param-value>false</param-value>
+  </init-param>
+</filter>
+<filter-mapping>
+  <filter-name>CorsFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+```
+
+This whitelists http://localhost:3000 for local development and the CORS plugin is no longer required. If it is enabled it will lead to CORS errors as cors.support.credentials is set to false which is the default value.
+
+re-build and run a new docker container using that web.xml by running:  
+```
+$ sudo ./docker.sh rebuild
+```
+in the /usr/local/~project-folder~ directory.
+#### Previously:
 
 You can install the CORS plugin for Chrome here to get around CORS issues:
 
