@@ -30,10 +30,10 @@ describe('Component: NutritionForm', () => {
     store = mockStore(
       {
         selectedPatient: {
-              uuid: "abc",
-              visit: {
-                uuid: "def"
-              }
+          uuid: "abc",
+          visit: {
+            uuid: "def"
+          }
         }
       });
     mountedComponent = undefined;
@@ -41,7 +41,6 @@ describe('Component: NutritionForm', () => {
 
   it('renders properly', () => {
     expect(toJson(nutritionForm())).toMatchSnapshot();
-    expect(nutritionForm().find(Container).length).toBe(1);
   });
 
 });

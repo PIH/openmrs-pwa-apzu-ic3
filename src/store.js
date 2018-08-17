@@ -20,7 +20,7 @@ import patientSelectedReducer from './patient/patientSelectedReducer';
 import patientListReducer from './patient/patientListReducer';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
-import formSagas from './form/formSagas';
+import formSagas from './bahmniform/formSagas';
 import { persistStore, persistReducer } from 'redux-persist';
 import storageSession from 'redux-persist/lib/storage/session';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';

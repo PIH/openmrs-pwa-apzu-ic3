@@ -39,7 +39,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           }
         }
       >
-        <Form
+        <BahmniForm
           afterSubmitLink="/screening/bloodPressure/queue"
           backLink="/screening/bloodPressure/queue"
           dispatch={[Function]}
@@ -1480,7 +1480,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
               </button>
             </Button>
           </div>
-        </Form>
+        </BahmniForm>
       </BloodPressureForm>
     </Connect(BloodPressureForm)>
   </MockRouter>

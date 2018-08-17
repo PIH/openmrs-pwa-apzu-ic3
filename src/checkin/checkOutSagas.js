@@ -2,7 +2,7 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 import { visitRest } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkOutActions from './checkOutActions';
-import formActions from "../form/formActions";
+import formActions from "../bahmniform/formActions";
 
 function* checkOut(action) {
 

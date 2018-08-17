@@ -1,100 +1,62 @@
-import React from "react";
+import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { OpenMRSForm, Submit, Obs } from '@openmrs/react-components';
+import { Grid, Row, Label, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import Form from '../../form/Form';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 
-let NutritionForm = props => {
+class NutritionForm extends Form {
 
-  const formDetails = {
-    "name": "Nutrition Form",
-    "id": 2,
-    "uuid": "e5c201c8-cfa8-4214-8e16-79129fbc5e6c",
-    "defaultLocale": "en",
-    "controls": [{
-      "translationKey": "LABEL_1",
-      "type": "label",
-      "value": "Nutrition Form",
-      "properties": { "location": { "column": 0, "row": 0 } },
-      "id": "1"
-    }, {
-      "type": "obsControl",
-      "label": { "translationKey": "WEIGHT_2", "id": "2", "units": "", "type": "label", "value": "Weight" },
-      "properties": {
-        "mandatory": false,
-        "notes": false,
-        "addMore": false,
-        "hideLabel": false,
-        "controlEvent": false,
-        "location": { "column": 0, "row": 1 },
-        "abnormal": false
-      },
-      "id": "2",
-      "concept": {
-        "name": "WEIGHT",
-        "uuid": CONCEPTS.Weight.uuid,
-        "datatype": "Numeric",
-        "conceptClass": "Misc",
-        "conceptHandler": null,
-        "answers": [],
-        "properties": { "allowDecimal": false }
-      },
-      "units": "kg",
-      "hiNormal": null,
-      "lowNormal": null,
-      "hiAbsolute": 250.0,
-      "lowAbsolute": 0.1
-    },
-    {
-      "type": "obsControl",
-      "label": { "translationKey": "HEIGHT_2", "id": "3", "units": "", "type": "label", "value": "Height" },
-      "properties": {
-        "mandatory": false,
-        "notes": false,
-        "addMore": false,
-        "hideLabel": false,
-        "controlEvent": false,
-        "location": { "column": 0, "row": 2 },
-        "abnormal": false
-      },
-      "id": "3",
-      "concept": {
-        "name": "HEIGHT",
-        "uuid": CONCEPTS.Height.uuid,
-        "datatype": "Numeric",
-        "conceptClass": "Misc",
-        "conceptHandler": null,
-        "answers": [],
-        "properties": { "allowDecimal": false }
-      },
-      "units": "cm",
-      "hiNormal": null,
-      "lowNormal": null,
-      "hiAbsolute": 228.0,
-      "lowAbsolute": 10.0
-    }],
-    "events": {},
-    //"translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations"
-  };
+  queueLink() {
+    return "/screening/nutrition/queue";
+  }
 
-  return (
-    <Form
-      afterSubmitLink="/screening/nutrition/queue"
-      backLink="/screening/nutrition/queue"
-      dispatch={props.dispatch}
-      encounterType={ENCOUNTER_TYPES.NutritionEncounterType}
-      formDetails={formDetails}
-      patient={props.patient}
-      visit={props.visit}
-    />
-  );
+  formContent() {
+    return (
+      <div>
+        <h3><Label>Nutrition</Label></h3>
+        <OpenMRSForm
+          encounterType={ENCOUNTER_TYPES.NutritionEncounterType}
+          formSubmittedActionCreator={this.formSubmittedActionCreators}
+          patient={this.props.patient}
+          visit={this.props.visit}>
+          <Grid>
+            <Row>
+              <FormGroup controlId="formWeight">
+                <Col componentClass={ControlLabel} sm={2}>
+                  Weight
+                </Col>
+                <Col sm={4}>
+                  <Obs
+                    concept={CONCEPTS.Weight.uuid}
+                    path="Weight"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+            <Row>
+              <FormGroup controlId="formHeight">
+                <Col componentClass={ControlLabel} sm={2}>
+                  Height
+                </Col>
+                <Col sm={4}>
+                  <Obs
+                    concept={CONCEPTS.Height.uuid}
+                    path="Height"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+            <Row>
+              <Submit />
+            </Row>
+          </Grid>
+        </OpenMRSForm>
+      </div>
+    );
+  }
 
-};
-
-NutritionForm.propTypes = {
-  patient: PropTypes.object.isRequired,
-  visit: PropTypes.object,
-};
+}
 
 const mapStateToProps = (state) => {
   return {
