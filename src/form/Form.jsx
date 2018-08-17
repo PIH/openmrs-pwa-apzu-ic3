@@ -1,39 +1,58 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+import { Button, Label } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { push } from 'connected-react-router';
+import { connect } from 'react-redux';
+import { OpenMRSForm } from '@openmrs/react-components';
 import { actions as toastrActions } from 'react-redux-toastr';
 
-class Form extends React.Component {
+let Form = (props) => {
 
   // https://github.com/diegoddox/react-redux-toastr
-  formSubmittedActionCreators = [
+  const formSubmittedActionCreators = [
     () => toastrActions.add({ title: "Data Saved", type: "success" }),
-    () => push(this.queueLink())
+    () => push(props.afterSubmitLink)
   ];
 
-  queueLink() {
-    return "/";  // needs to be overwritten in implementing methods
-  }
 
-  formContent() {
-    return null;  // needs to be overwritten in implementing methods
-  }
-
-  render() {
-    return (
+  return (
+    <div>
+      <Link to={props.backLink}>
+        <Button bsSize='large' bsStyle='danger'>
+          Back
+        </Button>
+      </Link>
       <div>
-        <Link to={this.queueLink()}>
-          <Button bsSize='large' bsStyle='danger'>
-            Back to Queue
-          </Button>
-        </Link>
-        { this.formContent() }
+        <h3><Label>{props.title}</Label></h3>
+        <OpenMRSForm
+          encounterType={props.encounterType}
+          formSubmittedActionCreator={formSubmittedActionCreators}
+          patient={props.patient}
+          visit={props.visit}
+        >
+          { props.formContent }
+        </OpenMRSForm>
       </div>
-    );
-  }
+    </div>
+  );
+};
 
+Form.propTypes = {
+  afterSubmitLink: PropTypes.string.isRequired,
+  backLink: PropTypes.string.isRequired,
+  encounterType: PropTypes.object.isRequired,
+  formContent: PropTypes.object.isRequired,
+  patient: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  visit: PropTypes.object
+};
 
-}
+const mapStateToProps = (state) => {
+  return {
+    patient: state.selectedPatient,
+    visit: state.selectedPatient.visit
+  };
+};
 
-export default Form;
+export default connect(mapStateToProps)(Form);

@@ -22,94 +22,217 @@ exports[`Component: NutritionForm renders properly 1`] = `
     replace={[Function]}
     url=""
   >
-    <Connect(NutritionForm)>
-      <NutritionForm
-        dispatch={[Function]}
-        patient={
+    <NutritionForm>
+      <Connect(Form)
+        afterSubmitLink="/screening/nutrition/queue"
+        backLink="/screening/nutrition/queue"
+        encounterType={
           Object {
-            "uuid": "abc",
-            "visit": Object {
-              "uuid": "def",
-            },
+            "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
           }
         }
-        visit={
-          Object {
-            "uuid": Object {
-              "uuid": "def",
-            },
-          }
-        }
-      >
-        <div>
-          <Link
-            replace={false}
-            to="/screening/nutrition/queue"
+        formContent={
+          <Grid
+            bsClass="container"
+            componentClass="div"
+            fluid={false}
           >
-            <a
-              onClick={[Function]}
+            <Row
+              bsClass="row"
+              componentClass="div"
             >
-              <Button
-                active={false}
-                block={false}
-                bsClass="btn"
-                bsSize="large"
-                bsStyle="danger"
-                disabled={false}
+              <FormGroup
+                bsClass="form-group"
+                controlId="formWeight"
               >
-                <button
-                  className="btn btn-lg btn-danger"
-                  disabled={false}
-                  type="button"
+                <Col
+                  bsClass="col"
+                  componentClass={[Function]}
+                  sm={2}
                 >
-                  Back to Queue
-                </button>
-              </Button>
-            </a>
-          </Link>
+                  Weight
+                </Col>
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  sm={4}
+                >
+                  <Obs
+                    concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                    path="Weight"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <FormGroup
+                bsClass="form-group"
+                controlId="formHeight"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass={[Function]}
+                  sm={2}
+                >
+                  Height
+                </Col>
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  sm={4}
+                >
+                  <Obs
+                    concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                    path="Height"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <Submit />
+            </Row>
+          </Grid>
+        }
+        title="Nutrition"
+      >
+        <Form
+          afterSubmitLink="/screening/nutrition/queue"
+          backLink="/screening/nutrition/queue"
+          dispatch={[Function]}
+          encounterType={
+            Object {
+              "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
+            }
+          }
+          formContent={
+            <Grid
+              bsClass="container"
+              componentClass="div"
+              fluid={false}
+            >
+              <Row
+                bsClass="row"
+                componentClass="div"
+              >
+                <FormGroup
+                  bsClass="form-group"
+                  controlId="formWeight"
+                >
+                  <Col
+                    bsClass="col"
+                    componentClass={[Function]}
+                    sm={2}
+                  >
+                    Weight
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    componentClass="div"
+                    sm={4}
+                  >
+                    <Obs
+                      concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                      path="Weight"
+                    />
+                  </Col>
+                </FormGroup>
+              </Row>
+              <Row
+                bsClass="row"
+                componentClass="div"
+              >
+                <FormGroup
+                  bsClass="form-group"
+                  controlId="formHeight"
+                >
+                  <Col
+                    bsClass="col"
+                    componentClass={[Function]}
+                    sm={2}
+                  >
+                    Height
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    componentClass="div"
+                    sm={4}
+                  >
+                    <Obs
+                      concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                      path="Height"
+                    />
+                  </Col>
+                </FormGroup>
+              </Row>
+              <Row
+                bsClass="row"
+                componentClass="div"
+              >
+                <Submit />
+              </Row>
+            </Grid>
+          }
+          patient={
+            Object {
+              "uuid": "abc",
+              "visit": Object {
+                "uuid": "def",
+              },
+            }
+          }
+          title="Nutrition"
+          visit={
+            Object {
+              "uuid": "def",
+            }
+          }
+        >
           <div>
-            <h3>
-              <Label
-                bsClass="label"
-                bsStyle="default"
-              >
-                <span
-                  className="label label-default"
-                >
-                  Nutrition
-                </span>
-              </Label>
-            </h3>
-            <Connect(ReduxForm)
-              encounterType={
-                Object {
-                  "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
-                }
-              }
-              formSubmittedActionCreator={
-                Array [
-                  [Function],
-                  [Function],
-                ]
-              }
-              patient={
-                Object {
-                  "uuid": "abc",
-                  "visit": Object {
-                    "uuid": "def",
-                  },
-                }
-              }
-              visit={
-                Object {
-                  "uuid": Object {
-                    "uuid": "def",
-                  },
-                }
-              }
+            <Link
+              replace={false}
+              to="/screening/nutrition/queue"
             >
-              <ReduxForm
-                dispatch={[Function]}
+              <a
+                onClick={[Function]}
+              >
+                <Button
+                  active={false}
+                  block={false}
+                  bsClass="btn"
+                  bsSize="large"
+                  bsStyle="danger"
+                  disabled={false}
+                >
+                  <button
+                    className="btn btn-lg btn-danger"
+                    disabled={false}
+                    type="button"
+                  >
+                    Back
+                  </button>
+                </Button>
+              </a>
+            </Link>
+            <div>
+              <h3>
+                <Label
+                  bsClass="label"
+                  bsStyle="default"
+                >
+                  <span
+                    className="label label-default"
+                  >
+                    Nutrition
+                  </span>
+                </Label>
+              </h3>
+              <Connect(ReduxForm)
                 encounterType={
                   Object {
                     "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
@@ -131,31 +254,23 @@ exports[`Component: NutritionForm renders properly 1`] = `
                 }
                 visit={
                   Object {
-                    "uuid": Object {
-                      "uuid": "def",
-                    },
+                    "uuid": "def",
                   }
                 }
               >
-                <Connect(Form(OpenMRSForm))
-                  destroyOnUnmount={true}
+                <ReduxForm
                   dispatch={[Function]}
-                  enableReinitialize={false}
                   encounterType={
                     Object {
                       "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
                     }
                   }
-                  forceUnregisterOnUnmount={false}
-                  form="openmrs-form"
                   formSubmittedActionCreator={
                     Array [
                       [Function],
                       [Function],
                     ]
                   }
-                  getFormState={[Function]}
-                  keepDirtyOnReinitialize={false}
                   patient={
                     Object {
                       "uuid": "abc",
@@ -164,60 +279,14 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       },
                     }
                   }
-                  persistentSubmitErrors={false}
-                  pure={true}
-                  shouldAsyncValidate={[Function]}
-                  shouldError={[Function]}
-                  shouldValidate={[Function]}
-                  shouldWarn={[Function]}
-                  touchOnBlur={true}
-                  touchOnChange={false}
-                  updateUnregisteredFields={false}
                   visit={
                     Object {
-                      "uuid": Object {
-                        "uuid": "def",
-                      },
+                      "uuid": "def",
                     }
                   }
                 >
-                  <Form(OpenMRSForm)
-                    anyTouched={false}
-                    array={
-                      Object {
-                        "insert": [Function],
-                        "move": [Function],
-                        "pop": [Function],
-                        "push": [Function],
-                        "remove": [Function],
-                        "removeAll": [Function],
-                        "shift": [Function],
-                        "splice": [Function],
-                        "swap": [Function],
-                        "unshift": [Function],
-                      }
-                    }
-                    arrayInsert={[Function]}
-                    arrayMove={[Function]}
-                    arrayPop={[Function]}
-                    arrayPush={[Function]}
-                    arrayRemove={[Function]}
-                    arrayRemoveAll={[Function]}
-                    arrayShift={[Function]}
-                    arraySplice={[Function]}
-                    arraySwap={[Function]}
-                    arrayUnshift={[Function]}
-                    asyncValidating={false}
-                    autofill={[Function]}
-                    blur={[Function]}
-                    change={[Function]}
-                    clearAsyncError={[Function]}
-                    clearFields={[Function]}
-                    clearSubmit={[Function]}
-                    clearSubmitErrors={[Function]}
-                    destroy={[Function]}
+                  <Connect(Form(OpenMRSForm))
                     destroyOnUnmount={true}
-                    dirty={false}
                     dispatch={[Function]}
                     enableReinitialize={false}
                     encounterType={
@@ -225,7 +294,6 @@ exports[`Component: NutritionForm renders properly 1`] = `
                         "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
                       }
                     }
-                    focus={[Function]}
                     forceUnregisterOnUnmount={false}
                     form="openmrs-form"
                     formSubmittedActionCreator={
@@ -235,9 +303,6 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       ]
                     }
                     getFormState={[Function]}
-                    initialize={[Function]}
-                    initialized={false}
-                    invalid={false}
                     keepDirtyOnReinitialize={false}
                     patient={
                       Object {
@@ -248,47 +313,21 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       }
                     }
                     persistentSubmitErrors={false}
-                    pristine={true}
                     pure={true}
-                    registerField={[Function]}
-                    reset={[Function]}
-                    resetSection={[Function]}
-                    setSubmitFailed={[Function]}
-                    setSubmitSucceeded={[Function]}
                     shouldAsyncValidate={[Function]}
                     shouldError={[Function]}
                     shouldValidate={[Function]}
                     shouldWarn={[Function]}
-                    startAsyncValidation={[Function]}
-                    startSubmit={[Function]}
-                    stopAsyncValidation={[Function]}
-                    stopSubmit={[Function]}
-                    submit={[Function]}
-                    submitFailed={false}
-                    submitSucceeded={false}
-                    submitting={false}
-                    syncErrors={Object {}}
-                    syncWarnings={Object {}}
-                    touch={[Function]}
                     touchOnBlur={true}
                     touchOnChange={false}
-                    unregisterField={[Function]}
-                    untouch={[Function]}
-                    updateSyncErrors={[Function]}
-                    updateSyncWarnings={[Function]}
                     updateUnregisteredFields={false}
-                    valid={true}
-                    validExceptSubmit={true}
-                    values={Object {}}
                     visit={
                       Object {
-                        "uuid": Object {
-                          "uuid": "def",
-                        },
+                        "uuid": "def",
                       }
                     }
                   >
-                    <OpenMRSForm
+                    <Form(OpenMRSForm)
                       anyTouched={false}
                       array={
                         Object {
@@ -304,7 +343,16 @@ exports[`Component: NutritionForm renders properly 1`] = `
                           "unshift": [Function],
                         }
                       }
-                      asyncValidate={[Function]}
+                      arrayInsert={[Function]}
+                      arrayMove={[Function]}
+                      arrayPop={[Function]}
+                      arrayPush={[Function]}
+                      arrayRemove={[Function]}
+                      arrayRemoveAll={[Function]}
+                      arrayShift={[Function]}
+                      arraySplice={[Function]}
+                      arraySwap={[Function]}
+                      arrayUnshift={[Function]}
                       asyncValidating={false}
                       autofill={[Function]}
                       blur={[Function]}
@@ -314,13 +362,17 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       clearSubmit={[Function]}
                       clearSubmitErrors={[Function]}
                       destroy={[Function]}
+                      destroyOnUnmount={true}
                       dirty={false}
                       dispatch={[Function]}
+                      enableReinitialize={false}
                       encounterType={
                         Object {
                           "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
                         }
                       }
+                      focus={[Function]}
+                      forceUnregisterOnUnmount={false}
                       form="openmrs-form"
                       formSubmittedActionCreator={
                         Array [
@@ -328,10 +380,11 @@ exports[`Component: NutritionForm renders properly 1`] = `
                           [Function],
                         ]
                       }
-                      handleSubmit={[Function]}
+                      getFormState={[Function]}
                       initialize={[Function]}
                       initialized={false}
                       invalid={false}
+                      keepDirtyOnReinitialize={false}
                       patient={
                         Object {
                           "uuid": "abc",
@@ -340,277 +393,183 @@ exports[`Component: NutritionForm renders properly 1`] = `
                           },
                         }
                       }
+                      persistentSubmitErrors={false}
                       pristine={true}
                       pure={true}
+                      registerField={[Function]}
                       reset={[Function]}
                       resetSection={[Function]}
+                      setSubmitFailed={[Function]}
+                      setSubmitSucceeded={[Function]}
+                      shouldAsyncValidate={[Function]}
+                      shouldError={[Function]}
+                      shouldValidate={[Function]}
+                      shouldWarn={[Function]}
+                      startAsyncValidation={[Function]}
+                      startSubmit={[Function]}
+                      stopAsyncValidation={[Function]}
+                      stopSubmit={[Function]}
                       submit={[Function]}
                       submitFailed={false}
                       submitSucceeded={false}
                       submitting={false}
+                      syncErrors={Object {}}
+                      syncWarnings={Object {}}
                       touch={[Function]}
+                      touchOnBlur={true}
+                      touchOnChange={false}
+                      unregisterField={[Function]}
                       untouch={[Function]}
+                      updateSyncErrors={[Function]}
+                      updateSyncWarnings={[Function]}
+                      updateUnregisteredFields={false}
                       valid={true}
+                      validExceptSubmit={true}
+                      values={Object {}}
                       visit={
                         Object {
-                          "uuid": Object {
-                            "uuid": "def",
-                          },
+                          "uuid": "def",
                         }
                       }
                     >
-                      <Form
-                        bsClass="form"
-                        componentClass="form"
-                        horizontal={true}
-                        inline={false}
-                        onSubmit={[Function]}
+                      <OpenMRSForm
+                        anyTouched={false}
+                        array={
+                          Object {
+                            "insert": [Function],
+                            "move": [Function],
+                            "pop": [Function],
+                            "push": [Function],
+                            "remove": [Function],
+                            "removeAll": [Function],
+                            "shift": [Function],
+                            "splice": [Function],
+                            "swap": [Function],
+                            "unshift": [Function],
+                          }
+                        }
+                        asyncValidate={[Function]}
+                        asyncValidating={false}
+                        autofill={[Function]}
+                        blur={[Function]}
+                        change={[Function]}
+                        clearAsyncError={[Function]}
+                        clearFields={[Function]}
+                        clearSubmit={[Function]}
+                        clearSubmitErrors={[Function]}
+                        destroy={[Function]}
+                        dirty={false}
+                        dispatch={[Function]}
+                        encounterType={
+                          Object {
+                            "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
+                          }
+                        }
+                        form="openmrs-form"
+                        formSubmittedActionCreator={
+                          Array [
+                            [Function],
+                            [Function],
+                          ]
+                        }
+                        handleSubmit={[Function]}
+                        initialize={[Function]}
+                        initialized={false}
+                        invalid={false}
+                        patient={
+                          Object {
+                            "uuid": "abc",
+                            "visit": Object {
+                              "uuid": "def",
+                            },
+                          }
+                        }
+                        pristine={true}
+                        pure={true}
+                        reset={[Function]}
+                        resetSection={[Function]}
+                        submit={[Function]}
+                        submitFailed={false}
+                        submitSucceeded={false}
+                        submitting={false}
+                        touch={[Function]}
+                        untouch={[Function]}
+                        valid={true}
+                        visit={
+                          Object {
+                            "uuid": "def",
+                          }
+                        }
                       >
-                        <form
-                          className="form-horizontal"
+                        <Form
+                          bsClass="form"
+                          componentClass="form"
+                          horizontal={true}
+                          inline={false}
                           onSubmit={[Function]}
                         >
-                          <Grid
-                            bsClass="container"
-                            componentClass="div"
-                            fluid={false}
+                          <form
+                            className="form-horizontal"
+                            onSubmit={[Function]}
                           >
-                            <div
-                              className="container"
+                            <Grid
+                              bsClass="container"
+                              componentClass="div"
+                              fluid={false}
                             >
-                              <Row
-                                bsClass="row"
-                                componentClass="div"
+                              <div
+                                className="container"
                               >
-                                <div
-                                  className="row"
+                                <Row
+                                  bsClass="row"
+                                  componentClass="div"
                                 >
-                                  <FormGroup
-                                    bsClass="form-group"
-                                    controlId="formWeight"
+                                  <div
+                                    className="row"
                                   >
-                                    <div
-                                      className="form-group"
+                                    <FormGroup
+                                      bsClass="form-group"
+                                      controlId="formWeight"
                                     >
-                                      <Col
-                                        bsClass="col"
-                                        componentClass={[Function]}
-                                        sm={2}
+                                      <div
+                                        className="form-group"
                                       >
-                                        <ControlLabel
-                                          bsClass="control-label"
-                                          className="col-sm-2"
-                                          srOnly={false}
+                                        <Col
+                                          bsClass="col"
+                                          componentClass={[Function]}
+                                          sm={2}
                                         >
-                                          <label
-                                            className="col-sm-2 control-label"
-                                            htmlFor="formWeight"
+                                          <ControlLabel
+                                            bsClass="control-label"
+                                            className="col-sm-2"
+                                            srOnly={false}
                                           >
-                                            Weight
-                                          </label>
-                                        </ControlLabel>
-                                      </Col>
-                                      <Col
-                                        bsClass="col"
-                                        componentClass="div"
-                                        sm={4}
-                                      >
-                                        <div
-                                          className="col-sm-4"
-                                        >
-                                          <Obs
-                                            concept="3ce93b62-26fe-102b-80cb-0017a47871b2"
-                                            path="Weight"
-                                          >
-                                            <Field
-                                              component={[Function]}
-                                              name="obs|path=Weight|concept=3ce93b62-26fe-102b-80cb-0017a47871b2"
-                                              type="number"
+                                            <label
+                                              className="col-sm-2 control-label"
+                                              htmlFor="formWeight"
                                             >
-                                              <Connect(ConnectedField)
-                                                _reduxForm={
-                                                  Object {
-                                                    "anyTouched": false,
-                                                    "array": Object {
-                                                      "insert": [Function],
-                                                      "move": [Function],
-                                                      "pop": [Function],
-                                                      "push": [Function],
-                                                      "remove": [Function],
-                                                      "removeAll": [Function],
-                                                      "shift": [Function],
-                                                      "splice": [Function],
-                                                      "swap": [Function],
-                                                      "unshift": [Function],
-                                                    },
-                                                    "arrayInsert": [Function],
-                                                    "arrayMove": [Function],
-                                                    "arrayPop": [Function],
-                                                    "arrayPush": [Function],
-                                                    "arrayRemove": [Function],
-                                                    "arrayRemoveAll": [Function],
-                                                    "arrayShift": [Function],
-                                                    "arraySplice": [Function],
-                                                    "arraySwap": [Function],
-                                                    "arrayUnshift": [Function],
-                                                    "asyncErrors": undefined,
-                                                    "asyncValidate": [Function],
-                                                    "asyncValidating": false,
-                                                    "autofill": [Function],
-                                                    "blur": [Function],
-                                                    "change": [Function],
-                                                    "children": <Grid
-                                                      bsClass="container"
-                                                      componentClass="div"
-                                                      fluid={false}
-                                                  >
-                                                      <Row
-                                                          bsClass="row"
-                                                          componentClass="div"
-                                                      >
-                                                          <FormGroup
-                                                              bsClass="form-group"
-                                                              controlId="formWeight"
-                                                          >
-                                                              <Col
-                                                                  bsClass="col"
-                                                                  componentClass={[Function]}
-                                                                  sm={2}
-                                                              >
-                                                                  Weight
-                                                              </Col>
-                                                              <Col
-                                                                  bsClass="col"
-                                                                  componentClass="div"
-                                                                  sm={4}
-                                                              >
-                                                                  <Obs
-                                                                      concept="3ce93b62-26fe-102b-80cb-0017a47871b2"
-                                                                      path="Weight"
-                                                                  />
-                                                              </Col>
-                                                          </FormGroup>
-                                                      </Row>
-                                                      <Row
-                                                          bsClass="row"
-                                                          componentClass="div"
-                                                      >
-                                                          <FormGroup
-                                                              bsClass="form-group"
-                                                              controlId="formHeight"
-                                                          >
-                                                              <Col
-                                                                  bsClass="col"
-                                                                  componentClass={[Function]}
-                                                                  sm={2}
-                                                              >
-                                                                  Height
-                                                              </Col>
-                                                              <Col
-                                                                  bsClass="col"
-                                                                  componentClass="div"
-                                                                  sm={4}
-                                                              >
-                                                                  <Obs
-                                                                      concept="3ce93cf2-26fe-102b-80cb-0017a47871b2"
-                                                                      path="Height"
-                                                                  />
-                                                              </Col>
-                                                          </FormGroup>
-                                                      </Row>
-                                                      <Row
-                                                          bsClass="row"
-                                                          componentClass="div"
-                                                      >
-                                                          <Submit />
-                                                      </Row>
-                                                  </Grid>,
-                                                    "clearAsyncError": [Function],
-                                                    "clearFields": [Function],
-                                                    "clearSubmit": [Function],
-                                                    "clearSubmitErrors": [Function],
-                                                    "destroy": [Function],
-                                                    "destroyOnUnmount": true,
-                                                    "dirty": false,
-                                                    "dispatch": [Function],
-                                                    "enableReinitialize": false,
-                                                    "encounterType": Object {
-                                                      "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
-                                                    },
-                                                    "error": undefined,
-                                                    "focus": [Function],
-                                                    "forceUnregisterOnUnmount": false,
-                                                    "form": "openmrs-form",
-                                                    "formSubmittedActionCreator": Array [
-                                                      [Function],
-                                                      [Function],
-                                                    ],
-                                                    "getFormState": [Function],
-                                                    "getValues": [Function],
-                                                    "initialValues": undefined,
-                                                    "initialize": [Function],
-                                                    "initialized": false,
-                                                    "invalid": false,
-                                                    "keepDirtyOnReinitialize": false,
-                                                    "patient": Object {
-                                                      "uuid": "abc",
-                                                      "visit": Object {
-                                                        "uuid": "def",
-                                                      },
-                                                    },
-                                                    "persistentSubmitErrors": false,
-                                                    "pristine": true,
-                                                    "pure": true,
-                                                    "register": [Function],
-                                                    "registerField": [Function],
-                                                    "registerInnerOnSubmit": [Function],
-                                                    "registeredFields": undefined,
-                                                    "reset": [Function],
-                                                    "resetSection": [Function],
-                                                    "sectionPrefix": undefined,
-                                                    "setSubmitFailed": [Function],
-                                                    "setSubmitSucceeded": [Function],
-                                                    "shouldAsyncValidate": [Function],
-                                                    "shouldError": [Function],
-                                                    "shouldValidate": [Function],
-                                                    "shouldWarn": [Function],
-                                                    "startAsyncValidation": [Function],
-                                                    "startSubmit": [Function],
-                                                    "stopAsyncValidation": [Function],
-                                                    "stopSubmit": [Function],
-                                                    "submit": [Function],
-                                                    "submitFailed": false,
-                                                    "submitSucceeded": false,
-                                                    "submitting": false,
-                                                    "syncErrors": Object {},
-                                                    "syncWarnings": Object {},
-                                                    "touch": [Function],
-                                                    "touchOnBlur": true,
-                                                    "touchOnChange": false,
-                                                    "triggerSubmit": undefined,
-                                                    "unregister": [Function],
-                                                    "unregisterField": [Function],
-                                                    "untouch": [Function],
-                                                    "updateSyncErrors": [Function],
-                                                    "updateSyncWarnings": [Function],
-                                                    "updateUnregisteredFields": false,
-                                                    "valid": true,
-                                                    "validExceptSubmit": true,
-                                                    "values": Object {},
-                                                    "visit": Object {
-                                                      "uuid": Object {
-                                                        "uuid": "def",
-                                                      },
-                                                    },
-                                                    "warning": undefined,
-                                                  }
-                                                }
+                                              Weight
+                                            </label>
+                                          </ControlLabel>
+                                        </Col>
+                                        <Col
+                                          bsClass="col"
+                                          componentClass="div"
+                                          sm={4}
+                                        >
+                                          <div
+                                            className="col-sm-4"
+                                          >
+                                            <Obs
+                                              concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                                              path="Weight"
+                                            >
+                                              <Field
                                                 component={[Function]}
-                                                name="obs|path=Weight|concept=3ce93b62-26fe-102b-80cb-0017a47871b2"
-                                                normalize={[Function]}
+                                                name="obs|path=Weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
                                                 type="number"
                                               >
-                                                <ConnectedField
+                                                <Connect(ConnectedField)
                                                   _reduxForm={
                                                     Object {
                                                       "anyTouched": false,
@@ -668,7 +627,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                     sm={4}
                                                                 >
                                                                     <Obs
-                                                                        concept="3ce93b62-26fe-102b-80cb-0017a47871b2"
+                                                                        concept="6569c44a-977f-11e1-8993-905e29aff6c1"
                                                                         path="Weight"
                                                                     />
                                                                 </Col>
@@ -695,7 +654,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                     sm={4}
                                                                 >
                                                                     <Obs
-                                                                        concept="3ce93cf2-26fe-102b-80cb-0017a47871b2"
+                                                                        concept="6569c562-977f-11e1-8993-905e29aff6c1"
                                                                         path="Height"
                                                                     />
                                                                 </Col>
@@ -781,315 +740,311 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "validExceptSubmit": true,
                                                       "values": Object {},
                                                       "visit": Object {
-                                                        "uuid": Object {
-                                                          "uuid": "def",
-                                                        },
+                                                        "uuid": "def",
                                                       },
                                                       "warning": undefined,
                                                     }
                                                   }
-                                                  asyncValidating={false}
                                                   component={[Function]}
-                                                  dirty={false}
-                                                  dispatch={[Function]}
-                                                  name="obs|path=Weight|concept=3ce93b62-26fe-102b-80cb-0017a47871b2"
+                                                  name="obs|path=Weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
                                                   normalize={[Function]}
-                                                  pristine={true}
                                                   type="number"
                                                 >
-                                                  <FieldInput
-                                                    input={
+                                                  <ConnectedField
+                                                    _reduxForm={
                                                       Object {
-                                                        "name": "obs|path=Weight|concept=3ce93b62-26fe-102b-80cb-0017a47871b2",
-                                                        "onBlur": [Function],
-                                                        "onChange": [Function],
-                                                        "onDragStart": [Function],
-                                                        "onDrop": [Function],
-                                                        "onFocus": [Function],
-                                                        "value": "",
-                                                      }
-                                                    }
-                                                    meta={
-                                                      Object {
-                                                        "active": false,
+                                                        "anyTouched": false,
+                                                        "array": Object {
+                                                          "insert": [Function],
+                                                          "move": [Function],
+                                                          "pop": [Function],
+                                                          "push": [Function],
+                                                          "remove": [Function],
+                                                          "removeAll": [Function],
+                                                          "shift": [Function],
+                                                          "splice": [Function],
+                                                          "swap": [Function],
+                                                          "unshift": [Function],
+                                                        },
+                                                        "arrayInsert": [Function],
+                                                        "arrayMove": [Function],
+                                                        "arrayPop": [Function],
+                                                        "arrayPush": [Function],
+                                                        "arrayRemove": [Function],
+                                                        "arrayRemoveAll": [Function],
+                                                        "arrayShift": [Function],
+                                                        "arraySplice": [Function],
+                                                        "arraySwap": [Function],
+                                                        "arrayUnshift": [Function],
+                                                        "asyncErrors": undefined,
+                                                        "asyncValidate": [Function],
                                                         "asyncValidating": false,
-                                                        "autofilled": false,
+                                                        "autofill": [Function],
+                                                        "blur": [Function],
+                                                        "change": [Function],
+                                                        "children": <Grid
+                                                          bsClass="container"
+                                                          componentClass="div"
+                                                          fluid={false}
+                                                      >
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <FormGroup
+                                                                  bsClass="form-group"
+                                                                  controlId="formWeight"
+                                                              >
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                  >
+                                                                      Weight
+                                                                  </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={4}
+                                                                  >
+                                                                      <Obs
+                                                                          concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                                          path="Weight"
+                                                                      />
+                                                                  </Col>
+                                                              </FormGroup>
+                                                          </Row>
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <FormGroup
+                                                                  bsClass="form-group"
+                                                                  controlId="formHeight"
+                                                              >
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                  >
+                                                                      Height
+                                                                  </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={4}
+                                                                  >
+                                                                      <Obs
+                                                                          concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                                                                          path="Height"
+                                                                      />
+                                                                  </Col>
+                                                              </FormGroup>
+                                                          </Row>
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <Submit />
+                                                          </Row>
+                                                      </Grid>,
+                                                        "clearAsyncError": [Function],
+                                                        "clearFields": [Function],
+                                                        "clearSubmit": [Function],
+                                                        "clearSubmitErrors": [Function],
+                                                        "destroy": [Function],
+                                                        "destroyOnUnmount": true,
                                                         "dirty": false,
                                                         "dispatch": [Function],
+                                                        "enableReinitialize": false,
+                                                        "encounterType": Object {
+                                                          "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
+                                                        },
                                                         "error": undefined,
+                                                        "focus": [Function],
+                                                        "forceUnregisterOnUnmount": false,
                                                         "form": "openmrs-form",
-                                                        "initial": undefined,
+                                                        "formSubmittedActionCreator": Array [
+                                                          [Function],
+                                                          [Function],
+                                                        ],
+                                                        "getFormState": [Function],
+                                                        "getValues": [Function],
+                                                        "initialValues": undefined,
+                                                        "initialize": [Function],
+                                                        "initialized": false,
                                                         "invalid": false,
+                                                        "keepDirtyOnReinitialize": false,
+                                                        "patient": Object {
+                                                          "uuid": "abc",
+                                                          "visit": Object {
+                                                            "uuid": "def",
+                                                          },
+                                                        },
+                                                        "persistentSubmitErrors": false,
                                                         "pristine": true,
+                                                        "pure": true,
+                                                        "register": [Function],
+                                                        "registerField": [Function],
+                                                        "registerInnerOnSubmit": [Function],
+                                                        "registeredFields": undefined,
+                                                        "reset": [Function],
+                                                        "resetSection": [Function],
+                                                        "sectionPrefix": undefined,
+                                                        "setSubmitFailed": [Function],
+                                                        "setSubmitSucceeded": [Function],
+                                                        "shouldAsyncValidate": [Function],
+                                                        "shouldError": [Function],
+                                                        "shouldValidate": [Function],
+                                                        "shouldWarn": [Function],
+                                                        "startAsyncValidation": [Function],
+                                                        "startSubmit": [Function],
+                                                        "stopAsyncValidation": [Function],
+                                                        "stopSubmit": [Function],
+                                                        "submit": [Function],
                                                         "submitFailed": false,
+                                                        "submitSucceeded": false,
                                                         "submitting": false,
-                                                        "touched": false,
+                                                        "syncErrors": Object {},
+                                                        "syncWarnings": Object {},
+                                                        "touch": [Function],
+                                                        "touchOnBlur": true,
+                                                        "touchOnChange": false,
+                                                        "triggerSubmit": undefined,
+                                                        "unregister": [Function],
+                                                        "unregisterField": [Function],
+                                                        "untouch": [Function],
+                                                        "updateSyncErrors": [Function],
+                                                        "updateSyncWarnings": [Function],
+                                                        "updateUnregisteredFields": false,
                                                         "valid": true,
-                                                        "visited": false,
+                                                        "validExceptSubmit": true,
+                                                        "values": Object {},
+                                                        "visit": Object {
+                                                          "uuid": "def",
+                                                        },
                                                         "warning": undefined,
                                                       }
                                                     }
+                                                    asyncValidating={false}
+                                                    component={[Function]}
+                                                    dirty={false}
+                                                    dispatch={[Function]}
+                                                    name="obs|path=Weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                    normalize={[Function]}
+                                                    pristine={true}
                                                     type="number"
                                                   >
-                                                    <FormControl
-                                                      bsClass="form-control"
-                                                      componentClass="input"
-                                                      onChange={[Function]}
+                                                    <FieldInput
+                                                      input={
+                                                        Object {
+                                                          "name": "obs|path=Weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1",
+                                                          "onBlur": [Function],
+                                                          "onChange": [Function],
+                                                          "onDragStart": [Function],
+                                                          "onDrop": [Function],
+                                                          "onFocus": [Function],
+                                                          "value": "",
+                                                        }
+                                                      }
+                                                      meta={
+                                                        Object {
+                                                          "active": false,
+                                                          "asyncValidating": false,
+                                                          "autofilled": false,
+                                                          "dirty": false,
+                                                          "dispatch": [Function],
+                                                          "error": undefined,
+                                                          "form": "openmrs-form",
+                                                          "initial": undefined,
+                                                          "invalid": false,
+                                                          "pristine": true,
+                                                          "submitFailed": false,
+                                                          "submitting": false,
+                                                          "touched": false,
+                                                          "valid": true,
+                                                          "visited": false,
+                                                          "warning": undefined,
+                                                        }
+                                                      }
                                                       type="number"
-                                                      value=""
                                                     >
-                                                      <input
-                                                        className="form-control"
-                                                        id="formWeight"
+                                                      <FormControl
+                                                        bsClass="form-control"
+                                                        componentClass="input"
                                                         onChange={[Function]}
                                                         type="number"
                                                         value=""
-                                                      />
-                                                    </FormControl>
-                                                  </FieldInput>
-                                                </ConnectedField>
-                                              </Connect(ConnectedField)>
-                                            </Field>
-                                          </Obs>
-                                        </div>
-                                      </Col>
-                                    </div>
-                                  </FormGroup>
-                                </div>
-                              </Row>
-                              <Row
-                                bsClass="row"
-                                componentClass="div"
-                              >
-                                <div
-                                  className="row"
+                                                      >
+                                                        <input
+                                                          className="form-control"
+                                                          id="formWeight"
+                                                          onChange={[Function]}
+                                                          type="number"
+                                                          value=""
+                                                        />
+                                                      </FormControl>
+                                                    </FieldInput>
+                                                  </ConnectedField>
+                                                </Connect(ConnectedField)>
+                                              </Field>
+                                            </Obs>
+                                          </div>
+                                        </Col>
+                                      </div>
+                                    </FormGroup>
+                                  </div>
+                                </Row>
+                                <Row
+                                  bsClass="row"
+                                  componentClass="div"
                                 >
-                                  <FormGroup
-                                    bsClass="form-group"
-                                    controlId="formHeight"
+                                  <div
+                                    className="row"
                                   >
-                                    <div
-                                      className="form-group"
+                                    <FormGroup
+                                      bsClass="form-group"
+                                      controlId="formHeight"
                                     >
-                                      <Col
-                                        bsClass="col"
-                                        componentClass={[Function]}
-                                        sm={2}
+                                      <div
+                                        className="form-group"
                                       >
-                                        <ControlLabel
-                                          bsClass="control-label"
-                                          className="col-sm-2"
-                                          srOnly={false}
+                                        <Col
+                                          bsClass="col"
+                                          componentClass={[Function]}
+                                          sm={2}
                                         >
-                                          <label
-                                            className="col-sm-2 control-label"
-                                            htmlFor="formHeight"
+                                          <ControlLabel
+                                            bsClass="control-label"
+                                            className="col-sm-2"
+                                            srOnly={false}
                                           >
-                                            Height
-                                          </label>
-                                        </ControlLabel>
-                                      </Col>
-                                      <Col
-                                        bsClass="col"
-                                        componentClass="div"
-                                        sm={4}
-                                      >
-                                        <div
-                                          className="col-sm-4"
-                                        >
-                                          <Obs
-                                            concept="3ce93cf2-26fe-102b-80cb-0017a47871b2"
-                                            path="Height"
-                                          >
-                                            <Field
-                                              component={[Function]}
-                                              name="obs|path=Height|concept=3ce93cf2-26fe-102b-80cb-0017a47871b2"
-                                              type="number"
+                                            <label
+                                              className="col-sm-2 control-label"
+                                              htmlFor="formHeight"
                                             >
-                                              <Connect(ConnectedField)
-                                                _reduxForm={
-                                                  Object {
-                                                    "anyTouched": false,
-                                                    "array": Object {
-                                                      "insert": [Function],
-                                                      "move": [Function],
-                                                      "pop": [Function],
-                                                      "push": [Function],
-                                                      "remove": [Function],
-                                                      "removeAll": [Function],
-                                                      "shift": [Function],
-                                                      "splice": [Function],
-                                                      "swap": [Function],
-                                                      "unshift": [Function],
-                                                    },
-                                                    "arrayInsert": [Function],
-                                                    "arrayMove": [Function],
-                                                    "arrayPop": [Function],
-                                                    "arrayPush": [Function],
-                                                    "arrayRemove": [Function],
-                                                    "arrayRemoveAll": [Function],
-                                                    "arrayShift": [Function],
-                                                    "arraySplice": [Function],
-                                                    "arraySwap": [Function],
-                                                    "arrayUnshift": [Function],
-                                                    "asyncErrors": undefined,
-                                                    "asyncValidate": [Function],
-                                                    "asyncValidating": false,
-                                                    "autofill": [Function],
-                                                    "blur": [Function],
-                                                    "change": [Function],
-                                                    "children": <Grid
-                                                      bsClass="container"
-                                                      componentClass="div"
-                                                      fluid={false}
-                                                  >
-                                                      <Row
-                                                          bsClass="row"
-                                                          componentClass="div"
-                                                      >
-                                                          <FormGroup
-                                                              bsClass="form-group"
-                                                              controlId="formWeight"
-                                                          >
-                                                              <Col
-                                                                  bsClass="col"
-                                                                  componentClass={[Function]}
-                                                                  sm={2}
-                                                              >
-                                                                  Weight
-                                                              </Col>
-                                                              <Col
-                                                                  bsClass="col"
-                                                                  componentClass="div"
-                                                                  sm={4}
-                                                              >
-                                                                  <Obs
-                                                                      concept="3ce93b62-26fe-102b-80cb-0017a47871b2"
-                                                                      path="Weight"
-                                                                  />
-                                                              </Col>
-                                                          </FormGroup>
-                                                      </Row>
-                                                      <Row
-                                                          bsClass="row"
-                                                          componentClass="div"
-                                                      >
-                                                          <FormGroup
-                                                              bsClass="form-group"
-                                                              controlId="formHeight"
-                                                          >
-                                                              <Col
-                                                                  bsClass="col"
-                                                                  componentClass={[Function]}
-                                                                  sm={2}
-                                                              >
-                                                                  Height
-                                                              </Col>
-                                                              <Col
-                                                                  bsClass="col"
-                                                                  componentClass="div"
-                                                                  sm={4}
-                                                              >
-                                                                  <Obs
-                                                                      concept="3ce93cf2-26fe-102b-80cb-0017a47871b2"
-                                                                      path="Height"
-                                                                  />
-                                                              </Col>
-                                                          </FormGroup>
-                                                      </Row>
-                                                      <Row
-                                                          bsClass="row"
-                                                          componentClass="div"
-                                                      >
-                                                          <Submit />
-                                                      </Row>
-                                                  </Grid>,
-                                                    "clearAsyncError": [Function],
-                                                    "clearFields": [Function],
-                                                    "clearSubmit": [Function],
-                                                    "clearSubmitErrors": [Function],
-                                                    "destroy": [Function],
-                                                    "destroyOnUnmount": true,
-                                                    "dirty": false,
-                                                    "dispatch": [Function],
-                                                    "enableReinitialize": false,
-                                                    "encounterType": Object {
-                                                      "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
-                                                    },
-                                                    "error": undefined,
-                                                    "focus": [Function],
-                                                    "forceUnregisterOnUnmount": false,
-                                                    "form": "openmrs-form",
-                                                    "formSubmittedActionCreator": Array [
-                                                      [Function],
-                                                      [Function],
-                                                    ],
-                                                    "getFormState": [Function],
-                                                    "getValues": [Function],
-                                                    "initialValues": undefined,
-                                                    "initialize": [Function],
-                                                    "initialized": false,
-                                                    "invalid": false,
-                                                    "keepDirtyOnReinitialize": false,
-                                                    "patient": Object {
-                                                      "uuid": "abc",
-                                                      "visit": Object {
-                                                        "uuid": "def",
-                                                      },
-                                                    },
-                                                    "persistentSubmitErrors": false,
-                                                    "pristine": true,
-                                                    "pure": true,
-                                                    "register": [Function],
-                                                    "registerField": [Function],
-                                                    "registerInnerOnSubmit": [Function],
-                                                    "registeredFields": undefined,
-                                                    "reset": [Function],
-                                                    "resetSection": [Function],
-                                                    "sectionPrefix": undefined,
-                                                    "setSubmitFailed": [Function],
-                                                    "setSubmitSucceeded": [Function],
-                                                    "shouldAsyncValidate": [Function],
-                                                    "shouldError": [Function],
-                                                    "shouldValidate": [Function],
-                                                    "shouldWarn": [Function],
-                                                    "startAsyncValidation": [Function],
-                                                    "startSubmit": [Function],
-                                                    "stopAsyncValidation": [Function],
-                                                    "stopSubmit": [Function],
-                                                    "submit": [Function],
-                                                    "submitFailed": false,
-                                                    "submitSucceeded": false,
-                                                    "submitting": false,
-                                                    "syncErrors": Object {},
-                                                    "syncWarnings": Object {},
-                                                    "touch": [Function],
-                                                    "touchOnBlur": true,
-                                                    "touchOnChange": false,
-                                                    "triggerSubmit": undefined,
-                                                    "unregister": [Function],
-                                                    "unregisterField": [Function],
-                                                    "untouch": [Function],
-                                                    "updateSyncErrors": [Function],
-                                                    "updateSyncWarnings": [Function],
-                                                    "updateUnregisteredFields": false,
-                                                    "valid": true,
-                                                    "validExceptSubmit": true,
-                                                    "values": Object {},
-                                                    "visit": Object {
-                                                      "uuid": Object {
-                                                        "uuid": "def",
-                                                      },
-                                                    },
-                                                    "warning": undefined,
-                                                  }
-                                                }
+                                              Height
+                                            </label>
+                                          </ControlLabel>
+                                        </Col>
+                                        <Col
+                                          bsClass="col"
+                                          componentClass="div"
+                                          sm={4}
+                                        >
+                                          <div
+                                            className="col-sm-4"
+                                          >
+                                            <Obs
+                                              concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                                              path="Height"
+                                            >
+                                              <Field
                                                 component={[Function]}
-                                                name="obs|path=Height|concept=3ce93cf2-26fe-102b-80cb-0017a47871b2"
-                                                normalize={[Function]}
+                                                name="obs|path=Height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
                                                 type="number"
                                               >
-                                                <ConnectedField
+                                                <Connect(ConnectedField)
                                                   _reduxForm={
                                                     Object {
                                                       "anyTouched": false,
@@ -1147,7 +1102,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                     sm={4}
                                                                 >
                                                                     <Obs
-                                                                        concept="3ce93b62-26fe-102b-80cb-0017a47871b2"
+                                                                        concept="6569c44a-977f-11e1-8993-905e29aff6c1"
                                                                         path="Weight"
                                                                     />
                                                                 </Col>
@@ -1174,7 +1129,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                     sm={4}
                                                                 >
                                                                     <Obs
-                                                                        concept="3ce93cf2-26fe-102b-80cb-0017a47871b2"
+                                                                        concept="6569c562-977f-11e1-8993-905e29aff6c1"
                                                                         path="Height"
                                                                     />
                                                                 </Col>
@@ -1260,123 +1215,303 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "validExceptSubmit": true,
                                                       "values": Object {},
                                                       "visit": Object {
-                                                        "uuid": Object {
-                                                          "uuid": "def",
-                                                        },
+                                                        "uuid": "def",
                                                       },
                                                       "warning": undefined,
                                                     }
                                                   }
-                                                  asyncValidating={false}
                                                   component={[Function]}
-                                                  dirty={false}
-                                                  dispatch={[Function]}
-                                                  name="obs|path=Height|concept=3ce93cf2-26fe-102b-80cb-0017a47871b2"
+                                                  name="obs|path=Height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
                                                   normalize={[Function]}
-                                                  pristine={true}
                                                   type="number"
                                                 >
-                                                  <FieldInput
-                                                    input={
+                                                  <ConnectedField
+                                                    _reduxForm={
                                                       Object {
-                                                        "name": "obs|path=Height|concept=3ce93cf2-26fe-102b-80cb-0017a47871b2",
-                                                        "onBlur": [Function],
-                                                        "onChange": [Function],
-                                                        "onDragStart": [Function],
-                                                        "onDrop": [Function],
-                                                        "onFocus": [Function],
-                                                        "value": "",
-                                                      }
-                                                    }
-                                                    meta={
-                                                      Object {
-                                                        "active": false,
+                                                        "anyTouched": false,
+                                                        "array": Object {
+                                                          "insert": [Function],
+                                                          "move": [Function],
+                                                          "pop": [Function],
+                                                          "push": [Function],
+                                                          "remove": [Function],
+                                                          "removeAll": [Function],
+                                                          "shift": [Function],
+                                                          "splice": [Function],
+                                                          "swap": [Function],
+                                                          "unshift": [Function],
+                                                        },
+                                                        "arrayInsert": [Function],
+                                                        "arrayMove": [Function],
+                                                        "arrayPop": [Function],
+                                                        "arrayPush": [Function],
+                                                        "arrayRemove": [Function],
+                                                        "arrayRemoveAll": [Function],
+                                                        "arrayShift": [Function],
+                                                        "arraySplice": [Function],
+                                                        "arraySwap": [Function],
+                                                        "arrayUnshift": [Function],
+                                                        "asyncErrors": undefined,
+                                                        "asyncValidate": [Function],
                                                         "asyncValidating": false,
-                                                        "autofilled": false,
+                                                        "autofill": [Function],
+                                                        "blur": [Function],
+                                                        "change": [Function],
+                                                        "children": <Grid
+                                                          bsClass="container"
+                                                          componentClass="div"
+                                                          fluid={false}
+                                                      >
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <FormGroup
+                                                                  bsClass="form-group"
+                                                                  controlId="formWeight"
+                                                              >
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                  >
+                                                                      Weight
+                                                                  </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={4}
+                                                                  >
+                                                                      <Obs
+                                                                          concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                                          path="Weight"
+                                                                      />
+                                                                  </Col>
+                                                              </FormGroup>
+                                                          </Row>
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <FormGroup
+                                                                  bsClass="form-group"
+                                                                  controlId="formHeight"
+                                                              >
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                  >
+                                                                      Height
+                                                                  </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={4}
+                                                                  >
+                                                                      <Obs
+                                                                          concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                                                                          path="Height"
+                                                                      />
+                                                                  </Col>
+                                                              </FormGroup>
+                                                          </Row>
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <Submit />
+                                                          </Row>
+                                                      </Grid>,
+                                                        "clearAsyncError": [Function],
+                                                        "clearFields": [Function],
+                                                        "clearSubmit": [Function],
+                                                        "clearSubmitErrors": [Function],
+                                                        "destroy": [Function],
+                                                        "destroyOnUnmount": true,
                                                         "dirty": false,
                                                         "dispatch": [Function],
+                                                        "enableReinitialize": false,
+                                                        "encounterType": Object {
+                                                          "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
+                                                        },
                                                         "error": undefined,
+                                                        "focus": [Function],
+                                                        "forceUnregisterOnUnmount": false,
                                                         "form": "openmrs-form",
-                                                        "initial": undefined,
+                                                        "formSubmittedActionCreator": Array [
+                                                          [Function],
+                                                          [Function],
+                                                        ],
+                                                        "getFormState": [Function],
+                                                        "getValues": [Function],
+                                                        "initialValues": undefined,
+                                                        "initialize": [Function],
+                                                        "initialized": false,
                                                         "invalid": false,
+                                                        "keepDirtyOnReinitialize": false,
+                                                        "patient": Object {
+                                                          "uuid": "abc",
+                                                          "visit": Object {
+                                                            "uuid": "def",
+                                                          },
+                                                        },
+                                                        "persistentSubmitErrors": false,
                                                         "pristine": true,
+                                                        "pure": true,
+                                                        "register": [Function],
+                                                        "registerField": [Function],
+                                                        "registerInnerOnSubmit": [Function],
+                                                        "registeredFields": undefined,
+                                                        "reset": [Function],
+                                                        "resetSection": [Function],
+                                                        "sectionPrefix": undefined,
+                                                        "setSubmitFailed": [Function],
+                                                        "setSubmitSucceeded": [Function],
+                                                        "shouldAsyncValidate": [Function],
+                                                        "shouldError": [Function],
+                                                        "shouldValidate": [Function],
+                                                        "shouldWarn": [Function],
+                                                        "startAsyncValidation": [Function],
+                                                        "startSubmit": [Function],
+                                                        "stopAsyncValidation": [Function],
+                                                        "stopSubmit": [Function],
+                                                        "submit": [Function],
                                                         "submitFailed": false,
+                                                        "submitSucceeded": false,
                                                         "submitting": false,
-                                                        "touched": false,
+                                                        "syncErrors": Object {},
+                                                        "syncWarnings": Object {},
+                                                        "touch": [Function],
+                                                        "touchOnBlur": true,
+                                                        "touchOnChange": false,
+                                                        "triggerSubmit": undefined,
+                                                        "unregister": [Function],
+                                                        "unregisterField": [Function],
+                                                        "untouch": [Function],
+                                                        "updateSyncErrors": [Function],
+                                                        "updateSyncWarnings": [Function],
+                                                        "updateUnregisteredFields": false,
                                                         "valid": true,
-                                                        "visited": false,
+                                                        "validExceptSubmit": true,
+                                                        "values": Object {},
+                                                        "visit": Object {
+                                                          "uuid": "def",
+                                                        },
                                                         "warning": undefined,
                                                       }
                                                     }
+                                                    asyncValidating={false}
+                                                    component={[Function]}
+                                                    dirty={false}
+                                                    dispatch={[Function]}
+                                                    name="obs|path=Height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
+                                                    normalize={[Function]}
+                                                    pristine={true}
                                                     type="number"
                                                   >
-                                                    <FormControl
-                                                      bsClass="form-control"
-                                                      componentClass="input"
-                                                      onChange={[Function]}
+                                                    <FieldInput
+                                                      input={
+                                                        Object {
+                                                          "name": "obs|path=Height|concept=6569c562-977f-11e1-8993-905e29aff6c1",
+                                                          "onBlur": [Function],
+                                                          "onChange": [Function],
+                                                          "onDragStart": [Function],
+                                                          "onDrop": [Function],
+                                                          "onFocus": [Function],
+                                                          "value": "",
+                                                        }
+                                                      }
+                                                      meta={
+                                                        Object {
+                                                          "active": false,
+                                                          "asyncValidating": false,
+                                                          "autofilled": false,
+                                                          "dirty": false,
+                                                          "dispatch": [Function],
+                                                          "error": undefined,
+                                                          "form": "openmrs-form",
+                                                          "initial": undefined,
+                                                          "invalid": false,
+                                                          "pristine": true,
+                                                          "submitFailed": false,
+                                                          "submitting": false,
+                                                          "touched": false,
+                                                          "valid": true,
+                                                          "visited": false,
+                                                          "warning": undefined,
+                                                        }
+                                                      }
                                                       type="number"
-                                                      value=""
                                                     >
-                                                      <input
-                                                        className="form-control"
-                                                        id="formHeight"
+                                                      <FormControl
+                                                        bsClass="form-control"
+                                                        componentClass="input"
                                                         onChange={[Function]}
                                                         type="number"
                                                         value=""
-                                                      />
-                                                    </FormControl>
-                                                  </FieldInput>
-                                                </ConnectedField>
-                                              </Connect(ConnectedField)>
-                                            </Field>
-                                          </Obs>
-                                        </div>
-                                      </Col>
-                                    </div>
-                                  </FormGroup>
-                                </div>
-                              </Row>
-                              <Row
-                                bsClass="row"
-                                componentClass="div"
-                              >
-                                <div
-                                  className="row"
+                                                      >
+                                                        <input
+                                                          className="form-control"
+                                                          id="formHeight"
+                                                          onChange={[Function]}
+                                                          type="number"
+                                                          value=""
+                                                        />
+                                                      </FormControl>
+                                                    </FieldInput>
+                                                  </ConnectedField>
+                                                </Connect(ConnectedField)>
+                                              </Field>
+                                            </Obs>
+                                          </div>
+                                        </Col>
+                                      </div>
+                                    </FormGroup>
+                                  </div>
+                                </Row>
+                                <Row
+                                  bsClass="row"
+                                  componentClass="div"
                                 >
-                                  <Submit>
-                                    <Button
-                                      active={false}
-                                      block={false}
-                                      bsClass="btn"
-                                      bsSize="large"
-                                      bsStyle="success"
-                                      disabled={false}
-                                      type="submit"
-                                    >
-                                      <button
-                                        className="btn btn-lg btn-success"
+                                  <div
+                                    className="row"
+                                  >
+                                    <Submit>
+                                      <Button
+                                        active={false}
+                                        block={false}
+                                        bsClass="btn"
+                                        bsSize="large"
+                                        bsStyle="success"
                                         disabled={false}
                                         type="submit"
                                       >
-                                        Submit
-                                      </button>
-                                    </Button>
-                                  </Submit>
-                                </div>
-                              </Row>
-                            </div>
-                          </Grid>
-                        </form>
-                      </Form>
-                    </OpenMRSForm>
-                  </Form(OpenMRSForm)>
-                </Connect(Form(OpenMRSForm))>
-              </ReduxForm>
-            </Connect(ReduxForm)>
+                                        <button
+                                          className="btn btn-lg btn-success"
+                                          disabled={false}
+                                          type="submit"
+                                        >
+                                          Submit
+                                        </button>
+                                      </Button>
+                                    </Submit>
+                                  </div>
+                                </Row>
+                              </div>
+                            </Grid>
+                          </form>
+                        </Form>
+                      </OpenMRSForm>
+                    </Form(OpenMRSForm)>
+                  </Connect(Form(OpenMRSForm))>
+                </ReduxForm>
+              </Connect(ReduxForm)>
+            </div>
           </div>
-        </div>
-      </NutritionForm>
-    </Connect(NutritionForm)>
+        </Form>
+      </Connect(Form)>
+    </NutritionForm>
   </MockRouter>
 </Provider>
 `;
