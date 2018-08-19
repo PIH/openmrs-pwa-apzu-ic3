@@ -1,20 +1,34 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm, formValueSelector } from 'redux-form';
-import { SelectList } from 'react-widgets';
+import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
-import { Alert, Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
+import { Alert, Button, ButtonToolbar, ButtonGroup, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
+import { CONCEPTS } from '../../constants';
+
 
 let HtcForm = props => {
 
   const { handleSubmit, submitting, patient } = props;
 
-  const renderSelectList = ({ input, data }) => (
-    <SelectList
-      {...input}
-      data={data}
-      onBlur={() => input.onBlur()}
-    />
+  let answers = [
+    { uuid: CONCEPTS.HTC_RESULTS.Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Reactive.name },
+    { uuid: CONCEPTS.HTC_RESULTS.Non_Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Non_Reactive.name },
+    { uuid: CONCEPTS.HTC_RESULTS.Not_Done.uuid, name: CONCEPTS.HTC_RESULTS.Not_Done.name },
+  ];
+
+
+  const renderButtonGroup = ({ input, options }) => (
+
+    <ButtonToolbar>
+      <ButtonGroup {...input}>
+        { options.map( option =>
+          <Button key={ option.uuid } value={option.uuid}>{ option.name }</Button>
+        )}
+      </ButtonGroup>
+
+    </ButtonToolbar>
+
+
   );
 
   return (
@@ -84,10 +98,10 @@ let HtcForm = props => {
               </Col>
               <Col sm={8}>
                 <Field
-                  component={renderSelectList}
-                  data={['Reactive', 'Non-Reactive', 'Not performed today']}
+                  component={ renderButtonGroup }
                   id="htcResults"
                   name="htcResults"
+                  options={ answers }
                 />
               </Col>
             </FormGroup>
@@ -104,7 +118,7 @@ let HtcForm = props => {
                   <Button
                     bsSize="large"
                     bsStyle="success"
-                    disabled={submitting}
+                    disabled={ submitting }
                     type="submit"
                   >
                     Save
@@ -114,8 +128,6 @@ let HtcForm = props => {
               </Col>
             </FormGroup>
           </Row>
-
-
 
         </Grid>
       </Form>
@@ -128,11 +140,8 @@ HtcForm = reduxForm({
   form: 'htc-form', // a unique identifier for this form
 })(HtcForm);
 
-const selector = formValueSelector('htc-form');
-
 export default connect(state => {
   return {
-    htcResults: selector(state, 'htcResults'),
     initialValues: state.selectedPatient,
   };
 })(HtcForm);

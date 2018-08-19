@@ -49,5 +49,20 @@ export const CONCEPTS = {
   },
   'Weight': {
     uuid: '6569c44a-977f-11e1-8993-905e29aff6c1'
+  },
+  'HTC_RESULTS': {
+    uuid: '654b983a-977f-11e1-8993-905e29aff6c1',
+    'Reactive': {
+      uuid: '6549be7a-977f-11e1-8993-905e29aff6c1',
+      name: 'Reactive'
+    },
+    'Non_Reactive': {
+      uuid: '654994c2-977f-11e1-8993-905e29aff6c1',
+      name: 'Non-Reactive'
+    },
+    'Not_Done': {
+      uuid: '6557a4ae-977f-11e1-8993-905e29aff6c1',
+      name: 'Not performed today'
+    }
   }
 };
