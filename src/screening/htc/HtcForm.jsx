@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
-import { Alert, Button, ButtonToolbar, ButtonGroup, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
+import { Alert, Button, ButtonToolbar, ToggleButtonGroup, ToggleButton, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
 import { CONCEPTS } from '../../constants';
 
 
@@ -10,24 +10,20 @@ let HtcForm = props => {
 
   const { handleSubmit, submitting, patient } = props;
 
-  let answers = [
+  const answers = [
     { uuid: CONCEPTS.HTC_RESULTS.Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Reactive.name },
     { uuid: CONCEPTS.HTC_RESULTS.Non_Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Non_Reactive.name },
     { uuid: CONCEPTS.HTC_RESULTS.Not_Done.uuid, name: CONCEPTS.HTC_RESULTS.Not_Done.name },
   ];
 
 
-  const renderButtonGroup = ({ input, options }) => (
+  const renderToggleButtonGroup = ({ input, options }) => (
 
-    <ButtonToolbar>
-      <ButtonGroup {...input}>
-        { options.map( option =>
-          <Button key={ option.uuid } value={option.uuid}>{ option.name }</Button>
-        )}
-      </ButtonGroup>
-
-    </ButtonToolbar>
-
+    <ToggleButtonGroup type="radio" name="resultsToggleGroup" justified={true} {...input}>
+      { options.map( option =>
+        <ToggleButton key={ option.uuid } value={option.uuid}>{ option.name }</ToggleButton>
+      )}
+    </ToggleButtonGroup>
 
   );
 
@@ -98,7 +94,7 @@ let HtcForm = props => {
               </Col>
               <Col sm={8}>
                 <Field
-                  component={ renderButtonGroup }
+                  component={ renderToggleButtonGroup }
                   id="htcResults"
                   name="htcResults"
                   options={ answers }
