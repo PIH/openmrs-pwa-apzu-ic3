@@ -18,9 +18,7 @@ const Layout = props => {
       <ReduxToastr />
       <Grid fluid={true}>
         <Row>
-          <Col xs={12} sm={12} md={12} lg={12}>
             <Header />
-          </Col>
         </Row>
         <Row>
           {props.patient.uuid &&

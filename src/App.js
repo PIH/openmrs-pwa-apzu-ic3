@@ -52,11 +52,13 @@ const App = props => {
               component={HomePage}
               exact
               path="/"
+              state="Home"
             />
             <Layout
               component={SearchPatient}
               path="/searchPatient"
               redirectOnLogin="/"
+              state="Search Patient"
             />
             <Layout
               component={CheckInTabs}
