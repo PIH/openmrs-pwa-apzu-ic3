@@ -8,6 +8,6 @@ const htcFilter = patient => {
 
 
 export default {
-  required: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.HTCEncounterType.uuid, 'exclude'), htcFilter],
+  required: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.HTCEncounterType.uuid, 'exclude')],
   completed: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.HTCEncounterType.uuid, 'include')]
 };
