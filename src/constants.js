@@ -66,3 +66,20 @@ export const CONCEPTS = {
     }
   }
 };
+
+export const NAV_MENU_PAGES = {
+  '/' : { display : 'Home', icon : 'home'},
+  '/searchPatient' : { display : 'Search Patient', icon : 'search'},
+  '/checkin/checkInTabs' : { display : 'Check-In', icon : 'notes-medical'},
+  '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
+  '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
+  '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },
+  '/screening/nurse/queue' : { display : 'Nurse', icon : 'user-md' },
+};
+
+export const USER_MENU_PAGES = {
+  '/user/settings' : { display : 'Settings', icon : 'cog' },
+  '/user/settings/password' : { display : 'Change Password', icon : 'key' },
+  '/logout' : { display : 'Logout', icon : 'sign-out-alt' },
+  '/blank' : { display : 'blank' }
+};

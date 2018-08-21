@@ -17,10 +17,8 @@ const Layout = props => {
     <div id="outer-container" className="ag-theme-material">
       <ReduxToastr />
       <Grid fluid={true}>
-        <Row>
-          <Col xs={12} sm={12} md={12} lg={12}>
+        <Row style={{marginBottom:60}}>
             <Header />
-          </Col>
         </Row>
         <Row>
           {props.patient.uuid &&
