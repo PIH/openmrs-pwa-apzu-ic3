@@ -8,7 +8,7 @@ import { CONCEPTS } from '../../constants';
 
 let HtcForm = props => {
 
-  const { handleSubmit, submitting, patient } = props;
+  const { handleSubmit, submitting } = props;
 
   const answers = [
     { uuid: CONCEPTS.HTC_RESULTS.Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Reactive.name },
