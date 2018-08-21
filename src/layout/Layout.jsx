@@ -2,12 +2,17 @@ import React from 'react';
 import ReduxToastr from 'react-redux-toastr';
 import { AuthenticatedRoute } from '@openmrs/react-components';
 import { Grid, Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import Header from '../header/Header';
-import LeftNav from './LeftNav';
+import LeftRail from './LeftRail';
 
 // TODO extract authenicated route out to a higher level?
+// TODO can we pass the patient into the Header as well, so it can be non-connected?
 
 const Layout = props => {
+
+  const contentCols = props.patient.uuid ? 10 : 12;
+
   return (
     <div id="outer-container" className="ag-theme-material">
       <ReduxToastr />
@@ -18,16 +23,25 @@ const Layout = props => {
           </Col>
         </Row>
         <Row>
-          <Col xs={2} sm={2} md={2} lg={2}>
-            <LeftNav />
-          </Col>
-          <Col xs={10} sm={10} md={10} lg={10}>
+          {props.patient.uuid &&
+            <Col xs={2} sm={2} md={2} lg={2}>
+              <LeftRail patient={props.patient} />
+            </Col>
+          }
+          <Col xs={contentCols} sm={contentCols} md={contentCols} lg={contentCols}>
             <AuthenticatedRoute {...props} />
           </Col>
         </Row>
       </Grid>
     </div>
-  )
+  );
 };
 
-export default Layout;
+const mapStateToProps = (state) => {
+  return {
+    patient: state.selectedPatient
+  };
+};
+
+export default connect(mapStateToProps)(Layout);
+

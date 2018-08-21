@@ -40,7 +40,7 @@ A CORS filter was added to web.xml at /usr/local/~project-folder~/config/web.xml
   <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
   <init-param>
     <param-name>cors.allowed.origins</param-name>
-    <param-value>http://localhost:3000</param-value>
+    <param-value>http://localhost:3000,http://10.10.216.116:3000</param-value>
   </init-param>
   <init-param>
     <param-name>cors.allowed.methods</param-name>
@@ -48,7 +48,7 @@ A CORS filter was added to web.xml at /usr/local/~project-folder~/config/web.xml
   </init-param>
   <init-param>
     <param-name>cors.allowed.headers</param-name>
-    <param-value>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Date,Server,Set-Cookie,Allow,ETag,Cont$
+    <param-value>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Date,Server,Set-Cookie,Allow,ETag,Content-Length,Keep-Alive,Connection,Authorization,Cookie,Host,Accept,Accept-Encoding,Accept-Language,Referer,User-Agent</param-value>
   </init-param>
   <init-param>
     <param-name>cors.support.credentials</param-name>

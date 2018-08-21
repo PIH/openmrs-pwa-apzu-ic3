@@ -8,7 +8,7 @@ import { CONCEPTS } from '../../constants';
 
 let HtcForm = props => {
 
-  const { handleSubmit, submitting, patient } = props;
+  const { handleSubmit, submitting } = props;
 
   const answers = [
     { uuid: CONCEPTS.HTC_RESULTS.Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Reactive.name },
@@ -44,8 +44,8 @@ let HtcForm = props => {
       >
         <Grid>
 
-          { (typeof patient !== 'undefined') &&
-          (typeof patient.alert !== 'undefined') &&
+          { (typeof props.initialValues !== 'undefined') &&
+          (typeof props.initialValues.alert !== 'undefined') &&
           <Row>
             <FormGroup controlId="formAlert">
               <Col
@@ -58,15 +58,15 @@ let HtcForm = props => {
                 sm={4}
               >
                 <Alert bsStyle="danger">
-                  { patient.alert }
+                  { props.initialValues.alert }
                 </Alert>
               </Col>
             </FormGroup>
           </Row>
           }
 
-          { (typeof patient !== 'undefined') &&
-          (typeof patient.actions !== 'undefined') && (patient.actions !== patient.alert) &&
+          { (typeof props.initialValues !== 'undefined') &&
+          (typeof props.initialValues.actions !== 'undefined') && (props.initialValues.actions !== props.initialValues.alert) &&
           <Row>
             <FormGroup controlId="formAction">
               <Col
@@ -77,7 +77,7 @@ let HtcForm = props => {
               </Col>
               <Col sm={4}>
                 <Alert bsStyle="warning">
-                  { patient.actions }
+                  { props.initialValues.actions }
                 </Alert>
               </Col>
             </FormGroup>
