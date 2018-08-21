@@ -3,18 +3,30 @@
 */
 .header {
     background: #F8971D;
-    max-height: 50px;
     border-radius: 5px;
-    margin: 5px;
-    padding-left: 10px;
 }
 
 #dropdown {
     color: white;
 }
+#navbarIcon {
+    vertical-align: middle;
+}
+#nav {
+
+}
+#navItemIcon {
+    margin-right: 7px;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 30px;
+    width: auto;
+}
 
 .logo {
-    max-height: 42px;
+    max-height: 38px;
 }
 
 .location-container {
@@ -57,3 +69,11 @@
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     background: #f78b08;
 }
+
+.navbar-nav li a {
+    line-height: 38px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+

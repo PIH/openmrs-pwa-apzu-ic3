@@ -17,7 +17,7 @@ const Layout = props => {
     <div id="outer-container" className="ag-theme-material">
       <ReduxToastr />
       <Grid fluid={true}>
-        <Row>
+        <Row style={{marginBottom:60}}>
             <Header />
         </Row>
         <Row>
