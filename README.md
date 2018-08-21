@@ -10,8 +10,12 @@
 5) Link to use your local version of openmrs-react-components:
     a) In your openmrs-react-components directory: npm link
     b) In the top level directory of this project: npm link @openmrs/react-components
-6) In your openmrs-react-components directory build and watch the code: npm run build:watch
-7) In the directory where you have this project checked out: npm start
+6) To avoid an error with a duplicate version of React, link React @openmrs/react-components *back* to the React in this project:
+    a) cd path-to-your-local-openmrs-react-components
+    b) npm link path-to-your-local-workflow-project/node_modules/react
+    Reference: https://stackoverflow.com/questions/33157904/how-to-avoid-loaded-two-copies-of-react-error-when-developing-an-external-comp
+7) In your openmrs-react-components directory build and watch the code: npm run build:watch
+8) In the directory where you have this project checked out: npm start
 
 ## Setting the URL of OpenMRS server
 
