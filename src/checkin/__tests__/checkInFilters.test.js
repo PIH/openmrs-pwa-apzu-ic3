@@ -32,7 +32,7 @@ describe('checkInFilters', () => {
           ]
         }
       },
-    ], checkInFilters);
+    ], checkInFilters.required);
 
     expect(results.length).toBe(1);
     expect(results[0].uuid).toBe("abcd");
@@ -67,7 +67,7 @@ describe('checkInFilters', () => {
           ]
         }
       },
-    ], checkInFilters);
+    ], checkInFilters.required);
 
     expect(results.length).toBe(1);
     expect(results[0].uuid).toBe("5678");

@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import {ListGroupItem} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ScreeningListItem from '../ScreeningListItem';
 import bloodPressureFilters from '../bloodPressure/bloodPressureFilters';
@@ -17,7 +18,7 @@ const screening = () => {
   return mountedComponent;
 };
 
-describe('Component: Screening', () => {
+describe('Component: Screening List Item', () => {
 
   beforeEach(() => {
     mountedComponent = undefined;
@@ -35,8 +36,8 @@ describe('Component: Screening', () => {
       completedFilters: bloodPressureFilters.completed
     };
 
-    expect(screening().find('div').length).toBe(1);
-    expect(screening().find('div').text()).toContain("Blood Pressure");
+    expect(screening().find(ListGroupItem).length).toBe(1);
+    expect(screening().find(ListGroupItem).text()).toContain("Blood Pressure");
   });
 
   it('renders checkmark when screening completed', () => {
@@ -65,8 +66,8 @@ describe('Component: Screening', () => {
       completedFilters: bloodPressureFilters.completed
     };
 
-    expect(screening().find('div').length).toBe(1);
-    expect(screening().find('div').text()).toContain("Blood Pressure");
+    expect(screening().find(ListGroupItem).length).toBe(1);
+    expect(screening().find(ListGroupItem).text()).toContain("Blood Pressure");
     expect(screening().find(FontAwesomeIcon).length).toBe(1);
     expect(screening().find(FontAwesomeIcon).props().icon).toBe("check");
 
@@ -93,8 +94,8 @@ describe('Component: Screening', () => {
       completedFilters: bloodPressureFilters.completed
     };
 
-    expect(screening().find('div').length).toBe(1);
-    expect(screening().find('div').text()).toContain("Blood Pressure");
+    expect(screening().find(ListGroupItem).length).toBe(1);
+    expect(screening().find(ListGroupItem).text()).toContain("Blood Pressure");
     expect(screening().find(FontAwesomeIcon).length).toBe(1);
     expect(screening().find(FontAwesomeIcon).props().icon).toBe("arrow-right");
 
@@ -122,8 +123,8 @@ describe('Component: Screening', () => {
       completedFilters: bloodPressureFilters.completed
     };
 
-    expect(screening().find('div').length).toBe(1);
-    expect(screening().find('div').text()).toContain("Blood Pressure");
+    expect(screening().find(ListGroupItem).length).toBe(1);
+    expect(screening().find(ListGroupItem).text()).toContain("Blood Pressure");
     expect(screening().find(FontAwesomeIcon).length).toBe(0);
 
   });
