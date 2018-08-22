@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {ListGroupItem} from 'react-bootstrap';
 
 let ScreeningListItem = props => {
 
@@ -15,8 +16,10 @@ let ScreeningListItem = props => {
   const required = applyFilters([props.patient], props.requiredFilters).length > 0;
   const completed = applyFilters([props.patient], props.completedFilters).length > 0;
 
+  const link = completed ? props.summaryLink : required && !completed ? props.entryLink : null;
+
   return (
-    <div>
+    <ListGroupItem href={link ? '#' + link : ''}>
       { completed &&
         <FontAwesomeIcon icon="check"/>
       }
@@ -24,7 +27,7 @@ let ScreeningListItem = props => {
         <FontAwesomeIcon icon="arrow-right"/>
       }
       &nbsp;{props.title}
-    </div>
+    </ListGroupItem>
   );
 
 };
@@ -32,11 +35,11 @@ let ScreeningListItem = props => {
 // TODO we may need to rework the links after we understand how this is all going to work
 ScreeningListItem.propTypes = {
   completedFilters: PropTypes.array.isRequired,
- // entryLink: PropTypes.string.isRequired,
+  entryLink: PropTypes.string,
   title: PropTypes.string.isRequired,
   patient: PropTypes.object.isRequired,
   requiredFilters: PropTypes.array.isRequired,
-  //summaryLink: PropTypes.string.isRequired
+  summaryLink: PropTypes.string
 };
 
 

@@ -1,6 +1,5 @@
-
+// TODO: rename to "config.js"?
 // TODO: this will be refactored out into an external config at some point
-// TODO have the actually correct uuids once we create the encounter types!
 
 export const PATIENT_REPRESENTATION = '(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,names,preferredName,addresses,attributes))';
 export const ENCOUNTER_REPRESENTATION = '(id,uuid,encounterDatetime,location:(id,uuid,name),encounterType:(id,uuid,name))';
@@ -82,3 +81,4 @@ export const USER_MENU_PAGES = {
   '/user/settings/password' : { display : 'Change Password', icon : 'key' },
   '/logout' : { display : 'Logout', icon : 'sign-out-alt' },
 };
+
