@@ -1,14 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
-import { Link } from 'react-router-dom';
-import { Alert, Button, ButtonToolbar, ToggleButtonGroup, ToggleButton, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
-import { CONCEPTS } from '../../constants';
+import { Submit, Obs } from '@openmrs/react-components';
+import { Alert, Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
+import Form from '../../form/Form';
+import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 
-
-let HtcForm = props => {
-
-  const { handleSubmit, submitting } = props;
+let HtcForm = (props) => {
 
   const answers = [
     { uuid: CONCEPTS.HTC_RESULTS.Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Reactive.name },
@@ -16,128 +13,83 @@ let HtcForm = props => {
     { uuid: CONCEPTS.HTC_RESULTS.Not_Done.uuid, name: CONCEPTS.HTC_RESULTS.Not_Done.name },
   ];
 
+  const formContent = (
+    <Grid>
+      { (typeof props.patient !== 'undefined') &&
+      (typeof props.patient.alert !== 'undefined') &&
+      <Row>
+        <FormGroup controlId="formAlert">
+          <Col
+            componentClass={ControlLabel}
+            sm={2}
+          >
+            Alert
+          </Col>
+          <Col
+            sm={4}
+          >
+            <Alert bsStyle="danger">
+              { props.patient.alert }
+            </Alert>
+          </Col>
+        </FormGroup>
+      </Row>
+      }
 
-  const renderToggleButtonGroup = ({ input, options }) => (
+      { (typeof props.patient !== 'undefined') &&
+      (typeof props.patient.actions !== 'undefined') && (props.patient.actions !== props.patient.alert) &&
+      <Row>
+        <FormGroup controlId="formAction">
+          <Col
+            componentClass={ControlLabel}
+            sm={2}
+          >
+            Action
+          </Col>
+          <Col sm={4}>
+            <Alert bsStyle="warning">
+              { props.patient.actions }
+            </Alert>
+          </Col>
+        </FormGroup>
+      </Row>
+      }
 
-    <ToggleButtonGroup type="radio" name="resultsToggleGroup" justified={true} {...input}>
-      { options.map( option =>
-        <ToggleButton key={ option.uuid } value={option.uuid}>{ option.name }</ToggleButton>
-      )}
-    </ToggleButtonGroup>
+      <Row>
+        <FormGroup controlId="formHtc">
+          <Col componentClass={ControlLabel} sm={2}>
+            Results
+          </Col>
+          <Col sm={8}>
+            <Obs
+              concept={CONCEPTS.HTC_RESULTS.uuid}
+              path="htc"
+              conceptAnswers={ answers }
+            />
+          </Col>
+        </FormGroup>
+      </Row>
 
+      <Row>
+        <Submit />
+      </Row>
+    </Grid>
   );
 
   return (
-    <div>
-      <Link to="/screening/htc/queue">
-        <Button
-          bsSize='large'
-          bsStyle='danger'
-        >
-          Back to HTC Queue
-        </Button>
-      </Link>
-      <h3><Label>HTC Station</Label></h3>
-      <Form
-        horizontal
-        onSubmit={handleSubmit}
-      >
-        <Grid>
-
-          { (typeof props.initialValues !== 'undefined') &&
-          (typeof props.initialValues.alert !== 'undefined') &&
-          <Row>
-            <FormGroup controlId="formAlert">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                Alert
-              </Col>
-              <Col
-                sm={4}
-              >
-                <Alert bsStyle="danger">
-                  { props.initialValues.alert }
-                </Alert>
-              </Col>
-            </FormGroup>
-          </Row>
-          }
-
-          { (typeof props.initialValues !== 'undefined') &&
-          (typeof props.initialValues.actions !== 'undefined') && (props.initialValues.actions !== props.initialValues.alert) &&
-          <Row>
-            <FormGroup controlId="formAction">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                Action
-              </Col>
-              <Col sm={4}>
-                <Alert bsStyle="warning">
-                  { props.initialValues.actions }
-                </Alert>
-              </Col>
-            </FormGroup>
-          </Row>
-          }
-
-          <Row>
-            <FormGroup controlId="formHtcResults">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                Results
-              </Col>
-              <Col sm={8}>
-                <Field
-                  component={ renderToggleButtonGroup }
-                  id="htcResults"
-                  name="htcResults"
-                  options={ answers }
-                />
-              </Col>
-            </FormGroup>
-          </Row>
-
-
-          <Row>
-            <FormGroup controlId="formSubmit">
-              <Col
-                sm={4}
-                smOffset={2}
-              >
-                <ButtonToolbar>
-                  <Button
-                    bsSize="large"
-                    bsStyle="success"
-                    disabled={ submitting }
-                    type="submit"
-                  >
-                    Save
-                  </Button>
-
-                </ButtonToolbar>
-              </Col>
-            </FormGroup>
-          </Row>
-
-        </Grid>
-      </Form>
-    </div>
+    <Form
+      afterSubmitLink="/screening/htc/queue"
+      backLink="/screening/htc/queue"
+      encounterType={ ENCOUNTER_TYPES.HTCEncounterType }
+      formContent={formContent}
+      title="HTC"
+    />
   );
 };
 
-
-HtcForm = reduxForm({
-  form: 'htc-form', // a unique identifier for this form
-})(HtcForm);
-
 export default connect(state => {
   return {
-    initialValues: state.selectedPatient,
+    patient: state.selectedPatient,
   };
 })(HtcForm);
+
