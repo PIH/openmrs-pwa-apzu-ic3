@@ -81,5 +81,4 @@ export const USER_MENU_PAGES = {
   '/user/settings' : { display : 'Settings', icon : 'cog' },
   '/user/settings/password' : { display : 'Change Password', icon : 'key' },
   '/logout' : { display : 'Logout', icon : 'sign-out-alt' },
-  '/blank' : { display : 'blank' }
 };

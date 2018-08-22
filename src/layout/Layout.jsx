@@ -5,6 +5,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import Header from '../header/Header';
 import LeftRail from './LeftRail';
+import PatientHeader from '../patient/PatientHeader';
 
 // TODO extract authenicated route out to a higher level?
 // TODO can we pass the patient into the Header as well, so it can be non-connected?
@@ -19,6 +20,9 @@ const Layout = props => {
       <Grid fluid={true}>
         <Row style={{marginBottom:60}}>
             <Header />
+        </Row>
+        <Row>
+          <PatientHeader />
         </Row>
         <Row>
           {props.patient.uuid &&
