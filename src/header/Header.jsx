@@ -1,24 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Navbar, Nav, NavItem, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import '../assets/css/header.css';
 import logo from "../assets/images/pih_apzu_logo_white.png";
 import NavBarMenu from './NavBarMenu';
 import { NAV_MENU_PAGES, USER_MENU_PAGES} from '../constants';
+import LocationMenu from './LocationMenu';
 
 export class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userDropdown: false,
-      locationDropdown: false,
-    };
-  }
 
   render() {
-
     return (
       <Navbar className="header" fixedTop >
         <Nav pullLeft id="nav">
@@ -36,28 +29,28 @@ export class Header extends React.Component {
           </NavItem>
         </Nav>
         <Nav pullRight id="nav">
-          <NavDropdown eventKey={2}
-                       id="dropdown"
-                       title={
+          <LocationMenu id="dropdown"
+                        locations={this.props.locations ? this.props.locations : []}
+                        sessionLocation={this.props.sessionLocation}
+                        dispatch={this.props.dispatch}
+                        title={
                          <span>
                            <FontAwesomeIcon icon="map-marker" size="lg" id="navItemIcon"/>
                            {this.props.sessionLocation.display}
                            </span>
                        }
-          >
-          </NavDropdown>
+          />
           <NavBarMenu
             pathname={this.props.pathname}
             pageOptions={USER_MENU_PAGES}
             id="dropdown"
             title={
-               <span>
+              <span>
                  <FontAwesomeIcon icon="user" size="lg" id="navItemIcon"/>
-                 {this.props.user.person ? this.props.user.person.display : 'user'}
+                {this.props.user.person ? this.props.user.person.display : 'user'}
                  </span>
-             }
-          >
-          </NavBarMenu>
+            }
+          />
         </Nav>
       </Navbar>
     );
