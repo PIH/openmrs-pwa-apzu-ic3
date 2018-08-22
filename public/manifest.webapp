@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "name": "Screening Workflow",
+  "description": "PIH Screening Workflow OWA.",
+  "launch_path": "index.html",
+  "icons": {
+    "48": "/img/omrs-button.png"
+  },
+  "developer": {
+    "name": "PIH",
+    "url": "https://github.com/PIH/openmrs-pwa-workflow"
+  },
+  "default_locale": "en",
+    "activities": {
+      "openmrs": {
+        "href": "*"
+      }
+    }
+}
