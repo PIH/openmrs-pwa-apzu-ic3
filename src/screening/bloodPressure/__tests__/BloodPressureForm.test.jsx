@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import MockRouter from 'react-mock-router';
 import { Provider } from 'react-redux';
-import { Container } from 'bahmni-form-controls';
 import BloodPressureForm from '../BloodPressureForm';
 
 
@@ -42,7 +41,6 @@ describe('Component: BloodPressureForm', () => {
 
   it('renders properly', () => {
     expect(toJson(bloodPressureForm())).toMatchSnapshot();
-    expect(bloodPressureForm().find(Container).length).toBe(1);
   });
 
 });

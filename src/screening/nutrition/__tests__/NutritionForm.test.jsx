@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import MockRouter from 'react-mock-router';
-import { Container } from 'bahmni-form-controls';
 import NutritionForm from '../NutritionForm';
 
 let props, store;
