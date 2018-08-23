@@ -22,132 +22,161 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
     replace={[Function]}
     url=""
   >
-    <Connect(BloodPressureForm)>
-      <BloodPressureForm
-        dispatch={[Function]}
-        patient={
+    <BloodPressureForm>
+      <Connect(Form)
+        afterSubmitLink="/screening/nutrition/queue"
+        backLink="/screening/nutrition/queue"
+        encounterType={
           Object {
-            "uuid": "abc",
-            "visit": Object {
-              "uuid": "def",
-            },
+            "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
           }
         }
-        visit={
-          Object {
-            "uuid": "def",
-          }
+        formContent={
+          <Grid
+            bsClass="container"
+            componentClass="div"
+            fluid={false}
+          >
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <FormGroup
+                bsClass="form-group"
+                controlId="formSystolic"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass={[Function]}
+                  sm={2}
+                >
+                  Systolic Blood Pressure
+                </Col>
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  sm={4}
+                >
+                  <Obs
+                    concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                    path="Systolic"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <FormGroup
+                bsClass="form-group"
+                controlId="formDiastolic"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass={[Function]}
+                  sm={2}
+                >
+                  Diastolic Blood Pressure
+                </Col>
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  sm={4}
+                >
+                  <Obs
+                    concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                    path="Diastolic"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <Submit />
+            </Row>
+          </Grid>
         }
+        title="Blood Pressure"
       >
-        <BahmniForm
-          afterSubmitLink="/screening/bloodPressure/queue"
-          backLink="/screening/bloodPressure/queue"
+        <Form
+          afterSubmitLink="/screening/nutrition/queue"
+          backLink="/screening/nutrition/queue"
           dispatch={[Function]}
           encounterType={
             Object {
               "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
             }
           }
-          formDetails={
-            Object {
-              "controls": Array [
-                Object {
-                  "id": "1",
-                  "properties": Object {
-                    "location": Object {
-                      "column": 0,
-                      "row": 0,
-                    },
-                  },
-                  "translationKey": "LABEL_1",
-                  "type": "label",
-                  "value": "Blood Pressure Form",
-                },
-                Object {
-                  "concept": Object {
-                    "answers": Array [],
-                    "conceptClass": "Misc",
-                    "conceptHandler": null,
-                    "datatype": "Numeric",
-                    "name": "SYSTOLIC",
-                    "properties": Object {
-                      "allowDecimal": false,
-                    },
-                    "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                  },
-                  "hiAbsolute": 300,
-                  "hiNormal": null,
-                  "id": "2",
-                  "label": Object {
-                    "id": "2",
-                    "translationKey": "SYSTOLIC_2",
-                    "type": "label",
-                    "units": "",
-                    "value": "Systolic Blood Pressure",
-                  },
-                  "lowAbsolute": 30,
-                  "lowNormal": null,
-                  "properties": Object {
-                    "abnormal": false,
-                    "addMore": false,
-                    "controlEvent": false,
-                    "hideLabel": false,
-                    "location": Object {
-                      "column": 0,
-                      "row": 1,
-                    },
-                    "mandatory": false,
-                    "notes": false,
-                  },
-                  "type": "obsControl",
-                  "units": "mmHg",
-                },
-                Object {
-                  "concept": Object {
-                    "answers": Array [],
-                    "conceptClass": "Misc",
-                    "conceptHandler": null,
-                    "datatype": "Numeric",
-                    "name": "DIASTOLIC",
-                    "properties": Object {
-                      "allowDecimal": false,
-                    },
-                    "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                  },
-                  "hiAbsolute": 150,
-                  "hiNormal": null,
-                  "id": "3",
-                  "label": Object {
-                    "id": "3",
-                    "translationKey": "DIASTOLIC_2",
-                    "type": "label",
-                    "units": "",
-                    "value": "Diastolic Blood Pressure",
-                  },
-                  "lowAbsolute": 20,
-                  "lowNormal": null,
-                  "properties": Object {
-                    "abnormal": false,
-                    "addMore": false,
-                    "controlEvent": false,
-                    "hideLabel": false,
-                    "location": Object {
-                      "column": 0,
-                      "row": 2,
-                    },
-                    "mandatory": false,
-                    "notes": false,
-                  },
-                  "type": "obsControl",
-                  "units": "mmHg",
-                },
-              ],
-              "defaultLocale": "en",
-              "events": Object {},
-              "id": 2,
-              "name": "Blood Pressure Form",
-              "uuid": "b57712e7-f89b-43a4-8a27-3a626e0785ba",
-            }
+          formContent={
+            <Grid
+              bsClass="container"
+              componentClass="div"
+              fluid={false}
+            >
+              <Row
+                bsClass="row"
+                componentClass="div"
+              >
+                <FormGroup
+                  bsClass="form-group"
+                  controlId="formSystolic"
+                >
+                  <Col
+                    bsClass="col"
+                    componentClass={[Function]}
+                    sm={2}
+                  >
+                    Systolic Blood Pressure
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    componentClass="div"
+                    sm={4}
+                  >
+                    <Obs
+                      concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                      path="Systolic"
+                    />
+                  </Col>
+                </FormGroup>
+              </Row>
+              <Row
+                bsClass="row"
+                componentClass="div"
+              >
+                <FormGroup
+                  bsClass="form-group"
+                  controlId="formDiastolic"
+                >
+                  <Col
+                    bsClass="col"
+                    componentClass={[Function]}
+                    sm={2}
+                  >
+                    Diastolic Blood Pressure
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    componentClass="div"
+                    sm={4}
+                  >
+                    <Obs
+                      concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                      path="Diastolic"
+                    />
+                  </Col>
+                </FormGroup>
+              </Row>
+              <Row
+                bsClass="row"
+                componentClass="div"
+              >
+                <Submit />
+              </Row>
+            </Grid>
           }
           patient={
             Object {
@@ -157,6 +186,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
               },
             }
           }
+          title="Blood Pressure"
           visit={
             Object {
               "uuid": "def",
@@ -166,7 +196,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           <div>
             <Link
               replace={false}
-              to="/screening/bloodPressure/queue"
+              to="/screening/nutrition/queue"
             >
               <a
                 onClick={[Function]}
@@ -189,1300 +219,1299 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 </Button>
               </a>
             </Link>
-            <Container
-              collapse={false}
-              metadata={
-                Object {
-                  "controls": Array [
-                    Object {
-                      "id": "1",
-                      "properties": Object {
-                        "location": Object {
-                          "column": 0,
-                          "row": 0,
-                        },
-                      },
-                      "translationKey": "LABEL_1",
-                      "type": "label",
-                      "value": "Blood Pressure Form",
-                    },
-                    Object {
-                      "concept": Object {
-                        "answers": Array [],
-                        "conceptClass": "Misc",
-                        "conceptHandler": null,
-                        "datatype": "Numeric",
-                        "name": "SYSTOLIC",
-                        "properties": Object {
-                          "allowDecimal": false,
-                        },
-                        "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                      },
-                      "hiAbsolute": 300,
-                      "hiNormal": null,
-                      "id": "2",
-                      "label": Object {
-                        "id": "2",
-                        "translationKey": "SYSTOLIC_2",
-                        "type": "label",
-                        "units": "",
-                        "value": "Systolic Blood Pressure",
-                      },
-                      "lowAbsolute": 30,
-                      "lowNormal": null,
-                      "properties": Object {
-                        "abnormal": false,
-                        "addMore": false,
-                        "controlEvent": false,
-                        "hideLabel": false,
-                        "location": Object {
-                          "column": 0,
-                          "row": 1,
-                        },
-                        "mandatory": false,
-                        "notes": false,
-                      },
-                      "type": "obsControl",
-                      "units": "mmHg",
-                    },
-                    Object {
-                      "concept": Object {
-                        "answers": Array [],
-                        "conceptClass": "Misc",
-                        "conceptHandler": null,
-                        "datatype": "Numeric",
-                        "name": "DIASTOLIC",
-                        "properties": Object {
-                          "allowDecimal": false,
-                        },
-                        "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                      },
-                      "hiAbsolute": 150,
-                      "hiNormal": null,
-                      "id": "3",
-                      "label": Object {
-                        "id": "3",
-                        "translationKey": "DIASTOLIC_2",
-                        "type": "label",
-                        "units": "",
-                        "value": "Diastolic Blood Pressure",
-                      },
-                      "lowAbsolute": 20,
-                      "lowNormal": null,
-                      "properties": Object {
-                        "abnormal": false,
-                        "addMore": false,
-                        "controlEvent": false,
-                        "hideLabel": false,
-                        "location": Object {
-                          "column": 0,
-                          "row": 2,
-                        },
-                        "mandatory": false,
-                        "notes": false,
-                      },
-                      "type": "obsControl",
-                      "units": "mmHg",
-                    },
-                  ],
-                  "defaultLocale": "en",
-                  "events": Object {},
-                  "id": 2,
-                  "name": "Blood Pressure Form",
-                  "uuid": "b57712e7-f89b-43a4-8a27-3a626e0785ba",
+            <div>
+              <h3>
+                <Label
+                  bsClass="label"
+                  bsStyle="default"
+                >
+                  <span
+                    className="label label-default"
+                  >
+                    Blood Pressure
+                  </span>
+                </Label>
+              </h3>
+              <Connect(ReduxForm)
+                encounterType={
+                  Object {
+                    "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
+                  }
                 }
-              }
-              observations={Array []}
-              translations={Object {}}
-            >
-              <IntlProvider
-                locale="en"
-                messages={Object {}}
+                formSubmittedActionCreator={
+                  Array [
+                    [Function],
+                    [Function],
+                  ]
+                }
+                patient={
+                  Object {
+                    "uuid": "abc",
+                    "visit": Object {
+                      "uuid": "def",
+                    },
+                  }
+                }
+                visit={
+                  Object {
+                    "uuid": "def",
+                  }
+                }
               >
-                <div>
-                  <NotificationContainer
-                    notification={Object {}}
-                  >
-                    <div />
-                  </NotificationContainer>
-                  <Row
-                    collapse={false}
-                    controls={
+                <ReduxForm
+                  dispatch={[Function]}
+                  encounterType={
+                    Object {
+                      "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
+                    }
+                  }
+                  formSubmittedActionCreator={
+                    Array [
+                      [Function],
+                      [Function],
+                    ]
+                  }
+                  patient={
+                    Object {
+                      "uuid": "abc",
+                      "visit": Object {
+                        "uuid": "def",
+                      },
+                    }
+                  }
+                  visit={
+                    Object {
+                      "uuid": "def",
+                    }
+                  }
+                >
+                  <Connect(Form(OpenMRSForm))
+                    destroyOnUnmount={true}
+                    dispatch={[Function]}
+                    enableReinitialize={false}
+                    encounterType={
+                      Object {
+                        "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
+                      }
+                    }
+                    forceUnregisterOnUnmount={false}
+                    form="openmrs-form"
+                    formSubmittedActionCreator={
                       Array [
-                        Object {
-                          "id": "1",
-                          "properties": Object {
-                            "location": Object {
-                              "column": 0,
-                              "row": 0,
-                            },
-                          },
-                          "translationKey": "LABEL_1",
-                          "type": "label",
-                          "value": "Blood Pressure Form",
-                        },
+                        [Function],
+                        [Function],
                       ]
                     }
-                    errors={Array []}
-                    formName="Blood Pressure Form"
-                    id={0}
-                    key="0"
-                    onControlAdd={[Function]}
-                    onControlRemove={[Function]}
-                    onEventTrigger={[Function]}
-                    onValueChanged={[Function]}
-                    records={
-                      Array [
-                        Object {
-                          "active": true,
-                          "children": undefined,
-                          "control": Object {
-                            "id": "1",
-                            "properties": Object {
-                              "location": Object {
-                                "column": 0,
-                                "row": 0,
-                              },
-                            },
-                            "translationKey": "LABEL_1",
-                            "type": "label",
-                            "value": "Blood Pressure Form",
-                          },
-                          "dataSource": Object {
-                            "concept": undefined,
-                            "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                            "formNamespace": "Bahmni",
-                            "voided": true,
-                          },
-                          "enabled": true,
-                          "errors": Array [],
-                          "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                          "getActive": [Function],
-                          "getConceptName": [Function],
-                          "getConceptType": [Function],
-                          "getControlId": [Function],
-                          "getErrors": [Function],
-                          "getEventScripts": [Function],
-                          "getLabelName": [Function],
-                          "getObject": [Function],
-                          "getValue": [Function],
-                          "hidden": false,
-                          "setValue": [Function],
-                          "showAddMore": true,
-                          "showRemove": false,
-                          "update": [Function],
-                          "value": Object {
-                            "comment": undefined,
-                            "interpretation": undefined,
-                            "value": undefined,
-                          },
-                          "valueMapper": undefined,
+                    getFormState={[Function]}
+                    keepDirtyOnReinitialize={false}
+                    patient={
+                      Object {
+                        "uuid": "abc",
+                        "visit": Object {
+                          "uuid": "def",
                         },
-                        Object {
-                          "active": true,
-                          "children": undefined,
-                          "control": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "SYSTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "hiAbsolute": 300,
-                            "hiNormal": null,
-                            "id": "2",
-                            "label": Object {
-                              "id": "2",
-                              "translationKey": "SYSTOLIC_2",
-                              "type": "label",
-                              "units": "",
-                              "value": "Systolic Blood Pressure",
-                            },
-                            "lowAbsolute": 30,
-                            "lowNormal": null,
-                            "properties": Object {
-                              "abnormal": false,
-                              "addMore": false,
-                              "controlEvent": false,
-                              "hideLabel": false,
-                              "location": Object {
-                                "column": 0,
-                                "row": 1,
-                              },
-                              "mandatory": false,
-                              "notes": false,
-                            },
-                            "type": "obsControl",
-                            "units": "mmHg",
-                          },
-                          "dataSource": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "SYSTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                            "formNamespace": "Bahmni",
-                            "voided": true,
-                          },
-                          "enabled": true,
-                          "errors": Array [],
-                          "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                          "getActive": [Function],
-                          "getConceptName": [Function],
-                          "getConceptType": [Function],
-                          "getControlId": [Function],
-                          "getErrors": [Function],
-                          "getEventScripts": [Function],
-                          "getLabelName": [Function],
-                          "getObject": [Function],
-                          "getValue": [Function],
-                          "hidden": false,
-                          "setValue": [Function],
-                          "showAddMore": true,
-                          "showRemove": false,
-                          "update": [Function],
-                          "value": Object {
-                            "comment": undefined,
-                            "interpretation": undefined,
-                            "value": undefined,
-                          },
-                          "valueMapper": undefined,
-                        },
-                        Object {
-                          "active": true,
-                          "children": undefined,
-                          "control": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "DIASTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "hiAbsolute": 150,
-                            "hiNormal": null,
-                            "id": "3",
-                            "label": Object {
-                              "id": "3",
-                              "translationKey": "DIASTOLIC_2",
-                              "type": "label",
-                              "units": "",
-                              "value": "Diastolic Blood Pressure",
-                            },
-                            "lowAbsolute": 20,
-                            "lowNormal": null,
-                            "properties": Object {
-                              "abnormal": false,
-                              "addMore": false,
-                              "controlEvent": false,
-                              "hideLabel": false,
-                              "location": Object {
-                                "column": 0,
-                                "row": 2,
-                              },
-                              "mandatory": false,
-                              "notes": false,
-                            },
-                            "type": "obsControl",
-                            "units": "mmHg",
-                          },
-                          "dataSource": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "DIASTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                            "formNamespace": "Bahmni",
-                            "voided": true,
-                          },
-                          "enabled": true,
-                          "errors": Array [],
-                          "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                          "getActive": [Function],
-                          "getConceptName": [Function],
-                          "getConceptType": [Function],
-                          "getControlId": [Function],
-                          "getErrors": [Function],
-                          "getEventScripts": [Function],
-                          "getLabelName": [Function],
-                          "getObject": [Function],
-                          "getValue": [Function],
-                          "hidden": false,
-                          "setValue": [Function],
-                          "showAddMore": true,
-                          "showRemove": false,
-                          "update": [Function],
-                          "value": Object {
-                            "comment": undefined,
-                            "interpretation": undefined,
-                            "value": undefined,
-                          },
-                          "valueMapper": undefined,
-                        },
-                      ]
+                      }
                     }
-                    showNotification={[Function]}
+                    persistentSubmitErrors={false}
+                    pure={true}
+                    shouldAsyncValidate={[Function]}
+                    shouldError={[Function]}
+                    shouldValidate={[Function]}
+                    shouldWarn={[Function]}
+                    touchOnBlur={true}
+                    touchOnChange={false}
+                    updateUnregisteredFields={false}
+                    visit={
+                      Object {
+                        "uuid": "def",
+                      }
+                    }
                   >
-                    <div
-                      className="form-builder-row"
+                    <Form(OpenMRSForm)
+                      anyTouched={false}
+                      array={
+                        Object {
+                          "insert": [Function],
+                          "move": [Function],
+                          "pop": [Function],
+                          "push": [Function],
+                          "remove": [Function],
+                          "removeAll": [Function],
+                          "shift": [Function],
+                          "splice": [Function],
+                          "swap": [Function],
+                          "unshift": [Function],
+                        }
+                      }
+                      arrayInsert={[Function]}
+                      arrayMove={[Function]}
+                      arrayPop={[Function]}
+                      arrayPush={[Function]}
+                      arrayRemove={[Function]}
+                      arrayRemoveAll={[Function]}
+                      arrayShift={[Function]}
+                      arraySplice={[Function]}
+                      arraySwap={[Function]}
+                      arrayUnshift={[Function]}
+                      asyncValidating={false}
+                      autofill={[Function]}
+                      blur={[Function]}
+                      change={[Function]}
+                      clearAsyncError={[Function]}
+                      clearFields={[Function]}
+                      clearSubmit={[Function]}
+                      clearSubmitErrors={[Function]}
+                      destroy={[Function]}
+                      destroyOnUnmount={true}
+                      dirty={false}
+                      dispatch={[Function]}
+                      enableReinitialize={false}
+                      encounterType={
+                        Object {
+                          "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
+                        }
+                      }
+                      focus={[Function]}
+                      forceUnregisterOnUnmount={false}
+                      form="openmrs-form"
+                      formSubmittedActionCreator={
+                        Array [
+                          [Function],
+                          [Function],
+                        ]
+                      }
+                      getFormState={[Function]}
+                      initialize={[Function]}
+                      initialized={false}
+                      invalid={false}
+                      keepDirtyOnReinitialize={false}
+                      patient={
+                        Object {
+                          "uuid": "abc",
+                          "visit": Object {
+                            "uuid": "def",
+                          },
+                        }
+                      }
+                      persistentSubmitErrors={false}
+                      pristine={true}
+                      pure={true}
+                      registerField={[Function]}
+                      reset={[Function]}
+                      resetSection={[Function]}
+                      setSubmitFailed={[Function]}
+                      setSubmitSucceeded={[Function]}
+                      shouldAsyncValidate={[Function]}
+                      shouldError={[Function]}
+                      shouldValidate={[Function]}
+                      shouldWarn={[Function]}
+                      startAsyncValidation={[Function]}
+                      startSubmit={[Function]}
+                      stopAsyncValidation={[Function]}
+                      stopSubmit={[Function]}
+                      submit={[Function]}
+                      submitFailed={false}
+                      submitSucceeded={false}
+                      submitting={false}
+                      syncErrors={Object {}}
+                      syncWarnings={Object {}}
+                      touch={[Function]}
+                      touchOnBlur={true}
+                      touchOnChange={false}
+                      unregisterField={[Function]}
+                      untouch={[Function]}
+                      updateSyncErrors={[Function]}
+                      updateSyncWarnings={[Function]}
+                      updateUnregisteredFields={false}
+                      valid={true}
+                      validExceptSubmit={true}
+                      values={Object {}}
+                      visit={
+                        Object {
+                          "uuid": "def",
+                        }
+                      }
                     >
-                      <div
-                        className="form-builder-column form-builder-column-0-index0"
-                        key="Blood Pressure Form.undefined/1-0"
+                      <OpenMRSForm
+                        anyTouched={false}
+                        array={
+                          Object {
+                            "insert": [Function],
+                            "move": [Function],
+                            "pop": [Function],
+                            "push": [Function],
+                            "remove": [Function],
+                            "removeAll": [Function],
+                            "shift": [Function],
+                            "splice": [Function],
+                            "swap": [Function],
+                            "unshift": [Function],
+                          }
+                        }
+                        asyncValidate={[Function]}
+                        asyncValidating={false}
+                        autofill={[Function]}
+                        blur={[Function]}
+                        change={[Function]}
+                        clearAsyncError={[Function]}
+                        clearFields={[Function]}
+                        clearSubmit={[Function]}
+                        clearSubmitErrors={[Function]}
+                        destroy={[Function]}
+                        dirty={false}
+                        dispatch={[Function]}
+                        encounterType={
+                          Object {
+                            "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
+                          }
+                        }
+                        form="openmrs-form"
+                        formSubmittedActionCreator={
+                          Array [
+                            [Function],
+                            [Function],
+                          ]
+                        }
+                        handleSubmit={[Function]}
+                        initialize={[Function]}
+                        initialized={false}
+                        invalid={false}
+                        patient={
+                          Object {
+                            "uuid": "abc",
+                            "visit": Object {
+                              "uuid": "def",
+                            },
+                          }
+                        }
+                        pristine={true}
+                        pure={true}
+                        reset={[Function]}
+                        resetSection={[Function]}
+                        submit={[Function]}
+                        submitFailed={false}
+                        submitSucceeded={false}
+                        submitting={false}
+                        touch={[Function]}
+                        untouch={[Function]}
+                        valid={true}
+                        visit={
+                          Object {
+                            "uuid": "def",
+                          }
+                        }
                       >
-                        <Label
-                          collapse={false}
-                          enabled={true}
-                          errors={Array []}
-                          formFieldPath="Blood Pressure Form.undefined/1-0"
-                          formName="Blood Pressure Form"
-                          hidden={false}
-                          id={0}
-                          key="1"
-                          metadata={
-                            Object {
-                              "id": "1",
-                              "properties": Object {
-                                "location": Object {
-                                  "column": 0,
-                                  "row": 0,
-                                },
-                              },
-                              "translationKey": "LABEL_1",
-                              "type": "label",
-                              "value": "Blood Pressure Form",
-                            }
-                          }
-                          onControlAdd={[Function]}
-                          onControlRemove={[Function]}
-                          onEventTrigger={[Function]}
-                          onValueChanged={[Function]}
-                          showAddMore={true}
-                          showNotification={[Function]}
-                          showRemove={false}
-                          value={
-                            Object {
-                              "comment": undefined,
-                              "interpretation": undefined,
-                              "value": undefined,
-                            }
-                          }
+                        <Form
+                          bsClass="form"
+                          componentClass="form"
+                          horizontal={true}
+                          inline={false}
+                          onSubmit={[Function]}
                         >
-                          <label
-                            className=""
+                          <form
+                            className="form-horizontal"
+                            onSubmit={[Function]}
                           >
-                            <FormattedMessage
-                              defaultMessage="Blood Pressure Form"
-                              id="LABEL_1"
-                              values={Object {}}
-                            >
-                              <span>
-                                Blood Pressure Form
-                              </span>
-                            </FormattedMessage>
-                          </label>
-                        </Label>
-                      </div>
-                    </div>
-                  </Row>
-                  <Row
-                    collapse={false}
-                    controls={
-                      Array [
-                        Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "SYSTOLIC",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 300,
-                          "hiNormal": null,
-                          "id": "2",
-                          "label": Object {
-                            "id": "2",
-                            "translationKey": "SYSTOLIC_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "Systolic Blood Pressure",
-                          },
-                          "lowAbsolute": 30,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 1,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "mmHg",
-                        },
-                      ]
-                    }
-                    errors={Array []}
-                    formName="Blood Pressure Form"
-                    id={1}
-                    key="1"
-                    onControlAdd={[Function]}
-                    onControlRemove={[Function]}
-                    onEventTrigger={[Function]}
-                    onValueChanged={[Function]}
-                    records={
-                      Array [
-                        Object {
-                          "active": true,
-                          "children": undefined,
-                          "control": Object {
-                            "id": "1",
-                            "properties": Object {
-                              "location": Object {
-                                "column": 0,
-                                "row": 0,
-                              },
-                            },
-                            "translationKey": "LABEL_1",
-                            "type": "label",
-                            "value": "Blood Pressure Form",
-                          },
-                          "dataSource": Object {
-                            "concept": undefined,
-                            "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                            "formNamespace": "Bahmni",
-                            "voided": true,
-                          },
-                          "enabled": true,
-                          "errors": Array [],
-                          "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                          "getActive": [Function],
-                          "getConceptName": [Function],
-                          "getConceptType": [Function],
-                          "getControlId": [Function],
-                          "getErrors": [Function],
-                          "getEventScripts": [Function],
-                          "getLabelName": [Function],
-                          "getObject": [Function],
-                          "getValue": [Function],
-                          "hidden": false,
-                          "setValue": [Function],
-                          "showAddMore": true,
-                          "showRemove": false,
-                          "update": [Function],
-                          "value": Object {
-                            "comment": undefined,
-                            "interpretation": undefined,
-                            "value": undefined,
-                          },
-                          "valueMapper": undefined,
-                        },
-                        Object {
-                          "active": true,
-                          "children": undefined,
-                          "control": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "SYSTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "hiAbsolute": 300,
-                            "hiNormal": null,
-                            "id": "2",
-                            "label": Object {
-                              "id": "2",
-                              "translationKey": "SYSTOLIC_2",
-                              "type": "label",
-                              "units": "",
-                              "value": "Systolic Blood Pressure",
-                            },
-                            "lowAbsolute": 30,
-                            "lowNormal": null,
-                            "properties": Object {
-                              "abnormal": false,
-                              "addMore": false,
-                              "controlEvent": false,
-                              "hideLabel": false,
-                              "location": Object {
-                                "column": 0,
-                                "row": 1,
-                              },
-                              "mandatory": false,
-                              "notes": false,
-                            },
-                            "type": "obsControl",
-                            "units": "mmHg",
-                          },
-                          "dataSource": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "SYSTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                            "formNamespace": "Bahmni",
-                            "voided": true,
-                          },
-                          "enabled": true,
-                          "errors": Array [],
-                          "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                          "getActive": [Function],
-                          "getConceptName": [Function],
-                          "getConceptType": [Function],
-                          "getControlId": [Function],
-                          "getErrors": [Function],
-                          "getEventScripts": [Function],
-                          "getLabelName": [Function],
-                          "getObject": [Function],
-                          "getValue": [Function],
-                          "hidden": false,
-                          "setValue": [Function],
-                          "showAddMore": true,
-                          "showRemove": false,
-                          "update": [Function],
-                          "value": Object {
-                            "comment": undefined,
-                            "interpretation": undefined,
-                            "value": undefined,
-                          },
-                          "valueMapper": undefined,
-                        },
-                        Object {
-                          "active": true,
-                          "children": undefined,
-                          "control": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "DIASTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "hiAbsolute": 150,
-                            "hiNormal": null,
-                            "id": "3",
-                            "label": Object {
-                              "id": "3",
-                              "translationKey": "DIASTOLIC_2",
-                              "type": "label",
-                              "units": "",
-                              "value": "Diastolic Blood Pressure",
-                            },
-                            "lowAbsolute": 20,
-                            "lowNormal": null,
-                            "properties": Object {
-                              "abnormal": false,
-                              "addMore": false,
-                              "controlEvent": false,
-                              "hideLabel": false,
-                              "location": Object {
-                                "column": 0,
-                                "row": 2,
-                              },
-                              "mandatory": false,
-                              "notes": false,
-                            },
-                            "type": "obsControl",
-                            "units": "mmHg",
-                          },
-                          "dataSource": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "DIASTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                            "formNamespace": "Bahmni",
-                            "voided": true,
-                          },
-                          "enabled": true,
-                          "errors": Array [],
-                          "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                          "getActive": [Function],
-                          "getConceptName": [Function],
-                          "getConceptType": [Function],
-                          "getControlId": [Function],
-                          "getErrors": [Function],
-                          "getEventScripts": [Function],
-                          "getLabelName": [Function],
-                          "getObject": [Function],
-                          "getValue": [Function],
-                          "hidden": false,
-                          "setValue": [Function],
-                          "showAddMore": true,
-                          "showRemove": false,
-                          "update": [Function],
-                          "value": Object {
-                            "comment": undefined,
-                            "interpretation": undefined,
-                            "value": undefined,
-                          },
-                          "valueMapper": undefined,
-                        },
-                      ]
-                    }
-                    showNotification={[Function]}
-                  >
-                    <div
-                      className="form-builder-row"
-                    >
-                      <div
-                        className="form-builder-column form-builder-column-0-index0"
-                        key="Blood Pressure Form.undefined/2-0"
-                      >
-                        <ObsControl
-                          collapse={false}
-                          enabled={true}
-                          errors={Array []}
-                          formFieldPath="Blood Pressure Form.undefined/2-0"
-                          formName="Blood Pressure Form"
-                          hidden={false}
-                          id={1}
-                          key="2"
-                          metadata={
-                            Object {
-                              "concept": Object {
-                                "answers": Array [],
-                                "conceptClass": "Misc",
-                                "conceptHandler": null,
-                                "datatype": "Numeric",
-                                "name": "SYSTOLIC",
-                                "properties": Object {
-                                  "allowDecimal": false,
-                                },
-                                "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                              },
-                              "hiAbsolute": 300,
-                              "hiNormal": null,
-                              "id": "2",
-                              "label": Object {
-                                "id": "2",
-                                "translationKey": "SYSTOLIC_2",
-                                "type": "label",
-                                "units": "",
-                                "value": "Systolic Blood Pressure",
-                              },
-                              "lowAbsolute": 30,
-                              "lowNormal": null,
-                              "properties": Object {
-                                "abnormal": false,
-                                "addMore": false,
-                                "controlEvent": false,
-                                "hideLabel": false,
-                                "location": Object {
-                                  "column": 0,
-                                  "row": 1,
-                                },
-                                "mandatory": false,
-                                "notes": false,
-                              },
-                              "type": "obsControl",
-                              "units": "mmHg",
-                            }
-                          }
-                          onControlAdd={[Function]}
-                          onControlRemove={[Function]}
-                          onEventTrigger={[Function]}
-                          onValueChanged={[Function]}
-                          showAddMore={true}
-                          showNotification={[Function]}
-                          showRemove={false}
-                          value={
-                            Object {
-                              "comment": undefined,
-                              "interpretation": undefined,
-                              "value": undefined,
-                            }
-                          }
-                        >
-                          <div
-                            className="form-field-wrap clearfix"
-                          >
-                            <div
-                              className="label-wrap fl"
-                            >
-                              <Label
-                                enabled={true}
-                                hidden={false}
-                                metadata={
-                                  Object {
-                                    "id": "2",
-                                    "translationKey": "SYSTOLIC_2",
-                                    "type": "label",
-                                    "units": "(mmHg)",
-                                    "value": "Systolic Blood Pressure",
-                                  }
-                                }
-                              >
-                                <label
-                                  className=""
-                                >
-                                  <FormattedMessage
-                                    defaultMessage="Systolic Blood Pressure"
-                                    id="SYSTOLIC_2"
-                                    values={Object {}}
-                                  >
-                                    <span>
-                                      Systolic Blood Pressure
-                                    </span>
-                                  </FormattedMessage>
-                                   (mmHg)
-                                </label>
-                              </Label>
-                            </div>
-                            <NumericBox
-                              conceptClass="Misc"
-                              conceptHandler={null}
-                              enabled={true}
-                              formFieldPath="Blood Pressure Form.undefined/2-0"
-                              hiAbsolute={300}
-                              hiNormal={null}
-                              hidden={false}
-                              lowAbsolute={30}
-                              lowNormal={null}
-                              onChange={[Function]}
-                              onControlAdd={[Function]}
-                              options={Array []}
-                              properties={
-                                Object {
-                                  "abnormal": false,
-                                  "addMore": false,
-                                  "controlEvent": false,
-                                  "hideLabel": false,
-                                  "location": Object {
-                                    "column": 0,
-                                    "row": 1,
-                                  },
-                                  "mandatory": false,
-                                  "notes": false,
-                                }
-                              }
-                              showNotification={[Function]}
-                              validations={
-                                Array [
-                                  "allowDecimal",
-                                ]
-                              }
+                            <Grid
+                              bsClass="container"
+                              componentClass="div"
+                              fluid={false}
                             >
                               <div
-                                className="fl"
+                                className="container"
                               >
-                                <input
-                                  className=""
-                                  disabled={false}
-                                  onChange={[Function]}
-                                  type="number"
-                                />
-                              </div>
-                            </NumericBox>
-                          </div>
-                        </ObsControl>
-                      </div>
-                    </div>
-                  </Row>
-                  <Row
-                    collapse={false}
-                    controls={
-                      Array [
-                        Object {
-                          "concept": Object {
-                            "answers": Array [],
-                            "conceptClass": "Misc",
-                            "conceptHandler": null,
-                            "datatype": "Numeric",
-                            "name": "DIASTOLIC",
-                            "properties": Object {
-                              "allowDecimal": false,
-                            },
-                            "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                          },
-                          "hiAbsolute": 150,
-                          "hiNormal": null,
-                          "id": "3",
-                          "label": Object {
-                            "id": "3",
-                            "translationKey": "DIASTOLIC_2",
-                            "type": "label",
-                            "units": "",
-                            "value": "Diastolic Blood Pressure",
-                          },
-                          "lowAbsolute": 20,
-                          "lowNormal": null,
-                          "properties": Object {
-                            "abnormal": false,
-                            "addMore": false,
-                            "controlEvent": false,
-                            "hideLabel": false,
-                            "location": Object {
-                              "column": 0,
-                              "row": 2,
-                            },
-                            "mandatory": false,
-                            "notes": false,
-                          },
-                          "type": "obsControl",
-                          "units": "mmHg",
-                        },
-                      ]
-                    }
-                    errors={Array []}
-                    formName="Blood Pressure Form"
-                    id={2}
-                    key="2"
-                    onControlAdd={[Function]}
-                    onControlRemove={[Function]}
-                    onEventTrigger={[Function]}
-                    onValueChanged={[Function]}
-                    records={
-                      Array [
-                        Object {
-                          "active": true,
-                          "children": undefined,
-                          "control": Object {
-                            "id": "1",
-                            "properties": Object {
-                              "location": Object {
-                                "column": 0,
-                                "row": 0,
-                              },
-                            },
-                            "translationKey": "LABEL_1",
-                            "type": "label",
-                            "value": "Blood Pressure Form",
-                          },
-                          "dataSource": Object {
-                            "concept": undefined,
-                            "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                            "formNamespace": "Bahmni",
-                            "voided": true,
-                          },
-                          "enabled": true,
-                          "errors": Array [],
-                          "formFieldPath": "Blood Pressure Form.undefined/1-0",
-                          "getActive": [Function],
-                          "getConceptName": [Function],
-                          "getConceptType": [Function],
-                          "getControlId": [Function],
-                          "getErrors": [Function],
-                          "getEventScripts": [Function],
-                          "getLabelName": [Function],
-                          "getObject": [Function],
-                          "getValue": [Function],
-                          "hidden": false,
-                          "setValue": [Function],
-                          "showAddMore": true,
-                          "showRemove": false,
-                          "update": [Function],
-                          "value": Object {
-                            "comment": undefined,
-                            "interpretation": undefined,
-                            "value": undefined,
-                          },
-                          "valueMapper": undefined,
-                        },
-                        Object {
-                          "active": true,
-                          "children": undefined,
-                          "control": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "SYSTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "hiAbsolute": 300,
-                            "hiNormal": null,
-                            "id": "2",
-                            "label": Object {
-                              "id": "2",
-                              "translationKey": "SYSTOLIC_2",
-                              "type": "label",
-                              "units": "",
-                              "value": "Systolic Blood Pressure",
-                            },
-                            "lowAbsolute": 30,
-                            "lowNormal": null,
-                            "properties": Object {
-                              "abnormal": false,
-                              "addMore": false,
-                              "controlEvent": false,
-                              "hideLabel": false,
-                              "location": Object {
-                                "column": 0,
-                                "row": 1,
-                              },
-                              "mandatory": false,
-                              "notes": false,
-                            },
-                            "type": "obsControl",
-                            "units": "mmHg",
-                          },
-                          "dataSource": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "SYSTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569bffe-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                            "formNamespace": "Bahmni",
-                            "voided": true,
-                          },
-                          "enabled": true,
-                          "errors": Array [],
-                          "formFieldPath": "Blood Pressure Form.undefined/2-0",
-                          "getActive": [Function],
-                          "getConceptName": [Function],
-                          "getConceptType": [Function],
-                          "getControlId": [Function],
-                          "getErrors": [Function],
-                          "getEventScripts": [Function],
-                          "getLabelName": [Function],
-                          "getObject": [Function],
-                          "getValue": [Function],
-                          "hidden": false,
-                          "setValue": [Function],
-                          "showAddMore": true,
-                          "showRemove": false,
-                          "update": [Function],
-                          "value": Object {
-                            "comment": undefined,
-                            "interpretation": undefined,
-                            "value": undefined,
-                          },
-                          "valueMapper": undefined,
-                        },
-                        Object {
-                          "active": true,
-                          "children": undefined,
-                          "control": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "DIASTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "hiAbsolute": 150,
-                            "hiNormal": null,
-                            "id": "3",
-                            "label": Object {
-                              "id": "3",
-                              "translationKey": "DIASTOLIC_2",
-                              "type": "label",
-                              "units": "",
-                              "value": "Diastolic Blood Pressure",
-                            },
-                            "lowAbsolute": 20,
-                            "lowNormal": null,
-                            "properties": Object {
-                              "abnormal": false,
-                              "addMore": false,
-                              "controlEvent": false,
-                              "hideLabel": false,
-                              "location": Object {
-                                "column": 0,
-                                "row": 2,
-                              },
-                              "mandatory": false,
-                              "notes": false,
-                            },
-                            "type": "obsControl",
-                            "units": "mmHg",
-                          },
-                          "dataSource": Object {
-                            "concept": Object {
-                              "answers": Array [],
-                              "conceptClass": "Misc",
-                              "conceptHandler": null,
-                              "datatype": "Numeric",
-                              "name": "DIASTOLIC",
-                              "properties": Object {
-                                "allowDecimal": false,
-                              },
-                              "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                            },
-                            "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                            "formNamespace": "Bahmni",
-                            "voided": true,
-                          },
-                          "enabled": true,
-                          "errors": Array [],
-                          "formFieldPath": "Blood Pressure Form.undefined/3-0",
-                          "getActive": [Function],
-                          "getConceptName": [Function],
-                          "getConceptType": [Function],
-                          "getControlId": [Function],
-                          "getErrors": [Function],
-                          "getEventScripts": [Function],
-                          "getLabelName": [Function],
-                          "getObject": [Function],
-                          "getValue": [Function],
-                          "hidden": false,
-                          "setValue": [Function],
-                          "showAddMore": true,
-                          "showRemove": false,
-                          "update": [Function],
-                          "value": Object {
-                            "comment": undefined,
-                            "interpretation": undefined,
-                            "value": undefined,
-                          },
-                          "valueMapper": undefined,
-                        },
-                      ]
-                    }
-                    showNotification={[Function]}
-                  >
-                    <div
-                      className="form-builder-row"
-                    >
-                      <div
-                        className="form-builder-column form-builder-column-0-index0"
-                        key="Blood Pressure Form.undefined/3-0"
-                      >
-                        <ObsControl
-                          collapse={false}
-                          enabled={true}
-                          errors={Array []}
-                          formFieldPath="Blood Pressure Form.undefined/3-0"
-                          formName="Blood Pressure Form"
-                          hidden={false}
-                          id={2}
-                          key="3"
-                          metadata={
-                            Object {
-                              "concept": Object {
-                                "answers": Array [],
-                                "conceptClass": "Misc",
-                                "conceptHandler": null,
-                                "datatype": "Numeric",
-                                "name": "DIASTOLIC",
-                                "properties": Object {
-                                  "allowDecimal": false,
-                                },
-                                "uuid": "6569c116-977f-11e1-8993-905e29aff6c1",
-                              },
-                              "hiAbsolute": 150,
-                              "hiNormal": null,
-                              "id": "3",
-                              "label": Object {
-                                "id": "3",
-                                "translationKey": "DIASTOLIC_2",
-                                "type": "label",
-                                "units": "",
-                                "value": "Diastolic Blood Pressure",
-                              },
-                              "lowAbsolute": 20,
-                              "lowNormal": null,
-                              "properties": Object {
-                                "abnormal": false,
-                                "addMore": false,
-                                "controlEvent": false,
-                                "hideLabel": false,
-                                "location": Object {
-                                  "column": 0,
-                                  "row": 2,
-                                },
-                                "mandatory": false,
-                                "notes": false,
-                              },
-                              "type": "obsControl",
-                              "units": "mmHg",
-                            }
-                          }
-                          onControlAdd={[Function]}
-                          onControlRemove={[Function]}
-                          onEventTrigger={[Function]}
-                          onValueChanged={[Function]}
-                          showAddMore={true}
-                          showNotification={[Function]}
-                          showRemove={false}
-                          value={
-                            Object {
-                              "comment": undefined,
-                              "interpretation": undefined,
-                              "value": undefined,
-                            }
-                          }
-                        >
-                          <div
-                            className="form-field-wrap clearfix"
-                          >
-                            <div
-                              className="label-wrap fl"
-                            >
-                              <Label
-                                enabled={true}
-                                hidden={false}
-                                metadata={
-                                  Object {
-                                    "id": "3",
-                                    "translationKey": "DIASTOLIC_2",
-                                    "type": "label",
-                                    "units": "(mmHg)",
-                                    "value": "Diastolic Blood Pressure",
-                                  }
-                                }
-                              >
-                                <label
-                                  className=""
+                                <Row
+                                  bsClass="row"
+                                  componentClass="div"
                                 >
-                                  <FormattedMessage
-                                    defaultMessage="Diastolic Blood Pressure"
-                                    id="DIASTOLIC_2"
-                                    values={Object {}}
+                                  <div
+                                    className="row"
                                   >
-                                    <span>
-                                      Diastolic Blood Pressure
-                                    </span>
-                                  </FormattedMessage>
-                                   (mmHg)
-                                </label>
-                              </Label>
-                            </div>
-                            <NumericBox
-                              conceptClass="Misc"
-                              conceptHandler={null}
-                              enabled={true}
-                              formFieldPath="Blood Pressure Form.undefined/3-0"
-                              hiAbsolute={150}
-                              hiNormal={null}
-                              hidden={false}
-                              lowAbsolute={20}
-                              lowNormal={null}
-                              onChange={[Function]}
-                              onControlAdd={[Function]}
-                              options={Array []}
-                              properties={
-                                Object {
-                                  "abnormal": false,
-                                  "addMore": false,
-                                  "controlEvent": false,
-                                  "hideLabel": false,
-                                  "location": Object {
-                                    "column": 0,
-                                    "row": 2,
-                                  },
-                                  "mandatory": false,
-                                  "notes": false,
-                                }
-                              }
-                              showNotification={[Function]}
-                              validations={
-                                Array [
-                                  "allowDecimal",
-                                ]
-                              }
-                            >
-                              <div
-                                className="fl"
-                              >
-                                <input
-                                  className=""
-                                  disabled={false}
-                                  onChange={[Function]}
-                                  type="number"
-                                />
+                                    <FormGroup
+                                      bsClass="form-group"
+                                      controlId="formSystolic"
+                                    >
+                                      <div
+                                        className="form-group"
+                                      >
+                                        <Col
+                                          bsClass="col"
+                                          componentClass={[Function]}
+                                          sm={2}
+                                        >
+                                          <ControlLabel
+                                            bsClass="control-label"
+                                            className="col-sm-2"
+                                            srOnly={false}
+                                          >
+                                            <label
+                                              className="col-sm-2 control-label"
+                                              htmlFor="formSystolic"
+                                            >
+                                              Systolic Blood Pressure
+                                            </label>
+                                          </ControlLabel>
+                                        </Col>
+                                        <Col
+                                          bsClass="col"
+                                          componentClass="div"
+                                          sm={4}
+                                        >
+                                          <div
+                                            className="col-sm-4"
+                                          >
+                                            <Obs
+                                              concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                              path="Systolic"
+                                            >
+                                              <Field
+                                                component={[Function]}
+                                                name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                type="number"
+                                              >
+                                                <Connect(ConnectedField)
+                                                  _reduxForm={
+                                                    Object {
+                                                      "anyTouched": false,
+                                                      "array": Object {
+                                                        "insert": [Function],
+                                                        "move": [Function],
+                                                        "pop": [Function],
+                                                        "push": [Function],
+                                                        "remove": [Function],
+                                                        "removeAll": [Function],
+                                                        "shift": [Function],
+                                                        "splice": [Function],
+                                                        "swap": [Function],
+                                                        "unshift": [Function],
+                                                      },
+                                                      "arrayInsert": [Function],
+                                                      "arrayMove": [Function],
+                                                      "arrayPop": [Function],
+                                                      "arrayPush": [Function],
+                                                      "arrayRemove": [Function],
+                                                      "arrayRemoveAll": [Function],
+                                                      "arrayShift": [Function],
+                                                      "arraySplice": [Function],
+                                                      "arraySwap": [Function],
+                                                      "arrayUnshift": [Function],
+                                                      "asyncErrors": undefined,
+                                                      "asyncValidate": [Function],
+                                                      "asyncValidating": false,
+                                                      "autofill": [Function],
+                                                      "blur": [Function],
+                                                      "change": [Function],
+                                                      "children": <Grid
+                                                        bsClass="container"
+                                                        componentClass="div"
+                                                        fluid={false}
+                                                    >
+                                                        <Row
+                                                            bsClass="row"
+                                                            componentClass="div"
+                                                        >
+                                                            <FormGroup
+                                                                bsClass="form-group"
+                                                                controlId="formSystolic"
+                                                            >
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass={[Function]}
+                                                                    sm={2}
+                                                                >
+                                                                    Systolic Blood Pressure
+                                                                </Col>
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass="div"
+                                                                    sm={4}
+                                                                >
+                                                                    <Obs
+                                                                        concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                        path="Systolic"
+                                                                    />
+                                                                </Col>
+                                                            </FormGroup>
+                                                        </Row>
+                                                        <Row
+                                                            bsClass="row"
+                                                            componentClass="div"
+                                                        >
+                                                            <FormGroup
+                                                                bsClass="form-group"
+                                                                controlId="formDiastolic"
+                                                            >
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass={[Function]}
+                                                                    sm={2}
+                                                                >
+                                                                    Diastolic Blood Pressure
+                                                                </Col>
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass="div"
+                                                                    sm={4}
+                                                                >
+                                                                    <Obs
+                                                                        concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                        path="Diastolic"
+                                                                    />
+                                                                </Col>
+                                                            </FormGroup>
+                                                        </Row>
+                                                        <Row
+                                                            bsClass="row"
+                                                            componentClass="div"
+                                                        >
+                                                            <Submit />
+                                                        </Row>
+                                                    </Grid>,
+                                                      "clearAsyncError": [Function],
+                                                      "clearFields": [Function],
+                                                      "clearSubmit": [Function],
+                                                      "clearSubmitErrors": [Function],
+                                                      "destroy": [Function],
+                                                      "destroyOnUnmount": true,
+                                                      "dirty": false,
+                                                      "dispatch": [Function],
+                                                      "enableReinitialize": false,
+                                                      "encounterType": Object {
+                                                        "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
+                                                      },
+                                                      "error": undefined,
+                                                      "focus": [Function],
+                                                      "forceUnregisterOnUnmount": false,
+                                                      "form": "openmrs-form",
+                                                      "formSubmittedActionCreator": Array [
+                                                        [Function],
+                                                        [Function],
+                                                      ],
+                                                      "getFormState": [Function],
+                                                      "getValues": [Function],
+                                                      "initialValues": undefined,
+                                                      "initialize": [Function],
+                                                      "initialized": false,
+                                                      "invalid": false,
+                                                      "keepDirtyOnReinitialize": false,
+                                                      "patient": Object {
+                                                        "uuid": "abc",
+                                                        "visit": Object {
+                                                          "uuid": "def",
+                                                        },
+                                                      },
+                                                      "persistentSubmitErrors": false,
+                                                      "pristine": true,
+                                                      "pure": true,
+                                                      "register": [Function],
+                                                      "registerField": [Function],
+                                                      "registerInnerOnSubmit": [Function],
+                                                      "registeredFields": undefined,
+                                                      "reset": [Function],
+                                                      "resetSection": [Function],
+                                                      "sectionPrefix": undefined,
+                                                      "setSubmitFailed": [Function],
+                                                      "setSubmitSucceeded": [Function],
+                                                      "shouldAsyncValidate": [Function],
+                                                      "shouldError": [Function],
+                                                      "shouldValidate": [Function],
+                                                      "shouldWarn": [Function],
+                                                      "startAsyncValidation": [Function],
+                                                      "startSubmit": [Function],
+                                                      "stopAsyncValidation": [Function],
+                                                      "stopSubmit": [Function],
+                                                      "submit": [Function],
+                                                      "submitFailed": false,
+                                                      "submitSucceeded": false,
+                                                      "submitting": false,
+                                                      "syncErrors": Object {},
+                                                      "syncWarnings": Object {},
+                                                      "touch": [Function],
+                                                      "touchOnBlur": true,
+                                                      "touchOnChange": false,
+                                                      "triggerSubmit": undefined,
+                                                      "unregister": [Function],
+                                                      "unregisterField": [Function],
+                                                      "untouch": [Function],
+                                                      "updateSyncErrors": [Function],
+                                                      "updateSyncWarnings": [Function],
+                                                      "updateUnregisteredFields": false,
+                                                      "valid": true,
+                                                      "validExceptSubmit": true,
+                                                      "values": Object {},
+                                                      "visit": Object {
+                                                        "uuid": "def",
+                                                      },
+                                                      "warning": undefined,
+                                                    }
+                                                  }
+                                                  component={[Function]}
+                                                  name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                  normalize={[Function]}
+                                                  type="number"
+                                                >
+                                                  <ConnectedField
+                                                    _reduxForm={
+                                                      Object {
+                                                        "anyTouched": false,
+                                                        "array": Object {
+                                                          "insert": [Function],
+                                                          "move": [Function],
+                                                          "pop": [Function],
+                                                          "push": [Function],
+                                                          "remove": [Function],
+                                                          "removeAll": [Function],
+                                                          "shift": [Function],
+                                                          "splice": [Function],
+                                                          "swap": [Function],
+                                                          "unshift": [Function],
+                                                        },
+                                                        "arrayInsert": [Function],
+                                                        "arrayMove": [Function],
+                                                        "arrayPop": [Function],
+                                                        "arrayPush": [Function],
+                                                        "arrayRemove": [Function],
+                                                        "arrayRemoveAll": [Function],
+                                                        "arrayShift": [Function],
+                                                        "arraySplice": [Function],
+                                                        "arraySwap": [Function],
+                                                        "arrayUnshift": [Function],
+                                                        "asyncErrors": undefined,
+                                                        "asyncValidate": [Function],
+                                                        "asyncValidating": false,
+                                                        "autofill": [Function],
+                                                        "blur": [Function],
+                                                        "change": [Function],
+                                                        "children": <Grid
+                                                          bsClass="container"
+                                                          componentClass="div"
+                                                          fluid={false}
+                                                      >
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <FormGroup
+                                                                  bsClass="form-group"
+                                                                  controlId="formSystolic"
+                                                              >
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                  >
+                                                                      Systolic Blood Pressure
+                                                                  </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={4}
+                                                                  >
+                                                                      <Obs
+                                                                          concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                          path="Systolic"
+                                                                      />
+                                                                  </Col>
+                                                              </FormGroup>
+                                                          </Row>
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <FormGroup
+                                                                  bsClass="form-group"
+                                                                  controlId="formDiastolic"
+                                                              >
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                  >
+                                                                      Diastolic Blood Pressure
+                                                                  </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={4}
+                                                                  >
+                                                                      <Obs
+                                                                          concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                          path="Diastolic"
+                                                                      />
+                                                                  </Col>
+                                                              </FormGroup>
+                                                          </Row>
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <Submit />
+                                                          </Row>
+                                                      </Grid>,
+                                                        "clearAsyncError": [Function],
+                                                        "clearFields": [Function],
+                                                        "clearSubmit": [Function],
+                                                        "clearSubmitErrors": [Function],
+                                                        "destroy": [Function],
+                                                        "destroyOnUnmount": true,
+                                                        "dirty": false,
+                                                        "dispatch": [Function],
+                                                        "enableReinitialize": false,
+                                                        "encounterType": Object {
+                                                          "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
+                                                        },
+                                                        "error": undefined,
+                                                        "focus": [Function],
+                                                        "forceUnregisterOnUnmount": false,
+                                                        "form": "openmrs-form",
+                                                        "formSubmittedActionCreator": Array [
+                                                          [Function],
+                                                          [Function],
+                                                        ],
+                                                        "getFormState": [Function],
+                                                        "getValues": [Function],
+                                                        "initialValues": undefined,
+                                                        "initialize": [Function],
+                                                        "initialized": false,
+                                                        "invalid": false,
+                                                        "keepDirtyOnReinitialize": false,
+                                                        "patient": Object {
+                                                          "uuid": "abc",
+                                                          "visit": Object {
+                                                            "uuid": "def",
+                                                          },
+                                                        },
+                                                        "persistentSubmitErrors": false,
+                                                        "pristine": true,
+                                                        "pure": true,
+                                                        "register": [Function],
+                                                        "registerField": [Function],
+                                                        "registerInnerOnSubmit": [Function],
+                                                        "registeredFields": undefined,
+                                                        "reset": [Function],
+                                                        "resetSection": [Function],
+                                                        "sectionPrefix": undefined,
+                                                        "setSubmitFailed": [Function],
+                                                        "setSubmitSucceeded": [Function],
+                                                        "shouldAsyncValidate": [Function],
+                                                        "shouldError": [Function],
+                                                        "shouldValidate": [Function],
+                                                        "shouldWarn": [Function],
+                                                        "startAsyncValidation": [Function],
+                                                        "startSubmit": [Function],
+                                                        "stopAsyncValidation": [Function],
+                                                        "stopSubmit": [Function],
+                                                        "submit": [Function],
+                                                        "submitFailed": false,
+                                                        "submitSucceeded": false,
+                                                        "submitting": false,
+                                                        "syncErrors": Object {},
+                                                        "syncWarnings": Object {},
+                                                        "touch": [Function],
+                                                        "touchOnBlur": true,
+                                                        "touchOnChange": false,
+                                                        "triggerSubmit": undefined,
+                                                        "unregister": [Function],
+                                                        "unregisterField": [Function],
+                                                        "untouch": [Function],
+                                                        "updateSyncErrors": [Function],
+                                                        "updateSyncWarnings": [Function],
+                                                        "updateUnregisteredFields": false,
+                                                        "valid": true,
+                                                        "validExceptSubmit": true,
+                                                        "values": Object {},
+                                                        "visit": Object {
+                                                          "uuid": "def",
+                                                        },
+                                                        "warning": undefined,
+                                                      }
+                                                    }
+                                                    asyncValidating={false}
+                                                    component={[Function]}
+                                                    dirty={false}
+                                                    dispatch={[Function]}
+                                                    name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                    normalize={[Function]}
+                                                    pristine={true}
+                                                    type="number"
+                                                  >
+                                                    <FieldInput
+                                                      input={
+                                                        Object {
+                                                          "name": "obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1",
+                                                          "onBlur": [Function],
+                                                          "onChange": [Function],
+                                                          "onDragStart": [Function],
+                                                          "onDrop": [Function],
+                                                          "onFocus": [Function],
+                                                          "value": "",
+                                                        }
+                                                      }
+                                                      meta={
+                                                        Object {
+                                                          "active": false,
+                                                          "asyncValidating": false,
+                                                          "autofilled": false,
+                                                          "dirty": false,
+                                                          "dispatch": [Function],
+                                                          "error": undefined,
+                                                          "form": "openmrs-form",
+                                                          "initial": undefined,
+                                                          "invalid": false,
+                                                          "pristine": true,
+                                                          "submitFailed": false,
+                                                          "submitting": false,
+                                                          "touched": false,
+                                                          "valid": true,
+                                                          "visited": false,
+                                                          "warning": undefined,
+                                                        }
+                                                      }
+                                                      type="number"
+                                                    >
+                                                      <FormControl
+                                                        bsClass="form-control"
+                                                        componentClass="input"
+                                                        onChange={[Function]}
+                                                        type="number"
+                                                        value=""
+                                                      >
+                                                        <input
+                                                          className="form-control"
+                                                          id="formSystolic"
+                                                          onChange={[Function]}
+                                                          type="number"
+                                                          value=""
+                                                        />
+                                                      </FormControl>
+                                                    </FieldInput>
+                                                  </ConnectedField>
+                                                </Connect(ConnectedField)>
+                                              </Field>
+                                            </Obs>
+                                          </div>
+                                        </Col>
+                                      </div>
+                                    </FormGroup>
+                                  </div>
+                                </Row>
+                                <Row
+                                  bsClass="row"
+                                  componentClass="div"
+                                >
+                                  <div
+                                    className="row"
+                                  >
+                                    <FormGroup
+                                      bsClass="form-group"
+                                      controlId="formDiastolic"
+                                    >
+                                      <div
+                                        className="form-group"
+                                      >
+                                        <Col
+                                          bsClass="col"
+                                          componentClass={[Function]}
+                                          sm={2}
+                                        >
+                                          <ControlLabel
+                                            bsClass="control-label"
+                                            className="col-sm-2"
+                                            srOnly={false}
+                                          >
+                                            <label
+                                              className="col-sm-2 control-label"
+                                              htmlFor="formDiastolic"
+                                            >
+                                              Diastolic Blood Pressure
+                                            </label>
+                                          </ControlLabel>
+                                        </Col>
+                                        <Col
+                                          bsClass="col"
+                                          componentClass="div"
+                                          sm={4}
+                                        >
+                                          <div
+                                            className="col-sm-4"
+                                          >
+                                            <Obs
+                                              concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                              path="Diastolic"
+                                            >
+                                              <Field
+                                                component={[Function]}
+                                                name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
+                                                type="number"
+                                              >
+                                                <Connect(ConnectedField)
+                                                  _reduxForm={
+                                                    Object {
+                                                      "anyTouched": false,
+                                                      "array": Object {
+                                                        "insert": [Function],
+                                                        "move": [Function],
+                                                        "pop": [Function],
+                                                        "push": [Function],
+                                                        "remove": [Function],
+                                                        "removeAll": [Function],
+                                                        "shift": [Function],
+                                                        "splice": [Function],
+                                                        "swap": [Function],
+                                                        "unshift": [Function],
+                                                      },
+                                                      "arrayInsert": [Function],
+                                                      "arrayMove": [Function],
+                                                      "arrayPop": [Function],
+                                                      "arrayPush": [Function],
+                                                      "arrayRemove": [Function],
+                                                      "arrayRemoveAll": [Function],
+                                                      "arrayShift": [Function],
+                                                      "arraySplice": [Function],
+                                                      "arraySwap": [Function],
+                                                      "arrayUnshift": [Function],
+                                                      "asyncErrors": undefined,
+                                                      "asyncValidate": [Function],
+                                                      "asyncValidating": false,
+                                                      "autofill": [Function],
+                                                      "blur": [Function],
+                                                      "change": [Function],
+                                                      "children": <Grid
+                                                        bsClass="container"
+                                                        componentClass="div"
+                                                        fluid={false}
+                                                    >
+                                                        <Row
+                                                            bsClass="row"
+                                                            componentClass="div"
+                                                        >
+                                                            <FormGroup
+                                                                bsClass="form-group"
+                                                                controlId="formSystolic"
+                                                            >
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass={[Function]}
+                                                                    sm={2}
+                                                                >
+                                                                    Systolic Blood Pressure
+                                                                </Col>
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass="div"
+                                                                    sm={4}
+                                                                >
+                                                                    <Obs
+                                                                        concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                        path="Systolic"
+                                                                    />
+                                                                </Col>
+                                                            </FormGroup>
+                                                        </Row>
+                                                        <Row
+                                                            bsClass="row"
+                                                            componentClass="div"
+                                                        >
+                                                            <FormGroup
+                                                                bsClass="form-group"
+                                                                controlId="formDiastolic"
+                                                            >
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass={[Function]}
+                                                                    sm={2}
+                                                                >
+                                                                    Diastolic Blood Pressure
+                                                                </Col>
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass="div"
+                                                                    sm={4}
+                                                                >
+                                                                    <Obs
+                                                                        concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                        path="Diastolic"
+                                                                    />
+                                                                </Col>
+                                                            </FormGroup>
+                                                        </Row>
+                                                        <Row
+                                                            bsClass="row"
+                                                            componentClass="div"
+                                                        >
+                                                            <Submit />
+                                                        </Row>
+                                                    </Grid>,
+                                                      "clearAsyncError": [Function],
+                                                      "clearFields": [Function],
+                                                      "clearSubmit": [Function],
+                                                      "clearSubmitErrors": [Function],
+                                                      "destroy": [Function],
+                                                      "destroyOnUnmount": true,
+                                                      "dirty": false,
+                                                      "dispatch": [Function],
+                                                      "enableReinitialize": false,
+                                                      "encounterType": Object {
+                                                        "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
+                                                      },
+                                                      "error": undefined,
+                                                      "focus": [Function],
+                                                      "forceUnregisterOnUnmount": false,
+                                                      "form": "openmrs-form",
+                                                      "formSubmittedActionCreator": Array [
+                                                        [Function],
+                                                        [Function],
+                                                      ],
+                                                      "getFormState": [Function],
+                                                      "getValues": [Function],
+                                                      "initialValues": undefined,
+                                                      "initialize": [Function],
+                                                      "initialized": false,
+                                                      "invalid": false,
+                                                      "keepDirtyOnReinitialize": false,
+                                                      "patient": Object {
+                                                        "uuid": "abc",
+                                                        "visit": Object {
+                                                          "uuid": "def",
+                                                        },
+                                                      },
+                                                      "persistentSubmitErrors": false,
+                                                      "pristine": true,
+                                                      "pure": true,
+                                                      "register": [Function],
+                                                      "registerField": [Function],
+                                                      "registerInnerOnSubmit": [Function],
+                                                      "registeredFields": undefined,
+                                                      "reset": [Function],
+                                                      "resetSection": [Function],
+                                                      "sectionPrefix": undefined,
+                                                      "setSubmitFailed": [Function],
+                                                      "setSubmitSucceeded": [Function],
+                                                      "shouldAsyncValidate": [Function],
+                                                      "shouldError": [Function],
+                                                      "shouldValidate": [Function],
+                                                      "shouldWarn": [Function],
+                                                      "startAsyncValidation": [Function],
+                                                      "startSubmit": [Function],
+                                                      "stopAsyncValidation": [Function],
+                                                      "stopSubmit": [Function],
+                                                      "submit": [Function],
+                                                      "submitFailed": false,
+                                                      "submitSucceeded": false,
+                                                      "submitting": false,
+                                                      "syncErrors": Object {},
+                                                      "syncWarnings": Object {},
+                                                      "touch": [Function],
+                                                      "touchOnBlur": true,
+                                                      "touchOnChange": false,
+                                                      "triggerSubmit": undefined,
+                                                      "unregister": [Function],
+                                                      "unregisterField": [Function],
+                                                      "untouch": [Function],
+                                                      "updateSyncErrors": [Function],
+                                                      "updateSyncWarnings": [Function],
+                                                      "updateUnregisteredFields": false,
+                                                      "valid": true,
+                                                      "validExceptSubmit": true,
+                                                      "values": Object {},
+                                                      "visit": Object {
+                                                        "uuid": "def",
+                                                      },
+                                                      "warning": undefined,
+                                                    }
+                                                  }
+                                                  component={[Function]}
+                                                  name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
+                                                  normalize={[Function]}
+                                                  type="number"
+                                                >
+                                                  <ConnectedField
+                                                    _reduxForm={
+                                                      Object {
+                                                        "anyTouched": false,
+                                                        "array": Object {
+                                                          "insert": [Function],
+                                                          "move": [Function],
+                                                          "pop": [Function],
+                                                          "push": [Function],
+                                                          "remove": [Function],
+                                                          "removeAll": [Function],
+                                                          "shift": [Function],
+                                                          "splice": [Function],
+                                                          "swap": [Function],
+                                                          "unshift": [Function],
+                                                        },
+                                                        "arrayInsert": [Function],
+                                                        "arrayMove": [Function],
+                                                        "arrayPop": [Function],
+                                                        "arrayPush": [Function],
+                                                        "arrayRemove": [Function],
+                                                        "arrayRemoveAll": [Function],
+                                                        "arrayShift": [Function],
+                                                        "arraySplice": [Function],
+                                                        "arraySwap": [Function],
+                                                        "arrayUnshift": [Function],
+                                                        "asyncErrors": undefined,
+                                                        "asyncValidate": [Function],
+                                                        "asyncValidating": false,
+                                                        "autofill": [Function],
+                                                        "blur": [Function],
+                                                        "change": [Function],
+                                                        "children": <Grid
+                                                          bsClass="container"
+                                                          componentClass="div"
+                                                          fluid={false}
+                                                      >
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <FormGroup
+                                                                  bsClass="form-group"
+                                                                  controlId="formSystolic"
+                                                              >
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                  >
+                                                                      Systolic Blood Pressure
+                                                                  </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={4}
+                                                                  >
+                                                                      <Obs
+                                                                          concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                          path="Systolic"
+                                                                      />
+                                                                  </Col>
+                                                              </FormGroup>
+                                                          </Row>
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <FormGroup
+                                                                  bsClass="form-group"
+                                                                  controlId="formDiastolic"
+                                                              >
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                  >
+                                                                      Diastolic Blood Pressure
+                                                                  </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={4}
+                                                                  >
+                                                                      <Obs
+                                                                          concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                          path="Diastolic"
+                                                                      />
+                                                                  </Col>
+                                                              </FormGroup>
+                                                          </Row>
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <Submit />
+                                                          </Row>
+                                                      </Grid>,
+                                                        "clearAsyncError": [Function],
+                                                        "clearFields": [Function],
+                                                        "clearSubmit": [Function],
+                                                        "clearSubmitErrors": [Function],
+                                                        "destroy": [Function],
+                                                        "destroyOnUnmount": true,
+                                                        "dirty": false,
+                                                        "dispatch": [Function],
+                                                        "enableReinitialize": false,
+                                                        "encounterType": Object {
+                                                          "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
+                                                        },
+                                                        "error": undefined,
+                                                        "focus": [Function],
+                                                        "forceUnregisterOnUnmount": false,
+                                                        "form": "openmrs-form",
+                                                        "formSubmittedActionCreator": Array [
+                                                          [Function],
+                                                          [Function],
+                                                        ],
+                                                        "getFormState": [Function],
+                                                        "getValues": [Function],
+                                                        "initialValues": undefined,
+                                                        "initialize": [Function],
+                                                        "initialized": false,
+                                                        "invalid": false,
+                                                        "keepDirtyOnReinitialize": false,
+                                                        "patient": Object {
+                                                          "uuid": "abc",
+                                                          "visit": Object {
+                                                            "uuid": "def",
+                                                          },
+                                                        },
+                                                        "persistentSubmitErrors": false,
+                                                        "pristine": true,
+                                                        "pure": true,
+                                                        "register": [Function],
+                                                        "registerField": [Function],
+                                                        "registerInnerOnSubmit": [Function],
+                                                        "registeredFields": undefined,
+                                                        "reset": [Function],
+                                                        "resetSection": [Function],
+                                                        "sectionPrefix": undefined,
+                                                        "setSubmitFailed": [Function],
+                                                        "setSubmitSucceeded": [Function],
+                                                        "shouldAsyncValidate": [Function],
+                                                        "shouldError": [Function],
+                                                        "shouldValidate": [Function],
+                                                        "shouldWarn": [Function],
+                                                        "startAsyncValidation": [Function],
+                                                        "startSubmit": [Function],
+                                                        "stopAsyncValidation": [Function],
+                                                        "stopSubmit": [Function],
+                                                        "submit": [Function],
+                                                        "submitFailed": false,
+                                                        "submitSucceeded": false,
+                                                        "submitting": false,
+                                                        "syncErrors": Object {},
+                                                        "syncWarnings": Object {},
+                                                        "touch": [Function],
+                                                        "touchOnBlur": true,
+                                                        "touchOnChange": false,
+                                                        "triggerSubmit": undefined,
+                                                        "unregister": [Function],
+                                                        "unregisterField": [Function],
+                                                        "untouch": [Function],
+                                                        "updateSyncErrors": [Function],
+                                                        "updateSyncWarnings": [Function],
+                                                        "updateUnregisteredFields": false,
+                                                        "valid": true,
+                                                        "validExceptSubmit": true,
+                                                        "values": Object {},
+                                                        "visit": Object {
+                                                          "uuid": "def",
+                                                        },
+                                                        "warning": undefined,
+                                                      }
+                                                    }
+                                                    asyncValidating={false}
+                                                    component={[Function]}
+                                                    dirty={false}
+                                                    dispatch={[Function]}
+                                                    name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
+                                                    normalize={[Function]}
+                                                    pristine={true}
+                                                    type="number"
+                                                  >
+                                                    <FieldInput
+                                                      input={
+                                                        Object {
+                                                          "name": "obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1",
+                                                          "onBlur": [Function],
+                                                          "onChange": [Function],
+                                                          "onDragStart": [Function],
+                                                          "onDrop": [Function],
+                                                          "onFocus": [Function],
+                                                          "value": "",
+                                                        }
+                                                      }
+                                                      meta={
+                                                        Object {
+                                                          "active": false,
+                                                          "asyncValidating": false,
+                                                          "autofilled": false,
+                                                          "dirty": false,
+                                                          "dispatch": [Function],
+                                                          "error": undefined,
+                                                          "form": "openmrs-form",
+                                                          "initial": undefined,
+                                                          "invalid": false,
+                                                          "pristine": true,
+                                                          "submitFailed": false,
+                                                          "submitting": false,
+                                                          "touched": false,
+                                                          "valid": true,
+                                                          "visited": false,
+                                                          "warning": undefined,
+                                                        }
+                                                      }
+                                                      type="number"
+                                                    >
+                                                      <FormControl
+                                                        bsClass="form-control"
+                                                        componentClass="input"
+                                                        onChange={[Function]}
+                                                        type="number"
+                                                        value=""
+                                                      >
+                                                        <input
+                                                          className="form-control"
+                                                          id="formDiastolic"
+                                                          onChange={[Function]}
+                                                          type="number"
+                                                          value=""
+                                                        />
+                                                      </FormControl>
+                                                    </FieldInput>
+                                                  </ConnectedField>
+                                                </Connect(ConnectedField)>
+                                              </Field>
+                                            </Obs>
+                                          </div>
+                                        </Col>
+                                      </div>
+                                    </FormGroup>
+                                  </div>
+                                </Row>
+                                <Row
+                                  bsClass="row"
+                                  componentClass="div"
+                                >
+                                  <div
+                                    className="row"
+                                  >
+                                    <Submit>
+                                      <Button
+                                        active={false}
+                                        block={false}
+                                        bsClass="btn"
+                                        bsSize="large"
+                                        bsStyle="success"
+                                        disabled={false}
+                                        type="submit"
+                                      >
+                                        <button
+                                          className="btn btn-lg btn-success"
+                                          disabled={false}
+                                          type="submit"
+                                        >
+                                          Submit
+                                        </button>
+                                      </Button>
+                                    </Submit>
+                                  </div>
+                                </Row>
                               </div>
-                            </NumericBox>
-                          </div>
-                        </ObsControl>
-                      </div>
-                    </div>
-                  </Row>
-                </div>
-              </IntlProvider>
-            </Container>
-            <Button
-              active={false}
-              block={false}
-              bsClass="btn"
-              bsSize="large"
-              bsStyle="success"
-              disabled={false}
-              onClick={[Function]}
-            >
-              <button
-                className="btn btn-lg btn-success"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-              >
-                Submit
-              </button>
-            </Button>
+                            </Grid>
+                          </form>
+                        </Form>
+                      </OpenMRSForm>
+                    </Form(OpenMRSForm)>
+                  </Connect(Form(OpenMRSForm))>
+                </ReduxForm>
+              </Connect(ReduxForm)>
+            </div>
           </div>
-        </BahmniForm>
-      </BloodPressureForm>
-    </Connect(BloodPressureForm)>
+        </Form>
+      </Connect(Form)>
+    </BloodPressureForm>
   </MockRouter>
 </Provider>
 `;

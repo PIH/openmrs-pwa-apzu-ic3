@@ -10,7 +10,6 @@
     "ag-grid": "^17.1.1",
     "ag-grid-react": "^17.1.0",
     "babel-polyfill": "^6.26.0",
-    "bahmni-form-controls": "file:lib/bahmni-form-controls-v0.92.0.tgz",
     "bootstrap": "^3.3.7",
     "connected-react-router": "^4.3.0",
     "create-react-class": "^15.6.3",
