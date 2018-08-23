@@ -1,5 +1,5 @@
 import { call, put, takeLatest, select } from 'redux-saga/effects';
-import { Patient, visitRest,  reportingRest, LOGIN_TYPES } from '@openmrs/react-components';
+import { Patient, visitRest,  reportingRest, LOGIN_TYPES, SESSION_TYPES } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
 import patientActions from '../patient/patientActions';
@@ -110,6 +110,7 @@ function *checkInSagas() {
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
   yield takeLatest(REHYDRATE, initiateGetExpectedToCheckIn);
   yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetExpectedToCheckIn);
+  yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetExpectedToCheckIn);
 }
 
 export default checkInSagas;

@@ -57,9 +57,12 @@ const LOGIN_TYPES = {
   LOGOUT: types('logout', BASIC_TYPES)
 }
 
+const SESSION_TYPES = types('session', BASIC_TYPES)
+
 
 export {
   visitRest,
   encounterRest,
-  LOGIN_TYPES
+  LOGIN_TYPES,
+  SESSION_TYPES
 };
