@@ -1,12 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import { LoginPage, Logout, LoadingView } from '@openmrs/react-components';
+import { Logout, LoadingView } from '@openmrs/react-components';
 import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core';
 import { faCheck, faArrowRight, faBars, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import setupStoreAndPersistor, { history } from './store';
 import Layout from './layout/Layout';
+import LoginPage from './login/LoginPage';
 import HomePage from './home/HomePage';
 import InfoPatient from './patient/PatientInfo';
 import SearchPatient from './search/SearchPatient';
