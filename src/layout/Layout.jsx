@@ -14,7 +14,7 @@ import '../assets/css/header.css';
 
 const Layout = props => {
 
-  const contentCols = props.patient.uuid ? 10 : 12;
+  const contentCols = props.patient ? 10 : 12;
 
   return (
     <div id="outer-container" className="ag-theme-material">
@@ -32,7 +32,7 @@ const Layout = props => {
           <PatientHeader />
         </Row>
         <Row>
-          {props.patient.uuid &&
+          {props.patient &&
             <Col xs={2} sm={2} md={2} lg={2}>
               <LeftRail patient={props.patient} />
             </Col>
@@ -48,7 +48,7 @@ const Layout = props => {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient
+    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null
   };
 };
 

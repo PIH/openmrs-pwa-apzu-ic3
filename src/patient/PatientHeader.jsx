@@ -9,7 +9,6 @@ class PatientHeader extends React.Component {
   render() {
       if ( this.props.patient
         && (typeof this.props.patient !== 'undefined')
-        &&  this.props.patient.uuid
         && (typeof this.props.patient.name !== 'undefined') ) {
       return (
 
@@ -73,7 +72,7 @@ PatientHeader.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient
+    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null
   };
 };
 

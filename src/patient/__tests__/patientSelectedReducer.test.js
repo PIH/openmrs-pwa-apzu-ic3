@@ -6,17 +6,18 @@ import reducers from '../patientSelectedReducer';
 describe('patient selected reducer', () => {
 
   it('should return the initial state', () => {
-    expect(reducers(undefined, {})).toEqual({});
+    expect(reducers(undefined, {})).toBeNull();
   });
 
   it('grid row selected should add patient to selected', () => {
 
     const patient = new Patient();
+    patient.uuid = 'abc-123';
 
     expect(reducers(undefined, {
       type: GRID_TYPES.ROW_SELECTED,
       row: patient
-    })).toEqual(patient);
+    })).toEqual(patient.uuid);
 
   });
 
@@ -26,10 +27,7 @@ describe('patient selected reducer', () => {
 
     expect(reducers({ patient: patient }, {
       type: GRID_TYPES.CLEAR_SELECTED,
-    })).toEqual({
-      patient: {},
-      uuid: null
-    });
+    })).toBeNull();
 
   });
 
@@ -39,10 +37,7 @@ describe('patient selected reducer', () => {
 
     expect(reducers({ patient: patient }, {
       type: PATIENT_TYPES.CLEAR_SELECTED,
-    })).toEqual({
-      patient: {},
-      uuid: null
-    });
+    })).toBeNull();
 
   });
 

@@ -28,23 +28,26 @@ describe('Component: CheckInForm', () => {
     props = {};
     store = mockStore(
       {
-        selectedPatient: {
-          patient: {
+        patients: {
+          "abc": {
             patient: {
-              uuid: "abc"
-            }
-          },
-          visit: {
-            activeVisit: {
-              uuid: "3a80",
-              encounters: [],
               patient: {
                 uuid: "abc"
               }
             },
-            uuid: "def"
+            visit: {
+              activeVisit: {
+                uuid: "3a80",
+                encounters: [],
+                patient: {
+                  uuid: "abc"
+                }
+              },
+              uuid: "def"
+            }
           }
-        }
+        },
+        selectedPatient: "abc"
       });
     mountedComponent = undefined;
   });

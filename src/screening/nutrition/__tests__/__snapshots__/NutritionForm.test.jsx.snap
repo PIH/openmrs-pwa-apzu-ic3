@@ -187,11 +187,6 @@ exports[`Component: NutritionForm renders properly 1`] = `
             }
           }
           title="Nutrition"
-          visit={
-            Object {
-              "uuid": "def",
-            }
-          }
         >
           <div>
             <Link

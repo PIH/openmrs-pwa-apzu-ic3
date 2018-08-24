@@ -29,7 +29,7 @@ let Form = (props) => {
           encounterType={props.encounterType}
           formSubmittedActionCreator={formSubmittedActionCreators}
           patient={props.patient}
-          visit={props.visit}
+          visit={props.patient ? props.patient.visit : null}
         >
           { props.formContent }
         </OpenMRSForm>
@@ -50,8 +50,7 @@ Form.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient,
-    visit: state.selectedPatient.visit
+    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null,
   };
 };
 

@@ -72,7 +72,7 @@ class PatientInfo extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient
+    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null
   };
 };
 

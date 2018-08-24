@@ -187,11 +187,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
             }
           }
           title="Blood Pressure"
-          visit={
-            Object {
-              "uuid": "def",
-            }
-          }
         >
           <div>
             <Link

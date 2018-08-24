@@ -36,9 +36,7 @@ describe('Component: SearchPatient', () => {
         openmrs: {
           patientSearch: {}
         },
-        selectedPatient: {
-          patient: {}
-        }
+        selectedPatient: null
       });
     mountedComponent = undefined;
   });

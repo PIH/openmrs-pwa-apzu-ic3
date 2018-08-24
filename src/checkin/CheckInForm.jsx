@@ -9,7 +9,7 @@ import { goBack } from 'connected-react-router';
 
 let CheckinForm = props => {
 
-  const { handleSubmit, submitting, activeVisit, patient } = props;
+  const { handleSubmit, submitting, patient } = props;
 
   const historyBack = () => {
     props.dispatch(goBack());
@@ -144,7 +144,7 @@ let CheckinForm = props => {
           </Row>
 
 
-          { !(typeof activeVisit !== 'undefined' && typeof activeVisit.encounters !== 'undefined' ) &&
+          {!(patient && patient.visit && patient.visit.encounters) &&
           <Row>
             <FormGroup controlId="formSubmit">
               <Col
@@ -167,10 +167,10 @@ let CheckinForm = props => {
           </Row>
           }
 
-          { (typeof activeVisit !== 'undefined' && typeof activeVisit.encounters !== 'undefined' ) &&
+          {(patient && patient.visit && patient.visit.encounters) &&
             <div>
               <h3><Label>Completed Screenings</Label></h3>
-              <CompletedScreenings patientUuid={activeVisit.patient.uuid} />
+              <CompletedScreenings/>
             </div>
           }
         </Grid>
@@ -186,8 +186,7 @@ CheckinForm = reduxForm({
 
 CheckinForm = connect(
   state => ({
-    initialValues: state.selectedPatient,
-    activeVisit: state.selectedPatient.visit
+    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null,
   })
 )(CheckinForm);
 

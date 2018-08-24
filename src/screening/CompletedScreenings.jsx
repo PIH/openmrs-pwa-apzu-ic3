@@ -1,16 +1,10 @@
 import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
-import { visitActions } from '@openmrs/react-components';
-import { VISIT_REPRESENTATION } from '../constants';
 import utils from "../utils";
 
+// TODO: potentially refactor so that you pass the patient into this instead of wiring to the store?
 class CompletedScreenings extends React.Component {
-
-  componentDidMount() {
-    this.props.dispatch(visitActions.fetchPatientActiveVisit(this.props.patientUuid,
-      "custom:" + VISIT_REPRESENTATION));
-  }
 
   render() {
 
@@ -36,14 +30,15 @@ class CompletedScreenings extends React.Component {
 }
 
 CompletedScreenings.propTypes = {
-  patientUuid: PropTypes.string.isRequired,
   activeVisit: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {
   return {
-    activeVisit: state.selectedPatient.visit ? state.selectedPatient.visit : { "encounters" : [] }
+    activeVisit: state.selectedPatient && state.patients[state.selectedPatient] && state.patients[state.selectedPatient].visit ?
+      state.patients[state.selectedPatient].visit : { "encounters": [] }
   };
 };
+
 
 export default connect(mapStateToProps)(CompletedScreenings);
