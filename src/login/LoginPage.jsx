@@ -6,6 +6,7 @@ import { Login } from '@openmrs/react-components';
 import homeImage from "../assets/images/Malawi_0216_HMHC-6weekANC_JDrake_033-webbig.jpg";
 import logo from "../assets/images/pih_apzu_logo_white.png";
 import '../assets/css/LoginPage.css';
+import '../assets/css/background.css';
 
 const LoginPage = props => {
   const { from } = props.location.state || { from: { pathname: "/" } };
