@@ -24,8 +24,8 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
   >
     <BloodPressureForm>
       <Connect(Form)
-        afterSubmitLink="/screening/nutrition/queue"
-        backLink="/screening/nutrition/queue"
+        afterSubmitLink="/screening/bloodPressure/queue"
+        backLink="/screening/bloodPressure/queue"
         encounterType={
           Object {
             "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
@@ -102,8 +102,8 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
         title="Blood Pressure"
       >
         <Form
-          afterSubmitLink="/screening/nutrition/queue"
-          backLink="/screening/nutrition/queue"
+          afterSubmitLink="/screening/bloodPressure/queue"
+          backLink="/screening/bloodPressure/queue"
           dispatch={[Function]}
           encounterType={
             Object {
@@ -191,7 +191,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           <div>
             <Link
               replace={false}
-              to="/screening/nutrition/queue"
+              to="/screening/bloodPressure/queue"
             >
               <a
                 onClick={[Function]}
