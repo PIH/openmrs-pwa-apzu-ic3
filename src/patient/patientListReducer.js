@@ -6,7 +6,12 @@ export default (state = {}, action) => {
 
   switch (action.type) {
 
-    // currently, this will overwrite the list entirely
+    // currently, the appt report is run one-time on loading the home page
+    // this case will overwrite anything in this list with the data
+    // returned from that report
+    // note that the saga that loads the report formats the data as Patient
+    // objects, but it doesn't 100% conform to the expected format,
+    // for instance identifier are stored in a different format (this will be fixed)
     case CHECK_IN_TYPES.CHECK_IN.EXPECTED_TO_CHECK_IN:
 
       if (action.patients == null) {
@@ -19,6 +24,10 @@ export default (state = {}, action) => {
         }, {});
       }
 
+    // currently, the active visits query is run every time a queue page is loaded,
+    // and at regular intervals (ever 10 seconds)
+    // this case will append the "visit" component of any existing patient record
+    // as well as add any patients that are not found in the list
     case VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED:
 
       // TODO do we want to copy over other information (demographics, etc?) if found?
@@ -46,21 +55,6 @@ export default (state = {}, action) => {
       else {
         return expectedPatientsWithVisits;
       }
-
-
-    // this adds active visits to expected patients list
-   /* case VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED:
-
-      // TODO do we want to copy over other information (demographics, etc?) if found?
-      return mapObjIndexed((patient) => {
-        return {
-          ...patient,
-          visit: action.visits != null ? action.visits.find((v) => {
-            return patient.uuid === v.patient.uuid;
-          }) : undefined
-        };
-      }, state);
-*/
 
     default: return state;
   }
