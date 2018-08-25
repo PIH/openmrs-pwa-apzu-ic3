@@ -72,7 +72,7 @@ const persistConfig = {
   key: 'root',
   storage: storageSession,
   stateReconciler: autoMergeLevel2,
-  whitelist: ['openmrs', 'router', 'selectedpatient']
+  whitelist: ['openmrs', 'router', 'selectedPatient']
 };
 
 const pReducer = persistReducer(persistConfig, rootReducer);
