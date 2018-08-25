@@ -1,5 +1,5 @@
 import { Patient, VISIT_TYPES  } from '@openmrs/react-components';
-import reducer from '../patientListReducer';
+import reducer from '../patientsReducer';
 import CHECK_IN_TYPES from '../../checkin/checkInTypes';
 
 describe('patient list reducer', () => {

@@ -17,7 +17,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { sagas as openmrsSagas, reducers as openmrsReducers, LOGIN_TYPES } from '@openmrs/react-components';
 import completedVisitsReducer from './visit/completedVisitsReducer';
 import patientSelectedReducer from './patient/patientSelectedReducer';
-import patientListReducer from './patient/patientListReducer';
+import patientsReducer from './patient/patientsReducer';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
 import formSagas from './bahmniform/formSagas';
@@ -56,7 +56,7 @@ const combinedReducer = combineReducers({
   openmrs: openmrsReducers,
   form: reduxFormReducer,
   toastr: toastrReducer,
-  patients: patientListReducer,
+  patients: patientsReducer,
   selectedPatient: patientSelectedReducer,
   completedVisits: completedVisitsReducer,
 });
