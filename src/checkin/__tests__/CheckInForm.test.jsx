@@ -25,30 +25,18 @@ const checkInForm = () => {
 
 describe('Component: CheckInForm', () => {
   beforeEach(() => {
-    props = {};
-    store = mockStore(
-      {
-        patients: {
-          "abc": {
-            patient: {
-              patient: {
-                uuid: "abc"
-              }
-            },
-            visit: {
-              activeVisit: {
-                uuid: "3a80",
-                encounters: [],
-                patient: {
-                  uuid: "abc"
-                }
-              },
-              uuid: "def"
-            }
-          }
+    props = {
+      patient: {
+        uuid: "abc",
+        name: {
+          givenName: "Claire",
+          familyName: "Jones"
         },
-        selectedPatient: "abc"
-      });
+        age: 12,
+        gender: "M"
+      }
+    };
+    store = mockStore({});
     mountedComponent = undefined;
   });
 

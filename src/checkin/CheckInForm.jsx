@@ -1,8 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
+import {reduxForm} from 'redux-form';
 import CompletedScreenings from "../screening/CompletedScreenings";
-import { FieldInput } from '@openmrs/react-components';
 import { Alert, Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
 import { goBack } from 'connected-react-router';
 
@@ -13,7 +11,7 @@ let CheckinForm = props => {
 
   const historyBack = () => {
     props.dispatch(goBack());
-  }
+  };
 
   return (
     <div>
@@ -68,79 +66,39 @@ let CheckinForm = props => {
           }
 
           <Row>
-            <FormGroup controlId="formFirstName">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                First Name
-              </Col>
-              <Col sm={4}>
-                <Field
-                  component={FieldInput}
-                  name="name.givenName"
-                  placeholder="First Name"
-                  type='text'
-                />
-              </Col>
-            </FormGroup>
+            <Col sm={2}>
+              First Name
+            </Col>
+            <Col sm={4}>
+              {patient.name.givenName}
+            </Col>
           </Row>
 
           <Row>
-            <FormGroup controlId="formLastName">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                Last Name
-              </Col>
-              <Col sm={4}>
-                <Field
-                  component={FieldInput}
-                  name="name.familyName"
-                  placeholder="Last Name"
-                  type='text'
-                />
-              </Col>
-            </FormGroup>
+            <Col sm={2}>
+              Last Name
+            </Col>
+            <Col sm={4}>
+              {patient.name.familyName}
+            </Col>
           </Row>
 
           <Row>
-            <FormGroup controlId="formGender">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                Gender
-              </Col>
-              <Col sm={4}>
-                <Field
-                  component={FieldInput}
-                  name="gender"
-                  placeholder="Gender"
-                  type='text'
-                />
-              </Col>
-            </FormGroup>
+            <Col sm={2}>
+              Gender
+            </Col>
+            <Col sm={4}>
+              {patient.gender}
+            </Col>
           </Row>
 
           <Row>
-            <FormGroup controlId="formAge">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                Age
-              </Col>
-              <Col sm={4}>
-                <Field
-                  component={FieldInput}
-                  name="age"
-                  placeholder="Age"
-                  type='number'
-                />
-              </Col>
-            </FormGroup>
+            <Col sm={2}>
+              Age
+            </Col>
+            <Col sm={4}>
+              {patient.age}
+            </Col>
           </Row>
 
 
@@ -184,11 +142,6 @@ CheckinForm = reduxForm({
   form: 'checkInForm', // a unique identifier for this form
 })(CheckinForm);
 
-CheckinForm = connect(
-  state => ({
-    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null,
-  })
-)(CheckinForm);
 
 export default CheckinForm;
 

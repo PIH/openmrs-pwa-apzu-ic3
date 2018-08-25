@@ -1,7 +1,11 @@
 import { mapObjIndexed } from 'ramda';
 import { Patient, VISIT_TYPES } from "@openmrs/react-components";
 import CHECK_IN_TYPES from '../checkin/checkInTypes';
+import PATIENT_TYPES from './patientTypes';
 
+// TODO would be good to make this more generic to support adding from a variety of queries, sources?
+// TODO should all the cass here expect to receive either a list of Patients or a single Patient?
+// TODO and in this case, could this be moved to React Components?
 export default (state = {}, action) => {
 
   switch (action.type) {
@@ -28,6 +32,7 @@ export default (state = {}, action) => {
     // and at regular intervals (ever 10 seconds)
     // this case will append the "visit" component of any existing patient record
     // as well as add any patients that are not found in the list
+    // should the "create from REST rep" happen here, or in the saga? ie, do we want to make this more generic?
     case VISIT_TYPES.ACTIVE_VISITS.FETCH_SUCCEEDED:
 
       // TODO do we want to copy over other information (demographics, etc?) if found?
@@ -55,6 +60,23 @@ export default (state = {}, action) => {
       else {
         return expectedPatientsWithVisits;
       }
+
+    // adds a patient to the list, if necessary
+    // we currently use this to add a patient selected by patient search
+    // in the future, should think abot whether this should really be an "add or update"
+    case PATIENT_TYPES.ADD:
+
+      // if the patient already in the list, do nothing
+      if (!action.patient || action.patient.uuid in state) {
+        return state;
+      }
+      else {
+        return {
+          [action.patient.uuid]: action.patient,
+          ...state
+        };
+      }
+
 
     default: return state;
   }

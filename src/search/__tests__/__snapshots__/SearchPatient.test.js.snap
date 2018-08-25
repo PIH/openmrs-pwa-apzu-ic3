@@ -19,7 +19,6 @@ exports[`Component: SearchPatient renders properly 1`] = `
     <SearchPatient
       columnDefs={Array []}
       dispatch={[Function]}
-      patient={null}
     >
       <div>
         <h3>
@@ -68,6 +67,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
           rowSelectedActionCreators={
             Array [
               [Function],
+              [Function],
             ]
           }
         >
@@ -107,6 +107,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
             rowData={Array []}
             rowSelectedActionCreators={
               Array [
+                [Function],
                 [Function],
               ]
             }
@@ -656,6 +657,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                 rowSelectedActionCreators={
                   Array [
                     [Function],
+                    [Function],
                   ]
                 }
               >
@@ -693,6 +695,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                   rowData={Array []}
                   rowSelectedActionCreators={
                     Array [
+                      [Function],
                       [Function],
                     ]
                   }

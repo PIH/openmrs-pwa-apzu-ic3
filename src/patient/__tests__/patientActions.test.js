@@ -1,3 +1,4 @@
+import {Patient} from '@openmrs/react-components';
 import patientActions from "../patientActions";
 import PATIENT_TYPES from "../patientTypes";
 
@@ -10,5 +11,20 @@ describe('patient actions', () => {
     };
 
     expect(patientActions.clearPatientSelected()).toEqual(expectedAction);
+  });
+
+
+  it('should create an add patient action', () => {
+
+    let patient = new Patient();
+    patient.uuid = 'abc';
+
+    const expectedAction = {
+      type: PATIENT_TYPES.ADD,
+      patient: patient
+    };
+
+    expect(patientActions.addPatient(patient)).toEqual(expectedAction);
+
   });
 });

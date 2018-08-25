@@ -2,16 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 import CheckinForm from './CheckInForm';
 import checkInActions from './checkInActions';
-import { visitActions } from '@openmrs/react-components';
-import {ENCOUNTER_TYPES, VISIT_TYPES, LOCATION_TYPES, VISIT_REPRESENTATION} from '../constants';
+import {ENCOUNTER_TYPES, VISIT_TYPES, LOCATION_TYPES} from '../constants';
 import { push } from "connected-react-router";
 
 class CheckInPage extends React.Component {
 
-  componentDidMount() {
-    this.props.dispatch(visitActions.fetchPatientActiveVisit(this.props.patient.uuid,
-      "custom:" + VISIT_REPRESENTATION));
-  }
+  // I don't think we need this anymore?  need to figure out how this is all going to work, though
+  /*  componentDidMount() {
+      this.props.dispatch(visitActions.fetchPatientActiveVisit(this.props.patient.uuid,
+        "custom:" + VISIT_REPRESENTATION));
+    }*/
 
   redirectToQueuePageActionCreator() {
     return push({

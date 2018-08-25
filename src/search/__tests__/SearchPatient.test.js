@@ -44,9 +44,10 @@ describe('Component: SearchPatient', () => {
   it('renders properly', () => {
     expect(toJson(searchPatient())).toMatchSnapshot();
     expect(searchPatient().find(PatientSearch).length).toBe(1);
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToInfoPageActionCreator");
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/checkin/checkInPage");
+    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators.length).toBe(2);
+    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("addPatient");
+    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[1].name).toBe("");
+    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[1]().payload.args[0]).toBe("/checkin/checkInPage");
     expect(SearchPatient.prototype.componentDidMount.calledOnce).toBe(true);
     expect(store.getActions()).toContainEqual(patientActions.clearPatientSelected());
   });
