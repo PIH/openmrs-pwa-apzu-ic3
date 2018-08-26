@@ -22,6 +22,9 @@ import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import NutritionForm from "./screening/nutrition/NutritionForm";
 import HtcQueue from "./screening/htc/HtcQueue";
 import HtcForm from "./screening/htc/HtcForm";
+import VLQueueTabs from "./screening/vl/VLQueueTabs";
+import VLQueue from "./screening/vl/VLQueue";
+import VLForm from "./screening/vl/VLForm";
 import NurseQueue from "./screening/nurse/NurseQueue";
 import ActiveVisitsQueue from "./visit/ActiveVisits";
 import CompletedVisitsQueue from "./visit/CompletedVisits";
@@ -106,6 +109,21 @@ const App = props => {
             <Layout
               component={HtcForm}
               path="/screening/htc/form"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={VLQueueTabs}
+              path="/screening/vl/tabs"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={VLQueue}
+              path="/screening/vl/queue"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={VLForm}
+              path="/screening/vl/form"
               redirectOnLogin="/"
             />
             <Layout

@@ -59,8 +59,16 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                   "hide": true,
                 },
                 Object {
-                  "headerName": "Id",
-                  "valueGetter": "data.identifiers[0].identifier",
+                  "headerName": "ART",
+                  "valueGetter": [Function],
+                },
+                Object {
+                  "headerName": "EID",
+                  "valueGetter": [Function],
+                },
+                Object {
+                  "headerName": "NCD",
+                  "valueGetter": [Function],
                 },
                 Object {
                   "field": "name.givenName",
@@ -116,8 +124,16 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                       "hide": true,
                     },
                     Object {
-                      "headerName": "Id",
-                      "valueGetter": "data.identifiers[0].identifier",
+                      "headerName": "ART",
+                      "valueGetter": [Function],
+                    },
+                    Object {
+                      "headerName": "EID",
+                      "valueGetter": [Function],
+                    },
+                    Object {
+                      "headerName": "NCD",
+                      "valueGetter": [Function],
                     },
                     Object {
                       "field": "name.givenName",
@@ -185,8 +201,16 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                           "hide": true,
                         },
                         Object {
-                          "headerName": "Id",
-                          "valueGetter": "data.identifiers[0].identifier",
+                          "headerName": "ART",
+                          "valueGetter": [Function],
+                        },
+                        Object {
+                          "headerName": "EID",
+                          "valueGetter": [Function],
+                        },
+                        Object {
+                          "headerName": "NCD",
+                          "valueGetter": [Function],
                         },
                         Object {
                           "field": "name.givenName",
@@ -226,8 +250,16 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                             "hide": true,
                           },
                           Object {
-                            "headerName": "Id",
-                            "valueGetter": "data.identifiers[0].identifier",
+                            "headerName": "ART",
+                            "valueGetter": [Function],
+                          },
+                          Object {
+                            "headerName": "EID",
+                            "valueGetter": [Function],
+                          },
+                          Object {
+                            "headerName": "NCD",
+                            "valueGetter": [Function],
                           },
                           Object {
                             "field": "name.givenName",
@@ -282,8 +314,16 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                                 "hide": true,
                               },
                               Object {
-                                "headerName": "Id",
-                                "valueGetter": "data.identifiers[0].identifier",
+                                "headerName": "ART",
+                                "valueGetter": [Function],
+                              },
+                              Object {
+                                "headerName": "EID",
+                                "valueGetter": [Function],
+                              },
+                              Object {
+                                "headerName": "NCD",
+                                "valueGetter": [Function],
                               },
                               Object {
                                 "field": "name.givenName",

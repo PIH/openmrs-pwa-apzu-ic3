@@ -46,7 +46,9 @@ ScreeningQueue.propTypes = {
 ScreeningQueue.defaultProps = {
   columnDefs: [
     { headerName: 'uuid', hide: true, field: 'uuid' },
-    { headerName: 'Id', valueGetter: 'data.identifiers[0].identifier' },  // TODO needs to be replaced with actual preferred identifier
+    { headerName: 'ART', valueGetter: function getArtIdentifier(params) { return utils.getPatientArtIdentifier(params.data); }},
+    { headerName: 'EID', valueGetter: function getEidIdentifier(params) { return utils.getPatientEidIdentifier(params.data); }},
+    { headerName: 'NCD', valueGetter: function getNcdIdentifier(params) { return utils.getPatientNcdIdentifier(params.data); }},
     { headerName: 'Given Name', field: 'name.givenName' },
     { headerName: 'Family Name', field: 'name.familyName' },
     { headerName: 'Gender', field: 'gender' },

@@ -21,12 +21,27 @@ export const ENCOUNTER_TYPES = {
   'HTCEncounterType': {
     uuid: '5B7238C1-23C6-4214-957F-7912A5BE87A9'
   },
+  'VLEncounterType': {
+    uuid: '9959A261-2122-4AE1-A89D-1CA444B712EA'
+  },
 };
 
 
 export const VISIT_TYPES = {
   'ClinicVisitType': {
     uuid: 'f01c54cb-2225-471a-9cd5-d348552c337c'
+  }
+};
+
+export const IDENTIFIER_TYPES = {
+  'ART_IDENTIFIER_TYPE': {
+    uuid: '66784d84-977f-11e1-8993-905e29aff6c1'
+  },
+  'EID_IDENTIFIER_TYPE': {
+    uuid: '66786256-977f-11e1-8993-905e29aff6c1'
+  },
+  'NCD_IDENTIFIER_TYPE': {
+    uuid: '11a76c3e-1db8-4d16-9252-9a18b5ed1843'
   }
 };
 
@@ -63,6 +78,65 @@ export const CONCEPTS = {
       uuid: '6557a4ae-977f-11e1-8993-905e29aff6c1',
       name: 'Not performed today'
     }
+  },
+  'VIRAL_LOAD_TEST_SET': {
+    uuid: '83931c6d-0e5a-4302-b8ce-a31175b6475e',
+    'Bled': {
+      uuid: 'f792f2f9-9c24-4d6e-98fd-caffa8f2383f',
+      name: 'Bled'
+    },
+    'True': {
+      uuid: '655e2f90-977f-11e1-8993-905e29aff6c1',
+      name: 'Yes'
+    },
+    'False': {
+      uuid: '655e3148-977f-11e1-8993-905e29aff6c1',
+      name: 'No'
+    },
+    'ReasonForNoSample': {
+      uuid: '0e447d92-a180-11e8-98d0-529269fb1459',
+      name: 'Reason for no sample'
+    },
+    'UnableToDrawBlood': {
+      uuid: '0e447720-a180-11e8-98d0-529269fb1459',
+      name: 'Unable to draw blood'
+    },
+    'PatientRefused': {
+      uuid: '6566a4ae-977f-11e1-8993-905e29aff6c1',
+      name: 'Patient refused'
+    },
+    'ReasonForTesting': {
+      uuid: '164126AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+      name: 'Reason for testing'
+    },
+    'Routine': {
+      uuid: 'e0821812-955d-11e7-abc4-cec278b6b50a',
+      name: 'Routine'
+    },
+    'Confirmatory': {
+      uuid: '65590f06-977f-11e1-8993-905e29aff6c1',
+      name: 'Confirmatory'
+    },
+    'Target': {
+      uuid: 'e0821df8-955d-11e7-abc4-cec278b6b50a',
+      name: 'Target'
+    },
+    'LabLocation': {
+      uuid: '6fc0ab50-9492-11e7-abc4-cec278b6b50a',
+      name: 'Lab Location'
+    },
+    'NenoGeneXpert': {
+      uuid: 'e08214c0-955d-11e7-abc4-cec278b6b50a',
+      name: 'Neno GeneXpert'
+    },
+    'CentralLaboratory': {
+      uuid: 'e0820552-955d-11e7-abc4-cec278b6b50a',
+      name: 'Central Laboratory'
+    },
+    'LisungwiGeneXpert': {
+      uuid: 'e08212b8-955d-11e7-abc4-cec278b6b50a',
+      name: 'Lisungwi GeneXpert'
+    }
   }
 };
 
@@ -73,6 +147,7 @@ export const NAV_MENU_PAGES = {
   '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
   '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
   '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },
+  '/screening/vl/tabs' : { display : 'Viral Load', icon : 'ribbon' },
   '/screening/nurse/queue' : { display : 'Nurse', icon : 'user-md' },
 };
 
