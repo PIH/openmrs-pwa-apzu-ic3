@@ -1,7 +1,7 @@
 import React from 'react';
 import {reduxForm, Field} from 'redux-form';
 import CompletedScreenings from "../screening/CompletedScreenings";
-import { Alert, Button, ButtonToolbar, DropdownButton, Grid, Row, Col, Form, FormGroup, ControlLabel, Label, MenuItem } from 'react-bootstrap';
+import { Alert, Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
 import { goBack } from 'connected-react-router';
 import { CONCEPTS } from "../constants";
 
