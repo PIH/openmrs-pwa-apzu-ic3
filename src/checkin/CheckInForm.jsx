@@ -1,13 +1,35 @@
 import React from 'react';
-import {reduxForm} from 'redux-form';
+import {reduxForm, Field} from 'redux-form';
 import CompletedScreenings from "../screening/CompletedScreenings";
-import { Alert, Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
+import { Alert, Button, ButtonToolbar, DropdownButton, Grid, Row, Col, Form, FormGroup, ControlLabel, Label, MenuItem } from 'react-bootstrap';
 import { goBack } from 'connected-react-router';
-
+import { CONCEPTS } from "../constants";
 
 let CheckinForm = props => {
 
   const { handleSubmit, submitting, patient } = props;
+
+  const referrals = [
+    CONCEPTS.SOURCE_OF_REFERRAL.SHARC,
+    CONCEPTS.SOURCE_OF_REFERRAL.OPD_at_health_center,
+    CONCEPTS.SOURCE_OF_REFERRAL.Inpatient,
+    CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District,
+    CONCEPTS.SOURCE_OF_REFERRAL.Other
+  ];
+
+  const Select = ({ input, options, disabled, placeholder }) => (
+    <div>
+      <select {...input} disabled={disabled} >
+        <option key={0} value={''}>{placeholder}</option>
+        { options.map(option =>
+          <option key={option.uuid} value={option.uuid}>
+            {option.name}
+          </option>
+        )}
+      </select>
+
+    </div>
+  );
 
   const historyBack = () => {
     props.dispatch(goBack());
@@ -26,7 +48,7 @@ let CheckinForm = props => {
         <Grid>
 
           { (typeof patient !== 'undefined') && (patient !== null) &&
-            (typeof patient.alert !== 'undefined') && (patient.alert.length > 0) &&
+            (typeof patient.alert !== 'undefined') && (patient.alert !== null) && (patient.alert.length > 0) &&
             <Row>
               <FormGroup controlId="formAlert">
                 <Col
@@ -47,7 +69,7 @@ let CheckinForm = props => {
           }
 
           { (typeof patient !== 'undefined') && (patient !== null) &&
-            (typeof patient.actions !== 'undefined') && (patient.actions !== patient.alert) &&
+            (typeof patient.actions !== 'undefined')  && (patient.actions !== null) && (patient.actions !== patient.alert) &&
           <Row>
             <FormGroup controlId="formAction">
               <Col
@@ -64,6 +86,54 @@ let CheckinForm = props => {
             </FormGroup>
           </Row>
           }
+
+          <Row>
+            <FormGroup controlId="formVillage">
+
+                <Col
+                  componentClass={ControlLabel}
+                  sm={2}
+                >
+                  Village
+                </Col>
+                <Col sm={4}>
+                  <Alert bsStyle="info">
+                    { patient.village }
+                  </Alert>
+                </Col>
+
+            </FormGroup>
+          </Row>
+
+          <Row>
+            <FormGroup controlId="formChw">
+              <Col componentClass={ControlLabel} sm={2}>
+                CHW
+              </Col>
+              <Col sm={4}>
+                <Alert bsStyle="info">
+                  { patient.chw }
+                </Alert>
+              </Col>
+            </FormGroup>
+          </Row>
+
+          <Row>
+            <FormGroup controlId="formReferralSelect">
+              <Col componentClass={ControlLabel} sm={2}>
+                Referred From
+              </Col>
+              <Col sm={8}>
+                <Field
+                  name="referral"
+                  id="referral"
+                  options={ referrals }
+                  component={ Select }
+                  placeholder="Select Source of Referral"
+                />
+              </Col>
+            </FormGroup>
+          </Row>
 
           {!(patient && patient.visit && patient.visit.encounters) &&
           <Row>

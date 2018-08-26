@@ -270,6 +270,575 @@ exports[`Component: CheckInForm renders properly 1`] = `
                         >
                           <FormGroup
                             bsClass="form-group"
+                            controlId="formVillage"
+                          >
+                            <div
+                              className="form-group"
+                            >
+                              <Col
+                                bsClass="col"
+                                componentClass={[Function]}
+                                sm={2}
+                              >
+                                <ControlLabel
+                                  bsClass="control-label"
+                                  className="col-sm-2"
+                                  srOnly={false}
+                                >
+                                  <label
+                                    className="col-sm-2 control-label"
+                                    htmlFor="formVillage"
+                                  >
+                                    Village
+                                  </label>
+                                </ControlLabel>
+                              </Col>
+                              <Col
+                                bsClass="col"
+                                componentClass="div"
+                                sm={4}
+                              >
+                                <div
+                                  className="col-sm-4"
+                                >
+                                  <Alert
+                                    bsClass="alert"
+                                    bsStyle="info"
+                                    closeLabel="Close alert"
+                                  >
+                                    <div
+                                      className="alert alert-info"
+                                      role="alert"
+                                    />
+                                  </Alert>
+                                </div>
+                              </Col>
+                            </div>
+                          </FormGroup>
+                        </div>
+                      </Row>
+                      <Row
+                        bsClass="row"
+                        componentClass="div"
+                      >
+                        <div
+                          className="row"
+                        >
+                          <FormGroup
+                            bsClass="form-group"
+                            controlId="formChw"
+                          >
+                            <div
+                              className="form-group"
+                            >
+                              <Col
+                                bsClass="col"
+                                componentClass={[Function]}
+                                sm={2}
+                              >
+                                <ControlLabel
+                                  bsClass="control-label"
+                                  className="col-sm-2"
+                                  srOnly={false}
+                                >
+                                  <label
+                                    className="col-sm-2 control-label"
+                                    htmlFor="formChw"
+                                  >
+                                    CHW
+                                  </label>
+                                </ControlLabel>
+                              </Col>
+                              <Col
+                                bsClass="col"
+                                componentClass="div"
+                                sm={4}
+                              >
+                                <div
+                                  className="col-sm-4"
+                                >
+                                  <Alert
+                                    bsClass="alert"
+                                    bsStyle="info"
+                                    closeLabel="Close alert"
+                                  >
+                                    <div
+                                      className="alert alert-info"
+                                      role="alert"
+                                    />
+                                  </Alert>
+                                </div>
+                              </Col>
+                            </div>
+                          </FormGroup>
+                        </div>
+                      </Row>
+                      <Row
+                        bsClass="row"
+                        componentClass="div"
+                      >
+                        <div
+                          className="row"
+                        >
+                          <FormGroup
+                            bsClass="form-group"
+                            controlId="formReferralSelect"
+                          >
+                            <div
+                              className="form-group"
+                            >
+                              <Col
+                                bsClass="col"
+                                componentClass={[Function]}
+                                sm={2}
+                              >
+                                <ControlLabel
+                                  bsClass="control-label"
+                                  className="col-sm-2"
+                                  srOnly={false}
+                                >
+                                  <label
+                                    className="col-sm-2 control-label"
+                                    htmlFor="formReferralSelect"
+                                  >
+                                    Referred From
+                                  </label>
+                                </ControlLabel>
+                              </Col>
+                              <Col
+                                bsClass="col"
+                                componentClass="div"
+                                sm={8}
+                              >
+                                <div
+                                  className="col-sm-8"
+                                >
+                                  <Field
+                                    component={[Function]}
+                                    id="referral"
+                                    name="referral"
+                                    options={
+                                      Array [
+                                        Object {
+                                          "name": "SHARC",
+                                          "uuid": "6f48dfac-9ffa-11e8-98d0-529269fb1459",
+                                        },
+                                        Object {
+                                          "name": "OPD at health center",
+                                          "uuid": "655ac68e-977f-11e1-8993-905e29aff6c1",
+                                        },
+                                        Object {
+                                          "name": "Inpatient",
+                                          "uuid": "655d1772-977f-11e1-8993-905e29aff6c1",
+                                        },
+                                        Object {
+                                          "name": "Outside Neno District",
+                                          "uuid": "6f48e5b0-9ffa-11e8-98d0-529269fb1459",
+                                        },
+                                        Object {
+                                          "name": "Other",
+                                          "uuid": "656cce7e-977f-11e1-8993-905e29aff6c1",
+                                        },
+                                      ]
+                                    }
+                                    placeholder="Select Source of Referral"
+                                  >
+                                    <Connect(ConnectedField)
+                                      _reduxForm={
+                                        Object {
+                                          "anyTouched": false,
+                                          "array": Object {
+                                            "insert": [Function],
+                                            "move": [Function],
+                                            "pop": [Function],
+                                            "push": [Function],
+                                            "remove": [Function],
+                                            "removeAll": [Function],
+                                            "shift": [Function],
+                                            "splice": [Function],
+                                            "swap": [Function],
+                                            "unshift": [Function],
+                                          },
+                                          "arrayInsert": [Function],
+                                          "arrayMove": [Function],
+                                          "arrayPop": [Function],
+                                          "arrayPush": [Function],
+                                          "arrayRemove": [Function],
+                                          "arrayRemoveAll": [Function],
+                                          "arrayShift": [Function],
+                                          "arraySplice": [Function],
+                                          "arraySwap": [Function],
+                                          "arrayUnshift": [Function],
+                                          "asyncErrors": undefined,
+                                          "asyncValidate": [Function],
+                                          "asyncValidating": false,
+                                          "autofill": [Function],
+                                          "blur": [Function],
+                                          "change": [Function],
+                                          "clearAsyncError": [Function],
+                                          "clearFields": [Function],
+                                          "clearSubmit": [Function],
+                                          "clearSubmitErrors": [Function],
+                                          "destroy": [Function],
+                                          "destroyOnUnmount": true,
+                                          "dirty": false,
+                                          "dispatch": [Function],
+                                          "enableReinitialize": false,
+                                          "error": undefined,
+                                          "focus": [Function],
+                                          "forceUnregisterOnUnmount": false,
+                                          "form": "checkInForm",
+                                          "getFormState": [Function],
+                                          "getValues": [Function],
+                                          "initialValues": undefined,
+                                          "initialize": [Function],
+                                          "initialized": false,
+                                          "invalid": false,
+                                          "keepDirtyOnReinitialize": false,
+                                          "patient": Object {
+                                            "age": 12,
+                                            "gender": "M",
+                                            "name": Object {
+                                              "familyName": "Jones",
+                                              "givenName": "Claire",
+                                            },
+                                            "uuid": "abc",
+                                          },
+                                          "persistentSubmitErrors": false,
+                                          "pristine": true,
+                                          "pure": true,
+                                          "register": [Function],
+                                          "registerField": [Function],
+                                          "registerInnerOnSubmit": [Function],
+                                          "registeredFields": undefined,
+                                          "reset": [Function],
+                                          "resetSection": [Function],
+                                          "sectionPrefix": undefined,
+                                          "setSubmitFailed": [Function],
+                                          "setSubmitSucceeded": [Function],
+                                          "shouldAsyncValidate": [Function],
+                                          "shouldError": [Function],
+                                          "shouldValidate": [Function],
+                                          "shouldWarn": [Function],
+                                          "startAsyncValidation": [Function],
+                                          "startSubmit": [Function],
+                                          "stopAsyncValidation": [Function],
+                                          "stopSubmit": [Function],
+                                          "submit": [Function],
+                                          "submitFailed": false,
+                                          "submitSucceeded": false,
+                                          "submitting": false,
+                                          "syncErrors": Object {},
+                                          "syncWarnings": Object {},
+                                          "touch": [Function],
+                                          "touchOnBlur": true,
+                                          "touchOnChange": false,
+                                          "triggerSubmit": undefined,
+                                          "unregister": [Function],
+                                          "unregisterField": [Function],
+                                          "untouch": [Function],
+                                          "updateSyncErrors": [Function],
+                                          "updateSyncWarnings": [Function],
+                                          "updateUnregisteredFields": false,
+                                          "valid": true,
+                                          "validExceptSubmit": true,
+                                          "values": Object {},
+                                          "warning": undefined,
+                                        }
+                                      }
+                                      component={[Function]}
+                                      id="referral"
+                                      name="referral"
+                                      normalize={[Function]}
+                                      options={
+                                        Array [
+                                          Object {
+                                            "name": "SHARC",
+                                            "uuid": "6f48dfac-9ffa-11e8-98d0-529269fb1459",
+                                          },
+                                          Object {
+                                            "name": "OPD at health center",
+                                            "uuid": "655ac68e-977f-11e1-8993-905e29aff6c1",
+                                          },
+                                          Object {
+                                            "name": "Inpatient",
+                                            "uuid": "655d1772-977f-11e1-8993-905e29aff6c1",
+                                          },
+                                          Object {
+                                            "name": "Outside Neno District",
+                                            "uuid": "6f48e5b0-9ffa-11e8-98d0-529269fb1459",
+                                          },
+                                          Object {
+                                            "name": "Other",
+                                            "uuid": "656cce7e-977f-11e1-8993-905e29aff6c1",
+                                          },
+                                        ]
+                                      }
+                                      placeholder="Select Source of Referral"
+                                    >
+                                      <ConnectedField
+                                        _reduxForm={
+                                          Object {
+                                            "anyTouched": false,
+                                            "array": Object {
+                                              "insert": [Function],
+                                              "move": [Function],
+                                              "pop": [Function],
+                                              "push": [Function],
+                                              "remove": [Function],
+                                              "removeAll": [Function],
+                                              "shift": [Function],
+                                              "splice": [Function],
+                                              "swap": [Function],
+                                              "unshift": [Function],
+                                            },
+                                            "arrayInsert": [Function],
+                                            "arrayMove": [Function],
+                                            "arrayPop": [Function],
+                                            "arrayPush": [Function],
+                                            "arrayRemove": [Function],
+                                            "arrayRemoveAll": [Function],
+                                            "arrayShift": [Function],
+                                            "arraySplice": [Function],
+                                            "arraySwap": [Function],
+                                            "arrayUnshift": [Function],
+                                            "asyncErrors": undefined,
+                                            "asyncValidate": [Function],
+                                            "asyncValidating": false,
+                                            "autofill": [Function],
+                                            "blur": [Function],
+                                            "change": [Function],
+                                            "clearAsyncError": [Function],
+                                            "clearFields": [Function],
+                                            "clearSubmit": [Function],
+                                            "clearSubmitErrors": [Function],
+                                            "destroy": [Function],
+                                            "destroyOnUnmount": true,
+                                            "dirty": false,
+                                            "dispatch": [Function],
+                                            "enableReinitialize": false,
+                                            "error": undefined,
+                                            "focus": [Function],
+                                            "forceUnregisterOnUnmount": false,
+                                            "form": "checkInForm",
+                                            "getFormState": [Function],
+                                            "getValues": [Function],
+                                            "initialValues": undefined,
+                                            "initialize": [Function],
+                                            "initialized": false,
+                                            "invalid": false,
+                                            "keepDirtyOnReinitialize": false,
+                                            "patient": Object {
+                                              "age": 12,
+                                              "gender": "M",
+                                              "name": Object {
+                                                "familyName": "Jones",
+                                                "givenName": "Claire",
+                                              },
+                                              "uuid": "abc",
+                                            },
+                                            "persistentSubmitErrors": false,
+                                            "pristine": true,
+                                            "pure": true,
+                                            "register": [Function],
+                                            "registerField": [Function],
+                                            "registerInnerOnSubmit": [Function],
+                                            "registeredFields": undefined,
+                                            "reset": [Function],
+                                            "resetSection": [Function],
+                                            "sectionPrefix": undefined,
+                                            "setSubmitFailed": [Function],
+                                            "setSubmitSucceeded": [Function],
+                                            "shouldAsyncValidate": [Function],
+                                            "shouldError": [Function],
+                                            "shouldValidate": [Function],
+                                            "shouldWarn": [Function],
+                                            "startAsyncValidation": [Function],
+                                            "startSubmit": [Function],
+                                            "stopAsyncValidation": [Function],
+                                            "stopSubmit": [Function],
+                                            "submit": [Function],
+                                            "submitFailed": false,
+                                            "submitSucceeded": false,
+                                            "submitting": false,
+                                            "syncErrors": Object {},
+                                            "syncWarnings": Object {},
+                                            "touch": [Function],
+                                            "touchOnBlur": true,
+                                            "touchOnChange": false,
+                                            "triggerSubmit": undefined,
+                                            "unregister": [Function],
+                                            "unregisterField": [Function],
+                                            "untouch": [Function],
+                                            "updateSyncErrors": [Function],
+                                            "updateSyncWarnings": [Function],
+                                            "updateUnregisteredFields": false,
+                                            "valid": true,
+                                            "validExceptSubmit": true,
+                                            "values": Object {},
+                                            "warning": undefined,
+                                          }
+                                        }
+                                        asyncValidating={false}
+                                        component={[Function]}
+                                        dirty={false}
+                                        dispatch={[Function]}
+                                        id="referral"
+                                        name="referral"
+                                        normalize={[Function]}
+                                        options={
+                                          Array [
+                                            Object {
+                                              "name": "SHARC",
+                                              "uuid": "6f48dfac-9ffa-11e8-98d0-529269fb1459",
+                                            },
+                                            Object {
+                                              "name": "OPD at health center",
+                                              "uuid": "655ac68e-977f-11e1-8993-905e29aff6c1",
+                                            },
+                                            Object {
+                                              "name": "Inpatient",
+                                              "uuid": "655d1772-977f-11e1-8993-905e29aff6c1",
+                                            },
+                                            Object {
+                                              "name": "Outside Neno District",
+                                              "uuid": "6f48e5b0-9ffa-11e8-98d0-529269fb1459",
+                                            },
+                                            Object {
+                                              "name": "Other",
+                                              "uuid": "656cce7e-977f-11e1-8993-905e29aff6c1",
+                                            },
+                                          ]
+                                        }
+                                        placeholder="Select Source of Referral"
+                                        pristine={true}
+                                      >
+                                        <Select
+                                          id="referral"
+                                          input={
+                                            Object {
+                                              "name": "referral",
+                                              "onBlur": [Function],
+                                              "onChange": [Function],
+                                              "onDragStart": [Function],
+                                              "onDrop": [Function],
+                                              "onFocus": [Function],
+                                              "value": "",
+                                            }
+                                          }
+                                          meta={
+                                            Object {
+                                              "active": false,
+                                              "asyncValidating": false,
+                                              "autofilled": false,
+                                              "dirty": false,
+                                              "dispatch": [Function],
+                                              "error": undefined,
+                                              "form": "checkInForm",
+                                              "initial": undefined,
+                                              "invalid": false,
+                                              "pristine": true,
+                                              "submitFailed": false,
+                                              "submitting": false,
+                                              "touched": false,
+                                              "valid": true,
+                                              "visited": false,
+                                              "warning": undefined,
+                                            }
+                                          }
+                                          options={
+                                            Array [
+                                              Object {
+                                                "name": "SHARC",
+                                                "uuid": "6f48dfac-9ffa-11e8-98d0-529269fb1459",
+                                              },
+                                              Object {
+                                                "name": "OPD at health center",
+                                                "uuid": "655ac68e-977f-11e1-8993-905e29aff6c1",
+                                              },
+                                              Object {
+                                                "name": "Inpatient",
+                                                "uuid": "655d1772-977f-11e1-8993-905e29aff6c1",
+                                              },
+                                              Object {
+                                                "name": "Outside Neno District",
+                                                "uuid": "6f48e5b0-9ffa-11e8-98d0-529269fb1459",
+                                              },
+                                              Object {
+                                                "name": "Other",
+                                                "uuid": "656cce7e-977f-11e1-8993-905e29aff6c1",
+                                              },
+                                            ]
+                                          }
+                                          placeholder="Select Source of Referral"
+                                        >
+                                          <div>
+                                            <select
+                                              name="referral"
+                                              onBlur={[Function]}
+                                              onChange={[Function]}
+                                              onDragStart={[Function]}
+                                              onDrop={[Function]}
+                                              onFocus={[Function]}
+                                              value=""
+                                            >
+                                              <option
+                                                key="0"
+                                                value=""
+                                              >
+                                                Select Source of Referral
+                                              </option>
+                                              <option
+                                                key="6f48dfac-9ffa-11e8-98d0-529269fb1459"
+                                                value="6f48dfac-9ffa-11e8-98d0-529269fb1459"
+                                              >
+                                                SHARC
+                                              </option>
+                                              <option
+                                                key="655ac68e-977f-11e1-8993-905e29aff6c1"
+                                                value="655ac68e-977f-11e1-8993-905e29aff6c1"
+                                              >
+                                                OPD at health center
+                                              </option>
+                                              <option
+                                                key="655d1772-977f-11e1-8993-905e29aff6c1"
+                                                value="655d1772-977f-11e1-8993-905e29aff6c1"
+                                              >
+                                                Inpatient
+                                              </option>
+                                              <option
+                                                key="6f48e5b0-9ffa-11e8-98d0-529269fb1459"
+                                                value="6f48e5b0-9ffa-11e8-98d0-529269fb1459"
+                                              >
+                                                Outside Neno District
+                                              </option>
+                                              <option
+                                                key="656cce7e-977f-11e1-8993-905e29aff6c1"
+                                                value="656cce7e-977f-11e1-8993-905e29aff6c1"
+                                              >
+                                                Other
+                                              </option>
+                                            </select>
+                                          </div>
+                                        </Select>
+                                      </ConnectedField>
+                                    </Connect(ConnectedField)>
+                                  </Field>
+                                </div>
+                              </Col>
+                            </div>
+                          </FormGroup>
+                        </div>
+                      </Row>
+                      <Row
+                        bsClass="row"
+                        componentClass="div"
+                      >
+                        <div
+                          className="row"
+                        >
+                          <FormGroup
+                            bsClass="form-group"
                             controlId="formSubmit"
                           >
                             <div

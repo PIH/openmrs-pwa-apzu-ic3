@@ -137,6 +137,29 @@ export const CONCEPTS = {
       uuid: 'e08212b8-955d-11e7-abc4-cec278b6b50a',
       name: 'Lisungwi GeneXpert'
     }
+  },
+  'SOURCE_OF_REFERRAL' : {
+    uuid: '65664fc2-977f-11e1-8993-905e29aff6c1',
+    'SHARC': {
+      uuid: '6f48dfac-9ffa-11e8-98d0-529269fb1459',
+      name: 'SHARC'
+    },
+    'OPD_at_health_center': {
+      uuid: '655ac68e-977f-11e1-8993-905e29aff6c1',
+      name: 'OPD at health center'
+    },
+    'Inpatient': {
+      uuid: '655d1772-977f-11e1-8993-905e29aff6c1',
+      name: 'Inpatient'
+    },
+    'Outside_Neno_District': {
+      uuid: '6f48e5b0-9ffa-11e8-98d0-529269fb1459',
+      name: 'Outside Neno District'
+    },
+    'Other': {
+      uuid: '656cce7e-977f-11e1-8993-905e29aff6c1',
+      name: 'Other'
+    }
   }
 };
 

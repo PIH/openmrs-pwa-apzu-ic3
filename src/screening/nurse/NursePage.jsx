@@ -42,8 +42,6 @@ class NursePage extends React.Component {
         </Link>
         <h3><Label>Completed Screenings</Label></h3>
         <CompletedScreenings patientUuid={this.props.patient.uuid} />
-        <h3><Label>Next steps</Label></h3>
-{/*        <RequiredScreenings patientUuid={this.props.patient.uuid} />*/}
         <ButtonToolbar>
           <Button
             bsSize="large"
