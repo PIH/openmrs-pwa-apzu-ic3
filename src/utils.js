@@ -8,7 +8,7 @@ const utils = {
   },
 
   formatRestDate: (datetime) => {
-    return dateFns.format(datetime, 'YYYY-MM-DDTHH:mm:ss.SSSZ');
+    return dateFns.format(datetime, 'YYYY-MM-DDTHH:mm:ss.SSS');
   },
 
   formatReportRestDate: (datetime) => {
