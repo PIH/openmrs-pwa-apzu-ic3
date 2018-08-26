@@ -25,8 +25,8 @@ let CheckinForm = props => {
       >
         <Grid>
 
-          { (typeof patient !== 'undefined') &&
-            (typeof patient.alert !== 'undefined') &&
+          { (typeof patient !== 'undefined') && (patient !== null) &&
+            (typeof patient.alert !== 'undefined') && (patient.alert.length > 0) &&
             <Row>
               <FormGroup controlId="formAlert">
                 <Col
@@ -46,7 +46,7 @@ let CheckinForm = props => {
             </Row>
           }
 
-          { (typeof patient !== 'undefined') &&
+          { (typeof patient !== 'undefined') && (patient !== null) &&
             (typeof patient.actions !== 'undefined') && (patient.actions !== patient.alert) &&
           <Row>
             <FormGroup controlId="formAction">
@@ -64,43 +64,6 @@ let CheckinForm = props => {
             </FormGroup>
           </Row>
           }
-
-          <Row>
-            <Col sm={2}>
-              First Name
-            </Col>
-            <Col sm={4}>
-              {patient.name.givenName}
-            </Col>
-          </Row>
-
-          <Row>
-            <Col sm={2}>
-              Last Name
-            </Col>
-            <Col sm={4}>
-              {patient.name.familyName}
-            </Col>
-          </Row>
-
-          <Row>
-            <Col sm={2}>
-              Gender
-            </Col>
-            <Col sm={4}>
-              {patient.gender}
-            </Col>
-          </Row>
-
-          <Row>
-            <Col sm={2}>
-              Age
-            </Col>
-            <Col sm={4}>
-              {patient.age}
-            </Col>
-          </Row>
-
 
           {!(patient && patient.visit && patient.visit.encounters) &&
           <Row>

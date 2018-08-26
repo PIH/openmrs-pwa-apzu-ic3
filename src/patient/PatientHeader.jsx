@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import dateFns from 'date-fns';
+import utils from '../utils';
 
 class PatientHeader extends React.Component {
 
@@ -47,9 +48,9 @@ class PatientHeader extends React.Component {
           <span>
             <div className="identifiers">
               <em>Patient ID</em>
-              <span>{ this.props.patient.identifiers.artNumber }
-                <br/>{ this.props.patient.identifiers.eidNumber }
-                <br/>{ this.props.patient.identifiers.ncdNumber }
+              <span>{ utils.getPatientArtIdentifier(this.props.patient) }
+                <br/>{ utils.getPatientEidIdentifier(this.props.patient) }
+                <br/>{ utils.getPatientNcdIdentifier(this.props.patient) }
                 </span>
               <br />
             </div>

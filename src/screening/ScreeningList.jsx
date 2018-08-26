@@ -4,6 +4,7 @@ import { ListGroupItem, ListGroup } from 'react-bootstrap';
 import bloodPressureFilters from './bloodPressure/bloodPressureFilters';
 import nutritionFilters from './nutrition/nutritionFilters';
 import htcFilters from './htc/htcFilters';
+import vlFilters from './vl/vlFilters';
 import checkInFilters from "../checkin/checkInFilters";
 import ScreeningListItem from './ScreeningListItem';
 
@@ -27,7 +28,14 @@ let ScreeningList = props => {
     {
       key: 2,
       title: "Targeted Screenings",
-      screenings: []
+      screenings: [
+        {
+          title: "Viral Load",
+          completedFilters: vlFilters.completed,
+          entryLink: '/screening/vl/form',
+          requiredFilters: vlFilters.required,
+        }
+      ]
     },
     {
       key: 3,

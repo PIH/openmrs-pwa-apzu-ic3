@@ -147,7 +147,7 @@ export const NAV_MENU_PAGES = {
   '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
   '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
   '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },
-  '/screening/vl/tabs' : { display : 'Viral Load', icon : 'ribbon' },
+  '/screening/vl/tabs' : { display : 'Viral Load', icon : 'vial' },
   '/screening/nurse/queue' : { display : 'Nurse', icon : 'user-md' },
 };
 

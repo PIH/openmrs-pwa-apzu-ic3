@@ -7,7 +7,7 @@ import vlFilters from './vlFilters';
 let VLQueueComplete = props => {
 
   const rowSelectedActionCreators = [
-    () => push('/screening/vl/form')
+    () => push('/checkin/checkInComplete')
   ];
 
 
