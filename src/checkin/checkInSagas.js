@@ -2,32 +2,26 @@ import { call, put, takeLatest, select } from 'redux-saga/effects';
 import { Patient, visitRest,  reportingRest, LOGIN_TYPES, SESSION_TYPES } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
-import patientActions from '../patient/patientActions';
+import { IDENTIFIER_TYPES } from '../constants';
 import uuidv4 from 'uuid/v4';
-import { REHYDRATE } from "redux-persist";
 import utils from "../utils";
 import * as R from 'ramda';
 
 const createFromReportingRestRep =  (restRep) => {
   let patient = new Patient();
 
-  patient.uuid = restRep.patient_uuid;
-  patient.gender = restRep.gender;
-  patient.age = restRep.age;
-  patient.birthdate = restRep.birthdate;
-
-  patient.name =  {
+  patient.setUuid(restRep.patient_uuid);
+  patient.setGender(restRep.gender);
+  patient.setAge(restRep.age);
+  patient.setBirthdate(restRep.birthdate);
+  patient.setName({
     givenName: restRep.first_name,
     familyName: restRep.last_name
-  } ;
+  });
 
-
-  // TODO these all should be modified to conform to the proper Patient format?
-  patient.identifiers = {
-    artNumber: restRep.art_number,
-    eidNumber: restRep.eid_number,
-    ncdNumber: restRep.ncd_number
-  };
+  patient.addIdentifier(restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE.uuid);
+  patient.addIdentifier(restRep.eid_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE.uuid);
+  patient.addIdentifier(restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE.uuid);
 
   // TODO how do we get these in a proper format
   patient.chw = restRep.vhw;
@@ -101,14 +95,12 @@ function* initiateGetExpectedToCheckIn(action) {
   if (R.path(['openmrs', 'session', 'authenticated'], state)){
     yield put(checkInActions.getExpectedToCheckIn(R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
                                                   utils.formatReportRestDate(new Date())));
-    yield put(patientActions.clearPatientSelected());
   }
 }
 
 function *checkInSagas() {
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.SUBMIT, checkIn);
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
-  yield takeLatest(REHYDRATE, initiateGetExpectedToCheckIn);
   yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetExpectedToCheckIn);
   yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetExpectedToCheckIn);
 }
