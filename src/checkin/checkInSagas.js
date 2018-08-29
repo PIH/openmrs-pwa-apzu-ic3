@@ -1,5 +1,5 @@
 import { call, put, takeLatest, select } from 'redux-saga/effects';
-import { Patient, visitRest,  reportingRest, LOGIN_TYPES, SESSION_TYPES } from '@openmrs/react-components';
+import { patientUtil, visitRest,  reportingRest, LOGIN_TYPES, SESSION_TYPES } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
 import { IDENTIFIER_TYPES } from '../constants';
@@ -8,20 +8,21 @@ import utils from "../utils";
 import * as R from 'ramda';
 
 const createFromReportingRestRep =  (restRep) => {
-  let patient = new Patient();
+  let patient = {};
 
-  patient.setUuid(restRep.patient_uuid);
-  patient.setGender(restRep.gender);
-  patient.setAge(restRep.age);
-  patient.setBirthdate(restRep.birthdate);
-  patient.setName({
+  patient.uuid = restRep.patient_uuid;
+  patient.gender = restRep.gender;
+  patient.age = restRep.age;
+  patient.birthdate = restRep.birthdate;
+
+  patient.name =  {
     givenName: restRep.first_name,
     familyName: restRep.last_name
-  });
+  } ;
 
-  patient.addIdentifier(restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE.uuid);
-  patient.addIdentifier(restRep.eid_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE.uuid);
-  patient.addIdentifier(restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE.uuid);
+  patient = patientUtil.addIdentifier(restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE.uuid, patient);
+  patient = patientUtil.addIdentifier(restRep.eid_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE.uuid, patient);
+  patient = patientUtil.addIdentifier(restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE.uuid, patient);
 
   // TODO how do we get these in a proper format
   patient.chw = restRep.vhw;

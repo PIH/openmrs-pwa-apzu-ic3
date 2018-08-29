@@ -1,4 +1,3 @@
-import {Patient} from '@openmrs/react-components';
 import patientActions from "../patientActions";
 import PATIENT_TYPES from "../patientTypes";
 
@@ -16,7 +15,7 @@ describe('patient actions', () => {
 
   it('should create an add patient action', () => {
 
-    let patient = new Patient();
+    let patient = {};
     patient.uuid = 'abc';
 
     const expectedAction = {

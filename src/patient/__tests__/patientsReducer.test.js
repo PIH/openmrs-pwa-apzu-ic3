@@ -1,14 +1,14 @@
-import { Patient, VISIT_TYPES  } from '@openmrs/react-components';
+import { VISIT_TYPES  } from '@openmrs/react-components';
 import reducer from '../patientsReducer';
 import CHECK_IN_TYPES from '../../checkin/checkInTypes';
 import PATIENT_TYPES from '../../patient/patientTypes';
 
 describe('patient list reducer', () => {
 
-  const samplePatient = new Patient();
+  const samplePatient = {};
   samplePatient.uuid = 'abcd-1234';
 
-  const anotherSamplePatient = new Patient();
+  const anotherSamplePatient = {};
   anotherSamplePatient.uuid = 'efgh-5678';
 
   const sampleVisit = {

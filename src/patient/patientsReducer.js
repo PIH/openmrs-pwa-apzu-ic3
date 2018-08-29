@@ -1,5 +1,5 @@
 import { mapObjIndexed } from 'ramda';
-import { Patient, VISIT_TYPES } from "@openmrs/react-components";
+import { patientUtil, VISIT_TYPES } from "@openmrs/react-components";
 import CHECK_IN_TYPES from '../checkin/checkInTypes';
 import PATIENT_TYPES from './patientTypes';
 
@@ -53,7 +53,7 @@ export default (state = {}, action) => {
           return !(visit.patient.uuid in expectedPatientsWithVisits);
         }).reduce((acc, visit) => {
           acc[visit.patient.uuid] =
-            Patient.createFromRestRep(visit.patient, visit);
+            patientUtil.createFromRestRep(visit.patient, visit);
           return acc;
         }, expectedPatientsWithVisits);
       }

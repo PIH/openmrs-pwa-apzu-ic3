@@ -1,10 +1,9 @@
 import React from 'react';
 import ReduxToastr from 'react-redux-toastr';
-import { AuthenticatedRoute, HeaderAlt } from '@openmrs/react-components';
+import { AuthenticatedRoute, HeaderAlt, PatientHeaderAlt } from '@openmrs/react-components';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import LeftRail from './LeftRail';
-import PatientHeader from '../patient/PatientHeader';
 import logo from "../assets/images/pih_apzu_logo_white.png";
 import { NAV_MENU_PAGES, USER_MENU_PAGES} from '../constants';
 import '../assets/css/header.css';
@@ -29,7 +28,7 @@ const Layout = props => {
             />
         </Row>
         <Row>
-          <PatientHeader />
+          <PatientHeaderAlt />
         </Row>
         <Row>
           {props.patient &&

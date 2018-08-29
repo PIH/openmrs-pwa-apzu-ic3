@@ -1,6 +1,6 @@
 import React from 'react';
 import { Label } from 'react-bootstrap';
-import { Patient, PatientSearch } from '@openmrs/react-components';
+import { patientUtil, PatientSearch } from '@openmrs/react-components';
 import { push } from 'connected-react-router';
 import {connect} from "react-redux";
 import patientActions from '../patient/patientActions';
@@ -28,7 +28,7 @@ class SearchPatient extends React.Component {
   parseResults(results) {
     // convert results to the patient domain object
     return results.map((result) => {
-      return Patient.createFromRestRep(result);
+      return patientUtil.createFromRestRep(result);
     });
   };
 
