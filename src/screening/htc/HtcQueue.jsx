@@ -13,9 +13,13 @@ let HtcQueue = props => {
 
   const columnDefs = [
     { headerName: 'uuid', hide: true, field: 'uuid' },
-    { headerName: 'ART Number', field: 'identifiers.artNumber' },
-    { headerName: 'EID Number', field: 'identifiers.eidNumber' },
-    { headerName: 'NCD Number', field: 'identifiers.ncdNumber' },
+    {
+      headerName: 'Id',
+      autoHeight: true,
+      cellRenderer: function(params){
+        return utils.getPatientIdentifiers(params.data);
+      }
+    },
     { headerName: 'Given Name', field: 'name.givenName' },
     { headerName: 'Family Name', field: 'name.familyName' },
     { headerName: 'Gender', field: 'gender' },

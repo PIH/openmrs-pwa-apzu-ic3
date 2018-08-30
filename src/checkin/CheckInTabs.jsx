@@ -14,18 +14,18 @@ class CheckInTabs extends React.Component {
   render() {
     return (
       <div>
-        <h3><Label>Check In Queue</Label></h3>
+        <h3><Label>Check-In List</Label></h3>
 
         <Tabs defaultActiveKey="1" id="checkin-tabs">
-          <Tab eventKey="1" title="Expected">
+          <Tab eventKey="1" title="expected">
             <CheckInQueue />
           </Tab>
 
-          <Tab eventKey="2" title="Waiting">
+          <Tab eventKey="2" title="in-progress">
             <ActiveVisits />
           </Tab>
 
-          <Tab eventKey="3" title="Completed">
+          <Tab eventKey="3" title="completed">
             <CompletedVisits />
           </Tab>
 

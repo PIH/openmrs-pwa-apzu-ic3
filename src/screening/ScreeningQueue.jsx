@@ -46,9 +46,13 @@ ScreeningQueue.propTypes = {
 ScreeningQueue.defaultProps = {
   columnDefs: [
     { headerName: 'uuid', hide: true, field: 'uuid' },
-    { headerName: 'ART', valueGetter: function getArtIdentifier(params) { return utils.getPatientArtIdentifier(params.data); }},
-    { headerName: 'EID', valueGetter: function getEidIdentifier(params) { return utils.getPatientEidIdentifier(params.data); }},
-    { headerName: 'NCD', valueGetter: function getNcdIdentifier(params) { return utils.getPatientNcdIdentifier(params.data); }},
+    {
+      headerName: 'Id',
+      autoHeight: true,
+      cellRenderer: function(params){
+        return utils.getPatientIdentifiers(params.data);
+      }
+    },
     { headerName: 'Given Name', field: 'name.givenName' },
     { headerName: 'Family Name', field: 'name.familyName' },
     { headerName: 'Gender', field: 'gender' },

@@ -59,16 +59,9 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                   "hide": true,
                 },
                 Object {
-                  "headerName": "ART",
-                  "valueGetter": [Function],
-                },
-                Object {
-                  "headerName": "EID",
-                  "valueGetter": [Function],
-                },
-                Object {
-                  "headerName": "NCD",
-                  "valueGetter": [Function],
+                  "autoHeight": true,
+                  "cellRenderer": [Function],
+                  "headerName": "Id",
                 },
                 Object {
                   "field": "name.givenName",
@@ -124,16 +117,9 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                       "hide": true,
                     },
                     Object {
-                      "headerName": "ART",
-                      "valueGetter": [Function],
-                    },
-                    Object {
-                      "headerName": "EID",
-                      "valueGetter": [Function],
-                    },
-                    Object {
-                      "headerName": "NCD",
-                      "valueGetter": [Function],
+                      "autoHeight": true,
+                      "cellRenderer": [Function],
+                      "headerName": "Id",
                     },
                     Object {
                       "field": "name.givenName",
@@ -201,16 +187,9 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                           "hide": true,
                         },
                         Object {
-                          "headerName": "ART",
-                          "valueGetter": [Function],
-                        },
-                        Object {
-                          "headerName": "EID",
-                          "valueGetter": [Function],
-                        },
-                        Object {
-                          "headerName": "NCD",
-                          "valueGetter": [Function],
+                          "autoHeight": true,
+                          "cellRenderer": [Function],
+                          "headerName": "Id",
                         },
                         Object {
                           "field": "name.givenName",
@@ -250,16 +229,9 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                             "hide": true,
                           },
                           Object {
-                            "headerName": "ART",
-                            "valueGetter": [Function],
-                          },
-                          Object {
-                            "headerName": "EID",
-                            "valueGetter": [Function],
-                          },
-                          Object {
-                            "headerName": "NCD",
-                            "valueGetter": [Function],
+                            "autoHeight": true,
+                            "cellRenderer": [Function],
+                            "headerName": "Id",
                           },
                           Object {
                             "field": "name.givenName",
@@ -314,16 +286,9 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                                 "hide": true,
                               },
                               Object {
-                                "headerName": "ART",
-                                "valueGetter": [Function],
-                              },
-                              Object {
-                                "headerName": "EID",
-                                "valueGetter": [Function],
-                              },
-                              Object {
-                                "headerName": "NCD",
-                                "valueGetter": [Function],
+                                "autoHeight": true,
+                                "cellRenderer": [Function],
+                                "headerName": "Id",
                               },
                               Object {
                                 "field": "name.givenName",

@@ -73,6 +73,29 @@ const utils = {
     return ncdId;
 
   },
+  getPatientIdentifiers: (patient) => {
+
+    let identifiers = [];
+    let id = utils.getPatientArtIdentifier(patient);
+    if ( id !== null) {
+      identifiers.push(id);
+    }
+    id = utils.getPatientEidIdentifier(patient);
+    if ( id !== null) {
+      identifiers.push(id);
+    }
+    id = utils.getPatientNcdIdentifier(patient);
+    if ( id !== null) {
+      identifiers.push(id);
+    }
+    if (identifiers.length > 0) {
+      return identifiers.join('<br/>');
+    } else {
+      return null;
+    }
+
+
+  },
   getPatientCheckedInTime: (patient) => {
 
     let checkedInTime = null;

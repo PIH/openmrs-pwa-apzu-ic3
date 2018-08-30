@@ -36,7 +36,7 @@ let ScreeningList = props => {
           requiredFilters: vlFilters.required,
         },
         {
-          title: "EID",
+          title: "EID DNA-PCR",
           completedFilters: vlFilters.completed,
           entryLink: '/screening/vl/form',
           requiredFilters: vlFilters.required,
