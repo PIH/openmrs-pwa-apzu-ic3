@@ -27,7 +27,7 @@ let ScreeningList = props => {
     },
     {
       key: 2,
-      title: "Targeted Screenings",
+      title: "Special Screenings",
       screenings: [
         {
           title: "Viral Load",
