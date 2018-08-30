@@ -34,6 +34,30 @@ let ScreeningList = props => {
           completedFilters: vlFilters.completed,
           entryLink: '/screening/vl/form',
           requiredFilters: vlFilters.required,
+        },
+        {
+          title: "EID",
+          completedFilters: vlFilters.completed,
+          entryLink: '/screening/vl/form',
+          requiredFilters: vlFilters.required,
+        },
+        {
+          title: "Adherence Counseling",
+          completedFilters: vlFilters.completed,
+          entryLink: '/screening/vl/form',
+          requiredFilters: vlFilters.required,
+        },
+        {
+          title: "A1C",
+          completedFilters: vlFilters.completed,
+          entryLink: '/screening/vl/form',
+          requiredFilters: vlFilters.required,
+        },
+        {
+          title: "Cervical Cancer",
+          completedFilters: vlFilters.completed,
+          entryLink: '/screening/vl/form',
+          requiredFilters: vlFilters.required,
         }
       ]
     },
@@ -55,6 +79,18 @@ let ScreeningList = props => {
         },
         {
           title: "HTC Screening",
+          completedFilters: htcFilters.completed,
+          entryLink: '/screening/htc/form',
+          requiredFilters: htcFilters.required,
+        },
+        {
+          title: "Family Planning",
+          completedFilters: htcFilters.completed,
+          entryLink: '/screening/htc/form',
+          requiredFilters: htcFilters.required,
+        },
+        {
+          title: "i-STAT",
           completedFilters: htcFilters.completed,
           entryLink: '/screening/htc/form',
           requiredFilters: htcFilters.required,
