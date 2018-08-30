@@ -112,6 +112,9 @@ describe('patient list reducer', () => {
 
     expect(patients['ijkl-9012']).toEqual(
       {
+        "address": {},
+        "attributes": [],
+        "identifiers": [],
         "uuid": "ijkl-9012",
         "visit":
           {
