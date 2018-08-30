@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Login } from '@openmrs/react-components';
-import homeImage from "../assets/images/Malawi_0216_HMHC-6weekANC_JDrake_033-webbig.jpg";
+import homeImage from "../assets/images/Magaleta_IC3_clinic.jpg";
 import logo from "../assets/images/pih_apzu_logo_white.png";
 import '../assets/css/LoginPage.css';
 import '../assets/css/background.css';

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { LOCATION_TYPES } from '../constants';
 import patientActions from '../patient/patientActions';
-import homeImage from "../assets/images/Malawi_0216_HMHC-6weekANC_JDrake_033-webbig.jpg";
+import homeImage from "../assets/images/Magaleta_IC3_clinic.jpg";
 import '../assets/css/background.css';
 
 class HomePage extends React.Component {
