@@ -408,10 +408,10 @@ exports[`Component: CheckInForm renders properly 1`] = `
                               <Col
                                 bsClass="col"
                                 componentClass="div"
-                                sm={8}
+                                sm={4}
                               >
                                 <div
-                                  className="col-sm-8"
+                                  className="col-sm-4"
                                 >
                                   <Field
                                     component={[Function]}
@@ -774,6 +774,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         >
                                           <div>
                                             <select
+                                              class="referralSelector"
                                               name="referral"
                                               onBlur={[Function]}
                                               onChange={[Function]}

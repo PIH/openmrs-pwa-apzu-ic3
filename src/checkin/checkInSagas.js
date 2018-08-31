@@ -50,7 +50,8 @@ function* checkIn(action) {
           uuid: encounterUuid,
           patient: action.patient.uuid ? action.patient.uuid : action.patient,
           location: action.location.uuid ? action.location.uuid : action.location,
-          encounterType: action.encounterType.uuid ? action.encounterType.uuid : action.encounterType
+          encounterType: action.encounterType.uuid ? action.encounterType.uuid : action.encounterType,
+          obs: action.obs
         }
       ]
     };

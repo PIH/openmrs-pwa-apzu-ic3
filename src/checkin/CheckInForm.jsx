@@ -4,6 +4,7 @@ import CompletedScreenings from "../screening/CompletedScreenings";
 import { Alert, Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
 import { goBack } from 'connected-react-router';
 import { CONCEPTS } from "../constants";
+import '../assets/css/LoginPage.css';
 
 let CheckinForm = props => {
 
@@ -19,7 +20,7 @@ let CheckinForm = props => {
 
   const Select = ({ input, options, disabled, placeholder }) => (
     <div>
-      <select {...input} disabled={disabled} >
+      <select {...input} disabled={disabled} class="referralSelector">
         <option key={0} value={''}>{placeholder}</option>
         { options.map(option =>
           <option key={option.uuid} value={option.uuid}>
@@ -123,7 +124,7 @@ let CheckinForm = props => {
               <Col componentClass={ControlLabel} sm={2}>
                 Referred From
               </Col>
-              <Col sm={8}>
+              <Col sm={4}>
                 <Field
                   name="referral"
                   id="referral"

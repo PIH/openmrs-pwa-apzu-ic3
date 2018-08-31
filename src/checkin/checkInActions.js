@@ -1,10 +1,11 @@
 import CHECK_IN_TYPES from './checkInTypes';
 
-const checkInSubmitted = (patient, visitType, encounterType, location, formSubmittedActionCreator) => ( {
+const checkInSubmitted = (patient, visitType, encounterType, obs, location, formSubmittedActionCreator) => ( {
   type: CHECK_IN_TYPES.CHECK_IN.SUBMIT,
   patient: patient,
   visitType: visitType,
   encounterType: encounterType,
+  obs: obs,
   location: location,
   formSubmittedActionCreator: formSubmittedActionCreator
 });

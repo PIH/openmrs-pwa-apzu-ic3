@@ -29,6 +29,10 @@ describe('check-in sagas', () => {
     const encounterType = {
       uuid: "encounter_type_uuid"
     };
+    const obs = {
+      concept: 'some_uuid',
+      value: 'some_value'
+    };
 
     const location = {
       uuid: "location_uuid"
@@ -36,7 +40,7 @@ describe('check-in sagas', () => {
 
     const formSubmittedActionCreator = jest.fn();
 
-    sagaTester.dispatch(checkInActions.checkInSubmitted(patient, visitType, encounterType, location, formSubmittedActionCreator));
+    sagaTester.dispatch(checkInActions.checkInSubmitted(patient, visitType, encounterType, obs, location, formSubmittedActionCreator));
     expect(sagaTester.getCalledActions()).toContainEqual(checkInActions.checkInSucceeded());
     expect(visitRest.createVisit).toHaveBeenCalledTimes(1);  // would be great to test what is actually called here
     expect(formSubmittedActionCreator).toHaveBeenCalledTimes(1);
@@ -50,12 +54,13 @@ describe('check-in sagas', () => {
     const visitType = "visit_type_uuid";
 
     const encounterType = "encounter_type_uuid";
+    const obs = "obs_uuid";
 
     const location = "location_uuid";
 
     const formSubmittedActionCreator = jest.fn();
 
-    sagaTester.dispatch(checkInActions.checkInSubmitted(patient, visitType, encounterType, location, formSubmittedActionCreator));
+    sagaTester.dispatch(checkInActions.checkInSubmitted(patient, visitType, encounterType, obs, location, formSubmittedActionCreator));
     expect(sagaTester.getCalledActions()).toContainEqual(checkInActions.checkInSucceeded());
     expect(visitRest.createVisit).toHaveBeenCalledTimes(1);  // would be great to test what is actually called here
     expect(formSubmittedActionCreator).toHaveBeenCalledTimes(1)

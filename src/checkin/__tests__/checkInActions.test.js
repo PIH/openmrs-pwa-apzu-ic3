@@ -10,11 +10,12 @@ describe('check in actions', () => {
       patient: "some_patient",
       visitType: "some_visit_type",
       encounterType: "some_encounter_type",
+      obs: "some_obs",
       location: "some_location",
       formSubmittedActionCreator: "some_form_submitted_action_creator"
     };
 
-    expect(checkInActions.checkInSubmitted("some_patient", "some_visit_type", "some_encounter_type", "some_location", "some_form_submitted_action_creator")).toEqual(expectedAction);
+    expect(checkInActions.checkInSubmitted("some_patient", "some_visit_type", "some_encounter_type", "some_obs", "some_location", "some_form_submitted_action_creator")).toEqual(expectedAction);
   });
 
 

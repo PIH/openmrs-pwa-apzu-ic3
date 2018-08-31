@@ -701,6 +701,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                   }
                 >
                   <div
+                    id="omrsGrid"
                     style={
                       Object {
                         "height": "600px",
@@ -715,6 +716,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                       />
                     </label>
                     <AgGridReact
+                      animateRows={true}
                       columnDefs={
                         Array [
                           Object {
