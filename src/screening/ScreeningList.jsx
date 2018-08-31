@@ -27,16 +27,10 @@ let ScreeningList = props => {
     },
     {
       key: 2,
-      title: "Special Screenings",
+      title: "Special",
       screenings: [
         {
           title: "Viral Load",
-          completedFilters: vlFilters.completed,
-          entryLink: '/screening/vl/form',
-          requiredFilters: vlFilters.required,
-        },
-        {
-          title: "EID DNA-PCR",
           completedFilters: vlFilters.completed,
           entryLink: '/screening/vl/form',
           requiredFilters: vlFilters.required,
@@ -48,10 +42,22 @@ let ScreeningList = props => {
           requiredFilters: vlFilters.required,
         },
         {
+          title: "EID",
+          completedFilters: vlFilters.completed,
+          entryLink: '/screening/vl/form',
+          requiredFilters: vlFilters.required,
+        },
+        {
           title: "A1C",
           completedFilters: vlFilters.completed,
           entryLink: '/screening/vl/form',
           requiredFilters: vlFilters.required,
+        },
+        {
+          title: "Creatinine",
+          completedFilters: htcFilters.completed,
+          entryLink: '/screening/htc/form',
+          requiredFilters: htcFilters.required,
         },
         {
           title: "Cervical Cancer",
@@ -63,34 +69,40 @@ let ScreeningList = props => {
     },
     {
       key: 3,
-      title: "Routine Screenings",
+      title: "Routine",
       screenings: [
         {
-          title: "Nutrition Screening",
+          title: "Nutrition",
           completedFilters: nutritionFilters.completed,
           entryLink: '/screening/nutrition/form',
           requiredFilters: nutritionFilters.required,
         },
         {
-          title: "BP Screening",
+          title: "Blood Pressure",
           completedFilters: bloodPressureFilters.completed,
           entryLink: '/screening/bloodPressure/form',
           requiredFilters: bloodPressureFilters.required,
         },
         {
-          title: "HTC Screening",
+          title: "Glucose Check",
+          completedFilters: htcFilters.completed,
+          entryLink: '/screening/htc/form',
+          requiredFilters: htcFilters.required,
+        },
+        {
+          title: "HTC",
+          completedFilters: htcFilters.completed,
+          entryLink: '/screening/htc/form',
+          requiredFilters: htcFilters.required,
+        },
+        {
+          title: "TB",
           completedFilters: htcFilters.completed,
           entryLink: '/screening/htc/form',
           requiredFilters: htcFilters.required,
         },
         {
           title: "Family Planning",
-          completedFilters: htcFilters.completed,
-          entryLink: '/screening/htc/form',
-          requiredFilters: htcFilters.required,
-        },
-        {
-          title: "i-STAT",
           completedFilters: htcFilters.completed,
           entryLink: '/screening/htc/form',
           requiredFilters: htcFilters.required,
