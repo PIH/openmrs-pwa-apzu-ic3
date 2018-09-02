@@ -4,6 +4,7 @@ import { Submit, Obs } from '@openmrs/react-components';
 import { Alert, Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import Form from '../../form/Form';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
+import '../../assets/css/tabs.css';
 
 let HtcForm = (props) => {
 

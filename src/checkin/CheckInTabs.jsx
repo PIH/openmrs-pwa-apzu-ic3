@@ -3,6 +3,7 @@ import { Label, Tabs, Tab } from 'react-bootstrap';
 import CheckInQueue from './CheckInQueue';
 import ActiveVisits from '../visit/ActiveVisits';
 import CompletedVisits from '../visit/CompletedVisits';
+import '../assets/css/tabs.css';
 
 class CheckInTabs extends React.Component {
 
@@ -16,7 +17,7 @@ class CheckInTabs extends React.Component {
       <div>
         <h3><Label>Check-In List</Label></h3>
 
-        <Tabs defaultActiveKey="1" id="checkin-tabs">
+        <Tabs defaultActiveKey="1" id="checkin-tabs" className="activeTab">
           <Tab eventKey="1" title="expected">
             <CheckInQueue />
           </Tab>
