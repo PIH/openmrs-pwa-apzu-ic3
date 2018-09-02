@@ -61,7 +61,7 @@ let HtcForm = (props) => {
           <Col componentClass={ControlLabel} sm={2}>
             Results
           </Col>
-          <Col sm={8}>
+          <Col sm={6}>
             <Obs
               concept={CONCEPTS.HTC_RESULTS.uuid}
               path="htc"

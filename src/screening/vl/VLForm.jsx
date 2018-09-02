@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { formValueSelector } from 'redux-form';
 import { Submit, Obs } from '@openmrs/react-components';
 import { Alert, Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import Form from '../../form/Form';
@@ -86,6 +87,8 @@ let VLForm = (props) => {
         </FormGroup>
       </Row>
 
+      {(typeof props.bled !== 'undefined') &&
+      (props.bled === CONCEPTS.VIRAL_LOAD_TEST_SET.False.uuid) &&
       <Row>
         <FormGroup controlId="formReasonForNoSample">
           <Col componentClass={ControlLabel} sm={2}>
@@ -95,12 +98,15 @@ let VLForm = (props) => {
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
               path="vl"
-              conceptAnswers={ noSampleAnswers }
+              conceptAnswers={noSampleAnswers}
             />
           </Col>
         </FormGroup>
       </Row>
+      }
 
+      {(typeof props.bled !== 'undefined') &&
+      (props.bled === CONCEPTS.VIRAL_LOAD_TEST_SET.True.uuid) &&
       <Row>
         <FormGroup controlId="formReasonForTesting">
           <Col componentClass={ControlLabel} sm={2}>
@@ -110,12 +116,15 @@ let VLForm = (props) => {
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid}
               path="vl"
-              conceptAnswers={ reasonForTesting }
+              conceptAnswers={reasonForTesting}
             />
           </Col>
         </FormGroup>
       </Row>
+      }
 
+      {(typeof props.bled !== 'undefined') &&
+      (props.bled === CONCEPTS.VIRAL_LOAD_TEST_SET.True.uuid) &&
       <Row>
         <FormGroup controlId="formLabLocation">
           <Col componentClass={ControlLabel} sm={2}>
@@ -125,14 +134,15 @@ let VLForm = (props) => {
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid}
               path="vl"
-              conceptAnswers={ labLocation }
+              conceptAnswers={labLocation}
             />
           </Col>
         </FormGroup>
       </Row>
-
+      }
       <Row>
-        <Submit />
+        <Col sm={2}></Col>
+        <Col sm={4}><Submit /></Col>
       </Row>
     </Grid>
   );
@@ -148,8 +158,12 @@ let VLForm = (props) => {
   );
 };
 
+const selector = formValueSelector('openmrs-form');
+
 export default connect(state => {
+  const bled = selector(state, 'obs|path=vl|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid);
   return {
+    bled,
     patient: state.selectedPatient ? state.patients[state.selectedPatient] : null,
   };
 })(VLForm);
