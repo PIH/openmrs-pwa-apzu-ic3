@@ -24,6 +24,9 @@ export const ENCOUNTER_TYPES = {
   'VLEncounterType': {
     uuid: '9959A261-2122-4AE1-A89D-1CA444B712EA'
   },
+  'EidEncounterType': {
+    uuid: '8383DE35-5145-4953-A018-34876B797F3E'
+  },
 };
 
 
@@ -167,10 +170,11 @@ export const NAV_MENU_PAGES = {
   '/' : { display : 'Home', icon : 'home'},
   '/searchPatient' : { display : 'Search Patient', icon : 'search'},
   '/checkin/checkInTabs' : { display : 'Check-In', icon : 'notes-medical'},
-  '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
-  '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
-  '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },
   '/screening/vl/tabs' : { display : 'Viral Load', icon : 'vial' },
+  '/screening/eid/tabs' : { display : 'EID', icon : 'child' },
+  '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
+  '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
+  '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },
   '/screening/nurse/queue' : { display : 'Nurse', icon : 'user-md' },
 };
 
