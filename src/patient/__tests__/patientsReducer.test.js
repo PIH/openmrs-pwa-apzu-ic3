@@ -112,6 +112,7 @@ describe('patient list reducer', () => {
 
     expect(patients['ijkl-9012']).toEqual(
       {
+        "_openmrsClass": "Patient",
         "address": {},
         "attributes": [],
         "identifiers": [],
