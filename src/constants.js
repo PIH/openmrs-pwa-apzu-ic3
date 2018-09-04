@@ -27,6 +27,9 @@ export const ENCOUNTER_TYPES = {
   'EidEncounterType': {
     uuid: '8383DE35-5145-4953-A018-34876B797F3E'
   },
+  'DnaPcrEncounterType': {
+    uuid: 'EA2869FD-39E0-45F0-8FE4-92F61E00CF9D'
+  },
 };
 
 
@@ -108,6 +111,10 @@ export const CONCEPTS = {
       uuid: '6566a4ae-977f-11e1-8993-905e29aff6c1',
       name: 'Patient refused'
     },
+    'InadequateSupplies': {
+      uuid: '68635CA0-7161-410A-AD59-B3B5112A5843',  // need to replace this UUID with the real one
+      name: 'Inadequate supplies for testing'
+    },
     'ReasonForTesting': {
       uuid: '164126AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
       name: 'Reason for testing'
@@ -115,6 +122,10 @@ export const CONCEPTS = {
     'Routine': {
       uuid: 'e0821812-955d-11e7-abc4-cec278b6b50a',
       name: 'Routine'
+    },
+    'SixWeeksRoutine': {
+      uuid: '6743B204-612E-4623-B495-2FCCC44F76E1',
+      name: '6w Routine'
     },
     'Confirmatory': {
       uuid: '65590f06-977f-11e1-8993-905e29aff6c1',
@@ -174,11 +185,16 @@ export const FORM_ANSWERS = {
   'noSampleAnswers': [
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.name },
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.name },
   ],
   'reasonForTesting': [
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Routine.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Routine.name },
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.name },
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Target.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Target.name },
+  ],
+  'dnaPcrReasonForTesting': [
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.SixWeeksRoutine.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.SixWeeksRoutine.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.name }
   ],
   'labLocation': [
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.NenoGeneXpert.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.NenoGeneXpert.name },

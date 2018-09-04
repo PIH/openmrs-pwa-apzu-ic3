@@ -33,7 +33,7 @@ let DnaPcrForm = (props) => {
           <Col componentClass={ControlLabel} sm={2}>
             Reason for no sample
           </Col>
-          <Col sm={8}>
+          <Col sm={10}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
               path="vl"
@@ -55,7 +55,7 @@ let DnaPcrForm = (props) => {
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid}
               path="vl"
-              conceptAnswers={ FORM_ANSWERS.reasonForTesting }
+              conceptAnswers={ FORM_ANSWERS.dnaPcrReasonForTesting }
             />
           </Col>
         </FormGroup>
@@ -90,7 +90,7 @@ let DnaPcrForm = (props) => {
     <Form
       afterSubmitLink="/screening/eid/queue"
       backLink="/screening/eid/queue"
-      encounterType={ ENCOUNTER_TYPES.VLEncounterType }
+      encounterType={ ENCOUNTER_TYPES.DnaPcrEncounterType }
       formContent={formContent}
       title=""
     />

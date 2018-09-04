@@ -34,8 +34,8 @@ let HtcForm = (props) => {
 
   return (
     <Form
-      afterSubmitLink="/screening/htc/queue"
-      backLink="/screening/htc/queue"
+      afterSubmitLink={ props.afterSubmitLink ? props.afterSubmitLink : "/screening/htc/queue" }
+      backLink={ props.backLink ? props.backLink : "/screening/htc/queue" }
       encounterType={ ENCOUNTER_TYPES.HTCEncounterType }
       formContent={formContent}
       title="HTC"

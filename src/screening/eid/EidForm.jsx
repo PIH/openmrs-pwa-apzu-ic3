@@ -57,7 +57,9 @@ class EidForm extends React.Component {
         <Row>
           <Col>
             <div>
-              <HtcForm/>
+              <HtcForm
+                afterSubmitLink="/screening/eid/queue"
+                backLink="/screening/eid/queue"/>
             </div>
           </Col>
         </Row>
