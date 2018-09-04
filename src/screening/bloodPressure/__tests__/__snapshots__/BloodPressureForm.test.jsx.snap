@@ -189,44 +189,89 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           title="Blood Pressure"
         >
           <div>
-            <Link
-              replace={false}
-              to="/screening/bloodPressure/queue"
+            <Grid
+              bsClass="container"
+              componentClass="div"
+              fluid={false}
             >
-              <a
-                onClick={[Function]}
+              <div
+                className="container"
               >
-                <Button
-                  active={false}
-                  block={false}
-                  bsClass="btn"
-                  bsSize="large"
-                  bsStyle="danger"
-                  disabled={false}
+                <Row
+                  bsClass="row"
+                  componentClass="div"
                 >
-                  <button
-                    className="btn btn-lg btn-danger"
-                    disabled={false}
-                    type="button"
+                  <div
+                    className="row"
                   >
-                    Back
-                  </button>
-                </Button>
-              </a>
-            </Link>
+                    <Col
+                      bsClass="col"
+                      componentClass="div"
+                      sm={2}
+                    >
+                      <div
+                        className="col-sm-2"
+                      >
+                        <Link
+                          replace={false}
+                          to="/screening/bloodPressure/queue"
+                        >
+                          <a
+                            onClick={[Function]}
+                          >
+                            <Button
+                              active={false}
+                              block={false}
+                              bsClass="btn"
+                              bsSize="large"
+                              bsStyle="danger"
+                              disabled={false}
+                            >
+                              <button
+                                className="btn btn-lg btn-danger"
+                                disabled={false}
+                                type="button"
+                              >
+                                Back
+                              </button>
+                            </Button>
+                          </a>
+                        </Link>
+                      </div>
+                    </Col>
+                    <Col
+                      bsClass="col"
+                      componentClass="div"
+                      sm={6}
+                    >
+                      <div
+                        className="col-sm-6"
+                      >
+                        <h1
+                          style={
+                            Object {
+                              "marginTop": "0px",
+                            }
+                          }
+                        >
+                          <Label
+                            bsClass="label"
+                            bsStyle="default"
+                          >
+                            <span
+                              className="label label-default"
+                            >
+                              Blood Pressure
+                            </span>
+                          </Label>
+                        </h1>
+                      </div>
+                    </Col>
+                  </div>
+                </Row>
+              </div>
+            </Grid>
             <div>
-              <h3>
-                <Label
-                  bsClass="label"
-                  bsStyle="default"
-                >
-                  <span
-                    className="label label-default"
-                  >
-                    Blood Pressure
-                  </span>
-                </Label>
-              </h3>
               <Connect(ReduxForm)
                 encounterType={
                   Object {

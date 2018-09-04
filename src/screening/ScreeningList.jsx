@@ -5,6 +5,7 @@ import bloodPressureFilters from './bloodPressure/bloodPressureFilters';
 import nutritionFilters from './nutrition/nutritionFilters';
 import htcFilters from './htc/htcFilters';
 import vlFilters from './vl/vlFilters';
+import eidFilters from './eid/eidFilters';
 import checkInFilters from "../checkin/checkInFilters";
 import ScreeningListItem from './ScreeningListItem';
 
@@ -44,8 +45,8 @@ let ScreeningList = props => {
         {
           title: "EID",
           completedFilters: vlFilters.completed,
-          entryLink: '/screening/vl/form',
-          requiredFilters: vlFilters.required,
+          entryLink: '/screening/eid/form',
+          requiredFilters: eidFilters.required,
         },
         {
           title: "A1C",

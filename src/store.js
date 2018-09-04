@@ -52,9 +52,28 @@ const middlewares = [
  * expectedCheckInLists:
  */
 
+
 const combinedReducer = combineReducers({
   openmrs: openmrsReducers,
-  form: reduxFormReducer,
+  form: reduxFormReducer.plugin({
+    'openmrs-form': (state, action) => {
+      switch (action.type) {
+        case '@@redux-form/UNREGISTER_FIELD':
+          let newValues = { ...state.values };
+          delete newValues[action.payload.name];
+          let newFields = { ...state.registeredFields };
+          delete newFields[action.payload.name];
+          return {
+            ...state,
+            values: newValues,
+            registeredFields: newFields
+          };
+        default:
+          return state;
+      }
+
+    }
+  }),
   toastr: toastrReducer,
   patients: patientsReducer,
   selectedPatient: patientSelectedReducer,
@@ -65,8 +84,8 @@ const rootReducer = (state, action) => {
   if (action.type === LOGIN_TYPES.LOGOUT.SUCCEEDED) {
     state = undefined;
   }
-  return combinedReducer(state, action)
-}
+  return combinedReducer(state, action);
+};
 
 const persistConfig = {
   key: 'root',

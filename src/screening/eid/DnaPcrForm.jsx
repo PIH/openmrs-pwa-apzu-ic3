@@ -2,53 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
 import { Submit, Obs } from '@openmrs/react-components';
-import { Alert, Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
+import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import Form from '../../form/Form';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 
-let VLForm = (props) => {
+let DnaPcrForm = (props) => {
 
   const formContent = (
     <Grid>
-      { (typeof props.patient !== 'undefined') &&
-      (typeof props.patient.alert !== 'undefined') &&
-      <Row>
-        <FormGroup controlId="formAlert">
-          <Col
-            componentClass={ControlLabel}
-            sm={2}
-          >
-            Alert
-          </Col>
-          <Col
-            sm={4}
-          >
-            <Alert bsStyle="danger">
-              { props.patient.alert }
-            </Alert>
-          </Col>
-        </FormGroup>
-      </Row>
-      }
-
-      { (typeof props.patient !== 'undefined') &&
-      (typeof props.patient.actions !== 'undefined') && (props.patient.actions !== props.patient.alert) &&
-      <Row>
-        <FormGroup controlId="formAction">
-          <Col
-            componentClass={ControlLabel}
-            sm={2}
-          >
-            Action
-          </Col>
-          <Col sm={4}>
-            <Alert bsStyle="warning">
-              { props.patient.actions }
-            </Alert>
-          </Col>
-        </FormGroup>
-      </Row>
-      }
 
       <Row>
         <FormGroup controlId="formBled">
@@ -72,7 +33,7 @@ let VLForm = (props) => {
           <Col componentClass={ControlLabel} sm={2}>
             Reason for no sample
           </Col>
-          <Col sm={8}>
+          <Col sm={10}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
               path="vl"
@@ -94,7 +55,7 @@ let VLForm = (props) => {
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid}
               path="vl"
-              conceptAnswers={ FORM_ANSWERS.reasonForTesting }
+              conceptAnswers={ FORM_ANSWERS.dnaPcrReasonForTesting }
             />
           </Col>
         </FormGroup>
@@ -127,11 +88,11 @@ let VLForm = (props) => {
 
   return (
     <Form
-      afterSubmitLink="/screening/vl/queue"
-      backLink="/screening/vl/queue"
-      encounterType={ ENCOUNTER_TYPES.VLEncounterType }
+      afterSubmitLink="/screening/eid/queue"
+      backLink="/screening/eid/queue"
+      encounterType={ ENCOUNTER_TYPES.DnaPcrEncounterType }
       formContent={formContent}
-      title="Viral Load"
+      title=""
     />
   );
 };
@@ -144,5 +105,5 @@ export default connect(state => {
     bled,
     patient: state.selectedPatient ? state.patients[state.selectedPatient] : null,
   };
-})(VLForm);
+})(DnaPcrForm);
 

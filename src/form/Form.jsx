@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Label } from 'react-bootstrap';
+import { Grid, Row, Col, Button, Label } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { push } from 'connected-react-router';
 import { connect } from 'react-redux';
@@ -15,16 +15,25 @@ let Form = (props) => {
     () => push(props.afterSubmitLink)
   ];
 
+  const labelStyles = {
+    marginTop: '0px'
+  };
 
   return (
     <div>
-      <Link to={props.backLink}>
-        <Button bsSize='large' bsStyle='danger'>
-          Back
-        </Button>
-      </Link>
+      <Grid>
+        <Row>
+          <Col sm={2}>
+            <Link to={props.backLink}>
+              <Button bsSize='large' bsStyle='danger'>
+                Back
+              </Button>
+            </Link>
+          </Col>
+          <Col sm={6}><h1 style={ labelStyles }><Label>{props.title}</Label></h1></Col>
+        </Row>
+      </Grid>
       <div>
-        <h3><Label>{props.title}</Label></h3>
         <OpenMRSForm
           encounterType={props.encounterType}
           formSubmittedActionCreator={formSubmittedActionCreators}

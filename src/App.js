@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { Logout, LoadingView } from '@openmrs/react-components';
 import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core';
-import { faCheck, faArrowRight, faBars, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faArrowRight, faBars, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import setupStoreAndPersistor, { history } from './store';
 import Layout from './layout/Layout';
@@ -21,10 +21,16 @@ import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import NutritionForm from "./screening/nutrition/NutritionForm";
 import HtcQueue from "./screening/htc/HtcQueue";
+import HtcPage from "./screening/htc/HtcPage";
 import HtcForm from "./screening/htc/HtcForm";
 import VLQueueTabs from "./screening/vl/VLQueueTabs";
 import VLQueue from "./screening/vl/VLQueue";
+import VLQueueComplete from "./screening/vl/VLQueueComplete";
 import VLForm from "./screening/vl/VLForm";
+import EidQueueTabs from './screening/eid/EidQueueTabs';
+import EidQueue from './screening/eid/EidQueue';
+import EidQueueComplete from './screening/eid/EidQueueComplete';
+import EidForm from './screening/eid/EidForm';
 import NurseQueue from "./screening/nurse/NurseQueue";
 import ActiveVisitsQueue from "./visit/ActiveVisits";
 import CompletedVisitsQueue from "./visit/CompletedVisits";
@@ -33,7 +39,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 
 const { store, persistor } = setupStoreAndPersistor();
 
-fontAwesomeLibrary.add(faCheck, faArrowRight, faBars, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome);
+fontAwesomeLibrary.add(faCheck, faArrowRight, faBars, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome);
 
 const App = props => {
 
@@ -107,6 +113,11 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
+              component={HtcPage}
+              path="/screening/htc/page"
+              redirectOnLogin="/"
+            />
+            <Layout
               component={HtcForm}
               path="/screening/htc/form"
               redirectOnLogin="/"
@@ -122,8 +133,33 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
+              component={VLQueueComplete}
+              path="/screening/vl/complete"
+              redirectOnLogin="/"
+            />
+            <Layout
               component={VLForm}
               path="/screening/vl/form"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={EidQueueTabs}
+              path="/screening/eid/tabs"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={EidQueue}
+              path="/screening/eid/queue"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={EidQueueComplete}
+              path="/screening/eid/complete"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={EidForm}
+              path="/screening/eid/form"
               redirectOnLogin="/"
             />
             <Layout

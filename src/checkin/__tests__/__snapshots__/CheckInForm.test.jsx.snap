@@ -774,7 +774,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                         >
                                           <div>
                                             <select
-                                              class="referralSelector"
+                                              className="referralSelector"
                                               name="referral"
                                               onBlur={[Function]}
                                               onChange={[Function]}

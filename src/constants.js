@@ -24,6 +24,12 @@ export const ENCOUNTER_TYPES = {
   'VLEncounterType': {
     uuid: '9959A261-2122-4AE1-A89D-1CA444B712EA'
   },
+  'EidEncounterType': {
+    uuid: '8383DE35-5145-4953-A018-34876B797F3E'
+  },
+  'DnaPcrEncounterType': {
+    uuid: 'EA2869FD-39E0-45F0-8FE4-92F61E00CF9D'
+  },
 };
 
 
@@ -105,6 +111,10 @@ export const CONCEPTS = {
       uuid: '6566a4ae-977f-11e1-8993-905e29aff6c1',
       name: 'Patient refused'
     },
+    'InadequateSupplies': {
+      uuid: '68635CA0-7161-410A-AD59-B3B5112A5843',  // need to replace this UUID with the real one
+      name: 'Inadequate supplies for testing'
+    },
     'ReasonForTesting': {
       uuid: '164126AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
       name: 'Reason for testing'
@@ -112,6 +122,10 @@ export const CONCEPTS = {
     'Routine': {
       uuid: 'e0821812-955d-11e7-abc4-cec278b6b50a',
       name: 'Routine'
+    },
+    'SixWeeksRoutine': {
+      uuid: '6743B204-612E-4623-B495-2FCCC44F76E1',
+      name: '6w Routine'
     },
     'Confirmatory': {
       uuid: '65590f06-977f-11e1-8993-905e29aff6c1',
@@ -163,14 +177,46 @@ export const CONCEPTS = {
   }
 };
 
+export const FORM_ANSWERS = {
+  'bledAnswers' : [
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.True.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.True.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.False.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.False.name },
+  ],
+  'noSampleAnswers': [
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.name },
+  ],
+  'reasonForTesting': [
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Routine.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Routine.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Target.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Target.name },
+  ],
+  'dnaPcrReasonForTesting': [
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.SixWeeksRoutine.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.SixWeeksRoutine.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.name }
+  ],
+  'labLocation': [
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.NenoGeneXpert.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.NenoGeneXpert.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.CentralLaboratory.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.CentralLaboratory.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.LisungwiGeneXpert.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.LisungwiGeneXpert.name },
+  ],
+  'htcAnswers': [
+    { uuid: CONCEPTS.HTC_RESULTS.Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Reactive.name },
+    { uuid: CONCEPTS.HTC_RESULTS.Non_Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Non_Reactive.name },
+    { uuid: CONCEPTS.HTC_RESULTS.Not_Done.uuid, name: CONCEPTS.HTC_RESULTS.Not_Done.name },
+  ]
+};
+
 export const NAV_MENU_PAGES = {
   '/' : { display : 'Home', icon : 'home'},
   '/searchPatient' : { display : 'Search Patient', icon : 'search'},
   '/checkin/checkInTabs' : { display : 'Check-In', icon : 'notes-medical'},
-  '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
-  '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
-  '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },
   '/screening/vl/tabs' : { display : 'Viral Load', icon : 'vial' },
+  '/screening/eid/tabs' : { display : 'EID', icon : 'child' },
+  '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
+  '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
+  '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },
   '/screening/nurse/queue' : { display : 'Nurse', icon : 'user-md' },
 };
 
