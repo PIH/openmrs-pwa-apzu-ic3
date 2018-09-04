@@ -8,7 +8,7 @@ import utils from "../../utils";
 let HtcQueue = props => {
 
   const rowSelectedActionCreators = [
-    () => push('/screening/htc/form')
+    () => push('/screening/htc/page')
   ];
 
   const columnDefs = [

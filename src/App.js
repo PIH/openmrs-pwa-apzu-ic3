@@ -21,6 +21,7 @@ import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import NutritionForm from "./screening/nutrition/NutritionForm";
 import HtcQueue from "./screening/htc/HtcQueue";
+import HtcPage from "./screening/htc/HtcPage";
 import HtcForm from "./screening/htc/HtcForm";
 import VLQueueTabs from "./screening/vl/VLQueueTabs";
 import VLQueue from "./screening/vl/VLQueue";
@@ -109,6 +110,11 @@ const App = props => {
             <Layout
               component={HtcQueue}
               path="/screening/htc/queue"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={HtcPage}
+              path="/screening/htc/page"
               redirectOnLogin="/"
             />
             <Layout
