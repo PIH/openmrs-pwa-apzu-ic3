@@ -20,9 +20,9 @@ const createFromReportingRestRep =  (restRep) => {
     familyName: restRep.last_name
   } ;
 
-  patient = patientUtil.addIdentifier(restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE.uuid, patient);
-  patient = patientUtil.addIdentifier(restRep.eid_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE.uuid, patient);
-  patient = patientUtil.addIdentifier(restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE.uuid, patient);
+  patient = patientUtil.addIdentifier(patient, restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE.uuid);
+  patient = patientUtil.addIdentifier(patient, restRep.eid_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE.uuid);
+  patient = patientUtil.addIdentifier(patient, restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE.uuid);
 
   // TODO how do we get these in a proper format
   patient.chw = restRep.vhw;

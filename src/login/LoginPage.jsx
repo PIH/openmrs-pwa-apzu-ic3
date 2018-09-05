@@ -18,7 +18,7 @@ const LoginPage = props => {
     return(
       <div class="background darken-pseudo" style={{backgroundImage: 'url(' + homeImage + ')'}}>
         <div class="foreground">
-          <img class="loginLogo" src={logo} alt='' />
+          <img className="loginLogo" src={logo} alt=''/>
           <Login/>
         </div>
       </div>

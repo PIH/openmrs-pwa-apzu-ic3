@@ -1,6 +1,6 @@
 import React from 'react';
 import ReduxToastr from 'react-redux-toastr';
-import { AuthenticatedRoute, HeaderAlt, PatientHeaderAlt } from '@openmrs/react-components';
+import {AuthenticatedRoute, HeaderAlt, PatientHeader} from '@openmrs/react-components';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import LeftRail from './LeftRail';
@@ -28,7 +28,9 @@ const Layout = props => {
             />
         </Row>
         <Row>
-          <PatientHeaderAlt />
+          {props.patient &&
+          <PatientHeader patient={props.patient}/>
+          }
         </Row>
         <Row>
           {props.patient &&
