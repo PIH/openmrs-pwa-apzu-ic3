@@ -5,7 +5,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import LeftRail from './LeftRail';
 import logo from "../assets/images/pih_apzu_logo_white.png";
-import { NAV_MENU_PAGES, USER_MENU_PAGES} from '../constants';
+import {NAV_MENU_PAGES, USER_MENU_PAGES, IDENTIFIER_TYPES} from '../constants';
 import '../assets/css/header.css';
 
 // TODO extract authenicated route out to a higher level?
@@ -29,7 +29,12 @@ const Layout = props => {
         </Row>
         <Row>
           {props.patient &&
-          <PatientHeader patient={props.patient}/>
+          <PatientHeader
+            identifierTypesToDisplay={
+              [IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE,
+                IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE,
+                IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE]}
+            patient={props.patient}/>
           }
         </Row>
         <Row>
