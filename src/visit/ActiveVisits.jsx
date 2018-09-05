@@ -52,6 +52,7 @@ let ActiveVisits = props => {
         filters={actionVisitFilters}
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={Object.values(props.patients)}
+        onRowCount={ props.onRowCount }
         rowSelectedActionCreators={rowSelectedActionCreators}
         title=""
       />

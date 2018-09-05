@@ -104,6 +104,7 @@ class CheckInQueue extends React.Component {
           filters={checkInFilters.required}
           onMountOtherActionCreators={ [this.onMountOtherActionCreators.bind(this)] }
           rowData={Object.values(this.props.patients)}
+          onRowCount={this.props.onRowCount}
           rowSelectedActionCreators={ [this.redirectToCheckinPageActionCreator.bind(this)] }
           title=""
         />

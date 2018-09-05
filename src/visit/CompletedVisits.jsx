@@ -60,6 +60,7 @@ let CompletedVisits = props => {
         fetchListActionCreator={fetchListActionCreator}
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
+        onRowCount={props.onRowCount}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title=""
       />
