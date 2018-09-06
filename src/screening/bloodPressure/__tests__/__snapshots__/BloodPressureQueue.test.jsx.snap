@@ -314,6 +314,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                               },
                             ]
                           }
+                          enableFiltering={true}
                           enableSorting={true}
                           id="omrsGrid"
                           onFilterChanged={[Function]}
