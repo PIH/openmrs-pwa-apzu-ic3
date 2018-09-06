@@ -17,6 +17,7 @@ let EidQueueComplete = props => {
         dispatch={ props.dispatch }
         filters={ eidFilters.completed }
         rowData={ Object.values(props.patients) }
+        onRowCount={ props.onRowCount }
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="EID Completed"
       />

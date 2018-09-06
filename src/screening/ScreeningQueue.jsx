@@ -27,6 +27,7 @@ let ScreeningQueue = props => {
         filters={[...props.filters, patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'include')]}
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
+        onRowCount={ props.onRowCount }
         rowSelectedActionCreators={props.rowSelectedActionCreators}
         title={props.title}
       />
