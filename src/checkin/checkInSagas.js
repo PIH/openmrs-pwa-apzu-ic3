@@ -10,6 +10,7 @@ import * as R from 'ramda';
 const createFromReportingRestRep =  (restRep) => {
   let patient = {};
 
+  patient._openmrsClass = "Patient";
   patient.uuid = restRep.patient_uuid;
   patient.gender = restRep.gender;
   patient.age = restRep.age;
@@ -20,9 +21,9 @@ const createFromReportingRestRep =  (restRep) => {
     familyName: restRep.last_name
   } ;
 
-  patient = patientUtil.addIdentifier(patient, restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE.uuid);
-  patient = patientUtil.addIdentifier(patient, restRep.eid_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE.uuid);
-  patient = patientUtil.addIdentifier(patient, restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE.uuid);
+  patient = patientUtil.addIdentifier(patient, restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
+  patient = patientUtil.addIdentifier(patient, restRep.eid_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE);
+  patient = patientUtil.addIdentifier(patient, restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE);
 
   // TODO how do we get these in a proper format
   patient.chw = restRep.vhw;

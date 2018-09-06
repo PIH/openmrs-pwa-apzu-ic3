@@ -1,4 +1,5 @@
 import dateFns from 'date-fns';
+import {patientUtil} from '@openmrs/react-components';
 import { ENCOUNTER_TYPES, IDENTIFIER_TYPES } from "./constants";
 
 const utils = {
@@ -23,69 +24,27 @@ const utils = {
   },
 
   getPatientArtIdentifier: (patient) => {
-
-    let artId = null;
-    if (typeof patient.identifiers !== 'undefined') {
-      if (typeof patient.identifiers.artNumber !== 'undefined') {
-        artId = patient.identifiers.artNumber;
-      } else {
-        let artIdentifier = patient.identifiers.find( identifier => identifier.identifierType === IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE.uuid);
-        if (typeof artIdentifier !== 'undefined' && artIdentifier !== null) {
-          artId = artIdentifier.identifier;
-        }
-      }
-    }
-
-    return artId;
-
+    return patientUtil.getIdentifier(patient, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
   },
   getPatientEidIdentifier: (patient) => {
-
-    let eidId = null;
-    if (typeof patient.identifiers !== 'undefined') {
-      if (typeof patient.identifiers.eidNumber !== 'undefined') {
-        eidId = patient.identifiers.eidNumber;
-      } else {
-        let eidIdentifier = patient.identifiers.find( identifier => identifier.identifierType === IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE.uuid);
-        if (typeof eidIdentifier !== 'undefined' && eidIdentifier !== null) {
-          eidId = eidIdentifier.identifier;
-        }
-      }
-    }
-
-    return eidId;
-
+    return patientUtil.getIdentifier(patient, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE);
   },
   getPatientNcdIdentifier: (patient) => {
-
-    let ncdId = null;
-    if (typeof patient.identifiers !== 'undefined') {
-      if (typeof patient.identifiers.ncdNumber !== 'undefined') {
-        ncdId = patient.identifiers.ncdNumber;
-      } else {
-        let ncdIdentifier = patient.identifiers.find( identifier => identifier.identifierType === IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE.uuid);
-        if (typeof ncdIdentifier !== 'undefined' && ncdIdentifier !== null) {
-          ncdId = ncdIdentifier.identifier;
-        }
-      }
-    }
-
-    return ncdId;
-
+    return patientUtil.getIdentifier(patient, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE);
   },
   getPatientIdentifiers: (patient) => {
 
     let identifiers = [];
     let id = utils.getPatientArtIdentifier(patient);
-    if ( id !== null) {
+    if (id) {
       identifiers.push(id);
     }
     id = utils.getPatientEidIdentifier(patient);
-    if ( id !== null) {
+    if (id) {
       identifiers.push(id);
     }
     id = utils.getPatientNcdIdentifier(patient);
-    if ( id !== null) {
+    if (id) {
       identifiers.push(id);
     }
     if (identifiers.length > 0) {
