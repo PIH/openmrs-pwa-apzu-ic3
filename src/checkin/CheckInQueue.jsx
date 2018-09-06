@@ -21,6 +21,9 @@ class CheckInQueue extends React.Component {
         autoHeight: true,
         cellRenderer: function(params){
           return utils.getPatientIdentifiers(params.data);
+        },
+        getQuickFilterText: function(params) {
+          return utils.getPatientIdentifiers(params.data);
         }
       },
       { headerName: 'Given Name', field: 'name.givenName' },
