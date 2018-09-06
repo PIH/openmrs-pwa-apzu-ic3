@@ -17,6 +17,7 @@ let EidQueue = props => {
         dispatch={ props.dispatch }
         filters={ eidFilters.required }
         rowData={ Object.values(props.patients) }
+        onRowCount={ props.onRowCount }
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="EID Test Queue"
       />

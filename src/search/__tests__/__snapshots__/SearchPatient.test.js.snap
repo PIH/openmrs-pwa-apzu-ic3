@@ -748,11 +748,12 @@ exports[`Component: SearchPatient renders properly 1`] = `
                       }
                       enableSorting={true}
                       id="omrsGrid"
+                      onFilterChanged={[Function]}
                       onGridReady={[Function]}
+                      onRowDataChanged={[Function]}
                       onSelectionChanged={[Function]}
                       rowClassRules="rowClassRules"
                       rowData={Array []}
-                      rowDataChanged={[Function]}
                       rowSelection="single"
                     >
                       <div
