@@ -61,6 +61,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                 Object {
                   "autoHeight": true,
                   "cellRenderer": [Function],
+                  "getQuickFilterText": [Function],
                   "headerName": "Id",
                 },
                 Object {
@@ -119,6 +120,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                     Object {
                       "autoHeight": true,
                       "cellRenderer": [Function],
+                      "getQuickFilterText": [Function],
                       "headerName": "Id",
                     },
                     Object {
@@ -189,6 +191,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                         Object {
                           "autoHeight": true,
                           "cellRenderer": [Function],
+                          "getQuickFilterText": [Function],
                           "headerName": "Id",
                         },
                         Object {
@@ -231,6 +234,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                           Object {
                             "autoHeight": true,
                             "cellRenderer": [Function],
+                            "getQuickFilterText": [Function],
                             "headerName": "Id",
                           },
                           Object {
@@ -290,6 +294,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                               Object {
                                 "autoHeight": true,
                                 "cellRenderer": [Function],
+                                "getQuickFilterText": [Function],
                                 "headerName": "Id",
                               },
                               Object {

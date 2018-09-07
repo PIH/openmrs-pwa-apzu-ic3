@@ -60,6 +60,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                 Object {
                   "autoHeight": true,
                   "cellRenderer": [Function],
+                  "getQuickFilterText": [Function],
                   "headerName": "Id",
                 },
                 Object {
@@ -117,6 +118,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                     Object {
                       "autoHeight": true,
                       "cellRenderer": [Function],
+                      "getQuickFilterText": [Function],
                       "headerName": "Id",
                     },
                     Object {
@@ -186,6 +188,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                         Object {
                           "autoHeight": true,
                           "cellRenderer": [Function],
+                          "getQuickFilterText": [Function],
                           "headerName": "Id",
                         },
                         Object {
@@ -228,6 +231,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                           Object {
                             "autoHeight": true,
                             "cellRenderer": [Function],
+                            "getQuickFilterText": [Function],
                             "headerName": "Id",
                           },
                           Object {
@@ -287,6 +291,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                               Object {
                                 "autoHeight": true,
                                 "cellRenderer": [Function],
+                                "getQuickFilterText": [Function],
                                 "headerName": "Id",
                               },
                               Object {
