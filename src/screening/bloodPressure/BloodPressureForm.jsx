@@ -3,17 +3,24 @@ import {Submit, Obs} from '@openmrs/react-components';
 import {Grid, Row, FormGroup, ControlLabel, Col} from 'react-bootstrap';
 import Form from '../../form/Form';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
+import { minValue, maxValue, abnormalMaxValue } from "../../validations";
 
-const minValue = min => value =>
-  value && value < min ? `Must be at least ${min}` : undefined ;
-
-const maxValue = max => value =>
-  value && value > max ? `Must be less than ${max + 1}` : undefined ;
-
+/**
+ * Range of possible values
+ * SBP 50-260
+ * DBP 40-140
+ *
+ * Abnormal results
+ * SBP > 160
+ * DBP > 110
+ */
 const minValue40 = minValue(40);
 const minValue50 = minValue(50);
 const maxValue140 = maxValue(140);
 const maxValue260 = maxValue(260);
+
+const abnormalMaxValue110 = abnormalMaxValue(110);
+const abnormalMaxValue160 = abnormalMaxValue(160);
 
 let BloodPressureForm = props => {
 
@@ -30,6 +37,7 @@ let BloodPressureForm = props => {
               placeholder="Systolic value"
               path="Systolic"
               validate={[minValue50, maxValue260]}
+              warn={ abnormalMaxValue160 }
             />
           </Col>
         </FormGroup>
@@ -45,6 +53,7 @@ let BloodPressureForm = props => {
               placeholder="Diastolic value"
               validate={[minValue40, maxValue140]}
               path="Diastolic"
+              warn={ abnormalMaxValue110 }
             />
           </Col>
         </FormGroup>
