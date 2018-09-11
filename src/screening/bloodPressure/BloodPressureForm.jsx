@@ -1,9 +1,9 @@
 import React from "react";
-import {Submit, Obs} from '@openmrs/react-components';
-import {Grid, Row, FormGroup, ControlLabel, Col} from 'react-bootstrap';
-import Form from '../../form/Form';
+import {Submit, Obs, FormPage } from '@openmrs/react-components';
+import {Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 import { minValue, maxValue, abnormalMaxValue } from "../../validations";
+import { connect } from "react-redux";
 
 /**
  * Range of possible values
@@ -65,9 +65,10 @@ let BloodPressureForm = props => {
   );
 
   return (
-    <Form
+    <FormPage
       afterSubmitLink="/screening/bloodPressure/queue"
       backLink="/screening/bloodPressure/queue"
+      patient={ props.patient }
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       formContent={formContent}
       title="Blood Pressure"
@@ -76,4 +77,11 @@ let BloodPressureForm = props => {
   );
 };
 
-export default BloodPressureForm;
+const mapStateToProps = (state) => {
+  return {
+    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null,
+  };
+};
+
+export default connect(mapStateToProps)(BloodPressureForm);
+
