@@ -56,7 +56,7 @@ const middlewares = [
 const combinedReducer = combineReducers({
   openmrs: openmrsReducers,
   form: reduxFormReducer.plugin({
-    'openmrs-form': (state, action) => {
+    'vl-form': (state, action) => {
       switch (action.type) {
         case '@@redux-form/UNREGISTER_FIELD':
           let newValues = { ...state.values };

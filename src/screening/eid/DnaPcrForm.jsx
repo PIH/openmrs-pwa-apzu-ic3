@@ -92,12 +92,13 @@ let DnaPcrForm = (props) => {
       backLink="/screening/eid/queue"
       encounterType={ ENCOUNTER_TYPES.DnaPcrEncounterType }
       formContent={formContent}
+      formId="vl-form"
       title=""
     />
   );
 };
 
-const selector = formValueSelector('openmrs-form');
+const selector = formValueSelector('vl-form');
 
 export default connect(state => {
   const bled = selector(state, 'obs|path=vl|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid);

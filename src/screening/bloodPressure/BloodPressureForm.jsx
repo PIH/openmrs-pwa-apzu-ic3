@@ -16,6 +16,9 @@ let BloodPressureForm = props => {
           <Col sm={4}>
             <Obs
               concept={CONCEPTS.SystolicBloodPressure.uuid}
+              label="Systolic"
+              min = { 50 }
+              max = { 260 }
               path="Systolic"
             />
           </Col>
@@ -29,6 +32,8 @@ let BloodPressureForm = props => {
           <Col sm={4}>
             <Obs
               concept={CONCEPTS.DiastolicBloodPressure.uuid}
+              min = { 40 }
+              max = { 140 }
               path="Diastolic"
             />
           </Col>
@@ -47,6 +52,7 @@ let BloodPressureForm = props => {
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       formContent={formContent}
       title="Blood Pressure"
+      formId="bp-form"
     />
   );
 };

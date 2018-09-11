@@ -35,6 +35,7 @@ let Form = (props) => {
       </Grid>
       <div>
         <OpenMRSForm
+          formId={ props.formId }
           encounterType={props.encounterType}
           formSubmittedActionCreator={formSubmittedActionCreators}
           patient={props.patient}

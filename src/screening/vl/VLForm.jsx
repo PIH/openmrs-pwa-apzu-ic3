@@ -131,12 +131,13 @@ let VLForm = (props) => {
       backLink="/screening/vl/queue"
       encounterType={ ENCOUNTER_TYPES.VLEncounterType }
       formContent={formContent}
+      formId="vl-form"
       title="Viral Load"
     />
   );
 };
 
-const selector = formValueSelector('openmrs-form');
+const selector = formValueSelector('vl-form');
 
 export default connect(state => {
   const bled = selector(state, 'obs|path=vl|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid);
