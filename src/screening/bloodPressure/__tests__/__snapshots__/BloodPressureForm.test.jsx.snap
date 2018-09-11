@@ -60,6 +60,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   <Obs
                     concept="6569bffe-977f-11e1-8993-905e29aff6c1"
                     path="Systolic"
+                    placeholder="Systolic value"
+                    validate={
+                      Array [
+                        [Function],
+                        [Function],
+                      ]
+                    }
+                    warn={[Function]}
                   />
                 </Col>
               </FormGroup>
@@ -87,6 +95,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   <Obs
                     concept="6569c116-977f-11e1-8993-905e29aff6c1"
                     path="Diastolic"
+                    placeholder="Diastolic value"
+                    validate={
+                      Array [
+                        [Function],
+                        [Function],
+                      ]
+                    }
+                    warn={[Function]}
                   />
                 </Col>
               </FormGroup>
@@ -99,6 +115,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
             </Row>
           </Grid>
         }
+        formId="bp-form"
         title="Blood Pressure"
       >
         <Form
@@ -139,6 +156,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     <Obs
                       concept="6569bffe-977f-11e1-8993-905e29aff6c1"
                       path="Systolic"
+                      placeholder="Systolic value"
+                      validate={
+                        Array [
+                          [Function],
+                          [Function],
+                        ]
+                      }
+                      warn={[Function]}
                     />
                   </Col>
                 </FormGroup>
@@ -166,6 +191,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     <Obs
                       concept="6569c116-977f-11e1-8993-905e29aff6c1"
                       path="Diastolic"
+                      placeholder="Diastolic value"
+                      validate={
+                        Array [
+                          [Function],
+                          [Function],
+                        ]
+                      }
+                      warn={[Function]}
                     />
                   </Col>
                 </FormGroup>
@@ -178,6 +211,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
               </Row>
             </Grid>
           }
+          formId="bp-form"
           patient={
             Object {
               "uuid": "abc",
@@ -278,6 +312,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                   }
                 }
+                formId="bp-form"
                 formSubmittedActionCreator={
                   Array [
                     [Function],
@@ -305,6 +340,8 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                     }
                   }
+                  form="bp-form"
+                  formId="bp-form"
                   formSubmittedActionCreator={
                     Array [
                       [Function],
@@ -328,14 +365,15 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   <Connect(Form(OpenMRSForm))
                     destroyOnUnmount={true}
                     dispatch={[Function]}
-                    enableReinitialize={false}
+                    enableReinitialize={true}
                     encounterType={
                       Object {
                         "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                       }
                     }
                     forceUnregisterOnUnmount={false}
-                    form="openmrs-form"
+                    form="bp-form"
+                    formId="bp-form"
                     formSubmittedActionCreator={
                       Array [
                         [Function],
@@ -405,7 +443,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       destroyOnUnmount={true}
                       dirty={false}
                       dispatch={[Function]}
-                      enableReinitialize={false}
+                      enableReinitialize={true}
                       encounterType={
                         Object {
                           "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
@@ -413,7 +451,8 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       }
                       focus={[Function]}
                       forceUnregisterOnUnmount={false}
-                      form="openmrs-form"
+                      form="bp-form"
+                      formId="bp-form"
                       formSubmittedActionCreator={
                         Array [
                           [Function],
@@ -505,7 +544,8 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                           }
                         }
-                        form="openmrs-form"
+                        form="bp-form"
+                        formId="bp-form"
                         formSubmittedActionCreator={
                           Array [
                             [Function],
@@ -603,11 +643,27 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                             <Obs
                                               concept="6569bffe-977f-11e1-8993-905e29aff6c1"
                                               path="Systolic"
+                                              placeholder="Systolic value"
+                                              validate={
+                                                Array [
+                                                  [Function],
+                                                  [Function],
+                                                ]
+                                              }
+                                              warn={[Function]}
                                             >
                                               <Field
                                                 component={[Function]}
                                                 name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                placeholder="Systolic value"
                                                 type="number"
+                                                validate={
+                                                  Array [
+                                                    [Function],
+                                                    [Function],
+                                                  ]
+                                                }
+                                                warn={[Function]}
                                               >
                                                 <Connect(ConnectedField)
                                                   _reduxForm={
@@ -669,6 +725,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                     <Obs
                                                                         concept="6569bffe-977f-11e1-8993-905e29aff6c1"
                                                                         path="Systolic"
+                                                                        placeholder="Systolic value"
+                                                                        validate={
+                                                                            Array [
+                                                                                [Function],
+                                                                                [Function],
+                                                                              ]
+                                                                        }
+                                                                        warn={[Function]}
                                                                     />
                                                                 </Col>
                                                             </FormGroup>
@@ -696,6 +760,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                     <Obs
                                                                         concept="6569c116-977f-11e1-8993-905e29aff6c1"
                                                                         path="Diastolic"
+                                                                        placeholder="Diastolic value"
+                                                                        validate={
+                                                                            Array [
+                                                                                [Function],
+                                                                                [Function],
+                                                                              ]
+                                                                        }
+                                                                        warn={[Function]}
                                                                     />
                                                                 </Col>
                                                             </FormGroup>
@@ -715,14 +787,15 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                       "destroyOnUnmount": true,
                                                       "dirty": false,
                                                       "dispatch": [Function],
-                                                      "enableReinitialize": false,
+                                                      "enableReinitialize": true,
                                                       "encounterType": Object {
                                                         "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                                                       },
                                                       "error": undefined,
                                                       "focus": [Function],
                                                       "forceUnregisterOnUnmount": false,
-                                                      "form": "openmrs-form",
+                                                      "form": "bp-form",
+                                                      "formId": "bp-form",
                                                       "formSubmittedActionCreator": Array [
                                                         [Function],
                                                         [Function],
@@ -788,7 +861,15 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                   component={[Function]}
                                                   name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
                                                   normalize={[Function]}
+                                                  placeholder="Systolic value"
                                                   type="number"
+                                                  validate={
+                                                    Array [
+                                                      [Function],
+                                                      [Function],
+                                                    ]
+                                                  }
+                                                  warn={[Function]}
                                                 >
                                                   <ConnectedField
                                                     _reduxForm={
@@ -850,6 +931,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                       <Obs
                                                                           concept="6569bffe-977f-11e1-8993-905e29aff6c1"
                                                                           path="Systolic"
+                                                                          placeholder="Systolic value"
+                                                                          validate={
+                                                                              Array [
+                                                                                  [Function],
+                                                                                  [Function],
+                                                                                ]
+                                                                          }
+                                                                          warn={[Function]}
                                                                       />
                                                                   </Col>
                                                               </FormGroup>
@@ -877,6 +966,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                       <Obs
                                                                           concept="6569c116-977f-11e1-8993-905e29aff6c1"
                                                                           path="Diastolic"
+                                                                          placeholder="Diastolic value"
+                                                                          validate={
+                                                                              Array [
+                                                                                  [Function],
+                                                                                  [Function],
+                                                                                ]
+                                                                          }
+                                                                          warn={[Function]}
                                                                       />
                                                                   </Col>
                                                               </FormGroup>
@@ -896,14 +993,15 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "destroyOnUnmount": true,
                                                         "dirty": false,
                                                         "dispatch": [Function],
-                                                        "enableReinitialize": false,
+                                                        "enableReinitialize": true,
                                                         "encounterType": Object {
                                                           "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                                                         },
                                                         "error": undefined,
                                                         "focus": [Function],
                                                         "forceUnregisterOnUnmount": false,
-                                                        "form": "openmrs-form",
+                                                        "form": "bp-form",
+                                                        "formId": "bp-form",
                                                         "formSubmittedActionCreator": Array [
                                                           [Function],
                                                           [Function],
@@ -972,10 +1070,18 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                     dispatch={[Function]}
                                                     name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
                                                     normalize={[Function]}
+                                                    placeholder="Systolic value"
                                                     pristine={true}
                                                     type="number"
+                                                    validate={
+                                                      Array [
+                                                        [Function],
+                                                        [Function],
+                                                      ]
+                                                    }
+                                                    warn={[Function]}
                                                   >
-                                                    <FieldInput
+                                                    <RenderField
                                                       input={
                                                         Object {
                                                           "name": "obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1",
@@ -995,7 +1101,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                           "dirty": false,
                                                           "dispatch": [Function],
                                                           "error": undefined,
-                                                          "form": "openmrs-form",
+                                                          "form": "bp-form",
                                                           "initial": undefined,
                                                           "invalid": false,
                                                           "pristine": true,
@@ -1007,24 +1113,41 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                           "warning": undefined,
                                                         }
                                                       }
+                                                      placeholder="Systolic value"
                                                       type="number"
                                                     >
-                                                      <FormControl
-                                                        bsClass="form-control"
-                                                        componentClass="input"
-                                                        onChange={[Function]}
-                                                        type="number"
-                                                        value=""
-                                                      >
-                                                        <input
-                                                          className="form-control"
-                                                          id="formSystolic"
-                                                          onChange={[Function]}
-                                                          type="number"
-                                                          value=""
-                                                        />
-                                                      </FormControl>
-                                                    </FieldInput>
+                                                      <div>
+                                                        <div>
+                                                          <FormControl
+                                                            bsClass="form-control"
+                                                            componentClass="input"
+                                                            name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                            onBlur={[Function]}
+                                                            onChange={[Function]}
+                                                            onDragStart={[Function]}
+                                                            onDrop={[Function]}
+                                                            onFocus={[Function]}
+                                                            placeholder="Systolic value"
+                                                            type="number"
+                                                            value=""
+                                                          >
+                                                            <input
+                                                              className="form-control"
+                                                              id="formSystolic"
+                                                              name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                              onBlur={[Function]}
+                                                              onChange={[Function]}
+                                                              onDragStart={[Function]}
+                                                              onDrop={[Function]}
+                                                              onFocus={[Function]}
+                                                              placeholder="Systolic value"
+                                                              type="number"
+                                                              value=""
+                                                            />
+                                                          </FormControl>
+                                                        </div>
+                                                      </div>
+                                                    </RenderField>
                                                   </ConnectedField>
                                                 </Connect(ConnectedField)>
                                               </Field>
@@ -1078,11 +1201,27 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                             <Obs
                                               concept="6569c116-977f-11e1-8993-905e29aff6c1"
                                               path="Diastolic"
+                                              placeholder="Diastolic value"
+                                              validate={
+                                                Array [
+                                                  [Function],
+                                                  [Function],
+                                                ]
+                                              }
+                                              warn={[Function]}
                                             >
                                               <Field
                                                 component={[Function]}
                                                 name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
+                                                placeholder="Diastolic value"
                                                 type="number"
+                                                validate={
+                                                  Array [
+                                                    [Function],
+                                                    [Function],
+                                                  ]
+                                                }
+                                                warn={[Function]}
                                               >
                                                 <Connect(ConnectedField)
                                                   _reduxForm={
@@ -1144,6 +1283,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                     <Obs
                                                                         concept="6569bffe-977f-11e1-8993-905e29aff6c1"
                                                                         path="Systolic"
+                                                                        placeholder="Systolic value"
+                                                                        validate={
+                                                                            Array [
+                                                                                [Function],
+                                                                                [Function],
+                                                                              ]
+                                                                        }
+                                                                        warn={[Function]}
                                                                     />
                                                                 </Col>
                                                             </FormGroup>
@@ -1171,6 +1318,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                     <Obs
                                                                         concept="6569c116-977f-11e1-8993-905e29aff6c1"
                                                                         path="Diastolic"
+                                                                        placeholder="Diastolic value"
+                                                                        validate={
+                                                                            Array [
+                                                                                [Function],
+                                                                                [Function],
+                                                                              ]
+                                                                        }
+                                                                        warn={[Function]}
                                                                     />
                                                                 </Col>
                                                             </FormGroup>
@@ -1190,14 +1345,15 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                       "destroyOnUnmount": true,
                                                       "dirty": false,
                                                       "dispatch": [Function],
-                                                      "enableReinitialize": false,
+                                                      "enableReinitialize": true,
                                                       "encounterType": Object {
                                                         "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                                                       },
                                                       "error": undefined,
                                                       "focus": [Function],
                                                       "forceUnregisterOnUnmount": false,
-                                                      "form": "openmrs-form",
+                                                      "form": "bp-form",
+                                                      "formId": "bp-form",
                                                       "formSubmittedActionCreator": Array [
                                                         [Function],
                                                         [Function],
@@ -1263,7 +1419,15 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                   component={[Function]}
                                                   name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
                                                   normalize={[Function]}
+                                                  placeholder="Diastolic value"
                                                   type="number"
+                                                  validate={
+                                                    Array [
+                                                      [Function],
+                                                      [Function],
+                                                    ]
+                                                  }
+                                                  warn={[Function]}
                                                 >
                                                   <ConnectedField
                                                     _reduxForm={
@@ -1325,6 +1489,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                       <Obs
                                                                           concept="6569bffe-977f-11e1-8993-905e29aff6c1"
                                                                           path="Systolic"
+                                                                          placeholder="Systolic value"
+                                                                          validate={
+                                                                              Array [
+                                                                                  [Function],
+                                                                                  [Function],
+                                                                                ]
+                                                                          }
+                                                                          warn={[Function]}
                                                                       />
                                                                   </Col>
                                                               </FormGroup>
@@ -1352,6 +1524,14 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                       <Obs
                                                                           concept="6569c116-977f-11e1-8993-905e29aff6c1"
                                                                           path="Diastolic"
+                                                                          placeholder="Diastolic value"
+                                                                          validate={
+                                                                              Array [
+                                                                                  [Function],
+                                                                                  [Function],
+                                                                                ]
+                                                                          }
+                                                                          warn={[Function]}
                                                                       />
                                                                   </Col>
                                                               </FormGroup>
@@ -1371,14 +1551,15 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "destroyOnUnmount": true,
                                                         "dirty": false,
                                                         "dispatch": [Function],
-                                                        "enableReinitialize": false,
+                                                        "enableReinitialize": true,
                                                         "encounterType": Object {
                                                           "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                                                         },
                                                         "error": undefined,
                                                         "focus": [Function],
                                                         "forceUnregisterOnUnmount": false,
-                                                        "form": "openmrs-form",
+                                                        "form": "bp-form",
+                                                        "formId": "bp-form",
                                                         "formSubmittedActionCreator": Array [
                                                           [Function],
                                                           [Function],
@@ -1447,10 +1628,18 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                     dispatch={[Function]}
                                                     name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
                                                     normalize={[Function]}
+                                                    placeholder="Diastolic value"
                                                     pristine={true}
                                                     type="number"
+                                                    validate={
+                                                      Array [
+                                                        [Function],
+                                                        [Function],
+                                                      ]
+                                                    }
+                                                    warn={[Function]}
                                                   >
-                                                    <FieldInput
+                                                    <RenderField
                                                       input={
                                                         Object {
                                                           "name": "obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1",
@@ -1470,7 +1659,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                           "dirty": false,
                                                           "dispatch": [Function],
                                                           "error": undefined,
-                                                          "form": "openmrs-form",
+                                                          "form": "bp-form",
                                                           "initial": undefined,
                                                           "invalid": false,
                                                           "pristine": true,
@@ -1482,24 +1671,41 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                           "warning": undefined,
                                                         }
                                                       }
+                                                      placeholder="Diastolic value"
                                                       type="number"
                                                     >
-                                                      <FormControl
-                                                        bsClass="form-control"
-                                                        componentClass="input"
-                                                        onChange={[Function]}
-                                                        type="number"
-                                                        value=""
-                                                      >
-                                                        <input
-                                                          className="form-control"
-                                                          id="formDiastolic"
-                                                          onChange={[Function]}
-                                                          type="number"
-                                                          value=""
-                                                        />
-                                                      </FormControl>
-                                                    </FieldInput>
+                                                      <div>
+                                                        <div>
+                                                          <FormControl
+                                                            bsClass="form-control"
+                                                            componentClass="input"
+                                                            name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
+                                                            onBlur={[Function]}
+                                                            onChange={[Function]}
+                                                            onDragStart={[Function]}
+                                                            onDrop={[Function]}
+                                                            onFocus={[Function]}
+                                                            placeholder="Diastolic value"
+                                                            type="number"
+                                                            value=""
+                                                          >
+                                                            <input
+                                                              className="form-control"
+                                                              id="formDiastolic"
+                                                              name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
+                                                              onBlur={[Function]}
+                                                              onChange={[Function]}
+                                                              onDragStart={[Function]}
+                                                              onDrop={[Function]}
+                                                              onFocus={[Function]}
+                                                              placeholder="Diastolic value"
+                                                              type="number"
+                                                              value=""
+                                                            />
+                                                          </FormControl>
+                                                        </div>
+                                                      </div>
+                                                    </RenderField>
                                                   </ConnectedField>
                                                 </Connect(ConnectedField)>
                                               </Field>
