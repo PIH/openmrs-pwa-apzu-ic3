@@ -4,6 +4,17 @@ import {Grid, Row, FormGroup, ControlLabel, Col} from 'react-bootstrap';
 import Form from '../../form/Form';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 
+const minValue = min => value =>
+  value && value < min ? `Must be at least ${min}` : undefined ;
+
+const maxValue = max => value =>
+  value && value > max ? `Must be less than ${max + 1}` : undefined ;
+
+const minValue40 = minValue(40);
+const minValue50 = minValue(50);
+const maxValue140 = maxValue(140);
+const maxValue260 = maxValue(260);
+
 let BloodPressureForm = props => {
 
   const formContent = (
@@ -16,10 +27,9 @@ let BloodPressureForm = props => {
           <Col sm={4}>
             <Obs
               concept={CONCEPTS.SystolicBloodPressure.uuid}
-              label="Systolic"
-              min = { 50 }
-              max = { 260 }
+              placeholder="Systolic value"
               path="Systolic"
+              validate={[minValue50, maxValue260]}
             />
           </Col>
         </FormGroup>
@@ -32,8 +42,8 @@ let BloodPressureForm = props => {
           <Col sm={4}>
             <Obs
               concept={CONCEPTS.DiastolicBloodPressure.uuid}
-              min = { 40 }
-              max = { 140 }
+              placeholder="Diastolic value"
+              validate={[minValue40, maxValue140]}
               path="Diastolic"
             />
           </Col>
