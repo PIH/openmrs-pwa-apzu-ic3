@@ -37,7 +37,7 @@ let BloodPressureForm = props => {
           <Col componentClass={ControlLabel} sm={4}>
             Systolic Blood Pressure
           </Col>
-          <Col sm={4}>
+          <Col sm={2}>
             <Obs
               concept={CONCEPTS.SystolicBloodPressure.uuid}
               placeholder="Systolic value"
@@ -56,7 +56,7 @@ let BloodPressureForm = props => {
           <Col componentClass={ControlLabel} sm={4}>
             Diastolic Blood Pressure
           </Col>
-          <Col sm={4}>
+          <Col sm={2}>
             <Obs
               concept={CONCEPTS.DiastolicBloodPressure.uuid}
               placeholder="Diastolic value"
@@ -71,7 +71,7 @@ let BloodPressureForm = props => {
         </FormGroup>
       </Row>
       <Row>
-        <Col sm={4} xsOffset={7}>
+        <Col sm={4} xsOffset={5}>
           <Submit/>
         </Col>
       </Row>

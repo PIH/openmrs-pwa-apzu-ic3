@@ -78,7 +78,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 <Col
                   bsClass="col"
                   componentClass="div"
-                  sm={4}
+                  sm={2}
                 >
                   <Obs
                     concept="6569bffe-977f-11e1-8993-905e29aff6c1"
@@ -125,7 +125,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 <Col
                   bsClass="col"
                   componentClass="div"
-                  sm={4}
+                  sm={2}
                 >
                   <Obs
                     concept="6569c116-977f-11e1-8993-905e29aff6c1"
@@ -162,7 +162,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 bsClass="col"
                 componentClass="div"
                 sm={4}
-                xsOffset={7}
+                xsOffset={5}
               >
                 <Submit />
               </Col>
@@ -228,7 +228,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   <Col
                     bsClass="col"
                     componentClass="div"
-                    sm={4}
+                    sm={2}
                   >
                     <Obs
                       concept="6569bffe-977f-11e1-8993-905e29aff6c1"
@@ -275,7 +275,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   <Col
                     bsClass="col"
                     componentClass="div"
-                    sm={4}
+                    sm={2}
                   >
                     <Obs
                       concept="6569c116-977f-11e1-8993-905e29aff6c1"
@@ -312,7 +312,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   bsClass="col"
                   componentClass="div"
                   sm={4}
-                  xsOffset={7}
+                  xsOffset={5}
                 >
                   <Submit />
                 </Col>
@@ -852,10 +852,10 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                         <Col
                                           bsClass="col"
                                           componentClass="div"
-                                          sm={4}
+                                          sm={2}
                                         >
                                           <div
-                                            className="col-sm-4"
+                                            className="col-sm-2"
                                           >
                                             <Obs
                                               concept="6569bffe-977f-11e1-8993-905e29aff6c1"
@@ -960,7 +960,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 <Col
                                                                     bsClass="col"
                                                                     componentClass="div"
-                                                                    sm={4}
+                                                                    sm={2}
                                                                 >
                                                                     <Obs
                                                                         concept="6569bffe-977f-11e1-8993-905e29aff6c1"
@@ -1007,7 +1007,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 <Col
                                                                     bsClass="col"
                                                                     componentClass="div"
-                                                                    sm={4}
+                                                                    sm={2}
                                                                 >
                                                                     <Obs
                                                                         concept="6569c116-977f-11e1-8993-905e29aff6c1"
@@ -1044,7 +1044,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 bsClass="col"
                                                                 componentClass="div"
                                                                 sm={4}
-                                                                xsOffset={7}
+                                                                xsOffset={5}
                                                             >
                                                                 <Submit />
                                                             </Col>
@@ -1220,7 +1220,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   <Col
                                                                       bsClass="col"
                                                                       componentClass="div"
-                                                                      sm={4}
+                                                                      sm={2}
                                                                   >
                                                                       <Obs
                                                                           concept="6569bffe-977f-11e1-8993-905e29aff6c1"
@@ -1267,7 +1267,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   <Col
                                                                       bsClass="col"
                                                                       componentClass="div"
-                                                                      sm={4}
+                                                                      sm={2}
                                                                   >
                                                                       <Obs
                                                                           concept="6569c116-977f-11e1-8993-905e29aff6c1"
@@ -1304,7 +1304,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   bsClass="col"
                                                                   componentClass="div"
                                                                   sm={4}
-                                                                  xsOffset={7}
+                                                                  xsOffset={5}
                                                               >
                                                                   <Submit />
                                                               </Col>
@@ -1551,10 +1551,10 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                         <Col
                                           bsClass="col"
                                           componentClass="div"
-                                          sm={4}
+                                          sm={2}
                                         >
                                           <div
-                                            className="col-sm-4"
+                                            className="col-sm-2"
                                           >
                                             <Obs
                                               concept="6569c116-977f-11e1-8993-905e29aff6c1"
@@ -1659,7 +1659,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 <Col
                                                                     bsClass="col"
                                                                     componentClass="div"
-                                                                    sm={4}
+                                                                    sm={2}
                                                                 >
                                                                     <Obs
                                                                         concept="6569bffe-977f-11e1-8993-905e29aff6c1"
@@ -1706,7 +1706,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 <Col
                                                                     bsClass="col"
                                                                     componentClass="div"
-                                                                    sm={4}
+                                                                    sm={2}
                                                                 >
                                                                     <Obs
                                                                         concept="6569c116-977f-11e1-8993-905e29aff6c1"
@@ -1743,7 +1743,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 bsClass="col"
                                                                 componentClass="div"
                                                                 sm={4}
-                                                                xsOffset={7}
+                                                                xsOffset={5}
                                                             >
                                                                 <Submit />
                                                             </Col>
@@ -1919,7 +1919,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   <Col
                                                                       bsClass="col"
                                                                       componentClass="div"
-                                                                      sm={4}
+                                                                      sm={2}
                                                                   >
                                                                       <Obs
                                                                           concept="6569bffe-977f-11e1-8993-905e29aff6c1"
@@ -1966,7 +1966,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   <Col
                                                                       bsClass="col"
                                                                       componentClass="div"
-                                                                      sm={4}
+                                                                      sm={2}
                                                                   >
                                                                       <Obs
                                                                           concept="6569c116-977f-11e1-8993-905e29aff6c1"
@@ -2003,7 +2003,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   bsClass="col"
                                                                   componentClass="div"
                                                                   sm={4}
-                                                                  xsOffset={7}
+                                                                  xsOffset={5}
                                                               >
                                                                   <Submit />
                                                               </Col>
@@ -2226,10 +2226,10 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                       bsClass="col"
                                       componentClass="div"
                                       sm={4}
-                                      xsOffset={7}
+                                      xsOffset={5}
                                     >
                                       <div
-                                        className="col-sm-4 col-xs-offset-7"
+                                        className="col-sm-4 col-xs-offset-5"
                                       >
                                         <Submit>
                                           <Button
