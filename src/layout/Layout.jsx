@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import LeftRail from './LeftRail';
 import logo from "../assets/images/pih_apzu_logo_white.png";
 import {NAV_MENU_PAGES, USER_MENU_PAGES, IDENTIFIER_TYPES} from '../constants';
+import { zeroPadding } from "../pwaStyles";
 import '../assets/css/header.css';
 
 // TODO extract authenicated route out to a higher level?
@@ -39,7 +40,7 @@ const Layout = props => {
         </Row>
         <Row>
           {props.patient &&
-            <Col xs={2} sm={2} md={2} lg={2}>
+            <Col xs={2} sm={2} md={2} lg={2} style={ zeroPadding }>
               <LeftRail patient={props.patient} />
             </Col>
           }
