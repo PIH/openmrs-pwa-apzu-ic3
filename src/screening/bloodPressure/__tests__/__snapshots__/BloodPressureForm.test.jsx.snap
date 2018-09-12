@@ -495,7 +495,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     }
                   }
                 >
-                  <Connect(Form(OpenMRSForm))
+                  <Connect(Form(EncounterForm))
                     destroyOnUnmount={true}
                     dispatch={[Function]}
                     enableReinitialize={true}
@@ -538,7 +538,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       }
                     }
                   >
-                    <Form(OpenMRSForm)
+                    <Form(EncounterForm)
                       anyTouched={false}
                       array={
                         Object {
@@ -644,7 +644,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                         }
                       }
                     >
-                      <OpenMRSForm
+                      <EncounterForm
                         anyTouched={false}
                         array={
                           Object {
@@ -2258,9 +2258,9 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             </Grid>
                           </form>
                         </Form>
-                      </OpenMRSForm>
-                    </Form(OpenMRSForm)>
-                  </Connect(Form(OpenMRSForm))>
+                      </EncounterForm>
+                    </Form(EncounterForm)>
+                  </Connect(Form(EncounterForm))>
                 </ReduxForm>
               </Connect(ReduxForm)>
             </div>
