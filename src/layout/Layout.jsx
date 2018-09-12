@@ -9,7 +9,6 @@ import {NAV_MENU_PAGES, USER_MENU_PAGES, IDENTIFIER_TYPES} from '../constants';
 import '../assets/css/header.css';
 
 // TODO extract authenicated route out to a higher level?
-// TODO can we pass the patient into the Header as well, so it can be non-connected?
 
 const Layout = props => {
 

@@ -4,7 +4,7 @@ import { Grid, Row, Col, Button, Label } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { push } from 'connected-react-router';
 import { connect } from 'react-redux';
-import { OpenMRSForm } from '@openmrs/react-components';
+import {EncounterForm} from '@openmrs/react-components';
 import { actions as toastrActions } from 'react-redux-toastr';
 
 let Form = (props) => {
@@ -34,7 +34,7 @@ let Form = (props) => {
         </Row>
       </Grid>
       <div>
-        <OpenMRSForm
+        <EncounterForm
           formId={ props.formId }
           encounterType={props.encounterType}
           formSubmittedActionCreator={formSubmittedActionCreators}
@@ -42,7 +42,7 @@ let Form = (props) => {
           visit={props.patient ? props.patient.visit : null}
         >
           { props.formContent }
-        </OpenMRSForm>
+        </EncounterForm>
       </div>
     </div>
   );
