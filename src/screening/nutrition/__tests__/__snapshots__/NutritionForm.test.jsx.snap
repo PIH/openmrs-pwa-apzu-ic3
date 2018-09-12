@@ -23,7 +23,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
     url=""
   >
     <NutritionForm>
-      <Connect(Form)
+      <Connect(EncounterFormPage)
         afterSubmitLink="/screening/nutrition/queue"
         backLink="/screening/nutrition/queue"
         encounterType={
@@ -101,7 +101,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
         }
         title="Nutrition"
       >
-        <Form
+        <EncounterFormPage
           afterSubmitLink="/screening/nutrition/queue"
           backLink="/screening/nutrition/queue"
           dispatch={[Function]}
@@ -1607,8 +1607,8 @@ exports[`Component: NutritionForm renders properly 1`] = `
               </Connect(ReduxForm)>
             </div>
           </div>
-        </Form>
-      </Connect(Form)>
+        </EncounterFormPage>
+      </Connect(EncounterFormPage)>
     </NutritionForm>
   </MockRouter>
 </Provider>

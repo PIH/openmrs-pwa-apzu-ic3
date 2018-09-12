@@ -23,7 +23,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
     url=""
   >
     <BloodPressureForm>
-      <Connect(Form)
+      <Connect(EncounterFormPage)
         afterSubmitLink="/screening/bloodPressure/queue"
         backLink="/screening/bloodPressure/queue"
         encounterType={
@@ -172,7 +172,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
         formId="bp-form"
         title="Blood Pressure"
       >
-        <Form
+        <EncounterFormPage
           afterSubmitLink="/screening/bloodPressure/queue"
           backLink="/screening/bloodPressure/queue"
           dispatch={[Function]}
@@ -2265,8 +2265,8 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
               </Connect(ReduxForm)>
             </div>
           </div>
-        </Form>
-      </Connect(Form)>
+        </EncounterFormPage>
+      </Connect(EncounterFormPage)>
     </BloodPressureForm>
   </MockRouter>
 </Provider>
