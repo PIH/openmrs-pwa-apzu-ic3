@@ -1,10 +1,10 @@
 import React from "react";
-import {Submit, Obs} from '@openmrs/react-components';
+import {Submit, Obs, Section} from '@openmrs/react-components';
 import {Grid, Row, FormGroup, ControlLabel, Col} from 'react-bootstrap';
 import Form from '../../form/Form';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 import { minValue, maxValue, abnormalMaxValue } from "../../validations";
-import { leftTextAlign } from "../../pwaStyles";
+import {colHeight, leftTextAlign} from "../../pwaStyles";
 
 /**
  * Range of possible values
@@ -27,7 +27,12 @@ let BloodPressureForm = props => {
 
   const formContent = (
     <Grid>
-
+      <Section title="Enter Patient Blood Pressure"></Section>
+      <Row>
+        <Col sm={20} md={20} style={ colHeight }>
+          <span><h1>{ '' }</h1></span>
+        </Col>
+      </Row>
       <Row>
         <FormGroup controlId="formSystolic">
           <Col componentClass={ControlLabel} sm={4}>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { push } from 'connected-react-router';
 import { connect } from 'react-redux';
-import { OpenMRSForm, Section } from '@openmrs/react-components';
+import { OpenMRSForm } from '@openmrs/react-components';
 import { actions as toastrActions } from 'react-redux-toastr';
 import { rowStyles, littlePaddingLeft, divContainer, colHeight } from '../pwaStyles'
 
@@ -23,12 +23,6 @@ let Form = (props) => {
             <span><h1>{props.title}</h1></span>
           </Col>
         </Row>
-        <Row>
-          <Col sm={20} md={20} style={ colHeight }>
-            <span><h1>{ '' }</h1></span>
-          </Col>
-        </Row>
-        <Section title="Enter Patient Blood Pressure"></Section>
         <Row>
           <Col sm={20} md={20} style={ colHeight }>
             <span><h1>{ '' }</h1></span>
