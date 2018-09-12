@@ -188,15 +188,79 @@ exports[`Component: NutritionForm renders properly 1`] = `
           }
           title="Nutrition"
         >
-          <div>
+          <div
+            style={
+              Object {
+                "paddingLeft": "0px",
+                "paddingRight": "0px",
+              }
+            }
+          >
             <Grid
               bsClass="container"
               componentClass="div"
               fluid={false}
+              style={
+                Object {
+                  "paddingLeft": "0px",
+                  "paddingRight": "0px",
+                }
+              }
             >
               <div
                 className="container"
+                style={
+                  Object {
+                    "paddingLeft": "0px",
+                    "paddingRight": "0px",
+                  }
+                }
               >
+                <Row
+                  bsClass="row"
+                  componentClass="div"
+                  style={
+                    Object {
+                      "backgroundColor": "#ffa500b3",
+                    }
+                  }
+                >
+                  <div
+                    className="row"
+                    style={
+                      Object {
+                        "backgroundColor": "#ffa500b3",
+                      }
+                    }
+                  >
+                    <Col
+                      bsClass="col"
+                      componentClass="div"
+                      md={20}
+                      sm={20}
+                      style={
+                        Object {
+                          "paddingLeft": "20px",
+                        }
+                      }
+                    >
+                      <div
+                        className="col-md-20 col-sm-20"
+                        style={
+                          Object {
+                            "paddingLeft": "20px",
+                          }
+                        }
+                      >
+                        <span>
+                          <h1>
+                            Nutrition
+                          </h1>
+                        </span>
+                      </div>
+                    </Col>
+                  </div>
+                </Row>
                 <Row
                   bsClass="row"
                   componentClass="div"
@@ -207,64 +271,25 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     <Col
                       bsClass="col"
                       componentClass="div"
-                      sm={2}
+                      md={20}
+                      sm={20}
+                      style={
+                        Object {
+                          "height": "40px",
+                        }
+                      }
                     >
                       <div
-                        className="col-sm-2"
-                      >
-                        <Link
-                          replace={false}
-                          to="/screening/nutrition/queue"
-                        >
-                          <a
-                            onClick={[Function]}
-                          >
-                            <Button
-                              active={false}
-                              block={false}
-                              bsClass="btn"
-                              bsSize="large"
-                              bsStyle="danger"
-                              disabled={false}
-                            >
-                              <button
-                                className="btn btn-lg btn-danger"
-                                disabled={false}
-                                type="button"
-                              >
-                                Back
-                              </button>
-                            </Button>
-                          </a>
-                        </Link>
-                      </div>
-                    </Col>
-                    <Col
-                      bsClass="col"
-                      componentClass="div"
-                      sm={6}
-                    >
-                      <div
-                        className="col-sm-6"
-                      >
-                        <h1
-                          style={
-                            Object {
-                              "marginTop": "0px",
-                            }
+                        className="col-md-20 col-sm-20"
+                        style={
+                          Object {
+                            "height": "40px",
                           }
-                        >
-                          <Label
-                            bsClass="label"
-                            bsStyle="default"
-                          >
-                            <span
-                              className="label label-default"
-                            >
-                              Nutrition
-                            </span>
-                          </Label>
-                        </h1>
+                        }
+                      >
+                        <span>
+                          <h1 />
+                        </span>
                       </div>
                     </Col>
                   </div>

@@ -1,9 +1,10 @@
 import React from "react";
-import {Submit, Obs} from '@openmrs/react-components';
+import {Submit, Obs, Section} from '@openmrs/react-components';
 import {Grid, Row, FormGroup, ControlLabel, Col} from 'react-bootstrap';
 import Form from '../../form/Form';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 import { minValue, maxValue, abnormalMaxValue } from "../../validations";
+import {colHeight, leftTextAlign} from "../../pwaStyles";
 
 /**
  * Range of possible values
@@ -26,9 +27,15 @@ let BloodPressureForm = props => {
 
   const formContent = (
     <Grid>
+      <Section title="Enter Patient Blood Pressure"></Section>
+      <Row>
+        <Col sm={20} md={20} style={ colHeight }>
+          <span><h1>{ '' }</h1></span>
+        </Col>
+      </Row>
       <Row>
         <FormGroup controlId="formSystolic">
-          <Col componentClass={ControlLabel} sm={2}>
+          <Col componentClass={ControlLabel} sm={4}>
             Systolic Blood Pressure
           </Col>
           <Col sm={4}>
@@ -40,11 +47,14 @@ let BloodPressureForm = props => {
               warn={ abnormalMaxValue160 }
             />
           </Col>
+          <Col componentClass={ControlLabel} sm={2} style={ leftTextAlign }>
+            mmHG
+          </Col>
         </FormGroup>
       </Row>
       <Row>
         <FormGroup controlId="formDiastolic">
-          <Col componentClass={ControlLabel} sm={2}>
+          <Col componentClass={ControlLabel} sm={4}>
             Diastolic Blood Pressure
           </Col>
           <Col sm={4}>
@@ -56,10 +66,15 @@ let BloodPressureForm = props => {
               warn={ abnormalMaxValue110 }
             />
           </Col>
+          <Col componentClass={ControlLabel} sm={2} style={ leftTextAlign }>
+            mmHG
+          </Col>
         </FormGroup>
       </Row>
       <Row>
-        <Submit/>
+        <Col sm={4} xsOffset={7}>
+          <Submit/>
+        </Col>
       </Row>
     </Grid>
   );

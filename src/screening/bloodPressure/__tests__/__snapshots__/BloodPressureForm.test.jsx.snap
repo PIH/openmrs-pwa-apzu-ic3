@@ -37,6 +37,29 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
             componentClass="div"
             fluid={false}
           >
+            <Section
+              title="Enter Patient Blood Pressure"
+            />
+            <Row
+              bsClass="row"
+              componentClass="div"
+            >
+              <Col
+                bsClass="col"
+                componentClass="div"
+                md={20}
+                sm={20}
+                style={
+                  Object {
+                    "height": "40px",
+                  }
+                }
+              >
+                <span>
+                  <h1 />
+                </span>
+              </Col>
+            </Row>
             <Row
               bsClass="row"
               componentClass="div"
@@ -48,7 +71,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 <Col
                   bsClass="col"
                   componentClass={[Function]}
-                  sm={2}
+                  sm={4}
                 >
                   Systolic Blood Pressure
                 </Col>
@@ -70,6 +93,18 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     warn={[Function]}
                   />
                 </Col>
+                <Col
+                  bsClass="col"
+                  componentClass={[Function]}
+                  sm={2}
+                  style={
+                    Object {
+                      "textAlign": "left",
+                    }
+                  }
+                >
+                  mmHG
+                </Col>
               </FormGroup>
             </Row>
             <Row
@@ -83,7 +118,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 <Col
                   bsClass="col"
                   componentClass={[Function]}
-                  sm={2}
+                  sm={4}
                 >
                   Diastolic Blood Pressure
                 </Col>
@@ -105,13 +140,32 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     warn={[Function]}
                   />
                 </Col>
+                <Col
+                  bsClass="col"
+                  componentClass={[Function]}
+                  sm={2}
+                  style={
+                    Object {
+                      "textAlign": "left",
+                    }
+                  }
+                >
+                  mmHG
+                </Col>
               </FormGroup>
             </Row>
             <Row
               bsClass="row"
               componentClass="div"
             >
-              <Submit />
+              <Col
+                bsClass="col"
+                componentClass="div"
+                sm={4}
+                xsOffset={7}
+              >
+                <Submit />
+              </Col>
             </Row>
           </Grid>
         }
@@ -133,6 +187,29 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
               componentClass="div"
               fluid={false}
             >
+              <Section
+                title="Enter Patient Blood Pressure"
+              />
+              <Row
+                bsClass="row"
+                componentClass="div"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  md={20}
+                  sm={20}
+                  style={
+                    Object {
+                      "height": "40px",
+                    }
+                  }
+                >
+                  <span>
+                    <h1 />
+                  </span>
+                </Col>
+              </Row>
               <Row
                 bsClass="row"
                 componentClass="div"
@@ -144,7 +221,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   <Col
                     bsClass="col"
                     componentClass={[Function]}
-                    sm={2}
+                    sm={4}
                   >
                     Systolic Blood Pressure
                   </Col>
@@ -166,6 +243,18 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       warn={[Function]}
                     />
                   </Col>
+                  <Col
+                    bsClass="col"
+                    componentClass={[Function]}
+                    sm={2}
+                    style={
+                      Object {
+                        "textAlign": "left",
+                      }
+                    }
+                  >
+                    mmHG
+                  </Col>
                 </FormGroup>
               </Row>
               <Row
@@ -179,7 +268,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   <Col
                     bsClass="col"
                     componentClass={[Function]}
-                    sm={2}
+                    sm={4}
                   >
                     Diastolic Blood Pressure
                   </Col>
@@ -201,13 +290,32 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       warn={[Function]}
                     />
                   </Col>
+                  <Col
+                    bsClass="col"
+                    componentClass={[Function]}
+                    sm={2}
+                    style={
+                      Object {
+                        "textAlign": "left",
+                      }
+                    }
+                  >
+                    mmHG
+                  </Col>
                 </FormGroup>
               </Row>
               <Row
                 bsClass="row"
                 componentClass="div"
               >
-                <Submit />
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  sm={4}
+                  xsOffset={7}
+                >
+                  <Submit />
+                </Col>
               </Row>
             </Grid>
           }
@@ -222,15 +330,79 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           }
           title="Blood Pressure"
         >
-          <div>
+          <div
+            style={
+              Object {
+                "paddingLeft": "0px",
+                "paddingRight": "0px",
+              }
+            }
+          >
             <Grid
               bsClass="container"
               componentClass="div"
               fluid={false}
+              style={
+                Object {
+                  "paddingLeft": "0px",
+                  "paddingRight": "0px",
+                }
+              }
             >
               <div
                 className="container"
+                style={
+                  Object {
+                    "paddingLeft": "0px",
+                    "paddingRight": "0px",
+                  }
+                }
               >
+                <Row
+                  bsClass="row"
+                  componentClass="div"
+                  style={
+                    Object {
+                      "backgroundColor": "#ffa500b3",
+                    }
+                  }
+                >
+                  <div
+                    className="row"
+                    style={
+                      Object {
+                        "backgroundColor": "#ffa500b3",
+                      }
+                    }
+                  >
+                    <Col
+                      bsClass="col"
+                      componentClass="div"
+                      md={20}
+                      sm={20}
+                      style={
+                        Object {
+                          "paddingLeft": "20px",
+                        }
+                      }
+                    >
+                      <div
+                        className="col-md-20 col-sm-20"
+                        style={
+                          Object {
+                            "paddingLeft": "20px",
+                          }
+                        }
+                      >
+                        <span>
+                          <h1>
+                            Blood Pressure
+                          </h1>
+                        </span>
+                      </div>
+                    </Col>
+                  </div>
+                </Row>
                 <Row
                   bsClass="row"
                   componentClass="div"
@@ -241,64 +413,25 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     <Col
                       bsClass="col"
                       componentClass="div"
-                      sm={2}
+                      md={20}
+                      sm={20}
+                      style={
+                        Object {
+                          "height": "40px",
+                        }
+                      }
                     >
                       <div
-                        className="col-sm-2"
-                      >
-                        <Link
-                          replace={false}
-                          to="/screening/bloodPressure/queue"
-                        >
-                          <a
-                            onClick={[Function]}
-                          >
-                            <Button
-                              active={false}
-                              block={false}
-                              bsClass="btn"
-                              bsSize="large"
-                              bsStyle="danger"
-                              disabled={false}
-                            >
-                              <button
-                                className="btn btn-lg btn-danger"
-                                disabled={false}
-                                type="button"
-                              >
-                                Back
-                              </button>
-                            </Button>
-                          </a>
-                        </Link>
-                      </div>
-                    </Col>
-                    <Col
-                      bsClass="col"
-                      componentClass="div"
-                      sm={6}
-                    >
-                      <div
-                        className="col-sm-6"
-                      >
-                        <h1
-                          style={
-                            Object {
-                              "marginTop": "0px",
-                            }
+                        className="col-md-20 col-sm-20"
+                        style={
+                          Object {
+                            "height": "40px",
                           }
-                        >
-                          <Label
-                            bsClass="label"
-                            bsStyle="default"
-                          >
-                            <span
-                              className="label label-default"
-                            >
-                              Blood Pressure
-                            </span>
-                          </Label>
-                        </h1>
+                        }
+                      >
+                        <span>
+                          <h1 />
+                        </span>
                       </div>
                     </Col>
                   </div>
@@ -600,6 +733,90 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                               <div
                                 className="container"
                               >
+                                <Section
+                                  title="Enter Patient Blood Pressure"
+                                >
+                                  <Row
+                                    bsClass="row"
+                                    componentClass="div"
+                                    style={
+                                      Object {
+                                        "backgroundColor": "rgba(255, 177, 0, 0.26)",
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="row"
+                                      style={
+                                        Object {
+                                          "backgroundColor": "rgba(255, 177, 0, 0.26)",
+                                        }
+                                      }
+                                    >
+                                      <Col
+                                        bsClass="col"
+                                        componentClass="div"
+                                        md={20}
+                                        sm={20}
+                                        style={
+                                          Object {
+                                            "height": "40px",
+                                            "paddingLeft": "60px",
+                                          }
+                                        }
+                                      >
+                                        <div
+                                          className="col-md-20 col-sm-20"
+                                          style={
+                                            Object {
+                                              "height": "40px",
+                                              "paddingLeft": "60px",
+                                            }
+                                          }
+                                        >
+                                          <span>
+                                            <h1>
+                                              Enter Patient Blood Pressure
+                                            </h1>
+                                          </span>
+                                        </div>
+                                      </Col>
+                                    </div>
+                                  </Row>
+                                </Section>
+                                <Row
+                                  bsClass="row"
+                                  componentClass="div"
+                                >
+                                  <div
+                                    className="row"
+                                  >
+                                    <Col
+                                      bsClass="col"
+                                      componentClass="div"
+                                      md={20}
+                                      sm={20}
+                                      style={
+                                        Object {
+                                          "height": "40px",
+                                        }
+                                      }
+                                    >
+                                      <div
+                                        className="col-md-20 col-sm-20"
+                                        style={
+                                          Object {
+                                            "height": "40px",
+                                          }
+                                        }
+                                      >
+                                        <span>
+                                          <h1 />
+                                        </span>
+                                      </div>
+                                    </Col>
+                                  </div>
+                                </Row>
                                 <Row
                                   bsClass="row"
                                   componentClass="div"
@@ -617,15 +834,15 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                         <Col
                                           bsClass="col"
                                           componentClass={[Function]}
-                                          sm={2}
+                                          sm={4}
                                         >
                                           <ControlLabel
                                             bsClass="control-label"
-                                            className="col-sm-2"
+                                            className="col-sm-4"
                                             srOnly={false}
                                           >
                                             <label
-                                              className="col-sm-2 control-label"
+                                              className="col-sm-4 control-label"
                                               htmlFor="formSystolic"
                                             >
                                               Systolic Blood Pressure
@@ -702,6 +919,29 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         componentClass="div"
                                                         fluid={false}
                                                     >
+                                                        <Section
+                                                            title="Enter Patient Blood Pressure"
+                                                        />
+                                                        <Row
+                                                            bsClass="row"
+                                                            componentClass="div"
+                                                        >
+                                                            <Col
+                                                                bsClass="col"
+                                                                componentClass="div"
+                                                                md={20}
+                                                                sm={20}
+                                                                style={
+                                                                    Object {
+                                                                        "height": "40px",
+                                                                      }
+                                                                }
+                                                            >
+                                                                <span>
+                                                                    <h1 />
+                                                                </span>
+                                                            </Col>
+                                                        </Row>
                                                         <Row
                                                             bsClass="row"
                                                             componentClass="div"
@@ -713,7 +953,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 <Col
                                                                     bsClass="col"
                                                                     componentClass={[Function]}
-                                                                    sm={2}
+                                                                    sm={4}
                                                                 >
                                                                     Systolic Blood Pressure
                                                                 </Col>
@@ -735,6 +975,18 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                         warn={[Function]}
                                                                     />
                                                                 </Col>
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass={[Function]}
+                                                                    sm={2}
+                                                                    style={
+                                                                        Object {
+                                                                            "textAlign": "left",
+                                                                          }
+                                                                    }
+                                                                >
+                                                                    mmHG
+                                                                </Col>
                                                             </FormGroup>
                                                         </Row>
                                                         <Row
@@ -748,7 +1000,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 <Col
                                                                     bsClass="col"
                                                                     componentClass={[Function]}
-                                                                    sm={2}
+                                                                    sm={4}
                                                                 >
                                                                     Diastolic Blood Pressure
                                                                 </Col>
@@ -770,13 +1022,32 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                         warn={[Function]}
                                                                     />
                                                                 </Col>
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass={[Function]}
+                                                                    sm={2}
+                                                                    style={
+                                                                        Object {
+                                                                            "textAlign": "left",
+                                                                          }
+                                                                    }
+                                                                >
+                                                                    mmHG
+                                                                </Col>
                                                             </FormGroup>
                                                         </Row>
                                                         <Row
                                                             bsClass="row"
                                                             componentClass="div"
                                                         >
-                                                            <Submit />
+                                                            <Col
+                                                                bsClass="col"
+                                                                componentClass="div"
+                                                                sm={4}
+                                                                xsOffset={7}
+                                                            >
+                                                                <Submit />
+                                                            </Col>
                                                         </Row>
                                                     </Grid>,
                                                       "clearAsyncError": [Function],
@@ -908,6 +1179,29 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                           componentClass="div"
                                                           fluid={false}
                                                       >
+                                                          <Section
+                                                              title="Enter Patient Blood Pressure"
+                                                          />
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <Col
+                                                                  bsClass="col"
+                                                                  componentClass="div"
+                                                                  md={20}
+                                                                  sm={20}
+                                                                  style={
+                                                                      Object {
+                                                                          "height": "40px",
+                                                                        }
+                                                                  }
+                                                              >
+                                                                  <span>
+                                                                      <h1 />
+                                                                  </span>
+                                                              </Col>
+                                                          </Row>
                                                           <Row
                                                               bsClass="row"
                                                               componentClass="div"
@@ -919,7 +1213,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   <Col
                                                                       bsClass="col"
                                                                       componentClass={[Function]}
-                                                                      sm={2}
+                                                                      sm={4}
                                                                   >
                                                                       Systolic Blood Pressure
                                                                   </Col>
@@ -941,6 +1235,18 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                           warn={[Function]}
                                                                       />
                                                                   </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                      style={
+                                                                          Object {
+                                                                              "textAlign": "left",
+                                                                            }
+                                                                      }
+                                                                  >
+                                                                      mmHG
+                                                                  </Col>
                                                               </FormGroup>
                                                           </Row>
                                                           <Row
@@ -954,7 +1260,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   <Col
                                                                       bsClass="col"
                                                                       componentClass={[Function]}
-                                                                      sm={2}
+                                                                      sm={4}
                                                                   >
                                                                       Diastolic Blood Pressure
                                                                   </Col>
@@ -976,13 +1282,32 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                           warn={[Function]}
                                                                       />
                                                                   </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                      style={
+                                                                          Object {
+                                                                              "textAlign": "left",
+                                                                            }
+                                                                      }
+                                                                  >
+                                                                      mmHG
+                                                                  </Col>
                                                               </FormGroup>
                                                           </Row>
                                                           <Row
                                                               bsClass="row"
                                                               componentClass="div"
                                                           >
-                                                              <Submit />
+                                                              <Col
+                                                                  bsClass="col"
+                                                                  componentClass="div"
+                                                                  sm={4}
+                                                                  xsOffset={7}
+                                                              >
+                                                                  <Submit />
+                                                              </Col>
                                                           </Row>
                                                       </Grid>,
                                                         "clearAsyncError": [Function],
@@ -1154,6 +1479,39 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                             </Obs>
                                           </div>
                                         </Col>
+                                        <Col
+                                          bsClass="col"
+                                          componentClass={[Function]}
+                                          sm={2}
+                                          style={
+                                            Object {
+                                              "textAlign": "left",
+                                            }
+                                          }
+                                        >
+                                          <ControlLabel
+                                            bsClass="control-label"
+                                            className="col-sm-2"
+                                            srOnly={false}
+                                            style={
+                                              Object {
+                                                "textAlign": "left",
+                                              }
+                                            }
+                                          >
+                                            <label
+                                              className="col-sm-2 control-label"
+                                              htmlFor="formSystolic"
+                                              style={
+                                                Object {
+                                                  "textAlign": "left",
+                                                }
+                                              }
+                                            >
+                                              mmHG
+                                            </label>
+                                          </ControlLabel>
+                                        </Col>
                                       </div>
                                     </FormGroup>
                                   </div>
@@ -1175,15 +1533,15 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                         <Col
                                           bsClass="col"
                                           componentClass={[Function]}
-                                          sm={2}
+                                          sm={4}
                                         >
                                           <ControlLabel
                                             bsClass="control-label"
-                                            className="col-sm-2"
+                                            className="col-sm-4"
                                             srOnly={false}
                                           >
                                             <label
-                                              className="col-sm-2 control-label"
+                                              className="col-sm-4 control-label"
                                               htmlFor="formDiastolic"
                                             >
                                               Diastolic Blood Pressure
@@ -1260,6 +1618,29 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         componentClass="div"
                                                         fluid={false}
                                                     >
+                                                        <Section
+                                                            title="Enter Patient Blood Pressure"
+                                                        />
+                                                        <Row
+                                                            bsClass="row"
+                                                            componentClass="div"
+                                                        >
+                                                            <Col
+                                                                bsClass="col"
+                                                                componentClass="div"
+                                                                md={20}
+                                                                sm={20}
+                                                                style={
+                                                                    Object {
+                                                                        "height": "40px",
+                                                                      }
+                                                                }
+                                                            >
+                                                                <span>
+                                                                    <h1 />
+                                                                </span>
+                                                            </Col>
+                                                        </Row>
                                                         <Row
                                                             bsClass="row"
                                                             componentClass="div"
@@ -1271,7 +1652,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 <Col
                                                                     bsClass="col"
                                                                     componentClass={[Function]}
-                                                                    sm={2}
+                                                                    sm={4}
                                                                 >
                                                                     Systolic Blood Pressure
                                                                 </Col>
@@ -1293,6 +1674,18 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                         warn={[Function]}
                                                                     />
                                                                 </Col>
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass={[Function]}
+                                                                    sm={2}
+                                                                    style={
+                                                                        Object {
+                                                                            "textAlign": "left",
+                                                                          }
+                                                                    }
+                                                                >
+                                                                    mmHG
+                                                                </Col>
                                                             </FormGroup>
                                                         </Row>
                                                         <Row
@@ -1306,7 +1699,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 <Col
                                                                     bsClass="col"
                                                                     componentClass={[Function]}
-                                                                    sm={2}
+                                                                    sm={4}
                                                                 >
                                                                     Diastolic Blood Pressure
                                                                 </Col>
@@ -1328,13 +1721,32 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                         warn={[Function]}
                                                                     />
                                                                 </Col>
+                                                                <Col
+                                                                    bsClass="col"
+                                                                    componentClass={[Function]}
+                                                                    sm={2}
+                                                                    style={
+                                                                        Object {
+                                                                            "textAlign": "left",
+                                                                          }
+                                                                    }
+                                                                >
+                                                                    mmHG
+                                                                </Col>
                                                             </FormGroup>
                                                         </Row>
                                                         <Row
                                                             bsClass="row"
                                                             componentClass="div"
                                                         >
-                                                            <Submit />
+                                                            <Col
+                                                                bsClass="col"
+                                                                componentClass="div"
+                                                                sm={4}
+                                                                xsOffset={7}
+                                                            >
+                                                                <Submit />
+                                                            </Col>
                                                         </Row>
                                                     </Grid>,
                                                       "clearAsyncError": [Function],
@@ -1466,6 +1878,29 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                           componentClass="div"
                                                           fluid={false}
                                                       >
+                                                          <Section
+                                                              title="Enter Patient Blood Pressure"
+                                                          />
+                                                          <Row
+                                                              bsClass="row"
+                                                              componentClass="div"
+                                                          >
+                                                              <Col
+                                                                  bsClass="col"
+                                                                  componentClass="div"
+                                                                  md={20}
+                                                                  sm={20}
+                                                                  style={
+                                                                      Object {
+                                                                          "height": "40px",
+                                                                        }
+                                                                  }
+                                                              >
+                                                                  <span>
+                                                                      <h1 />
+                                                                  </span>
+                                                              </Col>
+                                                          </Row>
                                                           <Row
                                                               bsClass="row"
                                                               componentClass="div"
@@ -1477,7 +1912,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   <Col
                                                                       bsClass="col"
                                                                       componentClass={[Function]}
-                                                                      sm={2}
+                                                                      sm={4}
                                                                   >
                                                                       Systolic Blood Pressure
                                                                   </Col>
@@ -1499,6 +1934,18 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                           warn={[Function]}
                                                                       />
                                                                   </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                      style={
+                                                                          Object {
+                                                                              "textAlign": "left",
+                                                                            }
+                                                                      }
+                                                                  >
+                                                                      mmHG
+                                                                  </Col>
                                                               </FormGroup>
                                                           </Row>
                                                           <Row
@@ -1512,7 +1959,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   <Col
                                                                       bsClass="col"
                                                                       componentClass={[Function]}
-                                                                      sm={2}
+                                                                      sm={4}
                                                                   >
                                                                       Diastolic Blood Pressure
                                                                   </Col>
@@ -1534,13 +1981,32 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                           warn={[Function]}
                                                                       />
                                                                   </Col>
+                                                                  <Col
+                                                                      bsClass="col"
+                                                                      componentClass={[Function]}
+                                                                      sm={2}
+                                                                      style={
+                                                                          Object {
+                                                                              "textAlign": "left",
+                                                                            }
+                                                                      }
+                                                                  >
+                                                                      mmHG
+                                                                  </Col>
                                                               </FormGroup>
                                                           </Row>
                                                           <Row
                                                               bsClass="row"
                                                               componentClass="div"
                                                           >
-                                                              <Submit />
+                                                              <Col
+                                                                  bsClass="col"
+                                                                  componentClass="div"
+                                                                  sm={4}
+                                                                  xsOffset={7}
+                                                              >
+                                                                  <Submit />
+                                                              </Col>
                                                           </Row>
                                                       </Grid>,
                                                         "clearAsyncError": [Function],
@@ -1712,6 +2178,39 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                             </Obs>
                                           </div>
                                         </Col>
+                                        <Col
+                                          bsClass="col"
+                                          componentClass={[Function]}
+                                          sm={2}
+                                          style={
+                                            Object {
+                                              "textAlign": "left",
+                                            }
+                                          }
+                                        >
+                                          <ControlLabel
+                                            bsClass="control-label"
+                                            className="col-sm-2"
+                                            srOnly={false}
+                                            style={
+                                              Object {
+                                                "textAlign": "left",
+                                              }
+                                            }
+                                          >
+                                            <label
+                                              className="col-sm-2 control-label"
+                                              htmlFor="formDiastolic"
+                                              style={
+                                                Object {
+                                                  "textAlign": "left",
+                                                }
+                                              }
+                                            >
+                                              mmHG
+                                            </label>
+                                          </ControlLabel>
+                                        </Col>
                                       </div>
                                     </FormGroup>
                                   </div>
@@ -1723,25 +2222,36 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                   <div
                                     className="row"
                                   >
-                                    <Submit>
-                                      <Button
-                                        active={false}
-                                        block={false}
-                                        bsClass="btn"
-                                        bsSize="large"
-                                        bsStyle="success"
-                                        disabled={false}
-                                        type="submit"
+                                    <Col
+                                      bsClass="col"
+                                      componentClass="div"
+                                      sm={4}
+                                      xsOffset={7}
+                                    >
+                                      <div
+                                        className="col-sm-4 col-xs-offset-7"
                                       >
-                                        <button
-                                          className="btn btn-lg btn-success"
-                                          disabled={false}
-                                          type="submit"
-                                        >
-                                          Submit
-                                        </button>
-                                      </Button>
-                                    </Submit>
+                                        <Submit>
+                                          <Button
+                                            active={false}
+                                            block={false}
+                                            bsClass="btn"
+                                            bsSize="large"
+                                            bsStyle="success"
+                                            disabled={false}
+                                            type="submit"
+                                          >
+                                            <button
+                                              className="btn btn-lg btn-success"
+                                              disabled={false}
+                                              type="submit"
+                                            >
+                                              Submit
+                                            </button>
+                                          </Button>
+                                        </Submit>
+                                      </div>
+                                    </Col>
                                   </div>
                                 </Row>
                               </div>

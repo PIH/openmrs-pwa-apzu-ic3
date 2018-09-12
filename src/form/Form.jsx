@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, Col, Button, Label } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Grid, Row, Col } from 'react-bootstrap';
 import { push } from 'connected-react-router';
 import { connect } from 'react-redux';
 import {EncounterForm} from '@openmrs/react-components';
 import { actions as toastrActions } from 'react-redux-toastr';
+import { rowStyles, littlePaddingLeft, divContainer, colHeight } from '../pwaStyles'
 
 let Form = (props) => {
 
@@ -15,22 +15,18 @@ let Form = (props) => {
     () => push(props.afterSubmitLink)
   ];
 
-  const labelStyles = {
-    marginTop: '0px'
-  };
-
   return (
-    <div>
-      <Grid>
-        <Row>
-          <Col sm={2}>
-            <Link to={props.backLink}>
-              <Button bsSize='large' bsStyle='danger'>
-                Back
-              </Button>
-            </Link>
+    <div style={divContainer}>
+      <Grid style={divContainer}>
+        <Row style={rowStyles}>
+          <Col sm={20} md={20} style={littlePaddingLeft}>
+            <span><h1>{props.title}</h1></span>
           </Col>
-          <Col sm={6}><h1 style={ labelStyles }><Label>{props.title}</Label></h1></Col>
+        </Row>
+        <Row>
+          <Col sm={20} md={20} style={ colHeight }>
+            <span><h1>{ '' }</h1></span>
+          </Col>
         </Row>
       </Grid>
       <div>
