@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
-import { Submit, Obs } from '@openmrs/react-components';
+import {Submit, Obs, EncounterFormPage} from '@openmrs/react-components';
 import { Alert, Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
-import Form from '../../form/Form';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 
 let VLForm = (props) => {
@@ -126,7 +125,7 @@ let VLForm = (props) => {
   );
 
   return (
-    <Form
+    <EncounterFormPage
       afterSubmitLink="/screening/vl/queue"
       backLink="/screening/vl/queue"
       encounterType={ ENCOUNTER_TYPES.VLEncounterType }

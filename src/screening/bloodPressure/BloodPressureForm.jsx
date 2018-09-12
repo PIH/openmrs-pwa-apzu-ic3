@@ -1,7 +1,6 @@
 import React from "react";
-import {Submit, Obs, Section} from '@openmrs/react-components';
+import {Submit, Obs, Section, EncounterFormPage} from '@openmrs/react-components';
 import {Grid, Row, FormGroup, ControlLabel, Col} from 'react-bootstrap';
-import Form from '../../form/Form';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 import { minValue, maxValue, abnormalMaxValue } from "../../validations";
 import {colHeight, leftTextAlign} from "../../pwaStyles";
@@ -80,7 +79,7 @@ let BloodPressureForm = props => {
   );
 
   return (
-    <Form
+    <EncounterFormPage
       afterSubmitLink="/screening/bloodPressure/queue"
       backLink="/screening/bloodPressure/queue"
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}

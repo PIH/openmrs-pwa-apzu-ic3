@@ -1,7 +1,6 @@
 import React from 'react';
-import { Submit, Obs } from '@openmrs/react-components';
+import {Submit, Obs, EncounterFormPage} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
-import Form from '../../form/Form';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 
 let NutritionForm = (props) => {
@@ -41,7 +40,7 @@ let NutritionForm = (props) => {
   );
 
   return (
-    <Form
+    <EncounterFormPage
       afterSubmitLink="/screening/nutrition/queue"
       backLink="/screening/nutrition/queue"
       encounterType={ENCOUNTER_TYPES.NutritionEncounterType}
