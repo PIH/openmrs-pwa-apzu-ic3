@@ -59,7 +59,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                 >
                   <Obs
                     concept="6569c44a-977f-11e1-8993-905e29aff6c1"
-                    path="Weight"
+                    path="weight"
                   />
                 </Col>
               </FormGroup>
@@ -86,7 +86,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                 >
                   <Obs
                     concept="6569c562-977f-11e1-8993-905e29aff6c1"
-                    path="Height"
+                    path="height"
                   />
                 </Col>
               </FormGroup>
@@ -99,6 +99,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
             </Row>
           </Grid>
         }
+        formId="nutrition-form"
         title="Nutrition"
       >
         <EncounterFormPage
@@ -138,7 +139,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   >
                     <Obs
                       concept="6569c44a-977f-11e1-8993-905e29aff6c1"
-                      path="Weight"
+                      path="weight"
                     />
                   </Col>
                 </FormGroup>
@@ -165,7 +166,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   >
                     <Obs
                       concept="6569c562-977f-11e1-8993-905e29aff6c1"
-                      path="Height"
+                      path="height"
                     />
                   </Col>
                 </FormGroup>
@@ -178,6 +179,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
               </Row>
             </Grid>
           }
+          formId="nutrition-form"
           patient={
             Object {
               "uuid": "abc",
@@ -303,6 +305,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
                   }
                 }
+                formId="nutrition-form"
                 formSubmittedActionCreator={
                   Array [
                     [Function],
@@ -330,7 +333,8 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
                     }
                   }
-                  form="openmrs-form"
+                  form="nutrition-form"
+                  formId="nutrition-form"
                   formSubmittedActionCreator={
                     Array [
                       [Function],
@@ -361,7 +365,8 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       }
                     }
                     forceUnregisterOnUnmount={false}
-                    form="openmrs-form"
+                    form="nutrition-form"
+                    formId="nutrition-form"
                     formSubmittedActionCreator={
                       Array [
                         [Function],
@@ -439,7 +444,8 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       }
                       focus={[Function]}
                       forceUnregisterOnUnmount={false}
-                      form="openmrs-form"
+                      form="nutrition-form"
+                      formId="nutrition-form"
                       formSubmittedActionCreator={
                         Array [
                           [Function],
@@ -531,7 +537,8 @@ exports[`Component: NutritionForm renders properly 1`] = `
                             "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
                           }
                         }
-                        form="openmrs-form"
+                        form="nutrition-form"
+                        formId="nutrition-form"
                         formSubmittedActionCreator={
                           Array [
                             [Function],
@@ -628,11 +635,11 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                           >
                                             <Obs
                                               concept="6569c44a-977f-11e1-8993-905e29aff6c1"
-                                              path="Weight"
+                                              path="weight"
                                             >
                                               <Field
                                                 component={[Function]}
-                                                name="obs|path=Weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                name="obs|path=weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
                                                 type="number"
                                               >
                                                 <Connect(ConnectedField)
@@ -694,7 +701,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                 >
                                                                     <Obs
                                                                         concept="6569c44a-977f-11e1-8993-905e29aff6c1"
-                                                                        path="Weight"
+                                                                        path="weight"
                                                                     />
                                                                 </Col>
                                                             </FormGroup>
@@ -721,7 +728,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                 >
                                                                     <Obs
                                                                         concept="6569c562-977f-11e1-8993-905e29aff6c1"
-                                                                        path="Height"
+                                                                        path="height"
                                                                     />
                                                                 </Col>
                                                             </FormGroup>
@@ -748,8 +755,8 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "error": undefined,
                                                       "focus": [Function],
                                                       "forceUnregisterOnUnmount": false,
-                                                      "form": "openmrs-form",
-                                                      "formId": undefined,
+                                                      "form": "nutrition-form",
+                                                      "formId": "nutrition-form",
                                                       "formSubmittedActionCreator": Array [
                                                         [Function],
                                                         [Function],
@@ -813,7 +820,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                     }
                                                   }
                                                   component={[Function]}
-                                                  name="obs|path=Weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                  name="obs|path=weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
                                                   normalize={[Function]}
                                                   type="number"
                                                 >
@@ -876,7 +883,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                   >
                                                                       <Obs
                                                                           concept="6569c44a-977f-11e1-8993-905e29aff6c1"
-                                                                          path="Weight"
+                                                                          path="weight"
                                                                       />
                                                                   </Col>
                                                               </FormGroup>
@@ -903,7 +910,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                   >
                                                                       <Obs
                                                                           concept="6569c562-977f-11e1-8993-905e29aff6c1"
-                                                                          path="Height"
+                                                                          path="height"
                                                                       />
                                                                   </Col>
                                                               </FormGroup>
@@ -930,8 +937,8 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                         "error": undefined,
                                                         "focus": [Function],
                                                         "forceUnregisterOnUnmount": false,
-                                                        "form": "openmrs-form",
-                                                        "formId": undefined,
+                                                        "form": "nutrition-form",
+                                                        "formId": "nutrition-form",
                                                         "formSubmittedActionCreator": Array [
                                                           [Function],
                                                           [Function],
@@ -998,7 +1005,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                     component={[Function]}
                                                     dirty={false}
                                                     dispatch={[Function]}
-                                                    name="obs|path=Weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                    name="obs|path=weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
                                                     normalize={[Function]}
                                                     pristine={true}
                                                     type="number"
@@ -1006,7 +1013,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                     <RenderField
                                                       input={
                                                         Object {
-                                                          "name": "obs|path=Weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1",
+                                                          "name": "obs|path=weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1",
                                                           "onBlur": [Function],
                                                           "onChange": [Function],
                                                           "onDragStart": [Function],
@@ -1023,7 +1030,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                           "dirty": false,
                                                           "dispatch": [Function],
                                                           "error": undefined,
-                                                          "form": "openmrs-form",
+                                                          "form": "nutrition-form",
                                                           "initial": undefined,
                                                           "invalid": false,
                                                           "pristine": true,
@@ -1042,7 +1049,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                           <FormControl
                                                             bsClass="form-control"
                                                             componentClass="input"
-                                                            name="obs|path=Weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                            name="obs|path=weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
                                                             onBlur={[Function]}
                                                             onChange={[Function]}
                                                             onDragStart={[Function]}
@@ -1054,7 +1061,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                             <input
                                                               className="form-control"
                                                               id="formWeight"
-                                                              name="obs|path=Weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                              name="obs|path=weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1"
                                                               onBlur={[Function]}
                                                               onChange={[Function]}
                                                               onDragStart={[Function]}
@@ -1119,11 +1126,11 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                           >
                                             <Obs
                                               concept="6569c562-977f-11e1-8993-905e29aff6c1"
-                                              path="Height"
+                                              path="height"
                                             >
                                               <Field
                                                 component={[Function]}
-                                                name="obs|path=Height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
+                                                name="obs|path=height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
                                                 type="number"
                                               >
                                                 <Connect(ConnectedField)
@@ -1185,7 +1192,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                 >
                                                                     <Obs
                                                                         concept="6569c44a-977f-11e1-8993-905e29aff6c1"
-                                                                        path="Weight"
+                                                                        path="weight"
                                                                     />
                                                                 </Col>
                                                             </FormGroup>
@@ -1212,7 +1219,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                 >
                                                                     <Obs
                                                                         concept="6569c562-977f-11e1-8993-905e29aff6c1"
-                                                                        path="Height"
+                                                                        path="height"
                                                                     />
                                                                 </Col>
                                                             </FormGroup>
@@ -1239,8 +1246,8 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "error": undefined,
                                                       "focus": [Function],
                                                       "forceUnregisterOnUnmount": false,
-                                                      "form": "openmrs-form",
-                                                      "formId": undefined,
+                                                      "form": "nutrition-form",
+                                                      "formId": "nutrition-form",
                                                       "formSubmittedActionCreator": Array [
                                                         [Function],
                                                         [Function],
@@ -1304,7 +1311,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                     }
                                                   }
                                                   component={[Function]}
-                                                  name="obs|path=Height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
+                                                  name="obs|path=height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
                                                   normalize={[Function]}
                                                   type="number"
                                                 >
@@ -1367,7 +1374,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                   >
                                                                       <Obs
                                                                           concept="6569c44a-977f-11e1-8993-905e29aff6c1"
-                                                                          path="Weight"
+                                                                          path="weight"
                                                                       />
                                                                   </Col>
                                                               </FormGroup>
@@ -1394,7 +1401,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                   >
                                                                       <Obs
                                                                           concept="6569c562-977f-11e1-8993-905e29aff6c1"
-                                                                          path="Height"
+                                                                          path="height"
                                                                       />
                                                                   </Col>
                                                               </FormGroup>
@@ -1421,8 +1428,8 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                         "error": undefined,
                                                         "focus": [Function],
                                                         "forceUnregisterOnUnmount": false,
-                                                        "form": "openmrs-form",
-                                                        "formId": undefined,
+                                                        "form": "nutrition-form",
+                                                        "formId": "nutrition-form",
                                                         "formSubmittedActionCreator": Array [
                                                           [Function],
                                                           [Function],
@@ -1489,7 +1496,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                     component={[Function]}
                                                     dirty={false}
                                                     dispatch={[Function]}
-                                                    name="obs|path=Height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
+                                                    name="obs|path=height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
                                                     normalize={[Function]}
                                                     pristine={true}
                                                     type="number"
@@ -1497,7 +1504,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                     <RenderField
                                                       input={
                                                         Object {
-                                                          "name": "obs|path=Height|concept=6569c562-977f-11e1-8993-905e29aff6c1",
+                                                          "name": "obs|path=height|concept=6569c562-977f-11e1-8993-905e29aff6c1",
                                                           "onBlur": [Function],
                                                           "onChange": [Function],
                                                           "onDragStart": [Function],
@@ -1514,7 +1521,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                           "dirty": false,
                                                           "dispatch": [Function],
                                                           "error": undefined,
-                                                          "form": "openmrs-form",
+                                                          "form": "nutrition-form",
                                                           "initial": undefined,
                                                           "invalid": false,
                                                           "pristine": true,
@@ -1533,7 +1540,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                           <FormControl
                                                             bsClass="form-control"
                                                             componentClass="input"
-                                                            name="obs|path=Height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
+                                                            name="obs|path=height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
                                                             onBlur={[Function]}
                                                             onChange={[Function]}
                                                             onDragStart={[Function]}
@@ -1545,7 +1552,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                             <input
                                                               className="form-control"
                                                               id="formHeight"
-                                                              name="obs|path=Height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
+                                                              name="obs|path=height|concept=6569c562-977f-11e1-8993-905e29aff6c1"
                                                               onBlur={[Function]}
                                                               onChange={[Function]}
                                                               onDragStart={[Function]}

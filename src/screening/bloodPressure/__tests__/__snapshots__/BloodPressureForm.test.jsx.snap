@@ -82,7 +82,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 >
                   <Obs
                     concept="6569bffe-977f-11e1-8993-905e29aff6c1"
-                    path="Systolic"
+                    path="systolic"
                     placeholder="Systolic value"
                     validate={
                       Array [
@@ -129,7 +129,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 >
                   <Obs
                     concept="6569c116-977f-11e1-8993-905e29aff6c1"
-                    path="Diastolic"
+                    path="diastolic"
                     placeholder="Diastolic value"
                     validate={
                       Array [
@@ -232,7 +232,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   >
                     <Obs
                       concept="6569bffe-977f-11e1-8993-905e29aff6c1"
-                      path="Systolic"
+                      path="systolic"
                       placeholder="Systolic value"
                       validate={
                         Array [
@@ -279,7 +279,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   >
                     <Obs
                       concept="6569c116-977f-11e1-8993-905e29aff6c1"
-                      path="Diastolic"
+                      path="diastolic"
                       placeholder="Diastolic value"
                       validate={
                         Array [
@@ -859,7 +859,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                           >
                                             <Obs
                                               concept="6569bffe-977f-11e1-8993-905e29aff6c1"
-                                              path="Systolic"
+                                              path="systolic"
                                               placeholder="Systolic value"
                                               validate={
                                                 Array [
@@ -871,7 +871,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                             >
                                               <Field
                                                 component={[Function]}
-                                                name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                name="obs|path=systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
                                                 placeholder="Systolic value"
                                                 type="number"
                                                 validate={
@@ -964,7 +964,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 >
                                                                     <Obs
                                                                         concept="6569bffe-977f-11e1-8993-905e29aff6c1"
-                                                                        path="Systolic"
+                                                                        path="systolic"
                                                                         placeholder="Systolic value"
                                                                         validate={
                                                                             Array [
@@ -1011,7 +1011,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 >
                                                                     <Obs
                                                                         concept="6569c116-977f-11e1-8993-905e29aff6c1"
-                                                                        path="Diastolic"
+                                                                        path="diastolic"
                                                                         placeholder="Diastolic value"
                                                                         validate={
                                                                             Array [
@@ -1130,7 +1130,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                     }
                                                   }
                                                   component={[Function]}
-                                                  name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                  name="obs|path=systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
                                                   normalize={[Function]}
                                                   placeholder="Systolic value"
                                                   type="number"
@@ -1224,7 +1224,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   >
                                                                       <Obs
                                                                           concept="6569bffe-977f-11e1-8993-905e29aff6c1"
-                                                                          path="Systolic"
+                                                                          path="systolic"
                                                                           placeholder="Systolic value"
                                                                           validate={
                                                                               Array [
@@ -1271,7 +1271,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   >
                                                                       <Obs
                                                                           concept="6569c116-977f-11e1-8993-905e29aff6c1"
-                                                                          path="Diastolic"
+                                                                          path="diastolic"
                                                                           placeholder="Diastolic value"
                                                                           validate={
                                                                               Array [
@@ -1393,7 +1393,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                     component={[Function]}
                                                     dirty={false}
                                                     dispatch={[Function]}
-                                                    name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                    name="obs|path=systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
                                                     normalize={[Function]}
                                                     placeholder="Systolic value"
                                                     pristine={true}
@@ -1409,7 +1409,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                     <RenderField
                                                       input={
                                                         Object {
-                                                          "name": "obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1",
+                                                          "name": "obs|path=systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1",
                                                           "onBlur": [Function],
                                                           "onChange": [Function],
                                                           "onDragStart": [Function],
@@ -1446,7 +1446,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                           <FormControl
                                                             bsClass="form-control"
                                                             componentClass="input"
-                                                            name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                            name="obs|path=systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
                                                             onBlur={[Function]}
                                                             onChange={[Function]}
                                                             onDragStart={[Function]}
@@ -1459,7 +1459,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                             <input
                                                               className="form-control"
                                                               id="formSystolic"
-                                                              name="obs|path=Systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                              name="obs|path=systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1"
                                                               onBlur={[Function]}
                                                               onChange={[Function]}
                                                               onDragStart={[Function]}
@@ -1558,7 +1558,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                           >
                                             <Obs
                                               concept="6569c116-977f-11e1-8993-905e29aff6c1"
-                                              path="Diastolic"
+                                              path="diastolic"
                                               placeholder="Diastolic value"
                                               validate={
                                                 Array [
@@ -1570,7 +1570,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                             >
                                               <Field
                                                 component={[Function]}
-                                                name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
+                                                name="obs|path=diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
                                                 placeholder="Diastolic value"
                                                 type="number"
                                                 validate={
@@ -1663,7 +1663,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 >
                                                                     <Obs
                                                                         concept="6569bffe-977f-11e1-8993-905e29aff6c1"
-                                                                        path="Systolic"
+                                                                        path="systolic"
                                                                         placeholder="Systolic value"
                                                                         validate={
                                                                             Array [
@@ -1710,7 +1710,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                 >
                                                                     <Obs
                                                                         concept="6569c116-977f-11e1-8993-905e29aff6c1"
-                                                                        path="Diastolic"
+                                                                        path="diastolic"
                                                                         placeholder="Diastolic value"
                                                                         validate={
                                                                             Array [
@@ -1829,7 +1829,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                     }
                                                   }
                                                   component={[Function]}
-                                                  name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
+                                                  name="obs|path=diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
                                                   normalize={[Function]}
                                                   placeholder="Diastolic value"
                                                   type="number"
@@ -1923,7 +1923,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   >
                                                                       <Obs
                                                                           concept="6569bffe-977f-11e1-8993-905e29aff6c1"
-                                                                          path="Systolic"
+                                                                          path="systolic"
                                                                           placeholder="Systolic value"
                                                                           validate={
                                                                               Array [
@@ -1970,7 +1970,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                   >
                                                                       <Obs
                                                                           concept="6569c116-977f-11e1-8993-905e29aff6c1"
-                                                                          path="Diastolic"
+                                                                          path="diastolic"
                                                                           placeholder="Diastolic value"
                                                                           validate={
                                                                               Array [
@@ -2092,7 +2092,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                     component={[Function]}
                                                     dirty={false}
                                                     dispatch={[Function]}
-                                                    name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
+                                                    name="obs|path=diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
                                                     normalize={[Function]}
                                                     placeholder="Diastolic value"
                                                     pristine={true}
@@ -2108,7 +2108,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                     <RenderField
                                                       input={
                                                         Object {
-                                                          "name": "obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1",
+                                                          "name": "obs|path=diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1",
                                                           "onBlur": [Function],
                                                           "onChange": [Function],
                                                           "onDragStart": [Function],
@@ -2145,7 +2145,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                           <FormControl
                                                             bsClass="form-control"
                                                             componentClass="input"
-                                                            name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
+                                                            name="obs|path=diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
                                                             onBlur={[Function]}
                                                             onChange={[Function]}
                                                             onDragStart={[Function]}
@@ -2158,7 +2158,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                             <input
                                                               className="form-control"
                                                               id="formDiastolic"
-                                                              name="obs|path=Diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
+                                                              name="obs|path=diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1"
                                                               onBlur={[Function]}
                                                               onChange={[Function]}
                                                               onDragStart={[Function]}
