@@ -15,7 +15,7 @@ let NutritionForm = (props) => {
           <Col sm={4}>
             <Obs
               concept={CONCEPTS.Weight.uuid}
-              path="Weight"
+              path="weight"
             />
           </Col>
         </FormGroup>
@@ -28,7 +28,7 @@ let NutritionForm = (props) => {
           <Col sm={4}>
             <Obs
               concept={CONCEPTS.Height.uuid}
-              path="Height"
+              path="height"
             />
           </Col>
         </FormGroup>
@@ -44,6 +44,7 @@ let NutritionForm = (props) => {
       afterSubmitLink="/screening/nutrition/queue"
       backLink="/screening/nutrition/queue"
       encounterType={ENCOUNTER_TYPES.NutritionEncounterType}
+      formId="nutrition-form"
       formContent={formContent}
       title="Nutrition"
     />

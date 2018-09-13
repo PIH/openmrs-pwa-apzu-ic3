@@ -40,7 +40,7 @@ let BloodPressureForm = props => {
             <Obs
               concept={CONCEPTS.SystolicBloodPressure.uuid}
               placeholder="Systolic value"
-              path="Systolic"
+              path="systolic"
               validate={[minValue50, maxValue260]}
               warn={ abnormalMaxValue160 }
             />
@@ -60,7 +60,7 @@ let BloodPressureForm = props => {
               concept={CONCEPTS.DiastolicBloodPressure.uuid}
               placeholder="Diastolic value"
               validate={[minValue40, maxValue140]}
-              path="Diastolic"
+              path="diastolic"
               warn={ abnormalMaxValue110 }
             />
           </Col>

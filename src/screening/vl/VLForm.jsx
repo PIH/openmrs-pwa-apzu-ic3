@@ -57,7 +57,7 @@ let VLForm = (props) => {
           <Col sm={8}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid}
-              path="vl"
+              path="vl-bled"
               conceptAnswers={ FORM_ANSWERS.bledAnswers }
             />
           </Col>
@@ -74,7 +74,7 @@ let VLForm = (props) => {
           <Col sm={8}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
-              path="vl"
+              path="vl-reason-no-sample"
               conceptAnswers={ FORM_ANSWERS.noSampleAnswers }
             />
           </Col>
@@ -92,7 +92,7 @@ let VLForm = (props) => {
           <Col sm={8}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid}
-              path="vl"
+              path="vl-reason-for-testing"
               conceptAnswers={ FORM_ANSWERS.reasonForTesting }
             />
           </Col>
@@ -110,7 +110,7 @@ let VLForm = (props) => {
           <Col sm={8}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid}
-              path="vl"
+              path="vl-lab-location"
               conceptAnswers={ FORM_ANSWERS.labLocation }
             />
           </Col>

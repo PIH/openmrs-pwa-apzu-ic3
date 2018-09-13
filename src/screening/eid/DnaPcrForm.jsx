@@ -18,7 +18,7 @@ let DnaPcrForm = (props) => {
           <Col sm={8}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid}
-              path="vl"
+              path="dna-pcr-bled"
               conceptAnswers={ FORM_ANSWERS.bledAnswers }
             />
           </Col>
@@ -35,7 +35,7 @@ let DnaPcrForm = (props) => {
           <Col sm={10}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
-              path="vl"
+              path="dna-pcrdr-reason-no-sample"
               conceptAnswers={ FORM_ANSWERS.noSampleAnswers }
             />
           </Col>
@@ -53,7 +53,7 @@ let DnaPcrForm = (props) => {
           <Col sm={8}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid}
-              path="vl"
+              path="dna-pcr-reason-for-testing"
               conceptAnswers={ FORM_ANSWERS.dnaPcrReasonForTesting }
             />
           </Col>
@@ -71,7 +71,7 @@ let DnaPcrForm = (props) => {
           <Col sm={8}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid}
-              path="vl"
+              path="dna-pcr-lab-location"
               conceptAnswers={ FORM_ANSWERS.labLocation }
             />
           </Col>
@@ -91,16 +91,16 @@ let DnaPcrForm = (props) => {
       backLink="/screening/eid/queue"
       encounterType={ ENCOUNTER_TYPES.DnaPcrEncounterType }
       formContent={formContent}
-      formId="vl-form"
+      formId="dna-pcr-form"
       title=""
     />
   );
 };
 
-const selector = formValueSelector('vl-form');
+const selector = formValueSelector('dna-pcr-form');
 
 export default connect(state => {
-  const bled = selector(state, 'obs|path=vl|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid);
+  const bled = selector(state, 'obs|path=dna-pcr-bled|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid);
   return {
     bled,
     patient: state.selectedPatient ? state.patients[state.selectedPatient] : null,

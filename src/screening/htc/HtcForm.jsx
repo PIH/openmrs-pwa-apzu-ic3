@@ -18,7 +18,7 @@ let HtcForm = (props) => {
           <Col sm={8}>
             <Obs
               concept={CONCEPTS.HTC_RESULTS.uuid}
-              path="htc"
+              path="htc-results"
               conceptAnswers={ FORM_ANSWERS.htcAnswers }
             />
           </Col>
