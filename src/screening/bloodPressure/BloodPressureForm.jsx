@@ -1,8 +1,7 @@
 import React from "react";
-import {Submit, Obs, Section, EncounterFormPage} from '@openmrs/react-components';
+import {Submit, Obs, Section, EncounterFormPage, formValidations } from '@openmrs/react-components';
 import {Grid, Row, FormGroup, ControlLabel, Col} from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
-import { minValue, maxValue, abnormalMaxValue } from "../../validations";
 import {colHeight, leftTextAlign} from "../../pwaStyles";
 
 /**
@@ -14,13 +13,13 @@ import {colHeight, leftTextAlign} from "../../pwaStyles";
  * SBP > 160
  * DBP > 110
  */
-const minValue40 = minValue(40);
-const minValue50 = minValue(50);
-const maxValue140 = maxValue(140);
-const maxValue260 = maxValue(260);
+const minValue40 = formValidations.minValue(40);
+const minValue50 = formValidations.minValue(50);
+const maxValue140 = formValidations.maxValue(140);
+const maxValue260 = formValidations.maxValue(260);
 
-const abnormalMaxValue110 = abnormalMaxValue(110);
-const abnormalMaxValue160 = abnormalMaxValue(160);
+const abnormalMaxValue110 = formValidations.abnormalMaxValue(110);
+const abnormalMaxValue160 = formValidations.abnormalMaxValue(160);
 
 let BloodPressureForm = props => {
 
