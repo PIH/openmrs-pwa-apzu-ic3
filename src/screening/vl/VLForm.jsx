@@ -3,51 +3,14 @@ import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
 import {Submit, Obs, EncounterFormPage} from '@openmrs/react-components';
 import { Alert, Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
+import PatientAlert from '../../patient/PatientAlert';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 
 let VLForm = (props) => {
 
   const formContent = (
     <Grid>
-      { (typeof props.patient !== 'undefined') &&
-      (typeof props.patient.alert !== 'undefined') &&
-      <Row>
-        <FormGroup controlId="formAlert">
-          <Col
-            componentClass={ControlLabel}
-            sm={2}
-          >
-            Alert
-          </Col>
-          <Col
-            sm={4}
-          >
-            <Alert bsStyle="danger">
-              { props.patient.alert }
-            </Alert>
-          </Col>
-        </FormGroup>
-      </Row>
-      }
-
-      { (typeof props.patient !== 'undefined') &&
-      (typeof props.patient.actions !== 'undefined') && (props.patient.actions !== props.patient.alert) &&
-      <Row>
-        <FormGroup controlId="formAction">
-          <Col
-            componentClass={ControlLabel}
-            sm={2}
-          >
-            Action
-          </Col>
-          <Col sm={4}>
-            <Alert bsStyle="warning">
-              { props.patient.actions }
-            </Alert>
-          </Col>
-        </FormGroup>
-      </Row>
-      }
+      <PatientAlert/>
 
       <Row>
         <FormGroup controlId="formBled">

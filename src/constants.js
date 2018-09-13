@@ -24,11 +24,8 @@ export const ENCOUNTER_TYPES = {
   'VLEncounterType': {
     uuid: '9959A261-2122-4AE1-A89D-1CA444B712EA'
   },
-  'EidEncounterType': {
-    uuid: '8383DE35-5145-4953-A018-34876B797F3E'
-  },
   'DnaPcrEncounterType': {
-    uuid: 'EA2869FD-39E0-45F0-8FE4-92F61E00CF9D'
+    uuid: '8383DE35-5145-4953-A018-34876B797F3E'
   },
 };
 
@@ -112,8 +109,12 @@ export const CONCEPTS = {
       name: 'Patient refused'
     },
     'InadequateSupplies': {
-      uuid: '68635CA0-7161-410A-AD59-B3B5112A5843',  // need to replace this UUID with the real one
+      uuid: '655dc866-977f-11e1-8993-905e29aff6c1',
       name: 'Inadequate supplies for testing'
+    },
+    'NeedsAdherenceCounseling': {
+      uuid: 'bc7bd9f2-b21d-11e8-96f8-529269fb1459',
+      name: 'Needs additional adherence counseling'
     },
     'ReasonForTesting': {
       uuid: '164126AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
@@ -186,6 +187,7 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.name },
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.name },
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.NeedsAdherenceCounseling.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.NeedsAdherenceCounseling.name },
   ],
   'reasonForTesting': [
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Routine.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Routine.name },

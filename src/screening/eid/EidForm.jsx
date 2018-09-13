@@ -4,6 +4,7 @@ import { Grid, Row, Col, ButtonToolbar, ToggleButtonGroup, ToggleButton } from '
 import PatientAlert from '../../patient/PatientAlert';
 import HtcForm from '../htc/HtcForm';
 import DnaPcrForm from './DnaPcrForm';
+import { colHeight } from "../../pwaStyles";
 
 
 class EidForm extends React.Component {
@@ -28,7 +29,7 @@ class EidForm extends React.Component {
       <Grid>
         <PatientAlert/>
         <Row>
-          <Col sm={8} smOffset={2}>
+          <Col sm={8}>
             <ButtonToolbar>
               <ToggleButtonGroup
                 name="eidFormType"
@@ -40,6 +41,11 @@ class EidForm extends React.Component {
                 <ToggleButton value="dna-pcr" bsSize="large" onChange={this.handleFormChange}>DNA-PCR</ToggleButton>
             </ToggleButtonGroup>
           </ButtonToolbar>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={20} md={20} style={ colHeight }>
+            <span><h1>{ '' }</h1></span>
           </Col>
         </Row>
 

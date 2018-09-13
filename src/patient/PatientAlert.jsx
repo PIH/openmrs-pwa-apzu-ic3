@@ -12,7 +12,7 @@ let PatientAlert = (props) => {
         (typeof props.patient.alert !== 'undefined') &&
         <Row>
           <FormGroup controlId="formAlert">
-            <Col sm={4} smOffset={2}>
+            <Col sm={4}>
               <ControlLabel>Alert</ControlLabel>
               <Alert bsStyle="danger">
                 { props.patient.alert }

@@ -26,6 +26,6 @@ const eidFilter = patient => {
 
 
 export default {
-  required: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.EidEncounterType.uuid, 'exclude'), eidFilter],
-  completed: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.EidEncounterType.uuid, 'include')]
+  required: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.DnaPcrEncounterType.uuid, 'exclude'), eidFilter],
+  completed: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.DnaPcrEncounterType.uuid, 'include')]
 };
