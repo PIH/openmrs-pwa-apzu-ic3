@@ -774,6 +774,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "dirty": false,
                                                       "dispatch": [Function],
                                                       "enableReinitialize": true,
+                                                      "encounter": undefined,
                                                       "encounterType": Object {
                                                         "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
                                                       },
@@ -993,6 +994,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                         "dirty": false,
                                                         "dispatch": [Function],
                                                         "enableReinitialize": true,
+                                                        "encounter": undefined,
                                                         "encounterType": Object {
                                                           "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
                                                         },
@@ -1339,6 +1341,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "dirty": false,
                                                       "dispatch": [Function],
                                                       "enableReinitialize": true,
+                                                      "encounter": undefined,
                                                       "encounterType": Object {
                                                         "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
                                                       },
@@ -1558,6 +1561,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                         "dirty": false,
                                                         "dispatch": [Function],
                                                         "enableReinitialize": true,
+                                                        "encounter": undefined,
                                                         "encounterType": Object {
                                                           "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
                                                         },

@@ -33,37 +33,37 @@ let ScreeningList = props => {
         {
           title: "Viral Load",
           completedFilters: vlFilters.completed,
-          entryLink: '/screening/vl/form',
+          link: '/screening/vl/form',
           requiredFilters: vlFilters.required,
         },
         {
           title: "Adherence Counseling",
           completedFilters: vlFilters.completed,
-          entryLink: '/screening/vl/form',
+          link: '/screening/vl/form',
           requiredFilters: vlFilters.required,
         },
         {
           title: "EID",
           completedFilters: vlFilters.completed,
-          entryLink: '/screening/eid/form',
+          link: '/screening/eid/form',
           requiredFilters: eidFilters.required,
         },
         {
           title: "A1C",
           completedFilters: vlFilters.completed,
-          entryLink: '/screening/vl/form',
+          link: '/screening/vl/form',
           requiredFilters: vlFilters.required,
         },
         {
           title: "Creatinine",
           completedFilters: htcFilters.completed,
-          entryLink: '/screening/htc/form',
+          link: '/screening/htc/form',
           requiredFilters: htcFilters.required,
         },
         {
           title: "Cervical Cancer",
           completedFilters: vlFilters.completed,
-          entryLink: '/screening/vl/form',
+          link: '/screening/vl/form',
           requiredFilters: vlFilters.required,
         }
       ]
@@ -75,37 +75,37 @@ let ScreeningList = props => {
         {
           title: "Nutrition",
           completedFilters: nutritionFilters.completed,
-          entryLink: '/screening/nutrition/form',
+          link: '/screening/nutrition/form',
           requiredFilters: nutritionFilters.required,
         },
         {
           title: "Blood Pressure",
           completedFilters: bloodPressureFilters.completed,
-          entryLink: '/screening/bloodPressure/form',
+          link: '/screening/bloodPressure/form',
           requiredFilters: bloodPressureFilters.required,
         },
         {
           title: "Glucose Check",
           completedFilters: htcFilters.completed,
-          entryLink: '/screening/htc/form',
+          link: '/screening/htc/form',
           requiredFilters: htcFilters.required,
         },
         {
           title: "HTC",
           completedFilters: htcFilters.completed,
-          entryLink: '/screening/htc/form',
+          link: '/screening/htc/form',
           requiredFilters: htcFilters.required,
         },
         {
           title: "TB",
           completedFilters: htcFilters.completed,
-          entryLink: '/screening/htc/form',
+          link: '/screening/htc/form',
           requiredFilters: htcFilters.required,
         },
         {
           title: "Family Planning",
           completedFilters: htcFilters.completed,
-          entryLink: '/screening/htc/form',
+          link: '/screening/htc/form',
           requiredFilters: htcFilters.required,
         }
       ]
@@ -122,7 +122,7 @@ let ScreeningList = props => {
             {screeningGroup.screenings.map(screening => (
               <ScreeningListItem
                 completedFilters={screening.completedFilters}
-                entryLink={screening.entryLink}
+                link={screening.link}
                 key={screening.title}
                 patient={props.patient}
                 requiredFilters={screening.requiredFilters}

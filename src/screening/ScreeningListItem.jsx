@@ -16,10 +16,8 @@ let ScreeningListItem = props => {
   const required = applyFilters([props.patient], props.requiredFilters).length > 0;
   const completed = applyFilters([props.patient], props.completedFilters).length > 0;
 
-  const link = completed ? props.summaryLink : required && !completed ? props.entryLink : null;
-
   return (
-    <ListGroupItem href={link ? '#' + link : ''}>
+    <ListGroupItem href={props.link ? '#' + props.link : ''}>
       { completed &&
         <FontAwesomeIcon icon="check"/>
       }

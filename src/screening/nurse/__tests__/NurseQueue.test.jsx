@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { DataGrid, visitActions } from '@openmrs/react-components';
 import NurseQueue from '../NurseQueue';
 import patientActions from '../../../patient/patientActions';
-import {ENCOUNTER_REPRESENTATION, PATIENT_REPRESENTATION, VISIT_REPRESENTATION} from "../../../constants";
+import {VISIT_REPRESENTATION} from "../../../constants";
 
 let props, store;
 let mountedComponent;

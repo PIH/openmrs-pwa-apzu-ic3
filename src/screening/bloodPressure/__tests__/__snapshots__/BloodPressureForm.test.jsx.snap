@@ -1063,6 +1063,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                       "dirty": false,
                                                       "dispatch": [Function],
                                                       "enableReinitialize": true,
+                                                      "encounter": undefined,
                                                       "encounterType": Object {
                                                         "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                                                       },
@@ -1353,6 +1354,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "dirty": false,
                                                         "dispatch": [Function],
                                                         "enableReinitialize": true,
+                                                        "encounter": undefined,
                                                         "encounterType": Object {
                                                           "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                                                         },
@@ -1822,6 +1824,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                       "dirty": false,
                                                       "dispatch": [Function],
                                                       "enableReinitialize": true,
+                                                      "encounter": undefined,
                                                       "encounterType": Object {
                                                         "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                                                       },
@@ -2112,6 +2115,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "dirty": false,
                                                         "dispatch": [Function],
                                                         "enableReinitialize": true,
+                                                        "encounter": undefined,
                                                         "encounterType": Object {
                                                           "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
                                                         },
