@@ -1,6 +1,7 @@
 import React from "react";
 import {Submit, Obs, Section, EncounterFormPage, formValidations } from '@openmrs/react-components';
-import {Grid, Row, FormGroup, ControlLabel, Col} from 'react-bootstrap';
+import { Button, Grid, Row, FormGroup, ControlLabel, Col} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 import {colHeight, leftTextAlign} from "../../pwaStyles";
 
@@ -20,6 +21,8 @@ const maxValue260 = formValidations.maxValue(260);
 
 const abnormalMaxValue110 = formValidations.abnormalMaxValue(110);
 const abnormalMaxValue160 = formValidations.abnormalMaxValue(160);
+
+const backLink = "/screening/bloodPressure/queue";
 
 let BloodPressureForm = props => {
 
@@ -70,7 +73,12 @@ let BloodPressureForm = props => {
         </FormGroup>
       </Row>
       <Row>
-        <Col sm={4} xsOffset={5}>
+        <Col sm={2} xsOffset={2}>
+          <Link to={ backLink }>
+            <Button bsSize="large">Back to list</Button>
+          </Link>
+        </Col>
+        <Col sm={2} xsOffset={1}>
           <Submit/>
         </Col>
       </Row>
@@ -80,7 +88,7 @@ let BloodPressureForm = props => {
   return (
     <EncounterFormPage
       afterSubmitLink="/screening/bloodPressure/queue"
-      backLink="/screening/bloodPressure/queue"
+      backLink={ backLink }
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       formContent={formContent}
       title="Blood Pressure"
