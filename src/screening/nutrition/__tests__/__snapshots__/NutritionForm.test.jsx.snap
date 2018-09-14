@@ -1010,7 +1010,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                     pristine={true}
                                                     type="number"
                                                   >
-                                                    <RenderField
+                                                    <FieldInput
                                                       input={
                                                         Object {
                                                           "name": "obs|path=weight|concept=6569c44a-977f-11e1-8993-905e29aff6c1",
@@ -1073,7 +1073,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                           </FormControl>
                                                         </div>
                                                       </div>
-                                                    </RenderField>
+                                                    </FieldInput>
                                                   </ConnectedField>
                                                 </Connect(ConnectedField)>
                                               </Field>
@@ -1501,7 +1501,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                     pristine={true}
                                                     type="number"
                                                   >
-                                                    <RenderField
+                                                    <FieldInput
                                                       input={
                                                         Object {
                                                           "name": "obs|path=height|concept=6569c562-977f-11e1-8993-905e29aff6c1",
@@ -1564,7 +1564,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                           </FormControl>
                                                         </div>
                                                       </div>
-                                                    </RenderField>
+                                                    </FieldInput>
                                                   </ConnectedField>
                                                 </Connect(ConnectedField)>
                                               </Field>

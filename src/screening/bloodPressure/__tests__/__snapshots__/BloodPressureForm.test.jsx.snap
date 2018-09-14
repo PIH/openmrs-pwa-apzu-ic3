@@ -1406,7 +1406,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                     }
                                                     warn={[Function]}
                                                   >
-                                                    <RenderField
+                                                    <FieldInput
                                                       input={
                                                         Object {
                                                           "name": "obs|path=systolic|concept=6569bffe-977f-11e1-8993-905e29aff6c1",
@@ -1472,7 +1472,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                           </FormControl>
                                                         </div>
                                                       </div>
-                                                    </RenderField>
+                                                    </FieldInput>
                                                   </ConnectedField>
                                                 </Connect(ConnectedField)>
                                               </Field>
@@ -2105,7 +2105,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                     }
                                                     warn={[Function]}
                                                   >
-                                                    <RenderField
+                                                    <FieldInput
                                                       input={
                                                         Object {
                                                           "name": "obs|path=diastolic|concept=6569c116-977f-11e1-8993-905e29aff6c1",
@@ -2171,7 +2171,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                           </FormControl>
                                                         </div>
                                                       </div>
-                                                    </RenderField>
+                                                    </FieldInput>
                                                   </ConnectedField>
                                                 </Connect(ConnectedField)>
                                               </Field>
