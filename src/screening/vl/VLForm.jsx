@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
 import {Submit, Obs, EncounterFormPage} from '@openmrs/react-components';
-import { Alert, Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
+import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import PatientAlert from '../../patient/PatientAlert';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 
@@ -102,7 +102,7 @@ let VLForm = (props) => {
 const selector = formValueSelector('vl-form');
 
 export default connect(state => {
-  const bled = selector(state, 'obs|path=vl|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid);
+  const bled = selector(state, 'obs|path=vl-bled|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid);
   return {
     bled,
     patient: state.selectedPatient ? state.patients[state.selectedPatient] : null,
