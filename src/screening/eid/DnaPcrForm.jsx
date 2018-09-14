@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
-import {Submit, Obs, EncounterFormPage} from '@openmrs/react-components';
+import {Obs, EncounterFormPage} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 
@@ -80,10 +80,6 @@ let DnaPcrForm = (props) => {
         </FormGroup>
       </Row>
       }
-      <Row>
-        <Col sm={2}></Col>
-        <Col sm={4}><Submit /></Col>
-      </Row>
     </Grid>
   );
 

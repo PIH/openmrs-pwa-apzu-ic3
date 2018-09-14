@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
-import {Submit, Obs, EncounterFormPage} from '@openmrs/react-components';
+import { Obs, EncounterFormPage} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import PatientAlert from '../../patient/PatientAlert';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
@@ -17,7 +17,7 @@ let VLForm = (props) => {
           <Col componentClass={ControlLabel} sm={2}>
             Bled
           </Col>
-          <Col sm={8}>
+          <Col sm={6}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid}
               path="vl-bled"
@@ -34,7 +34,7 @@ let VLForm = (props) => {
           <Col componentClass={ControlLabel} sm={2}>
             Reason for no sample
           </Col>
-          <Col sm={8}>
+          <Col sm={6}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
               path="vl-reason-no-sample"
@@ -52,7 +52,7 @@ let VLForm = (props) => {
           <Col componentClass={ControlLabel} sm={2}>
             Reason for testing
           </Col>
-          <Col sm={8}>
+          <Col sm={6}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid}
               path="vl-reason-for-testing"
@@ -70,7 +70,7 @@ let VLForm = (props) => {
           <Col componentClass={ControlLabel} sm={2}>
             Laboratory
           </Col>
-          <Col sm={8}>
+          <Col sm={6}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid}
               path="vl-lab-location"
@@ -80,10 +80,6 @@ let VLForm = (props) => {
         </FormGroup>
       </Row>
       }
-      <Row>
-        <Col sm={2}></Col>
-        <Col sm={4}><Submit /></Col>
-      </Row>
     </Grid>
   );
 

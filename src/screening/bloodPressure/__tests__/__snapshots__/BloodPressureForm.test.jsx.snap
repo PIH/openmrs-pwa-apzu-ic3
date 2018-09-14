@@ -154,41 +154,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 </Col>
               </FormGroup>
             </Row>
-            <Row
-              bsClass="row"
-              componentClass="div"
-            >
-              <Col
-                bsClass="col"
-                componentClass="div"
-                sm={2}
-                xsOffset={2}
-              >
-                <Link
-                  replace={false}
-                  to="/screening/bloodPressure/queue"
-                >
-                  <Button
-                    active={false}
-                    block={false}
-                    bsClass="btn"
-                    bsSize="large"
-                    bsStyle="default"
-                    disabled={false}
-                  >
-                    Back to list
-                  </Button>
-                </Link>
-              </Col>
-              <Col
-                bsClass="col"
-                componentClass="div"
-                sm={2}
-                xsOffset={1}
-              >
-                <Submit />
-              </Col>
-            </Row>
           </Grid>
         }
         formId="bp-form"
@@ -325,41 +290,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     mmHG
                   </Col>
                 </FormGroup>
-              </Row>
-              <Row
-                bsClass="row"
-                componentClass="div"
-              >
-                <Col
-                  bsClass="col"
-                  componentClass="div"
-                  sm={2}
-                  xsOffset={2}
-                >
-                  <Link
-                    replace={false}
-                    to="/screening/bloodPressure/queue"
-                  >
-                    <Button
-                      active={false}
-                      block={false}
-                      bsClass="btn"
-                      bsSize="large"
-                      bsStyle="default"
-                      disabled={false}
-                    >
-                      Back to list
-                    </Button>
-                  </Link>
-                </Col>
-                <Col
-                  bsClass="col"
-                  componentClass="div"
-                  sm={2}
-                  xsOffset={1}
-                >
-                  <Submit />
-                </Col>
               </Row>
             </Grid>
           }
@@ -958,164 +888,172 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                       "autofill": [Function],
                                                       "blur": [Function],
                                                       "change": [Function],
-                                                      "children": <Grid
-                                                        bsClass="container"
-                                                        componentClass="div"
-                                                        fluid={false}
+                                                      "children": Array [
+                                                        <Grid
+                                                          bsClass="container"
+                                                          componentClass="div"
+                                                          fluid={false}
                                                     >
-                                                        <Section
-                                                            title="Enter Patient Blood Pressure"
-                                                        />
-                                                        <Row
-                                                            bsClass="row"
-                                                            componentClass="div"
-                                                        >
-                                                            <Col
-                                                                bsClass="col"
+                                                          <Section
+                                                                title="Enter Patient Blood Pressure"
+                                                          />
+                                                          <Row
+                                                                bsClass="row"
                                                                 componentClass="div"
-                                                                md={20}
-                                                                sm={20}
-                                                                style={
-                                                                    Object {
-                                                                        "height": "40px",
+                                                          >
+                                                                <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      md={20}
+                                                                      sm={20}
+                                                                      style={
+                                                                            Object {
+                                                                                  "height": "40px",
+                                                                                }
                                                                       }
-                                                                }
-                                                            >
-                                                                <span>
-                                                                    <h1 />
-                                                                </span>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row
-                                                            bsClass="row"
-                                                            componentClass="div"
-                                                        >
-                                                            <FormGroup
-                                                                bsClass="form-group"
-                                                                controlId="formSystolic"
-                                                            >
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass={[Function]}
-                                                                    sm={4}
                                                                 >
-                                                                    Systolic Blood Pressure
+                                                                      <span>
+                                                                            <h1 />
+                                                                      </span>
                                                                 </Col>
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass="div"
-                                                                    sm={2}
-                                                                >
-                                                                    <Obs
-                                                                        concept="6569bffe-977f-11e1-8993-905e29aff6c1"
-                                                                        path="systolic"
-                                                                        placeholder="Systolic value"
-                                                                        validate={
-                                                                            Array [
-                                                                                [Function],
-                                                                                [Function],
-                                                                              ]
-                                                                        }
-                                                                        warn={[Function]}
-                                                                    />
-                                                                </Col>
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass={[Function]}
-                                                                    sm={2}
-                                                                    style={
-                                                                        Object {
-                                                                            "textAlign": "left",
-                                                                          }
-                                                                    }
-                                                                >
-                                                                    mmHG
-                                                                </Col>
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row
-                                                            bsClass="row"
-                                                            componentClass="div"
-                                                        >
-                                                            <FormGroup
-                                                                bsClass="form-group"
-                                                                controlId="formDiastolic"
-                                                            >
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass={[Function]}
-                                                                    sm={4}
-                                                                >
-                                                                    Diastolic Blood Pressure
-                                                                </Col>
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass="div"
-                                                                    sm={2}
-                                                                >
-                                                                    <Obs
-                                                                        concept="6569c116-977f-11e1-8993-905e29aff6c1"
-                                                                        path="diastolic"
-                                                                        placeholder="Diastolic value"
-                                                                        validate={
-                                                                            Array [
-                                                                                [Function],
-                                                                                [Function],
-                                                                              ]
-                                                                        }
-                                                                        warn={[Function]}
-                                                                    />
-                                                                </Col>
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass={[Function]}
-                                                                    sm={2}
-                                                                    style={
-                                                                        Object {
-                                                                            "textAlign": "left",
-                                                                          }
-                                                                    }
-                                                                >
-                                                                    mmHG
-                                                                </Col>
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row
-                                                            bsClass="row"
-                                                            componentClass="div"
-                                                        >
-                                                            <Col
-                                                                bsClass="col"
+                                                          </Row>
+                                                          <Row
+                                                                bsClass="row"
                                                                 componentClass="div"
-                                                                sm={2}
-                                                                xsOffset={2}
-                                                            >
-                                                                <Link
-                                                                    replace={false}
-                                                                    to="/screening/bloodPressure/queue"
+                                                          >
+                                                                <FormGroup
+                                                                      bsClass="form-group"
+                                                                      controlId="formSystolic"
                                                                 >
-                                                                    <Button
-                                                                        active={false}
-                                                                        block={false}
-                                                                        bsClass="btn"
-                                                                        bsSize="large"
-                                                                        bsStyle="default"
-                                                                        disabled={false}
-                                                                    >
-                                                                        Back to list
-                                                                    </Button>
-                                                                </Link>
-                                                            </Col>
-                                                            <Col
-                                                                bsClass="col"
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass={[Function]}
+                                                                            sm={4}
+                                                                      >
+                                                                            Systolic Blood Pressure
+                                                                      </Col>
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass="div"
+                                                                            sm={2}
+                                                                      >
+                                                                            <Obs
+                                                                                  concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                                  path="systolic"
+                                                                                  placeholder="Systolic value"
+                                                                                  validate={
+                                                                                        Array [
+                                                                                              [Function],
+                                                                                              [Function],
+                                                                                            ]
+                                                                                  }
+                                                                                  warn={[Function]}
+                                                                            />
+                                                                      </Col>
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass={[Function]}
+                                                                            sm={2}
+                                                                            style={
+                                                                                  Object {
+                                                                                        "textAlign": "left",
+                                                                                      }
+                                                                            }
+                                                                      >
+                                                                            mmHG
+                                                                      </Col>
+                                                                </FormGroup>
+                                                          </Row>
+                                                          <Row
+                                                                bsClass="row"
                                                                 componentClass="div"
-                                                                sm={2}
-                                                                xsOffset={1}
-                                                            >
-                                                                <Submit />
-                                                            </Col>
-                                                        </Row>
+                                                          >
+                                                                <FormGroup
+                                                                      bsClass="form-group"
+                                                                      controlId="formDiastolic"
+                                                                >
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass={[Function]}
+                                                                            sm={4}
+                                                                      >
+                                                                            Diastolic Blood Pressure
+                                                                      </Col>
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass="div"
+                                                                            sm={2}
+                                                                      >
+                                                                            <Obs
+                                                                                  concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                                  path="diastolic"
+                                                                                  placeholder="Diastolic value"
+                                                                                  validate={
+                                                                                        Array [
+                                                                                              [Function],
+                                                                                              [Function],
+                                                                                            ]
+                                                                                  }
+                                                                                  warn={[Function]}
+                                                                            />
+                                                                      </Col>
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass={[Function]}
+                                                                            sm={2}
+                                                                            style={
+                                                                                  Object {
+                                                                                        "textAlign": "left",
+                                                                                      }
+                                                                            }
+                                                                      >
+                                                                            mmHG
+                                                                      </Col>
+                                                                </FormGroup>
+                                                          </Row>
                                                     </Grid>,
+                                                        <Grid
+                                                          bsClass="container"
+                                                          componentClass="div"
+                                                          fluid={false}
+                                                    >
+                                                          <Row
+                                                                bsClass="row"
+                                                                componentClass="div"
+                                                          >
+                                                                <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={2}
+                                                                      xsOffset={2}
+                                                                >
+                                                                      <Link
+                                                                            replace={false}
+                                                                            to="/screening/bloodPressure/queue"
+                                                                      >
+                                                                            <Button
+                                                                                  active={false}
+                                                                                  block={false}
+                                                                                  bsClass="btn"
+                                                                                  bsSize="large"
+                                                                                  bsStyle="default"
+                                                                                  disabled={false}
+                                                                            >
+                                                                                  Back to list
+                                                                            </Button>
+                                                                      </Link>
+                                                                </Col>
+                                                                <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={2}
+                                                                      xsOffset={1}
+                                                                >
+                                                                      <Submit />
+                                                                </Col>
+                                                          </Row>
+                                                    </Grid>,
+                                                      ],
                                                       "clearAsyncError": [Function],
                                                       "clearFields": [Function],
                                                       "clearSubmit": [Function],
@@ -1240,164 +1178,172 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "autofill": [Function],
                                                         "blur": [Function],
                                                         "change": [Function],
-                                                        "children": <Grid
-                                                          bsClass="container"
-                                                          componentClass="div"
-                                                          fluid={false}
+                                                        "children": Array [
+                                                          <Grid
+                                                            bsClass="container"
+                                                            componentClass="div"
+                                                            fluid={false}
                                                       >
-                                                          <Section
-                                                              title="Enter Patient Blood Pressure"
-                                                          />
-                                                          <Row
-                                                              bsClass="row"
-                                                              componentClass="div"
-                                                          >
-                                                              <Col
-                                                                  bsClass="col"
+                                                            <Section
+                                                                  title="Enter Patient Blood Pressure"
+                                                            />
+                                                            <Row
+                                                                  bsClass="row"
                                                                   componentClass="div"
-                                                                  md={20}
-                                                                  sm={20}
-                                                                  style={
-                                                                      Object {
-                                                                          "height": "40px",
+                                                            >
+                                                                  <Col
+                                                                        bsClass="col"
+                                                                        componentClass="div"
+                                                                        md={20}
+                                                                        sm={20}
+                                                                        style={
+                                                                              Object {
+                                                                                    "height": "40px",
+                                                                                  }
                                                                         }
-                                                                  }
-                                                              >
-                                                                  <span>
-                                                                      <h1 />
-                                                                  </span>
-                                                              </Col>
-                                                          </Row>
-                                                          <Row
-                                                              bsClass="row"
-                                                              componentClass="div"
-                                                          >
-                                                              <FormGroup
-                                                                  bsClass="form-group"
-                                                                  controlId="formSystolic"
-                                                              >
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass={[Function]}
-                                                                      sm={4}
                                                                   >
-                                                                      Systolic Blood Pressure
+                                                                        <span>
+                                                                              <h1 />
+                                                                        </span>
                                                                   </Col>
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass="div"
-                                                                      sm={2}
-                                                                  >
-                                                                      <Obs
-                                                                          concept="6569bffe-977f-11e1-8993-905e29aff6c1"
-                                                                          path="systolic"
-                                                                          placeholder="Systolic value"
-                                                                          validate={
-                                                                              Array [
-                                                                                  [Function],
-                                                                                  [Function],
-                                                                                ]
-                                                                          }
-                                                                          warn={[Function]}
-                                                                      />
-                                                                  </Col>
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass={[Function]}
-                                                                      sm={2}
-                                                                      style={
-                                                                          Object {
-                                                                              "textAlign": "left",
-                                                                            }
-                                                                      }
-                                                                  >
-                                                                      mmHG
-                                                                  </Col>
-                                                              </FormGroup>
-                                                          </Row>
-                                                          <Row
-                                                              bsClass="row"
-                                                              componentClass="div"
-                                                          >
-                                                              <FormGroup
-                                                                  bsClass="form-group"
-                                                                  controlId="formDiastolic"
-                                                              >
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass={[Function]}
-                                                                      sm={4}
-                                                                  >
-                                                                      Diastolic Blood Pressure
-                                                                  </Col>
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass="div"
-                                                                      sm={2}
-                                                                  >
-                                                                      <Obs
-                                                                          concept="6569c116-977f-11e1-8993-905e29aff6c1"
-                                                                          path="diastolic"
-                                                                          placeholder="Diastolic value"
-                                                                          validate={
-                                                                              Array [
-                                                                                  [Function],
-                                                                                  [Function],
-                                                                                ]
-                                                                          }
-                                                                          warn={[Function]}
-                                                                      />
-                                                                  </Col>
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass={[Function]}
-                                                                      sm={2}
-                                                                      style={
-                                                                          Object {
-                                                                              "textAlign": "left",
-                                                                            }
-                                                                      }
-                                                                  >
-                                                                      mmHG
-                                                                  </Col>
-                                                              </FormGroup>
-                                                          </Row>
-                                                          <Row
-                                                              bsClass="row"
-                                                              componentClass="div"
-                                                          >
-                                                              <Col
-                                                                  bsClass="col"
+                                                            </Row>
+                                                            <Row
+                                                                  bsClass="row"
                                                                   componentClass="div"
-                                                                  sm={2}
-                                                                  xsOffset={2}
-                                                              >
-                                                                  <Link
-                                                                      replace={false}
-                                                                      to="/screening/bloodPressure/queue"
+                                                            >
+                                                                  <FormGroup
+                                                                        bsClass="form-group"
+                                                                        controlId="formSystolic"
                                                                   >
-                                                                      <Button
-                                                                          active={false}
-                                                                          block={false}
-                                                                          bsClass="btn"
-                                                                          bsSize="large"
-                                                                          bsStyle="default"
-                                                                          disabled={false}
-                                                                      >
-                                                                          Back to list
-                                                                      </Button>
-                                                                  </Link>
-                                                              </Col>
-                                                              <Col
-                                                                  bsClass="col"
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass={[Function]}
+                                                                              sm={4}
+                                                                        >
+                                                                              Systolic Blood Pressure
+                                                                        </Col>
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass="div"
+                                                                              sm={2}
+                                                                        >
+                                                                              <Obs
+                                                                                    concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                                    path="systolic"
+                                                                                    placeholder="Systolic value"
+                                                                                    validate={
+                                                                                          Array [
+                                                                                                [Function],
+                                                                                                [Function],
+                                                                                              ]
+                                                                                    }
+                                                                                    warn={[Function]}
+                                                                              />
+                                                                        </Col>
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass={[Function]}
+                                                                              sm={2}
+                                                                              style={
+                                                                                    Object {
+                                                                                          "textAlign": "left",
+                                                                                        }
+                                                                              }
+                                                                        >
+                                                                              mmHG
+                                                                        </Col>
+                                                                  </FormGroup>
+                                                            </Row>
+                                                            <Row
+                                                                  bsClass="row"
                                                                   componentClass="div"
-                                                                  sm={2}
-                                                                  xsOffset={1}
-                                                              >
-                                                                  <Submit />
-                                                              </Col>
-                                                          </Row>
+                                                            >
+                                                                  <FormGroup
+                                                                        bsClass="form-group"
+                                                                        controlId="formDiastolic"
+                                                                  >
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass={[Function]}
+                                                                              sm={4}
+                                                                        >
+                                                                              Diastolic Blood Pressure
+                                                                        </Col>
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass="div"
+                                                                              sm={2}
+                                                                        >
+                                                                              <Obs
+                                                                                    concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                                    path="diastolic"
+                                                                                    placeholder="Diastolic value"
+                                                                                    validate={
+                                                                                          Array [
+                                                                                                [Function],
+                                                                                                [Function],
+                                                                                              ]
+                                                                                    }
+                                                                                    warn={[Function]}
+                                                                              />
+                                                                        </Col>
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass={[Function]}
+                                                                              sm={2}
+                                                                              style={
+                                                                                    Object {
+                                                                                          "textAlign": "left",
+                                                                                        }
+                                                                              }
+                                                                        >
+                                                                              mmHG
+                                                                        </Col>
+                                                                  </FormGroup>
+                                                            </Row>
                                                       </Grid>,
+                                                          <Grid
+                                                            bsClass="container"
+                                                            componentClass="div"
+                                                            fluid={false}
+                                                      >
+                                                            <Row
+                                                                  bsClass="row"
+                                                                  componentClass="div"
+                                                            >
+                                                                  <Col
+                                                                        bsClass="col"
+                                                                        componentClass="div"
+                                                                        sm={2}
+                                                                        xsOffset={2}
+                                                                  >
+                                                                        <Link
+                                                                              replace={false}
+                                                                              to="/screening/bloodPressure/queue"
+                                                                        >
+                                                                              <Button
+                                                                                    active={false}
+                                                                                    block={false}
+                                                                                    bsClass="btn"
+                                                                                    bsSize="large"
+                                                                                    bsStyle="default"
+                                                                                    disabled={false}
+                                                                              >
+                                                                                    Back to list
+                                                                              </Button>
+                                                                        </Link>
+                                                                  </Col>
+                                                                  <Col
+                                                                        bsClass="col"
+                                                                        componentClass="div"
+                                                                        sm={2}
+                                                                        xsOffset={1}
+                                                                  >
+                                                                        <Submit />
+                                                                  </Col>
+                                                            </Row>
+                                                      </Grid>,
+                                                        ],
                                                         "clearAsyncError": [Function],
                                                         "clearFields": [Function],
                                                         "clearSubmit": [Function],
@@ -1701,164 +1647,172 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                       "autofill": [Function],
                                                       "blur": [Function],
                                                       "change": [Function],
-                                                      "children": <Grid
-                                                        bsClass="container"
-                                                        componentClass="div"
-                                                        fluid={false}
+                                                      "children": Array [
+                                                        <Grid
+                                                          bsClass="container"
+                                                          componentClass="div"
+                                                          fluid={false}
                                                     >
-                                                        <Section
-                                                            title="Enter Patient Blood Pressure"
-                                                        />
-                                                        <Row
-                                                            bsClass="row"
-                                                            componentClass="div"
-                                                        >
-                                                            <Col
-                                                                bsClass="col"
+                                                          <Section
+                                                                title="Enter Patient Blood Pressure"
+                                                          />
+                                                          <Row
+                                                                bsClass="row"
                                                                 componentClass="div"
-                                                                md={20}
-                                                                sm={20}
-                                                                style={
-                                                                    Object {
-                                                                        "height": "40px",
+                                                          >
+                                                                <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      md={20}
+                                                                      sm={20}
+                                                                      style={
+                                                                            Object {
+                                                                                  "height": "40px",
+                                                                                }
                                                                       }
-                                                                }
-                                                            >
-                                                                <span>
-                                                                    <h1 />
-                                                                </span>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row
-                                                            bsClass="row"
-                                                            componentClass="div"
-                                                        >
-                                                            <FormGroup
-                                                                bsClass="form-group"
-                                                                controlId="formSystolic"
-                                                            >
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass={[Function]}
-                                                                    sm={4}
                                                                 >
-                                                                    Systolic Blood Pressure
+                                                                      <span>
+                                                                            <h1 />
+                                                                      </span>
                                                                 </Col>
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass="div"
-                                                                    sm={2}
-                                                                >
-                                                                    <Obs
-                                                                        concept="6569bffe-977f-11e1-8993-905e29aff6c1"
-                                                                        path="systolic"
-                                                                        placeholder="Systolic value"
-                                                                        validate={
-                                                                            Array [
-                                                                                [Function],
-                                                                                [Function],
-                                                                              ]
-                                                                        }
-                                                                        warn={[Function]}
-                                                                    />
-                                                                </Col>
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass={[Function]}
-                                                                    sm={2}
-                                                                    style={
-                                                                        Object {
-                                                                            "textAlign": "left",
-                                                                          }
-                                                                    }
-                                                                >
-                                                                    mmHG
-                                                                </Col>
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row
-                                                            bsClass="row"
-                                                            componentClass="div"
-                                                        >
-                                                            <FormGroup
-                                                                bsClass="form-group"
-                                                                controlId="formDiastolic"
-                                                            >
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass={[Function]}
-                                                                    sm={4}
-                                                                >
-                                                                    Diastolic Blood Pressure
-                                                                </Col>
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass="div"
-                                                                    sm={2}
-                                                                >
-                                                                    <Obs
-                                                                        concept="6569c116-977f-11e1-8993-905e29aff6c1"
-                                                                        path="diastolic"
-                                                                        placeholder="Diastolic value"
-                                                                        validate={
-                                                                            Array [
-                                                                                [Function],
-                                                                                [Function],
-                                                                              ]
-                                                                        }
-                                                                        warn={[Function]}
-                                                                    />
-                                                                </Col>
-                                                                <Col
-                                                                    bsClass="col"
-                                                                    componentClass={[Function]}
-                                                                    sm={2}
-                                                                    style={
-                                                                        Object {
-                                                                            "textAlign": "left",
-                                                                          }
-                                                                    }
-                                                                >
-                                                                    mmHG
-                                                                </Col>
-                                                            </FormGroup>
-                                                        </Row>
-                                                        <Row
-                                                            bsClass="row"
-                                                            componentClass="div"
-                                                        >
-                                                            <Col
-                                                                bsClass="col"
+                                                          </Row>
+                                                          <Row
+                                                                bsClass="row"
                                                                 componentClass="div"
-                                                                sm={2}
-                                                                xsOffset={2}
-                                                            >
-                                                                <Link
-                                                                    replace={false}
-                                                                    to="/screening/bloodPressure/queue"
+                                                          >
+                                                                <FormGroup
+                                                                      bsClass="form-group"
+                                                                      controlId="formSystolic"
                                                                 >
-                                                                    <Button
-                                                                        active={false}
-                                                                        block={false}
-                                                                        bsClass="btn"
-                                                                        bsSize="large"
-                                                                        bsStyle="default"
-                                                                        disabled={false}
-                                                                    >
-                                                                        Back to list
-                                                                    </Button>
-                                                                </Link>
-                                                            </Col>
-                                                            <Col
-                                                                bsClass="col"
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass={[Function]}
+                                                                            sm={4}
+                                                                      >
+                                                                            Systolic Blood Pressure
+                                                                      </Col>
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass="div"
+                                                                            sm={2}
+                                                                      >
+                                                                            <Obs
+                                                                                  concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                                  path="systolic"
+                                                                                  placeholder="Systolic value"
+                                                                                  validate={
+                                                                                        Array [
+                                                                                              [Function],
+                                                                                              [Function],
+                                                                                            ]
+                                                                                  }
+                                                                                  warn={[Function]}
+                                                                            />
+                                                                      </Col>
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass={[Function]}
+                                                                            sm={2}
+                                                                            style={
+                                                                                  Object {
+                                                                                        "textAlign": "left",
+                                                                                      }
+                                                                            }
+                                                                      >
+                                                                            mmHG
+                                                                      </Col>
+                                                                </FormGroup>
+                                                          </Row>
+                                                          <Row
+                                                                bsClass="row"
                                                                 componentClass="div"
-                                                                sm={2}
-                                                                xsOffset={1}
-                                                            >
-                                                                <Submit />
-                                                            </Col>
-                                                        </Row>
+                                                          >
+                                                                <FormGroup
+                                                                      bsClass="form-group"
+                                                                      controlId="formDiastolic"
+                                                                >
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass={[Function]}
+                                                                            sm={4}
+                                                                      >
+                                                                            Diastolic Blood Pressure
+                                                                      </Col>
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass="div"
+                                                                            sm={2}
+                                                                      >
+                                                                            <Obs
+                                                                                  concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                                  path="diastolic"
+                                                                                  placeholder="Diastolic value"
+                                                                                  validate={
+                                                                                        Array [
+                                                                                              [Function],
+                                                                                              [Function],
+                                                                                            ]
+                                                                                  }
+                                                                                  warn={[Function]}
+                                                                            />
+                                                                      </Col>
+                                                                      <Col
+                                                                            bsClass="col"
+                                                                            componentClass={[Function]}
+                                                                            sm={2}
+                                                                            style={
+                                                                                  Object {
+                                                                                        "textAlign": "left",
+                                                                                      }
+                                                                            }
+                                                                      >
+                                                                            mmHG
+                                                                      </Col>
+                                                                </FormGroup>
+                                                          </Row>
                                                     </Grid>,
+                                                        <Grid
+                                                          bsClass="container"
+                                                          componentClass="div"
+                                                          fluid={false}
+                                                    >
+                                                          <Row
+                                                                bsClass="row"
+                                                                componentClass="div"
+                                                          >
+                                                                <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={2}
+                                                                      xsOffset={2}
+                                                                >
+                                                                      <Link
+                                                                            replace={false}
+                                                                            to="/screening/bloodPressure/queue"
+                                                                      >
+                                                                            <Button
+                                                                                  active={false}
+                                                                                  block={false}
+                                                                                  bsClass="btn"
+                                                                                  bsSize="large"
+                                                                                  bsStyle="default"
+                                                                                  disabled={false}
+                                                                            >
+                                                                                  Back to list
+                                                                            </Button>
+                                                                      </Link>
+                                                                </Col>
+                                                                <Col
+                                                                      bsClass="col"
+                                                                      componentClass="div"
+                                                                      sm={2}
+                                                                      xsOffset={1}
+                                                                >
+                                                                      <Submit />
+                                                                </Col>
+                                                          </Row>
+                                                    </Grid>,
+                                                      ],
                                                       "clearAsyncError": [Function],
                                                       "clearFields": [Function],
                                                       "clearSubmit": [Function],
@@ -1983,164 +1937,172 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "autofill": [Function],
                                                         "blur": [Function],
                                                         "change": [Function],
-                                                        "children": <Grid
-                                                          bsClass="container"
-                                                          componentClass="div"
-                                                          fluid={false}
+                                                        "children": Array [
+                                                          <Grid
+                                                            bsClass="container"
+                                                            componentClass="div"
+                                                            fluid={false}
                                                       >
-                                                          <Section
-                                                              title="Enter Patient Blood Pressure"
-                                                          />
-                                                          <Row
-                                                              bsClass="row"
-                                                              componentClass="div"
-                                                          >
-                                                              <Col
-                                                                  bsClass="col"
+                                                            <Section
+                                                                  title="Enter Patient Blood Pressure"
+                                                            />
+                                                            <Row
+                                                                  bsClass="row"
                                                                   componentClass="div"
-                                                                  md={20}
-                                                                  sm={20}
-                                                                  style={
-                                                                      Object {
-                                                                          "height": "40px",
+                                                            >
+                                                                  <Col
+                                                                        bsClass="col"
+                                                                        componentClass="div"
+                                                                        md={20}
+                                                                        sm={20}
+                                                                        style={
+                                                                              Object {
+                                                                                    "height": "40px",
+                                                                                  }
                                                                         }
-                                                                  }
-                                                              >
-                                                                  <span>
-                                                                      <h1 />
-                                                                  </span>
-                                                              </Col>
-                                                          </Row>
-                                                          <Row
-                                                              bsClass="row"
-                                                              componentClass="div"
-                                                          >
-                                                              <FormGroup
-                                                                  bsClass="form-group"
-                                                                  controlId="formSystolic"
-                                                              >
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass={[Function]}
-                                                                      sm={4}
                                                                   >
-                                                                      Systolic Blood Pressure
+                                                                        <span>
+                                                                              <h1 />
+                                                                        </span>
                                                                   </Col>
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass="div"
-                                                                      sm={2}
-                                                                  >
-                                                                      <Obs
-                                                                          concept="6569bffe-977f-11e1-8993-905e29aff6c1"
-                                                                          path="systolic"
-                                                                          placeholder="Systolic value"
-                                                                          validate={
-                                                                              Array [
-                                                                                  [Function],
-                                                                                  [Function],
-                                                                                ]
-                                                                          }
-                                                                          warn={[Function]}
-                                                                      />
-                                                                  </Col>
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass={[Function]}
-                                                                      sm={2}
-                                                                      style={
-                                                                          Object {
-                                                                              "textAlign": "left",
-                                                                            }
-                                                                      }
-                                                                  >
-                                                                      mmHG
-                                                                  </Col>
-                                                              </FormGroup>
-                                                          </Row>
-                                                          <Row
-                                                              bsClass="row"
-                                                              componentClass="div"
-                                                          >
-                                                              <FormGroup
-                                                                  bsClass="form-group"
-                                                                  controlId="formDiastolic"
-                                                              >
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass={[Function]}
-                                                                      sm={4}
-                                                                  >
-                                                                      Diastolic Blood Pressure
-                                                                  </Col>
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass="div"
-                                                                      sm={2}
-                                                                  >
-                                                                      <Obs
-                                                                          concept="6569c116-977f-11e1-8993-905e29aff6c1"
-                                                                          path="diastolic"
-                                                                          placeholder="Diastolic value"
-                                                                          validate={
-                                                                              Array [
-                                                                                  [Function],
-                                                                                  [Function],
-                                                                                ]
-                                                                          }
-                                                                          warn={[Function]}
-                                                                      />
-                                                                  </Col>
-                                                                  <Col
-                                                                      bsClass="col"
-                                                                      componentClass={[Function]}
-                                                                      sm={2}
-                                                                      style={
-                                                                          Object {
-                                                                              "textAlign": "left",
-                                                                            }
-                                                                      }
-                                                                  >
-                                                                      mmHG
-                                                                  </Col>
-                                                              </FormGroup>
-                                                          </Row>
-                                                          <Row
-                                                              bsClass="row"
-                                                              componentClass="div"
-                                                          >
-                                                              <Col
-                                                                  bsClass="col"
+                                                            </Row>
+                                                            <Row
+                                                                  bsClass="row"
                                                                   componentClass="div"
-                                                                  sm={2}
-                                                                  xsOffset={2}
-                                                              >
-                                                                  <Link
-                                                                      replace={false}
-                                                                      to="/screening/bloodPressure/queue"
+                                                            >
+                                                                  <FormGroup
+                                                                        bsClass="form-group"
+                                                                        controlId="formSystolic"
                                                                   >
-                                                                      <Button
-                                                                          active={false}
-                                                                          block={false}
-                                                                          bsClass="btn"
-                                                                          bsSize="large"
-                                                                          bsStyle="default"
-                                                                          disabled={false}
-                                                                      >
-                                                                          Back to list
-                                                                      </Button>
-                                                                  </Link>
-                                                              </Col>
-                                                              <Col
-                                                                  bsClass="col"
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass={[Function]}
+                                                                              sm={4}
+                                                                        >
+                                                                              Systolic Blood Pressure
+                                                                        </Col>
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass="div"
+                                                                              sm={2}
+                                                                        >
+                                                                              <Obs
+                                                                                    concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                                    path="systolic"
+                                                                                    placeholder="Systolic value"
+                                                                                    validate={
+                                                                                          Array [
+                                                                                                [Function],
+                                                                                                [Function],
+                                                                                              ]
+                                                                                    }
+                                                                                    warn={[Function]}
+                                                                              />
+                                                                        </Col>
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass={[Function]}
+                                                                              sm={2}
+                                                                              style={
+                                                                                    Object {
+                                                                                          "textAlign": "left",
+                                                                                        }
+                                                                              }
+                                                                        >
+                                                                              mmHG
+                                                                        </Col>
+                                                                  </FormGroup>
+                                                            </Row>
+                                                            <Row
+                                                                  bsClass="row"
                                                                   componentClass="div"
-                                                                  sm={2}
-                                                                  xsOffset={1}
-                                                              >
-                                                                  <Submit />
-                                                              </Col>
-                                                          </Row>
+                                                            >
+                                                                  <FormGroup
+                                                                        bsClass="form-group"
+                                                                        controlId="formDiastolic"
+                                                                  >
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass={[Function]}
+                                                                              sm={4}
+                                                                        >
+                                                                              Diastolic Blood Pressure
+                                                                        </Col>
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass="div"
+                                                                              sm={2}
+                                                                        >
+                                                                              <Obs
+                                                                                    concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                                    path="diastolic"
+                                                                                    placeholder="Diastolic value"
+                                                                                    validate={
+                                                                                          Array [
+                                                                                                [Function],
+                                                                                                [Function],
+                                                                                              ]
+                                                                                    }
+                                                                                    warn={[Function]}
+                                                                              />
+                                                                        </Col>
+                                                                        <Col
+                                                                              bsClass="col"
+                                                                              componentClass={[Function]}
+                                                                              sm={2}
+                                                                              style={
+                                                                                    Object {
+                                                                                          "textAlign": "left",
+                                                                                        }
+                                                                              }
+                                                                        >
+                                                                              mmHG
+                                                                        </Col>
+                                                                  </FormGroup>
+                                                            </Row>
                                                       </Grid>,
+                                                          <Grid
+                                                            bsClass="container"
+                                                            componentClass="div"
+                                                            fluid={false}
+                                                      >
+                                                            <Row
+                                                                  bsClass="row"
+                                                                  componentClass="div"
+                                                            >
+                                                                  <Col
+                                                                        bsClass="col"
+                                                                        componentClass="div"
+                                                                        sm={2}
+                                                                        xsOffset={2}
+                                                                  >
+                                                                        <Link
+                                                                              replace={false}
+                                                                              to="/screening/bloodPressure/queue"
+                                                                        >
+                                                                              <Button
+                                                                                    active={false}
+                                                                                    block={false}
+                                                                                    bsClass="btn"
+                                                                                    bsSize="large"
+                                                                                    bsStyle="default"
+                                                                                    disabled={false}
+                                                                              >
+                                                                                    Back to list
+                                                                              </Button>
+                                                                        </Link>
+                                                                  </Col>
+                                                                  <Col
+                                                                        bsClass="col"
+                                                                        componentClass="div"
+                                                                        sm={2}
+                                                                        xsOffset={1}
+                                                                  >
+                                                                        <Submit />
+                                                                  </Col>
+                                                            </Row>
+                                                      </Grid>,
+                                                        ],
                                                         "clearAsyncError": [Function],
                                                         "clearFields": [Function],
                                                         "clearSubmit": [Function],
@@ -2347,6 +2309,16 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                     </FormGroup>
                                   </div>
                                 </Row>
+                              </div>
+                            </Grid>
+                            <Grid
+                              bsClass="container"
+                              componentClass="div"
+                              fluid={false}
+                            >
+                              <div
+                                className="container"
+                              >
                                 <Row
                                   bsClass="row"
                                   componentClass="div"

@@ -1,7 +1,6 @@
 import React from "react";
-import {Submit, Obs, Section, EncounterFormPage, formValidations } from '@openmrs/react-components';
-import { Button, Grid, Row, FormGroup, ControlLabel, Col} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import {Obs, Section, EncounterFormPage, formValidations } from '@openmrs/react-components';
+import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 import {colHeight, leftTextAlign} from "../../pwaStyles";
 
@@ -72,16 +71,7 @@ let BloodPressureForm = props => {
           </Col>
         </FormGroup>
       </Row>
-      <Row>
-        <Col sm={2} xsOffset={2}>
-          <Link to={ backLink }>
-            <Button bsSize="large">Back to list</Button>
-          </Link>
-        </Col>
-        <Col sm={2} xsOffset={1}>
-          <Submit/>
-        </Col>
-      </Row>
+
     </Grid>
   );
 

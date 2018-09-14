@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Submit, Obs, EncounterFormPage} from '@openmrs/react-components';
+import { Obs, EncounterFormPage} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import '../../assets/css/tabs.css';
@@ -23,10 +23,6 @@ let HtcForm = (props) => {
             />
           </Col>
         </FormGroup>
-      </Row>
-
-      <Row>
-        <Submit />
       </Row>
     </Grid>
   );

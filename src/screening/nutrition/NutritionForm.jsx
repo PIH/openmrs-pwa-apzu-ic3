@@ -1,5 +1,5 @@
 import React from 'react';
-import {Submit, Obs, EncounterFormPage} from '@openmrs/react-components';
+import { Obs, EncounterFormPage} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 
@@ -32,9 +32,6 @@ let NutritionForm = (props) => {
             />
           </Col>
         </FormGroup>
-      </Row>
-      <Row>
-        <Submit />
       </Row>
     </Grid>
   );
