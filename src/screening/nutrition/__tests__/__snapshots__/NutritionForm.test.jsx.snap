@@ -750,7 +750,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                                   bsStyle="default"
                                                                                   disabled={false}
                                                                             >
-                                                                                  Back to list
+                                                                                  Cancel
                                                                             </Button>
                                                                       </Link>
                                                                 </Col>
@@ -970,7 +970,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                                     bsStyle="default"
                                                                                     disabled={false}
                                                                               >
-                                                                                    Back to list
+                                                                                    Cancel
                                                                               </Button>
                                                                         </Link>
                                                                   </Col>
@@ -1317,7 +1317,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                                   bsStyle="default"
                                                                                   disabled={false}
                                                                             >
-                                                                                  Back to list
+                                                                                  Cancel
                                                                             </Button>
                                                                       </Link>
                                                                 </Col>
@@ -1537,7 +1537,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                                     bsStyle="default"
                                                                                     disabled={false}
                                                                               >
-                                                                                    Back to list
+                                                                                    Cancel
                                                                               </Button>
                                                                         </Link>
                                                                   </Col>
@@ -1761,7 +1761,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                 disabled={false}
                                                 type="button"
                                               >
-                                                Back to list
+                                                Cancel
                                               </button>
                                             </Button>
                                           </a>
