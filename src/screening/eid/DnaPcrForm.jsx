@@ -38,7 +38,7 @@ let DnaPcrForm = (props) => {
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
               path="dna-pcrdr-reason-no-sample"
-              conceptAnswers={ FORM_ANSWERS.noSampleAnswers }
+              conceptAnswers={ FORM_ANSWERS.eidNoSampleAnswers }
             />
           </Col>
         </FormGroup>

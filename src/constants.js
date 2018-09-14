@@ -125,7 +125,7 @@ export const CONCEPTS = {
       name: 'Routine'
     },
     'SixWeeksRoutine': {
-      uuid: '6743B204-612E-4623-B495-2FCCC44F76E1',
+      uuid: 'e0821812-955d-11e7-abc4-cec278b6b50a',
       name: '6w Routine'
     },
     'Confirmatory': {
@@ -182,6 +182,11 @@ export const FORM_ANSWERS = {
   'bledAnswers' : [
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.True.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.True.name },
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.False.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.False.name },
+  ],
+  'eidNoSampleAnswers': [
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.name },
+    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.name },
   ],
   'noSampleAnswers': [
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.name },
