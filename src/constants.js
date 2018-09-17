@@ -27,6 +27,9 @@ export const ENCOUNTER_TYPES = {
   'DnaPcrEncounterType': {
     uuid: '8383DE35-5145-4953-A018-34876B797F3E'
   },
+  'AdherenceCounselingEncounterType': {
+    uuid: '7D801495-3857-422F-BE2A-A4EEB3F36278'
+  },
 };
 
 
@@ -80,6 +83,28 @@ export const CONCEPTS = {
     'Not_Done': {
       uuid: '6557a4ae-977f-11e1-8993-905e29aff6c1',
       name: 'Not performed today'
+    }
+  },
+  'ADHERENCE_COUNSELING': {
+    'AdherenceSession': {
+      uuid: '06b1f7d8-b6cc-11e8-96f8-529269fb1459',
+      name: 'Adherence Session',
+      'FirstSession': {
+        uuid: '65662ed4-977f-11e1-8993-905e29aff6c1',
+        name: '1st Session'
+      },
+      'SecondSession': {
+        uuid: '65662fd8-977f-11e1-8993-905e29aff6c1',
+        name: '2nd Session'
+      },
+      'ThirdSession': {
+        uuid: '656630e6-977f-11e1-8993-905e29aff6c1',
+        name: '3rd Session'
+      }
+    },
+    'NameOfCounselor': {
+      uuid: '6562b4fc-977f-11e1-8993-905e29aff6c1',
+      name: 'Name of counselor'
     }
   },
   'VIRAL_LOAD_TEST_SET': {
@@ -212,6 +237,11 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.HTC_RESULTS.Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Reactive.name },
     { uuid: CONCEPTS.HTC_RESULTS.Non_Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Non_Reactive.name },
     { uuid: CONCEPTS.HTC_RESULTS.Not_Done.uuid, name: CONCEPTS.HTC_RESULTS.Not_Done.name },
+  ],
+  'adherenceSession': [
+    { uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.uuid, name: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.name },
+    { uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.uuid, name: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.name },
+    { uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.uuid, name: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.name },
   ]
 };
 
@@ -220,6 +250,7 @@ export const NAV_MENU_PAGES = {
   '/searchPatient' : { display : 'Search Patient', icon : 'search'},
   '/checkin/checkInTabs' : { display : 'Check-In', icon : 'notes-medical'},
   '/screening/vl/tabs' : { display : 'Viral Load', icon : 'vial' },
+  '/screening/adherence/queue' : { display : 'Adherence', icon : 'pills' },
   '/screening/eid/tabs' : { display : 'EID', icon : 'child' },
   '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
   '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
