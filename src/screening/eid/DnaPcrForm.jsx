@@ -21,14 +21,14 @@ let DnaPcrForm = (props) => {
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid}
               path="dna-pcr-bled"
-              conceptAnswers={ FORM_ANSWERS.bledAnswers }
+              conceptAnswers={ FORM_ANSWERS.trueFalse }
             />
           </Col>
         </FormGroup>
       </Row>
 
       {(typeof props.bled !== 'undefined') &&
-      (props.bled === CONCEPTS.VIRAL_LOAD_TEST_SET.False.uuid) &&
+      (props.bled === CONCEPTS.False.uuid) &&
       <Row>
         <FormGroup controlId="formReasonForNoSample">
           <Col componentClass={ControlLabel} sm={2}>
@@ -46,7 +46,7 @@ let DnaPcrForm = (props) => {
       }
 
       {(typeof props.bled !== 'undefined') &&
-      (props.bled === CONCEPTS.VIRAL_LOAD_TEST_SET.True.uuid) &&
+      (props.bled === CONCEPTS.True.uuid) &&
       <Row>
         <FormGroup controlId="formReasonForTesting">
           <Col componentClass={ControlLabel} sm={2}>
@@ -64,7 +64,7 @@ let DnaPcrForm = (props) => {
       }
 
       {(typeof props.bled !== 'undefined') &&
-      (props.bled === CONCEPTS.VIRAL_LOAD_TEST_SET.True.uuid) &&
+      (props.bled === CONCEPTS.True.uuid) &&
       <Row>
         <FormGroup controlId="formLabLocation">
           <Col componentClass={ControlLabel} sm={2}>

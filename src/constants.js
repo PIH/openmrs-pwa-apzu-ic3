@@ -58,6 +58,14 @@ export const LOCATION_TYPES = {
 };
 
 export const CONCEPTS = {
+  'True': {
+    uuid: '655e2f90-977f-11e1-8993-905e29aff6c1',
+    name: 'Yes'
+  },
+  'False': {
+    uuid: '655e3148-977f-11e1-8993-905e29aff6c1',
+    name: 'No'
+  },
   'SystolicBloodPressure' : {
     uuid: '6569bffe-977f-11e1-8993-905e29aff6c1'
   },
@@ -105,6 +113,18 @@ export const CONCEPTS = {
     'NameOfCounselor': {
       uuid: '6562b4fc-977f-11e1-8993-905e29aff6c1',
       name: 'Name of counselor'
+    },
+    'CounseledOnPillCounts': {
+      uuid: '06b2005c-b6cc-11e8-96f8-529269fb1459',
+      name: 'Counseled on pill counts'
+    },
+    'DrugAdherencePercentage': {
+      uuid: '06b20552-b6cc-11e8-96f8-529269fb1459',
+      name: 'Drug adherence percentage'
+    },
+    'CounseledOnViralLoad': {
+      uuid: '06b20a2a-b6cc-11e8-96f8-529269fb1459',
+      name: 'Counseled on viral load'
     }
   },
   'VIRAL_LOAD_TEST_SET': {
@@ -112,14 +132,6 @@ export const CONCEPTS = {
     'Bled': {
       uuid: 'f792f2f9-9c24-4d6e-98fd-caffa8f2383f',
       name: 'Bled'
-    },
-    'True': {
-      uuid: '655e2f90-977f-11e1-8993-905e29aff6c1',
-      name: 'Yes'
-    },
-    'False': {
-      uuid: '655e3148-977f-11e1-8993-905e29aff6c1',
-      name: 'No'
     },
     'ReasonForNoSample': {
       uuid: '0e447d92-a180-11e8-98d0-529269fb1459',
@@ -204,9 +216,9 @@ export const CONCEPTS = {
 };
 
 export const FORM_ANSWERS = {
-  'bledAnswers' : [
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.True.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.True.name },
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.False.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.False.name },
+  'trueFalse' : [
+    { uuid: CONCEPTS.True.uuid, name: CONCEPTS.True.name },
+    { uuid: CONCEPTS.False.uuid, name: CONCEPTS.False.name },
   ],
   'eidNoSampleAnswers': [
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.name },
