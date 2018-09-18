@@ -77,7 +77,6 @@ let BloodPressureForm = props => {
 
   return (
     <EncounterFormPage
-      afterSubmitLink="/screening/bloodPressure/queue"
       backLink={ backLink }
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       formContent={formContent}

@@ -38,7 +38,6 @@ let NutritionForm = (props) => {
 
   return (
     <EncounterFormPage
-      afterSubmitLink="/screening/nutrition/queue"
       backLink="/screening/nutrition/queue"
       encounterType={ENCOUNTER_TYPES.NutritionEncounterType}
       formId="nutrition-form"
