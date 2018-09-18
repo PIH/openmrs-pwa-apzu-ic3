@@ -488,7 +488,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       ]
                     }
                     getFormState={[Function]}
-                    keepDirtyOnReinitialize={false}
+                    keepDirtyOnReinitialize={true}
                     patient={
                       Object {
                         "uuid": "abc",
@@ -570,7 +570,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       initialize={[Function]}
                       initialized={false}
                       invalid={false}
-                      keepDirtyOnReinitialize={false}
+                      keepDirtyOnReinitialize={true}
                       patient={
                         Object {
                           "uuid": "abc",
@@ -1039,7 +1039,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                                   bsStyle="default"
                                                                                   disabled={false}
                                                                             >
-                                                                                  Back to list
+                                                                                  Cancel
                                                                             </Button>
                                                                       </Link>
                                                                 </Col>
@@ -1082,7 +1082,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                       "initialize": [Function],
                                                       "initialized": false,
                                                       "invalid": false,
-                                                      "keepDirtyOnReinitialize": false,
+                                                      "keepDirtyOnReinitialize": true,
                                                       "patient": Object {
                                                         "uuid": "abc",
                                                         "visit": Object {
@@ -1330,7 +1330,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                                     bsStyle="default"
                                                                                     disabled={false}
                                                                               >
-                                                                                    Back to list
+                                                                                    Cancel
                                                                               </Button>
                                                                         </Link>
                                                                   </Col>
@@ -1373,7 +1373,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "initialize": [Function],
                                                         "initialized": false,
                                                         "invalid": false,
-                                                        "keepDirtyOnReinitialize": false,
+                                                        "keepDirtyOnReinitialize": true,
                                                         "patient": Object {
                                                           "uuid": "abc",
                                                           "visit": Object {
@@ -1800,7 +1800,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                                   bsStyle="default"
                                                                                   disabled={false}
                                                                             >
-                                                                                  Back to list
+                                                                                  Cancel
                                                                             </Button>
                                                                       </Link>
                                                                 </Col>
@@ -1843,7 +1843,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                       "initialize": [Function],
                                                       "initialized": false,
                                                       "invalid": false,
-                                                      "keepDirtyOnReinitialize": false,
+                                                      "keepDirtyOnReinitialize": true,
                                                       "patient": Object {
                                                         "uuid": "abc",
                                                         "visit": Object {
@@ -2091,7 +2091,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                                     bsStyle="default"
                                                                                     disabled={false}
                                                                               >
-                                                                                    Back to list
+                                                                                    Cancel
                                                                               </Button>
                                                                         </Link>
                                                                   </Col>
@@ -2134,7 +2134,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "initialize": [Function],
                                                         "initialized": false,
                                                         "invalid": false,
-                                                        "keepDirtyOnReinitialize": false,
+                                                        "keepDirtyOnReinitialize": true,
                                                         "patient": Object {
                                                           "uuid": "abc",
                                                           "visit": Object {
@@ -2359,7 +2359,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                 disabled={false}
                                                 type="button"
                                               >
-                                                Back to list
+                                                Cancel
                                               </button>
                                             </Button>
                                           </a>
