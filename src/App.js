@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { Logout, LoadingView } from '@openmrs/react-components';
 import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core';
-import { faCheck, faArrowRight, faBars, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faArrowRight, faBars, faUser, faPills, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import setupStoreAndPersistor, { history } from './store';
 import Layout from './layout/Layout';
@@ -20,6 +20,8 @@ import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import BloodPressureForm from './screening/bloodPressure/BloodPressureForm';
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import NutritionForm from "./screening/nutrition/NutritionForm";
+import AdherenceQueue from "./screening/adherence/AdherenceQueue";
+import AdherenceForm from "./screening/adherence/AdherenceForm";
 import HtcQueue from "./screening/htc/HtcQueue";
 import HtcPage from "./screening/htc/HtcPage";
 import HtcForm from "./screening/htc/HtcForm";
@@ -39,7 +41,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 
 const { store, persistor } = setupStoreAndPersistor();
 
-fontAwesomeLibrary.add(faCheck, faArrowRight, faBars, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome);
+fontAwesomeLibrary.add(faCheck, faArrowRight, faBars, faPills, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome);
 
 const App = props => {
 
@@ -105,6 +107,16 @@ const App = props => {
             <Layout
               component={NutritionForm}
               path="/screening/nutrition/form"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={ AdherenceQueue }
+              path="/screening/adherence/queue"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={ AdherenceForm }
+              path="/screening/adherence/form"
               redirectOnLogin="/"
             />
             <Layout

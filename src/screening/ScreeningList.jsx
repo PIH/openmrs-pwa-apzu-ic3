@@ -6,6 +6,7 @@ import nutritionFilters from './nutrition/nutritionFilters';
 import htcFilters from './htc/htcFilters';
 import vlFilters from './vl/vlFilters';
 import eidFilters from './eid/eidFilters';
+import adherenceFilters from './adherence/adherenceFilters';
 import checkInFilters from "../checkin/checkInFilters";
 import ScreeningListItem from './ScreeningListItem';
 
@@ -38,9 +39,9 @@ let ScreeningList = props => {
         },
         {
           title: "Adherence Counseling",
-          completedFilters: vlFilters.completed,
-          link: '/screening/vl/form',
-          requiredFilters: vlFilters.required,
+          completedFilters: adherenceFilters.completed,
+          link: '/screening/adherence/form',
+          requiredFilters: adherenceFilters.required,
         },
         {
           title: "EID",

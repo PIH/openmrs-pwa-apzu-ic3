@@ -12,13 +12,14 @@
 }
 
 .activeTab ul > li > a:hover {
-    background-color: greenyellow;
+    background-color: #007C85;
+    color: white;
 }
 
 /* Active tab */
 .activeTab ul > li.active > a,
 .activeTab ul > li.active > a:hover,
 .activeTab ul > li.active > a:focus {
-    background-color: limegreen;
+    background-color: #008EA0;
     color: white;
 }
