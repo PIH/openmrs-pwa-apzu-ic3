@@ -24,7 +24,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
   >
     <BloodPressureForm>
       <Connect(EncounterFormPage)
-        afterSubmitLink="/screening/bloodPressure/queue"
         backLink="/screening/bloodPressure/queue"
         encounterType={
           Object {
@@ -160,7 +159,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
         title="Blood Pressure"
       >
         <EncounterFormPage
-          afterSubmitLink="/screening/bloodPressure/queue"
           backLink="/screening/bloodPressure/queue"
           dispatch={[Function]}
           encounterType={

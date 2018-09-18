@@ -24,7 +24,6 @@ exports[`Component: NutritionForm renders properly 1`] = `
   >
     <NutritionForm>
       <Connect(EncounterFormPage)
-        afterSubmitLink="/screening/nutrition/queue"
         backLink="/screening/nutrition/queue"
         encounterType={
           Object {
@@ -97,7 +96,6 @@ exports[`Component: NutritionForm renders properly 1`] = `
         title="Nutrition"
       >
         <EncounterFormPage
-          afterSubmitLink="/screening/nutrition/queue"
           backLink="/screening/nutrition/queue"
           dispatch={[Function]}
           encounterType={
