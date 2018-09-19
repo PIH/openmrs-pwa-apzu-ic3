@@ -61,6 +61,12 @@ ScreeningQueue.defaultProps = {
     { headerName: 'Family Name', field: 'name.familyName' },
     { headerName: 'Gender', field: 'gender' },
     { headerName: 'Age', field: 'age' },
+    { headerName: 'Appt Date', valueGetter: function getApptDate(params) {
+        if (params.data.lastAppointmentDate) {
+          return utils.formatReportRestDate(params.data.lastAppointmentDate);
+        }
+      }
+    },
     { headerName: 'Checked-in Time',
       valueGetter: function getCheckedInTime(params) {
         return utils.getPatientCheckedInTime(params.data);

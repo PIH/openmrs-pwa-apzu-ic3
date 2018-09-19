@@ -8,7 +8,7 @@ let PatientAlert = (props) => {
   return (
     <div>
       <Grid>
-        { (typeof props.patient !== 'undefined') &&
+        { (typeof props.patient !== 'undefined') && props.patient !== null &&
         (typeof props.patient.alert !== 'undefined') &&
         <Row>
           <FormGroup controlId="formAlert">
@@ -18,7 +18,7 @@ let PatientAlert = (props) => {
                 { props.patient.alert }
               </Alert>
             </Col>
-            {(typeof props.patient !== 'undefined') &&
+            {(typeof props.patient !== 'undefined') && props.patient !== null &&
             (typeof props.patient.actions !== 'undefined') && (props.patient.actions !== props.patient.alert) &&
             <Col sm={4}>
               <ControlLabel>Action</ControlLabel>

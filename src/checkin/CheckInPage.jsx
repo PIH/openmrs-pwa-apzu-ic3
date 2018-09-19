@@ -7,11 +7,6 @@ import { push } from "connected-react-router";
 
 class CheckInPage extends React.Component {
 
-  // I don't think we need this anymore?  need to figure out how this is all going to work, though
-  /*  componentDidMount() {
-      this.props.dispatch(visitActions.fetchPatientActiveVisit(this.props.patient.uuid,
-        "custom:" + VISIT_REPRESENTATION));
-    }*/
 
   redirectToQueuePageActionCreator() {
     return push({

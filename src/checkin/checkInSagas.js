@@ -2,6 +2,8 @@ import { call, put, takeLatest, select } from 'redux-saga/effects';
 import { patientUtil, visitRest,  reportingRest, LOGIN_TYPES, SESSION_TYPES } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
+import patientActions from '../patient/patientActions';
+import PATIENT_TYPES from '../patient/patientTypes';
 import { IDENTIFIER_TYPES } from '../constants';
 import uuidv4 from 'uuid/v4';
 import utils from "../utils";
@@ -28,6 +30,8 @@ const createFromReportingRestRep =  (restRep) => {
   // TODO how do we get these in a proper format
   patient.chw = restRep.vhw;
   patient.village = restRep.village;
+  patient.lastAppointmentDate = restRep.last_appt_date;
+  patient.lastVisitDate = restRep.last_visit_date;
   patient.actions = restRep.actions;
   patient.alert = restRep.alert;
 
@@ -93,6 +97,31 @@ function* getExpectedToCheckIn(action) {
 
 }
 
+function* getPatientApptData(action) {
+
+  try {
+    var state = R.pathOr(yield select(), ['payload'], action);
+    // get patient appointment info
+    let apptRestResponse = yield call(reportingRest.getDataSet, {
+      datasetName: 'pihmalawi.dataset.ic3PatientAppointmentsData',
+      location: R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
+      endDate:  utils.formatReportRestDate(new Date()),
+      patient: action.patient.uuid
+    });
+
+    let patients = apptRestResponse.rows.map((result) => {
+      return createFromReportingRestRep(result);
+    });
+    if (patients && patients.length > 0 ) {
+      yield put(patientActions.updatePatient(patients[0]));
+    }
+
+  } catch (e) {
+    yield put(checkInActions.getExpectedToCheckInFailed(e.message));
+  }
+
+}
+
 function* initiateGetExpectedToCheckIn(action) {
   var state = R.pathOr(yield select(), ['payload'], action);
   if (R.path(['openmrs', 'session', 'authenticated'], state)){
@@ -106,6 +135,7 @@ function *checkInSagas() {
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
   yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetExpectedToCheckIn);
   yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetExpectedToCheckIn);
+  yield takeLatest(PATIENT_TYPES.GET_APPT_DATA, getPatientApptData);
 }
 
 export default checkInSagas;

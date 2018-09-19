@@ -41,6 +41,7 @@ class SearchPatient extends React.Component {
           parseResults={this.parseResults.bind(this)}
           rowSelectedActionCreators={[
             patientActions.addPatient,
+            patientActions.getPatientApptData,
             () => push('/checkin/checkInPage')
           ]}
         />

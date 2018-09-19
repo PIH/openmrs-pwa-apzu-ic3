@@ -77,6 +77,15 @@ export default (state = {}, action) => {
         };
       }
 
+    case PATIENT_TYPES.UPDATE:
+      return {
+        ...state,
+        [action.patient.uuid]: {
+          ...state[action.patient.uuid],
+          ...action.patient
+        }
+      }
+
 
     default: return state;
   }

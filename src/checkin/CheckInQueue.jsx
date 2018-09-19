@@ -33,6 +33,18 @@ class CheckInQueue extends React.Component {
       { headerName: 'Village', field: 'village' },
       { headerName: 'Actions', field: 'actions' },
       { headerName: 'Alert', field: 'alert' },
+      { headerName: 'Last Visit', valueGetter: function getLastVisitDate(params) {
+          if (params.data.lastVisitDate) {
+            return utils.formatReportRestDate(params.data.lastVisitDate);
+          }
+        }
+      },
+      { headerName: 'Appt Date', valueGetter: function getApptDate(params) {
+          if (params.data.lastAppointmentDate) {
+            return utils.formatReportRestDate(params.data.lastAppointmentDate);
+          }
+        }
+      },
       { headerName: 'Checked-in Time', valueGetter: function getCheckedInTime(params) {
         return utils.getPatientCheckedInTime(params.data);
       }
