@@ -81,6 +81,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 >
                   <Obs
                     concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                    datatype="number"
                     path="systolic"
                     placeholder="Systolic value"
                     validate={
@@ -128,6 +129,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 >
                   <Obs
                     concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                    datatype="number"
                     path="diastolic"
                     placeholder="Diastolic value"
                     validate={
@@ -217,6 +219,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   >
                     <Obs
                       concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                      datatype="number"
                       path="systolic"
                       placeholder="Systolic value"
                       validate={
@@ -264,6 +267,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   >
                     <Obs
                       concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                      datatype="number"
                       path="diastolic"
                       placeholder="Diastolic value"
                       validate={
@@ -831,6 +835,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                           >
                                             <Obs
                                               concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                              datatype="number"
                                               path="systolic"
                                               placeholder="Systolic value"
                                               validate={
@@ -937,6 +942,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                       >
                                                                             <Obs
                                                                                   concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                                  datatype="number"
                                                                                   path="systolic"
                                                                                   placeholder="Systolic value"
                                                                                   validate={
@@ -984,6 +990,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                       >
                                                                             <Obs
                                                                                   concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                                  datatype="number"
                                                                                   path="diastolic"
                                                                                   placeholder="Diastolic value"
                                                                                   validate={
@@ -1228,6 +1235,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                         >
                                                                               <Obs
                                                                                     concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                                    datatype="number"
                                                                                     path="systolic"
                                                                                     placeholder="Systolic value"
                                                                                     validate={
@@ -1275,6 +1283,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                         >
                                                                               <Obs
                                                                                     concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                                    datatype="number"
                                                                                     path="diastolic"
                                                                                     placeholder="Diastolic value"
                                                                                     validate={
@@ -1592,6 +1601,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                           >
                                             <Obs
                                               concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                              datatype="number"
                                               path="diastolic"
                                               placeholder="Diastolic value"
                                               validate={
@@ -1698,6 +1708,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                       >
                                                                             <Obs
                                                                                   concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                                  datatype="number"
                                                                                   path="systolic"
                                                                                   placeholder="Systolic value"
                                                                                   validate={
@@ -1745,6 +1756,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                       >
                                                                             <Obs
                                                                                   concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                                  datatype="number"
                                                                                   path="diastolic"
                                                                                   placeholder="Diastolic value"
                                                                                   validate={
@@ -1989,6 +2001,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                         >
                                                                               <Obs
                                                                                     concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                                                                                    datatype="number"
                                                                                     path="systolic"
                                                                                     placeholder="Systolic value"
                                                                                     validate={
@@ -2036,6 +2049,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                                         >
                                                                               <Obs
                                                                                     concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                                                                                    datatype="number"
                                                                                     path="diastolic"
                                                                                     placeholder="Diastolic value"
                                                                                     validate={

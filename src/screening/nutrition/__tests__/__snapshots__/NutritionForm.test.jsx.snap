@@ -58,6 +58,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                 >
                   <Obs
                     concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                    datatype="number"
                     path="weight"
                   />
                 </Col>
@@ -85,6 +86,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                 >
                   <Obs
                     concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                    datatype="number"
                     path="height"
                   />
                 </Col>
@@ -131,6 +133,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   >
                     <Obs
                       concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                      datatype="number"
                       path="weight"
                     />
                   </Col>
@@ -158,6 +161,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   >
                     <Obs
                       concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                      datatype="number"
                       path="height"
                     />
                   </Col>
@@ -621,6 +625,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                           >
                                             <Obs
                                               concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                                              datatype="number"
                                               path="weight"
                                             >
                                               <Field
@@ -688,6 +693,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                       >
                                                                             <Obs
                                                                                   concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                                                  datatype="number"
                                                                                   path="weight"
                                                                             />
                                                                       </Col>
@@ -715,6 +721,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                       >
                                                                             <Obs
                                                                                   concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                                                                                  datatype="number"
                                                                                   path="height"
                                                                             />
                                                                       </Col>
@@ -908,6 +915,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                         >
                                                                               <Obs
                                                                                     concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                                                    datatype="number"
                                                                                     path="weight"
                                                                               />
                                                                         </Col>
@@ -935,6 +943,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                         >
                                                                               <Obs
                                                                                     concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                                                                                    datatype="number"
                                                                                     path="height"
                                                                               />
                                                                         </Col>
@@ -1188,6 +1197,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                           >
                                             <Obs
                                               concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                                              datatype="number"
                                               path="height"
                                             >
                                               <Field
@@ -1255,6 +1265,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                       >
                                                                             <Obs
                                                                                   concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                                                  datatype="number"
                                                                                   path="weight"
                                                                             />
                                                                       </Col>
@@ -1282,6 +1293,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                       >
                                                                             <Obs
                                                                                   concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                                                                                  datatype="number"
                                                                                   path="height"
                                                                             />
                                                                       </Col>
@@ -1475,6 +1487,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                         >
                                                                               <Obs
                                                                                     concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                                                                                    datatype="number"
                                                                                     path="weight"
                                                                               />
                                                                         </Col>
@@ -1502,6 +1515,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                                         >
                                                                               <Obs
                                                                                     concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                                                                                    datatype="number"
                                                                                     path="height"
                                                                               />
                                                                         </Col>
