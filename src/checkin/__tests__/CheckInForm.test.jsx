@@ -34,7 +34,8 @@ describe('Component: CheckInForm', () => {
         },
         age: 12,
         gender: "M"
-      }
+      },
+      backLink: "/checkin/checkInQueue"
     };
     store = mockStore({});
     mountedComponent = undefined;

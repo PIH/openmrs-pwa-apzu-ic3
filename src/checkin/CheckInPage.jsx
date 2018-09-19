@@ -1,12 +1,21 @@
 import React from "react";
+import { css } from 'react-emotion';
+import { ClipLoader } from 'react-spinners';
+import { Label } from 'react-bootstrap';
 import { connect } from "react-redux";
 import CheckinForm from './CheckInForm';
 import checkInActions from './checkInActions';
 import {ENCOUNTER_TYPES, VISIT_TYPES, LOCATION_TYPES, CONCEPTS} from '../constants';
 import { push } from "connected-react-router";
 
-class CheckInPage extends React.Component {
+const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+    label: 'Retrieving patient info'
+`;
 
+class CheckInPage extends React.Component {
 
   redirectToQueuePageActionCreator() {
     return push({
@@ -37,8 +46,21 @@ class CheckInPage extends React.Component {
   render() {
     return (
       <div>
+        { this.props.loading === true &&
+        <div className='sweet-loading'>
+          <Label bsStyle="info">Updating Patient Info</Label>
+          <ClipLoader
+            className={override}
+            sizeUnit={"px"}
+            size={50}
+            color={'#F5A623'}
+            loading={this.props.loading}
+          />
+        </div>
+        }
         <CheckinForm
           patient={ this.props.patient }
+          backLink={ "/checkin/checkInQueue" }
           onSubmit={ this.handleCheckIn.bind(this) }
         />
       </div>
@@ -47,9 +69,11 @@ class CheckInPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  let storePatient = state.selectedPatient ? state.patients[state.selectedPatient] : null;
   return {
-    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null,
-    location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation
+    patient: storePatient,
+    location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,
+    loading: (storePatient && storePatient.lastVisitDate) ? false : true,
   };
 };
 

@@ -4,7 +4,7 @@ import CompletedScreenings from "../screening/CompletedScreenings";
 import PatientAlert from "../patient/PatientAlert";
 import PatientAppointments from "../patient/PatientAppointments";
 import { Alert, Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
-import { goBack } from 'connected-react-router';
+import { Link } from 'react-router-dom';
 import { CONCEPTS } from "../constants";
 import '../assets/css/LoginPage.css';
 
@@ -34,15 +34,9 @@ let CheckinForm = props => {
     </div>
   );
 
-  const historyBack = () => {
-    props.dispatch(goBack());
-  };
-
   return (
     <div>
-      <Button bsSize='large' bsStyle='danger' onClick={historyBack.bind(this)}>
-        Back
-      </Button>
+
       <h3><Label>Check-in</Label></h3>
       <Form
         horizontal
@@ -104,9 +98,14 @@ let CheckinForm = props => {
           {!(patient && patient.visit && patient.visit.encounters) &&
           <Row>
             <FormGroup controlId="formSubmit">
+              <Col sm={2} xsOffset={2}>
+                <Link to={ props.backLink }>
+                  <Button bsSize="large">Cancel</Button>
+                </Link>
+              </Col>
               <Col
-                sm={4}
-                smOffset={2}
+                sm={2}
+                smOffset={1}
               >
                 <ButtonToolbar>
                   <Button

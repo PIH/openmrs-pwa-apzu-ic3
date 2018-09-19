@@ -23,6 +23,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
     url=""
   >
     <ReduxForm
+      backLink="/checkin/checkInQueue"
       patient={
         Object {
           "age": 12,
@@ -36,6 +37,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
       }
     >
       <Connect(Form(CheckinForm))
+        backLink="/checkin/checkInQueue"
         destroyOnUnmount={true}
         enableReinitialize={false}
         forceUnregisterOnUnmount={false}
@@ -91,6 +93,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
           arrayUnshift={[Function]}
           asyncValidating={false}
           autofill={[Function]}
+          backLink="/checkin/checkInQueue"
           blur={[Function]}
           change={[Function]}
           clearAsyncError={[Function]}
@@ -174,6 +177,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
             asyncValidate={[Function]}
             asyncValidating={false}
             autofill={[Function]}
+            backLink="/checkin/checkInQueue"
             blur={[Function]}
             change={[Function]}
             clearAsyncError={[Function]}
@@ -212,24 +216,6 @@ exports[`Component: CheckInForm renders properly 1`] = `
             valid={true}
           >
             <div>
-              <Button
-                active={false}
-                block={false}
-                bsClass="btn"
-                bsSize="large"
-                bsStyle="danger"
-                disabled={false}
-                onClick={[Function]}
-              >
-                <button
-                  className="btn btn-lg btn-danger"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Back
-                </button>
-              </Button>
               <h3>
                 <Label
                   bsClass="label"
@@ -509,6 +495,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                           "asyncValidate": [Function],
                                           "asyncValidating": false,
                                           "autofill": [Function],
+                                          "backLink": "/checkin/checkInQueue",
                                           "blur": [Function],
                                           "change": [Function],
                                           "clearAsyncError": [Function],
@@ -642,6 +629,7 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                             "asyncValidate": [Function],
                                             "asyncValidating": false,
                                             "autofill": [Function],
+                                            "backLink": "/checkin/checkInQueue",
                                             "blur": [Function],
                                             "change": [Function],
                                             "clearAsyncError": [Function],
@@ -884,11 +872,47 @@ exports[`Component: CheckInForm renders properly 1`] = `
                               <Col
                                 bsClass="col"
                                 componentClass="div"
-                                sm={4}
-                                smOffset={2}
+                                sm={2}
+                                xsOffset={2}
                               >
                                 <div
-                                  className="col-sm-4 col-sm-offset-2"
+                                  className="col-sm-2 col-xs-offset-2"
+                                >
+                                  <Link
+                                    replace={false}
+                                    to="/checkin/checkInQueue"
+                                  >
+                                    <a
+                                      onClick={[Function]}
+                                    >
+                                      <Button
+                                        active={false}
+                                        block={false}
+                                        bsClass="btn"
+                                        bsSize="large"
+                                        bsStyle="default"
+                                        disabled={false}
+                                      >
+                                        <button
+                                          className="btn btn-lg btn-default"
+                                          disabled={false}
+                                          type="button"
+                                        >
+                                          Cancel
+                                        </button>
+                                      </Button>
+                                    </a>
+                                  </Link>
+                                </div>
+                              </Col>
+                              <Col
+                                bsClass="col"
+                                componentClass="div"
+                                sm={2}
+                                smOffset={1}
+                              >
+                                <div
+                                  className="col-sm-2 col-sm-offset-1"
                                 >
                                   <ButtonToolbar
                                     bsClass="btn-toolbar"
