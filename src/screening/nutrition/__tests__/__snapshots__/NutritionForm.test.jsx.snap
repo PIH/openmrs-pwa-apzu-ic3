@@ -344,7 +344,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   <Connect(Form(EncounterForm))
                     destroyOnUnmount={true}
                     dispatch={[Function]}
-                    enableReinitialize={true}
+                    enableReinitialize={false}
                     encounterType={
                       Object {
                         "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
@@ -360,7 +360,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       ]
                     }
                     getFormState={[Function]}
-                    keepDirtyOnReinitialize={true}
+                    keepDirtyOnReinitialize={false}
                     patient={
                       Object {
                         "uuid": "abc",
@@ -422,7 +422,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       destroyOnUnmount={true}
                       dirty={false}
                       dispatch={[Function]}
-                      enableReinitialize={true}
+                      enableReinitialize={false}
                       encounterType={
                         Object {
                           "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
@@ -442,7 +442,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       initialize={[Function]}
                       initialized={false}
                       invalid={false}
-                      keepDirtyOnReinitialize={true}
+                      keepDirtyOnReinitialize={false}
                       patient={
                         Object {
                           "uuid": "abc",
@@ -771,7 +771,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "destroyOnUnmount": true,
                                                       "dirty": false,
                                                       "dispatch": [Function],
-                                                      "enableReinitialize": true,
+                                                      "enableReinitialize": false,
                                                       "encounter": undefined,
                                                       "encounterType": Object {
                                                         "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
@@ -791,7 +791,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "initialize": [Function],
                                                       "initialized": false,
                                                       "invalid": false,
-                                                      "keepDirtyOnReinitialize": true,
+                                                      "keepDirtyOnReinitialize": false,
                                                       "patient": Object {
                                                         "uuid": "abc",
                                                         "visit": Object {
@@ -991,7 +991,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                         "destroyOnUnmount": true,
                                                         "dirty": false,
                                                         "dispatch": [Function],
-                                                        "enableReinitialize": true,
+                                                        "enableReinitialize": false,
                                                         "encounter": undefined,
                                                         "encounterType": Object {
                                                           "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
@@ -1011,7 +1011,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                         "initialize": [Function],
                                                         "initialized": false,
                                                         "invalid": false,
-                                                        "keepDirtyOnReinitialize": true,
+                                                        "keepDirtyOnReinitialize": false,
                                                         "patient": Object {
                                                           "uuid": "abc",
                                                           "visit": Object {
@@ -1338,7 +1338,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "destroyOnUnmount": true,
                                                       "dirty": false,
                                                       "dispatch": [Function],
-                                                      "enableReinitialize": true,
+                                                      "enableReinitialize": false,
                                                       "encounter": undefined,
                                                       "encounterType": Object {
                                                         "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
@@ -1358,7 +1358,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "initialize": [Function],
                                                       "initialized": false,
                                                       "invalid": false,
-                                                      "keepDirtyOnReinitialize": true,
+                                                      "keepDirtyOnReinitialize": false,
                                                       "patient": Object {
                                                         "uuid": "abc",
                                                         "visit": Object {
@@ -1558,7 +1558,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                         "destroyOnUnmount": true,
                                                         "dirty": false,
                                                         "dispatch": [Function],
-                                                        "enableReinitialize": true,
+                                                        "enableReinitialize": false,
                                                         "encounter": undefined,
                                                         "encounterType": Object {
                                                           "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
@@ -1578,7 +1578,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                         "initialize": [Function],
                                                         "initialized": false,
                                                         "invalid": false,
-                                                        "keepDirtyOnReinitialize": true,
+                                                        "keepDirtyOnReinitialize": false,
                                                         "patient": Object {
                                                           "uuid": "abc",
                                                           "visit": Object {
