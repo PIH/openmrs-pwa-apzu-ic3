@@ -81,6 +81,10 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                   "headerName": "Age",
                 },
                 Object {
+                  "headerName": "Appt Date",
+                  "valueGetter": [Function],
+                },
+                Object {
                   "headerName": "Checked-in Time",
                   "valueGetter": [Function],
                 },
@@ -138,6 +142,10 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                     Object {
                       "field": "age",
                       "headerName": "Age",
+                    },
+                    Object {
+                      "headerName": "Appt Date",
+                      "valueGetter": [Function],
                     },
                     Object {
                       "headerName": "Checked-in Time",
@@ -211,6 +219,10 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                           "headerName": "Age",
                         },
                         Object {
+                          "headerName": "Appt Date",
+                          "valueGetter": [Function],
+                        },
+                        Object {
                           "headerName": "Checked-in Time",
                           "valueGetter": [Function],
                         },
@@ -252,6 +264,10 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                           Object {
                             "field": "age",
                             "headerName": "Age",
+                          },
+                          Object {
+                            "headerName": "Appt Date",
+                            "valueGetter": [Function],
                           },
                           Object {
                             "headerName": "Checked-in Time",
@@ -312,6 +328,10 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                               Object {
                                 "field": "age",
                                 "headerName": "Age",
+                              },
+                              Object {
+                                "headerName": "Appt Date",
+                                "valueGetter": [Function],
                               },
                               Object {
                                 "headerName": "Checked-in Time",

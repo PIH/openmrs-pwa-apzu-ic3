@@ -261,6 +261,24 @@ exports[`Component: CheckInForm renders properly 1`] = `
                     <div
                       className="container"
                     >
+                      <Connect(PatientAlert)>
+                        <PatientAlert
+                          dispatch={[Function]}
+                          patient={null}
+                        >
+                          <div>
+                            <Grid
+                              bsClass="container"
+                              componentClass="div"
+                              fluid={false}
+                            >
+                              <div
+                                className="container"
+                              />
+                            </Grid>
+                          </div>
+                        </PatientAlert>
+                      </Connect(PatientAlert)>
                       <Row
                         bsClass="row"
                         componentClass="div"

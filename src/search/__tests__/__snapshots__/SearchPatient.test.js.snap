@@ -68,6 +68,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
             Array [
               [Function],
               [Function],
+              [Function],
             ]
           }
         >
@@ -107,6 +108,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
             rowData={Array []}
             rowSelectedActionCreators={
               Array [
+                [Function],
                 [Function],
                 [Function],
               ]
@@ -658,6 +660,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                   Array [
                     [Function],
                     [Function],
+                    [Function],
                   ]
                 }
               >
@@ -695,6 +698,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                   rowData={Array []}
                   rowSelectedActionCreators={
                     Array [
+                      [Function],
                       [Function],
                       [Function],
                     ]

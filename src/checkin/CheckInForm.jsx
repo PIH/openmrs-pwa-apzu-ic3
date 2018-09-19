@@ -1,6 +1,7 @@
 import React from 'react';
 import {reduxForm, Field} from 'redux-form';
 import CompletedScreenings from "../screening/CompletedScreenings";
+import PatientAlert from "../patient/PatientAlert";
 import { Alert, Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
 import { goBack } from 'connected-react-router';
 import { CONCEPTS } from "../constants";
@@ -47,65 +48,28 @@ let CheckinForm = props => {
         onSubmit={handleSubmit}
       >
         <Grid>
+          <PatientAlert/>
 
-          { (typeof patient !== 'undefined') && (patient !== null) &&
-            (typeof patient.alert !== 'undefined') && (patient.alert !== null) && (patient.alert.length > 0) &&
-            <Row>
-              <FormGroup controlId="formAlert">
-                <Col
-                  componentClass={ControlLabel}
-                  sm={2}
-                >
-              Alert
-                </Col>
-                <Col
-                  sm={4}
-                >
-                  <Alert bsStyle="danger">
-                    { patient.alert }
-                  </Alert>
-                </Col>
-              </FormGroup>
-            </Row>
-          }
-
-          { (typeof patient !== 'undefined') && (patient !== null) &&
-            (typeof patient.actions !== 'undefined')  && (patient.actions !== null) && (patient.actions !== patient.alert) &&
+          {(typeof patient !== 'undefined') && (patient !== null) &&
           <Row>
-            <FormGroup controlId="formAction">
+            <FormGroup controlId="formVillage">
+
               <Col
                 componentClass={ControlLabel}
                 sm={2}
               >
-              Action
+                Village
               </Col>
               <Col sm={4}>
-                <Alert bsStyle="warning">
-                  { patient.actions }
+                <Alert bsStyle="info">
+                  {patient.village}
                 </Alert>
               </Col>
+
             </FormGroup>
           </Row>
           }
-
-          <Row>
-            <FormGroup controlId="formVillage">
-
-                <Col
-                  componentClass={ControlLabel}
-                  sm={2}
-                >
-                  Village
-                </Col>
-                <Col sm={4}>
-                  <Alert bsStyle="info">
-                    { patient.village }
-                  </Alert>
-                </Col>
-
-            </FormGroup>
-          </Row>
-
+          {(typeof patient !== 'undefined') && (patient !== null) &&
           <Row>
             <FormGroup controlId="formChw">
               <Col componentClass={ControlLabel} sm={2}>
@@ -113,12 +77,12 @@ let CheckinForm = props => {
               </Col>
               <Col sm={4}>
                 <Alert bsStyle="info">
-                  { patient.chw }
+                  {patient.chw}
                 </Alert>
               </Col>
             </FormGroup>
           </Row>
-
+          }
           <Row>
             <FormGroup controlId="formReferralSelect">
               <Col componentClass={ControlLabel} sm={2}>
