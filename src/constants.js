@@ -119,7 +119,7 @@ export const CONCEPTS = {
       name: 'Counseled on pill counts'
     },
     'DrugAdherencePercentage': {
-      uuid: '06b20552-b6cc-11e8-96f8-529269fb1459',
+      uuid: '2F3B76C0-23AF-4A8F-91E3-33F1059A22F1',
       name: 'Drug adherence percentage'
     },
     'CounseledOnViralLoad': {

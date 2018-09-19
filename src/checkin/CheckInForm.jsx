@@ -2,6 +2,7 @@ import React from 'react';
 import {reduxForm, Field} from 'redux-form';
 import CompletedScreenings from "../screening/CompletedScreenings";
 import PatientAlert from "../patient/PatientAlert";
+import PatientAppointments from "../patient/PatientAppointments";
 import { Alert, Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
 import { goBack } from 'connected-react-router';
 import { CONCEPTS } from "../constants";
@@ -48,8 +49,8 @@ let CheckinForm = props => {
         onSubmit={handleSubmit}
       >
         <Grid>
+          <PatientAppointments/>
           <PatientAlert/>
-
           {(typeof patient !== 'undefined') && (patient !== null) &&
           <Row>
             <FormGroup controlId="formVillage">

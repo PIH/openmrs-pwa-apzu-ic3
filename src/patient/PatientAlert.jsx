@@ -9,7 +9,7 @@ let PatientAlert = (props) => {
     <div>
       <Grid>
         { (typeof props.patient !== 'undefined') && props.patient !== null &&
-        (typeof props.patient.alert !== 'undefined') &&
+        (typeof props.patient.alert !== 'undefined') && props.patient.alert !== null &&
         <Row>
           <FormGroup controlId="formAlert">
             <Col sm={4}>

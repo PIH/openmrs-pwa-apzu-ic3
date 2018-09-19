@@ -11,7 +11,9 @@ const utils = {
   formatRestDate: (datetime) => {
     return dateFns.format(datetime, 'YYYY-MM-DDTHH:mm:ss.SSS');
   },
-
+  formatCalendarDate: (datetime) => {
+    return dateFns.format(datetime, 'MMMM D, YYYY');
+  },
   formatReportRestDate: (datetime) => {
     return dateFns.format(datetime, 'YYYY-MM-DD');
   },
