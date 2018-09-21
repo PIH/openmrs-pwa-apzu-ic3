@@ -37,7 +37,7 @@ describe('Component: CheckInForm', () => {
       },
       backLink: "/checkin/checkInQueue"
     };
-    store = mockStore({});
+    store = mockStore({ openmrs: {} });
     mountedComponent = undefined;
   });
 

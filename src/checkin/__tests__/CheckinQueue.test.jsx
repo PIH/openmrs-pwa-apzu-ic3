@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { DataGrid } from '@openmrs/react-components';
@@ -33,12 +32,9 @@ describe('Component: CheckInQueue', () => {
             sessionLocation: {
               uuid: 'abc'
             }
-          }
+          },
+          patients: []
         },
-        patients: [],
-        selected: {
-          patient: {}
-        }
       });
     mountedComponent = undefined;
   });

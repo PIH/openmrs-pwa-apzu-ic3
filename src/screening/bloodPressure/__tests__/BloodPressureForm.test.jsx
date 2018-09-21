@@ -29,15 +29,17 @@ describe('Component: BloodPressureForm', () => {
     props = {};
     store = mockStore(
       {
-        patients: {
-          "abc": {
-            uuid: "abc",
-            visit: {
-              uuid: "def"
+        openmrs: {
+          patients: {
+            "abc": {
+              uuid: "abc",
+              visit: {
+                uuid: "def"
+              }
             }
-          }
-        },
-        selectedPatient: "abc"
+          },
+          selectedPatient: "abc"
+        }
       });
     mountedComponent = undefined;
   });

@@ -69,7 +69,7 @@ class CheckInPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  let storePatient = state.selectedPatient ? state.patients[state.selectedPatient] : null;
+  let storePatient = state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null;
   return {
     patient: storePatient,
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,

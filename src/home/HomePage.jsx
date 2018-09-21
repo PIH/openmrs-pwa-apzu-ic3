@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from "react-redux";
+import {patientActions} from '@openmrs/react-components';
 import { LOCATION_TYPES } from '../constants';
-import patientActions from '../patient/patientActions';
 import homeImage from "../assets/images/Magaleta_IC3_clinic.jpg";
 import '../assets/css/background.css';
 
 class HomePage extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(patientActions.clearPatientSelected());
+    this.props.dispatch(patientActions.clearSelectedPatient());
   }
 
   render() {

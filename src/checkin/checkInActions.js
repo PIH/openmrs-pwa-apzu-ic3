@@ -22,11 +22,6 @@ const checkInFailed = (message) => ( {
   }
 });
 
-const expectedToCheckIn = (results) => ( {
-  type: CHECK_IN_TYPES.CHECK_IN.EXPECTED_TO_CHECK_IN,
-  patients: results });
-
-
 const getExpectedToCheckIn = (location, endDate) => ( {
   type: CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN,
   location: location,
@@ -43,6 +38,5 @@ export default {
   checkInSucceeded,
   checkInFailed,
   getExpectedToCheckIn,
-  expectedToCheckIn,
   getExpectedToCheckInFailed
 };

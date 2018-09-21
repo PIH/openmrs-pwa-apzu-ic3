@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
-import { visitActions, List } from '@openmrs/react-components';
-import patientActions from '../patient/patientActions';
+import {patientActions, visitActions, List} from '@openmrs/react-components';
 import utils from "../utils";
 import { VISIT_REPRESENTATION } from '../constants';
 
@@ -41,10 +40,11 @@ let CompletedVisits = props => {
       props.session.sessionLocation ? props.session.sessionLocation.uuid : null));
 
   const onMountOtherActionCreators = [
-    () => props.dispatch(patientActions.clearPatientSelected())
+    () => props.dispatch(patientActions.clearSelectedPatient())
   ];
 
   const rowSelectedActionCreators = [
+    patientActions.setSelectedPatient,
     () =>  push({
       pathname: '/checkin/checkInComplete',
       state: {

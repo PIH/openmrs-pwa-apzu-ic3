@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { visitActions, List, patientObjByEncounterTypeFilter } from '@openmrs/react-components';
-import patientActions from '../patient/patientActions';
+import {patientActions, visitActions, List, patientObjByEncounterTypeFilter} from '@openmrs/react-components';
 import utils from "../utils";
 import { VISIT_REPRESENTATION, ENCOUNTER_TYPES } from '../constants';
 import {connect} from "react-redux";
@@ -16,7 +15,7 @@ let ScreeningQueue = props => {
 
   const onMountOtherActionCreators = props.onMountOtherActionCreators ? this.props.onMountOtherActionCreators :
     [
-      () => props.dispatch(patientActions.clearPatientSelected())
+      () => props.dispatch(patientActions.clearSelectedPatient())
     ];
 
   return (
@@ -28,7 +27,7 @@ let ScreeningQueue = props => {
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
         onRowCount={ props.onRowCount }
-        rowSelectedActionCreators={props.rowSelectedActionCreators}
+        rowSelectedActionCreators={[...props.rowSelectedActionCreators, patientActions.setSelectedPatient]}
         title={props.title}
       />
     </div>

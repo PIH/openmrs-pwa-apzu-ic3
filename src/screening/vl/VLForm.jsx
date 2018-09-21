@@ -101,7 +101,7 @@ export default connect(state => {
   const bled = selector(state, 'obs|path=vl-bled|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid);
   return {
     bled,
-    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null,
+    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null,
   };
 })(VLForm);
 

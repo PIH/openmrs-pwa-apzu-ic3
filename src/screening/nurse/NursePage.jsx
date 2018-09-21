@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Label, ButtonToolbar, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import patientActions from "../../patient/patientActions";
+import {patientActions} from '@openmrs/react-components';
 import checkOutActions from "../../checkin/checkOutActions";
 import CompletedScreenings from "../CompletedScreenings";
 import {push} from "connected-react-router";
@@ -12,7 +12,7 @@ import {actions as toastrActions} from "react-redux-toastr";
 class NursePage extends React.Component {
 
   componentWillUnmount(){
-    this.props.dispatch(patientActions.clearPatientSelected());
+    this.props.dispatch(patientActions.clearSelectedPatient());
   }
 
   checkOutSubmittedActionCreators() {
@@ -60,7 +60,7 @@ class NursePage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null
+    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null
   };
 };
 

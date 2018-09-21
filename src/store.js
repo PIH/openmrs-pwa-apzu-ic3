@@ -16,8 +16,7 @@ import { reducer as toastrReducer } from 'react-redux-toastr';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { sagas as openmrsSagas, reducers as openmrsReducers, LOGIN_TYPES } from '@openmrs/react-components';
 import completedVisitsReducer from './visit/completedVisitsReducer';
-import patientSelectedReducer from './patient/patientSelectedReducer';
-import patientsReducer from './patient/patientsReducer';
+import patientSagas from './patient/patientSagas';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
 import formSagas from './bahmniform/formSagas';
@@ -47,9 +46,6 @@ const middlewares = [
  * Elements in the store:
  *
  * openmrs: wires in the reducers provided by the openmrs-reactcomponents module
- * form: used by redux-form when rendering forms
- * selectedPatient: the currently selected patient; show always be a "Patient" domain object with attached active visit
- * expectedCheckInLists:
  */
 
 
@@ -75,8 +71,6 @@ const combinedReducer = combineReducers({
     }
   }),
   toastr: toastrReducer,
-  patients: patientsReducer,
-  selectedPatient: patientSelectedReducer,
   completedVisits: completedVisitsReducer,
 });
 
@@ -98,6 +92,7 @@ const pReducer = persistReducer(persistConfig, rootReducer);
 const rootSagas = function* () {
   yield all([
     openmrsSagas(),
+    patientSagas(),
     checkInSagas(),
     checkOutSagas(),
     formSagas()

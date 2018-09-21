@@ -41,7 +41,7 @@ let HtcForm = (props) => {
 
 export default connect(state => {
   return {
-    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null
+    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null
   };
 })(HtcForm);
 

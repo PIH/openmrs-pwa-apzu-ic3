@@ -1,9 +1,15 @@
 import { call, put, takeLatest, select } from 'redux-saga/effects';
-import { patientUtil, visitRest,  reportingRest, LOGIN_TYPES, SESSION_TYPES } from '@openmrs/react-components';
+import {
+  patientActions,
+  patientUtil,
+  visitRest,
+  reportingRest,
+  LOGIN_TYPES,
+  SESSION_TYPES
+} from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
-import patientActions from '../patient/patientActions';
-import PATIENT_TYPES from '../patient/patientTypes';
+import PATIENT_APPT_TYPES from '../patient/patientApptTypes';
 import { IDENTIFIER_TYPES } from '../constants';
 import uuidv4 from 'uuid/v4';
 import utils from "../utils";
@@ -89,7 +95,7 @@ function* getExpectedToCheckIn(action) {
       return createFromReportingRestRep(result);
     });
 
-    yield put(checkInActions.expectedToCheckIn(patients));
+    yield put(patientActions.setPatientsInStore(patients));
 
   } catch (e) {
     yield put(checkInActions.getExpectedToCheckInFailed(e.message));
@@ -113,7 +119,7 @@ function* getPatientApptData(action) {
       return createFromReportingRestRep(result);
     });
     if (patients && patients.length > 0 ) {
-      yield put(patientActions.updatePatient(patients[0]));
+      yield put(patientActions.updatePatientInStore(patients[0]));
     }
 
   } catch (e) {
@@ -135,7 +141,7 @@ function *checkInSagas() {
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
   yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetExpectedToCheckIn);
   yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetExpectedToCheckIn);
-  yield takeLatest(PATIENT_TYPES.GET_APPT_DATA, getPatientApptData);
+  yield takeLatest(PATIENT_APPT_TYPES.GET_APPT_DATA, getPatientApptData);
 }
 
 export default checkInSagas;

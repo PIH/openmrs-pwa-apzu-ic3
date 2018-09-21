@@ -171,6 +171,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                 rowSelectedActionCreators={
                   Array [
                     [Function],
+                    [Function],
                   ]
                 }
                 title="Blood Pressure Queue"
@@ -232,6 +233,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                     rowSelectedActionCreators={
                       Array [
                         [Function],
+                        [Function],
                       ]
                     }
                   >
@@ -279,6 +281,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                       rowData={Array []}
                       rowSelectedActionCreators={
                         Array [
+                          [Function],
                           [Function],
                         ]
                       }

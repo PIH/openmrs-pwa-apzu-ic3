@@ -1,10 +1,9 @@
 import React from 'react';
 import DatePicker from 'react-16-bootstrap-date-picker';
 import { Button, ButtonToolbar, Grid, Row, Col,FormGroup, ControlLabel } from 'react-bootstrap';
-import { List } from '@openmrs/react-components';
+import {patientActions, List} from '@openmrs/react-components';
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
-import patientActions from '../patient/patientActions';
 import checkInActions from './checkInActions';
 import { LOCATION_TYPES, PATIENT_REPRESENTATION } from '../constants';
 import utils from "../utils";
@@ -71,7 +70,7 @@ class CheckInQueue extends React.Component {
   };
 
   onMountOtherActionCreators() {
-    this.props.dispatch(patientActions.clearPatientSelected());
+    this.props.dispatch(patientActions.clearSelectedPatient());
   }
   redirectToCheckinPageActionCreator() {
     return push('/checkin/checkInPage');
@@ -120,7 +119,7 @@ class CheckInQueue extends React.Component {
           onMountOtherActionCreators={ [this.onMountOtherActionCreators.bind(this)] }
           rowData={Object.values(this.props.patients)}
           onRowCount={this.props.onRowCount}
-          rowSelectedActionCreators={ [this.redirectToCheckinPageActionCreator.bind(this)] }
+          rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
           title=""
         />
       </div>
@@ -135,7 +134,7 @@ CheckInQueue.defaultProps = {
 const mapStateToProps = (state) => {
   return {
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,
-    patients: state.patients
+    patients: state.openmrs.patients
   };
 };
 

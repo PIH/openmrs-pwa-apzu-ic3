@@ -1,9 +1,9 @@
 import React from 'react';
 import { Label } from 'react-bootstrap';
-import { patientUtil, PatientSearch } from '@openmrs/react-components';
+import {patientUtil, PatientSearch, patientActions} from '@openmrs/react-components';
 import { push } from 'connected-react-router';
 import {connect} from "react-redux";
-import patientActions from '../patient/patientActions';
+import patientApptActions from '../patient/patientApptActions';
 
 
 class SearchPatient extends React.Component {
@@ -22,7 +22,7 @@ class SearchPatient extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(patientActions.clearPatientSelected());
+    this.props.dispatch(patientActions.clearSelectedPatient());
   }
 
   parseResults(results) {
@@ -40,8 +40,8 @@ class SearchPatient extends React.Component {
           columnDefs={this.columnDefs}
           parseResults={this.parseResults.bind(this)}
           rowSelectedActionCreators={[
-            patientActions.addPatient,
-            patientActions.getPatientApptData,
+            patientActions.addPatientToStore,
+            patientApptActions.getPatientApptData,
             () => push('/checkin/checkInPage')
           ]}
         />

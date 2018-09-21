@@ -54,7 +54,7 @@ const Layout = props => {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.selectedPatient ? state.patients[state.selectedPatient] : null
+    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null
   };
 };
 

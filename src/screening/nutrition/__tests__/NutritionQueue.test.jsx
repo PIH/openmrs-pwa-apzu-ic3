@@ -3,9 +3,8 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import { DataGrid, visitActions } from '@openmrs/react-components';
+import {DataGrid, visitActions, patientActions} from '@openmrs/react-components';
 import NutritionQueue from '../NutritionQueue';
-import patientActions from '../../../patient/patientActions';
 import {VISIT_REPRESENTATION} from "../../../constants";
 
 let props, store;
@@ -39,9 +38,9 @@ describe('Component: NutritionQueue', () => {
             sessionLocation: {
               uuid: 'abc'
             }
-          }
+          },
+          patients: []
         },
-        patients: []
       });
     mountedComponent = undefined;
   });
@@ -49,9 +48,9 @@ describe('Component: NutritionQueue', () => {
   it('renders properly', () => {
     expect(toJson(nutritionQueue())).toMatchSnapshot();
     expect(nutritionQueue().find(DataGrid).length).toBe(1);
-    expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(1);
+    expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(2);
     expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/screening/nutrition/form");
-    expect(store.getActions()).toContainEqual(patientActions.clearPatientSelected());
+    expect(store.getActions()).toContainEqual(patientActions.clearSelectedPatient());
     expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits("custom:" + VISIT_REPRESENTATION, props.session.sessionLocation.uuid));
   });
 

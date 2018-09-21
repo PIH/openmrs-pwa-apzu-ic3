@@ -27,7 +27,7 @@ let BloodPressureQueue = props => {
 
 const mapStateToProps = (state) => {
   return {
-    patients: state.patients,
+    patients: state.openmrs.patients,
   };
 };
 

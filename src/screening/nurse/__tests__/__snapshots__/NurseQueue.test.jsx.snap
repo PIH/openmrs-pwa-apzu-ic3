@@ -168,6 +168,7 @@ exports[`Component: NurseQueue renders properly 1`] = `
                 rowSelectedActionCreators={
                   Array [
                     [Function],
+                    [Function],
                   ]
                 }
                 title="Nurse Queue"
@@ -229,6 +230,7 @@ exports[`Component: NurseQueue renders properly 1`] = `
                     rowSelectedActionCreators={
                       Array [
                         [Function],
+                        [Function],
                       ]
                     }
                   >
@@ -276,6 +278,7 @@ exports[`Component: NurseQueue renders properly 1`] = `
                       rowData={Array []}
                       rowSelectedActionCreators={
                         Array [
+                          [Function],
                           [Function],
                         ]
                       }
