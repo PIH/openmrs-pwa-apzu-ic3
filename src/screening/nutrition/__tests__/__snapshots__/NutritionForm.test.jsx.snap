@@ -544,6 +544,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                         initialize={[Function]}
                         initialized={false}
                         invalid={false}
+                        mode="edit"
                         patient={
                           Object {
                             "uuid": "abc",
