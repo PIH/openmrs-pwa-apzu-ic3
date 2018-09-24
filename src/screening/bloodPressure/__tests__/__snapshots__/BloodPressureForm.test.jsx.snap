@@ -426,6 +426,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   Array [
                     [Function],
                     [Function],
+                    [Function],
                   ]
                 }
                 patient={
@@ -453,6 +454,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   formId="bp-form"
                   formSubmittedActionCreator={
                     Array [
+                      [Function],
                       [Function],
                       [Function],
                     ]
@@ -485,6 +487,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     formId="bp-form"
                     formSubmittedActionCreator={
                       Array [
+                        [Function],
                         [Function],
                         [Function],
                       ]
@@ -564,6 +567,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       formId="bp-form"
                       formSubmittedActionCreator={
                         Array [
+                          [Function],
                           [Function],
                           [Function],
                         ]
@@ -657,6 +661,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                         formId="bp-form"
                         formSubmittedActionCreator={
                           Array [
+                            [Function],
                             [Function],
                             [Function],
                           ]
@@ -1081,6 +1086,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                       "formSubmittedActionCreator": Array [
                                                         [Function],
                                                         [Function],
+                                                        [Function],
                                                       ],
                                                       "getFormState": [Function],
                                                       "getValues": [Function],
@@ -1373,6 +1379,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "form": "bp-form",
                                                         "formId": "bp-form",
                                                         "formSubmittedActionCreator": Array [
+                                                          [Function],
                                                           [Function],
                                                           [Function],
                                                         ],
@@ -1849,6 +1856,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                       "formSubmittedActionCreator": Array [
                                                         [Function],
                                                         [Function],
+                                                        [Function],
                                                       ],
                                                       "getFormState": [Function],
                                                       "getValues": [Function],
@@ -2141,6 +2149,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                                         "form": "bp-form",
                                                         "formId": "bp-form",
                                                         "formSubmittedActionCreator": Array [
+                                                          [Function],
                                                           [Function],
                                                           [Function],
                                                         ],

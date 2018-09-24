@@ -300,6 +300,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   Array [
                     [Function],
                     [Function],
+                    [Function],
                   ]
                 }
                 patient={
@@ -327,6 +328,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   formId="nutrition-form"
                   formSubmittedActionCreator={
                     Array [
+                      [Function],
                       [Function],
                       [Function],
                     ]
@@ -359,6 +361,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     formId="nutrition-form"
                     formSubmittedActionCreator={
                       Array [
+                        [Function],
                         [Function],
                         [Function],
                       ]
@@ -438,6 +441,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       formId="nutrition-form"
                       formSubmittedActionCreator={
                         Array [
+                          [Function],
                           [Function],
                           [Function],
                         ]
@@ -531,6 +535,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                         formId="nutrition-form"
                         formSubmittedActionCreator={
                           Array [
+                            [Function],
                             [Function],
                             [Function],
                           ]
@@ -792,6 +797,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "formSubmittedActionCreator": Array [
                                                         [Function],
                                                         [Function],
+                                                        [Function],
                                                       ],
                                                       "getFormState": [Function],
                                                       "getValues": [Function],
@@ -1013,6 +1019,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                         "form": "nutrition-form",
                                                         "formId": "nutrition-form",
                                                         "formSubmittedActionCreator": Array [
+                                                          [Function],
                                                           [Function],
                                                           [Function],
                                                         ],
@@ -1366,6 +1373,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                       "formSubmittedActionCreator": Array [
                                                         [Function],
                                                         [Function],
+                                                        [Function],
                                                       ],
                                                       "getFormState": [Function],
                                                       "getValues": [Function],
@@ -1587,6 +1595,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                                                         "form": "nutrition-form",
                                                         "formId": "nutrition-form",
                                                         "formSubmittedActionCreator": Array [
+                                                          [Function],
                                                           [Function],
                                                           [Function],
                                                         ],

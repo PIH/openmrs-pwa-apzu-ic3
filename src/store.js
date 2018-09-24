@@ -16,7 +16,6 @@ import { reducer as toastrReducer } from 'react-redux-toastr';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { sagas as openmrsSagas, reducers as openmrsReducers, LOGIN_TYPES } from '@openmrs/react-components';
 import completedVisitsReducer from './visit/completedVisitsReducer';
-import patientSagas from './patient/patientSagas';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
 import formSagas from './bahmniform/formSagas';
@@ -92,7 +91,6 @@ const pReducer = persistReducer(persistConfig, rootReducer);
 const rootSagas = function* () {
   yield all([
     openmrsSagas(),
-    patientSagas(),
     checkInSagas(),
     checkOutSagas(),
     formSagas()
