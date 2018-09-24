@@ -4,13 +4,13 @@ import { Label, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import {visitActions} from '@openmrs/react-components';
 import CompletedScreenings from "../screening/CompletedScreenings";
-import {VISIT_REPRESENTATION} from '../constants';
+
+;
 
 class CheckInComplete extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(visitActions.fetchActiveVisits(
-      "custom:" + VISIT_REPRESENTATION,
       (this.props.session.sessionLocation ? this.props.session.sessionLocation.uuid : null)
     ));
   }

@@ -51,7 +51,7 @@ describe('Component: NutritionQueue', () => {
     expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(2);
     expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/screening/nutrition/form");
     expect(store.getActions()).toContainEqual(patientActions.clearSelectedPatient());
-    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits("custom:" + VISIT_REPRESENTATION, props.session.sessionLocation.uuid));
+    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits(props.session.sessionLocation.uuid));
   });
 
 });

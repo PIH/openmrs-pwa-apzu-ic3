@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 import {visitActions, patientActions, List} from '@openmrs/react-components';
 import utils from "../utils";
-import { VISIT_REPRESENTATION } from '../constants';
 import actionVisitFilters from './activeVisitsFilters';
 
 // TODO: should this extend the ScreeningQueue?
@@ -27,7 +26,7 @@ let ActiveVisits = props => {
   ];
 
   const fetchListActionCreator =
-    () => props.dispatch(visitActions.fetchActiveVisits("custom:" + VISIT_REPRESENTATION,
+    () => props.dispatch(visitActions.fetchActiveVisits(
       props.session.sessionLocation ? props.session.sessionLocation.uuid : null));
 
   const onMountOtherActionCreators = [

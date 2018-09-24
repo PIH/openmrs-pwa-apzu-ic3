@@ -2,14 +2,13 @@ import React from "react";
 import PropTypes from 'prop-types';
 import {patientActions, visitActions, List, patientObjByEncounterTypeFilter} from '@openmrs/react-components';
 import utils from "../utils";
-import { VISIT_REPRESENTATION, ENCOUNTER_TYPES } from '../constants';
+import {ENCOUNTER_TYPES} from '../constants';
 import {connect} from "react-redux";
 
 let ScreeningQueue = props => {
 
   const fetchListActionCreator = props.fetchListActionCreator ? this.props.fetchListActionCreator :
     () => props.dispatch(visitActions.fetchActiveVisits(
-      "custom:" + VISIT_REPRESENTATION,
       (props.session.sessionLocation ? props.session.sessionLocation.uuid : null)
     ));
 

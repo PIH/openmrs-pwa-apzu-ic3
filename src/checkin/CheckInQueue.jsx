@@ -5,7 +5,7 @@ import {patientActions, List} from '@openmrs/react-components';
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
 import checkInActions from './checkInActions';
-import { LOCATION_TYPES, PATIENT_REPRESENTATION } from '../constants';
+import {LOCATION_TYPES} from '../constants';
 import utils from "../utils";
 import checkInFilters from './checkInFilters';
 
@@ -126,10 +126,6 @@ class CheckInQueue extends React.Component {
     );
   }
 }
-
-CheckInQueue.defaultProps = {
-  representation: "custom:" + PATIENT_REPRESENTATION
-};
 
 const mapStateToProps = (state) => {
   return {
