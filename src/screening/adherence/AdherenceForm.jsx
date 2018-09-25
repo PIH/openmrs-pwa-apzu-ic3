@@ -90,8 +90,6 @@ let AdherenceForm = (props) => {
 
   return (
     <EncounterFormPage
-      afterSubmitLink={ props.afterSubmitLink ? props.afterSubmitLink : "/screening/adherence/queue" }
-      backLink={ props.backLink ? props.backLink : "/screening/adherence/queue" }
       encounterType={ ENCOUNTER_TYPES.AdherenceCounselingEncounterType }
       formContent={formContent}
       formId="adherence-form"

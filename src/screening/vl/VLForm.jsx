@@ -85,8 +85,6 @@ let VLForm = (props) => {
 
   return (
     <EncounterFormPage
-      afterSubmitLink="/screening/vl/queue"
-      backLink="/screening/vl/queue"
       encounterType={ ENCOUNTER_TYPES.VLEncounterType }
       formContent={formContent}
       formId="vl-form"

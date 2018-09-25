@@ -21,8 +21,6 @@ const maxValue260 = formValidations.maxValue(260);
 const abnormalMaxValue110 = formValidations.abnormalMaxValue(110);
 const abnormalMaxValue160 = formValidations.abnormalMaxValue(160);
 
-const backLink = "/screening/bloodPressure/queue";
-
 let BloodPressureForm = props => {
 
   const formContent = (
@@ -77,7 +75,6 @@ let BloodPressureForm = props => {
 
   return (
     <EncounterFormPage
-      backLink={ backLink }
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       formContent={formContent}
       title="Blood Pressure"
