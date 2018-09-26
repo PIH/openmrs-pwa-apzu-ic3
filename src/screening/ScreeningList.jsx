@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListGroupItem, ListGroup } from 'react-bootstrap';
+import {TaskList} from '@openmrs/react-components';
 
 import bloodPressureFilters from './bloodPressure/bloodPressureFilters';
 import nutritionFilters from './nutrition/nutritionFilters';
@@ -8,18 +8,14 @@ import vlFilters from './vl/vlFilters';
 import eidFilters from './eid/eidFilters';
 import adherenceFilters from './adherence/adherenceFilters';
 import checkInFilters from "../checkin/checkInFilters";
-import ScreeningListItem from './ScreeningListItem';
 
-
-// TODO should this be named something more generic than "Screening" as we will resuse?
 let ScreeningList = props => {
 
-  // this should likely be exported to the constnat.js or some other config, but I was having a problem with this
   const SCREENINGS = [
     {
       key: 1,
       title: <h3>IC3 Screening</h3>,
-      screenings: [
+      tasks: [
         {
           title: "Check-In",
           completedFilters: checkInFilters.completed,
@@ -30,7 +26,7 @@ let ScreeningList = props => {
     {
       key: 2,
       title: "Special",
-      screenings: [
+      tasks: [
         {
           title: "Viral Load",
           completedFilters: vlFilters.completed,
@@ -72,7 +68,7 @@ let ScreeningList = props => {
     {
       key: 3,
       title: "Routine",
-      screenings: [
+      tasks: [
         {
           title: "Nutrition",
           completedFilters: nutritionFilters.completed,
@@ -114,27 +110,11 @@ let ScreeningList = props => {
     }
   ];
 
-
   return (
-    <div>
-      <ListGroup>
-        {SCREENINGS.map(screeningGroup => (
-          <ListGroupItem key={screeningGroup.key} header={screeningGroup.title}>
-            {screeningGroup.screenings.map(screening => (
-              <ScreeningListItem
-                completedFilters={screening.completedFilters}
-                link={screening.link}
-                key={screening.title}
-                patient={props.patient}
-                requiredFilters={screening.requiredFilters}
-                summaryLink={screening.summmaryLink}
-                title={screening.title}
-              />
-            ))}
-          </ListGroupItem>
-        ))};
-      </ListGroup>
-    </div>
+    <TaskList
+      patient={props.patient}
+      taskGroups={SCREENINGS}
+    />
   );
 
 };
