@@ -18,7 +18,6 @@ import { sagas as openmrsSagas, reducers as openmrsReducers, LOGIN_TYPES } from 
 import completedVisitsReducer from './visit/completedVisitsReducer';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
-import formSagas from './bahmniform/formSagas';
 import { persistStore, persistReducer } from 'redux-persist';
 import storageSession from 'redux-persist/lib/storage/session';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
@@ -92,8 +91,7 @@ const rootSagas = function* () {
   yield all([
     openmrsSagas(),
     checkInSagas(),
-    checkOutSagas(),
-    formSagas()
+    checkOutSagas()
   ]);
 };
 
