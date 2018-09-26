@@ -2420,13 +2420,11 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                                             bsSize="large"
                                             bsStyle="success"
                                             disabled={false}
-                                            onClick={[Function]}
                                             type="submit"
                                           >
                                             <button
                                               className="btn btn-lg btn-success"
                                               disabled={false}
-                                              onClick={[Function]}
                                               type="submit"
                                             >
                                               Submit
