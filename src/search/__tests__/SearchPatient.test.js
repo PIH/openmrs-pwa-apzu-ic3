@@ -12,8 +12,6 @@ let mountedComponent;
 
 const mockStore = configureMockStore();
 
-spy(SearchPatient.prototype, 'componentDidMount');
-
 const searchPatient = () => {
   if (!mountedComponent) {
     mountedComponent = mount(
@@ -43,12 +41,12 @@ describe('Component: SearchPatient', () => {
   it('renders properly', () => {
     expect(toJson(searchPatient())).toMatchSnapshot();
     expect(searchPatient().find(PatientSearch).length).toBe(1);
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators.length).toBe(3);
+    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators.length).toBe(4);
     expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("addPatientToStore");
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[1].name).toBe("getPatientApptData");
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[2].name).toBe("");
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[2]().payload.args[0]).toBe("/checkin/checkInPage");
-    expect(SearchPatient.prototype.componentDidMount.calledOnce).toBe(true);
+    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[1].name).toBe("setSelectedPatient");
+    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[2].name).toBe("getPatientApptData");
+    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[3].name).toBe("");
+    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[3]().payload.args[0]).toBe("/checkin/checkInPage");
     expect(store.getActions()).toContainEqual(patientActions.clearSelectedPatient());
   });
 

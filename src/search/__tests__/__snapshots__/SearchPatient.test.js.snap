@@ -13,27 +13,31 @@ exports[`Component: SearchPatient renders properly 1`] = `
     }
   }
 >
-  <Connect(SearchPatient)
+  <SearchPatient
     columnDefs={Array []}
   >
-    <SearchPatient
-      columnDefs={Array []}
-      dispatch={[Function]}
-    >
-      <div>
-        <h3>
-          <Label
-            bsClass="label"
-            bsStyle="default"
+    <div>
+      <h3>
+        <Label
+          bsClass="label"
+          bsStyle="default"
+        >
+          <span
+            className="label label-default"
           >
-            <span
-              className="label label-default"
-            >
-              Patient Search
-            </span>
-          </Label>
-        </h3>
-        <Connect(PatientSearch)
+            Patient Search
+          </span>
+        </Label>
+      </h3>
+      <Connect(PatientSearch)
+        rowSelectedActionCreators={
+          Array [
+            [Function],
+            [Function],
+          ]
+        }
+      >
+        <PatientSearch
           columnDefs={
             Array [
               Object {
@@ -42,8 +46,8 @@ exports[`Component: SearchPatient renders properly 1`] = `
                 "hide": true,
               },
               Object {
-                "headerName": "Id",
-                "valueGetter": "data.identifiers[0].identifier",
+                "headerName": "ID",
+                "valueGetter": [Function],
               },
               Object {
                 "field": "name.givenName",
@@ -63,80 +67,122 @@ exports[`Component: SearchPatient renders properly 1`] = `
               },
             ]
           }
+          dispatch={[Function]}
           parseResults={[Function]}
+          representation="custom:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,names,preferredName,addresses,attributes))"
+          rowData={Array []}
           rowSelectedActionCreators={
             Array [
-              [Function],
               [Function],
               [Function],
             ]
           }
         >
-          <PatientSearch
-            columnDefs={
-              Array [
-                Object {
-                  "field": "uuid",
-                  "headerName": "uuid",
-                  "hide": true,
-                },
-                Object {
-                  "headerName": "Id",
-                  "valueGetter": "data.identifiers[0].identifier",
-                },
-                Object {
-                  "field": "name.givenName",
-                  "headerName": "Given Name",
-                },
-                Object {
-                  "field": "name.familyName",
-                  "headerName": "Family Name",
-                },
-                Object {
-                  "field": "gender",
-                  "headerName": "Gender",
-                },
-                Object {
-                  "field": "age",
-                  "headerName": "Age",
-                },
-              ]
-            }
-            dispatch={[Function]}
-            parseResults={[Function]}
-            representation="full"
-            rowData={Array []}
-            rowSelectedActionCreators={
-              Array [
-                [Function],
-                [Function],
-                [Function],
-              ]
-            }
-          >
-            <div>
-              <ReduxForm
+          <div>
+            <ReduxForm
+              onSubmit={[Function]}
+            >
+              <Connect(Form(PatientSearchForm))
+                destroyOnUnmount={true}
+                enableReinitialize={false}
+                forceUnregisterOnUnmount={false}
+                form="search-form"
+                getFormState={[Function]}
+                keepDirtyOnReinitialize={false}
                 onSubmit={[Function]}
+                persistentSubmitErrors={false}
+                pure={true}
+                shouldAsyncValidate={[Function]}
+                shouldError={[Function]}
+                shouldValidate={[Function]}
+                shouldWarn={[Function]}
+                touchOnBlur={true}
+                touchOnChange={false}
+                updateUnregisteredFields={false}
               >
-                <Connect(Form(PatientSearchForm))
+                <Form(PatientSearchForm)
+                  anyTouched={false}
+                  array={
+                    Object {
+                      "insert": [Function],
+                      "move": [Function],
+                      "pop": [Function],
+                      "push": [Function],
+                      "remove": [Function],
+                      "removeAll": [Function],
+                      "shift": [Function],
+                      "splice": [Function],
+                      "swap": [Function],
+                      "unshift": [Function],
+                    }
+                  }
+                  arrayInsert={[Function]}
+                  arrayMove={[Function]}
+                  arrayPop={[Function]}
+                  arrayPush={[Function]}
+                  arrayRemove={[Function]}
+                  arrayRemoveAll={[Function]}
+                  arrayShift={[Function]}
+                  arraySplice={[Function]}
+                  arraySwap={[Function]}
+                  arrayUnshift={[Function]}
+                  asyncValidating={false}
+                  autofill={[Function]}
+                  blur={[Function]}
+                  change={[Function]}
+                  clearAsyncError={[Function]}
+                  clearFields={[Function]}
+                  clearSubmit={[Function]}
+                  clearSubmitErrors={[Function]}
+                  destroy={[Function]}
                   destroyOnUnmount={true}
+                  dirty={false}
+                  dispatch={[Function]}
                   enableReinitialize={false}
+                  focus={[Function]}
                   forceUnregisterOnUnmount={false}
                   form="search-form"
                   getFormState={[Function]}
+                  initialize={[Function]}
+                  initialized={false}
+                  invalid={false}
                   keepDirtyOnReinitialize={false}
                   onSubmit={[Function]}
                   persistentSubmitErrors={false}
+                  pristine={true}
                   pure={true}
+                  registerField={[Function]}
+                  reset={[Function]}
+                  resetSection={[Function]}
+                  setSubmitFailed={[Function]}
+                  setSubmitSucceeded={[Function]}
                   shouldAsyncValidate={[Function]}
                   shouldError={[Function]}
                   shouldValidate={[Function]}
                   shouldWarn={[Function]}
+                  startAsyncValidation={[Function]}
+                  startSubmit={[Function]}
+                  stopAsyncValidation={[Function]}
+                  stopSubmit={[Function]}
+                  submit={[Function]}
+                  submitFailed={false}
+                  submitSucceeded={false}
+                  submitting={false}
+                  syncErrors={Object {}}
+                  syncWarnings={Object {}}
+                  touch={[Function]}
                   touchOnBlur={true}
                   touchOnChange={false}
+                  unregisterField={[Function]}
+                  untouch={[Function]}
+                  updateSyncErrors={[Function]}
+                  updateSyncWarnings={[Function]}
                   updateUnregisteredFields={false}
+                  valid={true}
+                  validExceptSubmit={true}
+                  values={Object {}}
                 >
-                  <Form(PatientSearchForm)
+                  <PatientSearchForm
                     anyTouched={false}
                     array={
                       Object {
@@ -152,16 +198,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                         "unshift": [Function],
                       }
                     }
-                    arrayInsert={[Function]}
-                    arrayMove={[Function]}
-                    arrayPop={[Function]}
-                    arrayPush={[Function]}
-                    arrayRemove={[Function]}
-                    arrayRemoveAll={[Function]}
-                    arrayShift={[Function]}
-                    arraySplice={[Function]}
-                    arraySwap={[Function]}
-                    arrayUnshift={[Function]}
+                    asyncValidate={[Function]}
                     asyncValidating={false}
                     autofill={[Function]}
                     blur={[Function]}
@@ -171,160 +208,187 @@ exports[`Component: SearchPatient renders properly 1`] = `
                     clearSubmit={[Function]}
                     clearSubmitErrors={[Function]}
                     destroy={[Function]}
-                    destroyOnUnmount={true}
                     dirty={false}
                     dispatch={[Function]}
-                    enableReinitialize={false}
-                    focus={[Function]}
-                    forceUnregisterOnUnmount={false}
                     form="search-form"
-                    getFormState={[Function]}
+                    handleSubmit={[Function]}
                     initialize={[Function]}
                     initialized={false}
                     invalid={false}
-                    keepDirtyOnReinitialize={false}
                     onSubmit={[Function]}
-                    persistentSubmitErrors={false}
                     pristine={true}
                     pure={true}
-                    registerField={[Function]}
                     reset={[Function]}
                     resetSection={[Function]}
-                    setSubmitFailed={[Function]}
-                    setSubmitSucceeded={[Function]}
-                    shouldAsyncValidate={[Function]}
-                    shouldError={[Function]}
-                    shouldValidate={[Function]}
-                    shouldWarn={[Function]}
-                    startAsyncValidation={[Function]}
-                    startSubmit={[Function]}
-                    stopAsyncValidation={[Function]}
-                    stopSubmit={[Function]}
                     submit={[Function]}
                     submitFailed={false}
                     submitSucceeded={false}
                     submitting={false}
-                    syncErrors={Object {}}
-                    syncWarnings={Object {}}
                     touch={[Function]}
-                    touchOnBlur={true}
-                    touchOnChange={false}
-                    unregisterField={[Function]}
                     untouch={[Function]}
-                    updateSyncErrors={[Function]}
-                    updateSyncWarnings={[Function]}
-                    updateUnregisteredFields={false}
                     valid={true}
-                    validExceptSubmit={true}
-                    values={Object {}}
                   >
-                    <PatientSearchForm
-                      anyTouched={false}
-                      array={
-                        Object {
-                          "insert": [Function],
-                          "move": [Function],
-                          "pop": [Function],
-                          "push": [Function],
-                          "remove": [Function],
-                          "removeAll": [Function],
-                          "shift": [Function],
-                          "splice": [Function],
-                          "swap": [Function],
-                          "unshift": [Function],
-                        }
-                      }
-                      asyncValidate={[Function]}
-                      asyncValidating={false}
-                      autofill={[Function]}
-                      blur={[Function]}
-                      change={[Function]}
-                      clearAsyncError={[Function]}
-                      clearFields={[Function]}
-                      clearSubmit={[Function]}
-                      clearSubmitErrors={[Function]}
-                      destroy={[Function]}
-                      dirty={false}
-                      dispatch={[Function]}
-                      form="search-form"
-                      handleSubmit={[Function]}
-                      initialize={[Function]}
-                      initialized={false}
-                      invalid={false}
+                    <Form
+                      bsClass="form"
+                      componentClass="form"
+                      horizontal={false}
+                      inline={false}
                       onSubmit={[Function]}
-                      pristine={true}
-                      pure={true}
-                      reset={[Function]}
-                      resetSection={[Function]}
-                      submit={[Function]}
-                      submitFailed={false}
-                      submitSucceeded={false}
-                      submitting={false}
-                      touch={[Function]}
-                      untouch={[Function]}
-                      valid={true}
                     >
-                      <Form
-                        bsClass="form"
-                        componentClass="form"
-                        horizontal={false}
-                        inline={false}
+                      <form
+                        className=""
                         onSubmit={[Function]}
                       >
-                        <form
-                          className=""
-                          onSubmit={[Function]}
+                        <Grid
+                          bsClass="container"
+                          componentClass="div"
+                          fluid={false}
                         >
-                          <Grid
-                            bsClass="container"
-                            componentClass="div"
-                            fluid={false}
+                          <div
+                            className="container"
                           >
-                            <div
-                              className="container"
+                            <Row
+                              bsClass="row"
+                              componentClass="div"
                             >
-                              <Row
-                                bsClass="row"
-                                componentClass="div"
+                              <div
+                                className="row"
                               >
-                                <div
-                                  className="row"
+                                <FormGroup
+                                  bsClass="form-group"
                                 >
-                                  <FormGroup
-                                    bsClass="form-group"
+                                  <div
+                                    className="form-group"
                                   >
-                                    <div
-                                      className="form-group"
+                                    <Col
+                                      bsClass="col"
+                                      componentClass={[Function]}
                                     >
-                                      <Col
-                                        bsClass="col"
-                                        componentClass={[Function]}
+                                      <ControlLabel
+                                        bsClass="control-label"
+                                        className=""
+                                        srOnly={false}
                                       >
-                                        <ControlLabel
-                                          bsClass="control-label"
-                                          className=""
-                                          srOnly={false}
+                                        <label
+                                          className="control-label"
                                         >
-                                          <label
-                                            className="control-label"
-                                          >
-                                            Search
-                                          </label>
-                                        </ControlLabel>
-                                      </Col>
-                                      <Col
-                                        bsClass="col"
-                                        componentClass="div"
+                                          Search
+                                        </label>
+                                      </ControlLabel>
+                                    </Col>
+                                    <Col
+                                      bsClass="col"
+                                      componentClass="div"
+                                    >
+                                      <div
+                                        className=""
                                       >
-                                        <div
-                                          className=""
+                                        <Field
+                                          component="input"
+                                          name="query"
+                                          type="text"
                                         >
-                                          <Field
+                                          <Connect(ConnectedField)
+                                            _reduxForm={
+                                              Object {
+                                                "anyTouched": false,
+                                                "array": Object {
+                                                  "insert": [Function],
+                                                  "move": [Function],
+                                                  "pop": [Function],
+                                                  "push": [Function],
+                                                  "remove": [Function],
+                                                  "removeAll": [Function],
+                                                  "shift": [Function],
+                                                  "splice": [Function],
+                                                  "swap": [Function],
+                                                  "unshift": [Function],
+                                                },
+                                                "arrayInsert": [Function],
+                                                "arrayMove": [Function],
+                                                "arrayPop": [Function],
+                                                "arrayPush": [Function],
+                                                "arrayRemove": [Function],
+                                                "arrayRemoveAll": [Function],
+                                                "arrayShift": [Function],
+                                                "arraySplice": [Function],
+                                                "arraySwap": [Function],
+                                                "arrayUnshift": [Function],
+                                                "asyncErrors": undefined,
+                                                "asyncValidate": [Function],
+                                                "asyncValidating": false,
+                                                "autofill": [Function],
+                                                "blur": [Function],
+                                                "change": [Function],
+                                                "clearAsyncError": [Function],
+                                                "clearFields": [Function],
+                                                "clearSubmit": [Function],
+                                                "clearSubmitErrors": [Function],
+                                                "destroy": [Function],
+                                                "destroyOnUnmount": true,
+                                                "dirty": false,
+                                                "dispatch": [Function],
+                                                "enableReinitialize": false,
+                                                "error": undefined,
+                                                "focus": [Function],
+                                                "forceUnregisterOnUnmount": false,
+                                                "form": "search-form",
+                                                "getFormState": [Function],
+                                                "getValues": [Function],
+                                                "initialValues": undefined,
+                                                "initialize": [Function],
+                                                "initialized": false,
+                                                "invalid": false,
+                                                "keepDirtyOnReinitialize": false,
+                                                "onSubmit": [Function],
+                                                "persistentSubmitErrors": false,
+                                                "pristine": true,
+                                                "pure": true,
+                                                "register": [Function],
+                                                "registerField": [Function],
+                                                "registerInnerOnSubmit": [Function],
+                                                "registeredFields": undefined,
+                                                "reset": [Function],
+                                                "resetSection": [Function],
+                                                "sectionPrefix": undefined,
+                                                "setSubmitFailed": [Function],
+                                                "setSubmitSucceeded": [Function],
+                                                "shouldAsyncValidate": [Function],
+                                                "shouldError": [Function],
+                                                "shouldValidate": [Function],
+                                                "shouldWarn": [Function],
+                                                "startAsyncValidation": [Function],
+                                                "startSubmit": [Function],
+                                                "stopAsyncValidation": [Function],
+                                                "stopSubmit": [Function],
+                                                "submit": [Function],
+                                                "submitFailed": false,
+                                                "submitSucceeded": false,
+                                                "submitting": false,
+                                                "syncErrors": Object {},
+                                                "syncWarnings": Object {},
+                                                "touch": [Function],
+                                                "touchOnBlur": true,
+                                                "touchOnChange": false,
+                                                "triggerSubmit": undefined,
+                                                "unregister": [Function],
+                                                "unregisterField": [Function],
+                                                "untouch": [Function],
+                                                "updateSyncErrors": [Function],
+                                                "updateSyncWarnings": [Function],
+                                                "updateUnregisteredFields": false,
+                                                "valid": true,
+                                                "validExceptSubmit": true,
+                                                "values": Object {},
+                                                "warning": undefined,
+                                              }
+                                            }
                                             component="input"
                                             name="query"
+                                            normalize={[Function]}
                                             type="text"
                                           >
-                                            <Connect(ConnectedField)
+                                            <ConnectedField
                                               _reduxForm={
                                                 Object {
                                                   "anyTouched": false,
@@ -419,213 +483,153 @@ exports[`Component: SearchPatient renders properly 1`] = `
                                                   "warning": undefined,
                                                 }
                                               }
+                                              asyncValidating={false}
                                               component="input"
+                                              dirty={false}
+                                              dispatch={[Function]}
                                               name="query"
                                               normalize={[Function]}
+                                              pristine={true}
                                               type="text"
                                             >
-                                              <ConnectedField
-                                                _reduxForm={
-                                                  Object {
-                                                    "anyTouched": false,
-                                                    "array": Object {
-                                                      "insert": [Function],
-                                                      "move": [Function],
-                                                      "pop": [Function],
-                                                      "push": [Function],
-                                                      "remove": [Function],
-                                                      "removeAll": [Function],
-                                                      "shift": [Function],
-                                                      "splice": [Function],
-                                                      "swap": [Function],
-                                                      "unshift": [Function],
-                                                    },
-                                                    "arrayInsert": [Function],
-                                                    "arrayMove": [Function],
-                                                    "arrayPop": [Function],
-                                                    "arrayPush": [Function],
-                                                    "arrayRemove": [Function],
-                                                    "arrayRemoveAll": [Function],
-                                                    "arrayShift": [Function],
-                                                    "arraySplice": [Function],
-                                                    "arraySwap": [Function],
-                                                    "arrayUnshift": [Function],
-                                                    "asyncErrors": undefined,
-                                                    "asyncValidate": [Function],
-                                                    "asyncValidating": false,
-                                                    "autofill": [Function],
-                                                    "blur": [Function],
-                                                    "change": [Function],
-                                                    "clearAsyncError": [Function],
-                                                    "clearFields": [Function],
-                                                    "clearSubmit": [Function],
-                                                    "clearSubmitErrors": [Function],
-                                                    "destroy": [Function],
-                                                    "destroyOnUnmount": true,
-                                                    "dirty": false,
-                                                    "dispatch": [Function],
-                                                    "enableReinitialize": false,
-                                                    "error": undefined,
-                                                    "focus": [Function],
-                                                    "forceUnregisterOnUnmount": false,
-                                                    "form": "search-form",
-                                                    "getFormState": [Function],
-                                                    "getValues": [Function],
-                                                    "initialValues": undefined,
-                                                    "initialize": [Function],
-                                                    "initialized": false,
-                                                    "invalid": false,
-                                                    "keepDirtyOnReinitialize": false,
-                                                    "onSubmit": [Function],
-                                                    "persistentSubmitErrors": false,
-                                                    "pristine": true,
-                                                    "pure": true,
-                                                    "register": [Function],
-                                                    "registerField": [Function],
-                                                    "registerInnerOnSubmit": [Function],
-                                                    "registeredFields": undefined,
-                                                    "reset": [Function],
-                                                    "resetSection": [Function],
-                                                    "sectionPrefix": undefined,
-                                                    "setSubmitFailed": [Function],
-                                                    "setSubmitSucceeded": [Function],
-                                                    "shouldAsyncValidate": [Function],
-                                                    "shouldError": [Function],
-                                                    "shouldValidate": [Function],
-                                                    "shouldWarn": [Function],
-                                                    "startAsyncValidation": [Function],
-                                                    "startSubmit": [Function],
-                                                    "stopAsyncValidation": [Function],
-                                                    "stopSubmit": [Function],
-                                                    "submit": [Function],
-                                                    "submitFailed": false,
-                                                    "submitSucceeded": false,
-                                                    "submitting": false,
-                                                    "syncErrors": Object {},
-                                                    "syncWarnings": Object {},
-                                                    "touch": [Function],
-                                                    "touchOnBlur": true,
-                                                    "touchOnChange": false,
-                                                    "triggerSubmit": undefined,
-                                                    "unregister": [Function],
-                                                    "unregisterField": [Function],
-                                                    "untouch": [Function],
-                                                    "updateSyncErrors": [Function],
-                                                    "updateSyncWarnings": [Function],
-                                                    "updateUnregisteredFields": false,
-                                                    "valid": true,
-                                                    "validExceptSubmit": true,
-                                                    "values": Object {},
-                                                    "warning": undefined,
-                                                  }
-                                                }
-                                                asyncValidating={false}
-                                                component="input"
-                                                dirty={false}
-                                                dispatch={[Function]}
+                                              <input
                                                 name="query"
-                                                normalize={[Function]}
-                                                pristine={true}
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                onDragStart={[Function]}
+                                                onDrop={[Function]}
+                                                onFocus={[Function]}
                                                 type="text"
-                                              >
-                                                <input
-                                                  name="query"
-                                                  onBlur={[Function]}
-                                                  onChange={[Function]}
-                                                  onDragStart={[Function]}
-                                                  onDrop={[Function]}
-                                                  onFocus={[Function]}
-                                                  type="text"
-                                                  value=""
-                                                />
-                                              </ConnectedField>
-                                            </Connect(ConnectedField)>
-                                          </Field>
-                                        </div>
-                                      </Col>
-                                    </div>
-                                  </FormGroup>
-                                </div>
-                              </Row>
-                              <Row
-                                bsClass="row"
-                                componentClass="div"
+                                                value=""
+                                              />
+                                            </ConnectedField>
+                                          </Connect(ConnectedField)>
+                                        </Field>
+                                      </div>
+                                    </Col>
+                                  </div>
+                                </FormGroup>
+                              </div>
+                            </Row>
+                            <Row
+                              bsClass="row"
+                              componentClass="div"
+                            >
+                              <div
+                                className="row"
                               >
-                                <div
-                                  className="row"
+                                <FormGroup
+                                  bsClass="form-group"
                                 >
-                                  <FormGroup
-                                    bsClass="form-group"
+                                  <div
+                                    className="form-group"
                                   >
-                                    <div
-                                      className="form-group"
+                                    <Col
+                                      bsClass="col"
+                                      componentClass="div"
                                     >
-                                      <Col
-                                        bsClass="col"
-                                        componentClass="div"
+                                      <div
+                                        className=""
                                       >
-                                        <div
-                                          className=""
+                                        <ButtonToolbar
+                                          bsClass="btn-toolbar"
                                         >
-                                          <ButtonToolbar
-                                            bsClass="btn-toolbar"
+                                          <div
+                                            className="btn-toolbar"
+                                            role="toolbar"
                                           >
-                                            <div
-                                              className="btn-toolbar"
-                                              role="toolbar"
+                                            <Button
+                                              active={false}
+                                              block={false}
+                                              bsClass="btn"
+                                              bsSize="large"
+                                              bsStyle="success"
+                                              disabled={true}
+                                              type="submit"
                                             >
-                                              <Button
-                                                active={false}
-                                                block={false}
-                                                bsClass="btn"
-                                                bsSize="large"
-                                                bsStyle="success"
+                                              <button
+                                                className="btn btn-lg btn-success"
                                                 disabled={true}
                                                 type="submit"
                                               >
-                                                <button
-                                                  className="btn btn-lg btn-success"
-                                                  disabled={true}
-                                                  type="submit"
-                                                >
-                                                  Search
-                                                </button>
-                                              </Button>
-                                              <Button
-                                                active={false}
-                                                block={false}
-                                                bsClass="btn"
-                                                bsSize="large"
-                                                bsStyle="danger"
+                                                Search
+                                              </button>
+                                            </Button>
+                                            <Button
+                                              active={false}
+                                              block={false}
+                                              bsClass="btn"
+                                              bsSize="large"
+                                              bsStyle="danger"
+                                              disabled={true}
+                                              onClick={[Function]}
+                                            >
+                                              <button
+                                                className="btn btn-lg btn-danger"
                                                 disabled={true}
                                                 onClick={[Function]}
+                                                type="button"
                                               >
-                                                <button
-                                                  className="btn btn-lg btn-danger"
-                                                  disabled={true}
-                                                  onClick={[Function]}
-                                                  type="button"
-                                                >
-                                                  Clear Values
-                                                </button>
-                                              </Button>
-                                            </div>
-                                          </ButtonToolbar>
-                                        </div>
-                                      </Col>
-                                    </div>
-                                  </FormGroup>
-                                </div>
-                              </Row>
-                            </div>
-                          </Grid>
-                        </form>
-                      </Form>
-                    </PatientSearchForm>
-                  </Form(PatientSearchForm)>
-                </Connect(Form(PatientSearchForm))>
-              </ReduxForm>
-              <Connect(DataGrid)
+                                                Clear Values
+                                              </button>
+                                            </Button>
+                                          </div>
+                                        </ButtonToolbar>
+                                      </div>
+                                    </Col>
+                                  </div>
+                                </FormGroup>
+                              </div>
+                            </Row>
+                          </div>
+                        </Grid>
+                      </form>
+                    </Form>
+                  </PatientSearchForm>
+                </Form(PatientSearchForm)>
+              </Connect(Form(PatientSearchForm))>
+            </ReduxForm>
+            <Connect(DataGrid)
+              columnDefs={
+                Array [
+                  Object {
+                    "field": "uuid",
+                    "headerName": "uuid",
+                    "hide": true,
+                  },
+                  Object {
+                    "headerName": "ID",
+                    "valueGetter": [Function],
+                  },
+                  Object {
+                    "field": "name.givenName",
+                    "headerName": "Given Name",
+                  },
+                  Object {
+                    "field": "name.familyName",
+                    "headerName": "Family Name",
+                  },
+                  Object {
+                    "field": "gender",
+                    "headerName": "Gender",
+                  },
+                  Object {
+                    "field": "age",
+                    "headerName": "Age",
+                  },
+                ]
+              }
+              rowData={Array []}
+              rowSelectedActionCreators={
+                Array [
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                ]
+              }
+            >
+              <DataGrid
                 columnDefs={
                   Array [
                     Object {
@@ -634,8 +638,8 @@ exports[`Component: SearchPatient renders properly 1`] = `
                       "hide": true,
                     },
                     Object {
-                      "headerName": "Id",
-                      "valueGetter": "data.identifiers[0].identifier",
+                      "headerName": "ID",
+                      "valueGetter": [Function],
                     },
                     Object {
                       "field": "name.givenName",
@@ -655,128 +659,89 @@ exports[`Component: SearchPatient renders properly 1`] = `
                     },
                   ]
                 }
+                dispatch={[Function]}
                 rowData={Array []}
                 rowSelectedActionCreators={
                   Array [
                     [Function],
                     [Function],
                     [Function],
+                    [Function],
                   ]
                 }
               >
-                <DataGrid
-                  columnDefs={
-                    Array [
-                      Object {
-                        "field": "uuid",
-                        "headerName": "uuid",
-                        "hide": true,
-                      },
-                      Object {
-                        "headerName": "Id",
-                        "valueGetter": "data.identifiers[0].identifier",
-                      },
-                      Object {
-                        "field": "name.givenName",
-                        "headerName": "Given Name",
-                      },
-                      Object {
-                        "field": "name.familyName",
-                        "headerName": "Family Name",
-                      },
-                      Object {
-                        "field": "gender",
-                        "headerName": "Gender",
-                      },
-                      Object {
-                        "field": "age",
-                        "headerName": "Age",
-                      },
-                    ]
-                  }
-                  dispatch={[Function]}
-                  rowData={Array []}
-                  rowSelectedActionCreators={
-                    Array [
-                      [Function],
-                      [Function],
-                      [Function],
-                    ]
+                <div
+                  id="omrsGrid"
+                  style={
+                    Object {
+                      "height": "600px",
+                    }
                   }
                 >
-                  <div
-                    id="omrsGrid"
-                    style={
-                      Object {
-                        "height": "600px",
-                      }
+                  <label>
+                    Search:
+                    <input
+                      onChange={[Function]}
+                      type="text"
+                    />
+                  </label>
+                  <AgGridReact
+                    animateRows={true}
+                    columnDefs={
+                      Array [
+                        Object {
+                          "field": "uuid",
+                          "headerName": "uuid",
+                          "hide": true,
+                        },
+                        Object {
+                          "headerName": "ID",
+                          "valueGetter": [Function],
+                        },
+                        Object {
+                          "field": "name.givenName",
+                          "headerName": "Given Name",
+                        },
+                        Object {
+                          "field": "name.familyName",
+                          "headerName": "Family Name",
+                        },
+                        Object {
+                          "field": "gender",
+                          "headerName": "Gender",
+                        },
+                        Object {
+                          "field": "age",
+                          "headerName": "Age",
+                        },
+                      ]
                     }
+                    enableFiltering={true}
+                    enableSorting={true}
+                    id="omrsGrid"
+                    onFilterChanged={[Function]}
+                    onGridReady={[Function]}
+                    onRowDataChanged={[Function]}
+                    onSelectionChanged={[Function]}
+                    rowClassRules="rowClassRules"
+                    rowData={Array []}
+                    rowSelection="single"
                   >
-                    <label>
-                      Search:
-                      <input
-                        onChange={[Function]}
-                        type="text"
-                      />
-                    </label>
-                    <AgGridReact
-                      animateRows={true}
-                      columnDefs={
-                        Array [
-                          Object {
-                            "field": "uuid",
-                            "headerName": "uuid",
-                            "hide": true,
-                          },
-                          Object {
-                            "headerName": "Id",
-                            "valueGetter": "data.identifiers[0].identifier",
-                          },
-                          Object {
-                            "field": "name.givenName",
-                            "headerName": "Given Name",
-                          },
-                          Object {
-                            "field": "name.familyName",
-                            "headerName": "Family Name",
-                          },
-                          Object {
-                            "field": "gender",
-                            "headerName": "Gender",
-                          },
-                          Object {
-                            "field": "age",
-                            "headerName": "Age",
-                          },
-                        ]
-                      }
-                      enableFiltering={true}
-                      enableSorting={true}
-                      id="omrsGrid"
-                      onFilterChanged={[Function]}
-                      onGridReady={[Function]}
-                      onRowDataChanged={[Function]}
-                      onSelectionChanged={[Function]}
-                      rowClassRules="rowClassRules"
-                      rowData={Array []}
-                      rowSelection="single"
-                    >
-                      <div
-                        style={
-                          Object {
-                            "height": "100%",
-                          }
+                    <div
+                      style={
+                        Object {
+                          "height": "100%",
                         }
-                      />
-                    </AgGridReact>
-                  </div>
-                </DataGrid>
-              </Connect(DataGrid)>
-            </div>
-          </PatientSearch>
-        </Connect(PatientSearch)>
-      </div>
-    </SearchPatient>
-  </Connect(SearchPatient)>
+                      }
+                    />
+                  </AgGridReact>
+                </div>
+              </DataGrid>
+            </Connect(DataGrid)>
+          </div>
+        </PatientSearch>
+      </Connect(PatientSearch)>
+    </div>
+  </SearchPatient>
 </Provider>
 `;
