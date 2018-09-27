@@ -1,7 +1,8 @@
 import React from 'react';
-import { Obs, EncounterFormPage} from '@openmrs/react-components';
+import {Obs} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
+import ScreeningForm from "../ScreeningForm";
 
 let NutritionForm = (props) => {
 
@@ -37,7 +38,7 @@ let NutritionForm = (props) => {
   );
 
   return (
-    <EncounterFormPage
+    <ScreeningForm
       encounterType={ENCOUNTER_TYPES.NutritionEncounterType}
       formId="nutrition-form"
       formContent={formContent}

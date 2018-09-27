@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
-import { Obs, EncounterFormPage} from '@openmrs/react-components';
+import {Obs} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import PatientAlert from '../../patient/PatientAlert';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
+import ScreeningForm from "../ScreeningForm";
 
 let VLForm = (props) => {
 
@@ -84,7 +85,7 @@ let VLForm = (props) => {
   );
 
   return (
-    <EncounterFormPage
+    <ScreeningForm
       encounterType={ ENCOUNTER_TYPES.VLEncounterType }
       formContent={formContent}
       formId="vl-form"

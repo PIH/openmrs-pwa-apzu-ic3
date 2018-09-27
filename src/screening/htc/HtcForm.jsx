@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Obs, EncounterFormPage} from '@openmrs/react-components';
+import {Obs} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import '../../assets/css/tabs.css';
+import ScreeningForm from "../ScreeningForm";
 
 let HtcForm = (props) => {
 
@@ -28,7 +29,7 @@ let HtcForm = (props) => {
   );
 
   return (
-    <EncounterFormPage
+    <ScreeningForm
       encounterType={ ENCOUNTER_TYPES.HTCEncounterType }
       formContent={formContent}
       formId="htc-form"

@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
-import {Obs, EncounterFormPage} from '@openmrs/react-components';
+import {Obs} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
-
+import ScreeningForm from "../ScreeningForm";
 
 
 let DnaPcrForm = (props) => {
@@ -84,7 +84,7 @@ let DnaPcrForm = (props) => {
   );
 
   return (
-    <EncounterFormPage
+    <ScreeningForm
       afterSubmitLink="/screening/eid/queue"
       backLink="/screening/eid/queue"
       encounterType={ ENCOUNTER_TYPES.DnaPcrEncounterType }

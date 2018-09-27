@@ -23,7 +23,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
     url=""
   >
     <BloodPressureForm>
-      <Connect(EncounterFormPage)
+      <Connect(ScreeningForm)
         encounterType={
           Object {
             "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
@@ -157,7 +157,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
         formId="bp-form"
         title="Blood Pressure"
       >
-        <EncounterFormPage
+        <ScreeningForm
           dispatch={[Function]}
           encounterType={
             Object {
@@ -300,85 +300,159 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           }
           title="Blood Pressure"
         >
-          <div
-            style={
+          <Connect(EncounterFormPage)
+            encounterType={
               Object {
-                "paddingLeft": "0px",
-                "paddingRight": "0px",
+                "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
               }
             }
-          >
-            <Grid
-              bsClass="container"
-              componentClass="div"
-              fluid={false}
-              style={
-                Object {
-                  "paddingLeft": "0px",
-                  "paddingRight": "0px",
-                }
-              }
-            >
-              <div
-                className="container"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
+            formContent={
+              <Grid
+                bsClass="container"
+                componentClass="div"
+                fluid={false}
               >
+                <Section
+                  title="Enter Patient Blood Pressure"
+                />
                 <Row
                   bsClass="row"
                   componentClass="div"
-                  style={
-                    Object {
-                      "backgroundColor": "#ffa500b3",
-                    }
-                  }
                 >
-                  <div
-                    className="row"
+                  <Col
+                    bsClass="col"
+                    componentClass="div"
+                    md={20}
+                    sm={20}
                     style={
                       Object {
-                        "backgroundColor": "#ffa500b3",
+                        "height": "40px",
                       }
                     }
                   >
-                    <Col
-                      bsClass="col"
-                      componentClass="div"
-                      md={20}
-                      sm={20}
-                      style={
-                        Object {
-                          "paddingLeft": "20px",
-                        }
-                      }
-                    >
-                      <div
-                        className="col-md-20 col-sm-20"
-                        style={
-                          Object {
-                            "paddingLeft": "20px",
-                          }
-                        }
-                      >
-                        <span>
-                          <h1>
-                            Blood Pressure
-                          </h1>
-                        </span>
-                      </div>
-                    </Col>
-                  </div>
+                    <span>
+                      <h1 />
+                    </span>
+                  </Col>
                 </Row>
                 <Row
                   bsClass="row"
                   componentClass="div"
                 >
-                  <div
-                    className="row"
+                  <FormGroup
+                    bsClass="form-group"
+                    controlId="formSystolic"
+                  >
+                    <Col
+                      bsClass="col"
+                      componentClass={[Function]}
+                      sm={4}
+                    >
+                      Systolic Blood Pressure
+                    </Col>
+                    <Col
+                      bsClass="col"
+                      componentClass="div"
+                      sm={2}
+                    >
+                      <Connect(Obs)
+                        concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                        path="systolic"
+                        placeholder="Systolic value"
+                        validate={
+                          Array [
+                            [Function],
+                            [Function],
+                          ]
+                        }
+                        warn={[Function]}
+                      />
+                    </Col>
+                    <Col
+                      bsClass="col"
+                      componentClass={[Function]}
+                      sm={2}
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      mmHG
+                    </Col>
+                  </FormGroup>
+                </Row>
+                <Row
+                  bsClass="row"
+                  componentClass="div"
+                >
+                  <FormGroup
+                    bsClass="form-group"
+                    controlId="formDiastolic"
+                  >
+                    <Col
+                      bsClass="col"
+                      componentClass={[Function]}
+                      sm={4}
+                    >
+                      Diastolic Blood Pressure
+                    </Col>
+                    <Col
+                      bsClass="col"
+                      componentClass="div"
+                      sm={2}
+                    >
+                      <Connect(Obs)
+                        concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                        path="diastolic"
+                        placeholder="Diastolic value"
+                        validate={
+                          Array [
+                            [Function],
+                            [Function],
+                          ]
+                        }
+                        warn={[Function]}
+                      />
+                    </Col>
+                    <Col
+                      bsClass="col"
+                      componentClass={[Function]}
+                      sm={2}
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      mmHG
+                    </Col>
+                  </FormGroup>
+                </Row>
+              </Grid>
+            }
+            formId="bp-form"
+            title="Blood Pressure"
+          >
+            <EncounterFormPage
+              dispatch={[Function]}
+              encounterType={
+                Object {
+                  "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
+                }
+              }
+              formContent={
+                <Grid
+                  bsClass="container"
+                  componentClass="div"
+                  fluid={false}
+                >
+                  <Section
+                    title="Enter Patient Blood Pressure"
+                  />
+                  <Row
+                    bsClass="row"
+                    componentClass="div"
                   >
                     <Col
                       bsClass="col"
@@ -391,44 +465,249 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                         }
                       }
                     >
-                      <div
-                        className="col-md-20 col-sm-20"
+                      <span>
+                        <h1 />
+                      </span>
+                    </Col>
+                  </Row>
+                  <Row
+                    bsClass="row"
+                    componentClass="div"
+                  >
+                    <FormGroup
+                      bsClass="form-group"
+                      controlId="formSystolic"
+                    >
+                      <Col
+                        bsClass="col"
+                        componentClass={[Function]}
+                        sm={4}
+                      >
+                        Systolic Blood Pressure
+                      </Col>
+                      <Col
+                        bsClass="col"
+                        componentClass="div"
+                        sm={2}
+                      >
+                        <Connect(Obs)
+                          concept="6569bffe-977f-11e1-8993-905e29aff6c1"
+                          path="systolic"
+                          placeholder="Systolic value"
+                          validate={
+                            Array [
+                              [Function],
+                              [Function],
+                            ]
+                          }
+                          warn={[Function]}
+                        />
+                      </Col>
+                      <Col
+                        bsClass="col"
+                        componentClass={[Function]}
+                        sm={2}
                         style={
                           Object {
-                            "height": "40px",
+                            "textAlign": "left",
                           }
                         }
                       >
-                        <span>
-                          <h1 />
-                        </span>
-                      </div>
-                    </Col>
-                  </div>
-                </Row>
-              </div>
-            </Grid>
-            <Loader>
+                        mmHG
+                      </Col>
+                    </FormGroup>
+                  </Row>
+                  <Row
+                    bsClass="row"
+                    componentClass="div"
+                  >
+                    <FormGroup
+                      bsClass="form-group"
+                      controlId="formDiastolic"
+                    >
+                      <Col
+                        bsClass="col"
+                        componentClass={[Function]}
+                        sm={4}
+                      >
+                        Diastolic Blood Pressure
+                      </Col>
+                      <Col
+                        bsClass="col"
+                        componentClass="div"
+                        sm={2}
+                      >
+                        <Connect(Obs)
+                          concept="6569c116-977f-11e1-8993-905e29aff6c1"
+                          path="diastolic"
+                          placeholder="Diastolic value"
+                          validate={
+                            Array [
+                              [Function],
+                              [Function],
+                            ]
+                          }
+                          warn={[Function]}
+                        />
+                      </Col>
+                      <Col
+                        bsClass="col"
+                        componentClass={[Function]}
+                        sm={2}
+                        style={
+                          Object {
+                            "textAlign": "left",
+                          }
+                        }
+                      >
+                        mmHG
+                      </Col>
+                    </FormGroup>
+                  </Row>
+                </Grid>
+              }
+              formId="bp-form"
+              patient={
+                Object {
+                  "uuid": "abc",
+                  "visit": Object {
+                    "uuid": "def",
+                  },
+                }
+              }
+              title="Blood Pressure"
+            >
               <div
-                className="custom-loader"
+                style={
+                  Object {
+                    "paddingLeft": "0px",
+                    "paddingRight": "0px",
+                  }
+                }
               >
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
+                <Grid
+                  bsClass="container"
+                  componentClass="div"
+                  fluid={false}
+                  style={
+                    Object {
+                      "paddingLeft": "0px",
+                      "paddingRight": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="container"
+                    style={
+                      Object {
+                        "paddingLeft": "0px",
+                        "paddingRight": "0px",
+                      }
+                    }
+                  >
+                    <Row
+                      bsClass="row"
+                      componentClass="div"
+                      style={
+                        Object {
+                          "backgroundColor": "#ffa500b3",
+                        }
+                      }
+                    >
+                      <div
+                        className="row"
+                        style={
+                          Object {
+                            "backgroundColor": "#ffa500b3",
+                          }
+                        }
+                      >
+                        <Col
+                          bsClass="col"
+                          componentClass="div"
+                          md={20}
+                          sm={20}
+                          style={
+                            Object {
+                              "paddingLeft": "20px",
+                            }
+                          }
+                        >
+                          <div
+                            className="col-md-20 col-sm-20"
+                            style={
+                              Object {
+                                "paddingLeft": "20px",
+                              }
+                            }
+                          >
+                            <span>
+                              <h1>
+                                Blood Pressure
+                              </h1>
+                            </span>
+                          </div>
+                        </Col>
+                      </div>
+                    </Row>
+                    <Row
+                      bsClass="row"
+                      componentClass="div"
+                    >
+                      <div
+                        className="row"
+                      >
+                        <Col
+                          bsClass="col"
+                          componentClass="div"
+                          md={20}
+                          sm={20}
+                          style={
+                            Object {
+                              "height": "40px",
+                            }
+                          }
+                        >
+                          <div
+                            className="col-md-20 col-sm-20"
+                            style={
+                              Object {
+                                "height": "40px",
+                              }
+                            }
+                          >
+                            <span>
+                              <h1 />
+                            </span>
+                          </div>
+                        </Col>
+                      </div>
+                    </Row>
+                  </div>
+                </Grid>
+                <Loader>
+                  <div
+                    className="custom-loader"
+                  >
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                  </div>
+                </Loader>
               </div>
-            </Loader>
-          </div>
-        </EncounterFormPage>
-      </Connect(EncounterFormPage)>
+            </EncounterFormPage>
+          </Connect(EncounterFormPage)>
+        </ScreeningForm>
+      </Connect(ScreeningForm)>
     </BloodPressureForm>
   </MockRouter>
 </Provider>

@@ -1,8 +1,9 @@
 import React from "react";
-import {Obs, Section, EncounterFormPage, formValidations } from '@openmrs/react-components';
+import {Obs, Section, formValidations} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 import {colHeight, leftTextAlign} from "../../pwaStyles";
+import ScreeningForm from "../ScreeningForm";
 
 /**
  * Range of possible values
@@ -74,7 +75,7 @@ let BloodPressureForm = props => {
   );
 
   return (
-    <EncounterFormPage
+    <ScreeningForm
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       formContent={formContent}
       title="Blood Pressure"
