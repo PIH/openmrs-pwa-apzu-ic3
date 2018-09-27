@@ -78,7 +78,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   componentClass="div"
                   sm={2}
                 >
-                  <Connect(Obs)
+                  <WithFormContext(Connect(Obs))
                     concept="6569bffe-977f-11e1-8993-905e29aff6c1"
                     path="systolic"
                     placeholder="Systolic value"
@@ -125,7 +125,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   componentClass="div"
                   sm={2}
                 >
-                  <Connect(Obs)
+                  <WithFormContext(Connect(Obs))
                     concept="6569c116-977f-11e1-8993-905e29aff6c1"
                     path="diastolic"
                     placeholder="Diastolic value"
@@ -213,7 +213,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     componentClass="div"
                     sm={2}
                   >
-                    <Connect(Obs)
+                    <WithFormContext(Connect(Obs))
                       concept="6569bffe-977f-11e1-8993-905e29aff6c1"
                       path="systolic"
                       placeholder="Systolic value"
@@ -260,7 +260,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     componentClass="div"
                     sm={2}
                   >
-                    <Connect(Obs)
+                    <WithFormContext(Connect(Obs))
                       concept="6569c116-977f-11e1-8993-905e29aff6c1"
                       path="diastolic"
                       placeholder="Diastolic value"
@@ -355,7 +355,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       componentClass="div"
                       sm={2}
                     >
-                      <Connect(Obs)
+                      <WithFormContext(Connect(Obs))
                         concept="6569bffe-977f-11e1-8993-905e29aff6c1"
                         path="systolic"
                         placeholder="Systolic value"
@@ -402,7 +402,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       componentClass="div"
                       sm={2}
                     >
-                      <Connect(Obs)
+                      <WithFormContext(Connect(Obs))
                         concept="6569c116-977f-11e1-8993-905e29aff6c1"
                         path="diastolic"
                         placeholder="Diastolic value"
@@ -490,7 +490,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                         componentClass="div"
                         sm={2}
                       >
-                        <Connect(Obs)
+                        <WithFormContext(Connect(Obs))
                           concept="6569bffe-977f-11e1-8993-905e29aff6c1"
                           path="systolic"
                           placeholder="Systolic value"
@@ -537,7 +537,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                         componentClass="div"
                         sm={2}
                       >
-                        <Connect(Obs)
+                        <WithFormContext(Connect(Obs))
                           concept="6569c116-977f-11e1-8993-905e29aff6c1"
                           path="diastolic"
                           placeholder="Diastolic value"

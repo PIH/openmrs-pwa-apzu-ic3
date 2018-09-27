@@ -55,7 +55,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   componentClass="div"
                   sm={4}
                 >
-                  <Connect(Obs)
+                  <WithFormContext(Connect(Obs))
                     concept="6569c44a-977f-11e1-8993-905e29aff6c1"
                     path="weight"
                   />
@@ -82,7 +82,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   componentClass="div"
                   sm={4}
                 >
-                  <Connect(Obs)
+                  <WithFormContext(Connect(Obs))
                     concept="6569c562-977f-11e1-8993-905e29aff6c1"
                     path="height"
                   />
@@ -127,7 +127,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     componentClass="div"
                     sm={4}
                   >
-                    <Connect(Obs)
+                    <WithFormContext(Connect(Obs))
                       concept="6569c44a-977f-11e1-8993-905e29aff6c1"
                       path="weight"
                     />
@@ -154,7 +154,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     componentClass="div"
                     sm={4}
                   >
-                    <Connect(Obs)
+                    <WithFormContext(Connect(Obs))
                       concept="6569c562-977f-11e1-8993-905e29aff6c1"
                       path="height"
                     />
@@ -206,7 +206,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       componentClass="div"
                       sm={4}
                     >
-                      <Connect(Obs)
+                      <WithFormContext(Connect(Obs))
                         concept="6569c44a-977f-11e1-8993-905e29aff6c1"
                         path="weight"
                       />
@@ -233,7 +233,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       componentClass="div"
                       sm={4}
                     >
-                      <Connect(Obs)
+                      <WithFormContext(Connect(Obs))
                         concept="6569c562-977f-11e1-8993-905e29aff6c1"
                         path="height"
                       />
@@ -278,7 +278,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                         componentClass="div"
                         sm={4}
                       >
-                        <Connect(Obs)
+                        <WithFormContext(Connect(Obs))
                           concept="6569c44a-977f-11e1-8993-905e29aff6c1"
                           path="weight"
                         />
@@ -305,7 +305,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                         componentClass="div"
                         sm={4}
                       >
-                        <Connect(Obs)
+                        <WithFormContext(Connect(Obs))
                           concept="6569c562-977f-11e1-8993-905e29aff6c1"
                           path="height"
                         />
