@@ -432,6 +432,11 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
               </Grid>
             }
             formId="bp-form"
+            formSubmittedActionCreators={
+              Array [
+                [Function],
+              ]
+            }
             title="Blood Pressure"
           >
             <EncounterFormPage
@@ -567,6 +572,11 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 </Grid>
               }
               formId="bp-form"
+              formSubmittedActionCreators={
+                Array [
+                  [Function],
+                ]
+              }
               patient={
                 Object {
                   "uuid": "abc",

@@ -1,5 +1,5 @@
 import React from "react";
-import {EncounterFormPage, encountersByEncounterTypeFilter} from '@openmrs/react-components';
+import {EncounterFormPage, encountersByEncounterTypeFilter, visitActions} from '@openmrs/react-components';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -13,12 +13,18 @@ let ScreeningForm = props => {
     encounter = encountersByEncounterTypeFilter(props.encounterType.uuid)(props.patient.visit.encounters).shift();
   }
 
+  // we want to update the active visit for the current patient on submit
+  const formSubmittedActionCreators = [
+    () => props.patient && props.patient.uuid && visitActions.fetchPatientActiveVisit(props.patient.uuid)
+  ];
+
   return (
     <EncounterFormPage
       encounter={encounter}
       encounterType={props.encounterType}
       formContent={props.formContent}
       formId={props.formId}
+      formSubmittedActionCreators={formSubmittedActionCreators}
       title={props.title}
     />
   );

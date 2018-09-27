@@ -243,6 +243,11 @@ exports[`Component: NutritionForm renders properly 1`] = `
               </Grid>
             }
             formId="nutrition-form"
+            formSubmittedActionCreators={
+              Array [
+                [Function],
+              ]
+            }
             title="Nutrition"
           >
             <EncounterFormPage
@@ -315,6 +320,11 @@ exports[`Component: NutritionForm renders properly 1`] = `
                 </Grid>
               }
               formId="nutrition-form"
+              formSubmittedActionCreators={
+                Array [
+                  [Function],
+                ]
+              }
               patient={
                 Object {
                   "uuid": "abc",
