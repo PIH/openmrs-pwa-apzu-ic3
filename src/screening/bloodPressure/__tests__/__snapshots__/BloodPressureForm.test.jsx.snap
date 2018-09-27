@@ -299,7 +299,135 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
             }
           }
           title="Blood Pressure"
-        />
+        >
+          <div
+            style={
+              Object {
+                "paddingLeft": "0px",
+                "paddingRight": "0px",
+              }
+            }
+          >
+            <Grid
+              bsClass="container"
+              componentClass="div"
+              fluid={false}
+              style={
+                Object {
+                  "paddingLeft": "0px",
+                  "paddingRight": "0px",
+                }
+              }
+            >
+              <div
+                className="container"
+                style={
+                  Object {
+                    "paddingLeft": "0px",
+                    "paddingRight": "0px",
+                  }
+                }
+              >
+                <Row
+                  bsClass="row"
+                  componentClass="div"
+                  style={
+                    Object {
+                      "backgroundColor": "#ffa500b3",
+                    }
+                  }
+                >
+                  <div
+                    className="row"
+                    style={
+                      Object {
+                        "backgroundColor": "#ffa500b3",
+                      }
+                    }
+                  >
+                    <Col
+                      bsClass="col"
+                      componentClass="div"
+                      md={20}
+                      sm={20}
+                      style={
+                        Object {
+                          "paddingLeft": "20px",
+                        }
+                      }
+                    >
+                      <div
+                        className="col-md-20 col-sm-20"
+                        style={
+                          Object {
+                            "paddingLeft": "20px",
+                          }
+                        }
+                      >
+                        <span>
+                          <h1>
+                            Blood Pressure
+                          </h1>
+                        </span>
+                      </div>
+                    </Col>
+                  </div>
+                </Row>
+                <Row
+                  bsClass="row"
+                  componentClass="div"
+                >
+                  <div
+                    className="row"
+                  >
+                    <Col
+                      bsClass="col"
+                      componentClass="div"
+                      md={20}
+                      sm={20}
+                      style={
+                        Object {
+                          "height": "40px",
+                        }
+                      }
+                    >
+                      <div
+                        className="col-md-20 col-sm-20"
+                        style={
+                          Object {
+                            "height": "40px",
+                          }
+                        }
+                      >
+                        <span>
+                          <h1 />
+                        </span>
+                      </div>
+                    </Col>
+                  </div>
+                </Row>
+              </div>
+            </Grid>
+            <Loader>
+              <div
+                className="custom-loader"
+              >
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+                <div />
+              </div>
+            </Loader>
+          </div>
+        </EncounterFormPage>
       </Connect(EncounterFormPage)>
     </BloodPressureForm>
   </MockRouter>
