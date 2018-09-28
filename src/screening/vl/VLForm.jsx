@@ -90,7 +90,7 @@ let VLForm = (props) => {
       encounterType={ ENCOUNTER_TYPES.VLEncounterType }
       formContent={formContent}
       formId="vl-form"
-      formInstanceId={ uuidv4() }
+      formInstanceId="vl-form"
       title="Viral Load"
     />
   );
