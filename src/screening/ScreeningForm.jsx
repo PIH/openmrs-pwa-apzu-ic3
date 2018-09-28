@@ -24,6 +24,7 @@ let ScreeningForm = props => {
       encounterType={props.encounterType}
       formContent={props.formContent}
       formId={props.formId}
+      formInstanceId={ props.formInstanceId }
       formSubmittedActionCreators={formSubmittedActionCreators}
       title={props.title}
     />
