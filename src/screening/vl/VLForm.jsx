@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import uuidv4 from 'uuid/v4';
 import { formValueSelector } from 'redux-form';
 import {Obs} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
