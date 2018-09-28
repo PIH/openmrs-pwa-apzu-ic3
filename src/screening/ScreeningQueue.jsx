@@ -26,7 +26,7 @@ let ScreeningQueue = props => {
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
         onRowCount={ props.onRowCount }
-        rowSelectedActionCreators={[...props.rowSelectedActionCreators, patientActions.setSelectedPatient]}
+        rowSelectedActionCreators={[patientActions.setSelectedPatient, ...props.rowSelectedActionCreators]}
         title={props.title}
       />
     </div>
