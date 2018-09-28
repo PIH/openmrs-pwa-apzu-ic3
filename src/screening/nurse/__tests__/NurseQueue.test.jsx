@@ -57,7 +57,7 @@ describe('Component: NurseQueue', () => {
         "queueLink": '/screening/nurse/queue'
       }
     };
-    expect(nurseQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toEqual(rowSelectedAction);
+    expect(nurseQueue().find(DataGrid).props().rowSelectedActionCreators[1]().payload.args[0]).toEqual(rowSelectedAction);
     expect(store.getActions()).toContainEqual(patientActions.clearSelectedPatient());
     expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits(props.session.sessionLocation.uuid));
   });

@@ -49,7 +49,7 @@ describe('Component: NutritionQueue', () => {
     expect(toJson(nutritionQueue())).toMatchSnapshot();
     expect(nutritionQueue().find(DataGrid).length).toBe(1);
     expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(2);
-    expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/screening/nutrition/form");
+    expect(nutritionQueue().find(DataGrid).props().rowSelectedActionCreators[1]().payload.args[0]).toBe("/screening/nutrition/form");
     expect(store.getActions()).toContainEqual(patientActions.clearSelectedPatient());
     expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits(props.session.sessionLocation.uuid));
   });
