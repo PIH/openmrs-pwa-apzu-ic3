@@ -95,7 +95,7 @@ function* getExpectedToCheckIn(action) {
       return createFromReportingRestRep(result);
     });
 
-    yield put(patientActions.setPatientsInStore(patients));
+    yield put(patientActions.setPatientStore(patients));
 
   } catch (e) {
     yield put(checkInActions.getExpectedToCheckInFailed(e.message));
