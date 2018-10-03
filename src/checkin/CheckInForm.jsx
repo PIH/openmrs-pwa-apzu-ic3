@@ -3,6 +3,7 @@ import {reduxForm, Field} from 'redux-form';
 import CompletedScreenings from "../screening/CompletedScreenings";
 import PatientAlert from "../patient/PatientAlert";
 import PatientAppointments from "../patient/PatientAppointments";
+import PatientLabTests from "../patient/PatientLabTests";
 import { Alert, Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { CONCEPTS } from "../constants";
@@ -44,6 +45,7 @@ let CheckinForm = props => {
       >
         <Grid>
           <PatientAppointments/>
+          <PatientLabTests/>
           <PatientAlert/>
           {(typeof patient !== 'undefined') && (patient !== null) &&
           <Row>

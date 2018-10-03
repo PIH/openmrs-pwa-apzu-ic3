@@ -11,7 +11,7 @@ class CompletedScreenings extends React.Component {
     let encounters = this.props.activeVisit.encounters.map((encounter, i) => {
       return (
         <div key={encounter.id}>
-          <h4>{encounter.display} @ { utils.formatTime(encounter.encounterDatetime) }</h4>
+          <h4>{encounter.encounterType.name} @ { utils.formatTime(encounter.encounterDatetime) }</h4>
           <ul>{encounter.obs.map((observation) => {
             return (
               <li key={observation.id}>{observation.display}</li>

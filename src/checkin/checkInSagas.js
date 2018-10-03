@@ -40,6 +40,7 @@ const createFromReportingRestRep =  (restRep) => {
   patient.lastVisitDate = restRep.last_visit_date;
   patient.actions = restRep.actions;
   patient.alert = restRep.alert;
+  patient.labTests = restRep.labTests;
 
   return patient;
 }
@@ -85,13 +86,12 @@ function* getExpectedToCheckIn(action) {
   try {
 
     // get the appointment report for today at this location
-    let apptRestResponse = yield call(reportingRest.getDataSet, {
-      datasetName: 'pihmalawi.dataset.ic3AppointmentData',
+    let apptRestResponse = yield call(reportingRest.getIC3Appt, {
       location: action.location,
       endDate:  action.endDate
     });
 
-    let patients = apptRestResponse.rows.map((result) => {
+    let patients = apptRestResponse.patients.map((result) => {
       return createFromReportingRestRep(result);
     });
 
@@ -108,14 +108,13 @@ function* getPatientApptData(action) {
   try {
     var state = R.pathOr(yield select(), ['payload'], action);
     // get patient appointment info
-    let apptRestResponse = yield call(reportingRest.getDataSet, {
-      datasetName: 'pihmalawi.dataset.ic3PatientAppointmentsData',
+    let apptRestResponse = yield call(reportingRest.getIC3Appt, {
       location: R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
       endDate:  utils.formatReportRestDate(new Date()),
       patient: action.patient.uuid
     });
 
-    let patients = apptRestResponse.rows.map((result) => {
+    let patients = apptRestResponse.patients.map((result) => {
       return createFromReportingRestRep(result);
     });
     if (patients && patients.length > 0 ) {

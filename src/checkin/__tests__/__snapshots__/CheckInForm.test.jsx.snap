@@ -265,6 +265,18 @@ exports[`Component: CheckInForm renders properly 1`] = `
                           </div>
                         </PatientAppointments>
                       </Connect(PatientAppointments)>
+                      <Connect(PatientLabTests)>
+                        <PatientLabTests
+                          dispatch={[Function]}
+                          patient={
+                            Object {
+                              "labTests": Array [],
+                            }
+                          }
+                        >
+                          <div />
+                        </PatientLabTests>
+                      </Connect(PatientLabTests)>
                       <Connect(PatientAlert)>
                         <PatientAlert
                           dispatch={[Function]}
