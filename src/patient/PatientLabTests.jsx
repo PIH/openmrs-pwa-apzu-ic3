@@ -10,7 +10,7 @@ class PatientLabTests extends React.Component {
   render() {
     let labTests = this.props.patient.labTests.map((lab, i) => {
       return (
-        <div key={ lab.lab_test_id }>
+        <div key={lab.lab_test_id}>
           <h4>{ lab.test_type } @ { lab.date_collected !== null ? utils.formatCalendarDate(lab.date_collected) : '_' }</h4>
           <ul>
             <li>Date entered: { lab.date_result_entered !== null ? utils.formatCalendarDate(lab.date_result_entered) : '_'}</li>
@@ -21,8 +21,11 @@ class PatientLabTests extends React.Component {
     });
 
     return (
-      <div>{ labTests }</div>
-    )
+      <div>
+        <h3><Label>History</Label></h3>
+        { labTests }
+      </div>
+    );
   }
 }
 

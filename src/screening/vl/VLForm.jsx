@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
-import {Obs} from '@openmrs/react-components';
+import { Obs } from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import PatientAlert from '../../patient/PatientAlert';
+import PatientLabTests from '../../patient/PatientLabTests';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
 
@@ -11,82 +12,101 @@ let VLForm = (props) => {
 
   const formContent = (
     <Grid>
-      <PatientAlert/>
-
       <Row>
-        <FormGroup controlId="formBled">
-          <Col componentClass={ControlLabel} sm={2}>
-            Bled
-          </Col>
-          <Col sm={6}>
-            <Obs
-              concept={CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid}
-              path="vl-bled"
-              conceptAnswers={ FORM_ANSWERS.trueFalse }
-            />
-          </Col>
-        </FormGroup>
-      </Row>
+        <Col sm={8}>
+          <PatientAlert />
 
-      {(typeof props.bled !== 'undefined') &&
+          <Row>
+            <FormGroup controlId="formBled">
+              <Col
+                componentClass={ControlLabel}
+                sm={2}
+              >
+            Bled
+              </Col>
+              <Col sm={6}>
+                <Obs
+                  concept={CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid}
+                  conceptAnswers={FORM_ANSWERS.trueFalse}
+                  path="vl-bled"
+                />
+              </Col>
+            </FormGroup>
+          </Row>
+
+          {(typeof props.bled !== 'undefined') &&
       (props.bled === CONCEPTS.False.uuid) &&
       <Row>
         <FormGroup controlId="formReasonForNoSample">
-          <Col componentClass={ControlLabel} sm={2}>
+          <Col
+            componentClass={ControlLabel}
+            sm={2}
+          >
             Reason for no sample
           </Col>
           <Col sm={6}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
+              conceptAnswers={FORM_ANSWERS.noSampleAnswers}
               path="vl-reason-no-sample"
-              conceptAnswers={ FORM_ANSWERS.noSampleAnswers }
             />
           </Col>
         </FormGroup>
       </Row>
-      }
+          }
 
-      {(typeof props.bled !== 'undefined') &&
+          {(typeof props.bled !== 'undefined') &&
       (props.bled === CONCEPTS.True.uuid) &&
       <Row>
         <FormGroup controlId="formReasonForTesting">
-          <Col componentClass={ControlLabel} sm={2}>
+          <Col
+            componentClass={ControlLabel}
+            sm={2}
+          >
             Reason for testing
           </Col>
           <Col sm={6}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid}
+              conceptAnswers={FORM_ANSWERS.reasonForTesting}
               path="vl-reason-for-testing"
-              conceptAnswers={ FORM_ANSWERS.reasonForTesting }
             />
           </Col>
         </FormGroup>
       </Row>
-      }
+          }
 
-      {(typeof props.bled !== 'undefined') &&
+          {(typeof props.bled !== 'undefined') &&
       (props.bled === CONCEPTS.True.uuid) &&
       <Row>
         <FormGroup controlId="formLabLocation">
-          <Col componentClass={ControlLabel} sm={2}>
+          <Col
+            componentClass={ControlLabel}
+            sm={2}
+          >
             Laboratory
           </Col>
           <Col sm={6}>
             <Obs
               concept={CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid}
+              conceptAnswers={FORM_ANSWERS.labLocation}
               path="vl-lab-location"
-              conceptAnswers={ FORM_ANSWERS.labLocation }
             />
           </Col>
         </FormGroup>
       </Row>
-      }
+          }
+        </Col>
+        <Col sm={4}>
+          <PatientLabTests />
+        </Col>
+      </Row>
     </Grid>
   );
 
   return (
     <ScreeningForm
-      encounterType={ ENCOUNTER_TYPES.VLEncounterType }
+      encounterType={ENCOUNTER_TYPES.VLEncounterType}
       formContent={formContent}
       formId="vl-form"
       formInstanceId="vl-form"

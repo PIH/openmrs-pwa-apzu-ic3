@@ -89,13 +89,14 @@ let DnaPcrForm = (props) => {
       backLink="/screening/eid/queue"
       encounterType={ ENCOUNTER_TYPES.DnaPcrEncounterType }
       formContent={formContent}
-      formId="vl-form"
+      formId="dna-pcr-form"
+      formInstanceId="dna-pcr-form"
       title="DNA-PCR"
     />
   );
 };
 
-const selector = formValueSelector('vl-form');
+const selector = formValueSelector('dna-pcr-form');
 
 export default connect(state => {
   const bled = selector(state, 'obs|path=dna-pcr-bled|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid);

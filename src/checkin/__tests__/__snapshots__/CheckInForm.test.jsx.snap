@@ -274,7 +274,20 @@ exports[`Component: CheckInForm renders properly 1`] = `
                             }
                           }
                         >
-                          <div />
+                          <div>
+                            <h3>
+                              <Label
+                                bsClass="label"
+                                bsStyle="default"
+                              >
+                                <span
+                                  className="label label-default"
+                                >
+                                  History
+                                </span>
+                              </Label>
+                            </h3>
+                          </div>
                         </PatientLabTests>
                       </Connect(PatientLabTests)>
                       <Connect(PatientAlert)>

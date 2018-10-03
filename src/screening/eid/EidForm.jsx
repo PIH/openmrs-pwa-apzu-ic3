@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Grid, Row, Col, ButtonToolbar, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 import PatientAlert from '../../patient/PatientAlert';
+import PatientLabTests from '../../patient/PatientLabTests';
 import HtcForm from '../htc/HtcForm';
 import DnaPcrForm from './DnaPcrForm';
 import { colHeight } from "../../pwaStyles";
@@ -27,7 +28,15 @@ class EidForm extends React.Component {
 
     return (
       <Grid>
+        <Row>
+          <Col sm={8}>
         <PatientAlert/>
+          </Col>
+          <Col sm={4}>
+            <PatientLabTests />
+          </Col>
+        </Row>
+
         <Row>
           <Col sm={8}>
             <ButtonToolbar>
