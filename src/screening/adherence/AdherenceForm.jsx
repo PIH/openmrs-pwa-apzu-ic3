@@ -111,7 +111,7 @@ let AdherenceForm = (props) => {
           </Row>
         </Col>
         <Col sm={4}>
-          <PatientLabTests />
+          <PatientLabTests test_type="Viral Load"/>
         </Col>
       </Row>
     </Grid>

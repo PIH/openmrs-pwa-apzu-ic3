@@ -1,5 +1,6 @@
 import { patientObjByEncounterTypeFilter  } from "@openmrs/react-components";
 import { ENCOUNTER_TYPES } from "../../constants";
+import utils from "../../utils";
 
 // ADHERENCE COUNSELING QUEUE
 /*
@@ -10,9 +11,21 @@ Here are the filtering criteria for the Adherence Counseling Queue:
 1. Last VL is not LDL and no regiment switch in the last 6months
 2. Last VL is not LDL and patient has not recorded 3 consecutive adherence counseling
 3. If they miss the second counseling then start from 1 again
- */
+
+Lab Tests Types
+1. Viral Load
+2. HIV Test
+3. HIV DNA polymerase chain reaction
+4. HIV rapid test, qualitative
+*/
+
+
 const adherenceFilter = patient => {
-  return true;
+  let lastVlTest = utils.getLastLabTest(patient.labTests, 'Viral Load');
+  if (lastVlTest !== null && lastVlTest.result_numeric !== null && lastVlTest.result_numeric > 0) {
+    return true;
+  }
+  return false;
 };
 
 

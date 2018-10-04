@@ -1,5 +1,5 @@
 import dateFns from 'date-fns';
-import {patientUtil} from '@openmrs/react-components';
+import { patientUtil } from '@openmrs/react-components';
 import { ENCOUNTER_TYPES, IDENTIFIER_TYPES } from "./constants";
 
 const utils = {
@@ -75,6 +75,25 @@ const utils = {
 
     return checkedInTime;
 
+  },
+
+  getLastLabTest: (labTests, type) => {
+    let lastLabTest = null;
+    if (labTests !== null ) {
+      let filteredTests = labTests;
+      if (typeof filteredTests !== 'undefined' && filteredTests !== null && type !== null) {
+        filteredTests = labTests.filter(test => test.test_type === type);
+
+        if ( filteredTests.length > 0 ) {
+          filteredTests.sort(function (a, b) {
+            return +new Date(b.date_collected) - +new Date(a.date_collected);
+          });
+          lastLabTest = filteredTests[0];
+        }
+      }
+    }
+
+    return lastLabTest;
   },
 
   getPatientCheckOutTime: (patient) => {
