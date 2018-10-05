@@ -1,6 +1,6 @@
 import dateFns from 'date-fns';
 import { patientUtil } from '@openmrs/react-components';
-import { ENCOUNTER_TYPES, IDENTIFIER_TYPES } from "./constants";
+import { ENCOUNTER_TYPES, IDENTIFIER_TYPES, CONCEPTS } from "./constants";
 
 const utils = {
 
@@ -96,6 +96,38 @@ const utils = {
     return lastLabTest;
   },
 
+  getAdherenceSessionNumber: (obs) => {
+    let sessionNumber = null;
+    obs.forEach(function(observation) {
+      if (observation.concept.uuid === CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.uuid ) {
+        switch(observation.value.uuid) {
+          case CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.uuid:
+            sessionNumber = CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.name;
+            break;
+          case CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.uuid:
+            sessionNumber = CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.name;
+            break;
+          case CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.uuid:
+            sessionNumber = CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.name;
+            break;
+          default:
+            break;
+        }
+      }
+    });
+    return sessionNumber;
+  },
+
+  getAdherenceCounselor: (obs) => {
+    let counselor = null;
+    obs.forEach(function(observation)  {
+      if (observation.concept.uuid === CONCEPTS.ADHERENCE_COUNSELING.NameOfCounselor.uuid ) {
+        counselor = observation.value;
+      }
+    });
+    return counselor;
+  },
+  
   getPatientCheckOutTime: (patient) => {
 
     let checkOutTime = null;

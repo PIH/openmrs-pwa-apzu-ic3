@@ -8,6 +8,7 @@ import { leftTextAlign } from "../../pwaStyles";
 import ScreeningForm from "../ScreeningForm";
 import PatientAlert from "../../patient/PatientAlert";
 import PatientLabTests from "../../patient/PatientLabTests";
+import AdherenceSessions from "./AdherenceSessions";
 
 let AdherenceForm = (props) => {
 
@@ -112,6 +113,7 @@ let AdherenceForm = (props) => {
         </Col>
         <Col sm={4}>
           <PatientLabTests test_type="Viral Load"/>
+          <AdherenceSessions/>
         </Col>
       </Row>
     </Grid>

@@ -30,6 +30,6 @@ const adherenceFilter = patient => {
 
 
 export default {
-  required: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.AdherenceCounselingEncounterType.uuid, 'exclude'), adherenceFilter],
+  required: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.AdherenceCounselingEncounterType.uuid, 'include'), adherenceFilter],
   completed: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.AdherenceCounselingEncounterType.uuid, 'include')]
 };
