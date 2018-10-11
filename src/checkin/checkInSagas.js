@@ -29,6 +29,7 @@ const createFromReportingRestRep =  (restRep) => {
     familyName: restRep.last_name
   } ;
 
+  // TODO move the add identifier logic here?
   patient = patientUtil.addIdentifier(patient, restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
   patient = patientUtil.addIdentifier(patient, restRep.eid_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE);
   patient = patientUtil.addIdentifier(patient, restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE);

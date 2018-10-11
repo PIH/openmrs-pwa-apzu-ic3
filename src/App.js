@@ -3,7 +3,24 @@ import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { Logout, LoadingView } from '@openmrs/react-components';
 import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core';
-import { faCheck, faArrowRight, faBars, faUser, faPills, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faUser,
+  faPills,
+  faMapMarker,
+  faCog,
+  faKey,
+  faSignOutAlt,
+  faRibbon,
+  faVial,
+  faChild,
+  faSearch,
+  faNotesMedical,
+  faHeart,
+  faUserMd,
+  faLemon,
+  faHome
+} from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import setupStoreAndPersistor, { history } from './store';
 import Layout from './layout/Layout';
@@ -41,7 +58,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 
 const { store, persistor } = setupStoreAndPersistor();
 
-fontAwesomeLibrary.add(faCheck, faArrowRight, faBars, faPills, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome);
+fontAwesomeLibrary.add(faBars, faPills, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome);
 
 const App = props => {
 
