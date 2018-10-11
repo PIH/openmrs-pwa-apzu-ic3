@@ -2,16 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {Obs} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
-import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
+import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS, HIV_TEST_TYPES } from "../../constants";
 import '../../assets/css/tabs.css';
 import ScreeningForm from "../ScreeningForm";
+import PatientLabTests from "../../patient/PatientLabTests";
 
 let HtcForm = (props) => {
 
   const formContent = (
     <Grid>
-
       <Row>
+        <Col sm={8}>
         <FormGroup controlId="formHtc">
           <Col componentClass={ControlLabel} sm={2}>
             Results
@@ -24,6 +25,10 @@ let HtcForm = (props) => {
             />
           </Col>
         </FormGroup>
+        </Col>
+        <Col sm={4}>
+          <PatientLabTests test_type={ HIV_TEST_TYPES.hiv_test + "; " + HIV_TEST_TYPES.rapid_test }/>
+        </Col>
       </Row>
     </Grid>
   );

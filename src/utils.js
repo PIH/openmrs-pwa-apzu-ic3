@@ -81,8 +81,8 @@ const utils = {
     let lastLabTest = null;
     if (labTests !== null ) {
       let filteredTests = labTests;
-      if (typeof filteredTests !== 'undefined' && filteredTests !== null && type !== null) {
-        filteredTests = labTests.filter(test => test.test_type === type);
+      if (typeof filteredTests !== 'undefined' && filteredTests !== null && typeof type !== 'undefined' && type !== null) {
+        filteredTests = labTests.filter(test => type.indexOf(test.test_type) >=0 );
 
         if ( filteredTests.length > 0 ) {
           filteredTests.sort(function (a, b) {

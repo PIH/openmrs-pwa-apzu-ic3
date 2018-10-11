@@ -10,7 +10,7 @@ class PatientLabTests extends React.Component {
   render() {
     let labTests = this.props.patient.labTests.map((lab, i) => {
         if ( (typeof this.props.test_type === 'undefined') ||
-          (typeof this.props.test_type !== 'undefined' && this.props.test_type === lab.test_type) ) {
+          (typeof this.props.test_type !== 'undefined' && this.props.test_type.indexOf(lab.test_type) >= 0) ) {
           return (
             <div key={lab.lab_test_id}>
               <h4>{lab.test_type} @ {lab.date_collected !== null ? utils.formatCalendarDate(lab.date_collected) : '_'}</h4>

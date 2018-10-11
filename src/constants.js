@@ -28,6 +28,10 @@ export const ENCOUNTER_TYPES = {
   },
 };
 
+export const HIV_TEST_TYPES = {
+  hiv_test: 'HIV test',
+  rapid_test: 'HIV rapid test, qualitative'
+};
 
 export const VISIT_TYPES = {
   'ClinicVisitType': {
