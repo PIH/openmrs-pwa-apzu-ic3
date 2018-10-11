@@ -175,6 +175,11 @@ exports[`Component: NutritionForm renders properly 1`] = `
           title="Nutrition"
         >
           <Connect(EncounterFormPage)
+            encounterRole={
+              Object {
+                "uuid": "a0b03050-c99b-11e0-9572-0800200c9a66",
+              }
+            }
             encounterType={
               Object {
                 "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
@@ -252,6 +257,11 @@ exports[`Component: NutritionForm renders properly 1`] = `
           >
             <EncounterFormPage
               dispatch={[Function]}
+              encounterRole={
+                Object {
+                  "uuid": "a0b03050-c99b-11e0-9572-0800200c9a66",
+                }
+              }
               encounterType={
                 Object {
                   "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",

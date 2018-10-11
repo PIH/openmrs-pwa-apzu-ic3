@@ -28,6 +28,18 @@ export const ENCOUNTER_TYPES = {
   },
 };
 
+export const ENCOUNTER_ROLES = {
+  'UnknownEncounterRole': {
+    uuid: 'a0b03050-c99b-11e0-9572-0800200c9a66'
+  },
+  'NurseEncounterRole': {
+    uuid: '98bf2792-3f0a-4388-81bb-c78b29c0df92'
+  },
+  'ConsultingClinicianEncounterRole': {
+    uuid: '4f10ad1a-ec49-48df-98c7-1391c6ac7f05'
+  }
+};
+
 export const HIV_TEST_TYPES = {
   hiv_test: 'HIV test',
   rapid_test: 'HIV rapid test, qualitative'

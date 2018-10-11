@@ -2,6 +2,7 @@ import React from "react";
 import {EncounterFormPage, encountersByEncounterTypeFilter, visitActions} from '@openmrs/react-components';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {ENCOUNTER_ROLES} from "../constants";
 
 let ScreeningForm = props => {
 
@@ -21,6 +22,7 @@ let ScreeningForm = props => {
   return (
     <EncounterFormPage
       encounter={encounter}
+      encounterRole={ENCOUNTER_ROLES.UnknownEncounterRole}
       encounterType={props.encounterType}
       formContent={props.formContent}
       formId={props.formId}

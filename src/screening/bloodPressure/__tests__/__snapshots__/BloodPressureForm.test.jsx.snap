@@ -301,6 +301,11 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           title="Blood Pressure"
         >
           <Connect(EncounterFormPage)
+            encounterRole={
+              Object {
+                "uuid": "a0b03050-c99b-11e0-9572-0800200c9a66",
+              }
+            }
             encounterType={
               Object {
                 "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
@@ -441,6 +446,11 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           >
             <EncounterFormPage
               dispatch={[Function]}
+              encounterRole={
+                Object {
+                  "uuid": "a0b03050-c99b-11e0-9572-0800200c9a66",
+                }
+              }
               encounterType={
                 Object {
                   "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
