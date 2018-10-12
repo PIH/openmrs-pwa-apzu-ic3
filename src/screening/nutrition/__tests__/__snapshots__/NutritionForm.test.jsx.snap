@@ -22,80 +22,21 @@ exports[`Component: NutritionForm renders properly 1`] = `
     replace={[Function]}
     url=""
   >
-    <NutritionForm>
-      <Connect(ScreeningForm)
-        encounterType={
+    <Connect(NutritionForm)>
+      <NutritionForm
+        bmi={null}
+        bmiStyle="default;"
+        dispatch={[Function]}
+        patient={
           Object {
-            "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
+            "uuid": "abc",
+            "visit": Object {
+              "uuid": "def",
+            },
           }
         }
-        formContent={
-          <Grid
-            bsClass="container"
-            componentClass="div"
-            fluid={false}
-          >
-            <Row
-              bsClass="row"
-              componentClass="div"
-            >
-              <FormGroup
-                bsClass="form-group"
-                controlId="formWeight"
-              >
-                <Col
-                  bsClass="col"
-                  componentClass={[Function]}
-                  sm={2}
-                >
-                  Weight
-                </Col>
-                <Col
-                  bsClass="col"
-                  componentClass="div"
-                  sm={4}
-                >
-                  <WithObsGroupContext(WithFormContext(Connect(Obs)))
-                    concept="6569c44a-977f-11e1-8993-905e29aff6c1"
-                    path="weight"
-                  />
-                </Col>
-              </FormGroup>
-            </Row>
-            <Row
-              bsClass="row"
-              componentClass="div"
-            >
-              <FormGroup
-                bsClass="form-group"
-                controlId="formHeight"
-              >
-                <Col
-                  bsClass="col"
-                  componentClass={[Function]}
-                  sm={2}
-                >
-                  Height
-                </Col>
-                <Col
-                  bsClass="col"
-                  componentClass="div"
-                  sm={4}
-                >
-                  <WithObsGroupContext(WithFormContext(Connect(Obs)))
-                    concept="6569c562-977f-11e1-8993-905e29aff6c1"
-                    path="height"
-                  />
-                </Col>
-              </FormGroup>
-            </Row>
-          </Grid>
-        }
-        formId="nutrition-form"
-        title="Nutrition"
       >
-        <ScreeningForm
-          dispatch={[Function]}
+        <Connect(ScreeningForm)
           encounterType={
             Object {
               "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
@@ -125,12 +66,31 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   <Col
                     bsClass="col"
                     componentClass="div"
-                    sm={4}
+                    sm={2}
                   >
                     <WithObsGroupContext(WithFormContext(Connect(Obs)))
                       concept="6569c44a-977f-11e1-8993-905e29aff6c1"
                       path="weight"
+                      placeholder="weight in kg"
+                      validate={
+                        Array [
+                          [Function],
+                          [Function],
+                        ]
+                      }
                     />
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    componentClass={[Function]}
+                    sm={2}
+                    style={
+                      Object {
+                        "textAlign": "left",
+                      }
+                    }
+                  >
+                    Kg
                   </Col>
                 </FormGroup>
               </Row>
@@ -152,34 +112,36 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   <Col
                     bsClass="col"
                     componentClass="div"
-                    sm={4}
+                    sm={2}
                   >
                     <WithObsGroupContext(WithFormContext(Connect(Obs)))
                       concept="6569c562-977f-11e1-8993-905e29aff6c1"
                       path="height"
+                      placeholder="height in cm"
                     />
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    componentClass={[Function]}
+                    sm={2}
+                    style={
+                      Object {
+                        "textAlign": "left",
+                      }
+                    }
+                  >
+                    cm
                   </Col>
                 </FormGroup>
               </Row>
             </Grid>
           }
           formId="nutrition-form"
-          patient={
-            Object {
-              "uuid": "abc",
-              "visit": Object {
-                "uuid": "def",
-              },
-            }
-          }
+          formInstanceId="nutrition-form"
           title="Nutrition"
         >
-          <Connect(EncounterFormPage)
-            encounterRole={
-              Object {
-                "uuid": "a0b03050-c99b-11e0-9572-0800200c9a66",
-              }
-            }
+          <ScreeningForm
+            dispatch={[Function]}
             encounterType={
               Object {
                 "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
@@ -209,12 +171,31 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     <Col
                       bsClass="col"
                       componentClass="div"
-                      sm={4}
+                      sm={2}
                     >
                       <WithObsGroupContext(WithFormContext(Connect(Obs)))
                         concept="6569c44a-977f-11e1-8993-905e29aff6c1"
                         path="weight"
+                        placeholder="weight in kg"
+                        validate={
+                          Array [
+                            [Function],
+                            [Function],
+                          ]
+                        }
                       />
+                    </Col>
+                    <Col
+                      bsClass="col"
+                      componentClass={[Function]}
+                      sm={2}
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      Kg
                     </Col>
                   </FormGroup>
                 </Row>
@@ -236,27 +217,43 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     <Col
                       bsClass="col"
                       componentClass="div"
-                      sm={4}
+                      sm={2}
                     >
                       <WithObsGroupContext(WithFormContext(Connect(Obs)))
                         concept="6569c562-977f-11e1-8993-905e29aff6c1"
                         path="height"
+                        placeholder="height in cm"
                       />
+                    </Col>
+                    <Col
+                      bsClass="col"
+                      componentClass={[Function]}
+                      sm={2}
+                      style={
+                        Object {
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      cm
                     </Col>
                   </FormGroup>
                 </Row>
               </Grid>
             }
             formId="nutrition-form"
-            formSubmittedActionCreators={
-              Array [
-                [Function],
-              ]
+            formInstanceId="nutrition-form"
+            patient={
+              Object {
+                "uuid": "abc",
+                "visit": Object {
+                  "uuid": "def",
+                },
+              }
             }
             title="Nutrition"
           >
-            <EncounterFormPage
-              dispatch={[Function]}
+            <Connect(EncounterFormPage)
               encounterRole={
                 Object {
                   "uuid": "a0b03050-c99b-11e0-9572-0800200c9a66",
@@ -291,12 +288,31 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       <Col
                         bsClass="col"
                         componentClass="div"
-                        sm={4}
+                        sm={2}
                       >
                         <WithObsGroupContext(WithFormContext(Connect(Obs)))
                           concept="6569c44a-977f-11e1-8993-905e29aff6c1"
                           path="weight"
+                          placeholder="weight in kg"
+                          validate={
+                            Array [
+                              [Function],
+                              [Function],
+                            ]
+                          }
                         />
+                      </Col>
+                      <Col
+                        bsClass="col"
+                        componentClass={[Function]}
+                        sm={2}
+                        style={
+                          Object {
+                            "textAlign": "left",
+                          }
+                        }
+                      >
+                        Kg
                       </Col>
                     </FormGroup>
                   </Row>
@@ -318,45 +334,163 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       <Col
                         bsClass="col"
                         componentClass="div"
-                        sm={4}
+                        sm={2}
                       >
                         <WithObsGroupContext(WithFormContext(Connect(Obs)))
                           concept="6569c562-977f-11e1-8993-905e29aff6c1"
                           path="height"
+                          placeholder="height in cm"
                         />
+                      </Col>
+                      <Col
+                        bsClass="col"
+                        componentClass={[Function]}
+                        sm={2}
+                        style={
+                          Object {
+                            "textAlign": "left",
+                          }
+                        }
+                      >
+                        cm
                       </Col>
                     </FormGroup>
                   </Row>
                 </Grid>
               }
               formId="nutrition-form"
+              formInstanceId="nutrition-form"
               formSubmittedActionCreators={
                 Array [
                   [Function],
                 ]
               }
-              patient={
-                Object {
-                  "uuid": "abc",
-                  "visit": Object {
-                    "uuid": "def",
-                  },
-                }
-              }
               title="Nutrition"
             >
-              <div
-                style={
+              <EncounterFormPage
+                dispatch={[Function]}
+                encounterRole={
                   Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
+                    "uuid": "a0b03050-c99b-11e0-9572-0800200c9a66",
                   }
                 }
+                encounterType={
+                  Object {
+                    "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
+                  }
+                }
+                formContent={
+                  <Grid
+                    bsClass="container"
+                    componentClass="div"
+                    fluid={false}
+                  >
+                    <Row
+                      bsClass="row"
+                      componentClass="div"
+                    >
+                      <FormGroup
+                        bsClass="form-group"
+                        controlId="formWeight"
+                      >
+                        <Col
+                          bsClass="col"
+                          componentClass={[Function]}
+                          sm={2}
+                        >
+                          Weight
+                        </Col>
+                        <Col
+                          bsClass="col"
+                          componentClass="div"
+                          sm={2}
+                        >
+                          <WithObsGroupContext(WithFormContext(Connect(Obs)))
+                            concept="6569c44a-977f-11e1-8993-905e29aff6c1"
+                            path="weight"
+                            placeholder="weight in kg"
+                            validate={
+                              Array [
+                                [Function],
+                                [Function],
+                              ]
+                            }
+                          />
+                        </Col>
+                        <Col
+                          bsClass="col"
+                          componentClass={[Function]}
+                          sm={2}
+                          style={
+                            Object {
+                              "textAlign": "left",
+                            }
+                          }
+                        >
+                          Kg
+                        </Col>
+                      </FormGroup>
+                    </Row>
+                    <Row
+                      bsClass="row"
+                      componentClass="div"
+                    >
+                      <FormGroup
+                        bsClass="form-group"
+                        controlId="formHeight"
+                      >
+                        <Col
+                          bsClass="col"
+                          componentClass={[Function]}
+                          sm={2}
+                        >
+                          Height
+                        </Col>
+                        <Col
+                          bsClass="col"
+                          componentClass="div"
+                          sm={2}
+                        >
+                          <WithObsGroupContext(WithFormContext(Connect(Obs)))
+                            concept="6569c562-977f-11e1-8993-905e29aff6c1"
+                            path="height"
+                            placeholder="height in cm"
+                          />
+                        </Col>
+                        <Col
+                          bsClass="col"
+                          componentClass={[Function]}
+                          sm={2}
+                          style={
+                            Object {
+                              "textAlign": "left",
+                            }
+                          }
+                        >
+                          cm
+                        </Col>
+                      </FormGroup>
+                    </Row>
+                  </Grid>
+                }
+                formId="nutrition-form"
+                formInstanceId="nutrition-form"
+                formSubmittedActionCreators={
+                  Array [
+                    [Function],
+                  ]
+                }
+                patient={
+                  Object {
+                    "uuid": "abc",
+                    "visit": Object {
+                      "uuid": "def",
+                    },
+                  }
+                }
+                title="Nutrition"
               >
-                <Grid
-                  bsClass="container"
-                  componentClass="div"
-                  fluid={false}
+                <div
                   style={
                     Object {
                       "paddingLeft": "0px",
@@ -364,8 +498,10 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     }
                   }
                 >
-                  <div
-                    className="container"
+                  <Grid
+                    bsClass="container"
+                    componentClass="div"
+                    fluid={false}
                     style={
                       Object {
                         "paddingLeft": "0px",
@@ -373,110 +509,120 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       }
                     }
                   >
-                    <Row
-                      bsClass="row"
-                      componentClass="div"
+                    <div
+                      className="container"
                       style={
                         Object {
-                          "backgroundColor": "#ffa500b3",
+                          "paddingLeft": "0px",
+                          "paddingRight": "0px",
                         }
                       }
                     >
-                      <div
-                        className="row"
+                      <Row
+                        bsClass="row"
+                        componentClass="div"
                         style={
                           Object {
                             "backgroundColor": "#ffa500b3",
                           }
                         }
                       >
-                        <Col
-                          bsClass="col"
-                          componentClass="div"
-                          md={20}
-                          sm={20}
+                        <div
+                          className="row"
                           style={
                             Object {
-                              "paddingLeft": "20px",
+                              "backgroundColor": "#ffa500b3",
                             }
                           }
                         >
-                          <div
-                            className="col-md-20 col-sm-20"
+                          <Col
+                            bsClass="col"
+                            componentClass="div"
+                            md={20}
+                            sm={20}
                             style={
                               Object {
                                 "paddingLeft": "20px",
                               }
                             }
                           >
-                            <span>
-                              <h1>
-                                Nutrition
-                              </h1>
-                            </span>
-                          </div>
-                        </Col>
-                      </div>
-                    </Row>
-                    <Row
-                      bsClass="row"
-                      componentClass="div"
-                    >
-                      <div
-                        className="row"
+                            <div
+                              className="col-md-20 col-sm-20"
+                              style={
+                                Object {
+                                  "paddingLeft": "20px",
+                                }
+                              }
+                            >
+                              <span>
+                                <h1>
+                                  Nutrition
+                                </h1>
+                              </span>
+                            </div>
+                          </Col>
+                        </div>
+                      </Row>
+                      <Row
+                        bsClass="row"
+                        componentClass="div"
                       >
-                        <Col
-                          bsClass="col"
-                          componentClass="div"
-                          md={20}
-                          sm={20}
-                          style={
-                            Object {
-                              "height": "40px",
-                            }
-                          }
+                        <div
+                          className="row"
                         >
-                          <div
-                            className="col-md-20 col-sm-20"
+                          <Col
+                            bsClass="col"
+                            componentClass="div"
+                            md={20}
+                            sm={20}
                             style={
                               Object {
                                 "height": "40px",
                               }
                             }
                           >
-                            <span>
-                              <h1 />
-                            </span>
-                          </div>
-                        </Col>
-                      </div>
-                    </Row>
-                  </div>
-                </Grid>
-                <Loader>
-                  <div
-                    className="custom-loader"
-                  >
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                  </div>
-                </Loader>
-              </div>
-            </EncounterFormPage>
-          </Connect(EncounterFormPage)>
-        </ScreeningForm>
-      </Connect(ScreeningForm)>
-    </NutritionForm>
+                            <div
+                              className="col-md-20 col-sm-20"
+                              style={
+                                Object {
+                                  "height": "40px",
+                                }
+                              }
+                            >
+                              <span>
+                                <h1 />
+                              </span>
+                            </div>
+                          </Col>
+                        </div>
+                      </Row>
+                    </div>
+                  </Grid>
+                  <Loader>
+                    <div
+                      className="custom-loader"
+                    >
+                      <div />
+                      <div />
+                      <div />
+                      <div />
+                      <div />
+                      <div />
+                      <div />
+                      <div />
+                      <div />
+                      <div />
+                      <div />
+                      <div />
+                    </div>
+                  </Loader>
+                </div>
+              </EncounterFormPage>
+            </Connect(EncounterFormPage)>
+          </ScreeningForm>
+        </Connect(ScreeningForm)>
+      </NutritionForm>
+    </Connect(NutritionForm)>
   </MockRouter>
 </Provider>
 `;
