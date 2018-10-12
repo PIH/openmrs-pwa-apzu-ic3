@@ -45,6 +45,14 @@ export const HIV_TEST_TYPES = {
   rapid_test: 'HIV rapid test, qualitative'
 };
 
+export const MALNUTRITION_ALERT_COLORS = {
+  default: "default",
+  severe: "danger",
+  moderate: "warning",
+  normal: "success",
+  overweight: "info"
+};
+
 export const VISIT_TYPES = {
   'ClinicVisitType': {
     uuid: 'f01c54cb-2225-471a-9cd5-d348552c337c'
@@ -89,6 +97,9 @@ export const CONCEPTS = {
   },
   'Weight': {
     uuid: '6569c44a-977f-11e1-8993-905e29aff6c1'
+  },
+  'MUAC': {
+    uuid: '6558d09a-977f-11e1-8993-905e29aff6c1'
   },
   'HTC_RESULTS': {
     uuid: '654b983a-977f-11e1-8993-905e29aff6c1',
