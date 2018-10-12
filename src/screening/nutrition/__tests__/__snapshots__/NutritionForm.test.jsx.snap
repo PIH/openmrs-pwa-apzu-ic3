@@ -134,6 +134,26 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   </Col>
                 </FormGroup>
               </Row>
+              <Row
+                bsClass="row"
+                componentClass="div"
+              >
+                <Col
+                  bsClass="col"
+                  componentClass="div"
+                  md={20}
+                  sm={20}
+                  style={
+                    Object {
+                      "height": "40px",
+                    }
+                  }
+                >
+                  <span>
+                    <h1 />
+                  </span>
+                </Col>
+              </Row>
             </Grid>
           }
           formId="nutrition-form"
@@ -238,6 +258,26 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       cm
                     </Col>
                   </FormGroup>
+                </Row>
+                <Row
+                  bsClass="row"
+                  componentClass="div"
+                >
+                  <Col
+                    bsClass="col"
+                    componentClass="div"
+                    md={20}
+                    sm={20}
+                    style={
+                      Object {
+                        "height": "40px",
+                      }
+                    }
+                  >
+                    <span>
+                      <h1 />
+                    </span>
+                  </Col>
                 </Row>
               </Grid>
             }
@@ -356,6 +396,26 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       </Col>
                     </FormGroup>
                   </Row>
+                  <Row
+                    bsClass="row"
+                    componentClass="div"
+                  >
+                    <Col
+                      bsClass="col"
+                      componentClass="div"
+                      md={20}
+                      sm={20}
+                      style={
+                        Object {
+                          "height": "40px",
+                        }
+                      }
+                    >
+                      <span>
+                        <h1 />
+                      </span>
+                    </Col>
+                  </Row>
                 </Grid>
               }
               formId="nutrition-form"
@@ -470,6 +530,26 @@ exports[`Component: NutritionForm renders properly 1`] = `
                           cm
                         </Col>
                       </FormGroup>
+                    </Row>
+                    <Row
+                      bsClass="row"
+                      componentClass="div"
+                    >
+                      <Col
+                        bsClass="col"
+                        componentClass="div"
+                        md={20}
+                        sm={20}
+                        style={
+                          Object {
+                            "height": "40px",
+                          }
+                        }
+                      >
+                        <span>
+                          <h1 />
+                        </span>
+                      </Col>
                     </Row>
                   </Grid>
                 }
