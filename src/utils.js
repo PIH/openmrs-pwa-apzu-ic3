@@ -1,6 +1,6 @@
 import dateFns from 'date-fns';
 import { patientUtil } from '@openmrs/react-components';
-import { ENCOUNTER_TYPES, IDENTIFIER_TYPES, CONCEPTS } from "./constants";
+import { ENCOUNTER_TYPES, IDENTIFIER_TYPES, CONCEPTS, MALNUTRITION_ALERT_COLORS } from "./constants";
 
 const utils = {
 
@@ -136,6 +136,29 @@ const utils = {
     }
 
     return checkOutTime;
+  },
+
+  calculateBMI: (weight, height) => {
+    let bmi = null;
+    if (weight !== null && height !== null ) {
+      bmi = (( weight / ( height * height) ) * 10000).toFixed(1);
+    }
+    return bmi;
+  },
+
+  calculateBMIAlert: (bmi) => {
+    let alert = MALNUTRITION_ALERT_COLORS.default;
+    if ( bmi < 16) {
+      alert = MALNUTRITION_ALERT_COLORS.severe;
+    } else if ( bmi >= 16 && bmi < 18.4) {
+      alert = MALNUTRITION_ALERT_COLORS.moderate;
+    } else if ( bmi >=18.4 && bmi < 24.9) {
+      alert = MALNUTRITION_ALERT_COLORS.normal;
+    } else {
+      alert = MALNUTRITION_ALERT_COLORS.overweight;
+    }
+
+    return alert;
   },
 
 };
