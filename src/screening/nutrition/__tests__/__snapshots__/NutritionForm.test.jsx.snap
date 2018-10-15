@@ -25,8 +25,14 @@ exports[`Component: NutritionForm renders properly 1`] = `
     <Connect(NutritionForm)>
       <NutritionForm
         bmi={null}
-        bmiStyle="default;"
+        bmiStyle={
+          Object {
+            "alert": "default",
+            "message": "None",
+          }
+        }
         dispatch={[Function]}
+        malnutrition={null}
         patient={
           Object {
             "uuid": "abc",

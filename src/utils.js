@@ -1,6 +1,6 @@
 import dateFns from 'date-fns';
 import { patientUtil } from '@openmrs/react-components';
-import { ENCOUNTER_TYPES, IDENTIFIER_TYPES, CONCEPTS, MALNUTRITION_ALERT_COLORS } from "./constants";
+import { ENCOUNTER_TYPES, IDENTIFIER_TYPES, CONCEPTS, MALNUTRITION_LEVEL } from "./constants";
 
 const utils = {
 
@@ -147,19 +147,70 @@ const utils = {
   },
 
   calculateBMIAlert: (bmi) => {
-    let alert = MALNUTRITION_ALERT_COLORS.default;
+    let alert = MALNUTRITION_LEVEL.default;
     if ( bmi < 16) {
-      alert = MALNUTRITION_ALERT_COLORS.severe;
+      alert = MALNUTRITION_LEVEL.severe;
     } else if ( bmi >= 16 && bmi < 18.4) {
-      alert = MALNUTRITION_ALERT_COLORS.moderate;
+      alert = MALNUTRITION_LEVEL.moderate;
     } else if ( bmi >=18.4 && bmi < 24.9) {
-      alert = MALNUTRITION_ALERT_COLORS.normal;
+      alert = MALNUTRITION_LEVEL.normal;
     } else {
-      alert = MALNUTRITION_ALERT_COLORS.overweight;
+      alert = MALNUTRITION_LEVEL.overweight;
     }
 
     return alert;
   },
+
+  calculateMalnutritionLevel: (bmi,muac, age, pregnant) => {
+    let level = null;
+    if (typeof bmi !== 'undefined' && bmi !== null && age > 18 && (typeof pregnant === 'undefined' || (typeof pregnant !== 'undefined' && pregnant === CONCEPTS.False.uuid))) {
+      //all adults above 18 years excluding pregnant females
+      return utils.calculateBMIAlert(bmi);
+    } else if (muac !== 'undefined' && muac !== null && age !== null) {
+      switch (true) {
+        case (age < 5 ): //MUAC cut-offs: 6-59 months <11.5cm severe and 11.5-12.5 moderate
+          if (muac < 11.5) {
+            level = MALNUTRITION_LEVEL.severe;
+          } else if ( muac < 12.5 ) {
+            level = MALNUTRITION_LEVEL.moderate;
+          }
+          break;
+        case (age < 10): //MUAC cut-offs: 5-9 years <13cm severe and 13-14.5 moderate
+          if (muac < 13) {
+            level = MALNUTRITION_LEVEL.severe;
+          } else if ( muac < 14.5 ) {
+            level = MALNUTRITION_LEVEL.moderate;
+          }
+          break;
+        case (age < 15): //MUAC cut-offs: 10-14 years <16cm severe and 16-18.5 moderate
+          if (muac < 16) {
+            level = MALNUTRITION_LEVEL.severe;
+          } else if ( muac < 18.5 ) {
+            level = MALNUTRITION_LEVEL.moderate;
+          }
+          break;
+        case (age < 18): //MUAC cut-offs: 15-18 years <18.5cm severe and 18.5-21.9cm moderate
+          if (muac < 18.5) {
+            level = MALNUTRITION_LEVEL.severe;
+          } else if ( muac < 21.9 ) {
+            level = MALNUTRITION_LEVEL.moderate;
+          }
+          break;
+        case (age >= 18): //MUAC cut-offs: pregnant mothers  <19cm severe and 19-21.9 moderate
+          if ( typeof pregnant !== 'undefined' && pregnant === CONCEPTS.True.uuid ){
+            if (muac < 19) {
+              level = MALNUTRITION_LEVEL.severe;
+            } else if ( muac < 22) {
+              level = MALNUTRITION_LEVEL.moderate;
+            }
+          }
+          break;
+        default:
+          break;
+      }
+    }
+    return level;
+  }
 
 };
 
