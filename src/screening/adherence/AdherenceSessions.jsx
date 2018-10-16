@@ -17,7 +17,7 @@ class AdherenceSessions extends React.Component {
   }
 
   componentDidMount() {
-    encounterRest.getEncounterByPatient(
+    encounterRest.fetchEncountersByPatient(
       this.props.patient.uuid, ENCOUNTER_TYPES.AdherenceCounselingEncounterType.uuid
     ).then(data => {
       this.setState({

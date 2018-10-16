@@ -1,19 +1,42 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
-import { Obs, formValidations } from '@openmrs/react-components';
+import { Obs, formValidations, obsRest } from '@openmrs/react-components';
 import { Alert, Grid, Row, FormGroup, ControlLabel, Label, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, FORM_ANSWERS } from "../../constants";
 import utils from "../../utils";
 import ScreeningForm from "../ScreeningForm";
 import { colHeight, leftTextAlign } from "../../pwaStyles";
 
-const minValue25 = formValidations.minValue(25);
-const maxValue140 = formValidations.maxValue(140);
 const minValue2 = formValidations.minValue(2);
+const minValue20 = formValidations.minValue(20);
+const minValue25 = formValidations.minValue(25);
+const minValue120 = formValidations.minValue(120);
 const maxValue100 = formValidations.maxValue(100);
+const maxValue140 = formValidations.maxValue(140);
+const maxValue215 = formValidations.maxValue(215);
 
 class NutritionForm extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      lastHeight: null
+    };
+  }
+
+  componentDidMount() {
+    // measure at each visit for less than 19 y.o., use previous height for >19 years
+    if (this.props.patient.age > 19) {
+      obsRest.fetchObsByPatient(
+        this.props.patient.uuid, CONCEPTS.Height.uuid, 1
+      ).then(data => {
+        this.setState({
+          lastHeight: data.results[0].value
+        });
+      });
+    }
+  }
 
   render() {
     const formContent = (
@@ -56,6 +79,8 @@ class NutritionForm extends React.Component {
                 concept={CONCEPTS.Height.uuid}
                 path="height"
                 placeholder="height in cm"
+                value={ this.state.lastHeight !== null ? this.state.lastHeight : null }
+                validate={this.props.patient.age > 18 ? [minValue120, maxValue215] :  [minValue20, maxValue215]}
               />
             </Col>
             <Col
@@ -172,6 +197,13 @@ class NutritionForm extends React.Component {
         formContent={formContent}
         formId="nutrition-form"
         formInstanceId="nutrition-form"
+        defaultValues={ this.state.lastHeight !== null ? [{
+          type: "obs",
+          path: "height",
+          concept: CONCEPTS.Height.uuid,
+          value: this.state.lastHeight
+        }] : null
+        }
         title="Nutrition"
       />
     );

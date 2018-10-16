@@ -43,6 +43,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
         }
       >
         <Connect(ScreeningForm)
+          defaultValues={null}
           encounterType={
             Object {
               "uuid": "6265F6BC-EBC0-4181-91F3-28B70BBFDB61",
@@ -124,6 +125,13 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       concept="6569c562-977f-11e1-8993-905e29aff6c1"
                       path="height"
                       placeholder="height in cm"
+                      validate={
+                        Array [
+                          [Function],
+                          [Function],
+                        ]
+                      }
+                      value={null}
                     />
                   </Col>
                   <Col
@@ -167,6 +175,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
           title="Nutrition"
         >
           <ScreeningForm
+            defaultValues={null}
             dispatch={[Function]}
             encounterType={
               Object {
@@ -249,6 +258,13 @@ exports[`Component: NutritionForm renders properly 1`] = `
                         concept="6569c562-977f-11e1-8993-905e29aff6c1"
                         path="height"
                         placeholder="height in cm"
+                        validate={
+                          Array [
+                            [Function],
+                            [Function],
+                          ]
+                        }
+                        value={null}
                       />
                     </Col>
                     <Col
@@ -300,6 +316,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
             title="Nutrition"
           >
             <Connect(EncounterFormPage)
+              defaultValues={null}
               encounterRole={
                 Object {
                   "uuid": "a0b03050-c99b-11e0-9572-0800200c9a66",
@@ -386,6 +403,13 @@ exports[`Component: NutritionForm renders properly 1`] = `
                           concept="6569c562-977f-11e1-8993-905e29aff6c1"
                           path="height"
                           placeholder="height in cm"
+                          validate={
+                            Array [
+                              [Function],
+                              [Function],
+                            ]
+                          }
+                          value={null}
                         />
                       </Col>
                       <Col
@@ -434,6 +458,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
               title="Nutrition"
             >
               <EncounterFormPage
+                defaultValues={null}
                 dispatch={[Function]}
                 encounterRole={
                   Object {
@@ -521,6 +546,13 @@ exports[`Component: NutritionForm renders properly 1`] = `
                             concept="6569c562-977f-11e1-8993-905e29aff6c1"
                             path="height"
                             placeholder="height in cm"
+                            validate={
+                              Array [
+                                [Function],
+                                [Function],
+                              ]
+                            }
+                            value={null}
                           />
                         </Col>
                         <Col
