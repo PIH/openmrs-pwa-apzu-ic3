@@ -193,6 +193,7 @@ class NutritionForm extends React.Component {
 
     return (
       <ScreeningForm
+        backLink="/screening/nutrition/queue"
         encounterType={ENCOUNTER_TYPES.NutritionEncounterType}
         formContent={formContent}
         formId="nutrition-form"

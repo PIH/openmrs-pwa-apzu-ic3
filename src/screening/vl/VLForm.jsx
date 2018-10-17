@@ -106,6 +106,7 @@ let VLForm = (props) => {
 
   return (
     <ScreeningForm
+      backLink="/screening/vl/queue"
       encounterType={ENCOUNTER_TYPES.VLEncounterType}
       formContent={formContent}
       formId="vl-form"

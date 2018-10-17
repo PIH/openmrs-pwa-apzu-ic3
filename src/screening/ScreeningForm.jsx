@@ -21,6 +21,7 @@ let ScreeningForm = props => {
 
   return (
     <EncounterFormPage
+      backLink={props.backLink}
       encounter={encounter}
       encounterRole={ENCOUNTER_ROLES.UnknownEncounterRole}
       encounterType={props.encounterType}
@@ -35,6 +36,7 @@ let ScreeningForm = props => {
 };
 
 ScreeningForm.propTypes = {
+  backLink: PropTypes.string,
   encounterType: PropTypes.object.isRequired,
   formContent: PropTypes.object.isRequired,
   formId: PropTypes.string.isRequired,

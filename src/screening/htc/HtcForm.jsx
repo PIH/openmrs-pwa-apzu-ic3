@@ -38,6 +38,7 @@ let HtcForm = (props) => {
 
   return (
     <ScreeningForm
+      backLink={props.backLink ? props.backLink : "/screening/htc/queue"}
       encounterType={ENCOUNTER_TYPES.HTCEncounterType}
       formContent={formContent}
       formId="htc-form"

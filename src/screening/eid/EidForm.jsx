@@ -72,7 +72,9 @@ class EidForm extends React.Component {
         <Row>
           <Col>
             <div>
-              <HtcForm/>
+              <HtcForm
+                backLink="/screening/eid/queue"
+              />
             </div>
           </Col>
         </Row>
