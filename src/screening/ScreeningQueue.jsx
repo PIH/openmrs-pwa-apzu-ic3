@@ -48,6 +48,7 @@ ScreeningQueue.defaultProps = {
     {
       headerName: 'Id',
       autoHeight: true,
+      cellStyle: {'line-height': "26px"},
       cellRenderer: function(params){
         return utils.getPatientIdentifiers(params.data);
       },

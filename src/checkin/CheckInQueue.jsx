@@ -19,6 +19,7 @@ class CheckInQueue extends React.Component {
         headerName: 'Id',
         width: 90,
         autoHeight: true,
+        cellStyle: {'line-height': "26px"},
         cellRenderer: function(params){
           return utils.getPatientIdentifiers(params.data);
         },
