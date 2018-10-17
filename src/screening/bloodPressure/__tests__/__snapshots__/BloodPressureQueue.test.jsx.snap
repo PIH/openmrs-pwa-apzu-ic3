@@ -61,6 +61,9 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                 Object {
                   "autoHeight": true,
                   "cellRenderer": [Function],
+                  "cellStyle": Object {
+                    "line-height": "26px",
+                  },
                   "getQuickFilterText": [Function],
                   "headerName": "Id",
                 },
@@ -124,6 +127,9 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                     Object {
                       "autoHeight": true,
                       "cellRenderer": [Function],
+                      "cellStyle": Object {
+                        "line-height": "26px",
+                      },
                       "getQuickFilterText": [Function],
                       "headerName": "Id",
                     },
@@ -210,6 +216,9 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                         Object {
                           "autoHeight": true,
                           "cellRenderer": [Function],
+                          "cellStyle": Object {
+                            "line-height": "26px",
+                          },
                           "getQuickFilterText": [Function],
                           "headerName": "Id",
                         },
@@ -258,6 +267,9 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                           Object {
                             "autoHeight": true,
                             "cellRenderer": [Function],
+                            "cellStyle": Object {
+                              "line-height": "26px",
+                            },
                             "getQuickFilterText": [Function],
                             "headerName": "Id",
                           },
@@ -324,6 +336,9 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                               Object {
                                 "autoHeight": true,
                                 "cellRenderer": [Function],
+                                "cellStyle": Object {
+                                  "line-height": "26px",
+                                },
                                 "getQuickFilterText": [Function],
                                 "headerName": "Id",
                               },
