@@ -189,6 +189,16 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                       </span>
                     </Label>
                   </h3>
+                  <h3>
+                    <Label
+                      bsClass="label"
+                      bsStyle="default"
+                    >
+                      <span
+                        className="label label-default hidden"
+                      />
+                    </Label>
+                  </h3>
                   <Connect(DataGrid)
                     columnDefs={
                       Array [
@@ -295,7 +305,8 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                         }
                       >
                         <label>
-                          Search:
+                          Search: 
+                           
                           <input
                             onChange={[Function]}
                             type="text"

@@ -679,7 +679,8 @@ exports[`Component: SearchPatient renders properly 1`] = `
                   }
                 >
                   <label>
-                    Search:
+                    Search: 
+                     
                     <input
                       onChange={[Function]}
                       type="text"
