@@ -37,7 +37,7 @@ class CheckInTabs extends React.Component {
     return (
       <div>
         <h3><Label>Check-In List</Label></h3>
-
+        <h3><Label>{''}</Label></h3>
         <Tabs defaultActiveKey="1" id="checkin-tabs" className="activeTab">
           <Tab eventKey="1" title={ "expected(" + this.state.expected + ")" }>
             <CheckInQueue onRowCount={ this.handleExpectedCount.bind(this) }/>
