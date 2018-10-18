@@ -24,6 +24,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
   >
     <BloodPressureForm>
       <Connect(ScreeningForm)
+        backLink="/screening/bloodPressure/queue"
         encounterType={
           Object {
             "uuid": "0C36F6FB-660E-485F-AF04-249579C9EAC9",
@@ -158,6 +159,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
         title="Blood Pressure"
       >
         <ScreeningForm
+          backLink="/screening/bloodPressure/queue"
           dispatch={[Function]}
           encounterType={
             Object {
@@ -301,6 +303,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           title="Blood Pressure"
         >
           <Connect(EncounterFormPage)
+            backLink="/screening/bloodPressure/queue"
             encounterRole={
               Object {
                 "uuid": "a0b03050-c99b-11e0-9572-0800200c9a66",
@@ -445,6 +448,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
             title="Blood Pressure"
           >
             <EncounterFormPage
+              backLink="/screening/bloodPressure/queue"
               dispatch={[Function]}
               encounterRole={
                 Object {

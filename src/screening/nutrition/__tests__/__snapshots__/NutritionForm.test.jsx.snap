@@ -43,6 +43,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
         }
       >
         <Connect(ScreeningForm)
+          backLink="/screening/nutrition/queue"
           defaultValues={null}
           encounterType={
             Object {
@@ -175,6 +176,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
           title="Nutrition"
         >
           <ScreeningForm
+            backLink="/screening/nutrition/queue"
             defaultValues={null}
             dispatch={[Function]}
             encounterType={
@@ -316,6 +318,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
             title="Nutrition"
           >
             <Connect(EncounterFormPage)
+              backLink="/screening/nutrition/queue"
               defaultValues={null}
               encounterRole={
                 Object {
@@ -458,6 +461,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
               title="Nutrition"
             >
               <EncounterFormPage
+                backLink="/screening/nutrition/queue"
                 defaultValues={null}
                 dispatch={[Function]}
                 encounterRole={
