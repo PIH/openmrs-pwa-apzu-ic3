@@ -1,37 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
-import {visitActions, patientActions, List} from '@openmrs/react-components';
-import utils from "../utils";
+import { patientActions } from '@openmrs/react-components';
+import ScreeningQueue from "../screening/ScreeningQueue";
 import actionVisitFilters from './activeVisitsFilters';
+
 
 // TODO: should this extend the ScreeningQueue?
 
 let ActiveVisits = props => {
-
-  const columnDefs = [
-    { headerName: 'uuid', hide: true, field: 'uuid' },
-    { headerName: 'ART', valueGetter: function getArtIdentifier(params) { return utils.getPatientArtIdentifier(params.data); }},
-    { headerName: 'EID', valueGetter: function getEidIdentifier(params) { return utils.getPatientEidIdentifier(params.data); }},
-    { headerName: 'NCD', valueGetter: function getNcdIdentifier(params) { return utils.getPatientNcdIdentifier(params.data); }},
-    { headerName: 'Given Name', field: 'name.givenName' },
-    { headerName: 'Family Name', field: 'name.familyName' },
-    { headerName: 'Gender', field: 'gender' },
-    { headerName: 'Age', field: 'age' },
-    { headerName: 'Checked-in Time',
-      valueGetter: function getCheckedInTime(params) {
-        return utils.getPatientCheckedInTime(params.data);
-      }
-    }
-  ];
-
-  const fetchListActionCreator =
-    () => props.dispatch(visitActions.fetchActiveVisits(
-      props.session.sessionLocation ? props.session.sessionLocation.uuid : null));
-
-  const onMountOtherActionCreators = [
-    () => props.dispatch(patientActions.clearSelectedPatient())
-  ];
 
   const rowSelectedActionCreators = [
     patientActions.setSelectedPatient,
@@ -45,16 +22,15 @@ let ActiveVisits = props => {
 
   return (
     <div>
-      <List
-        columnDefs={columnDefs}
-        fetchListActionCreator={fetchListActionCreator}
-        filters={actionVisitFilters}
-        onMountOtherActionCreators={onMountOtherActionCreators}
-        rowData={Object.values(props.patients)}
+      <ScreeningQueue
+        dispatch={ props.dispatch }
+        filters={ actionVisitFilters }
+        rowData={ Object.values(props.patients) }
         onRowCount={ props.onRowCount }
-        rowSelectedActionCreators={rowSelectedActionCreators}
-        title=""
+        rowSelectedActionCreators={ rowSelectedActionCreators }
+        title="Active Visits"
       />
+
     </div>
   );
 };
