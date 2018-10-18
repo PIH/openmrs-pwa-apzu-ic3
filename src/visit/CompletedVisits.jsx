@@ -9,16 +9,23 @@ let CompletedVisits = props => {
 
   const columnDefs = [
     { headerName: 'uuid', hide: true, field: 'uuid' },
-    { headerName: 'ART', valueGetter: function getArtIdentifier(params) { return utils.getPatientArtIdentifier(params.data); }},
-    { headerName: 'EID', valueGetter: function getEidIdentifier(params) { return utils.getPatientEidIdentifier(params.data); }},
-    { headerName: 'NCD', valueGetter: function getNcdIdentifier(params) { return utils.getPatientNcdIdentifier(params.data); }},
+    {
+      headerName: 'Id',
+      autoHeight: true,
+      cellStyle: {'line-height': "26px"},
+      cellRenderer: function(params){
+        return utils.getPatientIdentifiers(params.data);
+      },
+      getQuickFilterText: function(params) {
+        return utils.getPatientIdentifiers(params.data);
+      }
+    },
     { headerName: 'Given Name', field: 'name.givenName' },
     { headerName: 'Family Name', field: 'name.familyName' },
     { headerName: 'Gender', field: 'gender' },
     { headerName: 'Age', field: 'age' },
     { headerName: 'Village', field: 'village' },
     { headerName: 'Actions', field: 'actions' },
-    { headerName: 'Alert', field: 'alert' },
     { headerName: 'Checked-in Time',
       valueGetter: function getCheckedInTime(params) {
         return utils.getPatientCheckedInTime(params.data);
