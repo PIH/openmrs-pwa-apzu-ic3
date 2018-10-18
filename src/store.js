@@ -49,25 +49,7 @@ const middlewares = [
 
 const combinedReducer = combineReducers({
   openmrs: openmrsReducers,
-  form: reduxFormReducer.plugin({
-    'vl-form': (state, action) => {
-      switch (action.type) {
-        case '@@redux-form/UNREGISTER_FIELD':
-          let newValues = { ...state.values };
-          delete newValues[action.payload.name];
-          let newFields = { ...state.registeredFields };
-          delete newFields[action.payload.name];
-          return {
-            ...state,
-            values: newValues,
-            registeredFields: newFields
-          };
-        default:
-          return state;
-      }
-
-    }
-  }),
+  form: reduxFormReducer,
   toastr: toastrReducer,
   completedVisits: completedVisitsReducer,
 });
