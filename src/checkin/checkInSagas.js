@@ -1,6 +1,7 @@
-import { call, put, takeLatest, select } from 'redux-saga/effects';
+import {call, put, takeLatest, select } from 'redux-saga/effects';
 import {
   patientActions,
+  formActions,
   patientUtil,
   visitRest,
   reportingRest,
@@ -70,11 +71,7 @@ function* checkIn(action) {
     };
 
     yield call(visitRest.createVisit, { visit: visit });
-    yield put(checkInActions.checkInSucceeded());
-
-    if (action.formSubmittedActionCreator) {
-      yield put(action.formSubmittedActionCreator());
-    }
+    yield put(formActions.formSubmitSucceeded('check-in', action.formSubmittedActionCreator));
 
   } catch (e) {
     yield put(checkInActions.checkInFailed(e.message));

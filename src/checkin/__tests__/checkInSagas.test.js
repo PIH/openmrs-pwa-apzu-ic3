@@ -41,9 +41,8 @@ describe('check-in sagas', () => {
     const formSubmittedActionCreator = jest.fn();
 
     sagaTester.dispatch(checkInActions.checkInSubmitted(patient, visitType, encounterType, obs, location, formSubmittedActionCreator));
-    expect(sagaTester.getCalledActions()).toContainEqual(checkInActions.checkInSucceeded());
     expect(visitRest.createVisit).toHaveBeenCalledTimes(1);  // would be great to test what is actually called here
-    expect(formSubmittedActionCreator).toHaveBeenCalledTimes(1);
+    expect(formSubmittedActionCreator).toHaveBeenCalledTimes(0);
     expect(sagaTester.getCalledActions()).not.toContainEqual(checkInActions.checkInFailed("Unable to Submit"));
   });
 
@@ -61,9 +60,8 @@ describe('check-in sagas', () => {
     const formSubmittedActionCreator = jest.fn();
 
     sagaTester.dispatch(checkInActions.checkInSubmitted(patient, visitType, encounterType, obs, location, formSubmittedActionCreator));
-    expect(sagaTester.getCalledActions()).toContainEqual(checkInActions.checkInSucceeded());
     expect(visitRest.createVisit).toHaveBeenCalledTimes(1);  // would be great to test what is actually called here
-    expect(formSubmittedActionCreator).toHaveBeenCalledTimes(1)
+    expect(formSubmittedActionCreator).toHaveBeenCalledTimes(0)
     expect(sagaTester.getCalledActions()).not.toContainEqual(checkInActions.checkInFailed("Unable to Submit"));
   });
 
@@ -71,7 +69,6 @@ describe('check-in sagas', () => {
 
     sagaTester.dispatch(checkInActions.checkInSubmitted());
     expect(sagaTester.getCalledActions()).toContainEqual(checkInActions.checkInFailed("Cannot read property 'uuid' of undefined"));
-    expect(sagaTester.getCalledActions()).not.toContainEqual(checkInActions.checkInSucceeded());
     expect(visitRest.createVisit).not.toHaveBeenCalled();
   });
 

@@ -17,7 +17,6 @@ class CheckInQueue extends React.Component {
       { headerName: 'uuid', hide: true, field: 'uuid' },
       {
         headerName: 'Id',
-        width: 90,
         autoHeight: true,
         cellStyle: {'line-height': "26px"},
         cellRenderer: function(params){

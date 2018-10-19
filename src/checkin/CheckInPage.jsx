@@ -7,6 +7,7 @@ import CheckinForm from './CheckInForm';
 import checkInActions from './checkInActions';
 import {ENCOUNTER_TYPES, VISIT_TYPES, LOCATION_TYPES, CONCEPTS} from '../constants';
 import { push } from "connected-react-router";
+import {actions as toastrActions} from "react-redux-toastr";
 
 const override = css`
     display: block;
@@ -16,6 +17,20 @@ const override = css`
 `;
 
 class CheckInPage extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.formSubmittedActionCreators = [
+      () => toastrActions.add({ title: "Patient Check-in", type: "success" })
+    ];
+    this.formSubmittedActionCreators.push(() => push({
+      pathname: '/checkin/checkInComplete',
+      state: {
+        queueLink: '/checkin/checkInQueue'
+      }
+    }));
+  }
 
   redirectToQueuePageActionCreator() {
     return push({
@@ -39,7 +54,7 @@ class CheckInPage extends React.Component {
         ENCOUNTER_TYPES.CheckInEncounterType,
         referralObs,
         this.props.location,
-        this.redirectToQueuePageActionCreator
+        this.formSubmittedActionCreators
       ));
   }
 

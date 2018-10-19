@@ -10,8 +10,9 @@ const checkInSubmitted = (patient, visitType, encounterType, obs, location, form
   formSubmittedActionCreator: formSubmittedActionCreator
 });
 
-const checkInSucceeded = () => ( {
-  type: CHECK_IN_TYPES.CHECK_IN.SUCCEEDED
+const checkInSucceeded = (formSubmittedActionCreator) => ( {
+  type: CHECK_IN_TYPES.CHECK_IN.SUCCEEDED,
+  formSubmittedActionCreator: formSubmittedActionCreator
 });
 
 
