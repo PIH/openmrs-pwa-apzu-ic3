@@ -32,7 +32,16 @@ class CheckInQueue extends React.Component {
       { headerName: 'Gender', field: 'gender' },
       { headerName: 'Age', field: 'age' },
       { headerName: 'Village', field: 'village' },
-      { headerName: 'Actions', field: 'actions' }
+      { headerName: 'Actions', field: 'actions' },
+      {
+        headerName: 'Appt Date',
+        unSortIcon: true,
+        valueGetter: function getApptDate(params) {
+          if (params.data.lastAppointmentDate) {
+            return utils.formatReportRestDate(params.data.lastAppointmentDate);
+          }
+        }
+      }
     ];
 
     this.state = {

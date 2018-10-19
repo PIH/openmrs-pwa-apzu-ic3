@@ -52,7 +52,7 @@ describe('Component: NurseQueue', () => {
     expect(nurseQueue().find(DataGrid).length).toBe(1);
     expect(nurseQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(2);
     let rowSelectedAction = {
-      "pathname": '/nurse/nursePage',
+      "pathname": '/screening/nurse/nursePage',
       "state": {
         "queueLink": '/screening/nurse/queue'
       }

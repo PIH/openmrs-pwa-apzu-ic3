@@ -7,8 +7,9 @@ const checkOutSubmitted = (patient, visit,  formSubmittedActionCreator) => ( {
   formSubmittedActionCreator: formSubmittedActionCreator
 });
 
-const checkOutSucceeded = () => ( {
-  type: CHECK_IN_TYPES.CHECK_OUT.SUCCEEDED
+const checkOutSucceeded = (formSubmittedActionCreator) => ( {
+  type: CHECK_IN_TYPES.CHECK_OUT.SUCCEEDED,
+  formSubmittedActionCreator: formSubmittedActionCreator
 });
 
 const checkOutFailed = (message) => ( {

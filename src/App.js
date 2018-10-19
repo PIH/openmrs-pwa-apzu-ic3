@@ -213,7 +213,7 @@ const App = props => {
             />
             <Layout
               component={NursePage}
-              path="/nurse/nursePage"
+              path="/screening/nurse/nursePage"
               redirectOnLogin="/"
             />
           </Switch>
