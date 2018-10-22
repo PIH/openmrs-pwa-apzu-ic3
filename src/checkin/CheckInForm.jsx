@@ -1,13 +1,30 @@
 import React from 'react';
-import {reduxForm, Field} from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import CompletedScreenings from "../screening/CompletedScreenings";
-import PatientAlert from "../patient/PatientAlert";
-import PatientAppointments from "../patient/PatientAppointments";
-import PatientLabTests from "../patient/PatientLabTests";
-import { Alert, Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
+import { Section } from '@openmrs/react-components';
+import { Badge, Button, ButtonToolbar, Grid, Row, Col, Form, FormGroup, ControlLabel, Label } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { CONCEPTS } from "../constants";
 import '../assets/css/LoginPage.css';
+
+
+const rowStyles = {
+  backgroundColor: '#ffa500b3'
+};
+
+const littlePaddingLeft = {
+  paddingLeft: '20px'
+};
+
+const divContainer = {
+  paddingLeft: '0px',
+  paddingRight: '0px'
+};
+
+const colHeight = {
+  height: '5px'
+};
 
 let CheckinForm = props => {
 
@@ -36,105 +53,132 @@ let CheckinForm = props => {
   );
 
   return (
-    <div>
-
-      <h3><Label>Check-in</Label></h3>
+    <div style={ divContainer }>
+      <Grid style={ divContainer }>
+        <Row style={ rowStyles }>
+          <Col sm={20} md={20} style={ littlePaddingLeft }>
+            <span><h2>Patient Check-In</h2></span>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={20} md={20} style={ colHeight }>
+            <span><h1>{''}</h1></span>
+          </Col>
+        </Row>
+      </Grid>
+    <Grid>
+    <Section title="Patient Demographics"></Section>
       <Form
         horizontal
         onSubmit={handleSubmit}
       >
         <Grid>
-          <PatientAppointments/>
-          <PatientLabTests/>
-          <PatientAlert/>
+          <Row>
+            <Col sm={20} md={20} style={ colHeight }>
+              <span><h1>{''}</h1></span>
+            </Col>
+          </Row>
           {(typeof patient !== 'undefined') && (patient !== null) &&
           <Row>
-            <FormGroup controlId="formVillage">
+            <FormGroup controlId="formAddress">
+            <Col
+              componentClass={ControlLabel}
+              sm={2}
+            >
+              Address
+            </Col>
+            <Col sm={ 2 }>
+              <Badge><h5>{ patient.address.village }</h5></Badge>&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon="edit" /><br />
+                { patient.address.traditionalAuthority }<br />
+                { patient.address.district }<br />
 
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                Village
-              </Col>
-              <Col sm={4}>
-                <Alert bsStyle="info">
-                  {patient.village}
-                </Alert>
-              </Col>
+            </Col>
 
-            </FormGroup>
-          </Row>
-          }
+          </FormGroup>
+        </Row>
+        }
           {(typeof patient !== 'undefined') && (patient !== null) &&
           <Row>
-            <FormGroup controlId="formChw">
+            <FormGroup controlId="formPhoneNumber">
               <Col componentClass={ControlLabel} sm={2}>
-                CHW
+                Phone
               </Col>
-              <Col sm={4}>
-                <Alert bsStyle="info">
-                  {patient.chw}
-                </Alert>
+
+              <Col sm={2}>
+                {patient.phoneNumber}&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon="edit"/>
               </Col>
+
             </FormGroup>
           </Row>
           }
-          <Row>
-            <FormGroup controlId="formReferralSelect">
-              <Col componentClass={ControlLabel} sm={2}>
-                Referred From
-              </Col>
-              <Col sm={4}>
-                <Field
-                  name="referral"
-                  id="referral"
-                  options={ referrals }
-                  component={ Select }
-                  placeholder="Select Source of Referral"
-                />
-              </Col>
-            </FormGroup>
-          </Row>
+        {(typeof patient !== 'undefined') && (patient !== null) &&
+        <Row>
+          <FormGroup controlId="formChw">
+            <Col componentClass={ControlLabel} sm={2}>
+              CHW
+            </Col>
+            <Col sm={4}>
+              {patient.chw}&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon="edit" />
+            </Col>
+          </FormGroup>
+        </Row>
+        }
+        <Row>
+          <FormGroup controlId="formReferralSelect">
+            <Col componentClass={ControlLabel} sm={2}>
+              Referred From
+            </Col>
+            <Col sm={ 3 }>
+              <Field
+                name="referral"
+                id="referral"
+                options={referrals}
+                component={Select}
+                placeholder="Select Source of Referral"
+              />
+            </Col>
+          </FormGroup>
+        </Row>
 
-          {!(patient && patient.visit && patient.visit.encounters) &&
-          <Row>
-            <FormGroup controlId="formSubmit">
-              <Col sm={2} xsOffset={2}>
-                <Link to={ props.backLink }>
-                  <Button bsSize="large">Cancel</Button>
-                </Link>
-              </Col>
-              <Col
-                sm={2}
-                smOffset={1}
-              >
-                <ButtonToolbar>
-                  <Button
-                    bsSize="large"
-                    bsStyle="success"
-                    disabled={submitting}
-                    type="submit"
-                  >
-                    Check-in
-                  </Button>
+        {!(patient && patient.visit && patient.visit.encounters) &&
+        <Row>
+          <FormGroup controlId="formSubmit">
+            <Col sm={2} >
+              <Link to={props.backLink}>
+                <Button>Cancel</Button>
+              </Link>
+            </Col>
+            <Col
+              sm={2}
 
-                </ButtonToolbar>
-              </Col>
-            </FormGroup>
-          </Row>
-          }
+            >
+              <ButtonToolbar>
+                <Button
+                  bsSize="large"
+                  bsStyle="success"
+                  disabled={submitting}
+                  type="submit"
+                >
+                  Check-in
+                </Button>
 
-          {(patient && patient.visit && patient.visit.encounters) &&
-            <div>
-              <h3><Label>Completed Screenings</Label></h3>
-              <CompletedScreenings/>
-            </div>
-          }
-        </Grid>
-      </Form>
-    </div>
-  );
+              </ButtonToolbar>
+            </Col>
+          </FormGroup>
+        </Row>
+        }
+
+        {(patient && patient.visit && patient.visit.encounters) &&
+        <div>
+          <h3><Label>Completed Screenings</Label></h3>
+          <CompletedScreenings/>
+        </div>
+        }
+      </Grid>
+    </Form>
+    </Grid>
+  </div>
+ );
 };
 
 

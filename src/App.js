@@ -5,6 +5,7 @@ import { Logout, LoadingView } from '@openmrs/react-components';
 import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core';
 import {
   faBars,
+  faEdit,
   faUser,
   faPills,
   faMapMarker,
@@ -58,7 +59,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 
 const { store, persistor } = setupStoreAndPersistor();
 
-fontAwesomeLibrary.add(faBars, faPills, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome);
+fontAwesomeLibrary.add(faBars, faEdit, faPills, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome);
 
 const App = props => {
 

@@ -32,6 +32,11 @@ describe('Component: CheckInForm', () => {
           givenName: "Claire",
           familyName: "Jones"
         },
+        address: {
+          village: "Donda 1",
+          traditionalAuthority: "Dambe",
+          district: "Neno"
+        },
         age: 12,
         gender: "M"
       },

@@ -98,7 +98,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       }
                     }
                   >
-                    Kg
+                    kg
                   </Col>
                 </FormGroup>
               </Row>
@@ -232,7 +232,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                         }
                       }
                     >
-                      Kg
+                      kg
                     </Col>
                   </FormGroup>
                 </Row>
@@ -378,7 +378,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                           }
                         }
                       >
-                        Kg
+                        kg
                       </Col>
                     </FormGroup>
                   </Row>
@@ -522,7 +522,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                             }
                           }
                         >
-                          Kg
+                          kg
                         </Col>
                       </FormGroup>
                     </Row>
