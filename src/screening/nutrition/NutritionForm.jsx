@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
-import { Obs, formValidations, obsRest } from '@openmrs/react-components';
+import {Obs, formValidations, obsRest, formUtil} from '@openmrs/react-components';
 import { Alert, Grid, Row, FormGroup, ControlLabel, Label, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, FORM_ANSWERS } from "../../constants";
 import utils from "../../utils";
@@ -216,10 +216,10 @@ const selector = formValueSelector('nutrition-form');
 
 export default connect(state => {
   const patient = state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null;
-  const weight = selector(state, 'obs|path=weight|concept=' + CONCEPTS.Weight.uuid);
-  const height = selector(state, 'obs|path=height|concept=' + CONCEPTS.Height.uuid);
-  const muac = selector(state, 'obs|path=muac|concept=' + CONCEPTS.MUAC.uuid);
-  const pregnant = selector(state, 'obs|path=pregnant|concept=' + CONCEPTS.Pregnant.uuid);
+  const weight = selector(state, formUtil.obsFieldName('weight', CONCEPTS.Weight.uuid));
+  const height = selector(state, formUtil.obsFieldName('height', CONCEPTS.Height.uuid));
+  const muac = selector(state, formUtil.obsFieldName('muac', CONCEPTS.MUAC.uuid));
+  const pregnant = selector(state, formUtil.obsFieldName('pregnant', CONCEPTS.Pregnant.uuid));
   let bmi = null;
   let bmiStyle = MALNUTRITION_LEVEL.none;
   if ( typeof weight !== 'undefined' && typeof height !== 'undefined') {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
-import {Obs} from '@openmrs/react-components';
+import {Obs, formUtil} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
@@ -99,7 +99,7 @@ let DnaPcrForm = (props) => {
 const selector = formValueSelector('dna-pcr-form');
 
 export default connect(state => {
-  const bled = selector(state, 'obs|path=dna-pcr-bled|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid);
+  const bled = selector(state, formUtil.obsFieldName('dna-pcr-bled', CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid));
   return {
     bled,
     patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null,

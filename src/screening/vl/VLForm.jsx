@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {formValueSelector, change, untouch} from 'redux-form';
-import { Obs } from '@openmrs/react-components';
+import {Obs, formUtil} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import PatientAlert from '../../patient/PatientAlert';
 import PatientLabTests from '../../patient/PatientLabTests';
@@ -14,15 +14,15 @@ class VLForm extends React.PureComponent {
     // this clears out form values when the "bled" question is changed
     if (typeof this.props.bled !== 'undefined' && this.props.bled !== prevProps.bled) {
       if (this.props.bled === CONCEPTS.True.uuid) {
-        this.props.dispatch(change('vl-form', 'obs|path=vl-reason-no-sample|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid, null));
-        this.props.dispatch(untouch('vl-form', 'obs|path=vl-reason-no-sample|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid));
+        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-reason-no-sample', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid), null));
+        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-reason-no-sample', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid)));
       }
       else {
-        this.props.dispatch(change('vl-form', 'obs|path=vl-reason-for-testing|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid, null));
-        this.props.dispatch(untouch('vl-form', 'obs|path=vl-reason-for-testing|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid));
+        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-reason-for-testing', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid), null));
+        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-reason-for-testing', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid)));
 
-        this.props.dispatch(change('vl-form', 'obs|path=vl-lab-location|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid, null));
-        this.props.dispatch(untouch('vl-form', 'obs|path=vl-lab-location|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid));
+        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-lab-location', CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid), null));
+        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-lab-location', CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid)));
       }
     }
   }
@@ -140,7 +140,7 @@ class VLForm extends React.PureComponent {
 const selector = formValueSelector('vl-form');
 
 export default connect(state => {
-  const bled = selector(state, 'obs|path=vl-bled|concept=' + CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid);
+  const bled = selector(state, formUtil.obsFieldName('vl-bled', CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid));
   return {
     bled,
     patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null,
