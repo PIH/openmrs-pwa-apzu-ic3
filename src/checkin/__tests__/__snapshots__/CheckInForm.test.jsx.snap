@@ -26,6 +26,11 @@ exports[`Component: CheckInForm renders properly 1`] = `
       backLink="/checkin/checkInQueue"
       patient={
         Object {
+          "address": Object {
+            "district": "Neno",
+            "traditionalAuthority": "Dambe",
+            "village": "Donda 1",
+          },
           "age": 12,
           "gender": "M",
           "name": Object {
@@ -46,6 +51,11 @@ exports[`Component: CheckInForm renders properly 1`] = `
         keepDirtyOnReinitialize={false}
         patient={
           Object {
+            "address": Object {
+              "district": "Neno",
+              "traditionalAuthority": "Dambe",
+              "village": "Donda 1",
+            },
             "age": 12,
             "gender": "M",
             "name": Object {
@@ -115,6 +125,11 @@ exports[`Component: CheckInForm renders properly 1`] = `
           keepDirtyOnReinitialize={false}
           patient={
             Object {
+              "address": Object {
+                "district": "Neno",
+                "traditionalAuthority": "Dambe",
+                "village": "Donda 1",
+              },
               "age": 12,
               "gender": "M",
               "name": Object {
@@ -194,6 +209,11 @@ exports[`Component: CheckInForm renders properly 1`] = `
             invalid={false}
             patient={
               Object {
+                "address": Object {
+                  "district": "Neno",
+                  "traditionalAuthority": "Dambe",
+                  "village": "Donda 1",
+                },
                 "age": 12,
                 "gender": "M",
                 "name": Object {
@@ -215,526 +235,478 @@ exports[`Component: CheckInForm renders properly 1`] = `
             untouch={[Function]}
             valid={true}
           >
-            <div>
-              <h3>
-                <Label
-                  bsClass="label"
-                  bsStyle="default"
-                >
-                  <span
-                    className="label label-default"
-                  >
-                    Check-in
-                  </span>
-                </Label>
-              </h3>
-              <Form
-                bsClass="form"
-                componentClass="form"
-                horizontal={true}
-                inline={false}
-                onSubmit={[Function]}
+            <div
+              style={
+                Object {
+                  "paddingLeft": "0px",
+                  "paddingRight": "0px",
+                }
+              }
+            >
+              <Grid
+                bsClass="container"
+                componentClass="div"
+                fluid={false}
+                style={
+                  Object {
+                    "paddingLeft": "0px",
+                    "paddingRight": "0px",
+                  }
+                }
               >
-                <form
-                  className="form-horizontal"
-                  onSubmit={[Function]}
+                <div
+                  className="container"
+                  style={
+                    Object {
+                      "paddingLeft": "0px",
+                      "paddingRight": "0px",
+                    }
+                  }
                 >
-                  <Grid
-                    bsClass="container"
+                  <Row
+                    bsClass="row"
                     componentClass="div"
-                    fluid={false}
+                    style={
+                      Object {
+                        "backgroundColor": "#ffa500b3",
+                      }
+                    }
                   >
                     <div
-                      className="container"
+                      className="row"
+                      style={
+                        Object {
+                          "backgroundColor": "#ffa500b3",
+                        }
+                      }
                     >
-                      <Connect(PatientAppointments)>
-                        <PatientAppointments
-                          dispatch={[Function]}
-                          patient={null}
-                        >
-                          <div>
-                            <Grid
-                              bsClass="container"
-                              componentClass="div"
-                              fluid={false}
-                            >
-                              <div
-                                className="container"
-                              />
-                            </Grid>
-                          </div>
-                        </PatientAppointments>
-                      </Connect(PatientAppointments)>
-                      <Connect(PatientLabTests)>
-                        <PatientLabTests
-                          dispatch={[Function]}
-                          patient={
+                      <Col
+                        bsClass="col"
+                        componentClass="div"
+                        md={20}
+                        sm={20}
+                        style={
+                          Object {
+                            "paddingLeft": "20px",
+                          }
+                        }
+                      >
+                        <div
+                          className="col-md-20 col-sm-20"
+                          style={
                             Object {
-                              "labTests": Array [],
+                              "paddingLeft": "20px",
                             }
                           }
                         >
-                          <div>
-                            <h3>
-                              <Label
-                                bsClass="label"
-                                bsStyle="default"
-                              >
-                                <span
-                                  className="label label-default"
-                                >
-                                  History
-                                </span>
-                              </Label>
-                            </h3>
-                          </div>
-                        </PatientLabTests>
-                      </Connect(PatientLabTests)>
-                      <Connect(PatientAlert)>
-                        <PatientAlert
-                          dispatch={[Function]}
-                          patient={null}
-                        >
-                          <div>
-                            <Grid
-                              bsClass="container"
-                              componentClass="div"
-                              fluid={false}
-                            >
-                              <div
-                                className="container"
-                              />
-                            </Grid>
-                          </div>
-                        </PatientAlert>
-                      </Connect(PatientAlert)>
-                      <Row
-                        bsClass="row"
-                        componentClass="div"
-                      >
-                        <div
-                          className="row"
-                        >
-                          <FormGroup
-                            bsClass="form-group"
-                            controlId="formVillage"
-                          >
-                            <div
-                              className="form-group"
-                            >
-                              <Col
-                                bsClass="col"
-                                componentClass={[Function]}
-                                sm={2}
-                              >
-                                <ControlLabel
-                                  bsClass="control-label"
-                                  className="col-sm-2"
-                                  srOnly={false}
-                                >
-                                  <label
-                                    className="col-sm-2 control-label"
-                                    htmlFor="formVillage"
-                                  >
-                                    Village
-                                  </label>
-                                </ControlLabel>
-                              </Col>
-                              <Col
-                                bsClass="col"
-                                componentClass="div"
-                                sm={4}
-                              >
-                                <div
-                                  className="col-sm-4"
-                                >
-                                  <Alert
-                                    bsClass="alert"
-                                    bsStyle="info"
-                                    closeLabel="Close alert"
-                                  >
-                                    <div
-                                      className="alert alert-info"
-                                      role="alert"
-                                    />
-                                  </Alert>
-                                </div>
-                              </Col>
-                            </div>
-                          </FormGroup>
+                          <span>
+                            <h2>
+                              Patient Check-In
+                            </h2>
+                          </span>
                         </div>
-                      </Row>
-                      <Row
-                        bsClass="row"
+                      </Col>
+                    </div>
+                  </Row>
+                  <Row
+                    bsClass="row"
+                    componentClass="div"
+                  >
+                    <div
+                      className="row"
+                    >
+                      <Col
+                        bsClass="col"
                         componentClass="div"
+                        md={20}
+                        sm={20}
+                        style={
+                          Object {
+                            "height": "40px",
+                          }
+                        }
                       >
                         <div
-                          className="row"
+                          className="col-md-20 col-sm-20"
+                          style={
+                            Object {
+                              "height": "40px",
+                            }
+                          }
                         >
-                          <FormGroup
-                            bsClass="form-group"
-                            controlId="formChw"
-                          >
-                            <div
-                              className="form-group"
-                            >
-                              <Col
-                                bsClass="col"
-                                componentClass={[Function]}
-                                sm={2}
-                              >
-                                <ControlLabel
-                                  bsClass="control-label"
-                                  className="col-sm-2"
-                                  srOnly={false}
-                                >
-                                  <label
-                                    className="col-sm-2 control-label"
-                                    htmlFor="formChw"
-                                  >
-                                    CHW
-                                  </label>
-                                </ControlLabel>
-                              </Col>
-                              <Col
-                                bsClass="col"
-                                componentClass="div"
-                                sm={4}
-                              >
-                                <div
-                                  className="col-sm-4"
-                                >
-                                  <Alert
-                                    bsClass="alert"
-                                    bsStyle="info"
-                                    closeLabel="Close alert"
-                                  >
-                                    <div
-                                      className="alert alert-info"
-                                      role="alert"
-                                    />
-                                  </Alert>
-                                </div>
-                              </Col>
-                            </div>
-                          </FormGroup>
+                          <span>
+                            <h1 />
+                          </span>
                         </div>
-                      </Row>
-                      <Row
-                        bsClass="row"
+                      </Col>
+                    </div>
+                  </Row>
+                </div>
+              </Grid>
+              <Grid
+                bsClass="container"
+                componentClass="div"
+                fluid={false}
+              >
+                <div
+                  className="container"
+                >
+                  <Section
+                    title="Patient Demographics"
+                  >
+                    <Row
+                      bsClass="row"
+                      componentClass="div"
+                      style={
+                        Object {
+                          "backgroundColor": "rgba(255, 177, 0, 0.26)",
+                        }
+                      }
+                    >
+                      <div
+                        className="row"
+                        style={
+                          Object {
+                            "backgroundColor": "rgba(255, 177, 0, 0.26)",
+                          }
+                        }
+                      >
+                        <Col
+                          bsClass="col"
+                          componentClass="div"
+                          md={20}
+                          sm={20}
+                          style={
+                            Object {
+                              "height": "40px",
+                              "paddingLeft": "60px",
+                            }
+                          }
+                        >
+                          <div
+                            className="col-md-20 col-sm-20"
+                            style={
+                              Object {
+                                "height": "40px",
+                                "paddingLeft": "60px",
+                              }
+                            }
+                          >
+                            <span>
+                              <h1>
+                                Patient Demographics
+                              </h1>
+                            </span>
+                          </div>
+                        </Col>
+                      </div>
+                    </Row>
+                  </Section>
+                  <Form
+                    bsClass="form"
+                    componentClass="form"
+                    horizontal={true}
+                    inline={false}
+                    onSubmit={[Function]}
+                  >
+                    <form
+                      className="form-horizontal"
+                      onSubmit={[Function]}
+                    >
+                      <Grid
+                        bsClass="container"
                         componentClass="div"
+                        fluid={false}
                       >
                         <div
-                          className="row"
+                          className="container"
                         >
-                          <FormGroup
-                            bsClass="form-group"
-                            controlId="formReferralSelect"
+                          <Row
+                            bsClass="row"
+                            componentClass="div"
                           >
                             <div
-                              className="form-group"
+                              className="row"
                             >
                               <Col
                                 bsClass="col"
-                                componentClass={[Function]}
-                                sm={2}
-                              >
-                                <ControlLabel
-                                  bsClass="control-label"
-                                  className="col-sm-2"
-                                  srOnly={false}
-                                >
-                                  <label
-                                    className="col-sm-2 control-label"
-                                    htmlFor="formReferralSelect"
-                                  >
-                                    Referred From
-                                  </label>
-                                </ControlLabel>
-                              </Col>
-                              <Col
-                                bsClass="col"
                                 componentClass="div"
-                                sm={4}
+                                md={20}
+                                sm={20}
+                                style={
+                                  Object {
+                                    "height": "40px",
+                                  }
+                                }
                               >
                                 <div
-                                  className="col-sm-4"
-                                >
-                                  <Field
-                                    component={[Function]}
-                                    id="referral"
-                                    name="referral"
-                                    options={
-                                      Array [
-                                        Object {
-                                          "name": "SHARC",
-                                          "uuid": "6f48dfac-9ffa-11e8-98d0-529269fb1459",
-                                        },
-                                        Object {
-                                          "name": "OPD at health center",
-                                          "uuid": "655ac68e-977f-11e1-8993-905e29aff6c1",
-                                        },
-                                        Object {
-                                          "name": "Inpatient",
-                                          "uuid": "655d1772-977f-11e1-8993-905e29aff6c1",
-                                        },
-                                        Object {
-                                          "name": "Outside Neno District",
-                                          "uuid": "6f48e5b0-9ffa-11e8-98d0-529269fb1459",
-                                        },
-                                        Object {
-                                          "name": "Other",
-                                          "uuid": "656cce7e-977f-11e1-8993-905e29aff6c1",
-                                        },
-                                      ]
+                                  className="col-md-20 col-sm-20"
+                                  style={
+                                    Object {
+                                      "height": "40px",
                                     }
-                                    placeholder="Select Source of Referral"
+                                  }
+                                >
+                                  <span>
+                                    <h1 />
+                                  </span>
+                                </div>
+                              </Col>
+                            </div>
+                          </Row>
+                          <Row
+                            bsClass="row"
+                            componentClass="div"
+                          >
+                            <div
+                              className="row"
+                            >
+                              <FormGroup
+                                bsClass="form-group"
+                                controlId="formAddress"
+                              >
+                                <div
+                                  className="form-group"
+                                >
+                                  <Col
+                                    bsClass="col"
+                                    componentClass={[Function]}
+                                    sm={2}
                                   >
-                                    <Connect(ConnectedField)
-                                      _reduxForm={
-                                        Object {
-                                          "anyTouched": false,
-                                          "array": Object {
-                                            "insert": [Function],
-                                            "move": [Function],
-                                            "pop": [Function],
-                                            "push": [Function],
-                                            "remove": [Function],
-                                            "removeAll": [Function],
-                                            "shift": [Function],
-                                            "splice": [Function],
-                                            "swap": [Function],
-                                            "unshift": [Function],
-                                          },
-                                          "arrayInsert": [Function],
-                                          "arrayMove": [Function],
-                                          "arrayPop": [Function],
-                                          "arrayPush": [Function],
-                                          "arrayRemove": [Function],
-                                          "arrayRemoveAll": [Function],
-                                          "arrayShift": [Function],
-                                          "arraySplice": [Function],
-                                          "arraySwap": [Function],
-                                          "arrayUnshift": [Function],
-                                          "asyncErrors": undefined,
-                                          "asyncValidate": [Function],
-                                          "asyncValidating": false,
-                                          "autofill": [Function],
-                                          "backLink": "/checkin/checkInQueue",
-                                          "blur": [Function],
-                                          "change": [Function],
-                                          "clearAsyncError": [Function],
-                                          "clearFields": [Function],
-                                          "clearSubmit": [Function],
-                                          "clearSubmitErrors": [Function],
-                                          "destroy": [Function],
-                                          "destroyOnUnmount": true,
-                                          "dirty": false,
-                                          "dispatch": [Function],
-                                          "enableReinitialize": false,
-                                          "error": undefined,
-                                          "focus": [Function],
-                                          "forceUnregisterOnUnmount": false,
-                                          "form": "checkInForm",
-                                          "getFormState": [Function],
-                                          "getValues": [Function],
-                                          "initialValues": undefined,
-                                          "initialize": [Function],
-                                          "initialized": false,
-                                          "invalid": false,
-                                          "keepDirtyOnReinitialize": false,
-                                          "patient": Object {
-                                            "age": 12,
-                                            "gender": "M",
-                                            "name": Object {
-                                              "familyName": "Jones",
-                                              "givenName": "Claire",
-                                            },
-                                            "uuid": "abc",
-                                          },
-                                          "persistentSubmitErrors": false,
-                                          "pristine": true,
-                                          "pure": true,
-                                          "register": [Function],
-                                          "registerField": [Function],
-                                          "registerInnerOnSubmit": [Function],
-                                          "registeredFields": undefined,
-                                          "reset": [Function],
-                                          "resetSection": [Function],
-                                          "sectionPrefix": undefined,
-                                          "setSubmitFailed": [Function],
-                                          "setSubmitSucceeded": [Function],
-                                          "shouldAsyncValidate": [Function],
-                                          "shouldError": [Function],
-                                          "shouldValidate": [Function],
-                                          "shouldWarn": [Function],
-                                          "startAsyncValidation": [Function],
-                                          "startSubmit": [Function],
-                                          "stopAsyncValidation": [Function],
-                                          "stopSubmit": [Function],
-                                          "submit": [Function],
-                                          "submitFailed": false,
-                                          "submitSucceeded": false,
-                                          "submitting": false,
-                                          "syncErrors": Object {},
-                                          "syncWarnings": Object {},
-                                          "touch": [Function],
-                                          "touchOnBlur": true,
-                                          "touchOnChange": false,
-                                          "triggerSubmit": undefined,
-                                          "unregister": [Function],
-                                          "unregisterField": [Function],
-                                          "untouch": [Function],
-                                          "updateSyncErrors": [Function],
-                                          "updateSyncWarnings": [Function],
-                                          "updateUnregisteredFields": false,
-                                          "valid": true,
-                                          "validExceptSubmit": true,
-                                          "values": Object {},
-                                          "warning": undefined,
-                                        }
-                                      }
-                                      component={[Function]}
-                                      id="referral"
-                                      name="referral"
-                                      normalize={[Function]}
-                                      options={
-                                        Array [
-                                          Object {
-                                            "name": "SHARC",
-                                            "uuid": "6f48dfac-9ffa-11e8-98d0-529269fb1459",
-                                          },
-                                          Object {
-                                            "name": "OPD at health center",
-                                            "uuid": "655ac68e-977f-11e1-8993-905e29aff6c1",
-                                          },
-                                          Object {
-                                            "name": "Inpatient",
-                                            "uuid": "655d1772-977f-11e1-8993-905e29aff6c1",
-                                          },
-                                          Object {
-                                            "name": "Outside Neno District",
-                                            "uuid": "6f48e5b0-9ffa-11e8-98d0-529269fb1459",
-                                          },
-                                          Object {
-                                            "name": "Other",
-                                            "uuid": "656cce7e-977f-11e1-8993-905e29aff6c1",
-                                          },
-                                        ]
-                                      }
-                                      placeholder="Select Source of Referral"
+                                    <ControlLabel
+                                      bsClass="control-label"
+                                      className="col-sm-2"
+                                      srOnly={false}
                                     >
-                                      <ConnectedField
-                                        _reduxForm={
-                                          Object {
-                                            "anyTouched": false,
-                                            "array": Object {
-                                              "insert": [Function],
-                                              "move": [Function],
-                                              "pop": [Function],
-                                              "push": [Function],
-                                              "remove": [Function],
-                                              "removeAll": [Function],
-                                              "shift": [Function],
-                                              "splice": [Function],
-                                              "swap": [Function],
-                                              "unshift": [Function],
-                                            },
-                                            "arrayInsert": [Function],
-                                            "arrayMove": [Function],
-                                            "arrayPop": [Function],
-                                            "arrayPush": [Function],
-                                            "arrayRemove": [Function],
-                                            "arrayRemoveAll": [Function],
-                                            "arrayShift": [Function],
-                                            "arraySplice": [Function],
-                                            "arraySwap": [Function],
-                                            "arrayUnshift": [Function],
-                                            "asyncErrors": undefined,
-                                            "asyncValidate": [Function],
-                                            "asyncValidating": false,
-                                            "autofill": [Function],
-                                            "backLink": "/checkin/checkInQueue",
-                                            "blur": [Function],
-                                            "change": [Function],
-                                            "clearAsyncError": [Function],
-                                            "clearFields": [Function],
-                                            "clearSubmit": [Function],
-                                            "clearSubmitErrors": [Function],
-                                            "destroy": [Function],
-                                            "destroyOnUnmount": true,
-                                            "dirty": false,
-                                            "dispatch": [Function],
-                                            "enableReinitialize": false,
-                                            "error": undefined,
-                                            "focus": [Function],
-                                            "forceUnregisterOnUnmount": false,
-                                            "form": "checkInForm",
-                                            "getFormState": [Function],
-                                            "getValues": [Function],
-                                            "initialValues": undefined,
-                                            "initialize": [Function],
-                                            "initialized": false,
-                                            "invalid": false,
-                                            "keepDirtyOnReinitialize": false,
-                                            "patient": Object {
-                                              "age": 12,
-                                              "gender": "M",
-                                              "name": Object {
-                                                "familyName": "Jones",
-                                                "givenName": "Claire",
-                                              },
-                                              "uuid": "abc",
-                                            },
-                                            "persistentSubmitErrors": false,
-                                            "pristine": true,
-                                            "pure": true,
-                                            "register": [Function],
-                                            "registerField": [Function],
-                                            "registerInnerOnSubmit": [Function],
-                                            "registeredFields": undefined,
-                                            "reset": [Function],
-                                            "resetSection": [Function],
-                                            "sectionPrefix": undefined,
-                                            "setSubmitFailed": [Function],
-                                            "setSubmitSucceeded": [Function],
-                                            "shouldAsyncValidate": [Function],
-                                            "shouldError": [Function],
-                                            "shouldValidate": [Function],
-                                            "shouldWarn": [Function],
-                                            "startAsyncValidation": [Function],
-                                            "startSubmit": [Function],
-                                            "stopAsyncValidation": [Function],
-                                            "stopSubmit": [Function],
-                                            "submit": [Function],
-                                            "submitFailed": false,
-                                            "submitSucceeded": false,
-                                            "submitting": false,
-                                            "syncErrors": Object {},
-                                            "syncWarnings": Object {},
-                                            "touch": [Function],
-                                            "touchOnBlur": true,
-                                            "touchOnChange": false,
-                                            "triggerSubmit": undefined,
-                                            "unregister": [Function],
-                                            "unregisterField": [Function],
-                                            "untouch": [Function],
-                                            "updateSyncErrors": [Function],
-                                            "updateSyncWarnings": [Function],
-                                            "updateUnregisteredFields": false,
-                                            "valid": true,
-                                            "validExceptSubmit": true,
-                                            "values": Object {},
-                                            "warning": undefined,
-                                          }
-                                        }
-                                        asyncValidating={false}
+                                      <label
+                                        className="col-sm-2 control-label"
+                                        htmlFor="formAddress"
+                                      >
+                                        Address
+                                      </label>
+                                    </ControlLabel>
+                                  </Col>
+                                  <Col
+                                    bsClass="col"
+                                    componentClass="div"
+                                    sm={2}
+                                  >
+                                    <div
+                                      className="col-sm-2"
+                                    >
+                                      <Badge
+                                        bsClass="badge"
+                                        pullRight={false}
+                                      >
+                                        <span
+                                          className="badge"
+                                        >
+                                          <h5>
+                                            Donda 1
+                                          </h5>
+                                        </span>
+                                      </Badge>
+                                         
+                                      <FontAwesomeIcon
+                                        border={false}
+                                        className=""
+                                        fixedWidth={false}
+                                        flip={null}
+                                        icon="edit"
+                                        inverse={false}
+                                        listItem={false}
+                                        mask={null}
+                                        pull={null}
+                                        pulse={false}
+                                        rotation={null}
+                                        size={null}
+                                        spin={false}
+                                        symbol={false}
+                                        transform={null}
+                                      />
+                                      <br />
+                                      Dambe
+                                      <br />
+                                      Neno
+                                      <br />
+                                    </div>
+                                  </Col>
+                                </div>
+                              </FormGroup>
+                            </div>
+                          </Row>
+                          <Row
+                            bsClass="row"
+                            componentClass="div"
+                          >
+                            <div
+                              className="row"
+                            >
+                              <FormGroup
+                                bsClass="form-group"
+                                controlId="formPhoneNumber"
+                              >
+                                <div
+                                  className="form-group"
+                                >
+                                  <Col
+                                    bsClass="col"
+                                    componentClass={[Function]}
+                                    sm={2}
+                                  >
+                                    <ControlLabel
+                                      bsClass="control-label"
+                                      className="col-sm-2"
+                                      srOnly={false}
+                                    >
+                                      <label
+                                        className="col-sm-2 control-label"
+                                        htmlFor="formPhoneNumber"
+                                      >
+                                        Phone
+                                      </label>
+                                    </ControlLabel>
+                                  </Col>
+                                  <Col
+                                    bsClass="col"
+                                    componentClass="div"
+                                    sm={2}
+                                  >
+                                    <div
+                                      className="col-sm-2"
+                                    >
+                                         
+                                      <FontAwesomeIcon
+                                        border={false}
+                                        className=""
+                                        fixedWidth={false}
+                                        flip={null}
+                                        icon="edit"
+                                        inverse={false}
+                                        listItem={false}
+                                        mask={null}
+                                        pull={null}
+                                        pulse={false}
+                                        rotation={null}
+                                        size={null}
+                                        spin={false}
+                                        symbol={false}
+                                        transform={null}
+                                      />
+                                    </div>
+                                  </Col>
+                                </div>
+                              </FormGroup>
+                            </div>
+                          </Row>
+                          <Row
+                            bsClass="row"
+                            componentClass="div"
+                          >
+                            <div
+                              className="row"
+                            >
+                              <FormGroup
+                                bsClass="form-group"
+                                controlId="formChw"
+                              >
+                                <div
+                                  className="form-group"
+                                >
+                                  <Col
+                                    bsClass="col"
+                                    componentClass={[Function]}
+                                    sm={2}
+                                  >
+                                    <ControlLabel
+                                      bsClass="control-label"
+                                      className="col-sm-2"
+                                      srOnly={false}
+                                    >
+                                      <label
+                                        className="col-sm-2 control-label"
+                                        htmlFor="formChw"
+                                      >
+                                        CHW
+                                      </label>
+                                    </ControlLabel>
+                                  </Col>
+                                  <Col
+                                    bsClass="col"
+                                    componentClass="div"
+                                    sm={4}
+                                  >
+                                    <div
+                                      className="col-sm-4"
+                                    >
+                                         
+                                      <FontAwesomeIcon
+                                        border={false}
+                                        className=""
+                                        fixedWidth={false}
+                                        flip={null}
+                                        icon="edit"
+                                        inverse={false}
+                                        listItem={false}
+                                        mask={null}
+                                        pull={null}
+                                        pulse={false}
+                                        rotation={null}
+                                        size={null}
+                                        spin={false}
+                                        symbol={false}
+                                        transform={null}
+                                      />
+                                    </div>
+                                  </Col>
+                                </div>
+                              </FormGroup>
+                            </div>
+                          </Row>
+                          <Row
+                            bsClass="row"
+                            componentClass="div"
+                          >
+                            <div
+                              className="row"
+                            >
+                              <FormGroup
+                                bsClass="form-group"
+                                controlId="formReferralSelect"
+                              >
+                                <div
+                                  className="form-group"
+                                >
+                                  <Col
+                                    bsClass="col"
+                                    componentClass={[Function]}
+                                    sm={2}
+                                  >
+                                    <ControlLabel
+                                      bsClass="control-label"
+                                      className="col-sm-2"
+                                      srOnly={false}
+                                    >
+                                      <label
+                                        className="col-sm-2 control-label"
+                                        htmlFor="formReferralSelect"
+                                      >
+                                        Referred From
+                                      </label>
+                                    </ControlLabel>
+                                  </Col>
+                                  <Col
+                                    bsClass="col"
+                                    componentClass="div"
+                                    sm={3}
+                                  >
+                                    <div
+                                      className="col-sm-3"
+                                    >
+                                      <Field
                                         component={[Function]}
-                                        dirty={false}
-                                        dispatch={[Function]}
                                         id="referral"
                                         name="referral"
-                                        normalize={[Function]}
                                         options={
                                           Array [
                                             Object {
@@ -760,41 +732,120 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                           ]
                                         }
                                         placeholder="Select Source of Referral"
-                                        pristine={true}
                                       >
-                                        <Select
-                                          id="referral"
-                                          input={
+                                        <Connect(ConnectedField)
+                                          _reduxForm={
                                             Object {
-                                              "name": "referral",
-                                              "onBlur": [Function],
-                                              "onChange": [Function],
-                                              "onDragStart": [Function],
-                                              "onDrop": [Function],
-                                              "onFocus": [Function],
-                                              "value": "",
-                                            }
-                                          }
-                                          meta={
-                                            Object {
-                                              "active": false,
+                                              "anyTouched": false,
+                                              "array": Object {
+                                                "insert": [Function],
+                                                "move": [Function],
+                                                "pop": [Function],
+                                                "push": [Function],
+                                                "remove": [Function],
+                                                "removeAll": [Function],
+                                                "shift": [Function],
+                                                "splice": [Function],
+                                                "swap": [Function],
+                                                "unshift": [Function],
+                                              },
+                                              "arrayInsert": [Function],
+                                              "arrayMove": [Function],
+                                              "arrayPop": [Function],
+                                              "arrayPush": [Function],
+                                              "arrayRemove": [Function],
+                                              "arrayRemoveAll": [Function],
+                                              "arrayShift": [Function],
+                                              "arraySplice": [Function],
+                                              "arraySwap": [Function],
+                                              "arrayUnshift": [Function],
+                                              "asyncErrors": undefined,
+                                              "asyncValidate": [Function],
                                               "asyncValidating": false,
-                                              "autofilled": false,
+                                              "autofill": [Function],
+                                              "backLink": "/checkin/checkInQueue",
+                                              "blur": [Function],
+                                              "change": [Function],
+                                              "clearAsyncError": [Function],
+                                              "clearFields": [Function],
+                                              "clearSubmit": [Function],
+                                              "clearSubmitErrors": [Function],
+                                              "destroy": [Function],
+                                              "destroyOnUnmount": true,
                                               "dirty": false,
                                               "dispatch": [Function],
+                                              "enableReinitialize": false,
                                               "error": undefined,
+                                              "focus": [Function],
+                                              "forceUnregisterOnUnmount": false,
                                               "form": "checkInForm",
-                                              "initial": undefined,
+                                              "getFormState": [Function],
+                                              "getValues": [Function],
+                                              "initialValues": undefined,
+                                              "initialize": [Function],
+                                              "initialized": false,
                                               "invalid": false,
+                                              "keepDirtyOnReinitialize": false,
+                                              "patient": Object {
+                                                "address": Object {
+                                                  "district": "Neno",
+                                                  "traditionalAuthority": "Dambe",
+                                                  "village": "Donda 1",
+                                                },
+                                                "age": 12,
+                                                "gender": "M",
+                                                "name": Object {
+                                                  "familyName": "Jones",
+                                                  "givenName": "Claire",
+                                                },
+                                                "uuid": "abc",
+                                              },
+                                              "persistentSubmitErrors": false,
                                               "pristine": true,
+                                              "pure": true,
+                                              "register": [Function],
+                                              "registerField": [Function],
+                                              "registerInnerOnSubmit": [Function],
+                                              "registeredFields": undefined,
+                                              "reset": [Function],
+                                              "resetSection": [Function],
+                                              "sectionPrefix": undefined,
+                                              "setSubmitFailed": [Function],
+                                              "setSubmitSucceeded": [Function],
+                                              "shouldAsyncValidate": [Function],
+                                              "shouldError": [Function],
+                                              "shouldValidate": [Function],
+                                              "shouldWarn": [Function],
+                                              "startAsyncValidation": [Function],
+                                              "startSubmit": [Function],
+                                              "stopAsyncValidation": [Function],
+                                              "stopSubmit": [Function],
+                                              "submit": [Function],
                                               "submitFailed": false,
+                                              "submitSucceeded": false,
                                               "submitting": false,
-                                              "touched": false,
+                                              "syncErrors": Object {},
+                                              "syncWarnings": Object {},
+                                              "touch": [Function],
+                                              "touchOnBlur": true,
+                                              "touchOnChange": false,
+                                              "triggerSubmit": undefined,
+                                              "unregister": [Function],
+                                              "unregisterField": [Function],
+                                              "untouch": [Function],
+                                              "updateSyncErrors": [Function],
+                                              "updateSyncWarnings": [Function],
+                                              "updateUnregisteredFields": false,
                                               "valid": true,
-                                              "visited": false,
+                                              "validExceptSubmit": true,
+                                              "values": Object {},
                                               "warning": undefined,
                                             }
                                           }
+                                          component={[Function]}
+                                          id="referral"
+                                          name="referral"
+                                          normalize={[Function]}
                                           options={
                                             Array [
                                               Object {
@@ -821,160 +872,362 @@ exports[`Component: CheckInForm renders properly 1`] = `
                                           }
                                           placeholder="Select Source of Referral"
                                         >
-                                          <div>
-                                            <select
-                                              className="referralSelector"
-                                              name="referral"
-                                              onBlur={[Function]}
-                                              onChange={[Function]}
-                                              onDragStart={[Function]}
-                                              onDrop={[Function]}
-                                              onFocus={[Function]}
-                                              value=""
+                                          <ConnectedField
+                                            _reduxForm={
+                                              Object {
+                                                "anyTouched": false,
+                                                "array": Object {
+                                                  "insert": [Function],
+                                                  "move": [Function],
+                                                  "pop": [Function],
+                                                  "push": [Function],
+                                                  "remove": [Function],
+                                                  "removeAll": [Function],
+                                                  "shift": [Function],
+                                                  "splice": [Function],
+                                                  "swap": [Function],
+                                                  "unshift": [Function],
+                                                },
+                                                "arrayInsert": [Function],
+                                                "arrayMove": [Function],
+                                                "arrayPop": [Function],
+                                                "arrayPush": [Function],
+                                                "arrayRemove": [Function],
+                                                "arrayRemoveAll": [Function],
+                                                "arrayShift": [Function],
+                                                "arraySplice": [Function],
+                                                "arraySwap": [Function],
+                                                "arrayUnshift": [Function],
+                                                "asyncErrors": undefined,
+                                                "asyncValidate": [Function],
+                                                "asyncValidating": false,
+                                                "autofill": [Function],
+                                                "backLink": "/checkin/checkInQueue",
+                                                "blur": [Function],
+                                                "change": [Function],
+                                                "clearAsyncError": [Function],
+                                                "clearFields": [Function],
+                                                "clearSubmit": [Function],
+                                                "clearSubmitErrors": [Function],
+                                                "destroy": [Function],
+                                                "destroyOnUnmount": true,
+                                                "dirty": false,
+                                                "dispatch": [Function],
+                                                "enableReinitialize": false,
+                                                "error": undefined,
+                                                "focus": [Function],
+                                                "forceUnregisterOnUnmount": false,
+                                                "form": "checkInForm",
+                                                "getFormState": [Function],
+                                                "getValues": [Function],
+                                                "initialValues": undefined,
+                                                "initialize": [Function],
+                                                "initialized": false,
+                                                "invalid": false,
+                                                "keepDirtyOnReinitialize": false,
+                                                "patient": Object {
+                                                  "address": Object {
+                                                    "district": "Neno",
+                                                    "traditionalAuthority": "Dambe",
+                                                    "village": "Donda 1",
+                                                  },
+                                                  "age": 12,
+                                                  "gender": "M",
+                                                  "name": Object {
+                                                    "familyName": "Jones",
+                                                    "givenName": "Claire",
+                                                  },
+                                                  "uuid": "abc",
+                                                },
+                                                "persistentSubmitErrors": false,
+                                                "pristine": true,
+                                                "pure": true,
+                                                "register": [Function],
+                                                "registerField": [Function],
+                                                "registerInnerOnSubmit": [Function],
+                                                "registeredFields": undefined,
+                                                "reset": [Function],
+                                                "resetSection": [Function],
+                                                "sectionPrefix": undefined,
+                                                "setSubmitFailed": [Function],
+                                                "setSubmitSucceeded": [Function],
+                                                "shouldAsyncValidate": [Function],
+                                                "shouldError": [Function],
+                                                "shouldValidate": [Function],
+                                                "shouldWarn": [Function],
+                                                "startAsyncValidation": [Function],
+                                                "startSubmit": [Function],
+                                                "stopAsyncValidation": [Function],
+                                                "stopSubmit": [Function],
+                                                "submit": [Function],
+                                                "submitFailed": false,
+                                                "submitSucceeded": false,
+                                                "submitting": false,
+                                                "syncErrors": Object {},
+                                                "syncWarnings": Object {},
+                                                "touch": [Function],
+                                                "touchOnBlur": true,
+                                                "touchOnChange": false,
+                                                "triggerSubmit": undefined,
+                                                "unregister": [Function],
+                                                "unregisterField": [Function],
+                                                "untouch": [Function],
+                                                "updateSyncErrors": [Function],
+                                                "updateSyncWarnings": [Function],
+                                                "updateUnregisteredFields": false,
+                                                "valid": true,
+                                                "validExceptSubmit": true,
+                                                "values": Object {},
+                                                "warning": undefined,
+                                              }
+                                            }
+                                            asyncValidating={false}
+                                            component={[Function]}
+                                            dirty={false}
+                                            dispatch={[Function]}
+                                            id="referral"
+                                            name="referral"
+                                            normalize={[Function]}
+                                            options={
+                                              Array [
+                                                Object {
+                                                  "name": "SHARC",
+                                                  "uuid": "6f48dfac-9ffa-11e8-98d0-529269fb1459",
+                                                },
+                                                Object {
+                                                  "name": "OPD at health center",
+                                                  "uuid": "655ac68e-977f-11e1-8993-905e29aff6c1",
+                                                },
+                                                Object {
+                                                  "name": "Inpatient",
+                                                  "uuid": "655d1772-977f-11e1-8993-905e29aff6c1",
+                                                },
+                                                Object {
+                                                  "name": "Outside Neno District",
+                                                  "uuid": "6f48e5b0-9ffa-11e8-98d0-529269fb1459",
+                                                },
+                                                Object {
+                                                  "name": "Other",
+                                                  "uuid": "656cce7e-977f-11e1-8993-905e29aff6c1",
+                                                },
+                                              ]
+                                            }
+                                            placeholder="Select Source of Referral"
+                                            pristine={true}
+                                          >
+                                            <Select
+                                              id="referral"
+                                              input={
+                                                Object {
+                                                  "name": "referral",
+                                                  "onBlur": [Function],
+                                                  "onChange": [Function],
+                                                  "onDragStart": [Function],
+                                                  "onDrop": [Function],
+                                                  "onFocus": [Function],
+                                                  "value": "",
+                                                }
+                                              }
+                                              meta={
+                                                Object {
+                                                  "active": false,
+                                                  "asyncValidating": false,
+                                                  "autofilled": false,
+                                                  "dirty": false,
+                                                  "dispatch": [Function],
+                                                  "error": undefined,
+                                                  "form": "checkInForm",
+                                                  "initial": undefined,
+                                                  "invalid": false,
+                                                  "pristine": true,
+                                                  "submitFailed": false,
+                                                  "submitting": false,
+                                                  "touched": false,
+                                                  "valid": true,
+                                                  "visited": false,
+                                                  "warning": undefined,
+                                                }
+                                              }
+                                              options={
+                                                Array [
+                                                  Object {
+                                                    "name": "SHARC",
+                                                    "uuid": "6f48dfac-9ffa-11e8-98d0-529269fb1459",
+                                                  },
+                                                  Object {
+                                                    "name": "OPD at health center",
+                                                    "uuid": "655ac68e-977f-11e1-8993-905e29aff6c1",
+                                                  },
+                                                  Object {
+                                                    "name": "Inpatient",
+                                                    "uuid": "655d1772-977f-11e1-8993-905e29aff6c1",
+                                                  },
+                                                  Object {
+                                                    "name": "Outside Neno District",
+                                                    "uuid": "6f48e5b0-9ffa-11e8-98d0-529269fb1459",
+                                                  },
+                                                  Object {
+                                                    "name": "Other",
+                                                    "uuid": "656cce7e-977f-11e1-8993-905e29aff6c1",
+                                                  },
+                                                ]
+                                              }
+                                              placeholder="Select Source of Referral"
                                             >
-                                              <option
-                                                key="0"
-                                                value=""
-                                              >
-                                                Select Source of Referral
-                                              </option>
-                                              <option
-                                                key="6f48dfac-9ffa-11e8-98d0-529269fb1459"
-                                                value="6f48dfac-9ffa-11e8-98d0-529269fb1459"
-                                              >
-                                                SHARC
-                                              </option>
-                                              <option
-                                                key="655ac68e-977f-11e1-8993-905e29aff6c1"
-                                                value="655ac68e-977f-11e1-8993-905e29aff6c1"
-                                              >
-                                                OPD at health center
-                                              </option>
-                                              <option
-                                                key="655d1772-977f-11e1-8993-905e29aff6c1"
-                                                value="655d1772-977f-11e1-8993-905e29aff6c1"
-                                              >
-                                                Inpatient
-                                              </option>
-                                              <option
-                                                key="6f48e5b0-9ffa-11e8-98d0-529269fb1459"
-                                                value="6f48e5b0-9ffa-11e8-98d0-529269fb1459"
-                                              >
-                                                Outside Neno District
-                                              </option>
-                                              <option
-                                                key="656cce7e-977f-11e1-8993-905e29aff6c1"
-                                                value="656cce7e-977f-11e1-8993-905e29aff6c1"
-                                              >
-                                                Other
-                                              </option>
-                                            </select>
-                                          </div>
-                                        </Select>
-                                      </ConnectedField>
-                                    </Connect(ConnectedField)>
-                                  </Field>
+                                              <div>
+                                                <select
+                                                  className="referralSelector"
+                                                  name="referral"
+                                                  onBlur={[Function]}
+                                                  onChange={[Function]}
+                                                  onDragStart={[Function]}
+                                                  onDrop={[Function]}
+                                                  onFocus={[Function]}
+                                                  value=""
+                                                >
+                                                  <option
+                                                    key="0"
+                                                    value=""
+                                                  >
+                                                    Select Source of Referral
+                                                  </option>
+                                                  <option
+                                                    key="6f48dfac-9ffa-11e8-98d0-529269fb1459"
+                                                    value="6f48dfac-9ffa-11e8-98d0-529269fb1459"
+                                                  >
+                                                    SHARC
+                                                  </option>
+                                                  <option
+                                                    key="655ac68e-977f-11e1-8993-905e29aff6c1"
+                                                    value="655ac68e-977f-11e1-8993-905e29aff6c1"
+                                                  >
+                                                    OPD at health center
+                                                  </option>
+                                                  <option
+                                                    key="655d1772-977f-11e1-8993-905e29aff6c1"
+                                                    value="655d1772-977f-11e1-8993-905e29aff6c1"
+                                                  >
+                                                    Inpatient
+                                                  </option>
+                                                  <option
+                                                    key="6f48e5b0-9ffa-11e8-98d0-529269fb1459"
+                                                    value="6f48e5b0-9ffa-11e8-98d0-529269fb1459"
+                                                  >
+                                                    Outside Neno District
+                                                  </option>
+                                                  <option
+                                                    key="656cce7e-977f-11e1-8993-905e29aff6c1"
+                                                    value="656cce7e-977f-11e1-8993-905e29aff6c1"
+                                                  >
+                                                    Other
+                                                  </option>
+                                                </select>
+                                              </div>
+                                            </Select>
+                                          </ConnectedField>
+                                        </Connect(ConnectedField)>
+                                      </Field>
+                                    </div>
+                                  </Col>
                                 </div>
-                              </Col>
+                              </FormGroup>
                             </div>
-                          </FormGroup>
-                        </div>
-                      </Row>
-                      <Row
-                        bsClass="row"
-                        componentClass="div"
-                      >
-                        <div
-                          className="row"
-                        >
-                          <FormGroup
-                            bsClass="form-group"
-                            controlId="formSubmit"
+                          </Row>
+                          <Row
+                            bsClass="row"
+                            componentClass="div"
                           >
                             <div
-                              className="form-group"
+                              className="row"
                             >
-                              <Col
-                                bsClass="col"
-                                componentClass="div"
-                                sm={2}
-                                xsOffset={2}
+                              <FormGroup
+                                bsClass="form-group"
+                                controlId="formSubmit"
                               >
                                 <div
-                                  className="col-sm-2 col-xs-offset-2"
+                                  className="form-group"
                                 >
-                                  <Link
-                                    replace={false}
-                                    to="/checkin/checkInQueue"
-                                  >
-                                    <a
-                                      onClick={[Function]}
-                                    >
-                                      <Button
-                                        active={false}
-                                        block={false}
-                                        bsClass="btn"
-                                        bsSize="large"
-                                        bsStyle="default"
-                                        disabled={false}
-                                      >
-                                        <button
-                                          className="btn btn-lg btn-default"
-                                          disabled={false}
-                                          type="button"
-                                        >
-                                          Cancel
-                                        </button>
-                                      </Button>
-                                    </a>
-                                  </Link>
-                                </div>
-                              </Col>
-                              <Col
-                                bsClass="col"
-                                componentClass="div"
-                                sm={2}
-                                smOffset={1}
-                              >
-                                <div
-                                  className="col-sm-2 col-sm-offset-1"
-                                >
-                                  <ButtonToolbar
-                                    bsClass="btn-toolbar"
+                                  <Col
+                                    bsClass="col"
+                                    componentClass="div"
+                                    sm={2}
                                   >
                                     <div
-                                      className="btn-toolbar"
-                                      role="toolbar"
+                                      className="col-sm-2"
                                     >
-                                      <Button
-                                        active={false}
-                                        block={false}
-                                        bsClass="btn"
-                                        bsSize="large"
-                                        bsStyle="success"
-                                        disabled={false}
-                                        type="submit"
+                                      <Link
+                                        replace={false}
+                                        to="/checkin/checkInQueue"
                                       >
-                                        <button
-                                          className="btn btn-lg btn-success"
-                                          disabled={false}
-                                          type="submit"
+                                        <a
+                                          onClick={[Function]}
                                         >
-                                          Check-in
-                                        </button>
-                                      </Button>
+                                          <Button
+                                            active={false}
+                                            block={false}
+                                            bsClass="btn"
+                                            bsSize="medium"
+                                            bsStyle="default"
+                                            disabled={false}
+                                          >
+                                            <button
+                                              className="btn btn-md btn-default"
+                                              disabled={false}
+                                              type="button"
+                                            >
+                                              Cancel
+                                            </button>
+                                          </Button>
+                                        </a>
+                                      </Link>
                                     </div>
-                                  </ButtonToolbar>
+                                  </Col>
+                                  <Col
+                                    bsClass="col"
+                                    componentClass="div"
+                                    sm={2}
+                                  >
+                                    <div
+                                      className="col-sm-2"
+                                    >
+                                      <ButtonToolbar
+                                        bsClass="btn-toolbar"
+                                      >
+                                        <div
+                                          className="btn-toolbar"
+                                          role="toolbar"
+                                        >
+                                          <Button
+                                            active={false}
+                                            block={false}
+                                            bsClass="btn"
+                                            bsSize="large"
+                                            bsStyle="success"
+                                            disabled={false}
+                                            type="submit"
+                                          >
+                                            <button
+                                              className="btn btn-lg btn-success"
+                                              disabled={false}
+                                              type="submit"
+                                            >
+                                              Check-in
+                                            </button>
+                                          </Button>
+                                        </div>
+                                      </ButtonToolbar>
+                                    </div>
+                                  </Col>
                                 </div>
-                              </Col>
+                              </FormGroup>
                             </div>
-                          </FormGroup>
+                          </Row>
                         </div>
-                      </Row>
-                    </div>
-                  </Grid>
-                </form>
-              </Form>
+                      </Grid>
+                    </form>
+                  </Form>
+                </div>
+              </Grid>
             </div>
           </CheckinForm>
         </Form(CheckinForm)>

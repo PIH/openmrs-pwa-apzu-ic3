@@ -23,3 +23,7 @@ export const divContainer = {
 export const colHeight = {
   height: '40px'
 };
+
+export const labelTop = {
+  marginTop: '5px'
+};

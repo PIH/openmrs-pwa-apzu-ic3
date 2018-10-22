@@ -6,7 +6,7 @@ import { Alert, Grid, Row, FormGroup, ControlLabel, Label, Col } from 'react-boo
 import { ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, FORM_ANSWERS } from "../../constants";
 import utils from "../../utils";
 import ScreeningForm from "../ScreeningForm";
-import { colHeight, leftTextAlign } from "../../pwaStyles";
+import { colHeight, leftTextAlign, labelTop } from "../../pwaStyles";
 
 const minValue2 = formValidations.minValue(2);
 const minValue20 = formValidations.minValue(20);
@@ -62,7 +62,7 @@ class NutritionForm extends React.Component {
               sm={2}
               style={leftTextAlign}
             >
-              Kg
+              kg
             </Col>
           </FormGroup>
         </Row>
@@ -124,12 +124,19 @@ class NutritionForm extends React.Component {
               >
               BMI
               </Col>
-              { (typeof this.props.weight !== 'undefined') && (typeof this.props.height !== 'undefined') &&
-              <Col sm={2}>
-                <h3><Label bsStyle={this.props.bmiStyle.alert}>{ this.props.bmi }</Label>
+
+              <Col sm={1}>
+                <h3 style={ labelTop }><Label bsStyle={this.props.bmiStyle.alert}>{ this.props.bmi }</Label>
                 </h3>
               </Col>
-              }
+
+              <Col
+                componentClass={ControlLabel}
+                sm={2}
+                style={leftTextAlign}
+              >
+                kg/m<sup>2</sup>
+              </Col>
             </FormGroup>
           </Row>
         }

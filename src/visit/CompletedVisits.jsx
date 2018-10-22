@@ -24,7 +24,7 @@ let CompletedVisits = props => {
     { headerName: 'Family Name', field: 'name.familyName' },
     { headerName: 'Gender', field: 'gender' },
     { headerName: 'Age', field: 'age' },
-    { headerName: 'Village', field: 'village' },
+    { headerName: 'Village', field: 'address.village' },
     { headerName: 'Actions', field: 'actions' },
     { headerName: 'Checked-in Time',
       valueGetter: function getCheckedInTime(params) {

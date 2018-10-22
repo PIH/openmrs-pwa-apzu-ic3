@@ -37,7 +37,13 @@ const createFromReportingRestRep =  (restRep) => {
 
   // TODO how do we get these in a proper format
   patient.chw = restRep.vhw;
-  patient.village = restRep.village;
+  patient.address = {
+    village: restRep.village,
+    traditionalAuthority: restRep.traditional_authority,
+    district: restRep.district
+  };
+
+  patient.phoneNumber = restRep.phone_number;
   patient.lastAppointmentDate = restRep.last_appt_date;
   patient.lastVisitDate = restRep.last_visit_date;
   patient.actions = restRep.actions;
