@@ -23,7 +23,7 @@ const divContainer = {
 };
 
 const colHeight = {
-  height: '40px'
+  height: '5px'
 };
 
 let CheckinForm = props => {
@@ -145,7 +145,7 @@ let CheckinForm = props => {
           <FormGroup controlId="formSubmit">
             <Col sm={2} >
               <Link to={props.backLink}>
-                <Button bsSize="medium">Cancel</Button>
+                <Button>Cancel</Button>
               </Link>
             </Col>
             <Col
