@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import {visitActions} from '@openmrs/react-components';
 import CompletedScreenings from "../screening/CompletedScreenings";
 
-;
 
 class CheckInComplete extends React.Component {
 

@@ -57,9 +57,9 @@ const utils = {
 
 
   },
-  getPatientCheckedInTime: (patient) => {
+  getPatientCheckedInEncounter: (patient) => {
 
-    let checkedInTime = null;
+    let checkedInEncounter = null;
     if (typeof patient.visit !== 'undefined' && typeof patient.visit.encounters !== 'undefined') {
       //filter by CheckIn encounter
       let checkedInEncounters = patient.visit.encounters.filter(encounter =>
@@ -69,12 +69,19 @@ const utils = {
         checkedInEncounters.sort(function (a, b) {
           return +new Date(a.encounterDatetime) - +new Date(b.encounterDatetime);
         });
-        checkedInTime = utils.formatTime(checkedInEncounters[0].encounterDatetime);
+        checkedInEncounter = checkedInEncounters[0];
       }
     }
 
-    return checkedInTime;
+    return checkedInEncounter;
 
+  },
+  getPatientCheckedInTime: (patient) => {
+    return utils.getPatientCheckedInEncounter(patient) !== null ? utils.formatTime((utils.getPatientCheckedInEncounter(patient)).encounterDatetime) : null;
+  },
+
+  getPatientCheckedInDate: (patient) => {
+    return utils.getPatientCheckedInEncounter(patient) !== null ? utils.formatReportRestDate((utils.getPatientCheckedInEncounter(patient)).encounterDatetime) : null;
   },
 
   getLastLabTest: (labTests, type) => {

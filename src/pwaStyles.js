@@ -2,6 +2,10 @@ export const leftTextAlign = {
   textAlign: "left"
 };
 
+export const centerTextAlign = {
+  textAlign: "center"
+};
+
 export const rowStyles = {
   backgroundColor: '#ffa500b3'
 };
@@ -21,9 +25,13 @@ export const divContainer = {
 };
 
 export const colHeight = {
-  height: '40px'
+  height: '5px'
 };
 
 export const labelTop = {
   marginTop: '5px'
+};
+
+export const historySection = {
+  backgroundColor: '#C3F0FF'
 };

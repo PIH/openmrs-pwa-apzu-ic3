@@ -50,7 +50,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 sm={20}
                 style={
                   Object {
-                    "height": "40px",
+                    "height": "5px",
                   }
                 }
               >
@@ -186,7 +186,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   sm={20}
                   style={
                     Object {
-                      "height": "40px",
+                      "height": "5px",
                     }
                   }
                 >
@@ -334,7 +334,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                     sm={20}
                     style={
                       Object {
-                        "height": "40px",
+                        "height": "5px",
                       }
                     }
                   >
@@ -480,7 +480,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       sm={20}
                       style={
                         Object {
-                          "height": "40px",
+                          "height": "5px",
                         }
                       }
                     >

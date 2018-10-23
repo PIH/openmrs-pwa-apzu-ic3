@@ -22,23 +22,16 @@ class CheckInPage extends React.Component {
     super(props);
 
     this.formSubmittedActionCreators = [
-      () => toastrActions.add({ title: "Patient Check-in", type: "success" })
+      () => toastrActions.add({ title: "Check-in completed for "
+        + this.props.patient.name.givenName + " "
+        + this.props.patient.name.familyName, type: "success" })
     ];
     this.formSubmittedActionCreators.push(() => push({
-      pathname: '/checkin/checkInComplete',
+      pathname: '/checkin/checkInPage',
       state: {
-        queueLink: '/checkin/checkInQueue'
+        queueLink: '/checkin/checkInTabs'
       }
     }));
-  }
-
-  redirectToQueuePageActionCreator() {
-    return push({
-      pathname: '/checkin/checkInComplete',
-      state: {
-        queueLink: '/checkin/checkInQueue'
-      }
-    });
   }
 
   handleCheckIn(values) {

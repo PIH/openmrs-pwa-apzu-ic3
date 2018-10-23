@@ -83,11 +83,15 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                   "headerName": "Age",
                 },
                 Object {
-                  "headerName": "Appt Date",
+                  "headerName": "Checked-in Time",
                   "valueGetter": [Function],
                 },
                 Object {
-                  "headerName": "Checked-in Time",
+                  "headerName": "Checked-In Date",
+                  "valueGetter": [Function],
+                },
+                Object {
+                  "headerName": "Appt Date",
                   "valueGetter": [Function],
                 },
               ]
@@ -148,11 +152,15 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                       "headerName": "Age",
                     },
                     Object {
-                      "headerName": "Appt Date",
+                      "headerName": "Checked-in Time",
                       "valueGetter": [Function],
                     },
                     Object {
-                      "headerName": "Checked-in Time",
+                      "headerName": "Checked-In Date",
+                      "valueGetter": [Function],
+                    },
+                    Object {
+                      "headerName": "Appt Date",
                       "valueGetter": [Function],
                     },
                   ]
@@ -236,11 +244,15 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                           "headerName": "Age",
                         },
                         Object {
-                          "headerName": "Appt Date",
+                          "headerName": "Checked-in Time",
                           "valueGetter": [Function],
                         },
                         Object {
-                          "headerName": "Checked-in Time",
+                          "headerName": "Checked-In Date",
+                          "valueGetter": [Function],
+                        },
+                        Object {
+                          "headerName": "Appt Date",
                           "valueGetter": [Function],
                         },
                       ]
@@ -287,11 +299,15 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                             "headerName": "Age",
                           },
                           Object {
-                            "headerName": "Appt Date",
+                            "headerName": "Checked-in Time",
                             "valueGetter": [Function],
                           },
                           Object {
-                            "headerName": "Checked-in Time",
+                            "headerName": "Checked-In Date",
+                            "valueGetter": [Function],
+                          },
+                          Object {
+                            "headerName": "Appt Date",
                             "valueGetter": [Function],
                           },
                         ]
@@ -352,11 +368,15 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                 "headerName": "Age",
                               },
                               Object {
-                                "headerName": "Appt Date",
+                                "headerName": "Checked-in Time",
                                 "valueGetter": [Function],
                               },
                               Object {
-                                "headerName": "Checked-in Time",
+                                "headerName": "Checked-In Date",
+                                "valueGetter": [Function],
+                              },
+                              Object {
+                                "headerName": "Appt Date",
                                 "valueGetter": [Function],
                               },
                             ]
