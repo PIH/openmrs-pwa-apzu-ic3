@@ -68,7 +68,7 @@ class CheckInPage extends React.Component {
         }
         <CheckinForm
           patient={ this.props.patient }
-          backLink={ "/checkin/checkInQueue" }
+          backLink={ "/checkin/checkInTabs" }
           onSubmit={ this.handleCheckIn.bind(this) }
         />
       </div>
