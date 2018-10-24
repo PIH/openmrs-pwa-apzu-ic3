@@ -13,7 +13,7 @@ let ActiveVisits = props => {
   const rowSelectedActionCreators = [
     patientActions.setSelectedPatient,
     () =>  push({
-      pathname: '/checkin/checkInComplete',
+      pathname: '/checkin/checkInPage',
       state: {
         queueLink: '/visit/queue'
       }
