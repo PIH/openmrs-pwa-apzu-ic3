@@ -45,7 +45,7 @@ class CheckinForm extends React.Component{
             </Col>
           </Row>
           <Row className="show-grid">
-            <Col sm={6} style={historySection}>
+            <Col sm={6} style={ historySection }>
               <span style={centerTextAlign}><h1>Summary</h1></span>
               <Grid>
                 <Row>
