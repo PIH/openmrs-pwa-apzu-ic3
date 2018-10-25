@@ -33,5 +33,6 @@ export const labelTop = {
 };
 
 export const historySection = {
-  backgroundColor: '#C3F0FF'
+  backgroundColor: '#C3F0FF',
+  height: '-webkit-fill-available'
 };
