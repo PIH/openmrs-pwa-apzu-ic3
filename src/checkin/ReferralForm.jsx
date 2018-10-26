@@ -23,7 +23,6 @@ class ReferralForm extends React.Component {
                 path="referral"
                 conceptAnswers={ FORM_ANSWERS.referrals }
                 widget="dropdown"
-                defaultValue=" "
               />
             </Col>
 

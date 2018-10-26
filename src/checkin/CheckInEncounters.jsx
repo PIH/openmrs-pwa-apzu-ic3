@@ -29,8 +29,13 @@ class CheckInEncounters extends React.Component {
   }
 
   render() {
-
-    let history = this.state.encounters.map((encounter, i) => {
+    let checkInEncounters = [];
+    if (this.props.patient && this.props.patient.visit && this.props.patient.visit.encounters) {
+      checkInEncounters = this.props.patient.visit.encounters;
+    } else {
+      checkInEncounters = this.state.encounters;
+    }
+    let history = checkInEncounters.map((encounter, i) => {
       return (
         <div key={encounter.id}>
           <h5><u>{ utils.formatCalendarDate(encounter.encounterDatetime) }</u></h5>
