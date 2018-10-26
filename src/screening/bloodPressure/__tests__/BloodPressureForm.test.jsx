@@ -38,9 +38,9 @@ describe('Component: BloodPressureForm', () => {
                   uuid: "def"
                 }
               }
-            }
+            },
+            selected: "abc"
           },
-          selected: "abc"
         }
       });
     mountedComponent = undefined;

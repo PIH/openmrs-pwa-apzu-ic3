@@ -24,7 +24,7 @@ exports[`Component: NurseQueue renders properly 1`] = `
   >
     <NurseQueue
       dispatch={[Function]}
-      patients={Array []}
+      patients={Object {}}
       session={
         Object {
           "sessionLocation": Object {
