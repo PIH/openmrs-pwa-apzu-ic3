@@ -17,6 +17,7 @@ const vlFilter = patient => {
 
 
 export default {
+  expected: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'exclude'), vlFilter],
   required: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.VLEncounterType.uuid, 'exclude'), vlFilter],
   completed: [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.VLEncounterType.uuid, 'include')]
 };
