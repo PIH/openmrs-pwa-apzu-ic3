@@ -1,10 +1,11 @@
 import React from 'react';
 import CheckInEncounters from "./CheckInEncounters";
 import ReferralForm from './ReferralForm';
-import { Grid, Row, Col, FormGroup, ControlLabel } from 'react-bootstrap';
+import { Button, Grid, Row, Col, FormGroup, ControlLabel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import utils from '../utils.js';
 import '../assets/css/LoginPage.css';
-import { colHeight, littlePaddingLeft, divContainer, rowStyles, historySection, centerTextAlign } from '../pwaStyles';
+import { colHeight, littlePaddingLeft, littlePaddingTop, divContainer, rowStyles, historySection, leftTextAlign, centerTextAlign } from '../pwaStyles';
 
 
 
@@ -23,8 +24,24 @@ class CheckinForm extends React.Component{
           </Row>
           <Row className="show-grid">
             <Col sm={6} style={ historySection }>
-              <span style={centerTextAlign}><h1>Summary</h1></span>
               <Grid>
+                <Row>
+                  <Col style={ littlePaddingTop } sm={2}>
+                    <Link to={ this.props.backLink }>
+                    <Button
+                      bsStyle="danger"
+                      bsSize="small"
+                    >Back to List</Button>
+                  </Link>
+                  </Col>
+                  <Col sm={6}>
+                    <span style={ centerTextAlign }><h1>Summary</h1></span>
+                  </Col>
+                </Row>
+              </Grid>
+
+              <Grid>
+
                 <Row>
                   <Col sm={6} style={colHeight}>
                     <span><h1>{''}</h1></span>

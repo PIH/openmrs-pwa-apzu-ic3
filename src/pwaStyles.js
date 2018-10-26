@@ -19,6 +19,10 @@ export const littlePaddingLeft = {
   paddingLeft: '20px'
 };
 
+export const littlePaddingTop = {
+  paddingTop: '20px'
+};
+
 export const divContainer = {
   paddingLeft: '0px',
   paddingRight: '0px'
