@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Obs } from '@openmrs/react-components';
+import {Obs, selectors} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS, HIV_TEST_TYPES } from "../../constants";
 import '../../assets/css/tabs.css';
@@ -49,7 +49,7 @@ let HtcForm = (props) => {
 
 export default connect(state => {
   return {
-    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null
+    patient: selectors.getSelectedPatientFromStore(state)
   };
 })(HtcForm);
 

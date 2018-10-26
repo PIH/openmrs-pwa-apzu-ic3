@@ -1,5 +1,5 @@
 import React from 'react';
-import { encounterRest } from '@openmrs/react-components';
+import {encounterRest, selectors} from '@openmrs/react-components';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../constants";
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
@@ -61,7 +61,7 @@ CheckInEncounters.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null
+    patient: selectors.getSelectedPatientFromStore(state)
   };
 };
 

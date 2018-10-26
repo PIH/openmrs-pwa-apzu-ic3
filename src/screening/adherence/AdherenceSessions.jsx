@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Label } from 'react-bootstrap';
-import { encounterRest } from '@openmrs/react-components';
+import {encounterRest, selectors} from '@openmrs/react-components';
 import { ENCOUNTER_TYPES } from '../../constants';
 import utils from "../../utils";
 
@@ -55,8 +55,6 @@ AdherenceSessions.propTypes = {
 
 export default connect(state => {
   return {
-    patient: (state.openmrs.selectedPatient
-      && state.openmrs.patients[state.openmrs.selectedPatient])
-      ? state.openmrs.patients[state.openmrs.selectedPatient] : null
+    patient: selectors.getSelectedPatientFromStore(state)
   };
 })(AdherenceSessions);

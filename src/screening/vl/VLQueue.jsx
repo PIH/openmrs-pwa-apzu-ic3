@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
+import {selectors} from '@openmrs/react-components';
 import ScreeningQueue from "../ScreeningQueue";
 import vlFilters from './vlFilters';
 
@@ -26,7 +27,7 @@ let VLQueue = props => {
 
 const mapStateToProps = (state) => {
   return {
-    patients: state.openmrs.patients,
+    patients: selectors.getPatientStore(state)
   };
 };
 

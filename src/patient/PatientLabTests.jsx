@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Label } from 'react-bootstrap';
+import {selectors} from '@openmrs/react-components';
 import utils from '../utils';
 
 
@@ -44,11 +45,11 @@ PatientLabTests.propTypes = {
 };
 
 export default connect(state => {
+
+  const storePatient = selectors.getSelectedPatientFromStore(state);
+
   return {
-    patient: (state.openmrs.selectedPatient
-      && state.openmrs.patients[state.openmrs.selectedPatient]
-      && state.openmrs.patients[state.openmrs.selectedPatient].labTests)
-      ? state.openmrs.patients[state.openmrs.selectedPatient] : { "labTests": [] }
+    patient: (storePatient && storePatient.labTests) ? storePatient : { "labTests": [] }
   };
 })(PatientLabTests);
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
+import {selectors} from '@openmrs/react-components';
 import PropTypes from 'prop-types';
 import utils from "../utils";
 
@@ -34,9 +35,10 @@ CompletedScreenings.propTypes = {
 };
 
 const mapStateToProps = (state) => {
+  const storePatient = selectors.getSelectedPatientFromStore(state);
   return {
-    activeVisit: state.openmrs.selectedPatient && state.openmrs.patients[state.openmrs.selectedPatient] && state.openmrs.patients[state.openmrs.selectedPatient].visit ?
-      state.openmrs.patients[state.openmrs.selectedPatient].visit : { "encounters": [] }
+    activeVisit: (storePatient && storePatient.visit) ?
+      storePatient.visit : { "encounters": [] }
   };
 };
 

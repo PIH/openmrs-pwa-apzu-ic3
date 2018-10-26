@@ -39,7 +39,11 @@ describe('Component: NutritionQueue', () => {
               uuid: 'abc'
             }
           },
-          patients: []
+          patients: {
+            set: {},
+            isUpdating: false,
+            selected: null
+          }
         },
       });
     mountedComponent = undefined;

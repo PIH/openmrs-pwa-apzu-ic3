@@ -31,14 +31,16 @@ describe('Component: BloodPressureForm', () => {
       {
         openmrs: {
           patients: {
-            "abc": {
-              uuid: "abc",
-              visit: {
-                uuid: "def"
+            set: {
+              "abc": {
+                uuid: "abc",
+                visit: {
+                  uuid: "def"
+                }
               }
             }
           },
-          selectedPatient: "abc"
+          selected: "abc"
         }
       });
     mountedComponent = undefined;

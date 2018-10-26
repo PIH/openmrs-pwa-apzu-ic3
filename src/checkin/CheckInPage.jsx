@@ -3,6 +3,7 @@ import { css } from 'react-emotion';
 import { ClipLoader } from 'react-spinners';
 import { Label } from 'react-bootstrap';
 import { connect } from "react-redux";
+import {selectors} from '@openmrs/react-components';
 import CheckinForm from './CheckInForm';
 import checkInActions from './checkInActions';
 import {ENCOUNTER_TYPES, VISIT_TYPES, LOCATION_TYPES, CONCEPTS} from '../constants';
@@ -77,7 +78,7 @@ class CheckInPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  let storePatient = state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null;
+  let storePatient = selectors.getSelectedPatientFromStore(state);
   return {
     patient: storePatient,
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
-import { patientActions } from '@openmrs/react-components';
+import {patientActions, selectors} from '@openmrs/react-components';
 import ScreeningQueue from "../screening/ScreeningQueue";
 import actionVisitFilters from './activeVisitsFilters';
 
@@ -37,7 +37,7 @@ let ActiveVisits = props => {
 
 const mapStateToProps = (state) => {
   return {
-    patients: state.openmrs.patients,
+    patients: selectors.getPatientStore(state),
     session: state.openmrs.session
   };
 };

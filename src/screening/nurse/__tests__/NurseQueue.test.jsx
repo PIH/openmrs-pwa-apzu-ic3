@@ -40,7 +40,10 @@ describe('Component: NurseQueue', () => {
               uuid: 'abc'
             }
           },
-          patients: []
+          patients: {
+            set: {},
+            selected: null
+          }
         },
 
       });

@@ -33,7 +33,10 @@ describe('Component: CheckInQueue', () => {
               uuid: 'abc'
             }
           },
-          patients: []
+          patients: {
+            set: [],
+            selected: null
+          }
         },
       });
     mountedComponent = undefined;

@@ -1,5 +1,5 @@
 import React from "react";
-import {EncounterFormPage, encountersByEncounterTypeFilter, visitActions} from '@openmrs/react-components';
+import {EncounterFormPage, encountersByEncounterTypeFilter, visitActions, selectors} from '@openmrs/react-components';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {ENCOUNTER_ROLES} from "../constants";
@@ -46,7 +46,7 @@ ScreeningForm.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null,
+    patient: selectors.getSelectedPatientFromStore(state)
   };
 };
 

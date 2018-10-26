@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
+import {selectors} from '@openmrs/react-components';
 import ScreeningQueue from "../ScreeningQueue";
 import htcFilters from './htcFilters';
 import utils from "../../utils";
@@ -49,7 +50,7 @@ let HtcQueue = props => {
 
 const mapStateToProps = (state) => {
   return {
-    patients: state.openmrs.patients,
+    patients: selectors.getPatientStore(state)
   };
 };
 

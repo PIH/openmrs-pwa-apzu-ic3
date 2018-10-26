@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Alert, Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
-
+import {selectors} from '@openmrs/react-components';
 
 let PatientAlert = (props) => {
 
@@ -37,7 +37,7 @@ let PatientAlert = (props) => {
 
 export default connect(state => {
   return {
-    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null
+    patient: selectors.getSelectedPatientFromStore(state)
   };
 })(PatientAlert);
 

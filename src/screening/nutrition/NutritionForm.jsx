@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
-import {Obs, formValidations, obsRest, formUtil} from '@openmrs/react-components';
+import {Obs, formValidations, obsRest, formUtil, selectors} from '@openmrs/react-components';
 import { Alert, Grid, Row, FormGroup, ControlLabel, Label, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, FORM_ANSWERS } from "../../constants";
 import utils from "../../utils";
@@ -222,7 +222,7 @@ class NutritionForm extends React.Component {
 const selector = formValueSelector('nutrition-form');
 
 export default connect(state => {
-  const patient = state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null;
+  const patient = selectors.getSelectedPatientFromStore(state);
   const weight = selector(state, formUtil.obsFieldName('weight', CONCEPTS.Weight.uuid));
   const height = selector(state, formUtil.obsFieldName('height', CONCEPTS.Height.uuid));
   const muac = selector(state, formUtil.obsFieldName('muac', CONCEPTS.MUAC.uuid));

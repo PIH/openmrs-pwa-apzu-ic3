@@ -1,7 +1,7 @@
 import React from 'react';
 import DatePicker from 'react-16-bootstrap-date-picker';
 import { Button, ButtonToolbar, Grid, Row, Col,FormGroup, ControlLabel } from 'react-bootstrap';
-import {patientActions, List} from '@openmrs/react-components';
+import {patientActions, List, selectors} from '@openmrs/react-components';
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
 import checkInActions from './checkInActions';
@@ -123,7 +123,7 @@ class CheckInQueue extends React.Component {
 const mapStateToProps = (state) => {
   return {
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,
-    patients: state.openmrs.patients
+    patients: selectors.getPatientStore(state)
   };
 };
 

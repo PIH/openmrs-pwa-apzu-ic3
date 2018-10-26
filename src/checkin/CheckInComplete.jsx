@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Label, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import {visitActions} from '@openmrs/react-components';
+import {visitActions, selectors} from '@openmrs/react-components';
 import CompletedScreenings from "../screening/CompletedScreenings";
 
 
@@ -31,7 +31,7 @@ class CheckInComplete extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null,
+    patient: selectors.getSelectedPatientFromStore(state),
     session: state.openmrs.session,
   };
 };

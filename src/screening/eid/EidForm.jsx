@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Grid, Row, Col, ButtonToolbar, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import {selectors} from '@openmrs/react-components';
 import PatientAlert from '../../patient/PatientAlert';
 import PatientLabTests from '../../patient/PatientLabTests';
 import HtcForm from '../htc/HtcForm';
@@ -86,7 +87,7 @@ class EidForm extends React.Component {
 
 export default connect(state => {
   return {
-    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null,
+    patient: selectors.getSelectedPatientFromStore(state)
   };
 })(EidForm);
 

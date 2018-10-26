@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Label, ButtonToolbar, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import { patientActions } from '@openmrs/react-components';
+import {patientActions, selectors} from '@openmrs/react-components';
 import checkOutActions from "../../checkin/checkOutActions";
 import CompletedScreenings from "../CompletedScreenings";
 import { push } from "connected-react-router";
@@ -66,7 +66,7 @@ class NursePage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null
+    patient: selectors.getSelectedPatientFromStore(state)
   };
 };
 

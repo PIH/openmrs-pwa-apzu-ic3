@@ -30,14 +30,16 @@ describe('Component: NutritionForm', () => {
       {
         openmrs: {
           patients: {
-            "abc": {
-              uuid: "abc",
-              visit: {
-                uuid: "def"
+            set: {
+              "abc": {
+                uuid: "abc",
+                visit: {
+                  uuid: "def"
+                }
               }
-            }
+            },
+            selected: "abc"
           },
-          selectedPatient: "abc"
         }
       });
     mountedComponent = undefined;

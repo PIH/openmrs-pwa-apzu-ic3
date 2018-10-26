@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {selectors} from '@openmrs/react-components';
 import HtcFrom from './HtcForm';
 import PatientAlert from '../../patient/PatientAlert';
 
@@ -15,7 +16,7 @@ let HtcPage = (props) => {
 
 export default connect(state => {
   return {
-    patient: state.openmrs.selectedPatient ? state.openmrs.patients[state.openmrs.selectedPatient] : null
+    patient: selectors.getSelectedPatientFromStore(state)
   };
 })(HtcPage);
 
