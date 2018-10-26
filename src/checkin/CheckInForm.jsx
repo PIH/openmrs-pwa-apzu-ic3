@@ -5,7 +5,7 @@ import { Button, Grid, Row, Col, FormGroup, ControlLabel } from 'react-bootstrap
 import { Link } from 'react-router-dom';
 import utils from '../utils.js';
 import '../assets/css/LoginPage.css';
-import { colHeight, littlePaddingLeft, littlePaddingTop, divContainer, rowStyles, historySection, leftTextAlign, centerTextAlign } from '../pwaStyles';
+import { colHeight, littlePaddingLeft, littlePaddingTop, divContainer, rowStyles, historySection, centerTextAlign } from '../pwaStyles';
 
 
 
