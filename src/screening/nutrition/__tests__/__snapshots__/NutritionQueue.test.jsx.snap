@@ -116,6 +116,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
               }
             }
             title="Nutrition Queue"
+            updating={false}
           >
             <div>
               <List
@@ -165,7 +166,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                     },
                   ]
                 }
-                delayInterval={10000}
+                delayInterval={60000}
                 fetchListActionCreator={[Function]}
                 filters={
                   Array [
@@ -173,6 +174,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                     [Function],
                   ]
                 }
+                loading={false}
                 onMountOtherActionCreators={
                   Array [
                     [Function],
@@ -257,6 +259,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                         },
                       ]
                     }
+                    loading={false}
                     rowData={Array []}
                     rowSelectedActionCreators={
                       Array [
@@ -313,6 +316,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                         ]
                       }
                       dispatch={[Function]}
+                      loading={false}
                       rowData={Array []}
                       rowSelectedActionCreators={
                         Array [

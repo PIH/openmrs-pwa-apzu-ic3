@@ -1,6 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import {patientActions, visitActions, List, patientObjByEncounterTypeFilter} from '@openmrs/react-components';
+import {
+  patientActions,
+  visitActions,
+  List,
+  patientObjByEncounterTypeFilter,
+  selectors
+} from '@openmrs/react-components';
 import utils from "../utils";
 import {ENCOUNTER_TYPES} from '../constants';
 import {connect} from "react-redux";
@@ -8,9 +14,11 @@ import {connect} from "react-redux";
 let ScreeningQueue = props => {
 
   const fetchListActionCreator = props.fetchListActionCreator ? this.props.fetchListActionCreator :
-    () => props.dispatch(visitActions.fetchActiveVisits(
-      (props.session.sessionLocation ? props.session.sessionLocation.uuid : null)
-    ));
+    () => {
+      if (!props.updating) {
+        props.dispatch(visitActions.fetchActiveVisits((props.session.sessionLocation ? props.session.sessionLocation.uuid : null)));
+      }
+    };
 
   const onMountOtherActionCreators = props.onMountOtherActionCreators ? this.props.onMountOtherActionCreators :
     [
@@ -23,6 +31,7 @@ let ScreeningQueue = props => {
         columnDefs={props.columnDefs}
         fetchListActionCreator={fetchListActionCreator}
         filters={[...props.filters, patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'include')]}
+        loading={props.updating}
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
         onRowCount={ props.onRowCount }
@@ -83,6 +92,7 @@ ScreeningQueue.defaultProps = {
 const mapStateToProps = (state) => {
   return {
     session: state.openmrs.session,
+    updating: selectors.isPatientStoreUpdating(state)
   };
 };
 

@@ -165,7 +165,7 @@ exports[`Component: NurseQueue renders properly 1`] = `
                     },
                   ]
                 }
-                delayInterval={10000}
+                delayInterval={60000}
                 fetchListActionCreator={[Function]}
                 filters={
                   Array [

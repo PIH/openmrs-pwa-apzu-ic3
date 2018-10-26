@@ -40,7 +40,11 @@ describe('Component: BloodPressureQueue', () => {
               uuid: 'abc'
             }
           },
-          patients: []
+          patients: {
+            set: {},
+            loading: true,
+            selected: null
+          }
         },
 
       });

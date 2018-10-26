@@ -6,7 +6,7 @@ import {
   visitRest,
   reportingRest,
   LOGIN_TYPES,
-  SESSION_TYPES
+  SESSION_TYPES, visitActions
 } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
@@ -89,6 +89,9 @@ function* getExpectedToCheckIn(action) {
 
   try {
 
+    yield put(patientActions.clearPatientStore());
+    yield put(patientActions.setPatientStoreUpdating());
+
     // get the appointment report for today at this location
     let apptRestResponse = yield call(reportingRest.getIC3Appt, {
       location: action.location,
@@ -100,6 +103,7 @@ function* getExpectedToCheckIn(action) {
     });
 
     yield put(patientActions.setPatientStore(patients));
+    yield put(visitActions.fetchActiveVisits(action.location));
 
   } catch (e) {
     yield put(checkInActions.getExpectedToCheckInFailed(e.message));

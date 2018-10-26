@@ -109,6 +109,7 @@ class CheckInQueue extends React.Component {
         <List
           columnDefs={ this.columnDefs }
           filters={checkInFilters.required}
+          loading={this.props.updating}
           onMountOtherActionCreators={ [this.onMountOtherActionCreators.bind(this)] }
           rowData={Object.values(this.props.patients)}
           onRowCount={this.props.onRowCount}
@@ -123,7 +124,8 @@ class CheckInQueue extends React.Component {
 const mapStateToProps = (state) => {
   return {
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,
-    patients: selectors.getPatientStore(state)
+    patients: selectors.getPatientStore(state),
+    updating: selectors.isPatientStoreUpdating(state)
   };
 };
 
