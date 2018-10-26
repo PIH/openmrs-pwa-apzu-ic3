@@ -16,7 +16,6 @@ class CheckInQueue extends React.Component {
     super(props);
     this.columnDefs =  [
       ...BASIC_GRID,
-      COLUMN_DEFS.ACTIONS,
       COLUMN_DEFS.APPOINTMENT_DATE
     ];
 
