@@ -25,6 +25,7 @@ let ScreeningForm = props => {
       encounter={encounter}
       encounterRole={ENCOUNTER_ROLES.UnknownEncounterRole}
       encounterType={props.encounterType}
+      visitType={props.visitType}
       formContent={props.formContent}
       formId={props.formId}
       formInstanceId={ props.formInstanceId }

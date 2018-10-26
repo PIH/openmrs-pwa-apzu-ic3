@@ -257,6 +257,13 @@ export const CONCEPTS = {
 };
 
 export const FORM_ANSWERS = {
+  'referrals': [
+    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.SHARC.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.SHARC.name },
+    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.OPD_at_health_center.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.OPD_at_health_center.name },
+    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Inpatient.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.Inpatient.name },
+    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.name },
+    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Other.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.Other.name }
+  ],
   'trueFalse' : [
     { uuid: CONCEPTS.True.uuid, name: CONCEPTS.True.name },
     { uuid: CONCEPTS.False.uuid, name: CONCEPTS.False.name },
