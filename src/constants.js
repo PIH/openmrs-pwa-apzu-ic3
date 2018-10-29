@@ -1,6 +1,15 @@
 // TODO: rename to "config.js"?
 // TODO: this will be refactored out into an external config at some point
 
+// TODO tweak this as needed depending on other data points
+export const ACTIVE_VISITS_REP =
+  'custom:(uuid,location:(uuid,display,name),startDatetime,stopDatetime,' +
+  'patient:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),' +
+  'person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,preferredName:(familyName,givenName,middleName,display))),' +
+  'encounters:(uuid,encounterDatetime,location:(id,uuid,name),encounterType:(id,uuid,name),' +
+  'obs:(uuid,value,concept:(uuid),comment,display)' +
+  ')';
+
 export const ENCOUNTER_TYPES = {
   'BloodPressureEncounterType': {
     uuid: '0C36F6FB-660E-485F-AF04-249579C9EAC9'  // is added to the pihmalawi EncounterTypes

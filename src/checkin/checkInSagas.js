@@ -11,7 +11,7 @@ import {
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
 import PATIENT_APPT_TYPES from '../patient/patientApptTypes';
-import { IDENTIFIER_TYPES } from '../constants';
+import {IDENTIFIER_TYPES, ACTIVE_VISITS_REP} from '../constants';
 import uuidv4 from 'uuid/v4';
 import utils from "../utils";
 import * as R from 'ramda';
@@ -103,7 +103,7 @@ function* getExpectedToCheckIn(action) {
     });
 
     yield put(patientActions.setPatientStore(patients));
-    yield put(visitActions.fetchActiveVisits(action.location));
+    yield put(visitActions.fetchActiveVisits(action.location, ACTIVE_VISITS_REP));
 
   } catch (e) {
     yield put(checkInActions.getExpectedToCheckInFailed(e.message));

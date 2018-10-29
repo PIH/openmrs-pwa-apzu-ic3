@@ -2,7 +2,7 @@ import React from "react";
 import {EncounterFormPage, encountersByEncounterTypeFilter, visitActions, selectors} from '@openmrs/react-components';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {ENCOUNTER_ROLES} from "../constants";
+import {ACTIVE_VISITS_REP, ENCOUNTER_ROLES} from "../constants";
 
 let ScreeningForm = props => {
 
@@ -16,7 +16,7 @@ let ScreeningForm = props => {
 
   // we want to update the active visit for the current patient on submit
   const formSubmittedActionCreators = [
-    () => props.patient && props.patient.uuid && visitActions.fetchPatientActiveVisit(props.patient.uuid)
+    () => props.patient && props.patient.uuid && visitActions.fetchPatientActiveVisit(props.patient.uuid, ACTIVE_VISITS_REP)
   ];
 
   return (
