@@ -19,6 +19,7 @@ let ScreeningList = props => {
         {
           title: "Check-In",
           completedFilters: checkInFilters.completed,
+          link: '/checkin/checkInPage',
           requiredFilters: checkInFilters.required
         }
       ]

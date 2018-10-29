@@ -19,6 +19,7 @@ let VLQueueComplete = props => {
         filters={ vlFilters.completed }
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={rowSelectedActionCreators}
+        onRowCount={ props.onRowCount }
         title="VL Completed"
       />
     </div>
