@@ -32,6 +32,7 @@ let ScreeningForm = props => {
       defaultValues={ props.defaultValues }
       formSubmittedActionCreators={formSubmittedActionCreators}
       title={props.title}
+      toastMessage={props.toastMessage ? props.toastMessage : "Screening Form Saved"}
     />
   );
 };
@@ -41,6 +42,7 @@ ScreeningForm.propTypes = {
   encounterType: PropTypes.object.isRequired,
   formContent: PropTypes.object.isRequired,
   formId: PropTypes.string.isRequired,
+  toastMessage: PropTypes.string,
   title: PropTypes.string
 };
 

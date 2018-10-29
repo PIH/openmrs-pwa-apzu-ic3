@@ -126,6 +126,7 @@ let AdherenceForm = (props) => {
       formContent={formContent}
       formId="adherence-form"
       title="Adherence Counseling"
+      toastMessage="Adherence Counseling Saved"
     />
   );
 };

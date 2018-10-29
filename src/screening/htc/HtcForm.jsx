@@ -43,6 +43,7 @@ let HtcForm = (props) => {
       formContent={formContent}
       formId="htc-form"
       title="HTC"
+      toastMessage="HTC Saved"
     />
   );
 };

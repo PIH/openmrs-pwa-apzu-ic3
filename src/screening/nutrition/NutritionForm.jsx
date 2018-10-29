@@ -213,6 +213,7 @@ class NutritionForm extends React.Component {
         }] : null
         }
         title="Nutrition"
+        toastMessage="Nutrition Saved"
       />
     );
   }
