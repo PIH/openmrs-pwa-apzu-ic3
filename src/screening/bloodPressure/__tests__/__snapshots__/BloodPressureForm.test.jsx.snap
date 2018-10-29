@@ -157,6 +157,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
         }
         formId="bp-form"
         title="Blood Pressure"
+        toastMessage="Blood Pressure Saved"
       >
         <ScreeningForm
           backLink="/screening/bloodPressure/queue"
@@ -301,6 +302,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
             }
           }
           title="Blood Pressure"
+          toastMessage="Blood Pressure Saved"
         >
           <Connect(EncounterFormPage)
             backLink="/screening/bloodPressure/queue"
@@ -446,6 +448,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
               ]
             }
             title="Blood Pressure"
+            toastMessage="Blood Pressure Saved"
           >
             <EncounterFormPage
               backLink="/screening/bloodPressure/queue"
@@ -600,6 +603,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 }
               }
               title="Blood Pressure"
+              toastMessage="Blood Pressure Saved"
             >
               <div
                 style={
