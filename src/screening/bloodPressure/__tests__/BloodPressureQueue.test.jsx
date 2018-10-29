@@ -5,7 +5,7 @@ import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import {DataGrid, visitActions, patientActions} from '@openmrs/react-components';
 import BloodPressureQueue from '../BloodPressureQueue';
-import { VISIT_REPRESENTATION } from "../../../constants";
+import {ACTIVE_VISITS_REP, VISIT_REPRESENTATION} from "../../../constants";
 
 let props, store;
 let mountedComponent;
@@ -57,7 +57,7 @@ describe('Component: BloodPressureQueue', () => {
     expect(bloodPressureQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(2);
     expect(bloodPressureQueue().find(DataGrid).props().rowSelectedActionCreators[1]().payload.args[0]).toBe("/screening/bloodPressure/form");
     expect(store.getActions()).toContainEqual(patientActions.clearSelectedPatient());
-    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits(props.session.sessionLocation.uuid));
+    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits(props.session.sessionLocation.uuid, ACTIVE_VISITS_REP));
   });
 
 });
