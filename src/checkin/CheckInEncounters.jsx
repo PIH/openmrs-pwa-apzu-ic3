@@ -31,7 +31,8 @@ class CheckInEncounters extends React.Component {
   render() {
     let checkInEncounters = [];
     if (this.props.patient && this.props.patient.visit && this.props.patient.visit.encounters) {
-      checkInEncounters = this.props.patient.visit.encounters;
+      checkInEncounters = this.props.patient.visit.encounters.filter(encounter =>
+        encounter.encounterType.uuid === ENCOUNTER_TYPES.CheckInEncounterType.uuid);
     } else {
       checkInEncounters = this.state.encounters;
     }
