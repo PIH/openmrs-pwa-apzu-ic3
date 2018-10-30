@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 import {patientActions, visitActions, List} from '@openmrs/react-components';
 import utils from "../utils";
+import {ACTIVE_VISITS_REP} from "../constants";
 
 
 let CompletedVisits = props => {
@@ -41,7 +42,8 @@ let CompletedVisits = props => {
   const fetchListActionCreator =
     () => props.dispatch(visitActions.fetchInactiveVisits(
       utils.getEndOfYesterday(),
-      props.session.sessionLocation ? props.session.sessionLocation.uuid : null));
+      props.session.sessionLocation ? props.session.sessionLocation.uuid : null,
+      ACTIVE_VISITS_REP));
 
   const onMountOtherActionCreators = [
     () => props.dispatch(patientActions.clearSelectedPatient())

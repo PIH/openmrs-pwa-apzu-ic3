@@ -8,7 +8,7 @@ import {
   selectors
 } from '@openmrs/react-components';
 import utils from "../utils";
-import {ENCOUNTER_TYPES} from '../constants';
+import {ENCOUNTER_TYPES, ACTIVE_VISITS_REP} from '../constants';
 import {connect} from "react-redux";
 
 let ScreeningQueue = props => {
@@ -16,7 +16,7 @@ let ScreeningQueue = props => {
   const fetchListActionCreator = props.fetchListActionCreator ? this.props.fetchListActionCreator :
     () => {
       if (!props.updating) {
-        props.dispatch(visitActions.fetchActiveVisits((props.session.sessionLocation ? props.session.sessionLocation.uuid : null)));
+        props.dispatch(visitActions.fetchActiveVisits((props.session.sessionLocation ? props.session.sessionLocation.uuid : null), ACTIVE_VISITS_REP));
       }
     };
 

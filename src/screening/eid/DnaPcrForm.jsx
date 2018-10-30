@@ -109,6 +109,7 @@ class DnaPcrForm extends React.PureComponent {
         formContent={formContent}
         formId="dna-pcr-form"
         formInstanceId="dna-pcr-form"
+        toastMessage="DNA-PCR Saved"
         title="DNA-PCR"
       />
     );

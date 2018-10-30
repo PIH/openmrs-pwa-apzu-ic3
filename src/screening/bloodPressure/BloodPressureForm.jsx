@@ -80,6 +80,7 @@ let BloodPressureForm = props => {
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       formContent={formContent}
       title="Blood Pressure"
+      toastMessage="Blood Pressure Saved"
       formId="bp-form"
     />
   );
