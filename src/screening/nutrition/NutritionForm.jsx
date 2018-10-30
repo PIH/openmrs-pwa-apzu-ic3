@@ -32,7 +32,7 @@ class NutritionForm extends React.Component {
         this.props.patient.uuid, CONCEPTS.Height.uuid, 1
       ).then(data => {
         this.setState({
-          lastHeight: data.results[0].value
+          lastHeight: data.results[0] ? data.results[0].value : null
         });
       });
     }
