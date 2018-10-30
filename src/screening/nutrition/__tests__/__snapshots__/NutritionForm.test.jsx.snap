@@ -41,6 +41,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
             },
           }
         }
+        showMalnutrition="hidden"
       >
         <Connect(ScreeningForm)
           backLink="/screening/nutrition/queue"
@@ -146,6 +147,49 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     }
                   >
                     cm
+                  </Col>
+                </FormGroup>
+              </Row>
+              <Row
+                bsClass="row"
+                componentClass="div"
+              >
+                <FormGroup
+                  bsClass="form-group"
+                  controlId="formMalnutrition"
+                >
+                  <Col
+                    bsClass="col"
+                    componentClass={[Function]}
+                    sm={2}
+                  >
+                    <span
+                      style={
+                        Object {
+                          "visibility": "hidden",
+                        }
+                      }
+                    >
+                      Malnutrition
+                    </span>
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    componentClass="div"
+                    sm={2}
+                  >
+                    <Alert
+                      bsClass="alert"
+                      bsStyle="info"
+                      closeLabel="Close alert"
+                      style={
+                        Object {
+                          "visibility": "hidden",
+                        }
+                      }
+                    >
+                       
+                    </Alert>
                   </Col>
                 </FormGroup>
               </Row>
@@ -280,6 +324,49 @@ exports[`Component: NutritionForm renders properly 1`] = `
                       }
                     >
                       cm
+                    </Col>
+                  </FormGroup>
+                </Row>
+                <Row
+                  bsClass="row"
+                  componentClass="div"
+                >
+                  <FormGroup
+                    bsClass="form-group"
+                    controlId="formMalnutrition"
+                  >
+                    <Col
+                      bsClass="col"
+                      componentClass={[Function]}
+                      sm={2}
+                    >
+                      <span
+                        style={
+                          Object {
+                            "visibility": "hidden",
+                          }
+                        }
+                      >
+                        Malnutrition
+                      </span>
+                    </Col>
+                    <Col
+                      bsClass="col"
+                      componentClass="div"
+                      sm={2}
+                    >
+                      <Alert
+                        bsClass="alert"
+                        bsStyle="info"
+                        closeLabel="Close alert"
+                        style={
+                          Object {
+                            "visibility": "hidden",
+                          }
+                        }
+                      >
+                         
+                      </Alert>
                     </Col>
                   </FormGroup>
                 </Row>
@@ -433,6 +520,49 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     bsClass="row"
                     componentClass="div"
                   >
+                    <FormGroup
+                      bsClass="form-group"
+                      controlId="formMalnutrition"
+                    >
+                      <Col
+                        bsClass="col"
+                        componentClass={[Function]}
+                        sm={2}
+                      >
+                        <span
+                          style={
+                            Object {
+                              "visibility": "hidden",
+                            }
+                          }
+                        >
+                          Malnutrition
+                        </span>
+                      </Col>
+                      <Col
+                        bsClass="col"
+                        componentClass="div"
+                        sm={2}
+                      >
+                        <Alert
+                          bsClass="alert"
+                          bsStyle="info"
+                          closeLabel="Close alert"
+                          style={
+                            Object {
+                              "visibility": "hidden",
+                            }
+                          }
+                        >
+                           
+                        </Alert>
+                      </Col>
+                    </FormGroup>
+                  </Row>
+                  <Row
+                    bsClass="row"
+                    componentClass="div"
+                  >
                     <Col
                       bsClass="col"
                       componentClass="div"
@@ -570,6 +700,49 @@ exports[`Component: NutritionForm renders properly 1`] = `
                           }
                         >
                           cm
+                        </Col>
+                      </FormGroup>
+                    </Row>
+                    <Row
+                      bsClass="row"
+                      componentClass="div"
+                    >
+                      <FormGroup
+                        bsClass="form-group"
+                        controlId="formMalnutrition"
+                      >
+                        <Col
+                          bsClass="col"
+                          componentClass={[Function]}
+                          sm={2}
+                        >
+                          <span
+                            style={
+                              Object {
+                                "visibility": "hidden",
+                              }
+                            }
+                          >
+                            Malnutrition
+                          </span>
+                        </Col>
+                        <Col
+                          bsClass="col"
+                          componentClass="div"
+                          sm={2}
+                        >
+                          <Alert
+                            bsClass="alert"
+                            bsStyle="info"
+                            closeLabel="Close alert"
+                            style={
+                              Object {
+                                "visibility": "hidden",
+                              }
+                            }
+                          >
+                             
+                          </Alert>
                         </Col>
                       </FormGroup>
                     </Row>

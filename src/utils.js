@@ -173,7 +173,8 @@ const utils = {
     if (typeof bmi !== 'undefined' && bmi !== null && age > 18 && (typeof pregnant === 'undefined' || (typeof pregnant !== 'undefined' && pregnant === CONCEPTS.False.uuid))) {
       //all adults above 18 years excluding pregnant females
       return utils.calculateBMIAlert(bmi);
-    } else if (muac !== 'undefined' && muac !== null && age !== null) {
+    } else if (typeof muac !== 'undefined' && muac !== null && age !== null) {
+      level = MALNUTRITION_LEVEL.normal;
       switch (true) {
         case (age < 5 ): //MUAC cut-offs: 6-59 months <11.5cm severe and 11.5-12.5 moderate
           if (muac < 11.5) {

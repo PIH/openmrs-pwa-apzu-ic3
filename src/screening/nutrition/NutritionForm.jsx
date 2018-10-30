@@ -126,7 +126,7 @@ class NutritionForm extends React.Component {
               </Col>
 
               <Col sm={1}>
-                <h3 style={ labelTop }><Label bsStyle={this.props.bmiStyle.alert}>{ this.props.bmi }</Label>
+                <h3 style={ labelTop }><Label bsStyle={this.props.bmiStyle.alert} style={{visibility: "visible"}}>{ this.props.bmi ? this.props.bmi : "00.00" }</Label>
                 </h3>
               </Col>
 
@@ -167,25 +167,26 @@ class NutritionForm extends React.Component {
           </FormGroup>
         </Row>
         }
-        {(this.props.malnutrition !== null)
-        && ((this.props.malnutrition === MALNUTRITION_LEVEL.severe) || (this.props.malnutrition === MALNUTRITION_LEVEL.moderate)) &&
         <Row>
           <FormGroup controlId="formMalnutrition">
             <Col
               componentClass={ControlLabel}
               sm={2}
             >
-              Malnutrition
+              <span style={{visibility: this.props.showMalnutrition}}>Malnutrition</span>
             </Col>
             <Col sm={2}>
-              <Alert bsStyle={this.props.malnutrition.alert}>
-                { this.props.malnutrition.message }
+              <Alert
+                bsStyle={this.props.malnutrition ? this.props.malnutrition.alert : "info"}
+                style={{visibility: (this.props.malnutrition && this.props.malnutrition.message) ? "visible" : "hidden" }}
+              >
+                {this.props.malnutrition ? this.props.malnutrition.message : " "}
               </Alert>
             </Col>
 
           </FormGroup>
         </Row>
-        }
+
         <Row>
           <Col
             md={20}
@@ -234,6 +235,11 @@ export default connect(state => {
     bmiStyle = utils.calculateBMIAlert(bmi);
   }
   const malnutrition = utils.calculateMalnutritionLevel(bmi, muac, patient ? patient.age : null, pregnant);
+  let showMalnutrition = "hidden";
+  if (malnutrition &&
+    (malnutrition === MALNUTRITION_LEVEL.moderate || malnutrition === MALNUTRITION_LEVEL.severe)) {
+    showMalnutrition = "visible";
+  }
   return {
     weight,
     height,
@@ -241,6 +247,7 @@ export default connect(state => {
     bmi,
     bmiStyle,
     malnutrition,
+    showMalnutrition,
     patient,
   };
 })(NutritionForm);
