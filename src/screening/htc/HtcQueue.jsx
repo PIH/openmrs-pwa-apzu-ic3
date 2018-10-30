@@ -39,7 +39,7 @@ let HtcQueue = props => {
       <ScreeningQueue
         dispatch={ props.dispatch }
         columnDefs = { columnDefs }
-        filters={ htcFilters.required }
+        filters={[htcFilters.required, (patient) => !htcFilters.completed(patient)]}
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="HTC Queue"

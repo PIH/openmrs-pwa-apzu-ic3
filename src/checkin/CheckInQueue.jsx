@@ -84,7 +84,7 @@ class CheckInQueue extends React.Component {
 
         <List
           columnDefs={ this.columnDefs }
-          filters={checkInFilters.required}
+          filters={[(patient) => !checkInFilters.completed(patient)]}
           loading={this.props.updating}
           onMountOtherActionCreators={ [this.onMountOtherActionCreators.bind(this)] }
           rowData={Object.values(this.props.patients)}

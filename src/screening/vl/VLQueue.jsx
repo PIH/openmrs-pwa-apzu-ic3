@@ -24,7 +24,7 @@ let VLQueue = props => {
       <ScreeningQueue
         columnDefs={ columnDefs }
         dispatch={ props.dispatch }
-        filters={ vlFilters.required }
+        filters={[vlFilters.required, (patient) => !vlFilters.completed(patient)]}
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={rowSelectedActionCreators}
         onRowCount={ props.onRowCount }

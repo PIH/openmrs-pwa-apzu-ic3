@@ -33,7 +33,7 @@ class VLQueueExpected extends React.Component {
       <div>
         <List
           columnDefs={ this.columnDefs }
-          filters={ vlFilters.expected }
+          filters={[vlFilters.expected]}
           onMountOtherActionCreators={ [this.onMountOtherActionCreators] }
           rowData={Object.values( this.props.patients )}
           onRowCount={ this.props.onRowCount }

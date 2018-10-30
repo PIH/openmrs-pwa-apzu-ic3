@@ -16,7 +16,7 @@ let EidQueue = props => {
     <div>
       <ScreeningQueue
         dispatch={ props.dispatch }
-        filters={ eidFilters.required }
+        filters={[eidFilters.required, (patient) => !eidFilters.completed(patient)]}
         rowData={ Object.values(props.patients) }
         onRowCount={ props.onRowCount }
         rowSelectedActionCreators={rowSelectedActionCreators}

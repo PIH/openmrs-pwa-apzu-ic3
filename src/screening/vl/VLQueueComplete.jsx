@@ -16,7 +16,7 @@ let VLQueueComplete = props => {
     <div>
       <ScreeningQueue
         dispatch={ props.dispatch }
-        filters={ vlFilters.completed }
+        filters={[vlFilters.completed]}
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={rowSelectedActionCreators}
         onRowCount={ props.onRowCount }

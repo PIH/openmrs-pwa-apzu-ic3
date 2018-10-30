@@ -11,103 +11,127 @@ import checkInFilters from "../checkin/checkInFilters";
 
 let ScreeningList = props => {
 
+  const CHECK_IN_SCREENING = [
+    {
+      title: "Check-In",
+      completed: checkInFilters.completed,
+      link: '/checkin/checkInPage',
+    }
+  ];
+
+  const TARGETED_SCREENINGS = [
+    {
+      title: "Viral Load",
+      completed: vlFilters.completed,
+      link: '/screening/vl/form',
+      required: vlFilters.required,
+    },
+    {
+      title: "Adherence Counseling",
+      completed: adherenceFilters.completed,
+      link: '/screening/adherence/form',
+      required: adherenceFilters.required,
+    },
+    {
+      title: "EID",
+      completed: eidFilters.completed,
+      link: '/screening/eid/form',
+      required: eidFilters.required,
+    },
+    /*    {
+          title: "A1C",
+          completed: vlFilters.completed,
+          link: '/screening/vl/form',
+          required: vlFilters.required,
+        },*/
+    /* {
+       title: "Creatinine",
+       completed: htcFilters.completed,
+       link: '/screening/htc/form',
+       required: htcFilters.required,
+     },*/
+    /*  {
+        title: "Cervical Cancer",
+        completed: vlFilters.completed,
+        link: '/screening/vl/form',
+        required: vlFilters.required,
+      }*/
+  ];
+
+  const ROUTINE_SCREENINGS = [
+    {
+      title: "Nutrition",
+      completed: nutritionFilters.completed,
+      link: '/screening/nutrition/form',
+    },
+    {
+      title: "Blood Pressure",
+      completed: bloodPressureFilters.completed,
+      link: '/screening/bloodPressure/form',
+      required: bloodPressureFilters.required,
+    }, /*
+        {
+          title: "Glucose Check",
+          completed: htcFilters.completed,
+          link: '/screening/htc/form',
+          required: htcFilters.required,
+        },*/
+    {
+      title: "HTC",
+      completed: htcFilters.completed,
+      link: '/screening/htc/form',
+      required: htcFilters.required,
+    }/*,
+        {
+          title: "TB",
+          completed: htcFilters.completed,
+          link: '/screening/htc/form',
+          required: htcFilters.required,
+        },
+        {
+          title: "Family Planning",
+          completed: htcFilters.completed,
+          link: '/screening/htc/form',
+          required: htcFilters.required,
+        }*/
+  ]
+
+
   const SCREENINGS = [
     {
       key: 1,
       title: <h3>IC3 Screening</h3>,
-      tasks: [
-        {
-          title: "Check-In",
-          completedFilters: checkInFilters.completed,
-          link: '/checkin/checkInPage',
-          requiredFilters: checkInFilters.required
-        }
-      ]
+      tasks: CHECK_IN_SCREENING
     },
     {
       key: 2,
-      title: "Special",
-      tasks: [
-        {
-          title: "Viral Load",
-          completedFilters: vlFilters.completed,
-          link: '/screening/vl/form',
-          requiredFilters: vlFilters.required,
-        },
-        {
-          title: "Adherence Counseling",
-          completedFilters: adherenceFilters.completed,
-          link: '/screening/adherence/form',
-          requiredFilters: adherenceFilters.required,
-        },
-        {
-          title: "EID",
-          completedFilters: vlFilters.completed,
-          link: '/screening/eid/form',
-          requiredFilters: eidFilters.required,
-        },
-        {
-          title: "A1C",
-          completedFilters: vlFilters.completed,
-          link: '/screening/vl/form',
-          requiredFilters: vlFilters.required,
-        },
-        {
-          title: "Creatinine",
-          completedFilters: htcFilters.completed,
-          link: '/screening/htc/form',
-          requiredFilters: htcFilters.required,
-        },
-        {
-          title: "Cervical Cancer",
-          completedFilters: vlFilters.completed,
-          link: '/screening/vl/form',
-          requiredFilters: vlFilters.required,
-        }
-      ]
+      title: "Targeted",
+      tasks: TARGETED_SCREENINGS
     },
     {
       key: 3,
       title: "Routine",
+      tasks: ROUTINE_SCREENINGS
+    },
+    {
+      key: 4,
+      title: "Optional",
+      // the list of tasks is the targeted + routine combined but with their "required" function inversed
+      // (... ie all those that are not required)
       tasks: [
-        {
-          title: "Nutrition",
-          completedFilters: nutritionFilters.completed,
-          link: '/screening/nutrition/form',
-          requiredFilters: nutritionFilters.required,
-        },
-        {
-          title: "Blood Pressure",
-          completedFilters: bloodPressureFilters.completed,
-          link: '/screening/bloodPressure/form',
-          requiredFilters: bloodPressureFilters.required,
-        },
-        {
-          title: "Glucose Check",
-          completedFilters: htcFilters.completed,
-          link: '/screening/htc/form',
-          requiredFilters: htcFilters.required,
-        },
-        {
-          title: "HTC",
-          completedFilters: htcFilters.completed,
-          link: '/screening/htc/form',
-          requiredFilters: htcFilters.required,
-        },
-        {
-          title: "TB",
-          completedFilters: htcFilters.completed,
-          link: '/screening/htc/form',
-          requiredFilters: htcFilters.required,
-        },
-        {
-          title: "Family Planning",
-          completedFilters: htcFilters.completed,
-          link: '/screening/htc/form',
-          requiredFilters: htcFilters.required,
-        }
+        ...(TARGETED_SCREENINGS.map((screening) => {
+          return {
+            ...screening,
+            required: (patient) => screening.required ? !screening.required(patient) : false
+          };
+        })),
+        ...(ROUTINE_SCREENINGS.map((screening) => {
+          return {
+            ...screening,
+            required: (patient) => screening.required ? !screening.required(patient) : false
+          };
+        })),
       ]
-
     }
   ];
 

@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 import {patientActions, selectors} from '@openmrs/react-components';
 import ScreeningQueue from "../screening/ScreeningQueue";
-import actionVisitFilters from './activeVisitsFilters';
 
 
 // TODO: should this extend the ScreeningQueue?
@@ -24,7 +23,6 @@ let ActiveVisits = props => {
     <div>
       <ScreeningQueue
         dispatch={ props.dispatch }
-        filters={ actionVisitFilters }
         rowData={ Object.values(props.patients) }
         onRowCount={ props.onRowCount }
         rowSelectedActionCreators={ rowSelectedActionCreators }

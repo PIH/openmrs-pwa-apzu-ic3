@@ -17,7 +17,7 @@ let NutritionQueue = props => {
     <div>
       <ScreeningQueue
         dispatch={props.dispatch}
-        filters={nutritionFilters.required}
+        filters={[(patient) => !nutritionFilters.completed(patient)]}
         rowData={Object.values(props.patients)}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="Nutrition Queue"
