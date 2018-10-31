@@ -19,7 +19,7 @@ let ScreeningList = props => {
     }
   ];
 
-  const TARGETED_SCREENINGS = [
+  const SPECIAL_SCREENINGS = [
     {
       title: "Viral Load",
       completed: vlFilters.completed,
@@ -105,8 +105,8 @@ let ScreeningList = props => {
     },
     {
       key: 2,
-      title: "Targeted",
-      tasks: TARGETED_SCREENINGS
+      title: "Special",
+      tasks: SPECIAL_SCREENINGS
     },
     {
       key: 3,
@@ -119,7 +119,7 @@ let ScreeningList = props => {
       // the list of tasks is the targeted + routine combined but with their "required" function inversed
       // (... ie all those that are not required)
       tasks: [
-        ...(TARGETED_SCREENINGS.map((screening) => {
+        ...(SPECIAL_SCREENINGS.map((screening) => {
           return {
             ...screening,
             required: (patient) => screening.required ? !screening.required(patient) : false
