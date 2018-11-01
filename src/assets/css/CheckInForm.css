@@ -1,0 +1,46 @@
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 0px;
+}
+
+.midPanelItemContainer {
+    margin-top: 20px;
+    width: 220px;
+}
+
+.bottomPanelItemContainer {
+    margin-top: 20px;
+    width: 220px;
+    align-content: stretch;
+}
+
+.panelItem {
+    width: 220px;
+}
+
+.checkinButton {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.form-control {
+    background-color: #ffffff;
+    border-radius: 0px;
+    border: 0px;
+    color: #777;
+}
+
+.referralSelector {
+    background-color: #ffffff;
+    height: 34px;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+}
