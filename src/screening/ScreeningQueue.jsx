@@ -7,10 +7,9 @@ import {
   patientObjByEncounterTypeFilter,
   selectors
 } from '@openmrs/react-components';
-import utils from "../utils";
-import {ENCOUNTER_TYPES, ACTIVE_VISITS_REP} from '../constants';
+import { ENCOUNTER_TYPES, ACTIVE_VISITS_REP } from '../constants';
 import {connect} from "react-redux";
-import {BASIC_GRID, COLUMN_DEFS} from "../gridConstants";
+import { BASIC_GRID, COLUMN_DEFS } from "../gridConstants";
 
 let ScreeningQueue = props => {
 
