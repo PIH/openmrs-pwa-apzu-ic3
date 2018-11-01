@@ -4,7 +4,7 @@ import { push } from 'connected-react-router';
 import {selectors} from '@openmrs/react-components';
 import ScreeningQueue from "../ScreeningQueue";
 import vlFilters from './vlFilters';
-import {BASIC_GRID, COLUMN_DEFS} from "../../gridConstants";
+import { BASIC_GRID, COLUMN_DEFS } from "../../gridConstants";
 
 let VLQueue = props => {
 
@@ -28,7 +28,7 @@ let VLQueue = props => {
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={rowSelectedActionCreators}
         onRowCount={ props.onRowCount }
-        title="Viral Load Test Queue"
+        title=""
       />
     </div>
   );

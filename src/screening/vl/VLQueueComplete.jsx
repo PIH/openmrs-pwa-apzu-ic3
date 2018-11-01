@@ -8,7 +8,7 @@ import vlFilters from './vlFilters';
 let VLQueueComplete = props => {
 
   const rowSelectedActionCreators = [
-    () => push('/checkin/checkInComplete')
+    () => push('/screening/vl/form')
   ];
 
 
@@ -20,7 +20,7 @@ let VLQueueComplete = props => {
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={rowSelectedActionCreators}
         onRowCount={ props.onRowCount }
-        title="VL Completed"
+        title=""
       />
     </div>
   );

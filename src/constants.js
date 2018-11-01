@@ -7,7 +7,7 @@ export const ACTIVE_VISITS_REP =
   'patient:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),' +
   'person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,preferredName:(familyName,givenName,middleName,display))),' +
   'encounters:(uuid,encounterDatetime,location:(id,uuid,name),encounterType:(id,uuid,name),' +
-  'obs:(uuid,value,concept:(uuid),comment,display)' +
+  'obs:(uuid,id,value,concept:(uuid),comment,display)' +
   ')';
 
 export const ENCOUNTER_TYPES = {
