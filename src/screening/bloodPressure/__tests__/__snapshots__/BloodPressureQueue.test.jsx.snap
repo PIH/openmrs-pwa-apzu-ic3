@@ -84,15 +84,11 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                   "headerName": "Age",
                 },
                 Object {
+                  "field": "address.village",
+                  "headerName": "Village",
+                },
+                Object {
                   "headerName": "Checked-in Time",
-                  "valueGetter": [Function],
-                },
-                Object {
-                  "headerName": "Checked-In Date",
-                  "valueGetter": [Function],
-                },
-                Object {
-                  "headerName": "Appt Date",
                   "valueGetter": [Function],
                 },
               ]
@@ -154,15 +150,11 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                       "headerName": "Age",
                     },
                     Object {
+                      "field": "address.village",
+                      "headerName": "Village",
+                    },
+                    Object {
                       "headerName": "Checked-in Time",
-                      "valueGetter": [Function],
-                    },
-                    Object {
-                      "headerName": "Checked-In Date",
-                      "valueGetter": [Function],
-                    },
-                    Object {
-                      "headerName": "Appt Date",
                       "valueGetter": [Function],
                     },
                   ]
@@ -247,15 +239,11 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                           "headerName": "Age",
                         },
                         Object {
+                          "field": "address.village",
+                          "headerName": "Village",
+                        },
+                        Object {
                           "headerName": "Checked-in Time",
-                          "valueGetter": [Function],
-                        },
-                        Object {
-                          "headerName": "Checked-In Date",
-                          "valueGetter": [Function],
-                        },
-                        Object {
-                          "headerName": "Appt Date",
                           "valueGetter": [Function],
                         },
                       ]
@@ -302,15 +290,11 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                             "headerName": "Age",
                           },
                           Object {
+                            "field": "address.village",
+                            "headerName": "Village",
+                          },
+                          Object {
                             "headerName": "Checked-in Time",
-                            "valueGetter": [Function],
-                          },
-                          Object {
-                            "headerName": "Checked-In Date",
-                            "valueGetter": [Function],
-                          },
-                          Object {
-                            "headerName": "Appt Date",
                             "valueGetter": [Function],
                           },
                         ]
@@ -371,15 +355,11 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                                 "headerName": "Age",
                               },
                               Object {
+                                "field": "address.village",
+                                "headerName": "Village",
+                              },
+                              Object {
                                 "headerName": "Checked-in Time",
-                                "valueGetter": [Function],
-                              },
-                              Object {
-                                "headerName": "Checked-In Date",
-                                "valueGetter": [Function],
-                              },
-                              Object {
-                                "headerName": "Appt Date",
                                 "valueGetter": [Function],
                               },
                             ]
