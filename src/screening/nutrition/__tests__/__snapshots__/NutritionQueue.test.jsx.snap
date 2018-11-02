@@ -34,12 +34,13 @@ exports[`Component: NutritionQueue renders properly 1`] = `
       }
     >
       <div>
-        <Connect(ScreeningQueue)
+        <ScreeningTabs
           dispatch={[Function]}
           filters={
-            Array [
-              [Function],
-            ]
+            Object {
+              "completed": [Function],
+              "required": [Function],
+            }
           }
           rowData={Array []}
           rowSelectedActionCreators={
@@ -49,351 +50,978 @@ exports[`Component: NutritionQueue renders properly 1`] = `
           }
           title="Nutrition Queue"
         >
-          <ScreeningQueue
-            columnDefs={
-              Array [
-                Object {
-                  "field": "uuid",
-                  "headerName": "uuid",
-                  "hide": true,
-                },
-                Object {
-                  "autoHeight": true,
-                  "cellRenderer": [Function],
-                  "cellStyle": Object {
-                    "line-height": "26px",
-                  },
-                  "getQuickFilterText": [Function],
-                  "headerName": "Id",
-                },
-                Object {
-                  "field": "name.givenName",
-                  "headerName": "Given Name",
-                },
-                Object {
-                  "field": "name.familyName",
-                  "headerName": "Family Name",
-                },
-                Object {
-                  "field": "gender",
-                  "headerName": "Gender",
-                },
-                Object {
-                  "field": "age",
-                  "headerName": "Age",
-                },
-                Object {
-                  "field": "address.village",
-                  "headerName": "Village",
-                },
-                Object {
-                  "headerName": "Checked-in Time",
-                  "valueGetter": [Function],
-                },
-              ]
-            }
-            dispatch={[Function]}
-            filters={
-              Array [
-                [Function],
-              ]
-            }
-            rowData={Array []}
-            rowSelectedActionCreators={
-              Array [
-                [Function],
-              ]
-            }
-            session={
-              Object {
-                "sessionLocation": Object {
-                  "uuid": "abc",
-                },
-              }
-            }
-            title="Nutrition Queue"
-            updating={false}
-          >
-            <div>
-              <List
-                columnDefs={
-                  Array [
-                    Object {
-                      "field": "uuid",
-                      "headerName": "uuid",
-                      "hide": true,
-                    },
-                    Object {
-                      "autoHeight": true,
-                      "cellRenderer": [Function],
-                      "cellStyle": Object {
-                        "line-height": "26px",
-                      },
-                      "getQuickFilterText": [Function],
-                      "headerName": "Id",
-                    },
-                    Object {
-                      "field": "name.givenName",
-                      "headerName": "Given Name",
-                    },
-                    Object {
-                      "field": "name.familyName",
-                      "headerName": "Family Name",
-                    },
-                    Object {
-                      "field": "gender",
-                      "headerName": "Gender",
-                    },
-                    Object {
-                      "field": "age",
-                      "headerName": "Age",
-                    },
-                    Object {
-                      "field": "address.village",
-                      "headerName": "Village",
-                    },
-                    Object {
-                      "headerName": "Checked-in Time",
-                      "valueGetter": [Function],
-                    },
-                  ]
-                }
-                delayInterval={60000}
-                fetchListActionCreator={[Function]}
-                filters={
-                  Array [
-                    [Function],
-                    [Function],
-                  ]
-                }
-                loading={false}
-                onMountOtherActionCreators={
-                  Array [
-                    [Function],
-                  ]
-                }
-                rowData={Array []}
-                rowSelectedActionCreators={
-                  Array [
-                    [Function],
-                    [Function],
-                  ]
-                }
-                title="Nutrition Queue"
+          <div>
+            <h3>
+              <Label
+                bsClass="label"
+                bsStyle="default"
               >
-                <div>
-                  <h3>
-                    <Label
-                      bsClass="label"
-                      bsStyle="default"
-                    >
-                      <span
-                        className="label label-default"
-                      >
-                        Nutrition Queue
-                      </span>
-                    </Label>
-                  </h3>
-                  <h3>
-                    <Label
-                      bsClass="label"
-                      bsStyle="default"
-                    >
-                      <span
-                        className="label label-default hidden"
-                      />
-                    </Label>
-                  </h3>
-                  <Connect(DataGrid)
-                    columnDefs={
-                      Array [
-                        Object {
-                          "field": "uuid",
-                          "headerName": "uuid",
-                          "hide": true,
-                        },
-                        Object {
-                          "autoHeight": true,
-                          "cellRenderer": [Function],
-                          "cellStyle": Object {
-                            "line-height": "26px",
-                          },
-                          "getQuickFilterText": [Function],
-                          "headerName": "Id",
-                        },
-                        Object {
-                          "field": "name.givenName",
-                          "headerName": "Given Name",
-                        },
-                        Object {
-                          "field": "name.familyName",
-                          "headerName": "Family Name",
-                        },
-                        Object {
-                          "field": "gender",
-                          "headerName": "Gender",
-                        },
-                        Object {
-                          "field": "age",
-                          "headerName": "Age",
-                        },
-                        Object {
-                          "field": "address.village",
-                          "headerName": "Village",
-                        },
-                        Object {
-                          "headerName": "Checked-in Time",
-                          "valueGetter": [Function],
-                        },
-                      ]
-                    }
-                    loading={false}
-                    rowData={Array []}
-                    rowSelectedActionCreators={
-                      Array [
-                        [Function],
-                        [Function],
-                      ]
-                    }
+                <span
+                  className="label label-default"
+                >
+                  Nutrition Queue
+                </span>
+              </Label>
+            </h3>
+            <Uncontrolled(Tabs)
+              className="activeTab"
+              defaultActiveKey="1"
+              id="screening-tabs"
+            >
+              <Tabs
+                activeKey="1"
+                animation={true}
+                bsClass="tab"
+                bsStyle="tabs"
+                className="activeTab"
+                id="screening-tabs"
+                mountOnEnter={false}
+                onSelect={[Function]}
+                unmountOnExit={false}
+              >
+                <TabContainer
+                  activeKey="1"
+                  className="activeTab"
+                  id="screening-tabs"
+                  onSelect={[Function]}
+                >
+                  <div
+                    className="activeTab"
+                    id="screening-tabs"
                   >
-                    <DataGrid
-                      columnDefs={
-                        Array [
-                          Object {
-                            "field": "uuid",
-                            "headerName": "uuid",
-                            "hide": true,
-                          },
-                          Object {
-                            "autoHeight": true,
-                            "cellRenderer": [Function],
-                            "cellStyle": Object {
-                              "line-height": "26px",
-                            },
-                            "getQuickFilterText": [Function],
-                            "headerName": "Id",
-                          },
-                          Object {
-                            "field": "name.givenName",
-                            "headerName": "Given Name",
-                          },
-                          Object {
-                            "field": "name.familyName",
-                            "headerName": "Family Name",
-                          },
-                          Object {
-                            "field": "gender",
-                            "headerName": "Gender",
-                          },
-                          Object {
-                            "field": "age",
-                            "headerName": "Age",
-                          },
-                          Object {
-                            "field": "address.village",
-                            "headerName": "Village",
-                          },
-                          Object {
-                            "headerName": "Checked-in Time",
-                            "valueGetter": [Function],
-                          },
-                        ]
-                      }
-                      dispatch={[Function]}
-                      loading={false}
-                      rowData={Array []}
-                      rowSelectedActionCreators={
-                        Array [
-                          [Function],
-                          [Function],
-                        ]
-                      }
+                    <Nav
+                      bsClass="nav"
+                      bsStyle="tabs"
+                      justified={false}
+                      pullLeft={false}
+                      pullRight={false}
+                      role="tablist"
+                      stacked={false}
+                    >
+                      <ul
+                        className="nav nav-tabs"
+                        role="tablist"
+                      >
+                        <NavItem
+                          active={true}
+                          activeKey="1"
+                          aria-controls="screening-tabs-pane-1"
+                          disabled={false}
+                          eventKey="1"
+                          id="screening-tabs-tab-1"
+                          key=".$.0"
+                          onKeyDown={[Function]}
+                          onSelect={[Function]}
+                          role="tab"
+                        >
+                          <li
+                            className="active"
+                            role="presentation"
+                          >
+                            <SafeAnchor
+                              aria-controls="screening-tabs-pane-1"
+                              aria-selected={true}
+                              componentClass="a"
+                              disabled={false}
+                              id="screening-tabs-tab-1"
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="tab"
+                            >
+                              <a
+                                aria-controls="screening-tabs-pane-1"
+                                aria-selected={true}
+                                href="#"
+                                id="screening-tabs-tab-1"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="tab"
+                              >
+                                in-progress(0)
+                              </a>
+                            </SafeAnchor>
+                          </li>
+                        </NavItem>
+                        <NavItem
+                          active={false}
+                          activeKey="1"
+                          aria-controls="screening-tabs-pane-2"
+                          disabled={false}
+                          eventKey="2"
+                          id="screening-tabs-tab-2"
+                          key=".$.1"
+                          onKeyDown={[Function]}
+                          onSelect={[Function]}
+                          role="tab"
+                          tabIndex={-1}
+                        >
+                          <li
+                            className=""
+                            role="presentation"
+                          >
+                            <SafeAnchor
+                              aria-controls="screening-tabs-pane-2"
+                              aria-selected={false}
+                              componentClass="a"
+                              disabled={false}
+                              id="screening-tabs-tab-2"
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="tab"
+                              tabIndex={-1}
+                            >
+                              <a
+                                aria-controls="screening-tabs-pane-2"
+                                aria-selected={false}
+                                href="#"
+                                id="screening-tabs-tab-2"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="tab"
+                                tabIndex={-1}
+                              >
+                                completed(0)
+                              </a>
+                            </SafeAnchor>
+                          </li>
+                        </NavItem>
+                      </ul>
+                    </Nav>
+                    <TabContent
+                      animation={true}
+                      bsClass="tab"
+                      componentClass="div"
+                      mountOnEnter={false}
+                      unmountOnExit={false}
                     >
                       <div
-                        className="grid-wrapper"
-                        id="omrsGrid"
+                        className="tab-content"
                       >
-                        <label>
-                          Search: 
-                           
-                          <input
-                            onChange={[Function]}
-                            type="text"
-                          />
-                        </label>
-                        <AgGridReact
-                          animateRows={true}
-                          columnDefs={
-                            Array [
-                              Object {
-                                "field": "uuid",
-                                "headerName": "uuid",
-                                "hide": true,
-                              },
-                              Object {
-                                "autoHeight": true,
-                                "cellRenderer": [Function],
-                                "cellStyle": Object {
-                                  "line-height": "26px",
-                                },
-                                "getQuickFilterText": [Function],
-                                "headerName": "Id",
-                              },
-                              Object {
-                                "field": "name.givenName",
-                                "headerName": "Given Name",
-                              },
-                              Object {
-                                "field": "name.familyName",
-                                "headerName": "Family Name",
-                              },
-                              Object {
-                                "field": "gender",
-                                "headerName": "Gender",
-                              },
-                              Object {
-                                "field": "age",
-                                "headerName": "Age",
-                              },
-                              Object {
-                                "field": "address.village",
-                                "headerName": "Village",
-                              },
-                              Object {
-                                "headerName": "Checked-in Time",
-                                "valueGetter": [Function],
-                              },
-                            ]
-                          }
-                          enableFiltering={true}
-                          enableSorting={true}
-                          id="omrsGrid"
-                          onFilterChanged={[Function]}
-                          onGridReady={[Function]}
-                          onGridSizeChanged={[Function]}
-                          onRowDataChanged={[Function]}
-                          onSelectionChanged={[Function]}
-                          rowClassRules="rowClassRules"
-                          rowData={Array []}
-                          rowSelection="single"
-                          style="width: 100%; height: 100%;"
+                        <Tab
+                          eventKey="1"
+                          title="in-progress(0)"
                         >
-                          <div
-                            style={
-                              Object {
-                                "height": "100%",
-                              }
-                            }
-                          />
-                        </AgGridReact>
+                          <TabPane
+                            bsClass="tab-pane"
+                            eventKey="1"
+                          >
+                            <Fade
+                              appear={false}
+                              in={true}
+                              mountOnEnter={false}
+                              onEnter={[Function]}
+                              onExited={[Function]}
+                              timeout={300}
+                              unmountOnExit={false}
+                            >
+                              <Transition
+                                appear={false}
+                                enter={true}
+                                exit={true}
+                                in={true}
+                                mountOnEnter={false}
+                                onEnter={[Function]}
+                                onEntered={[Function]}
+                                onEntering={[Function]}
+                                onExit={[Function]}
+                                onExited={[Function]}
+                                onExiting={[Function]}
+                                timeout={300}
+                                unmountOnExit={false}
+                              >
+                                <div
+                                  aria-hidden={false}
+                                  aria-labelledby="screening-tabs-tab-1"
+                                  className="fade tab-pane active in"
+                                  id="screening-tabs-pane-1"
+                                  role="tabpanel"
+                                >
+                                  <Connect(ScreeningQueue)
+                                    dispatch={[Function]}
+                                    filters={
+                                      Array [
+                                        [Function],
+                                        [Function],
+                                      ]
+                                    }
+                                    onRowCount={[Function]}
+                                    rowData={Array []}
+                                    rowSelectedActionCreators={
+                                      Array [
+                                        [Function],
+                                      ]
+                                    }
+                                    title=""
+                                  >
+                                    <ScreeningQueue
+                                      columnDefs={
+                                        Array [
+                                          Object {
+                                            "field": "uuid",
+                                            "headerName": "uuid",
+                                            "hide": true,
+                                          },
+                                          Object {
+                                            "autoHeight": true,
+                                            "cellRenderer": [Function],
+                                            "cellStyle": Object {
+                                              "line-height": "26px",
+                                            },
+                                            "getQuickFilterText": [Function],
+                                            "headerName": "Id",
+                                          },
+                                          Object {
+                                            "field": "name.givenName",
+                                            "headerName": "Given Name",
+                                          },
+                                          Object {
+                                            "field": "name.familyName",
+                                            "headerName": "Family Name",
+                                          },
+                                          Object {
+                                            "field": "gender",
+                                            "headerName": "Gender",
+                                          },
+                                          Object {
+                                            "field": "age",
+                                            "headerName": "Age",
+                                          },
+                                          Object {
+                                            "field": "address.village",
+                                            "headerName": "Village",
+                                          },
+                                          Object {
+                                            "headerName": "Checked-in Time",
+                                            "valueGetter": [Function],
+                                          },
+                                        ]
+                                      }
+                                      dispatch={[Function]}
+                                      filters={
+                                        Array [
+                                          [Function],
+                                          [Function],
+                                        ]
+                                      }
+                                      onRowCount={[Function]}
+                                      rowData={Array []}
+                                      rowSelectedActionCreators={
+                                        Array [
+                                          [Function],
+                                        ]
+                                      }
+                                      session={
+                                        Object {
+                                          "sessionLocation": Object {
+                                            "uuid": "abc",
+                                          },
+                                        }
+                                      }
+                                      title=""
+                                      updating={false}
+                                    >
+                                      <div>
+                                        <List
+                                          columnDefs={
+                                            Array [
+                                              Object {
+                                                "field": "uuid",
+                                                "headerName": "uuid",
+                                                "hide": true,
+                                              },
+                                              Object {
+                                                "autoHeight": true,
+                                                "cellRenderer": [Function],
+                                                "cellStyle": Object {
+                                                  "line-height": "26px",
+                                                },
+                                                "getQuickFilterText": [Function],
+                                                "headerName": "Id",
+                                              },
+                                              Object {
+                                                "field": "name.givenName",
+                                                "headerName": "Given Name",
+                                              },
+                                              Object {
+                                                "field": "name.familyName",
+                                                "headerName": "Family Name",
+                                              },
+                                              Object {
+                                                "field": "gender",
+                                                "headerName": "Gender",
+                                              },
+                                              Object {
+                                                "field": "age",
+                                                "headerName": "Age",
+                                              },
+                                              Object {
+                                                "field": "address.village",
+                                                "headerName": "Village",
+                                              },
+                                              Object {
+                                                "headerName": "Checked-in Time",
+                                                "valueGetter": [Function],
+                                              },
+                                            ]
+                                          }
+                                          delayInterval={60000}
+                                          fetchListActionCreator={[Function]}
+                                          filters={
+                                            Array [
+                                              [Function],
+                                              [Function],
+                                              [Function],
+                                            ]
+                                          }
+                                          loading={false}
+                                          onMountOtherActionCreators={
+                                            Array [
+                                              [Function],
+                                            ]
+                                          }
+                                          onRowCount={[Function]}
+                                          rowData={Array []}
+                                          rowSelectedActionCreators={
+                                            Array [
+                                              [Function],
+                                              [Function],
+                                            ]
+                                          }
+                                          title=""
+                                        >
+                                          <div>
+                                            <h3>
+                                              <Label
+                                                bsClass="label"
+                                                bsStyle="default"
+                                              >
+                                                <span
+                                                  className="label label-default hidden"
+                                                />
+                                              </Label>
+                                            </h3>
+                                            <h3>
+                                              <Label
+                                                bsClass="label"
+                                                bsStyle="default"
+                                              >
+                                                <span
+                                                  className="label label-default hidden"
+                                                />
+                                              </Label>
+                                            </h3>
+                                            <Connect(DataGrid)
+                                              columnDefs={
+                                                Array [
+                                                  Object {
+                                                    "field": "uuid",
+                                                    "headerName": "uuid",
+                                                    "hide": true,
+                                                  },
+                                                  Object {
+                                                    "autoHeight": true,
+                                                    "cellRenderer": [Function],
+                                                    "cellStyle": Object {
+                                                      "line-height": "26px",
+                                                    },
+                                                    "getQuickFilterText": [Function],
+                                                    "headerName": "Id",
+                                                  },
+                                                  Object {
+                                                    "field": "name.givenName",
+                                                    "headerName": "Given Name",
+                                                  },
+                                                  Object {
+                                                    "field": "name.familyName",
+                                                    "headerName": "Family Name",
+                                                  },
+                                                  Object {
+                                                    "field": "gender",
+                                                    "headerName": "Gender",
+                                                  },
+                                                  Object {
+                                                    "field": "age",
+                                                    "headerName": "Age",
+                                                  },
+                                                  Object {
+                                                    "field": "address.village",
+                                                    "headerName": "Village",
+                                                  },
+                                                  Object {
+                                                    "headerName": "Checked-in Time",
+                                                    "valueGetter": [Function],
+                                                  },
+                                                ]
+                                              }
+                                              loading={false}
+                                              onRowCount={[Function]}
+                                              rowData={Array []}
+                                              rowSelectedActionCreators={
+                                                Array [
+                                                  [Function],
+                                                  [Function],
+                                                ]
+                                              }
+                                            >
+                                              <DataGrid
+                                                columnDefs={
+                                                  Array [
+                                                    Object {
+                                                      "field": "uuid",
+                                                      "headerName": "uuid",
+                                                      "hide": true,
+                                                    },
+                                                    Object {
+                                                      "autoHeight": true,
+                                                      "cellRenderer": [Function],
+                                                      "cellStyle": Object {
+                                                        "line-height": "26px",
+                                                      },
+                                                      "getQuickFilterText": [Function],
+                                                      "headerName": "Id",
+                                                    },
+                                                    Object {
+                                                      "field": "name.givenName",
+                                                      "headerName": "Given Name",
+                                                    },
+                                                    Object {
+                                                      "field": "name.familyName",
+                                                      "headerName": "Family Name",
+                                                    },
+                                                    Object {
+                                                      "field": "gender",
+                                                      "headerName": "Gender",
+                                                    },
+                                                    Object {
+                                                      "field": "age",
+                                                      "headerName": "Age",
+                                                    },
+                                                    Object {
+                                                      "field": "address.village",
+                                                      "headerName": "Village",
+                                                    },
+                                                    Object {
+                                                      "headerName": "Checked-in Time",
+                                                      "valueGetter": [Function],
+                                                    },
+                                                  ]
+                                                }
+                                                dispatch={[Function]}
+                                                loading={false}
+                                                onRowCount={[Function]}
+                                                rowData={Array []}
+                                                rowSelectedActionCreators={
+                                                  Array [
+                                                    [Function],
+                                                    [Function],
+                                                  ]
+                                                }
+                                              >
+                                                <div
+                                                  className="grid-wrapper"
+                                                  id="omrsGrid"
+                                                >
+                                                  <label>
+                                                    Search: 
+                                                     
+                                                    <input
+                                                      onChange={[Function]}
+                                                      type="text"
+                                                    />
+                                                  </label>
+                                                  <AgGridReact
+                                                    animateRows={true}
+                                                    columnDefs={
+                                                      Array [
+                                                        Object {
+                                                          "field": "uuid",
+                                                          "headerName": "uuid",
+                                                          "hide": true,
+                                                        },
+                                                        Object {
+                                                          "autoHeight": true,
+                                                          "cellRenderer": [Function],
+                                                          "cellStyle": Object {
+                                                            "line-height": "26px",
+                                                          },
+                                                          "getQuickFilterText": [Function],
+                                                          "headerName": "Id",
+                                                        },
+                                                        Object {
+                                                          "field": "name.givenName",
+                                                          "headerName": "Given Name",
+                                                        },
+                                                        Object {
+                                                          "field": "name.familyName",
+                                                          "headerName": "Family Name",
+                                                        },
+                                                        Object {
+                                                          "field": "gender",
+                                                          "headerName": "Gender",
+                                                        },
+                                                        Object {
+                                                          "field": "age",
+                                                          "headerName": "Age",
+                                                        },
+                                                        Object {
+                                                          "field": "address.village",
+                                                          "headerName": "Village",
+                                                        },
+                                                        Object {
+                                                          "headerName": "Checked-in Time",
+                                                          "valueGetter": [Function],
+                                                        },
+                                                      ]
+                                                    }
+                                                    enableFiltering={true}
+                                                    enableSorting={true}
+                                                    id="omrsGrid"
+                                                    onFilterChanged={[Function]}
+                                                    onGridReady={[Function]}
+                                                    onGridSizeChanged={[Function]}
+                                                    onRowDataChanged={[Function]}
+                                                    onSelectionChanged={[Function]}
+                                                    rowClassRules="rowClassRules"
+                                                    rowData={Array []}
+                                                    rowSelection="single"
+                                                    style="width: 100%; height: 100%;"
+                                                  >
+                                                    <div
+                                                      style={
+                                                        Object {
+                                                          "height": "100%",
+                                                        }
+                                                      }
+                                                    />
+                                                  </AgGridReact>
+                                                </div>
+                                              </DataGrid>
+                                            </Connect(DataGrid)>
+                                          </div>
+                                        </List>
+                                      </div>
+                                    </ScreeningQueue>
+                                  </Connect(ScreeningQueue)>
+                                </div>
+                              </Transition>
+                            </Fade>
+                          </TabPane>
+                        </Tab>
+                        <Tab
+                          eventKey="2"
+                          title="completed(0)"
+                        >
+                          <TabPane
+                            bsClass="tab-pane"
+                            eventKey="2"
+                          >
+                            <Fade
+                              appear={false}
+                              in={false}
+                              mountOnEnter={false}
+                              onEnter={[Function]}
+                              onExited={[Function]}
+                              timeout={300}
+                              unmountOnExit={false}
+                            >
+                              <Transition
+                                appear={false}
+                                enter={true}
+                                exit={true}
+                                in={false}
+                                mountOnEnter={false}
+                                onEnter={[Function]}
+                                onEntered={[Function]}
+                                onEntering={[Function]}
+                                onExit={[Function]}
+                                onExited={[Function]}
+                                onExiting={[Function]}
+                                timeout={300}
+                                unmountOnExit={false}
+                              >
+                                <div
+                                  aria-hidden={true}
+                                  aria-labelledby="screening-tabs-tab-2"
+                                  className="fade tab-pane"
+                                  id="screening-tabs-pane-2"
+                                  role="tabpanel"
+                                >
+                                  <Connect(ScreeningQueue)
+                                    dispatch={[Function]}
+                                    filters={
+                                      Array [
+                                        [Function],
+                                      ]
+                                    }
+                                    onRowCount={[Function]}
+                                    rowData={Array []}
+                                    rowSelectedActionCreators={
+                                      Array [
+                                        [Function],
+                                      ]
+                                    }
+                                    title=""
+                                  >
+                                    <ScreeningQueue
+                                      columnDefs={
+                                        Array [
+                                          Object {
+                                            "field": "uuid",
+                                            "headerName": "uuid",
+                                            "hide": true,
+                                          },
+                                          Object {
+                                            "autoHeight": true,
+                                            "cellRenderer": [Function],
+                                            "cellStyle": Object {
+                                              "line-height": "26px",
+                                            },
+                                            "getQuickFilterText": [Function],
+                                            "headerName": "Id",
+                                          },
+                                          Object {
+                                            "field": "name.givenName",
+                                            "headerName": "Given Name",
+                                          },
+                                          Object {
+                                            "field": "name.familyName",
+                                            "headerName": "Family Name",
+                                          },
+                                          Object {
+                                            "field": "gender",
+                                            "headerName": "Gender",
+                                          },
+                                          Object {
+                                            "field": "age",
+                                            "headerName": "Age",
+                                          },
+                                          Object {
+                                            "field": "address.village",
+                                            "headerName": "Village",
+                                          },
+                                          Object {
+                                            "headerName": "Checked-in Time",
+                                            "valueGetter": [Function],
+                                          },
+                                        ]
+                                      }
+                                      dispatch={[Function]}
+                                      filters={
+                                        Array [
+                                          [Function],
+                                        ]
+                                      }
+                                      onRowCount={[Function]}
+                                      rowData={Array []}
+                                      rowSelectedActionCreators={
+                                        Array [
+                                          [Function],
+                                        ]
+                                      }
+                                      session={
+                                        Object {
+                                          "sessionLocation": Object {
+                                            "uuid": "abc",
+                                          },
+                                        }
+                                      }
+                                      title=""
+                                      updating={false}
+                                    >
+                                      <div>
+                                        <List
+                                          columnDefs={
+                                            Array [
+                                              Object {
+                                                "field": "uuid",
+                                                "headerName": "uuid",
+                                                "hide": true,
+                                              },
+                                              Object {
+                                                "autoHeight": true,
+                                                "cellRenderer": [Function],
+                                                "cellStyle": Object {
+                                                  "line-height": "26px",
+                                                },
+                                                "getQuickFilterText": [Function],
+                                                "headerName": "Id",
+                                              },
+                                              Object {
+                                                "field": "name.givenName",
+                                                "headerName": "Given Name",
+                                              },
+                                              Object {
+                                                "field": "name.familyName",
+                                                "headerName": "Family Name",
+                                              },
+                                              Object {
+                                                "field": "gender",
+                                                "headerName": "Gender",
+                                              },
+                                              Object {
+                                                "field": "age",
+                                                "headerName": "Age",
+                                              },
+                                              Object {
+                                                "field": "address.village",
+                                                "headerName": "Village",
+                                              },
+                                              Object {
+                                                "headerName": "Checked-in Time",
+                                                "valueGetter": [Function],
+                                              },
+                                            ]
+                                          }
+                                          delayInterval={60000}
+                                          fetchListActionCreator={[Function]}
+                                          filters={
+                                            Array [
+                                              [Function],
+                                              [Function],
+                                            ]
+                                          }
+                                          loading={false}
+                                          onMountOtherActionCreators={
+                                            Array [
+                                              [Function],
+                                            ]
+                                          }
+                                          onRowCount={[Function]}
+                                          rowData={Array []}
+                                          rowSelectedActionCreators={
+                                            Array [
+                                              [Function],
+                                              [Function],
+                                            ]
+                                          }
+                                          title=""
+                                        >
+                                          <div>
+                                            <h3>
+                                              <Label
+                                                bsClass="label"
+                                                bsStyle="default"
+                                              >
+                                                <span
+                                                  className="label label-default hidden"
+                                                />
+                                              </Label>
+                                            </h3>
+                                            <h3>
+                                              <Label
+                                                bsClass="label"
+                                                bsStyle="default"
+                                              >
+                                                <span
+                                                  className="label label-default hidden"
+                                                />
+                                              </Label>
+                                            </h3>
+                                            <Connect(DataGrid)
+                                              columnDefs={
+                                                Array [
+                                                  Object {
+                                                    "field": "uuid",
+                                                    "headerName": "uuid",
+                                                    "hide": true,
+                                                  },
+                                                  Object {
+                                                    "autoHeight": true,
+                                                    "cellRenderer": [Function],
+                                                    "cellStyle": Object {
+                                                      "line-height": "26px",
+                                                    },
+                                                    "getQuickFilterText": [Function],
+                                                    "headerName": "Id",
+                                                  },
+                                                  Object {
+                                                    "field": "name.givenName",
+                                                    "headerName": "Given Name",
+                                                  },
+                                                  Object {
+                                                    "field": "name.familyName",
+                                                    "headerName": "Family Name",
+                                                  },
+                                                  Object {
+                                                    "field": "gender",
+                                                    "headerName": "Gender",
+                                                  },
+                                                  Object {
+                                                    "field": "age",
+                                                    "headerName": "Age",
+                                                  },
+                                                  Object {
+                                                    "field": "address.village",
+                                                    "headerName": "Village",
+                                                  },
+                                                  Object {
+                                                    "headerName": "Checked-in Time",
+                                                    "valueGetter": [Function],
+                                                  },
+                                                ]
+                                              }
+                                              loading={false}
+                                              onRowCount={[Function]}
+                                              rowData={Array []}
+                                              rowSelectedActionCreators={
+                                                Array [
+                                                  [Function],
+                                                  [Function],
+                                                ]
+                                              }
+                                            >
+                                              <DataGrid
+                                                columnDefs={
+                                                  Array [
+                                                    Object {
+                                                      "field": "uuid",
+                                                      "headerName": "uuid",
+                                                      "hide": true,
+                                                    },
+                                                    Object {
+                                                      "autoHeight": true,
+                                                      "cellRenderer": [Function],
+                                                      "cellStyle": Object {
+                                                        "line-height": "26px",
+                                                      },
+                                                      "getQuickFilterText": [Function],
+                                                      "headerName": "Id",
+                                                    },
+                                                    Object {
+                                                      "field": "name.givenName",
+                                                      "headerName": "Given Name",
+                                                    },
+                                                    Object {
+                                                      "field": "name.familyName",
+                                                      "headerName": "Family Name",
+                                                    },
+                                                    Object {
+                                                      "field": "gender",
+                                                      "headerName": "Gender",
+                                                    },
+                                                    Object {
+                                                      "field": "age",
+                                                      "headerName": "Age",
+                                                    },
+                                                    Object {
+                                                      "field": "address.village",
+                                                      "headerName": "Village",
+                                                    },
+                                                    Object {
+                                                      "headerName": "Checked-in Time",
+                                                      "valueGetter": [Function],
+                                                    },
+                                                  ]
+                                                }
+                                                dispatch={[Function]}
+                                                loading={false}
+                                                onRowCount={[Function]}
+                                                rowData={Array []}
+                                                rowSelectedActionCreators={
+                                                  Array [
+                                                    [Function],
+                                                    [Function],
+                                                  ]
+                                                }
+                                              >
+                                                <div
+                                                  className="grid-wrapper"
+                                                  id="omrsGrid"
+                                                >
+                                                  <label>
+                                                    Search: 
+                                                     
+                                                    <input
+                                                      onChange={[Function]}
+                                                      type="text"
+                                                    />
+                                                  </label>
+                                                  <AgGridReact
+                                                    animateRows={true}
+                                                    columnDefs={
+                                                      Array [
+                                                        Object {
+                                                          "field": "uuid",
+                                                          "headerName": "uuid",
+                                                          "hide": true,
+                                                        },
+                                                        Object {
+                                                          "autoHeight": true,
+                                                          "cellRenderer": [Function],
+                                                          "cellStyle": Object {
+                                                            "line-height": "26px",
+                                                          },
+                                                          "getQuickFilterText": [Function],
+                                                          "headerName": "Id",
+                                                        },
+                                                        Object {
+                                                          "field": "name.givenName",
+                                                          "headerName": "Given Name",
+                                                        },
+                                                        Object {
+                                                          "field": "name.familyName",
+                                                          "headerName": "Family Name",
+                                                        },
+                                                        Object {
+                                                          "field": "gender",
+                                                          "headerName": "Gender",
+                                                        },
+                                                        Object {
+                                                          "field": "age",
+                                                          "headerName": "Age",
+                                                        },
+                                                        Object {
+                                                          "field": "address.village",
+                                                          "headerName": "Village",
+                                                        },
+                                                        Object {
+                                                          "headerName": "Checked-in Time",
+                                                          "valueGetter": [Function],
+                                                        },
+                                                      ]
+                                                    }
+                                                    enableFiltering={true}
+                                                    enableSorting={true}
+                                                    id="omrsGrid"
+                                                    onFilterChanged={[Function]}
+                                                    onGridReady={[Function]}
+                                                    onGridSizeChanged={[Function]}
+                                                    onRowDataChanged={[Function]}
+                                                    onSelectionChanged={[Function]}
+                                                    rowClassRules="rowClassRules"
+                                                    rowData={Array []}
+                                                    rowSelection="single"
+                                                    style="width: 100%; height: 100%;"
+                                                  >
+                                                    <div
+                                                      style={
+                                                        Object {
+                                                          "height": "100%",
+                                                        }
+                                                      }
+                                                    />
+                                                  </AgGridReact>
+                                                </div>
+                                              </DataGrid>
+                                            </Connect(DataGrid)>
+                                          </div>
+                                        </List>
+                                      </div>
+                                    </ScreeningQueue>
+                                  </Connect(ScreeningQueue)>
+                                </div>
+                              </Transition>
+                            </Fade>
+                          </TabPane>
+                        </Tab>
                       </div>
-                    </DataGrid>
-                  </Connect(DataGrid)>
-                </div>
-              </List>
-            </div>
-          </ScreeningQueue>
-        </Connect(ScreeningQueue)>
+                    </TabContent>
+                  </div>
+                </TabContainer>
+              </Tabs>
+            </Uncontrolled(Tabs)>
+          </div>
+        </ScreeningTabs>
       </div>
     </NutritionQueue>
   </Connect(NutritionQueue)>

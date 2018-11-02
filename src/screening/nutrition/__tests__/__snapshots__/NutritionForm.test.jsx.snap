@@ -854,9 +854,9 @@ exports[`Component: NutritionForm renders properly 1`] = `
                               }
                             >
                               <span>
-                                <h1>
+                                <h2>
                                   Nutrition
-                                </h1>
+                                </h2>
                               </span>
                             </div>
                           </Col>
@@ -889,7 +889,7 @@ exports[`Component: NutritionForm renders properly 1`] = `
                               }
                             >
                               <span>
-                                <h1 />
+                                <h2 />
                               </span>
                             </div>
                           </Col>
