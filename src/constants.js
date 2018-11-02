@@ -3,10 +3,10 @@
 
 // TODO tweak this as needed depending on other data points
 export const ACTIVE_VISITS_REP =
-  'custom:(uuid,location:(uuid,display,name),startDatetime,stopDatetime,' +
-  'patient:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),' +
-  'person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,preferredName:(familyName,givenName,middleName,display))),' +
-  'encounters:(uuid,encounterDatetime,location:(id,uuid,name),encounterType:(id,uuid,name),' +
+  'custom:(id,uuid,location:(uuid,display,name),startDatetime,stopDatetime,' +
+  'patient:(id,uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),' +
+  'person:(id,uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,preferredName:(familyName,givenName,middleName,display))),' +
+  'encounters:(id,uuid,encounterDatetime,location:(id,uuid,name),encounterType:(id,uuid,name),' +
   'obs:(uuid,id,value,concept:(uuid),comment,display)' +
   ')';
 
