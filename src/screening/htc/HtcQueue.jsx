@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
-import {selectors} from '@openmrs/react-components';
-import ScreeningQueue from "../ScreeningQueue";
+import { selectors } from '@openmrs/react-components';
+import ScreeningTabs from "../ScreeningTabs";
 import htcFilters from './htcFilters';
-import utils from "../../utils";
+import { BASIC_GRID, COLUMN_DEFS } from "../../gridConstants";
+
 
 let HtcQueue = props => {
 
@@ -13,35 +14,20 @@ let HtcQueue = props => {
   ];
 
   const columnDefs = [
-    { headerName: 'uuid', hide: true, field: 'uuid' },
-    {
-      headerName: 'Id',
-      autoHeight: true,
-      cellRenderer: function(params){
-        return utils.getPatientIdentifiers(params.data);
-      }
-    },
-    { headerName: 'Given Name', field: 'name.givenName' },
-    { headerName: 'Family Name', field: 'name.familyName' },
-    { headerName: 'Gender', field: 'gender' },
-    { headerName: 'Age', field: 'age' },
-    { headerName: 'Village', field: 'address.village' },
-    { headerName: 'Actions', field: 'actions' },
-    { headerName: 'Alert', field: 'alert' },
-    { headerName: 'Checked-in Time', valueGetter: function getCheckedInTime(params) {
-        return utils.getPatientCheckedInTime(params.data);
-      }
-    }
+    ...BASIC_GRID,
+    COLUMN_DEFS.CHECKED_IN_TIME,
+    COLUMN_DEFS.ACTIONS,
+    COLUMN_DEFS.APPOINTMENT_DATE
   ];
 
   return (
     <div>
-      <ScreeningQueue
+      <ScreeningTabs
         dispatch={ props.dispatch }
         columnDefs = { columnDefs }
-        filters={[htcFilters.required, (patient) => !htcFilters.completed(patient)]}
+        filters={ htcFilters }
         rowData={ Object.values(props.patients) }
-        rowSelectedActionCreators={rowSelectedActionCreators}
+        rowSelectedActionCreators={ rowSelectedActionCreators }
         title="HTC Queue"
       />
     </div>
