@@ -148,15 +148,15 @@ export const CONCEPTS = {
       uuid: '06b1f7d8-b6cc-11e8-96f8-529269fb1459',
       name: 'Adherence Session',
       'FirstSession': {
-        uuid: '65662ed4-977f-11e1-8993-905e29aff6c1',
+        uuid: '697e9461-f2d6-4ab1-a140-48f768ce002a',
         name: '1st Session'
       },
       'SecondSession': {
-        uuid: '65662fd8-977f-11e1-8993-905e29aff6c1',
+        uuid: '11c0f708-6950-4e94-b080-5c76174a4947',
         name: '2nd Session'
       },
       'ThirdSession': {
-        uuid: '656630e6-977f-11e1-8993-905e29aff6c1',
+        uuid: '224e3d57-f6d1-4244-bbe2-b81a574ba7aa',
         name: '3rd Session'
       }
     },
@@ -169,7 +169,7 @@ export const CONCEPTS = {
       name: 'Counseled on pill counts'
     },
     'DrugAdherencePercentage': {
-      uuid: '2F3B76C0-23AF-4A8F-91E3-33F1059A22F1',
+      uuid: '20E91F16-BA4F-4058-B17A-998A82F4B803',
       name: 'Drug adherence percentage'
     },
     'CounseledOnViralLoad': {
