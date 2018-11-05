@@ -670,9 +670,9 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             }
                           >
                             <span>
-                              <h1>
+                              <h2>
                                 Blood Pressure
-                              </h1>
+                              </h2>
                             </span>
                           </div>
                         </Col>
@@ -705,7 +705,7 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                             }
                           >
                             <span>
-                              <h1 />
+                              <h2 />
                             </span>
                           </div>
                         </Col>
