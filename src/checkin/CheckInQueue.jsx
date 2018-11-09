@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import checkInActions from './checkInActions';
 import {LOCATION_TYPES} from '../constants';
 import utils from "../utils";
-import { COLUMN_DEFS, BASIC_GRID } from "../gridConstants";
+import { COLUMN_DEFS, BASIC_GRID, PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
 import checkInFilters from './checkInFilters';
 
 class CheckInQueue extends React.Component {
@@ -91,6 +91,7 @@ class CheckInQueue extends React.Component {
           onRowCount={this.props.onRowCount}
           rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
           title=""
+          optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
         />
       </div>
     );

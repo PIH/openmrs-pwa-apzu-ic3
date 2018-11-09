@@ -1,5 +1,20 @@
 import utils from "./utils";
 
+export const PATIENT_IDENTIFIER_FILTERS = [
+  {
+    label: "ART",
+    filter: patient => utils.getPatientArtIdentifier(patient)
+  },
+  {
+    label: "EID",
+    filter: patient => utils.getPatientEidIdentifier(patient)
+  },
+  {
+    label: "NCD",
+    filter: patient => utils.getPatientNcdIdentifier(patient)
+  }
+];
+
 export const COLUMN_DEFS = {
   'UUID': { headerName: 'uuid', hide: true, field: 'uuid' },
   'IDENTIFIER': {

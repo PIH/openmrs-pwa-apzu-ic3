@@ -9,25 +9,9 @@ import {
 } from '@openmrs/react-components';
 import { ENCOUNTER_TYPES, ACTIVE_VISITS_REP } from '../constants';
 import { connect } from "react-redux";
-import { BASIC_GRID, COLUMN_DEFS } from "../gridConstants";
-import utils from "../utils";
+import { BASIC_GRID, COLUMN_DEFS, PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
 
 let ScreeningQueue = props => {
-
-  const optionalFilters = [
-    {
-      label: "ART",
-      filter: patient => utils.getPatientArtIdentifier(patient)
-    },
-    {
-      label: "EID",
-      filter: patient => utils.getPatientEidIdentifier(patient)
-    },
-    {
-      label: "NCD",
-      filter: patient => utils.getPatientNcdIdentifier(patient)
-    }
-  ];
 
   const fetchListActionCreator = props.fetchListActionCreator ? this.props.fetchListActionCreator :
     () => {
@@ -50,7 +34,7 @@ let ScreeningQueue = props => {
         loading={props.updating}
         onMountOtherActionCreators={onMountOtherActionCreators}
         onRowCount={props.onRowCount}
-        optionalFilters={optionalFilters}
+        optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
         rowData={props.rowData}
         rowSelectedActionCreators={[patientActions.setSelectedPatient, ...props.rowSelectedActionCreators]}
         title={props.title}

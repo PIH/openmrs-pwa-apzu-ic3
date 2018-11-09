@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 import {patientActions, visitActions, List} from '@openmrs/react-components';
 import utils from "../utils";
-import {ACTIVE_VISITS_REP} from "../constants";
+import { ACTIVE_VISITS_REP } from "../constants";
+import { PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
 
 
 let CompletedVisits = props => {
@@ -69,6 +70,7 @@ let CompletedVisits = props => {
         onRowCount={props.onRowCount}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title=""
+        optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
       />
     </div>
   );

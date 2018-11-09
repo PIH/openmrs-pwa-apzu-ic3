@@ -3,9 +3,9 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import {DataGrid, visitActions, patientActions} from '@openmrs/react-components';
+import { DataGrid, visitActions, patientActions } from '@openmrs/react-components';
 import NurseQueue from '../NurseQueue';
-import {ACTIVE_VISITS_REP, VISIT_REPRESENTATION} from "../../../constants";
+import { ACTIVE_VISITS_REP, VISIT_REPRESENTATION } from "../../../constants";
 
 let props, store;
 let mountedComponent;
