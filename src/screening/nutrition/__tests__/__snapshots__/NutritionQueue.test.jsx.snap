@@ -380,6 +380,28 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                             ]
                                           }
                                           onRowCount={[Function]}
+                                          optionalFilters={
+                                            Array [
+                                              Object {
+                                                "enabled": false,
+                                                "filter": [Function],
+                                                "key": "art",
+                                                "label": "ART",
+                                              },
+                                              Object {
+                                                "enabled": false,
+                                                "filter": [Function],
+                                                "key": "eid",
+                                                "label": "EID",
+                                              },
+                                              Object {
+                                                "enabled": false,
+                                                "filter": [Function],
+                                                "key": "ncd",
+                                                "label": "NCD",
+                                              },
+                                            ]
+                                          }
                                           rowData={Array []}
                                           rowSelectedActionCreators={
                                             Array [
@@ -410,6 +432,130 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                 />
                                               </Label>
                                             </h3>
+                                            <Grid
+                                              bsClass="container"
+                                              componentClass="div"
+                                              fluid={false}
+                                            >
+                                              <div
+                                                className="container"
+                                              >
+                                                <Row
+                                                  bsClass="row"
+                                                  componentClass="div"
+                                                >
+                                                  <div
+                                                    className="row"
+                                                  >
+                                                    <FormGroup
+                                                      bsClass="form-group"
+                                                      controlId="gridFilters"
+                                                    >
+                                                      <div
+                                                        className="form-group"
+                                                      >
+                                                        <Col
+                                                          bsClass="col"
+                                                          componentClass="div"
+                                                          sm={1}
+                                                        >
+                                                          <div
+                                                            className="col-sm-1"
+                                                          >
+                                                            <Checkbox
+                                                              bsClass="checkbox"
+                                                              disabled={false}
+                                                              inline={false}
+                                                              onChange={[Function]}
+                                                              title=""
+                                                            >
+                                                              <div
+                                                                className="checkbox"
+                                                              >
+                                                                <label
+                                                                  title=""
+                                                                >
+                                                                  <input
+                                                                    disabled={false}
+                                                                    onChange={[Function]}
+                                                                    type="checkbox"
+                                                                  />
+                                                                  ART
+                                                                </label>
+                                                              </div>
+                                                            </Checkbox>
+                                                          </div>
+                                                        </Col>
+                                                        <Col
+                                                          bsClass="col"
+                                                          componentClass="div"
+                                                          sm={1}
+                                                        >
+                                                          <div
+                                                            className="col-sm-1"
+                                                          >
+                                                            <Checkbox
+                                                              bsClass="checkbox"
+                                                              disabled={false}
+                                                              inline={false}
+                                                              onChange={[Function]}
+                                                              title=""
+                                                            >
+                                                              <div
+                                                                className="checkbox"
+                                                              >
+                                                                <label
+                                                                  title=""
+                                                                >
+                                                                  <input
+                                                                    disabled={false}
+                                                                    onChange={[Function]}
+                                                                    type="checkbox"
+                                                                  />
+                                                                  EID
+                                                                </label>
+                                                              </div>
+                                                            </Checkbox>
+                                                          </div>
+                                                        </Col>
+                                                        <Col
+                                                          bsClass="col"
+                                                          componentClass="div"
+                                                          sm={1}
+                                                        >
+                                                          <div
+                                                            className="col-sm-1"
+                                                          >
+                                                            <Checkbox
+                                                              bsClass="checkbox"
+                                                              disabled={false}
+                                                              inline={false}
+                                                              onChange={[Function]}
+                                                              title=""
+                                                            >
+                                                              <div
+                                                                className="checkbox"
+                                                              >
+                                                                <label
+                                                                  title=""
+                                                                >
+                                                                  <input
+                                                                    disabled={false}
+                                                                    onChange={[Function]}
+                                                                    type="checkbox"
+                                                                  />
+                                                                  NCD
+                                                                </label>
+                                                              </div>
+                                                            </Checkbox>
+                                                          </div>
+                                                        </Col>
+                                                      </div>
+                                                    </FormGroup>
+                                                  </div>
+                                                </Row>
+                                              </div>
+                                            </Grid>
                                             <Connect(DataGrid)
                                               columnDefs={
                                                 Array [
@@ -787,6 +933,28 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                             ]
                                           }
                                           onRowCount={[Function]}
+                                          optionalFilters={
+                                            Array [
+                                              Object {
+                                                "enabled": false,
+                                                "filter": [Function],
+                                                "key": "art",
+                                                "label": "ART",
+                                              },
+                                              Object {
+                                                "enabled": false,
+                                                "filter": [Function],
+                                                "key": "eid",
+                                                "label": "EID",
+                                              },
+                                              Object {
+                                                "enabled": false,
+                                                "filter": [Function],
+                                                "key": "ncd",
+                                                "label": "NCD",
+                                              },
+                                            ]
+                                          }
                                           rowData={Array []}
                                           rowSelectedActionCreators={
                                             Array [
@@ -817,6 +985,130 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                 />
                                               </Label>
                                             </h3>
+                                            <Grid
+                                              bsClass="container"
+                                              componentClass="div"
+                                              fluid={false}
+                                            >
+                                              <div
+                                                className="container"
+                                              >
+                                                <Row
+                                                  bsClass="row"
+                                                  componentClass="div"
+                                                >
+                                                  <div
+                                                    className="row"
+                                                  >
+                                                    <FormGroup
+                                                      bsClass="form-group"
+                                                      controlId="gridFilters"
+                                                    >
+                                                      <div
+                                                        className="form-group"
+                                                      >
+                                                        <Col
+                                                          bsClass="col"
+                                                          componentClass="div"
+                                                          sm={1}
+                                                        >
+                                                          <div
+                                                            className="col-sm-1"
+                                                          >
+                                                            <Checkbox
+                                                              bsClass="checkbox"
+                                                              disabled={false}
+                                                              inline={false}
+                                                              onChange={[Function]}
+                                                              title=""
+                                                            >
+                                                              <div
+                                                                className="checkbox"
+                                                              >
+                                                                <label
+                                                                  title=""
+                                                                >
+                                                                  <input
+                                                                    disabled={false}
+                                                                    onChange={[Function]}
+                                                                    type="checkbox"
+                                                                  />
+                                                                  ART
+                                                                </label>
+                                                              </div>
+                                                            </Checkbox>
+                                                          </div>
+                                                        </Col>
+                                                        <Col
+                                                          bsClass="col"
+                                                          componentClass="div"
+                                                          sm={1}
+                                                        >
+                                                          <div
+                                                            className="col-sm-1"
+                                                          >
+                                                            <Checkbox
+                                                              bsClass="checkbox"
+                                                              disabled={false}
+                                                              inline={false}
+                                                              onChange={[Function]}
+                                                              title=""
+                                                            >
+                                                              <div
+                                                                className="checkbox"
+                                                              >
+                                                                <label
+                                                                  title=""
+                                                                >
+                                                                  <input
+                                                                    disabled={false}
+                                                                    onChange={[Function]}
+                                                                    type="checkbox"
+                                                                  />
+                                                                  EID
+                                                                </label>
+                                                              </div>
+                                                            </Checkbox>
+                                                          </div>
+                                                        </Col>
+                                                        <Col
+                                                          bsClass="col"
+                                                          componentClass="div"
+                                                          sm={1}
+                                                        >
+                                                          <div
+                                                            className="col-sm-1"
+                                                          >
+                                                            <Checkbox
+                                                              bsClass="checkbox"
+                                                              disabled={false}
+                                                              inline={false}
+                                                              onChange={[Function]}
+                                                              title=""
+                                                            >
+                                                              <div
+                                                                className="checkbox"
+                                                              >
+                                                                <label
+                                                                  title=""
+                                                                >
+                                                                  <input
+                                                                    disabled={false}
+                                                                    onChange={[Function]}
+                                                                    type="checkbox"
+                                                                  />
+                                                                  NCD
+                                                                </label>
+                                                              </div>
+                                                            </Checkbox>
+                                                          </div>
+                                                        </Col>
+                                                      </div>
+                                                    </FormGroup>
+                                                  </div>
+                                                </Row>
+                                              </div>
+                                            </Grid>
                                             <Connect(DataGrid)
                                               columnDefs={
                                                 Array [
