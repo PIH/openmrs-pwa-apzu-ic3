@@ -31,7 +31,21 @@ describe('Component: SearchPatient', () => {
       {
         dispatch: {},
         openmrs: {
-          patientSearch: {},
+          patientSearch: {
+            results: [
+              {
+                address: "",
+                age: 18,
+                gender: "M",
+                identifiers: [
+                  {
+                    identifier: "NOP 55 CCC",
+                    preferred: true
+                  }
+                ]
+              }
+            ]
+          },
           selectedPatient: null
         },
       });

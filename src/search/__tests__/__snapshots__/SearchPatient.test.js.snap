@@ -18,16 +18,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
   >
     <div>
       <h3>
-        <Label
-          bsClass="label"
-          bsStyle="default"
-        >
-          <span
-            className="label label-default"
-          >
-            Patient Search
-          </span>
-        </Label>
+        Search for Patient
       </h3>
       <Connect(PatientSearch)
         rowSelectedActionCreators={
@@ -46,7 +37,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                 "hide": true,
               },
               Object {
-                "headerName": "ID",
+                "headerName": "Identifier",
                 "valueGetter": [Function],
               },
               Object {
@@ -70,7 +61,21 @@ exports[`Component: SearchPatient renders properly 1`] = `
           dispatch={[Function]}
           parseResults={[Function]}
           representation="custom:(uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),person:(uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,names,preferredName,addresses,attributes))"
-          rowData={Array []}
+          rowData={
+            Array [
+              Object {
+                "address": "",
+                "age": 18,
+                "gender": "M",
+                "identifiers": Array [
+                  Object {
+                    "identifier": "NOP 55 CCC",
+                    "preferred": true,
+                  },
+                ],
+              },
+            ]
+          }
           rowSelectedActionCreators={
             Array [
               [Function],
@@ -256,6 +261,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                               >
                                 <FormGroup
                                   bsClass="form-group"
+                                  controlId="searchLabel"
                                 >
                                   <div
                                     className="form-group"
@@ -263,29 +269,57 @@ exports[`Component: SearchPatient renders properly 1`] = `
                                     <Col
                                       bsClass="col"
                                       componentClass={[Function]}
+                                      sm={3}
                                     >
                                       <ControlLabel
                                         bsClass="control-label"
-                                        className=""
+                                        className="col-sm-3"
                                         srOnly={false}
                                       >
                                         <label
-                                          className="control-label"
+                                          className="col-sm-3 control-label"
+                                          htmlFor="searchLabel"
                                         >
-                                          Search
+                                          Search Patients
                                         </label>
                                       </ControlLabel>
                                     </Col>
+                                  </div>
+                                </FormGroup>
+                              </div>
+                            </Row>
+                            <Row
+                              bsClass="row"
+                              componentClass="div"
+                            >
+                              <div
+                                className="row"
+                              >
+                                <FormGroup
+                                  bsClass="form-group"
+                                  controlId="searchLabel"
+                                >
+                                  <div
+                                    className="form-group"
+                                  >
                                     <Col
                                       bsClass="col"
                                       componentClass="div"
+                                      sm={3}
                                     >
                                       <div
-                                        className=""
+                                        className="col-sm-3"
                                       >
                                         <Field
                                           component="input"
                                           name="query"
+                                          placeholder="enter name or id"
+                                          style={
+                                            Object {
+                                              "height": "30px",
+                                              "width": "-webkit-fill-available",
+                                            }
+                                          }
                                           type="text"
                                         >
                                           <Connect(ConnectedField)
@@ -386,6 +420,13 @@ exports[`Component: SearchPatient renders properly 1`] = `
                                             component="input"
                                             name="query"
                                             normalize={[Function]}
+                                            placeholder="enter name or id"
+                                            style={
+                                              Object {
+                                                "height": "30px",
+                                                "width": "-webkit-fill-available",
+                                              }
+                                            }
                                             type="text"
                                           >
                                             <ConnectedField
@@ -489,7 +530,14 @@ exports[`Component: SearchPatient renders properly 1`] = `
                                               dispatch={[Function]}
                                               name="query"
                                               normalize={[Function]}
+                                              placeholder="enter name or id"
                                               pristine={true}
+                                              style={
+                                                Object {
+                                                  "height": "30px",
+                                                  "width": "-webkit-fill-available",
+                                                }
+                                              }
                                               type="text"
                                             >
                                               <input
@@ -499,12 +547,56 @@ exports[`Component: SearchPatient renders properly 1`] = `
                                                 onDragStart={[Function]}
                                                 onDrop={[Function]}
                                                 onFocus={[Function]}
+                                                placeholder="enter name or id"
+                                                style={
+                                                  Object {
+                                                    "height": "30px",
+                                                    "width": "-webkit-fill-available",
+                                                  }
+                                                }
                                                 type="text"
                                                 value=""
                                               />
                                             </ConnectedField>
                                           </Connect(ConnectedField)>
                                         </Field>
+                                      </div>
+                                    </Col>
+                                    <Col
+                                      bsClass="col"
+                                      componentClass="div"
+                                      sm={2}
+                                      style={
+                                        Object {
+                                          "textAlign": "left",
+                                        }
+                                      }
+                                    >
+                                      <div
+                                        className="col-sm-2"
+                                        style={
+                                          Object {
+                                            "textAlign": "left",
+                                          }
+                                        }
+                                      >
+                                        <Button
+                                          active={false}
+                                          block={false}
+                                          bsClass="btn"
+                                          bsSize="small"
+                                          bsStyle="primary"
+                                          disabled={true}
+                                          type="submit"
+                                        >
+                                          <button
+                                            className="btn btn-sm btn-primary"
+                                            disabled={true}
+                                            type="submit"
+                                          >
+                                            Search
+                                          </button>
+                                        </Button>
                                       </div>
                                     </Col>
                                   </div>
@@ -518,67 +610,30 @@ exports[`Component: SearchPatient renders properly 1`] = `
                               <div
                                 className="row"
                               >
-                                <FormGroup
-                                  bsClass="form-group"
+                                <Col
+                                  bsClass="col"
+                                  componentClass="div"
+                                  md={20}
+                                  sm={20}
+                                  style={
+                                    Object {
+                                      "height": "10px",
+                                    }
+                                  }
                                 >
                                   <div
-                                    className="form-group"
+                                    className="col-md-20 col-sm-20"
+                                    style={
+                                      Object {
+                                        "height": "10px",
+                                      }
+                                    }
                                   >
-                                    <Col
-                                      bsClass="col"
-                                      componentClass="div"
-                                    >
-                                      <div
-                                        className=""
-                                      >
-                                        <ButtonToolbar
-                                          bsClass="btn-toolbar"
-                                        >
-                                          <div
-                                            className="btn-toolbar"
-                                            role="toolbar"
-                                          >
-                                            <Button
-                                              active={false}
-                                              block={false}
-                                              bsClass="btn"
-                                              bsSize="large"
-                                              bsStyle="success"
-                                              disabled={true}
-                                              type="submit"
-                                            >
-                                              <button
-                                                className="btn btn-lg btn-success"
-                                                disabled={true}
-                                                type="submit"
-                                              >
-                                                Search
-                                              </button>
-                                            </Button>
-                                            <Button
-                                              active={false}
-                                              block={false}
-                                              bsClass="btn"
-                                              bsSize="large"
-                                              bsStyle="danger"
-                                              disabled={true}
-                                              onClick={[Function]}
-                                            >
-                                              <button
-                                                className="btn btn-lg btn-danger"
-                                                disabled={true}
-                                                onClick={[Function]}
-                                                type="button"
-                                              >
-                                                Clear Values
-                                              </button>
-                                            </Button>
-                                          </div>
-                                        </ButtonToolbar>
-                                      </div>
-                                    </Col>
+                                    <span>
+                                      <h1 />
+                                    </span>
                                   </div>
-                                </FormGroup>
+                                </Col>
                               </div>
                             </Row>
                           </div>
@@ -598,7 +653,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                     "hide": true,
                   },
                   Object {
-                    "headerName": "ID",
+                    "headerName": "Identifier",
                     "valueGetter": [Function],
                   },
                   Object {
@@ -619,7 +674,21 @@ exports[`Component: SearchPatient renders properly 1`] = `
                   },
                 ]
               }
-              rowData={Array []}
+              rowData={
+                Array [
+                  Object {
+                    "address": "",
+                    "age": 18,
+                    "gender": "M",
+                    "identifiers": Array [
+                      Object {
+                        "identifier": "NOP 55 CCC",
+                        "preferred": true,
+                      },
+                    ],
+                  },
+                ]
+              }
               rowSelectedActionCreators={
                 Array [
                   [Function],
@@ -638,7 +707,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                       "hide": true,
                     },
                     Object {
-                      "headerName": "ID",
+                      "headerName": "Identifier",
                       "valueGetter": [Function],
                     },
                     Object {
@@ -660,7 +729,21 @@ exports[`Component: SearchPatient renders properly 1`] = `
                   ]
                 }
                 dispatch={[Function]}
-                rowData={Array []}
+                rowData={
+                  Array [
+                    Object {
+                      "address": "",
+                      "age": 18,
+                      "gender": "M",
+                      "identifiers": Array [
+                        Object {
+                          "identifier": "NOP 55 CCC",
+                          "preferred": true,
+                        },
+                      ],
+                    },
+                  ]
+                }
                 rowSelectedActionCreators={
                   Array [
                     [Function],
@@ -692,7 +775,7 @@ exports[`Component: SearchPatient renders properly 1`] = `
                           "hide": true,
                         },
                         Object {
-                          "headerName": "ID",
+                          "headerName": "Identifier",
                           "valueGetter": [Function],
                         },
                         Object {
@@ -722,7 +805,21 @@ exports[`Component: SearchPatient renders properly 1`] = `
                     onRowDataChanged={[Function]}
                     onSelectionChanged={[Function]}
                     rowClassRules="rowClassRules"
-                    rowData={Array []}
+                    rowData={
+                      Array [
+                        Object {
+                          "address": "",
+                          "age": 18,
+                          "gender": "M",
+                          "identifiers": Array [
+                            Object {
+                              "identifier": "NOP 55 CCC",
+                              "preferred": true,
+                            },
+                          ],
+                        },
+                      ]
+                    }
                     rowSelection="single"
                     style="width: 100%; height: 100%;"
                   >

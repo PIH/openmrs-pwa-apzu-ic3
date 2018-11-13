@@ -268,7 +268,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                               "line-height": "26px",
                                             },
                                             "getQuickFilterText": [Function],
-                                            "headerName": "Id",
+                                            "headerName": "Identifier",
                                           },
                                           Object {
                                             "field": "name.givenName",
@@ -336,7 +336,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                   "line-height": "26px",
                                                 },
                                                 "getQuickFilterText": [Function],
-                                                "headerName": "Id",
+                                                "headerName": "Identifier",
                                               },
                                               Object {
                                                 "field": "name.givenName",
@@ -447,111 +447,102 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                   <div
                                                     className="row"
                                                   >
-                                                    <FormGroup
-                                                      bsClass="form-group"
-                                                      controlId="gridFilters"
+                                                    <Col
+                                                      bsClass="col"
+                                                      componentClass="div"
+                                                      sm={1}
                                                     >
                                                       <div
-                                                        className="form-group"
+                                                        className="col-sm-1"
                                                       >
-                                                        <Col
-                                                          bsClass="col"
-                                                          componentClass="div"
-                                                          sm={1}
+                                                        <Checkbox
+                                                          bsClass="checkbox"
+                                                          disabled={false}
+                                                          inline={false}
+                                                          onChange={[Function]}
+                                                          title=""
                                                         >
                                                           <div
-                                                            className="col-sm-1"
+                                                            className="checkbox"
                                                           >
-                                                            <Checkbox
-                                                              bsClass="checkbox"
-                                                              disabled={false}
-                                                              inline={false}
-                                                              onChange={[Function]}
+                                                            <label
                                                               title=""
                                                             >
-                                                              <div
-                                                                className="checkbox"
-                                                              >
-                                                                <label
-                                                                  title=""
-                                                                >
-                                                                  <input
-                                                                    disabled={false}
-                                                                    onChange={[Function]}
-                                                                    type="checkbox"
-                                                                  />
-                                                                  ART
-                                                                </label>
-                                                              </div>
-                                                            </Checkbox>
+                                                              <input
+                                                                disabled={false}
+                                                                onChange={[Function]}
+                                                                type="checkbox"
+                                                              />
+                                                              ART
+                                                            </label>
                                                           </div>
-                                                        </Col>
-                                                        <Col
-                                                          bsClass="col"
-                                                          componentClass="div"
-                                                          sm={1}
-                                                        >
-                                                          <div
-                                                            className="col-sm-1"
-                                                          >
-                                                            <Checkbox
-                                                              bsClass="checkbox"
-                                                              disabled={false}
-                                                              inline={false}
-                                                              onChange={[Function]}
-                                                              title=""
-                                                            >
-                                                              <div
-                                                                className="checkbox"
-                                                              >
-                                                                <label
-                                                                  title=""
-                                                                >
-                                                                  <input
-                                                                    disabled={false}
-                                                                    onChange={[Function]}
-                                                                    type="checkbox"
-                                                                  />
-                                                                  EID
-                                                                </label>
-                                                              </div>
-                                                            </Checkbox>
-                                                          </div>
-                                                        </Col>
-                                                        <Col
-                                                          bsClass="col"
-                                                          componentClass="div"
-                                                          sm={1}
-                                                        >
-                                                          <div
-                                                            className="col-sm-1"
-                                                          >
-                                                            <Checkbox
-                                                              bsClass="checkbox"
-                                                              disabled={false}
-                                                              inline={false}
-                                                              onChange={[Function]}
-                                                              title=""
-                                                            >
-                                                              <div
-                                                                className="checkbox"
-                                                              >
-                                                                <label
-                                                                  title=""
-                                                                >
-                                                                  <input
-                                                                    disabled={false}
-                                                                    onChange={[Function]}
-                                                                    type="checkbox"
-                                                                  />
-                                                                  NCD
-                                                                </label>
-                                                              </div>
-                                                            </Checkbox>
-                                                          </div>
-                                                        </Col>
+                                                        </Checkbox>
                                                       </div>
-                                                    </FormGroup>
+                                                    </Col>
+                                                    <Col
+                                                      bsClass="col"
+                                                      componentClass="div"
+                                                      sm={1}
+                                                    >
+                                                      <div
+                                                        className="col-sm-1"
+                                                      >
+                                                        <Checkbox
+                                                          bsClass="checkbox"
+                                                          disabled={false}
+                                                          inline={false}
+                                                          onChange={[Function]}
+                                                          title=""
+                                                        >
+                                                          <div
+                                                            className="checkbox"
+                                                          >
+                                                            <label
+                                                              title=""
+                                                            >
+                                                              <input
+                                                                disabled={false}
+                                                                onChange={[Function]}
+                                                                type="checkbox"
+                                                              />
+                                                              EID
+                                                            </label>
+                                                          </div>
+                                                        </Checkbox>
+                                                      </div>
+                                                    </Col>
+                                                    <Col
+                                                      bsClass="col"
+                                                      componentClass="div"
+                                                      sm={1}
+                                                    >
+                                                      <div
+                                                        className="col-sm-1"
+                                                      >
+                                                        <Checkbox
+                                                          bsClass="checkbox"
+                                                          disabled={false}
+                                                          inline={false}
+                                                          onChange={[Function]}
+                                                          title=""
+                                                        >
+                                                          <div
+                                                            className="checkbox"
+                                                          >
+                                                            <label
+                                                              title=""
+                                                            >
+                                                              <input
+                                                                disabled={false}
+                                                                onChange={[Function]}
+                                                                type="checkbox"
+                                                              />
+                                                              NCD
+                                                            </label>
+                                                          </div>
+                                                        </Checkbox>
+                                                      </div>
+                                                    </Col>
                                                   </div>
                                                 </Row>
                                               </div>
@@ -571,7 +562,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                       "line-height": "26px",
                                                     },
                                                     "getQuickFilterText": [Function],
-                                                    "headerName": "Id",
+                                                    "headerName": "Identifier",
                                                   },
                                                   Object {
                                                     "field": "name.givenName",
@@ -624,7 +615,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                         "line-height": "26px",
                                                       },
                                                       "getQuickFilterText": [Function],
-                                                      "headerName": "Id",
+                                                      "headerName": "Identifier",
                                                     },
                                                     Object {
                                                       "field": "name.givenName",
@@ -691,7 +682,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                             "line-height": "26px",
                                                           },
                                                           "getQuickFilterText": [Function],
-                                                          "headerName": "Id",
+                                                          "headerName": "Identifier",
                                                         },
                                                         Object {
                                                           "field": "name.givenName",
@@ -823,7 +814,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                               "line-height": "26px",
                                             },
                                             "getQuickFilterText": [Function],
-                                            "headerName": "Id",
+                                            "headerName": "Identifier",
                                           },
                                           Object {
                                             "field": "name.givenName",
@@ -890,7 +881,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                   "line-height": "26px",
                                                 },
                                                 "getQuickFilterText": [Function],
-                                                "headerName": "Id",
+                                                "headerName": "Identifier",
                                               },
                                               Object {
                                                 "field": "name.givenName",
@@ -1000,111 +991,102 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                   <div
                                                     className="row"
                                                   >
-                                                    <FormGroup
-                                                      bsClass="form-group"
-                                                      controlId="gridFilters"
+                                                    <Col
+                                                      bsClass="col"
+                                                      componentClass="div"
+                                                      sm={1}
                                                     >
                                                       <div
-                                                        className="form-group"
+                                                        className="col-sm-1"
                                                       >
-                                                        <Col
-                                                          bsClass="col"
-                                                          componentClass="div"
-                                                          sm={1}
+                                                        <Checkbox
+                                                          bsClass="checkbox"
+                                                          disabled={false}
+                                                          inline={false}
+                                                          onChange={[Function]}
+                                                          title=""
                                                         >
                                                           <div
-                                                            className="col-sm-1"
+                                                            className="checkbox"
                                                           >
-                                                            <Checkbox
-                                                              bsClass="checkbox"
-                                                              disabled={false}
-                                                              inline={false}
-                                                              onChange={[Function]}
+                                                            <label
                                                               title=""
                                                             >
-                                                              <div
-                                                                className="checkbox"
-                                                              >
-                                                                <label
-                                                                  title=""
-                                                                >
-                                                                  <input
-                                                                    disabled={false}
-                                                                    onChange={[Function]}
-                                                                    type="checkbox"
-                                                                  />
-                                                                  ART
-                                                                </label>
-                                                              </div>
-                                                            </Checkbox>
+                                                              <input
+                                                                disabled={false}
+                                                                onChange={[Function]}
+                                                                type="checkbox"
+                                                              />
+                                                              ART
+                                                            </label>
                                                           </div>
-                                                        </Col>
-                                                        <Col
-                                                          bsClass="col"
-                                                          componentClass="div"
-                                                          sm={1}
-                                                        >
-                                                          <div
-                                                            className="col-sm-1"
-                                                          >
-                                                            <Checkbox
-                                                              bsClass="checkbox"
-                                                              disabled={false}
-                                                              inline={false}
-                                                              onChange={[Function]}
-                                                              title=""
-                                                            >
-                                                              <div
-                                                                className="checkbox"
-                                                              >
-                                                                <label
-                                                                  title=""
-                                                                >
-                                                                  <input
-                                                                    disabled={false}
-                                                                    onChange={[Function]}
-                                                                    type="checkbox"
-                                                                  />
-                                                                  EID
-                                                                </label>
-                                                              </div>
-                                                            </Checkbox>
-                                                          </div>
-                                                        </Col>
-                                                        <Col
-                                                          bsClass="col"
-                                                          componentClass="div"
-                                                          sm={1}
-                                                        >
-                                                          <div
-                                                            className="col-sm-1"
-                                                          >
-                                                            <Checkbox
-                                                              bsClass="checkbox"
-                                                              disabled={false}
-                                                              inline={false}
-                                                              onChange={[Function]}
-                                                              title=""
-                                                            >
-                                                              <div
-                                                                className="checkbox"
-                                                              >
-                                                                <label
-                                                                  title=""
-                                                                >
-                                                                  <input
-                                                                    disabled={false}
-                                                                    onChange={[Function]}
-                                                                    type="checkbox"
-                                                                  />
-                                                                  NCD
-                                                                </label>
-                                                              </div>
-                                                            </Checkbox>
-                                                          </div>
-                                                        </Col>
+                                                        </Checkbox>
                                                       </div>
-                                                    </FormGroup>
+                                                    </Col>
+                                                    <Col
+                                                      bsClass="col"
+                                                      componentClass="div"
+                                                      sm={1}
+                                                    >
+                                                      <div
+                                                        className="col-sm-1"
+                                                      >
+                                                        <Checkbox
+                                                          bsClass="checkbox"
+                                                          disabled={false}
+                                                          inline={false}
+                                                          onChange={[Function]}
+                                                          title=""
+                                                        >
+                                                          <div
+                                                            className="checkbox"
+                                                          >
+                                                            <label
+                                                              title=""
+                                                            >
+                                                              <input
+                                                                disabled={false}
+                                                                onChange={[Function]}
+                                                                type="checkbox"
+                                                              />
+                                                              EID
+                                                            </label>
+                                                          </div>
+                                                        </Checkbox>
+                                                      </div>
+                                                    </Col>
+                                                    <Col
+                                                      bsClass="col"
+                                                      componentClass="div"
+                                                      sm={1}
+                                                    >
+                                                      <div
+                                                        className="col-sm-1"
+                                                      >
+                                                        <Checkbox
+                                                          bsClass="checkbox"
+                                                          disabled={false}
+                                                          inline={false}
+                                                          onChange={[Function]}
+                                                          title=""
+                                                        >
+                                                          <div
+                                                            className="checkbox"
+                                                          >
+                                                            <label
+                                                              title=""
+                                                            >
+                                                              <input
+                                                                disabled={false}
+                                                                onChange={[Function]}
+                                                                type="checkbox"
+                                                              />
+                                                              NCD
+                                                            </label>
+                                                          </div>
+                                                        </Checkbox>
+                                                      </div>
+                                                    </Col>
                                                   </div>
                                                 </Row>
                                               </div>
@@ -1124,7 +1106,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                       "line-height": "26px",
                                                     },
                                                     "getQuickFilterText": [Function],
-                                                    "headerName": "Id",
+                                                    "headerName": "Identifier",
                                                   },
                                                   Object {
                                                     "field": "name.givenName",
@@ -1177,7 +1159,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                         "line-height": "26px",
                                                       },
                                                       "getQuickFilterText": [Function],
-                                                      "headerName": "Id",
+                                                      "headerName": "Identifier",
                                                     },
                                                     Object {
                                                       "field": "name.givenName",
@@ -1244,7 +1226,7 @@ exports[`Component: NutritionQueue renders properly 1`] = `
                                                             "line-height": "26px",
                                                           },
                                                           "getQuickFilterText": [Function],
-                                                          "headerName": "Id",
+                                                          "headerName": "Identifier",
                                                         },
                                                         Object {
                                                           "field": "name.givenName",

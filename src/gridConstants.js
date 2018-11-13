@@ -18,7 +18,7 @@ export const PATIENT_IDENTIFIER_FILTERS = [
 export const COLUMN_DEFS = {
   'UUID': { headerName: 'uuid', hide: true, field: 'uuid' },
   'IDENTIFIER': {
-    headerName: 'Id',
+    headerName: 'Identifier',
     autoHeight: true,
     cellStyle: { 'line-height': "26px" },
     cellRenderer: function(params){
