@@ -28,6 +28,18 @@ REACT_APP_SERVER_ADDRESS=http://localhost:8080/
 REACT_APP_SERVER_CONTEXT_PATH=openmrs
 ```
 
+## Setting up Chrome to emulate the tablet
+
+For everyone developing and testing the IC3 screening app, just a reminder that we should be primarily testing for the tablet and not a laptop.
+
+To emulate this in Chrome:
+
+1.       Open Developer Tools
+2.       Click “toggle device” icon on the left of the developer tools toolbar
+3.       On the device dropdown at the top of the browser, click edit to create a custom device
+4.       Click “Add Custom Device” in the panel that opens in the console
+5.       I found that 940 x 585 resolution emulates our tablet almost exactly.  The actual published resolution for the device is 1200x800.  not sure why this renders differently.
+
 ## Debugging on a tablet
 
 Need to set Android to remote debugging using the "magic" steps here:
