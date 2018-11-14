@@ -1,7 +1,7 @@
 
 # Development Enviroment Setup
 
-##
+## Building and starting the PWA
 
 1. Clone this repo locally
 2. npm install
