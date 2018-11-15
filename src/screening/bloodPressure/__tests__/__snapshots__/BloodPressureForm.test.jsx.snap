@@ -36,9 +36,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
             componentClass="div"
             fluid={false}
           >
-            <Section
-              title="Enter Patient Blood Pressure"
-            />
             <Row
               bsClass="row"
               componentClass="div"
@@ -156,7 +153,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
           </Grid>
         }
         formId="bp-form"
-        title="Blood Pressure"
         toastMessage="Blood Pressure Saved"
       >
         <ScreeningForm
@@ -173,9 +169,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
               componentClass="div"
               fluid={false}
             >
-              <Section
-                title="Enter Patient Blood Pressure"
-              />
               <Row
                 bsClass="row"
                 componentClass="div"
@@ -301,7 +294,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
               },
             }
           }
-          title="Blood Pressure"
           toastMessage="Blood Pressure Saved"
         >
           <Connect(EncounterFormPage)
@@ -322,9 +314,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 componentClass="div"
                 fluid={false}
               >
-                <Section
-                  title="Enter Patient Blood Pressure"
-                />
                 <Row
                   bsClass="row"
                   componentClass="div"
@@ -447,7 +436,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                 [Function],
               ]
             }
-            title="Blood Pressure"
             toastMessage="Blood Pressure Saved"
           >
             <EncounterFormPage
@@ -469,9 +457,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   componentClass="div"
                   fluid={false}
                 >
-                  <Section
-                    title="Enter Patient Blood Pressure"
-                  />
                   <Row
                     bsClass="row"
                     componentClass="div"
@@ -602,7 +587,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                   },
                 }
               }
-              title="Blood Pressure"
               toastMessage="Blood Pressure Saved"
             >
               <div
@@ -633,51 +617,6 @@ exports[`Component: BloodPressureForm renders properly 1`] = `
                       }
                     }
                   >
-                    <Row
-                      bsClass="row"
-                      componentClass="div"
-                      style={
-                        Object {
-                          "backgroundColor": "#ffa500b3",
-                        }
-                      }
-                    >
-                      <div
-                        className="row"
-                        style={
-                          Object {
-                            "backgroundColor": "#ffa500b3",
-                          }
-                        }
-                      >
-                        <Col
-                          bsClass="col"
-                          componentClass="div"
-                          md={20}
-                          sm={20}
-                          style={
-                            Object {
-                              "paddingLeft": "20px",
-                            }
-                          }
-                        >
-                          <div
-                            className="col-md-20 col-sm-20"
-                            style={
-                              Object {
-                                "paddingLeft": "20px",
-                              }
-                            }
-                          >
-                            <span>
-                              <h2>
-                                Blood Pressure
-                              </h2>
-                            </span>
-                          </div>
-                        </Col>
-                      </div>
-                    </Row>
                     <Row
                       bsClass="row"
                       componentClass="div"
