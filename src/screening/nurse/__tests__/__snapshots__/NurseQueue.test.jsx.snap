@@ -242,6 +242,7 @@ exports[`Component: NurseQueue renders properly 1`] = `
                           <Col
                             bsClass="col"
                             componentClass="div"
+                            key="0"
                             sm={1}
                           >
                             <div
@@ -274,6 +275,7 @@ exports[`Component: NurseQueue renders properly 1`] = `
                           <Col
                             bsClass="col"
                             componentClass="div"
+                            key="1"
                             sm={1}
                           >
                             <div
@@ -306,6 +308,7 @@ exports[`Component: NurseQueue renders properly 1`] = `
                           <Col
                             bsClass="col"
                             componentClass="div"
+                            key="2"
                             sm={1}
                           >
                             <div
