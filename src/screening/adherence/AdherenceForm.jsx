@@ -7,8 +7,6 @@ import '../../assets/css/tabs.css';
 import { leftTextAlign } from "../../pwaStyles";
 import ScreeningForm from "../ScreeningForm";
 import PatientAlert from "../../patient/PatientAlert";
-import PatientLabTests from "../../patient/PatientLabTests";
-import AdherenceSessions from "./AdherenceSessions";
 
 let AdherenceForm = (props) => {
 
@@ -112,8 +110,7 @@ let AdherenceForm = (props) => {
           </Row>
         </Col>
         <Col sm={4}>
-          <PatientLabTests test_type="Viral Load"/>
-          <AdherenceSessions/>
+
         </Col>
       </Row>
     </Grid>
@@ -125,7 +122,6 @@ let AdherenceForm = (props) => {
       encounterType={ENCOUNTER_TYPES.AdherenceCounselingEncounterType}
       formContent={formContent}
       formId="adherence-form"
-      title="Adherence Counseling"
       toastMessage="Adherence Counseling Saved"
     />
   );

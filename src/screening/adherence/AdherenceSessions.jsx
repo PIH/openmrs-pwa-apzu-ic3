@@ -42,7 +42,6 @@ class AdherenceSessions extends React.Component {
     });
     return (
       <div>
-        <h3><Label>Adherence Counseling</Label></h3>
         { sessions }
       </div>
     );

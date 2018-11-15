@@ -27,7 +27,7 @@ let ScreeningList = props => {
       required: vlFilters.required,
     },
     {
-      title: "Adherence Counseling",
+      title: "Adherence",
       completed: adherenceFilters.completed,
       link: '/screening/adherence/form',
       required: adherenceFilters.required,

@@ -37,12 +37,12 @@ import CheckInComplete from './checkin/CheckInComplete';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import AdherenceQueue from "./screening/adherence/AdherenceQueue";
-import AdherenceForm from "./screening/adherence/AdherenceForm";
+import AdherenceSummaryAndForm from "./screening/adherence/AdherenceSummaryAndForm";
 import HtcQueue from "./screening/htc/HtcQueue";
 import VLQueueTabs from "./screening/vl/VLQueueTabs";
 import VLQueue from "./screening/vl/VLQueue";
 import VLQueueComplete from "./screening/vl/VLQueueComplete";
-import VLForm from "./screening/vl/VLForm";
+import VLSummaryAndForm from "./screening/vl/VLSummaryAndForm";
 import EidQueueTabs from './screening/eid/EidQueueTabs';
 import EidQueue from './screening/eid/EidQueue';
 import EidQueueComplete from './screening/eid/EidQueueComplete';
@@ -132,7 +132,7 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={ AdherenceForm }
+              component={AdherenceSummaryAndForm}
               path="/screening/adherence/form"
               redirectOnLogin="/"
             />
@@ -162,7 +162,7 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={VLForm}
+              component={VLSummaryAndForm}
               path="/screening/vl/form"
               redirectOnLogin="/"
             />
