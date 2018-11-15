@@ -1,27 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Button, Col, Grid, Row} from "react-bootstrap";
-import {Link} from 'react-router-dom';
-import {centerTextAlign, littlePaddingTop, historySection} from "../pwaStyles";
+import {Col, Grid, Row} from "react-bootstrap";
+import {centerTextAlign, historySection} from "../pwaStyles";
 
 const Summary = props => {
 
   return (
-    <Col sm={6} style={historySection}>
+    <Col sm={4} style={historySection}>
       <Grid>
         <Row>
-          <Col style={littlePaddingTop} sm={2}>
-            <Link to={props.backLink}>
-              <Button
-                bsStyle="danger"
-                bsSize="small"
-              >
-                Back to List
-              </Button>
-            </Link>
-          </Col>
           <Col sm={6}>
-            <span style={centerTextAlign}><h1>Summary</h1></span>
+            <span style={centerTextAlign}><h2>Summary</h2></span>
           </Col>
         </Row>
       </Grid>
