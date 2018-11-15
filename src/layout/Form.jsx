@@ -7,8 +7,11 @@ import utils from "../utils";
 const Form = props => {
 
   return (
-    <Col sm={6}>
-      <span style={centerTextAlign}><h1>Today: {utils.formatCalendarDate(new Date())}</h1></span>
+    <Col sm={8}>
+      <div style={centerTextAlign}>
+        <h2>Today</h2>
+        <h6>{utils.formatCalendarDate(new Date())}</h6>
+      </div>
       {React.cloneElement(props.form, { patient: props.patient, backLink: props.backLink })}
     </Col>
   );

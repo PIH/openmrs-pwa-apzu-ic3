@@ -11,21 +11,17 @@ let HtcForm = (props) => {
   const formContent = (
     <Grid>
       <Row>
-        <Col sm={8}>
+        <Col componentClass={ControlLabel}>
+          Results
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={12}>
           <FormGroup controlId="formHtc">
-            <Col
-              componentClass={ControlLabel}
-              sm={2}
-            >
-            Results
-            </Col>
-            <Col sm={8}>
-              <Obs
-                concept={CONCEPTS.HTC_RESULTS.uuid}
-                conceptAnswers={FORM_ANSWERS.htcAnswers}
-                path="htc-results"
-              />
-            </Col>
+            <Obs
+              concept={CONCEPTS.HTC_RESULTS.uuid}
+              conceptAnswers={FORM_ANSWERS.htcAnswers}
+              path="htc-results"/>
           </FormGroup>
         </Col>
       </Row>
