@@ -1,7 +1,4 @@
 import React from "react";
-import { css } from 'react-emotion';
-import { ClipLoader } from 'react-spinners';
-import { Label } from 'react-bootstrap';
 import { connect } from "react-redux";
 import {selectors} from '@openmrs/react-components';
 import {LOCATION_TYPES} from '../constants';
@@ -10,13 +7,6 @@ import {actions as toastrActions} from "react-redux-toastr";
 import CheckInSummary from "./CheckInSummary";
 import ReferralForm from "./ReferralForm";
 import SummaryAndForm from "../layout/SummaryAndForm";
-
-const override = css`
-    display: block;
-    margin: 0 auto;
-    border-color: red;
-    label: 'Retrieving patient info'
-`;
 
 class CheckInPage extends React.Component {
 
@@ -57,22 +47,9 @@ class CheckInPage extends React.Component {
   render() {
     return (
       <div>
-        { this.props.loading === true &&
-        <div className='sweet-loading'>
-          <Label bsStyle="info">Updating Patient Info</Label>
-          <ClipLoader
-            className={override}
-            sizeUnit={"px"}
-            size={50}
-            color={'#F5A623'}
-            loading={this.props.loading}
-          />
-        </div>
-        }
         <SummaryAndForm
           backLink="/checkin/checkInTabs"
           form={<ReferralForm/>}
-
           patient={ this.props.patient }
           summary={<CheckInSummary/>}
           title="Patient Check-In"
@@ -87,7 +64,6 @@ const mapStateToProps = (state) => {
   return {
     patient: storePatient,
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,
-    loading: (storePatient && storePatient.lastVisitDate) ? false : true,
   };
 };
 
