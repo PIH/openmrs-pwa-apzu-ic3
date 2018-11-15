@@ -34,7 +34,7 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
       }
     >
       <div>
-        <ScreeningTabs
+        <Connect(ScreeningTabs)
           dispatch={[Function]}
           filters={
             Object {
@@ -48,254 +48,214 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
               [Function],
             ]
           }
+          tabsId="bp-tabs"
           title="Blood Pressure Queue"
         >
-          <div>
-            <h3>
-              <Label
-                bsClass="label"
-                bsStyle="default"
-              >
-                <span
-                  className="label label-default"
+          <ScreeningTabs
+            dispatch={[Function]}
+            filters={
+              Object {
+                "completed": [Function],
+                "required": [Function],
+              }
+            }
+            rowData={Array []}
+            rowSelectedActionCreators={
+              Array [
+                [Function],
+              ]
+            }
+            tabsId="bp-tabs"
+            title="Blood Pressure Queue"
+          >
+            <div>
+              <h3>
+                <Label
+                  bsClass="label"
+                  bsStyle="default"
                 >
-                  Blood Pressure Queue
-                </span>
-              </Label>
-            </h3>
-            <Uncontrolled(Tabs)
-              className="activeTab"
-              defaultActiveKey="1"
-              id="screening-tabs"
-            >
-              <Tabs
-                activeKey="1"
-                animation={true}
-                bsClass="tab"
-                bsStyle="tabs"
-                className="activeTab"
-                id="screening-tabs"
-                mountOnEnter={false}
-                onSelect={[Function]}
-                unmountOnExit={false}
-              >
-                <TabContainer
-                  activeKey="1"
-                  className="activeTab"
-                  id="screening-tabs"
-                  onSelect={[Function]}
-                >
-                  <div
-                    className="activeTab"
-                    id="screening-tabs"
+                  <span
+                    className="label label-default"
                   >
-                    <Nav
-                      bsClass="nav"
-                      bsStyle="tabs"
-                      justified={false}
-                      pullLeft={false}
-                      pullRight={false}
-                      role="tablist"
-                      stacked={false}
+                    Blood Pressure Queue
+                  </span>
+                </Label>
+              </h3>
+              <Uncontrolled(Tabs)
+                className="activeTab"
+                defaultActiveKey={1}
+                id="bp-tabs"
+                onSelect={[Function]}
+              >
+                <Tabs
+                  activeKey={1}
+                  animation={true}
+                  bsClass="tab"
+                  bsStyle="tabs"
+                  className="activeTab"
+                  id="bp-tabs"
+                  mountOnEnter={false}
+                  onSelect={[Function]}
+                  unmountOnExit={false}
+                >
+                  <TabContainer
+                    activeKey={1}
+                    className="activeTab"
+                    id="bp-tabs"
+                    onSelect={[Function]}
+                  >
+                    <div
+                      className="activeTab"
+                      id="bp-tabs"
                     >
-                      <ul
-                        className="nav nav-tabs"
+                      <Nav
+                        bsClass="nav"
+                        bsStyle="tabs"
+                        justified={false}
+                        pullLeft={false}
+                        pullRight={false}
                         role="tablist"
+                        stacked={false}
                       >
-                        <NavItem
-                          active={true}
-                          activeKey="1"
-                          aria-controls="screening-tabs-pane-1"
-                          disabled={false}
-                          eventKey="1"
-                          id="screening-tabs-tab-1"
-                          key=".$.0"
-                          onKeyDown={[Function]}
-                          onSelect={[Function]}
-                          role="tab"
+                        <ul
+                          className="nav nav-tabs"
+                          role="tablist"
                         >
-                          <li
-                            className="active"
-                            role="presentation"
+                          <NavItem
+                            active={true}
+                            activeKey={1}
+                            aria-controls="bp-tabs-pane-1"
+                            disabled={false}
+                            eventKey={1}
+                            id="bp-tabs-tab-1"
+                            key=".$.0"
+                            onKeyDown={[Function]}
+                            onSelect={[Function]}
+                            role="tab"
                           >
-                            <SafeAnchor
-                              aria-controls="screening-tabs-pane-1"
-                              aria-selected={true}
-                              componentClass="a"
-                              disabled={false}
-                              id="screening-tabs-tab-1"
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
-                              role="tab"
+                            <li
+                              className="active"
+                              role="presentation"
                             >
-                              <a
-                                aria-controls="screening-tabs-pane-1"
+                              <SafeAnchor
+                                aria-controls="bp-tabs-pane-1"
                                 aria-selected={true}
-                                href="#"
-                                id="screening-tabs-tab-1"
+                                componentClass="a"
+                                disabled={false}
+                                id="bp-tabs-tab-1"
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
                                 role="tab"
                               >
-                                in-progress(0)
-                              </a>
-                            </SafeAnchor>
-                          </li>
-                        </NavItem>
-                        <NavItem
-                          active={false}
-                          activeKey="1"
-                          aria-controls="screening-tabs-pane-2"
-                          disabled={false}
-                          eventKey="2"
-                          id="screening-tabs-tab-2"
-                          key=".$.1"
-                          onKeyDown={[Function]}
-                          onSelect={[Function]}
-                          role="tab"
-                          tabIndex={-1}
-                        >
-                          <li
-                            className=""
-                            role="presentation"
+                                <a
+                                  aria-controls="bp-tabs-pane-1"
+                                  aria-selected={true}
+                                  href="#"
+                                  id="bp-tabs-tab-1"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="tab"
+                                >
+                                  in-progress(0)
+                                </a>
+                              </SafeAnchor>
+                            </li>
+                          </NavItem>
+                          <NavItem
+                            active={false}
+                            activeKey={1}
+                            aria-controls="bp-tabs-pane-2"
+                            disabled={false}
+                            eventKey={2}
+                            id="bp-tabs-tab-2"
+                            key=".$.1"
+                            onKeyDown={[Function]}
+                            onSelect={[Function]}
+                            role="tab"
+                            tabIndex={-1}
                           >
-                            <SafeAnchor
-                              aria-controls="screening-tabs-pane-2"
-                              aria-selected={false}
-                              componentClass="a"
-                              disabled={false}
-                              id="screening-tabs-tab-2"
-                              onClick={[Function]}
-                              onKeyDown={[Function]}
-                              role="tab"
-                              tabIndex={-1}
+                            <li
+                              className=""
+                              role="presentation"
                             >
-                              <a
-                                aria-controls="screening-tabs-pane-2"
+                              <SafeAnchor
+                                aria-controls="bp-tabs-pane-2"
                                 aria-selected={false}
-                                href="#"
-                                id="screening-tabs-tab-2"
+                                componentClass="a"
+                                disabled={false}
+                                id="bp-tabs-tab-2"
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
                                 role="tab"
                                 tabIndex={-1}
                               >
-                                completed(0)
-                              </a>
-                            </SafeAnchor>
-                          </li>
-                        </NavItem>
-                      </ul>
-                    </Nav>
-                    <TabContent
-                      animation={true}
-                      bsClass="tab"
-                      componentClass="div"
-                      mountOnEnter={false}
-                      unmountOnExit={false}
-                    >
-                      <div
-                        className="tab-content"
+                                <a
+                                  aria-controls="bp-tabs-pane-2"
+                                  aria-selected={false}
+                                  href="#"
+                                  id="bp-tabs-tab-2"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="tab"
+                                  tabIndex={-1}
+                                >
+                                  completed(0)
+                                </a>
+                              </SafeAnchor>
+                            </li>
+                          </NavItem>
+                        </ul>
+                      </Nav>
+                      <TabContent
+                        animation={true}
+                        bsClass="tab"
+                        componentClass="div"
+                        mountOnEnter={false}
+                        unmountOnExit={false}
                       >
-                        <Tab
-                          eventKey="1"
-                          title="in-progress(0)"
+                        <div
+                          className="tab-content"
                         >
-                          <TabPane
-                            bsClass="tab-pane"
-                            eventKey="1"
+                          <Tab
+                            eventKey={1}
+                            title="in-progress(0)"
                           >
-                            <Fade
-                              appear={false}
-                              in={true}
-                              mountOnEnter={false}
-                              onEnter={[Function]}
-                              onExited={[Function]}
-                              timeout={300}
-                              unmountOnExit={false}
+                            <TabPane
+                              bsClass="tab-pane"
+                              eventKey={1}
                             >
-                              <Transition
+                              <Fade
                                 appear={false}
-                                enter={true}
-                                exit={true}
                                 in={true}
                                 mountOnEnter={false}
                                 onEnter={[Function]}
-                                onEntered={[Function]}
-                                onEntering={[Function]}
-                                onExit={[Function]}
                                 onExited={[Function]}
-                                onExiting={[Function]}
                                 timeout={300}
                                 unmountOnExit={false}
                               >
-                                <div
-                                  aria-hidden={false}
-                                  aria-labelledby="screening-tabs-tab-1"
-                                  className="fade tab-pane active in"
-                                  id="screening-tabs-pane-1"
-                                  role="tabpanel"
+                                <Transition
+                                  appear={false}
+                                  enter={true}
+                                  exit={true}
+                                  in={true}
+                                  mountOnEnter={false}
+                                  onEnter={[Function]}
+                                  onEntered={[Function]}
+                                  onEntering={[Function]}
+                                  onExit={[Function]}
+                                  onExited={[Function]}
+                                  onExiting={[Function]}
+                                  timeout={300}
+                                  unmountOnExit={false}
                                 >
-                                  <Connect(ScreeningQueue)
-                                    dispatch={[Function]}
-                                    filters={
-                                      Array [
-                                        [Function],
-                                        [Function],
-                                      ]
-                                    }
-                                    onRowCount={[Function]}
-                                    rowData={Array []}
-                                    rowSelectedActionCreators={
-                                      Array [
-                                        [Function],
-                                      ]
-                                    }
-                                    title=""
+                                  <div
+                                    aria-hidden={false}
+                                    aria-labelledby="bp-tabs-tab-1"
+                                    className="fade tab-pane active in"
+                                    id="bp-tabs-pane-1"
+                                    role="tabpanel"
                                   >
-                                    <ScreeningQueue
-                                      columnDefs={
-                                        Array [
-                                          Object {
-                                            "field": "uuid",
-                                            "headerName": "uuid",
-                                            "hide": true,
-                                          },
-                                          Object {
-                                            "autoHeight": true,
-                                            "cellRenderer": [Function],
-                                            "cellStyle": Object {
-                                              "line-height": "26px",
-                                            },
-                                            "getQuickFilterText": [Function],
-                                            "headerName": "Identifier",
-                                          },
-                                          Object {
-                                            "field": "name.givenName",
-                                            "headerName": "Given Name",
-                                          },
-                                          Object {
-                                            "field": "name.familyName",
-                                            "headerName": "Family Name",
-                                          },
-                                          Object {
-                                            "field": "gender",
-                                            "headerName": "Gender",
-                                          },
-                                          Object {
-                                            "field": "age",
-                                            "headerName": "Age",
-                                          },
-                                          Object {
-                                            "field": "address.village",
-                                            "headerName": "Village",
-                                          },
-                                          Object {
-                                            "headerName": "Checked-in Time",
-                                            "valueGetter": [Function],
-                                          },
-                                        ]
-                                      }
+                                    <Connect(ScreeningQueue)
                                       dispatch={[Function]}
                                       filters={
                                         Array [
@@ -310,294 +270,301 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                                           [Function],
                                         ]
                                       }
-                                      session={
-                                        Object {
-                                          "sessionLocation": Object {
-                                            "uuid": "abc",
-                                          },
-                                        }
-                                      }
                                       title=""
                                     >
-                                      <div>
-                                        <List
-                                          columnDefs={
-                                            Array [
-                                              Object {
-                                                "field": "uuid",
-                                                "headerName": "uuid",
-                                                "hide": true,
+                                      <ScreeningQueue
+                                        columnDefs={
+                                          Array [
+                                            Object {
+                                              "field": "uuid",
+                                              "headerName": "uuid",
+                                              "hide": true,
+                                            },
+                                            Object {
+                                              "autoHeight": true,
+                                              "cellRenderer": [Function],
+                                              "cellStyle": Object {
+                                                "line-height": "26px",
                                               },
-                                              Object {
-                                                "autoHeight": true,
-                                                "cellRenderer": [Function],
-                                                "cellStyle": Object {
-                                                  "line-height": "26px",
+                                              "getQuickFilterText": [Function],
+                                              "headerName": "Identifier",
+                                            },
+                                            Object {
+                                              "field": "name.givenName",
+                                              "headerName": "Given Name",
+                                            },
+                                            Object {
+                                              "field": "name.familyName",
+                                              "headerName": "Family Name",
+                                            },
+                                            Object {
+                                              "field": "gender",
+                                              "headerName": "Gender",
+                                            },
+                                            Object {
+                                              "field": "age",
+                                              "headerName": "Age",
+                                            },
+                                            Object {
+                                              "field": "address.village",
+                                              "headerName": "Village",
+                                            },
+                                            Object {
+                                              "headerName": "Checked-in Time",
+                                              "valueGetter": [Function],
+                                            },
+                                          ]
+                                        }
+                                        dispatch={[Function]}
+                                        filters={
+                                          Array [
+                                            [Function],
+                                            [Function],
+                                          ]
+                                        }
+                                        onRowCount={[Function]}
+                                        rowData={Array []}
+                                        rowSelectedActionCreators={
+                                          Array [
+                                            [Function],
+                                          ]
+                                        }
+                                        session={
+                                          Object {
+                                            "sessionLocation": Object {
+                                              "uuid": "abc",
+                                            },
+                                          }
+                                        }
+                                        title=""
+                                      >
+                                        <div>
+                                          <List
+                                            columnDefs={
+                                              Array [
+                                                Object {
+                                                  "field": "uuid",
+                                                  "headerName": "uuid",
+                                                  "hide": true,
                                                 },
-                                                "getQuickFilterText": [Function],
-                                                "headerName": "Identifier",
-                                              },
-                                              Object {
-                                                "field": "name.givenName",
-                                                "headerName": "Given Name",
-                                              },
-                                              Object {
-                                                "field": "name.familyName",
-                                                "headerName": "Family Name",
-                                              },
-                                              Object {
-                                                "field": "gender",
-                                                "headerName": "Gender",
-                                              },
-                                              Object {
-                                                "field": "age",
-                                                "headerName": "Age",
-                                              },
-                                              Object {
-                                                "field": "address.village",
-                                                "headerName": "Village",
-                                              },
-                                              Object {
-                                                "headerName": "Checked-in Time",
-                                                "valueGetter": [Function],
-                                              },
-                                            ]
-                                          }
-                                          delayInterval={60000}
-                                          fetchListActionCreator={[Function]}
-                                          filters={
-                                            Array [
-                                              [Function],
-                                              [Function],
-                                              [Function],
-                                            ]
-                                          }
-                                          onMountOtherActionCreators={
-                                            Array [
-                                              [Function],
-                                            ]
-                                          }
-                                          onRowCount={[Function]}
-                                          optionalFilters={
-                                            Array [
-                                              Object {
-                                                "enabled": false,
-                                                "filter": [Function],
-                                                "key": "art",
-                                                "label": "ART",
-                                              },
-                                              Object {
-                                                "enabled": false,
-                                                "filter": [Function],
-                                                "key": "eid",
-                                                "label": "EID",
-                                              },
-                                              Object {
-                                                "enabled": false,
-                                                "filter": [Function],
-                                                "key": "ncd",
-                                                "label": "NCD",
-                                              },
-                                            ]
-                                          }
-                                          rowData={Array []}
-                                          rowSelectedActionCreators={
-                                            Array [
-                                              [Function],
-                                              [Function],
-                                            ]
-                                          }
-                                          title=""
-                                        >
-                                          <div>
-                                            <h3>
-                                              <Label
-                                                bsClass="label"
-                                                bsStyle="default"
-                                              >
-                                                <span
-                                                  className="label label-default hidden"
-                                                />
-                                              </Label>
-                                            </h3>
-                                            <h3>
-                                              <Label
-                                                bsClass="label"
-                                                bsStyle="default"
-                                              >
-                                                <span
-                                                  className="label label-default hidden"
-                                                />
-                                              </Label>
-                                            </h3>
-                                            <Grid
-                                              bsClass="container"
-                                              componentClass="div"
-                                              fluid={false}
-                                            >
-                                              <div
-                                                className="container"
-                                              >
-                                                <Row
-                                                  bsClass="row"
-                                                  componentClass="div"
+                                                Object {
+                                                  "autoHeight": true,
+                                                  "cellRenderer": [Function],
+                                                  "cellStyle": Object {
+                                                    "line-height": "26px",
+                                                  },
+                                                  "getQuickFilterText": [Function],
+                                                  "headerName": "Identifier",
+                                                },
+                                                Object {
+                                                  "field": "name.givenName",
+                                                  "headerName": "Given Name",
+                                                },
+                                                Object {
+                                                  "field": "name.familyName",
+                                                  "headerName": "Family Name",
+                                                },
+                                                Object {
+                                                  "field": "gender",
+                                                  "headerName": "Gender",
+                                                },
+                                                Object {
+                                                  "field": "age",
+                                                  "headerName": "Age",
+                                                },
+                                                Object {
+                                                  "field": "address.village",
+                                                  "headerName": "Village",
+                                                },
+                                                Object {
+                                                  "headerName": "Checked-in Time",
+                                                  "valueGetter": [Function],
+                                                },
+                                              ]
+                                            }
+                                            delayInterval={60000}
+                                            fetchListActionCreator={[Function]}
+                                            filters={
+                                              Array [
+                                                [Function],
+                                                [Function],
+                                                [Function],
+                                              ]
+                                            }
+                                            onMountOtherActionCreators={
+                                              Array [
+                                                [Function],
+                                              ]
+                                            }
+                                            onRowCount={[Function]}
+                                            optionalFilters={
+                                              Array [
+                                                Object {
+                                                  "enabled": false,
+                                                  "filter": [Function],
+                                                  "key": "art",
+                                                  "label": "ART",
+                                                },
+                                                Object {
+                                                  "enabled": false,
+                                                  "filter": [Function],
+                                                  "key": "eid",
+                                                  "label": "EID",
+                                                },
+                                                Object {
+                                                  "enabled": false,
+                                                  "filter": [Function],
+                                                  "key": "ncd",
+                                                  "label": "NCD",
+                                                },
+                                              ]
+                                            }
+                                            rowData={Array []}
+                                            rowSelectedActionCreators={
+                                              Array [
+                                                [Function],
+                                                [Function],
+                                              ]
+                                            }
+                                            title=""
+                                          >
+                                            <div>
+                                              <h3>
+                                                <Label
+                                                  bsClass="label"
+                                                  bsStyle="default"
                                                 >
-                                                  <div
-                                                    className="row"
+                                                  <span
+                                                    className="label label-default hidden"
+                                                  />
+                                                </Label>
+                                              </h3>
+                                              <h3>
+                                                <Label
+                                                  bsClass="label"
+                                                  bsStyle="default"
+                                                >
+                                                  <span
+                                                    className="label label-default hidden"
+                                                  />
+                                                </Label>
+                                              </h3>
+                                              <Grid
+                                                bsClass="container"
+                                                componentClass="div"
+                                                fluid={false}
+                                              >
+                                                <div
+                                                  className="container"
+                                                >
+                                                  <Row
+                                                    bsClass="row"
+                                                    componentClass="div"
                                                   >
-                                                    <Col
-                                                      bsClass="col"
-                                                      componentClass="div"
-                                                      sm={1}
+                                                    <div
+                                                      className="row"
                                                     >
-                                                      <div
-                                                        className="col-sm-1"
+                                                      <Col
+                                                        bsClass="col"
+                                                        componentClass="div"
+                                                        sm={1}
                                                       >
-                                                        <Checkbox
-                                                          bsClass="checkbox"
-                                                          disabled={false}
-                                                          inline={false}
-                                                          onChange={[Function]}
-                                                          title=""
+                                                        <div
+                                                          className="col-sm-1"
                                                         >
-                                                          <div
-                                                            className="checkbox"
+                                                          <Checkbox
+                                                            bsClass="checkbox"
+                                                            disabled={false}
+                                                            inline={false}
+                                                            onChange={[Function]}
+                                                            title=""
                                                           >
-                                                            <label
-                                                              title=""
+                                                            <div
+                                                              className="checkbox"
                                                             >
-                                                              <input
-                                                                disabled={false}
-                                                                onChange={[Function]}
-                                                                type="checkbox"
-                                                              />
-                                                              ART
-                                                            </label>
-                                                          </div>
-                                                        </Checkbox>
-                                                      </div>
-                                                    </Col>
-                                                    <Col
-                                                      bsClass="col"
-                                                      componentClass="div"
-                                                      sm={1}
-                                                    >
-                                                      <div
-                                                        className="col-sm-1"
+                                                              <label
+                                                                title=""
+                                                              >
+                                                                <input
+                                                                  disabled={false}
+                                                                  onChange={[Function]}
+                                                                  type="checkbox"
+                                                                />
+                                                                ART
+                                                              </label>
+                                                            </div>
+                                                          </Checkbox>
+                                                        </div>
+                                                      </Col>
+                                                      <Col
+                                                        bsClass="col"
+                                                        componentClass="div"
+                                                        sm={1}
                                                       >
-                                                        <Checkbox
-                                                          bsClass="checkbox"
-                                                          disabled={false}
-                                                          inline={false}
-                                                          onChange={[Function]}
-                                                          title=""
+                                                        <div
+                                                          className="col-sm-1"
                                                         >
-                                                          <div
-                                                            className="checkbox"
+                                                          <Checkbox
+                                                            bsClass="checkbox"
+                                                            disabled={false}
+                                                            inline={false}
+                                                            onChange={[Function]}
+                                                            title=""
                                                           >
-                                                            <label
-                                                              title=""
+                                                            <div
+                                                              className="checkbox"
                                                             >
-                                                              <input
-                                                                disabled={false}
-                                                                onChange={[Function]}
-                                                                type="checkbox"
-                                                              />
-                                                              EID
-                                                            </label>
-                                                          </div>
-                                                        </Checkbox>
-                                                      </div>
-                                                    </Col>
-                                                    <Col
-                                                      bsClass="col"
-                                                      componentClass="div"
-                                                      sm={1}
-                                                    >
-                                                      <div
-                                                        className="col-sm-1"
+                                                              <label
+                                                                title=""
+                                                              >
+                                                                <input
+                                                                  disabled={false}
+                                                                  onChange={[Function]}
+                                                                  type="checkbox"
+                                                                />
+                                                                EID
+                                                              </label>
+                                                            </div>
+                                                          </Checkbox>
+                                                        </div>
+                                                      </Col>
+                                                      <Col
+                                                        bsClass="col"
+                                                        componentClass="div"
+                                                        sm={1}
                                                       >
-                                                        <Checkbox
-                                                          bsClass="checkbox"
-                                                          disabled={false}
-                                                          inline={false}
-                                                          onChange={[Function]}
-                                                          title=""
+                                                        <div
+                                                          className="col-sm-1"
                                                         >
-                                                          <div
-                                                            className="checkbox"
+                                                          <Checkbox
+                                                            bsClass="checkbox"
+                                                            disabled={false}
+                                                            inline={false}
+                                                            onChange={[Function]}
+                                                            title=""
                                                           >
-                                                            <label
-                                                              title=""
+                                                            <div
+                                                              className="checkbox"
                                                             >
-                                                              <input
-                                                                disabled={false}
-                                                                onChange={[Function]}
-                                                                type="checkbox"
-                                                              />
-                                                              NCD
-                                                            </label>
-                                                          </div>
-                                                        </Checkbox>
-                                                      </div>
-                                                    </Col>
-                                                  </div>
-                                                </Row>
-                                              </div>
-                                            </Grid>
-                                            <Connect(DataGrid)
-                                              columnDefs={
-                                                Array [
-                                                  Object {
-                                                    "field": "uuid",
-                                                    "headerName": "uuid",
-                                                    "hide": true,
-                                                  },
-                                                  Object {
-                                                    "autoHeight": true,
-                                                    "cellRenderer": [Function],
-                                                    "cellStyle": Object {
-                                                      "line-height": "26px",
-                                                    },
-                                                    "getQuickFilterText": [Function],
-                                                    "headerName": "Identifier",
-                                                  },
-                                                  Object {
-                                                    "field": "name.givenName",
-                                                    "headerName": "Given Name",
-                                                  },
-                                                  Object {
-                                                    "field": "name.familyName",
-                                                    "headerName": "Family Name",
-                                                  },
-                                                  Object {
-                                                    "field": "gender",
-                                                    "headerName": "Gender",
-                                                  },
-                                                  Object {
-                                                    "field": "age",
-                                                    "headerName": "Age",
-                                                  },
-                                                  Object {
-                                                    "field": "address.village",
-                                                    "headerName": "Village",
-                                                  },
-                                                  Object {
-                                                    "headerName": "Checked-in Time",
-                                                    "valueGetter": [Function],
-                                                  },
-                                                ]
-                                              }
-                                              onRowCount={[Function]}
-                                              rowData={Array []}
-                                              rowSelectedActionCreators={
-                                                Array [
-                                                  [Function],
-                                                  [Function],
-                                                ]
-                                              }
-                                            >
-                                              <DataGrid
+                                                              <label
+                                                                title=""
+                                                              >
+                                                                <input
+                                                                  disabled={false}
+                                                                  onChange={[Function]}
+                                                                  type="checkbox"
+                                                                />
+                                                                NCD
+                                                              </label>
+                                                            </div>
+                                                          </Checkbox>
+                                                        </div>
+                                                      </Col>
+                                                    </div>
+                                                  </Row>
+                                                </div>
+                                              </Grid>
+                                              <Connect(DataGrid)
                                                 columnDefs={
                                                   Array [
                                                     Object {
@@ -640,7 +607,6 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                                                     },
                                                   ]
                                                 }
-                                                dispatch={[Function]}
                                                 onRowCount={[Function]}
                                                 rowData={Array []}
                                                 rowSelectedActionCreators={
@@ -650,194 +616,189 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                                                   ]
                                                 }
                                               >
-                                                <div
-                                                  className="grid-wrapper"
-                                                  id="omrsGrid"
+                                                <DataGrid
+                                                  columnDefs={
+                                                    Array [
+                                                      Object {
+                                                        "field": "uuid",
+                                                        "headerName": "uuid",
+                                                        "hide": true,
+                                                      },
+                                                      Object {
+                                                        "autoHeight": true,
+                                                        "cellRenderer": [Function],
+                                                        "cellStyle": Object {
+                                                          "line-height": "26px",
+                                                        },
+                                                        "getQuickFilterText": [Function],
+                                                        "headerName": "Identifier",
+                                                      },
+                                                      Object {
+                                                        "field": "name.givenName",
+                                                        "headerName": "Given Name",
+                                                      },
+                                                      Object {
+                                                        "field": "name.familyName",
+                                                        "headerName": "Family Name",
+                                                      },
+                                                      Object {
+                                                        "field": "gender",
+                                                        "headerName": "Gender",
+                                                      },
+                                                      Object {
+                                                        "field": "age",
+                                                        "headerName": "Age",
+                                                      },
+                                                      Object {
+                                                        "field": "address.village",
+                                                        "headerName": "Village",
+                                                      },
+                                                      Object {
+                                                        "headerName": "Checked-in Time",
+                                                        "valueGetter": [Function],
+                                                      },
+                                                    ]
+                                                  }
+                                                  dispatch={[Function]}
+                                                  onRowCount={[Function]}
+                                                  rowData={Array []}
+                                                  rowSelectedActionCreators={
+                                                    Array [
+                                                      [Function],
+                                                      [Function],
+                                                    ]
+                                                  }
                                                 >
-                                                  <label>
-                                                    Search: 
-                                                     
-                                                    <input
-                                                      onChange={[Function]}
-                                                      type="text"
-                                                    />
-                                                  </label>
-                                                  <AgGridReact
-                                                    animateRows={true}
-                                                    columnDefs={
-                                                      Array [
-                                                        Object {
-                                                          "field": "uuid",
-                                                          "headerName": "uuid",
-                                                          "hide": true,
-                                                        },
-                                                        Object {
-                                                          "autoHeight": true,
-                                                          "cellRenderer": [Function],
-                                                          "cellStyle": Object {
-                                                            "line-height": "26px",
-                                                          },
-                                                          "getQuickFilterText": [Function],
-                                                          "headerName": "Identifier",
-                                                        },
-                                                        Object {
-                                                          "field": "name.givenName",
-                                                          "headerName": "Given Name",
-                                                        },
-                                                        Object {
-                                                          "field": "name.familyName",
-                                                          "headerName": "Family Name",
-                                                        },
-                                                        Object {
-                                                          "field": "gender",
-                                                          "headerName": "Gender",
-                                                        },
-                                                        Object {
-                                                          "field": "age",
-                                                          "headerName": "Age",
-                                                        },
-                                                        Object {
-                                                          "field": "address.village",
-                                                          "headerName": "Village",
-                                                        },
-                                                        Object {
-                                                          "headerName": "Checked-in Time",
-                                                          "valueGetter": [Function],
-                                                        },
-                                                      ]
-                                                    }
-                                                    enableFiltering={true}
-                                                    enableSorting={true}
+                                                  <div
+                                                    className="grid-wrapper"
                                                     id="omrsGrid"
-                                                    onFilterChanged={[Function]}
-                                                    onGridReady={[Function]}
-                                                    onGridSizeChanged={[Function]}
-                                                    onRowDataChanged={[Function]}
-                                                    onSelectionChanged={[Function]}
-                                                    rowClassRules="rowClassRules"
-                                                    rowData={Array []}
-                                                    rowSelection="single"
-                                                    style="width: 100%; height: 100%;"
                                                   >
-                                                    <div
-                                                      style={
-                                                        Object {
-                                                          "height": "100%",
-                                                        }
+                                                    <label>
+                                                      Search: 
+                                                       
+                                                      <input
+                                                        onChange={[Function]}
+                                                        type="text"
+                                                      />
+                                                    </label>
+                                                    <AgGridReact
+                                                      animateRows={true}
+                                                      columnDefs={
+                                                        Array [
+                                                          Object {
+                                                            "field": "uuid",
+                                                            "headerName": "uuid",
+                                                            "hide": true,
+                                                          },
+                                                          Object {
+                                                            "autoHeight": true,
+                                                            "cellRenderer": [Function],
+                                                            "cellStyle": Object {
+                                                              "line-height": "26px",
+                                                            },
+                                                            "getQuickFilterText": [Function],
+                                                            "headerName": "Identifier",
+                                                          },
+                                                          Object {
+                                                            "field": "name.givenName",
+                                                            "headerName": "Given Name",
+                                                          },
+                                                          Object {
+                                                            "field": "name.familyName",
+                                                            "headerName": "Family Name",
+                                                          },
+                                                          Object {
+                                                            "field": "gender",
+                                                            "headerName": "Gender",
+                                                          },
+                                                          Object {
+                                                            "field": "age",
+                                                            "headerName": "Age",
+                                                          },
+                                                          Object {
+                                                            "field": "address.village",
+                                                            "headerName": "Village",
+                                                          },
+                                                          Object {
+                                                            "headerName": "Checked-in Time",
+                                                            "valueGetter": [Function],
+                                                          },
+                                                        ]
                                                       }
-                                                    />
-                                                  </AgGridReact>
-                                                </div>
-                                              </DataGrid>
-                                            </Connect(DataGrid)>
-                                          </div>
-                                        </List>
-                                      </div>
-                                    </ScreeningQueue>
-                                  </Connect(ScreeningQueue)>
-                                </div>
-                              </Transition>
-                            </Fade>
-                          </TabPane>
-                        </Tab>
-                        <Tab
-                          eventKey="2"
-                          title="completed(0)"
-                        >
-                          <TabPane
-                            bsClass="tab-pane"
-                            eventKey="2"
+                                                      enableFiltering={true}
+                                                      enableSorting={true}
+                                                      id="omrsGrid"
+                                                      onFilterChanged={[Function]}
+                                                      onGridReady={[Function]}
+                                                      onGridSizeChanged={[Function]}
+                                                      onRowDataChanged={[Function]}
+                                                      onSelectionChanged={[Function]}
+                                                      rowClassRules="rowClassRules"
+                                                      rowData={Array []}
+                                                      rowSelection="single"
+                                                      style="width: 100%; height: 100%;"
+                                                    >
+                                                      <div
+                                                        style={
+                                                          Object {
+                                                            "height": "100%",
+                                                          }
+                                                        }
+                                                      />
+                                                    </AgGridReact>
+                                                  </div>
+                                                </DataGrid>
+                                              </Connect(DataGrid)>
+                                            </div>
+                                          </List>
+                                        </div>
+                                      </ScreeningQueue>
+                                    </Connect(ScreeningQueue)>
+                                  </div>
+                                </Transition>
+                              </Fade>
+                            </TabPane>
+                          </Tab>
+                          <Tab
+                            eventKey={2}
+                            title="completed(0)"
                           >
-                            <Fade
-                              appear={false}
-                              in={false}
-                              mountOnEnter={false}
-                              onEnter={[Function]}
-                              onExited={[Function]}
-                              timeout={300}
-                              unmountOnExit={false}
+                            <TabPane
+                              bsClass="tab-pane"
+                              eventKey={2}
                             >
-                              <Transition
+                              <Fade
                                 appear={false}
-                                enter={true}
-                                exit={true}
                                 in={false}
                                 mountOnEnter={false}
                                 onEnter={[Function]}
-                                onEntered={[Function]}
-                                onEntering={[Function]}
-                                onExit={[Function]}
                                 onExited={[Function]}
-                                onExiting={[Function]}
                                 timeout={300}
                                 unmountOnExit={false}
                               >
-                                <div
-                                  aria-hidden={true}
-                                  aria-labelledby="screening-tabs-tab-2"
-                                  className="fade tab-pane"
-                                  id="screening-tabs-pane-2"
-                                  role="tabpanel"
+                                <Transition
+                                  appear={false}
+                                  enter={true}
+                                  exit={true}
+                                  in={false}
+                                  mountOnEnter={false}
+                                  onEnter={[Function]}
+                                  onEntered={[Function]}
+                                  onEntering={[Function]}
+                                  onExit={[Function]}
+                                  onExited={[Function]}
+                                  onExiting={[Function]}
+                                  timeout={300}
+                                  unmountOnExit={false}
                                 >
-                                  <Connect(ScreeningQueue)
-                                    dispatch={[Function]}
-                                    filters={
-                                      Array [
-                                        [Function],
-                                      ]
-                                    }
-                                    onRowCount={[Function]}
-                                    rowData={Array []}
-                                    rowSelectedActionCreators={
-                                      Array [
-                                        [Function],
-                                      ]
-                                    }
-                                    title=""
+                                  <div
+                                    aria-hidden={true}
+                                    aria-labelledby="bp-tabs-tab-2"
+                                    className="fade tab-pane"
+                                    id="bp-tabs-pane-2"
+                                    role="tabpanel"
                                   >
-                                    <ScreeningQueue
-                                      columnDefs={
-                                        Array [
-                                          Object {
-                                            "field": "uuid",
-                                            "headerName": "uuid",
-                                            "hide": true,
-                                          },
-                                          Object {
-                                            "autoHeight": true,
-                                            "cellRenderer": [Function],
-                                            "cellStyle": Object {
-                                              "line-height": "26px",
-                                            },
-                                            "getQuickFilterText": [Function],
-                                            "headerName": "Identifier",
-                                          },
-                                          Object {
-                                            "field": "name.givenName",
-                                            "headerName": "Given Name",
-                                          },
-                                          Object {
-                                            "field": "name.familyName",
-                                            "headerName": "Family Name",
-                                          },
-                                          Object {
-                                            "field": "gender",
-                                            "headerName": "Gender",
-                                          },
-                                          Object {
-                                            "field": "age",
-                                            "headerName": "Age",
-                                          },
-                                          Object {
-                                            "field": "address.village",
-                                            "headerName": "Village",
-                                          },
-                                          Object {
-                                            "headerName": "Checked-in Time",
-                                            "valueGetter": [Function],
-                                          },
-                                        ]
-                                      }
+                                    <Connect(ScreeningQueue)
                                       dispatch={[Function]}
                                       filters={
                                         Array [
@@ -851,293 +812,299 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                                           [Function],
                                         ]
                                       }
-                                      session={
-                                        Object {
-                                          "sessionLocation": Object {
-                                            "uuid": "abc",
-                                          },
-                                        }
-                                      }
                                       title=""
                                     >
-                                      <div>
-                                        <List
-                                          columnDefs={
-                                            Array [
-                                              Object {
-                                                "field": "uuid",
-                                                "headerName": "uuid",
-                                                "hide": true,
+                                      <ScreeningQueue
+                                        columnDefs={
+                                          Array [
+                                            Object {
+                                              "field": "uuid",
+                                              "headerName": "uuid",
+                                              "hide": true,
+                                            },
+                                            Object {
+                                              "autoHeight": true,
+                                              "cellRenderer": [Function],
+                                              "cellStyle": Object {
+                                                "line-height": "26px",
                                               },
-                                              Object {
-                                                "autoHeight": true,
-                                                "cellRenderer": [Function],
-                                                "cellStyle": Object {
-                                                  "line-height": "26px",
+                                              "getQuickFilterText": [Function],
+                                              "headerName": "Identifier",
+                                            },
+                                            Object {
+                                              "field": "name.givenName",
+                                              "headerName": "Given Name",
+                                            },
+                                            Object {
+                                              "field": "name.familyName",
+                                              "headerName": "Family Name",
+                                            },
+                                            Object {
+                                              "field": "gender",
+                                              "headerName": "Gender",
+                                            },
+                                            Object {
+                                              "field": "age",
+                                              "headerName": "Age",
+                                            },
+                                            Object {
+                                              "field": "address.village",
+                                              "headerName": "Village",
+                                            },
+                                            Object {
+                                              "headerName": "Checked-in Time",
+                                              "valueGetter": [Function],
+                                            },
+                                          ]
+                                        }
+                                        dispatch={[Function]}
+                                        filters={
+                                          Array [
+                                            [Function],
+                                          ]
+                                        }
+                                        onRowCount={[Function]}
+                                        rowData={Array []}
+                                        rowSelectedActionCreators={
+                                          Array [
+                                            [Function],
+                                          ]
+                                        }
+                                        session={
+                                          Object {
+                                            "sessionLocation": Object {
+                                              "uuid": "abc",
+                                            },
+                                          }
+                                        }
+                                        title=""
+                                      >
+                                        <div>
+                                          <List
+                                            columnDefs={
+                                              Array [
+                                                Object {
+                                                  "field": "uuid",
+                                                  "headerName": "uuid",
+                                                  "hide": true,
                                                 },
-                                                "getQuickFilterText": [Function],
-                                                "headerName": "Identifier",
-                                              },
-                                              Object {
-                                                "field": "name.givenName",
-                                                "headerName": "Given Name",
-                                              },
-                                              Object {
-                                                "field": "name.familyName",
-                                                "headerName": "Family Name",
-                                              },
-                                              Object {
-                                                "field": "gender",
-                                                "headerName": "Gender",
-                                              },
-                                              Object {
-                                                "field": "age",
-                                                "headerName": "Age",
-                                              },
-                                              Object {
-                                                "field": "address.village",
-                                                "headerName": "Village",
-                                              },
-                                              Object {
-                                                "headerName": "Checked-in Time",
-                                                "valueGetter": [Function],
-                                              },
-                                            ]
-                                          }
-                                          delayInterval={60000}
-                                          fetchListActionCreator={[Function]}
-                                          filters={
-                                            Array [
-                                              [Function],
-                                              [Function],
-                                            ]
-                                          }
-                                          onMountOtherActionCreators={
-                                            Array [
-                                              [Function],
-                                            ]
-                                          }
-                                          onRowCount={[Function]}
-                                          optionalFilters={
-                                            Array [
-                                              Object {
-                                                "enabled": false,
-                                                "filter": [Function],
-                                                "key": "art",
-                                                "label": "ART",
-                                              },
-                                              Object {
-                                                "enabled": false,
-                                                "filter": [Function],
-                                                "key": "eid",
-                                                "label": "EID",
-                                              },
-                                              Object {
-                                                "enabled": false,
-                                                "filter": [Function],
-                                                "key": "ncd",
-                                                "label": "NCD",
-                                              },
-                                            ]
-                                          }
-                                          rowData={Array []}
-                                          rowSelectedActionCreators={
-                                            Array [
-                                              [Function],
-                                              [Function],
-                                            ]
-                                          }
-                                          title=""
-                                        >
-                                          <div>
-                                            <h3>
-                                              <Label
-                                                bsClass="label"
-                                                bsStyle="default"
-                                              >
-                                                <span
-                                                  className="label label-default hidden"
-                                                />
-                                              </Label>
-                                            </h3>
-                                            <h3>
-                                              <Label
-                                                bsClass="label"
-                                                bsStyle="default"
-                                              >
-                                                <span
-                                                  className="label label-default hidden"
-                                                />
-                                              </Label>
-                                            </h3>
-                                            <Grid
-                                              bsClass="container"
-                                              componentClass="div"
-                                              fluid={false}
-                                            >
-                                              <div
-                                                className="container"
-                                              >
-                                                <Row
-                                                  bsClass="row"
-                                                  componentClass="div"
+                                                Object {
+                                                  "autoHeight": true,
+                                                  "cellRenderer": [Function],
+                                                  "cellStyle": Object {
+                                                    "line-height": "26px",
+                                                  },
+                                                  "getQuickFilterText": [Function],
+                                                  "headerName": "Identifier",
+                                                },
+                                                Object {
+                                                  "field": "name.givenName",
+                                                  "headerName": "Given Name",
+                                                },
+                                                Object {
+                                                  "field": "name.familyName",
+                                                  "headerName": "Family Name",
+                                                },
+                                                Object {
+                                                  "field": "gender",
+                                                  "headerName": "Gender",
+                                                },
+                                                Object {
+                                                  "field": "age",
+                                                  "headerName": "Age",
+                                                },
+                                                Object {
+                                                  "field": "address.village",
+                                                  "headerName": "Village",
+                                                },
+                                                Object {
+                                                  "headerName": "Checked-in Time",
+                                                  "valueGetter": [Function],
+                                                },
+                                              ]
+                                            }
+                                            delayInterval={60000}
+                                            fetchListActionCreator={[Function]}
+                                            filters={
+                                              Array [
+                                                [Function],
+                                                [Function],
+                                              ]
+                                            }
+                                            onMountOtherActionCreators={
+                                              Array [
+                                                [Function],
+                                              ]
+                                            }
+                                            onRowCount={[Function]}
+                                            optionalFilters={
+                                              Array [
+                                                Object {
+                                                  "enabled": false,
+                                                  "filter": [Function],
+                                                  "key": "art",
+                                                  "label": "ART",
+                                                },
+                                                Object {
+                                                  "enabled": false,
+                                                  "filter": [Function],
+                                                  "key": "eid",
+                                                  "label": "EID",
+                                                },
+                                                Object {
+                                                  "enabled": false,
+                                                  "filter": [Function],
+                                                  "key": "ncd",
+                                                  "label": "NCD",
+                                                },
+                                              ]
+                                            }
+                                            rowData={Array []}
+                                            rowSelectedActionCreators={
+                                              Array [
+                                                [Function],
+                                                [Function],
+                                              ]
+                                            }
+                                            title=""
+                                          >
+                                            <div>
+                                              <h3>
+                                                <Label
+                                                  bsClass="label"
+                                                  bsStyle="default"
                                                 >
-                                                  <div
-                                                    className="row"
+                                                  <span
+                                                    className="label label-default hidden"
+                                                  />
+                                                </Label>
+                                              </h3>
+                                              <h3>
+                                                <Label
+                                                  bsClass="label"
+                                                  bsStyle="default"
+                                                >
+                                                  <span
+                                                    className="label label-default hidden"
+                                                  />
+                                                </Label>
+                                              </h3>
+                                              <Grid
+                                                bsClass="container"
+                                                componentClass="div"
+                                                fluid={false}
+                                              >
+                                                <div
+                                                  className="container"
+                                                >
+                                                  <Row
+                                                    bsClass="row"
+                                                    componentClass="div"
                                                   >
-                                                    <Col
-                                                      bsClass="col"
-                                                      componentClass="div"
-                                                      sm={1}
+                                                    <div
+                                                      className="row"
                                                     >
-                                                      <div
-                                                        className="col-sm-1"
+                                                      <Col
+                                                        bsClass="col"
+                                                        componentClass="div"
+                                                        sm={1}
                                                       >
-                                                        <Checkbox
-                                                          bsClass="checkbox"
-                                                          disabled={false}
-                                                          inline={false}
-                                                          onChange={[Function]}
-                                                          title=""
+                                                        <div
+                                                          className="col-sm-1"
                                                         >
-                                                          <div
-                                                            className="checkbox"
+                                                          <Checkbox
+                                                            bsClass="checkbox"
+                                                            disabled={false}
+                                                            inline={false}
+                                                            onChange={[Function]}
+                                                            title=""
                                                           >
-                                                            <label
-                                                              title=""
+                                                            <div
+                                                              className="checkbox"
                                                             >
-                                                              <input
-                                                                disabled={false}
-                                                                onChange={[Function]}
-                                                                type="checkbox"
-                                                              />
-                                                              ART
-                                                            </label>
-                                                          </div>
-                                                        </Checkbox>
-                                                      </div>
-                                                    </Col>
-                                                    <Col
-                                                      bsClass="col"
-                                                      componentClass="div"
-                                                      sm={1}
-                                                    >
-                                                      <div
-                                                        className="col-sm-1"
+                                                              <label
+                                                                title=""
+                                                              >
+                                                                <input
+                                                                  disabled={false}
+                                                                  onChange={[Function]}
+                                                                  type="checkbox"
+                                                                />
+                                                                ART
+                                                              </label>
+                                                            </div>
+                                                          </Checkbox>
+                                                        </div>
+                                                      </Col>
+                                                      <Col
+                                                        bsClass="col"
+                                                        componentClass="div"
+                                                        sm={1}
                                                       >
-                                                        <Checkbox
-                                                          bsClass="checkbox"
-                                                          disabled={false}
-                                                          inline={false}
-                                                          onChange={[Function]}
-                                                          title=""
+                                                        <div
+                                                          className="col-sm-1"
                                                         >
-                                                          <div
-                                                            className="checkbox"
+                                                          <Checkbox
+                                                            bsClass="checkbox"
+                                                            disabled={false}
+                                                            inline={false}
+                                                            onChange={[Function]}
+                                                            title=""
                                                           >
-                                                            <label
-                                                              title=""
+                                                            <div
+                                                              className="checkbox"
                                                             >
-                                                              <input
-                                                                disabled={false}
-                                                                onChange={[Function]}
-                                                                type="checkbox"
-                                                              />
-                                                              EID
-                                                            </label>
-                                                          </div>
-                                                        </Checkbox>
-                                                      </div>
-                                                    </Col>
-                                                    <Col
-                                                      bsClass="col"
-                                                      componentClass="div"
-                                                      sm={1}
-                                                    >
-                                                      <div
-                                                        className="col-sm-1"
+                                                              <label
+                                                                title=""
+                                                              >
+                                                                <input
+                                                                  disabled={false}
+                                                                  onChange={[Function]}
+                                                                  type="checkbox"
+                                                                />
+                                                                EID
+                                                              </label>
+                                                            </div>
+                                                          </Checkbox>
+                                                        </div>
+                                                      </Col>
+                                                      <Col
+                                                        bsClass="col"
+                                                        componentClass="div"
+                                                        sm={1}
                                                       >
-                                                        <Checkbox
-                                                          bsClass="checkbox"
-                                                          disabled={false}
-                                                          inline={false}
-                                                          onChange={[Function]}
-                                                          title=""
+                                                        <div
+                                                          className="col-sm-1"
                                                         >
-                                                          <div
-                                                            className="checkbox"
+                                                          <Checkbox
+                                                            bsClass="checkbox"
+                                                            disabled={false}
+                                                            inline={false}
+                                                            onChange={[Function]}
+                                                            title=""
                                                           >
-                                                            <label
-                                                              title=""
+                                                            <div
+                                                              className="checkbox"
                                                             >
-                                                              <input
-                                                                disabled={false}
-                                                                onChange={[Function]}
-                                                                type="checkbox"
-                                                              />
-                                                              NCD
-                                                            </label>
-                                                          </div>
-                                                        </Checkbox>
-                                                      </div>
-                                                    </Col>
-                                                  </div>
-                                                </Row>
-                                              </div>
-                                            </Grid>
-                                            <Connect(DataGrid)
-                                              columnDefs={
-                                                Array [
-                                                  Object {
-                                                    "field": "uuid",
-                                                    "headerName": "uuid",
-                                                    "hide": true,
-                                                  },
-                                                  Object {
-                                                    "autoHeight": true,
-                                                    "cellRenderer": [Function],
-                                                    "cellStyle": Object {
-                                                      "line-height": "26px",
-                                                    },
-                                                    "getQuickFilterText": [Function],
-                                                    "headerName": "Identifier",
-                                                  },
-                                                  Object {
-                                                    "field": "name.givenName",
-                                                    "headerName": "Given Name",
-                                                  },
-                                                  Object {
-                                                    "field": "name.familyName",
-                                                    "headerName": "Family Name",
-                                                  },
-                                                  Object {
-                                                    "field": "gender",
-                                                    "headerName": "Gender",
-                                                  },
-                                                  Object {
-                                                    "field": "age",
-                                                    "headerName": "Age",
-                                                  },
-                                                  Object {
-                                                    "field": "address.village",
-                                                    "headerName": "Village",
-                                                  },
-                                                  Object {
-                                                    "headerName": "Checked-in Time",
-                                                    "valueGetter": [Function],
-                                                  },
-                                                ]
-                                              }
-                                              onRowCount={[Function]}
-                                              rowData={Array []}
-                                              rowSelectedActionCreators={
-                                                Array [
-                                                  [Function],
-                                                  [Function],
-                                                ]
-                                              }
-                                            >
-                                              <DataGrid
+                                                              <label
+                                                                title=""
+                                                              >
+                                                                <input
+                                                                  disabled={false}
+                                                                  onChange={[Function]}
+                                                                  type="checkbox"
+                                                                />
+                                                                NCD
+                                                              </label>
+                                                            </div>
+                                                          </Checkbox>
+                                                        </div>
+                                                      </Col>
+                                                    </div>
+                                                  </Row>
+                                                </div>
+                                              </Grid>
+                                              <Connect(DataGrid)
                                                 columnDefs={
                                                   Array [
                                                     Object {
@@ -1180,7 +1147,6 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                                                     },
                                                   ]
                                                 }
-                                                dispatch={[Function]}
                                                 onRowCount={[Function]}
                                                 rowData={Array []}
                                                 rowSelectedActionCreators={
@@ -1190,104 +1156,158 @@ exports[`Component: BloodPressureQueue renders properly 1`] = `
                                                   ]
                                                 }
                                               >
-                                                <div
-                                                  className="grid-wrapper"
-                                                  id="omrsGrid"
+                                                <DataGrid
+                                                  columnDefs={
+                                                    Array [
+                                                      Object {
+                                                        "field": "uuid",
+                                                        "headerName": "uuid",
+                                                        "hide": true,
+                                                      },
+                                                      Object {
+                                                        "autoHeight": true,
+                                                        "cellRenderer": [Function],
+                                                        "cellStyle": Object {
+                                                          "line-height": "26px",
+                                                        },
+                                                        "getQuickFilterText": [Function],
+                                                        "headerName": "Identifier",
+                                                      },
+                                                      Object {
+                                                        "field": "name.givenName",
+                                                        "headerName": "Given Name",
+                                                      },
+                                                      Object {
+                                                        "field": "name.familyName",
+                                                        "headerName": "Family Name",
+                                                      },
+                                                      Object {
+                                                        "field": "gender",
+                                                        "headerName": "Gender",
+                                                      },
+                                                      Object {
+                                                        "field": "age",
+                                                        "headerName": "Age",
+                                                      },
+                                                      Object {
+                                                        "field": "address.village",
+                                                        "headerName": "Village",
+                                                      },
+                                                      Object {
+                                                        "headerName": "Checked-in Time",
+                                                        "valueGetter": [Function],
+                                                      },
+                                                    ]
+                                                  }
+                                                  dispatch={[Function]}
+                                                  onRowCount={[Function]}
+                                                  rowData={Array []}
+                                                  rowSelectedActionCreators={
+                                                    Array [
+                                                      [Function],
+                                                      [Function],
+                                                    ]
+                                                  }
                                                 >
-                                                  <label>
-                                                    Search: 
-                                                     
-                                                    <input
-                                                      onChange={[Function]}
-                                                      type="text"
-                                                    />
-                                                  </label>
-                                                  <AgGridReact
-                                                    animateRows={true}
-                                                    columnDefs={
-                                                      Array [
-                                                        Object {
-                                                          "field": "uuid",
-                                                          "headerName": "uuid",
-                                                          "hide": true,
-                                                        },
-                                                        Object {
-                                                          "autoHeight": true,
-                                                          "cellRenderer": [Function],
-                                                          "cellStyle": Object {
-                                                            "line-height": "26px",
-                                                          },
-                                                          "getQuickFilterText": [Function],
-                                                          "headerName": "Identifier",
-                                                        },
-                                                        Object {
-                                                          "field": "name.givenName",
-                                                          "headerName": "Given Name",
-                                                        },
-                                                        Object {
-                                                          "field": "name.familyName",
-                                                          "headerName": "Family Name",
-                                                        },
-                                                        Object {
-                                                          "field": "gender",
-                                                          "headerName": "Gender",
-                                                        },
-                                                        Object {
-                                                          "field": "age",
-                                                          "headerName": "Age",
-                                                        },
-                                                        Object {
-                                                          "field": "address.village",
-                                                          "headerName": "Village",
-                                                        },
-                                                        Object {
-                                                          "headerName": "Checked-in Time",
-                                                          "valueGetter": [Function],
-                                                        },
-                                                      ]
-                                                    }
-                                                    enableFiltering={true}
-                                                    enableSorting={true}
+                                                  <div
+                                                    className="grid-wrapper"
                                                     id="omrsGrid"
-                                                    onFilterChanged={[Function]}
-                                                    onGridReady={[Function]}
-                                                    onGridSizeChanged={[Function]}
-                                                    onRowDataChanged={[Function]}
-                                                    onSelectionChanged={[Function]}
-                                                    rowClassRules="rowClassRules"
-                                                    rowData={Array []}
-                                                    rowSelection="single"
-                                                    style="width: 100%; height: 100%;"
                                                   >
-                                                    <div
-                                                      style={
-                                                        Object {
-                                                          "height": "100%",
-                                                        }
+                                                    <label>
+                                                      Search: 
+                                                       
+                                                      <input
+                                                        onChange={[Function]}
+                                                        type="text"
+                                                      />
+                                                    </label>
+                                                    <AgGridReact
+                                                      animateRows={true}
+                                                      columnDefs={
+                                                        Array [
+                                                          Object {
+                                                            "field": "uuid",
+                                                            "headerName": "uuid",
+                                                            "hide": true,
+                                                          },
+                                                          Object {
+                                                            "autoHeight": true,
+                                                            "cellRenderer": [Function],
+                                                            "cellStyle": Object {
+                                                              "line-height": "26px",
+                                                            },
+                                                            "getQuickFilterText": [Function],
+                                                            "headerName": "Identifier",
+                                                          },
+                                                          Object {
+                                                            "field": "name.givenName",
+                                                            "headerName": "Given Name",
+                                                          },
+                                                          Object {
+                                                            "field": "name.familyName",
+                                                            "headerName": "Family Name",
+                                                          },
+                                                          Object {
+                                                            "field": "gender",
+                                                            "headerName": "Gender",
+                                                          },
+                                                          Object {
+                                                            "field": "age",
+                                                            "headerName": "Age",
+                                                          },
+                                                          Object {
+                                                            "field": "address.village",
+                                                            "headerName": "Village",
+                                                          },
+                                                          Object {
+                                                            "headerName": "Checked-in Time",
+                                                            "valueGetter": [Function],
+                                                          },
+                                                        ]
                                                       }
-                                                    />
-                                                  </AgGridReact>
-                                                </div>
-                                              </DataGrid>
-                                            </Connect(DataGrid)>
-                                          </div>
-                                        </List>
-                                      </div>
-                                    </ScreeningQueue>
-                                  </Connect(ScreeningQueue)>
-                                </div>
-                              </Transition>
-                            </Fade>
-                          </TabPane>
-                        </Tab>
-                      </div>
-                    </TabContent>
-                  </div>
-                </TabContainer>
-              </Tabs>
-            </Uncontrolled(Tabs)>
-          </div>
-        </ScreeningTabs>
+                                                      enableFiltering={true}
+                                                      enableSorting={true}
+                                                      id="omrsGrid"
+                                                      onFilterChanged={[Function]}
+                                                      onGridReady={[Function]}
+                                                      onGridSizeChanged={[Function]}
+                                                      onRowDataChanged={[Function]}
+                                                      onSelectionChanged={[Function]}
+                                                      rowClassRules="rowClassRules"
+                                                      rowData={Array []}
+                                                      rowSelection="single"
+                                                      style="width: 100%; height: 100%;"
+                                                    >
+                                                      <div
+                                                        style={
+                                                          Object {
+                                                            "height": "100%",
+                                                          }
+                                                        }
+                                                      />
+                                                    </AgGridReact>
+                                                  </div>
+                                                </DataGrid>
+                                              </Connect(DataGrid)>
+                                            </div>
+                                          </List>
+                                        </div>
+                                      </ScreeningQueue>
+                                    </Connect(ScreeningQueue)>
+                                  </div>
+                                </Transition>
+                              </Fade>
+                            </TabPane>
+                          </Tab>
+                        </div>
+                      </TabContent>
+                    </div>
+                  </TabContainer>
+                </Tabs>
+              </Uncontrolled(Tabs)>
+            </div>
+          </ScreeningTabs>
+        </Connect(ScreeningTabs)>
       </div>
     </BloodPressureQueue>
   </Connect(BloodPressureQueue)>

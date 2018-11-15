@@ -28,6 +28,7 @@ let HtcQueue = props => {
         filters={ htcFilters }
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={ rowSelectedActionCreators }
+        tabsId="htc-tabs"
         title="HTC Queue"
       />
     </div>

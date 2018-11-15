@@ -20,6 +20,7 @@ let NutritionQueue = props => {
         filters={ nutritionFilters }
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={ rowSelectedActionCreators }
+        tabsId="nutrition-tabs"
         title="Nutrition Queue"
       />
     </div>

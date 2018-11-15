@@ -21,6 +21,7 @@ let BloodPressureQueue = props => {
         filters={ bloodPressureFilters }
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={ rowSelectedActionCreators }
+        tabsId="bp-tabs"
         title="Blood Pressure Queue"
       />
     </div>
