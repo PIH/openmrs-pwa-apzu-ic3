@@ -39,8 +39,6 @@ import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import AdherenceQueue from "./screening/adherence/AdherenceQueue";
 import AdherenceForm from "./screening/adherence/AdherenceForm";
 import HtcQueue from "./screening/htc/HtcQueue";
-import HtcPage from "./screening/htc/HtcPage";
-import HtcForm from "./screening/htc/HtcForm";
 import VLQueueTabs from "./screening/vl/VLQueueTabs";
 import VLQueue from "./screening/vl/VLQueue";
 import VLQueueComplete from "./screening/vl/VLQueueComplete";
@@ -56,6 +54,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import BloodPressureSummaryAndForm from "./screening/bloodPressure/BloodPressureSummaryAndForm";
 import NutritionSummaryAndForm from "./screening/nutrition/NutritionSummaryAndForm";
+import HtcSummaryAndForm from "./screening/htc/HtcSummaryAndForm";
 
 const { store, persistor } = setupStoreAndPersistor();
 
@@ -143,12 +142,7 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={HtcPage}
-              path="/screening/htc/page"
-              redirectOnLogin="/"
-            />
-            <Layout
-              component={HtcForm}
+              component={HtcSummaryAndForm}
               path="/screening/htc/form"
               redirectOnLogin="/"
             />

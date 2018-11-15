@@ -10,7 +10,7 @@ import { BASIC_GRID, COLUMN_DEFS } from "../../gridConstants";
 let HtcQueue = props => {
 
   const rowSelectedActionCreators = [
-    () => push('/screening/htc/page')
+    () => push('/screening/htc/form')
   ];
 
   const columnDefs = [
