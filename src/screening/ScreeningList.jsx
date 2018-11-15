@@ -100,7 +100,7 @@ let ScreeningList = props => {
   const SCREENINGS = [
     {
       key: 1,
-      title: <h3>IC3 Screening</h3>,
+      title: "IC3 Screening",
       tasks: CHECK_IN_SCREENING
     },
     {
