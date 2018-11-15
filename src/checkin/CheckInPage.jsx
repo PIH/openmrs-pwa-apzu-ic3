@@ -4,11 +4,12 @@ import { ClipLoader } from 'react-spinners';
 import { Label } from 'react-bootstrap';
 import { connect } from "react-redux";
 import {selectors} from '@openmrs/react-components';
-import CheckinForm from './CheckInForm';
-import checkInActions from './checkInActions';
-import {ENCOUNTER_TYPES, VISIT_TYPES, LOCATION_TYPES, CONCEPTS} from '../constants';
+import {LOCATION_TYPES} from '../constants';
 import { push } from "connected-react-router";
 import {actions as toastrActions} from "react-redux-toastr";
+import CheckInSummary from "./CheckInSummary";
+import ReferralForm from "./ReferralForm";
+import SummaryAndForm from "../layout/SummaryAndForm";
 
 const override = css`
     display: block;
@@ -35,22 +36,23 @@ class CheckInPage extends React.Component {
     }));
   }
 
-  handleCheckIn(values) {
-    let referralObs = [];
-    if ( values !== null && (typeof values.referral !== 'undefined') && (values.referral.length > 0) ) {
-      referralObs.push({ concept: CONCEPTS.SOURCE_OF_REFERRAL.uuid, value: values.referral });
+  // TODO: this didn't appear to be doing anything?
+  /* handleCheckIn(values) {
+     let referralObs = [];
+     if ( values !== null && (typeof values.referral !== 'undefined') && (values.referral.length > 0) ) {
+       referralObs.push({ concept: CONCEPTS.SOURCE_OF_REFERRAL.uuid, value: values.referral });
 
-    }
-    this.props.dispatch(
-      checkInActions.checkInSubmitted(
-        this.props.patient,
-        VISIT_TYPES.ClinicVisitType,
-        ENCOUNTER_TYPES.CheckInEncounterType,
-        referralObs,
-        this.props.location,
-        this.formSubmittedActionCreators
-      ));
-  }
+     }
+     this.props.dispatch(
+       checkInActions.checkInSubmitted(
+         this.props.patient,
+         VISIT_TYPES.ClinicVisitType,
+         ENCOUNTER_TYPES.CheckInEncounterType,
+         referralObs,
+         this.props.location,
+         this.formSubmittedActionCreators
+       ));
+   }*/
 
   render() {
     return (
@@ -67,10 +69,13 @@ class CheckInPage extends React.Component {
           />
         </div>
         }
-        <CheckinForm
+        <SummaryAndForm
+          backLink="/checkin/checkInTabs"
+          form={<ReferralForm/>}
+
           patient={ this.props.patient }
-          backLink={ "/checkin/checkInTabs" }
-          onSubmit={ this.handleCheckIn.bind(this) }
+          summary={<CheckInSummary/>}
+          title="Patient Check-In"
         />
       </div>
     );

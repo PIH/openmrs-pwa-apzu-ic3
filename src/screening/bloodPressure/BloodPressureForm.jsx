@@ -26,7 +26,6 @@ let BloodPressureForm = props => {
 
   const formContent = (
     <Grid>
-      <Section title="Enter Patient Blood Pressure"></Section>
       <Row>
         <Col sm={20} md={20} style={ colHeight }>
           <span><h1>{ '' }</h1></span>
@@ -79,7 +78,6 @@ let BloodPressureForm = props => {
       backLink="/screening/bloodPressure/queue"
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       formContent={formContent}
-      title="Blood Pressure"
       toastMessage="Blood Pressure Saved"
       formId="bp-form"
     />
