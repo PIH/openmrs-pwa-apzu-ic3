@@ -217,7 +217,6 @@ exports[`Component: NutritionForm renders properly 1`] = `
           }
           formId="nutrition-form"
           formInstanceId="nutrition-form"
-          title="Nutrition"
           toastMessage="Nutrition Saved"
         >
           <ScreeningForm
@@ -403,7 +402,6 @@ exports[`Component: NutritionForm renders properly 1`] = `
                 },
               }
             }
-            title="Nutrition"
             toastMessage="Nutrition Saved"
           >
             <Connect(EncounterFormPage)
@@ -590,7 +588,6 @@ exports[`Component: NutritionForm renders properly 1`] = `
                   [Function],
                 ]
               }
-              title="Nutrition"
               toastMessage="Nutrition Saved"
             >
               <EncounterFormPage
@@ -786,7 +783,6 @@ exports[`Component: NutritionForm renders properly 1`] = `
                     },
                   }
                 }
-                title="Nutrition"
                 toastMessage="Nutrition Saved"
               >
                 <div
@@ -817,51 +813,6 @@ exports[`Component: NutritionForm renders properly 1`] = `
                         }
                       }
                     >
-                      <Row
-                        bsClass="row"
-                        componentClass="div"
-                        style={
-                          Object {
-                            "backgroundColor": "#ffa500b3",
-                          }
-                        }
-                      >
-                        <div
-                          className="row"
-                          style={
-                            Object {
-                              "backgroundColor": "#ffa500b3",
-                            }
-                          }
-                        >
-                          <Col
-                            bsClass="col"
-                            componentClass="div"
-                            md={20}
-                            sm={20}
-                            style={
-                              Object {
-                                "paddingLeft": "20px",
-                              }
-                            }
-                          >
-                            <div
-                              className="col-md-20 col-sm-20"
-                              style={
-                                Object {
-                                  "paddingLeft": "20px",
-                                }
-                              }
-                            >
-                              <span>
-                                <h2>
-                                  Nutrition
-                                </h2>
-                              </span>
-                            </div>
-                          </Col>
-                        </div>
-                      </Row>
                       <Row
                         bsClass="row"
                         componentClass="div"
