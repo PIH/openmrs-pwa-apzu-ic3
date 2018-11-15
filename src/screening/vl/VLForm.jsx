@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import {formValueSelector, change, untouch} from 'redux-form';
 import {Obs, formUtil, selectors} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
-import PatientAlert from '../../patient/PatientAlert';
-import PatientLabTests from '../../patient/PatientLabTests';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
 
@@ -31,95 +29,92 @@ class VLForm extends React.PureComponent {
 
     const formContent = (
       <Grid>
+
         <Row>
-          <Col sm={8}>
-            <PatientAlert/>
-
-            <Row>
-              <FormGroup controlId="formBled">
-                <Col
-                  componentClass={ControlLabel}
-                  sm={2}
-                >
-                  Bled
-                </Col>
-                <Col sm={6}>
-                  <Obs
-                    concept={CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid}
-                    conceptAnswers={FORM_ANSWERS.trueFalse}
-                    path="vl-bled"
-                  />
-                </Col>
-              </FormGroup>
-            </Row>
-
-            {(typeof this.props.bled !== 'undefined') &&
-            (this.props.bled === CONCEPTS.False.uuid) &&
-            <Row>
-              <FormGroup controlId="formReasonForNoSample">
-                <Col
-                  componentClass={ControlLabel}
-                  sm={2}
-                >
-                  Reason for no sample
-                </Col>
-                <Col sm={6}>
-                  <Obs
-                    concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
-                    conceptAnswers={FORM_ANSWERS.noSampleAnswers}
-                    path="vl-reason-no-sample"
-                  />
-                </Col>
-              </FormGroup>
-            </Row>
-            }
-
-            {(typeof this.props.bled !== 'undefined') &&
-            (this.props.bled === CONCEPTS.True.uuid) &&
-            <Row>
-              <FormGroup controlId="formReasonForTesting">
-                <Col
-                  componentClass={ControlLabel}
-                  sm={2}
-                >
-                  Reason for testing
-                </Col>
-                <Col sm={6}>
-                  <Obs
-                    concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid}
-                    conceptAnswers={FORM_ANSWERS.reasonForTesting}
-                    path="vl-reason-for-testing"
-                  />
-                </Col>
-              </FormGroup>
-            </Row>
-            }
-
-            {(typeof this.props.bled !== 'undefined') &&
-            (this.props.bled === CONCEPTS.True.uuid) &&
-            <Row>
-              <FormGroup controlId="formLabLocation">
-                <Col
-                  componentClass={ControlLabel}
-                  sm={2}
-                >
-                  Laboratory
-                </Col>
-                <Col sm={6}>
-                  <Obs
-                    concept={CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid}
-                    conceptAnswers={FORM_ANSWERS.labLocation}
-                    path="vl-lab-location"
-                  />
-                </Col>
-              </FormGroup>
-            </Row>
-            }
-          </Col>
-          <Col sm={4}>
-            <PatientLabTests/>
+          <Col
+            componentClass={ControlLabel}
+          >
+            Bled
           </Col>
         </Row>
+        <Row>
+          <Col sm={12}>
+            <FormGroup controlId="formBled">
+              <Obs
+                concept={CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid}
+                conceptAnswers={FORM_ANSWERS.trueFalse}
+                path="vl-bled"
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
+        {(typeof this.props.bled !== 'undefined') &&
+        (this.props.bled === CONCEPTS.False.uuid) && (
+          <span>
+              <Row>
+                <Col componentClass={ControlLabel}>
+                  Reason for no sample
+                </Col>
+              </Row>
+              <Row>
+                <FormGroup controlId="formReasonForNoSample">
+                  <Col sm={12}>
+                    <Obs
+                      concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
+                      conceptAnswers={FORM_ANSWERS.noSampleAnswers}
+                      path="vl-reason-no-sample"
+                    />
+                  </Col>
+                </FormGroup>
+              </Row>
+            </span>)
+        }
+
+        {(typeof this.props.bled !== 'undefined') &&
+        (this.props.bled === CONCEPTS.True.uuid) && (
+          <span>
+              <Row>
+                <Col componentClass={ControlLabel}>
+                  Reason for testing
+                </Col>
+              </Row>
+              <Row>
+                <FormGroup controlId="formReasonForTesting">
+                  <Col sm={12}>
+                    <Obs
+                      concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid}
+                      conceptAnswers={FORM_ANSWERS.reasonForTesting}
+                      path="vl-reason-for-testing"
+                    />
+                  </Col>
+                </FormGroup>
+              </Row>
+            </span>)
+        }
+
+        {(typeof this.props.bled !== 'undefined') &&
+        (this.props.bled === CONCEPTS.True.uuid) && (
+          <span>
+              <Row>
+                <Col componentClass={ControlLabel}>
+                  Reason for testing
+                </Col>
+              </Row>
+              <Row>
+                <FormGroup controlId="formLabLocation">
+                  <Col sm={12}>
+                    <Obs
+                      concept={CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid}
+                      conceptAnswers={FORM_ANSWERS.labLocation}
+                      path="vl-lab-location"
+                    />
+                  </Col>
+                </FormGroup>
+              </Row>
+            </span>)
+        }
+
       </Grid>
     );
 
