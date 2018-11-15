@@ -36,7 +36,6 @@ import NursePage from './screening/nurse/NursePage';
 import CheckInComplete from './checkin/CheckInComplete';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
-import NutritionForm from "./screening/nutrition/NutritionForm";
 import AdherenceQueue from "./screening/adherence/AdherenceQueue";
 import AdherenceForm from "./screening/adherence/AdherenceForm";
 import HtcQueue from "./screening/htc/HtcQueue";
@@ -56,6 +55,7 @@ import CompletedVisitsQueue from "./visit/CompletedVisits";
 import { ConnectedRouter } from 'connected-react-router';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import BloodPressureSummaryAndForm from "./screening/bloodPressure/BloodPressureSummaryAndForm";
+import NutritionSummaryAndForm from "./screening/nutrition/NutritionSummaryAndForm";
 
 const { store, persistor } = setupStoreAndPersistor();
 
@@ -123,7 +123,7 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={NutritionForm}
+              component={NutritionSummaryAndForm}
               path="/screening/nutrition/form"
               redirectOnLogin="/"
             />
