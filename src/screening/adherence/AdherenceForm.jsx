@@ -6,113 +6,114 @@ import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import '../../assets/css/tabs.css';
 import { leftTextAlign } from "../../pwaStyles";
 import ScreeningForm from "../ScreeningForm";
-import PatientAlert from "../../patient/PatientAlert";
 
 let AdherenceForm = (props) => {
 
   const formContent = (
     <Grid>
       <Row>
-        <Col sm={8}>
-          <PatientAlert />
-          <Row>
-            <FormGroup controlId="formAdherenceSession">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                { CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.name }
-              </Col>
-              <Col sm={8}>
-                <Obs
-                  concept={CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.uuid}
-                  conceptAnswers={FORM_ANSWERS.adherenceSession}
-                  path="adherence-session"
-                />
-              </Col>
-            </FormGroup>
-          </Row>
-          <Row>
-            <FormGroup controlId="formAdherenceCounselor">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                { CONCEPTS.ADHERENCE_COUNSELING.NameOfCounselor.name }
-              </Col>
-              <Col sm={8}>
-                <Obs
-                  concept={CONCEPTS.ADHERENCE_COUNSELING.NameOfCounselor.uuid}
-                  datatype="text"
-                  path="adherence-counselor"
-                  placeholder="Enter the name of the counselor"
-                />
-              </Col>
-            </FormGroup>
-          </Row>
-          <Row>
-            <FormGroup controlId="formCounseledOnPillCounts">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                { CONCEPTS.ADHERENCE_COUNSELING.CounseledOnPillCounts.name }
-              </Col>
-              <Col sm={8}>
-                <Obs
-                  concept={CONCEPTS.ADHERENCE_COUNSELING.CounseledOnPillCounts.uuid}
-                  conceptAnswers={FORM_ANSWERS.trueFalse}
-                  path="adherence-counseled-on-pill-counts"
-                />
-              </Col>
-            </FormGroup>
-          </Row>
-          <Row>
-            <FormGroup controlId="formAdherencePercentage">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                { CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage.name }
-              </Col>
-              <Col sm={3}>
-                <Obs
-                  concept={CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage.uuid}
-                  path="adherence-percentage"
-                  placeholder="Enter percentage"
-                />
-              </Col>
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-                style={leftTextAlign}
-              >
-            %
-              </Col>
-            </FormGroup>
-          </Row>
-          <Row>
-            <FormGroup controlId="formCounseledOnVL">
-              <Col
-                componentClass={ControlLabel}
-                sm={2}
-              >
-                { CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad.name }
-              </Col>
-              <Col sm={8}>
-                <Obs
-                  concept={CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad.uuid}
-                  conceptAnswers={FORM_ANSWERS.trueFalse}
-                  path="adherence-counseled-on-vl"
-                />
-              </Col>
-            </FormGroup>
-          </Row>
-        </Col>
-        <Col sm={4}>
-
+        <Col
+          componentClass={ControlLabel}
+        >
+          {CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.name}
         </Col>
       </Row>
+      <Row>
+        <Col sm={12}>
+          <FormGroup controlId="formAdherenceSession">
+            <Obs
+              concept={CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.uuid}
+              conceptAnswers={FORM_ANSWERS.adherenceSession}
+              path="adherence-session"
+            />
+          </FormGroup>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col
+          componentClass={ControlLabel}
+        >
+          {CONCEPTS.ADHERENCE_COUNSELING.NameOfCounselor.name}
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={12}>
+          <FormGroup controlId="formAdherenceCounselor">
+            <Obs
+              concept={CONCEPTS.ADHERENCE_COUNSELING.NameOfCounselor.uuid}
+              datatype="text"
+              path="adherence-counselor"
+              placeholder="Enter the name of the counselor"
+            />
+          </FormGroup>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col
+          componentClass={ControlLabel}
+        >
+          {CONCEPTS.ADHERENCE_COUNSELING.CounseledOnPillCounts.name}
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={12}>
+          <FormGroup controlId="formCounseledOnPillCounts">
+            <Obs
+              concept={CONCEPTS.ADHERENCE_COUNSELING.CounseledOnPillCounts.uuid}
+              conceptAnswers={FORM_ANSWERS.trueFalse}
+              path="adherence-counseled-on-pill-counts"
+            />
+          </FormGroup>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col
+          componentClass={ControlLabel}
+        >
+          {CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage.name}
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={4}>
+          <FormGroup controlId="formAdherencePercentage">
+            <Obs
+              concept={CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage.uuid}
+              path="adherence-percentage"
+              placeholder="Enter percentage"
+            />
+          </FormGroup>
+        </Col>
+        <Col
+          componentClass={ControlLabel}
+          sm={2}
+          style={leftTextAlign}
+        >
+          %
+        </Col>
+      </Row>
+
+      <Row>
+        <Col
+          componentClass={ControlLabel}
+        >
+          {CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad.name}
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={12}>
+          <FormGroup controlId="formCounseledOnVL">
+            <Obs
+              concept={CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad.uuid}
+              conceptAnswers={FORM_ANSWERS.trueFalse}
+              path="adherence-counseled-on-vl"
+            />
+          </FormGroup>
+        </Col>
+      </Row>
+
     </Grid>
   );
 

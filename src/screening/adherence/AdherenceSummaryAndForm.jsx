@@ -10,7 +10,7 @@ const AdherenceSummaryAndForm = props => {
       backLink="/screening/adherence/queue"
       form={<AdherenceForm/>}
       summary={<AdherenceSummary/>}
-      title="Blood Pressure"
+      title="Adherence Counseling"
     />
   );
 
