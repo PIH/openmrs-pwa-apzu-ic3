@@ -16,6 +16,7 @@ import { reducer as toastrReducer } from 'react-redux-toastr';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { sagas as openmrsSagas, reducers as openmrsReducers, LOGIN_TYPES } from '@openmrs/react-components';
 import completedVisitsReducer from './visit/completedVisitsReducer';
+import { default as tabsReducer } from './screening/actions/reducer';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
 import { persistStore, persistReducer } from 'redux-persist';
@@ -51,6 +52,7 @@ const combinedReducer = combineReducers({
   openmrs: openmrsReducers,
   form: reduxFormReducer,
   toastr: toastrReducer,
+  gridtabs: tabsReducer,
   completedVisits: completedVisitsReducer,
 });
 

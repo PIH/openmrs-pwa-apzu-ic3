@@ -40,6 +40,7 @@
     "redux-mock-store": "^1.5.3",
     "redux-persist": "^5.10.0",
     "redux-saga": "^0.16.0",
+    "redux-types": "^2.0.3",
     "source-map-explorer": "^1.6.0"
   },
   "devDependencies": {
