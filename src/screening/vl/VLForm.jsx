@@ -130,7 +130,6 @@ class VLForm extends React.PureComponent {
         formContent={formContent}
         formId="vl-form"
         formInstanceId="vl-form"
-        title="Viral Load"
         toastMessage="Viral Load Saved"
       />
     );

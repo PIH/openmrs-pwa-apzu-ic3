@@ -213,7 +213,6 @@ class NutritionForm extends React.Component {
           value: this.state.lastHeight
         }] : null
         }
-        title="Nutrition"
         toastMessage="Nutrition Saved"
       />
     );

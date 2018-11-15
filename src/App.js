@@ -36,16 +36,13 @@ import NursePage from './screening/nurse/NursePage';
 import CheckInComplete from './checkin/CheckInComplete';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
-import NutritionForm from "./screening/nutrition/NutritionForm";
 import AdherenceQueue from "./screening/adherence/AdherenceQueue";
-import AdherenceForm from "./screening/adherence/AdherenceForm";
+import AdherenceSummaryAndForm from "./screening/adherence/AdherenceSummaryAndForm";
 import HtcQueue from "./screening/htc/HtcQueue";
-import HtcPage from "./screening/htc/HtcPage";
-import HtcForm from "./screening/htc/HtcForm";
 import VLQueueTabs from "./screening/vl/VLQueueTabs";
 import VLQueue from "./screening/vl/VLQueue";
 import VLQueueComplete from "./screening/vl/VLQueueComplete";
-import VLForm from "./screening/vl/VLForm";
+import VLSummaryAndForm from "./screening/vl/VLSummaryAndForm";
 import EidQueueTabs from './screening/eid/EidQueueTabs';
 import EidQueue from './screening/eid/EidQueue';
 import EidQueueComplete from './screening/eid/EidQueueComplete';
@@ -56,6 +53,8 @@ import CompletedVisitsQueue from "./visit/CompletedVisits";
 import { ConnectedRouter } from 'connected-react-router';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import BloodPressureSummaryAndForm from "./screening/bloodPressure/BloodPressureSummaryAndForm";
+import NutritionSummaryAndForm from "./screening/nutrition/NutritionSummaryAndForm";
+import HtcSummaryAndForm from "./screening/htc/HtcSummaryAndForm";
 
 const { store, persistor } = setupStoreAndPersistor();
 
@@ -123,7 +122,7 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={NutritionForm}
+              component={NutritionSummaryAndForm}
               path="/screening/nutrition/form"
               redirectOnLogin="/"
             />
@@ -133,7 +132,7 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={ AdherenceForm }
+              component={AdherenceSummaryAndForm}
               path="/screening/adherence/form"
               redirectOnLogin="/"
             />
@@ -143,12 +142,7 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={HtcPage}
-              path="/screening/htc/page"
-              redirectOnLogin="/"
-            />
-            <Layout
-              component={HtcForm}
+              component={HtcSummaryAndForm}
               path="/screening/htc/form"
               redirectOnLogin="/"
             />
@@ -168,7 +162,7 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={VLForm}
+              component={VLSummaryAndForm}
               path="/screening/vl/form"
               redirectOnLogin="/"
             />
