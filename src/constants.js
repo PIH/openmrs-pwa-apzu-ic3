@@ -1,6 +1,7 @@
 // TODO: rename to "config.js"?
 // TODO: this will be refactored out into an external config at some point
 
+export const SESSION_TIMEOUT = 1000 * 60 * 10; // 10 minutes
 // TODO tweak this as needed depending on other data points
 export const ACTIVE_VISITS_REP =
   'custom:(id,uuid,location:(uuid,display,name),startDatetime,stopDatetime,' +

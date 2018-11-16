@@ -55,6 +55,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import BloodPressureSummaryAndForm from "./screening/bloodPressure/BloodPressureSummaryAndForm";
 import NutritionSummaryAndForm from "./screening/nutrition/NutritionSummaryAndForm";
 import HtcSummaryAndForm from "./screening/htc/HtcSummaryAndForm";
+import UserSession from "./login/UserSession";
 
 const { store, persistor } = setupStoreAndPersistor();
 
@@ -64,8 +65,8 @@ const App = props => {
 
   return (
     <Provider store={store}>
-
       <PersistGate loading={<LoadingView />} persistor={persistor}>
+        <UserSession/>
         <ConnectedRouter history={history}>
           <Switch>
             <Route
