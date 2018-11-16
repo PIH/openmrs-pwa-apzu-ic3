@@ -8,65 +8,60 @@ const CheckInSummary = props => {
   return (
     <Grid>
       <Row>
-        <Col sm={6} style={colHeight}>
-          <span><h1>{''}</h1></span>
-        </Col>
-      </Row>
-      <Row>
-        <Col sm={6}>
-          <span><h4>Demographic Information</h4></span>
+        <Col>
+          <span><h4>Demographics</h4></span>
         </Col>
       </Row>
       {(typeof props.patient !== 'undefined') && (props.patient !== null) &&
-      <Row>
-        <FormGroup controlId="formAddress">
-          <Col
-            componentClass={ControlLabel}
-            sm={2}
-          >
-            <u> Address:</u>
-          </Col>
-          <Col sm={4}>
-            {props.patient.address.village}<br/>
-            {props.patient.address.traditionalAuthority}<br/>
-            {props.patient.address.district}<br/>
-            <br/>
-          </Col>
+      <span>
+          <Row>
+            <Col
+              componentClass={ControlLabel}
+            >
+              Address
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              {props.patient.address.village}<br/>
+              {props.patient.address.traditionalAuthority}<br/>
+              {props.patient.address.district}<br/>
+              <br/>
+            </Col>
+          </Row>
+        </span>
+      }
+      {(typeof props.patient !== 'undefined') && (props.patient !== null) &&
+      <span>
+          <Row>
+            <Col componentClass={ControlLabel}>
+              Phone
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              {props.patient.phoneNumber}
+            </Col>
+          </Row>
+        </span>
+      }
+      {(typeof props.patient !== 'undefined') && (props.patient !== null) &&
+      <span>
+          <Row>
+            <Col componentClass={ControlLabel}>
+              CHW
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              {props.patient.chw}
+            </Col>
+          </Row>
+        </span>
+      }
 
-        </FormGroup>
-      </Row>
-      }
-      {(typeof props.patient !== 'undefined') && (props.patient !== null) &&
       <Row>
-        <FormGroup controlId="formPhoneNumber">
-          <Col componentClass={ControlLabel} sm={2}>
-            <u>Phone:</u>
-          </Col>
-          <Col sm={2}>
-            {props.patient.phoneNumber}<br/><br/>
-          </Col>
-        </FormGroup>
-      </Row>
-      }
-      {(typeof props.patient !== 'undefined') && (props.patient !== null) &&
-      <Row>
-        <FormGroup controlId="formChw">
-          <Col componentClass={ControlLabel} sm={2}>
-            <u>CHW:</u>
-          </Col>
-          <Col sm={4}>
-            {props.patient.chw}<br/><br/>
-          </Col>
-        </FormGroup>
-      </Row>
-      }
-      <Row>
-        <Col sm={6} style={colHeight}>
-          <span><h1>{''}</h1></span>
-        </Col>
-      </Row>
-      <Row>
-        <Col sm={6}>
+        <Col>
           <span><h4>History</h4></span>
         </Col>
       </Row>
