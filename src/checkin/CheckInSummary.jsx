@@ -1,10 +1,14 @@
 import React from 'react';
 import {Col, ControlLabel, Grid, Row} from "react-bootstrap";
-import CheckInEncounters from "./CheckInEncounters";
-import {selectors} from "@openmrs/react-components";
+import {EncounterHistory, selectors} from "@openmrs/react-components";
 import connect from "react-redux/es/connect/connect";
+import {CONCEPTS, ENCOUNTER_TYPES} from "../constants";
 
 const CheckInSummary = props => {
+
+  const labels = {
+    [CONCEPTS.SOURCE_OF_REFERRAL.uuid]: 'Referred from'
+  };
 
   return (
     <Grid>
@@ -66,7 +70,10 @@ const CheckInSummary = props => {
           <span><h4>History</h4></span>
         </Col>
       </Row>
-      <CheckInEncounters/>
+      <EncounterHistory
+        encounterType={ENCOUNTER_TYPES.CheckInEncounterType}
+        labels={labels}
+      />
     </Grid>
   );
 };
