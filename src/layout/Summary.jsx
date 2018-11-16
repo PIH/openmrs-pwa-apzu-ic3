@@ -14,16 +14,14 @@ const Summary = props => {
           </Col>
         </Row>
       </Grid>
-      {React.cloneElement(props.summary, { patient: props.patient, backLink: props.backLink })}
+      {React.cloneElement(props.summary, { backLink: props.backLink })}
     </Col>
   );
 };
 
 Summary.propTypes = {
   backLink: PropTypes.string.isRequired,
-  patient: PropTypes.object,
   summary: PropTypes.object.isRequired,
 };
-
 
 export default Summary;

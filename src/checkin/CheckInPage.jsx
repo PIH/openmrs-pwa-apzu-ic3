@@ -1,19 +1,14 @@
 import React from "react";
-import { connect } from "react-redux";
-import {selectors} from '@openmrs/react-components';
-import {LOCATION_TYPES} from '../constants';
-import { push } from "connected-react-router";
-import {actions as toastrActions} from "react-redux-toastr";
 import CheckInSummary from "./CheckInSummary";
 import ReferralForm from "./ReferralForm";
 import SummaryAndForm from "../layout/SummaryAndForm";
 
 class CheckInPage extends React.Component {
 
-  constructor(props) {
-    super(props);
+  /*  constructor(props) {
+      super(props);*/
 
-    this.formSubmittedActionCreators = [
+  /*  this.formSubmittedActionCreators = [
       () => toastrActions.add({ title: "Check-in completed for "
         + this.props.patient.name.givenName + " "
         + this.props.patient.name.familyName, type: "success" })
@@ -24,7 +19,7 @@ class CheckInPage extends React.Component {
         queueLink: '/checkin/checkInTabs'
       }
     }));
-  }
+  }*/
 
   // TODO: this didn't appear to be doing anything?
   /* handleCheckIn(values) {
@@ -50,7 +45,7 @@ class CheckInPage extends React.Component {
         <SummaryAndForm
           backLink="/checkin/checkInTabs"
           form={<ReferralForm/>}
-          patient={ this.props.patient }
+          requireVisitForForm={false}
           summary={<CheckInSummary/>}
           title="Patient Check-In"
         />
@@ -58,6 +53,8 @@ class CheckInPage extends React.Component {
     );
   }
 }
+
+/*
 
 const mapStateToProps = (state) => {
   let storePatient = selectors.getSelectedPatientFromStore(state);
@@ -68,3 +65,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(CheckInPage);
+*/
+
+export default CheckInPage;

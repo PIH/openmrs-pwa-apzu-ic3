@@ -12,7 +12,7 @@ const Form = props => {
         <h2>Today</h2>
         <h6>{utils.formatCalendarDate(new Date())}</h6>
       </div>
-      {React.cloneElement(props.form, { patient: props.patient, backLink: props.backLink })}
+      {React.cloneElement(props.form, { backLink: props.backLink })}
     </Col>
   );
 
@@ -20,8 +20,7 @@ const Form = props => {
 
 Form.propTypes = {
   backLink: PropTypes.string.isRequired,
-  form: PropTypes.object.isRequired,
-  patient: PropTypes.object,
+  form: PropTypes.object.isRequired
 };
 
 

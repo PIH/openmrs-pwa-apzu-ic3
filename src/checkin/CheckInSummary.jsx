@@ -1,7 +1,8 @@
 import React from 'react';
-import {Col, ControlLabel, FormGroup, Grid, Row} from "react-bootstrap";
-import {colHeight} from "../pwaStyles";
+import {Col, ControlLabel, Grid, Row} from "react-bootstrap";
 import CheckInEncounters from "./CheckInEncounters";
+import {selectors} from "@openmrs/react-components";
+import connect from "react-redux/es/connect/connect";
 
 const CheckInSummary = props => {
 
@@ -70,4 +71,12 @@ const CheckInSummary = props => {
   );
 };
 
-export default CheckInSummary;
+const mapStateToProps = (state) => {
+  let storePatient = selectors.getSelectedPatientFromStore(state);
+  return {
+    patient: storePatient
+  };
+};
+
+export default connect(mapStateToProps)(CheckInSummary);
+
