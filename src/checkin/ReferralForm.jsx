@@ -12,24 +12,22 @@ class ReferralForm extends React.Component {
     let formContent = (
       <Grid>
         <Row>
-          <FormGroup controlId="formReferredFrom">
-            <Col componentClass={ControlLabel} sm={4}>
-              Referred From:
-            </Col>
-            <Col sm={6}>
+          <Col componentClass={ControlLabel}>
+            Referred From
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12}>
+            <FormGroup controlId="formReferredFrom">
               <Obs
                 concept={CONCEPTS.SOURCE_OF_REFERRAL.uuid}
                 placeholder="Select Source of Referral"
                 path="referral"
                 conceptAnswers={ FORM_ANSWERS.referrals }
-                widget="dropdown"
               />
-            </Col>
-
-          </FormGroup>
+            </FormGroup>
+          </Col>
         </Row>
-
-
       </Grid>
     );
 
