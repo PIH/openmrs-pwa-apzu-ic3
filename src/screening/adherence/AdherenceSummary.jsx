@@ -1,12 +1,15 @@
 import React from "react";
 import PatientLabTests from "../../patient/PatientLabTests";
-import AdherenceSessions from "./AdherenceSessions";
+import {ENCOUNTER_TYPES} from "../../constants";
+import {EncounterHistory} from "@openmrs/react-components";
 
 const AdherenceSummary = props => {
   return (
     <div>
       <PatientLabTests test_type="Viral Load"/>
-      <AdherenceSessions/>
+      <EncounterHistory
+        encounterType={ENCOUNTER_TYPES.AdherenceCounselingEncounterType}
+      />
     </div>
   );
 };
