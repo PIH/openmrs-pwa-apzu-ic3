@@ -6,7 +6,6 @@ import Summary from "./Summary";
 import Form from "./Form";
 import {selectors} from "@openmrs/react-components";
 import connect from "react-redux/es/connect/connect";
-import utils from "../utils";
 
 const SummaryAndForm = props => {
 
