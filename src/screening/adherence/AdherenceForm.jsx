@@ -38,7 +38,7 @@ let AdherenceForm = (props) => {
         </Col>
       </Row>
       <Row>
-        <Col sm={12}>
+        <Col sm={8}>
           <FormGroup controlId="formAdherenceCounselor">
             <Obs
               concept={CONCEPTS.ADHERENCE_COUNSELING.NameOfCounselor.uuid}
@@ -77,7 +77,7 @@ let AdherenceForm = (props) => {
         </Col>
       </Row>
       <Row>
-        <Col sm={4}>
+        <Col sm={1}>
           <FormGroup controlId="formAdherencePercentage">
             <Obs
               concept={CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage.uuid}
@@ -88,7 +88,7 @@ let AdherenceForm = (props) => {
         </Col>
         <Col
           componentClass={ControlLabel}
-          sm={2}
+          sm={1}
           style={leftTextAlign}
         >
           %
