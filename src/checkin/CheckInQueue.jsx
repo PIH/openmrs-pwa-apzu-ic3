@@ -33,7 +33,10 @@ class CheckInQueue extends React.Component {
     }));
   }
 
+  clearPatientStore;
+
   getAppointmentReport(){
+    this.props.dispatch(patientActions.clearPatientStore());
     this.props.dispatch(ic3PatientActions.getIC3Patients(this.props.location, utils.formatReportRestDate(this.state.appointmentDate)));
 
   };
