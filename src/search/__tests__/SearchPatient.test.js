@@ -56,7 +56,7 @@ describe('Component: SearchPatient', () => {
     expect(toJson(searchPatient())).toMatchSnapshot();
     expect(searchPatient().find(PatientSearch).length).toBe(1);
     expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators.length).toBe(4);
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("addPatientToStore");
+    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("updatePatientInStore");
     expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[1].name).toBe("setSelectedPatient");
     expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[2].name).toBe("getPatientApptData");
     expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[3].name).toBe("");

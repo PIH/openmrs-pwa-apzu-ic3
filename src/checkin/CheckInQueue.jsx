@@ -4,11 +4,11 @@ import { Button, ButtonToolbar, Grid, Row, Col,FormGroup, ControlLabel } from 'r
 import {patientActions, List, selectors} from '@openmrs/react-components';
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
-import checkInActions from './checkInActions';
 import {LOCATION_TYPES} from '../constants';
 import utils from "../utils";
 import { COLUMN_DEFS, BASIC_GRID, PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
 import checkInFilters from './checkInFilters';
+import ic3PatientActions from '../patient/patientActions';
 
 class CheckInQueue extends React.Component {
 
@@ -34,7 +34,7 @@ class CheckInQueue extends React.Component {
   }
 
   getAppointmentReport(){
-    this.props.dispatch(checkInActions.getExpectedToCheckIn(this.props.location, utils.formatReportRestDate(this.state.appointmentDate)));
+    this.props.dispatch(ic3PatientActions.getIC3Patients(this.props.location, utils.formatReportRestDate(this.state.appointmentDate)));
 
   };
 

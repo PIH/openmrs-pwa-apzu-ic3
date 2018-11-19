@@ -16,12 +16,14 @@ import { reducer as toastrReducer } from 'react-redux-toastr';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { sagas as openmrsSagas, reducers as openmrsReducers, LOGIN_TYPES } from '@openmrs/react-components';
 import completedVisitsReducer from './visit/completedVisitsReducer';
+import {persistStore, persistReducer} from 'redux-persist';
+import storageSession from 'redux-persist/lib/storage/session';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import { default as tabsReducer } from './screening/actions/reducer';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
-import { persistStore, persistReducer } from 'redux-persist';
-import storageSession from 'redux-persist/lib/storage/session';
-import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import patientSagas from './patient/patientSagas';
+
 
 // fyi, connected-react-router docs:
 // https://github.com/supasate/connected-react-router
@@ -75,7 +77,8 @@ const rootSagas = function* () {
   yield all([
     openmrsSagas(),
     checkInSagas(),
-    checkOutSagas()
+    checkOutSagas(),
+    patientSagas()
   ]);
 };
 

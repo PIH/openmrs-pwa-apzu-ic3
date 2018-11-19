@@ -6,12 +6,13 @@ import {
   visitRest,
   reportingRest,
   LOGIN_TYPES,
-  SESSION_TYPES, visitActions
+  SESSION_TYPES
 } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
+import ic3PatientActions from '../patient/patientActions';
 import PATIENT_APPT_TYPES from '../patient/patientApptTypes';
-import {IDENTIFIER_TYPES, ACTIVE_VISITS_REP} from '../constants';
+import {IDENTIFIER_TYPES} from '../constants';
 import uuidv4 from 'uuid/v4';
 import utils from "../utils";
 import * as R from 'ramda';
@@ -85,32 +86,6 @@ function* checkIn(action) {
 
 }
 
-function* getExpectedToCheckIn(action) {
-
-  try {
-
-    yield put(patientActions.clearPatientStore());
-    yield put(patientActions.setPatientStoreUpdating());
-
-    // get the appointment report for today at this location
-    let apptRestResponse = yield call(reportingRest.getIC3Appt, {
-      location: action.location,
-      endDate:  action.endDate
-    });
-
-    let patients = apptRestResponse.patients.map((result) => {
-      return createFromReportingRestRep(result);
-    });
-
-    yield put(patientActions.setPatientStore(patients));
-    yield put(visitActions.fetchActiveVisits(action.location, ACTIVE_VISITS_REP));
-
-  } catch (e) {
-    yield put(checkInActions.getExpectedToCheckInFailed(e.message));
-  }
-
-}
-
 function* getPatientApptData(action) {
 
   try {
@@ -130,24 +105,23 @@ function* getPatientApptData(action) {
     }
 
   } catch (e) {
-    yield put(checkInActions.getExpectedToCheckInFailed(e.message));
+    //yield put(checkInActions.getExpectedToCheckInFailed(e.message));
   }
 
 }
 
-function* initiateGetExpectedToCheckIn(action) {
+function* initiateGetIC3PatientsAction(action) {
   var state = R.pathOr(yield select(), ['payload'], action);
   if (R.path(['openmrs', 'session', 'authenticated'], state)){
-    yield put(checkInActions.getExpectedToCheckIn(R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
-                                                  utils.formatReportRestDate(new Date())));
+    yield put(ic3PatientActions.getIC3Patients(R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
+      utils.formatReportRestDate(new Date())));
   }
 }
 
 function *checkInSagas() {
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.SUBMIT, checkIn);
-  yield takeLatest(CHECK_IN_TYPES.CHECK_IN.GET_EXPECTED_PATIENTS_TO_CHECKIN, getExpectedToCheckIn);
-  yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetExpectedToCheckIn);
-  yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetExpectedToCheckIn);
+  yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetIC3PatientsAction);
+  yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetIC3PatientsAction);
   yield takeLatest(PATIENT_APPT_TYPES.GET_APPT_DATA, getPatientApptData);
 }
 
