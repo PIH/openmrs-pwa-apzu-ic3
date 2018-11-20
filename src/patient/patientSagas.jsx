@@ -18,7 +18,7 @@ const createFromReportingRestRep = (restRep) => {
   patient._openmrsClass = "Patient";
   patient.uuid = restRep.patient_uuid;
   patient.gender = restRep.gender;
-  patient.age = restRep.age;
+  patient.age = restRep.age_years;
   patient.birthdate = restRep.birthdate;
 
   patient.name = {
@@ -44,18 +44,12 @@ const createFromReportingRestRep = (restRep) => {
   patient.lastVisitDate = restRep.last_visit_date;
 
   patient.alert = ""; // TODO add alerts back in, change to support array
-  patient.labTests = []; // TODO add lab tests back in
+  patient.labTests = []; // TODO add lab tests back int
   patient.actions = "";  // TODO add actions back in, change to support array
 
 
   return patient;
 };
-
-// why does it call the ic3 twice on cancel? at least on nutrition form
-// age and identifers?
-// figure out the get patient appt  when you find a patient ad hoc??
-// figure out inactive visits. visits & filters
-// figoure out actions, alerts and lab results
 
 function* getIC3Patients(action) {
 

@@ -26,7 +26,7 @@ let ActiveVisits = props => {
         rowData={ Object.values(props.patients) }
         onRowCount={ props.onRowCount }
         rowSelectedActionCreators={ rowSelectedActionCreators }
-        title="Active Visits"
+        title=""
       />
 
     </div>
