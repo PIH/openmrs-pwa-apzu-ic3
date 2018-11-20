@@ -25,7 +25,7 @@ const createFromReportingRestRep = (restRep) => {
 
   // TODO move the add identifier logic here?
   patient = patientUtil.addIdentifier(patient, restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
-  patient = patientUtil.addIdentifier(patient, restRep.eid_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE);
+  patient = patientUtil.addIdentifier(patient, restRep.hcc_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE);
   patient = patientUtil.addIdentifier(patient, restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE);
 
   // TODO how do we get these in a proper format
@@ -39,9 +39,11 @@ const createFromReportingRestRep = (restRep) => {
   patient.phoneNumber = restRep.phone_number;
   patient.lastAppointmentDate = restRep.last_appt_date;
   patient.lastVisitDate = restRep.last_visit_date;
-  patient.actions = restRep.actions;
-  patient.alert = restRep.alert;
-  patient.labTests = restRep.labTests;
+
+  patient.alert = ""; // TODO add alerts back in, change to support array
+  patient.labTests = []; // TODO add lab tests back in
+  patient.actions = "";  // TODO add actions back in, change to support array
+
 
   return patient;
 };
@@ -52,6 +54,8 @@ const createFromReportingRestRep = (restRep) => {
 // make sure the definition of active visits is the same?
 // or just make sure active visits doesn't add to store
 // figure out the get patient appt  when you find a patient ad hoc??
+// figure out inactive visits
+// figoure out actions, alerts and lab results
 
 function* getIC3Patients(action) {
 
@@ -65,7 +69,7 @@ function* getIC3Patients(action) {
       endDate: action.endDate
     });
 
-    let patients = apptRestResponse.patients.map((result) => {
+    let patients = apptRestResponse.map((result) => {
       return createFromReportingRestRep(result);
     });
 
