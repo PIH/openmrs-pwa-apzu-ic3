@@ -11,6 +11,7 @@ import {IDENTIFIER_TYPES, ACTIVE_VISITS_REP} from '../constants';
 import reportingRest from '../rest/reportingRest';
 import * as R from "ramda";
 import utils from "../utils";
+import PATIENT_APPT_TYPES from "./patientApptTypes";
 
 const createFromReportingRestRep = (restRep) => {
   let patient = {};
@@ -51,12 +52,8 @@ const createFromReportingRestRep = (restRep) => {
   return patient;
 };
 
-// make sure the definition of active visits is the same?
-// or just make sure active visits doesn't add to store
-// move out the initiate actions out of check in saga
-// only load expected upon initialization
-// why does it call the ic3 twice on cancel?
-
+// why does it call the ic3 twice on cancel? at least on nutrition form
+// age and identifers?
 // figure out the get patient appt  when you find a patient ad hoc??
 // figure out inactive visits. visits & filters
 // figoure out actions, alerts and lab results
@@ -91,7 +88,28 @@ function* getIC3Patients(action) {
   } catch (e) {
     yield put(ic3PatientActions.getIC3PatientsFailed(e.message));
   }
+}
 
+// get the screening data for a single patient
+function* getPatientApptData(action) {
+
+  try {
+    // get patient appointment info
+    let apptRestResponse = yield call(reportingRest.getScreeningData, {
+      endDate: utils.formatReportRestDate(new Date()),
+      patients: action.patient.uuid
+    });
+
+    let patients = apptRestResponse.patients.map((result) => {
+      return createFromReportingRestRep(result);
+    });
+    if (patients && patients.length > 0) {
+      yield put(patientActions.updatePatientInStore(patients[0]));
+    }
+
+  } catch (e) {
+    // TODO what should be thrown here?
+  }
 
 }
 
@@ -109,6 +127,7 @@ function* initiateGetIC3PatientsAction(action) {
 
 function* ic3PatientSagas() {
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENTS, getIC3Patients);
+  yield takeLatest(PATIENT_APPT_TYPES.GET_APPT_DATA, getPatientApptData);
   yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetIC3PatientsAction);
   yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetIC3PatientsAction);
 }

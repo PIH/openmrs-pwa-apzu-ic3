@@ -17,7 +17,23 @@ const api = {
           return response.data;
         }
       });
+  },
+
+  getScreeningData: (params) => {
+    return axiosInstance.get("pihmalawi/ic3ScreeningData"
+      + (params.endDate ? "?endDate=" + params.endDate : '')
+      + (params.patients ? "&patients=" + params.patients : '')
+    )
+      .then((response) => {
+        if (response.status !== 200) {
+          throw response;
+        }
+        else {
+          return response.data;
+        }
+      });
   }
+
 
 };
 

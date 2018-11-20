@@ -1,56 +1,11 @@
-import {call, put, takeLatest, select } from 'redux-saga/effects';
+import {call, put, takeLatest} from 'redux-saga/effects';
 import {
-  patientActions,
   formActions,
-  patientUtil,
   visitRest,
-  reportingRest
 } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
-import PATIENT_APPT_TYPES from '../patient/patientApptTypes';
-import {IDENTIFIER_TYPES} from '../constants';
 import uuidv4 from 'uuid/v4';
-import utils from "../utils";
-import * as R from 'ramda';
-
-const createFromReportingRestRep =  (restRep) => {
-  let patient = {};
-
-  patient._openmrsClass = "Patient";
-  patient.uuid = restRep.patient_uuid;
-  patient.gender = restRep.gender;
-  patient.age = restRep.age;
-  patient.birthdate = restRep.birthdate;
-
-  patient.name =  {
-    givenName: restRep.first_name,
-    familyName: restRep.last_name
-  } ;
-
-  // TODO move the add identifier logic here?
-  patient = patientUtil.addIdentifier(patient, restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
-  patient = patientUtil.addIdentifier(patient, restRep.eid_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE);
-  patient = patientUtil.addIdentifier(patient, restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE);
-
-  // TODO how do we get these in a proper format
-  patient.chw = restRep.vhw;
-  patient.address = {
-    village: restRep.village,
-    traditionalAuthority: restRep.traditional_authority,
-    district: restRep.district
-  };
-
-  patient.phoneNumber = restRep.phone_number;
-  patient.lastAppointmentDate = restRep.last_appt_date;
-  patient.lastVisitDate = restRep.last_visit_date;
-  patient.actions = restRep.actions;
-  patient.alert = restRep.alert;
-  patient.labTests = restRep.labTests;
-
-  return patient;
-}
-
 
 function* checkIn(action) {
 
@@ -83,33 +38,9 @@ function* checkIn(action) {
 
 }
 
-function* getPatientApptData(action) {
-
-  try {
-    var state = R.pathOr(yield select(), ['payload'], action);
-    // get patient appointment info
-    let apptRestResponse = yield call(reportingRest.getIC3Patients, {
-      location: R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
-      endDate:  utils.formatReportRestDate(new Date()),
-      patient: action.patient.uuid
-    });
-
-    let patients = apptRestResponse.patients.map((result) => {
-      return createFromReportingRestRep(result);
-    });
-    if (patients && patients.length > 0 ) {
-      yield put(patientActions.updatePatientInStore(patients[0]));
-    }
-
-  } catch (e) {
-    //yield put(checkInActions.getExpectedToCheckInFailed(e.message));
-  }
-
-}
 
 function *checkInSagas() {
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.SUBMIT, checkIn);
-  yield takeLatest(PATIENT_APPT_TYPES.GET_APPT_DATA, getPatientApptData);
 }
 
 export default checkInSagas;
