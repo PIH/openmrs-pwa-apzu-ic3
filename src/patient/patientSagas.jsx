@@ -2,12 +2,12 @@ import {call, put, takeLatest} from 'redux-saga/effects';
 import {
   patientActions,
   patientUtil,
-  reportingRest,
   visitActions
 } from '@openmrs/react-components';
 import ic3PatientActions from './patientActions';
 import PATIENT_TYPES from './patientTypes';
 import {IDENTIFIER_TYPES, ACTIVE_VISITS_REP} from '../constants';
+import reportingRest from '../rest/reportingRest';
 
 const createFromReportingRestRep = (restRep) => {
   let patient = {};
@@ -45,6 +45,13 @@ const createFromReportingRestRep = (restRep) => {
 
   return patient;
 };
+
+// update the getIC3 endpoint
+// fix the parsing
+// change to use getting IC3 patients everywhere (instead of just active visits)
+// make sure the definition of active visits is the same?
+// or just make sure active visits doesn't add to store
+// figure out the get patient appt  when you find a patient ad hoc??
 
 function* getIC3Patients(action) {
 
