@@ -1,7 +1,7 @@
 import React from 'react';
 import { PatientSearch } from '@openmrs/react-components';
 import { push } from 'connected-react-router';
-import patientApptActions from '../patient/patientApptActions';
+import patientActions from '../patient/patientActions';
 
 
 let SearchPatient = (props) => {
@@ -10,7 +10,7 @@ let SearchPatient = (props) => {
       <h3>Search for Patient</h3>
       <PatientSearch
         rowSelectedActionCreators={[
-          patientApptActions.getPatientApptData,
+          patientActions.getIC3PatientScreeningData,
           () => push('/checkin/checkInPage')
         ]}
       />

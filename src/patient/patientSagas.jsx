@@ -11,7 +11,6 @@ import {IDENTIFIER_TYPES, ACTIVE_VISITS_REP} from '../constants';
 import reportingRest from '../rest/reportingRest';
 import * as R from "ramda";
 import utils from "../utils";
-import PATIENT_APPT_TYPES from "./patientApptTypes";
 
 const createFromReportingRestRep = (restRep) => {
   let patient = {};
@@ -91,7 +90,7 @@ function* getIC3Patients(action) {
 }
 
 // get the screening data for a single patient
-function* getPatientApptData(action) {
+function* getIC3PatientScreeningData(action) {
 
   try {
     // get patient appointment info
@@ -108,7 +107,7 @@ function* getPatientApptData(action) {
     }
 
   } catch (e) {
-    // TODO what should be thrown here?
+    yield put(ic3PatientActions.getIC3PatientScreeningDataFailed(e));
   }
 
 }
@@ -127,7 +126,7 @@ function* initiateGetIC3PatientsAction(action) {
 
 function* ic3PatientSagas() {
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENTS, getIC3Patients);
-  yield takeLatest(PATIENT_APPT_TYPES.GET_APPT_DATA, getPatientApptData);
+  yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENT_SCREENING_DATA, getIC3PatientScreeningData);
   yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetIC3PatientsAction);
   yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetIC3PatientsAction);
 }
