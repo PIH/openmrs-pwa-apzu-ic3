@@ -2,16 +2,17 @@ import React from "react";
 import { connect } from "react-redux";
 import { Label, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import {visitActions, selectors} from '@openmrs/react-components';
+import {selectors} from '@openmrs/react-components';
 import CompletedScreenings from "../screening/CompletedScreenings";
-import {ACTIVE_VISITS_REP} from "../constants";
+import patientActions from "../patient/patientActions";
+import utils from "../utils";
 
 
 class CheckInComplete extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(visitActions.fetchActiveVisits(
-      (this.props.session.sessionLocation ? this.props.session.sessionLocation.uuid : null, ACTIVE_VISITS_REP)
+    this.props.dispatch(patientActions.getIC3Patients(
+      (this.props.session.sessionLocation ? this.props.session.sessionLocation.uuid : null, utils.formatReportRestDate(new Date()))
     ));
   }
 

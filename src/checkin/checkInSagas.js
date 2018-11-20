@@ -91,7 +91,7 @@ function* getPatientApptData(action) {
   try {
     var state = R.pathOr(yield select(), ['payload'], action);
     // get patient appointment info
-    let apptRestResponse = yield call(reportingRest.getIC3Appt, {
+    let apptRestResponse = yield call(reportingRest.getIC3Patients, {
       location: R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
       endDate:  utils.formatReportRestDate(new Date()),
       patient: action.patient.uuid
@@ -111,6 +111,7 @@ function* getPatientApptData(action) {
 }
 
 function* initiateGetIC3PatientsAction(action) {
+  yield put(patientActions.clearPatientStore());
   var state = R.pathOr(yield select(), ['payload'], action);
   if (R.path(['openmrs', 'session', 'authenticated'], state)){
     yield put(ic3PatientActions.getIC3Patients(R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),

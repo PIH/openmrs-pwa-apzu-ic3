@@ -48,13 +48,14 @@ const createFromReportingRestRep = (restRep) => {
   return patient;
 };
 
-// update the getIC3 endpoint
-// fix the parsing
 // change to use getting IC3 patients everywhere (instead of just active visits)
 // make sure the definition of active visits is the same?
 // or just make sure active visits doesn't add to store
+
+// move out the initiate actions out of check in sage
+// figure out why the form isn't being saved properly?
 // figure out the get patient appt  when you find a patient ad hoc??
-// figure out inactive visits
+// figure out inactive visits. visits & filters
 // figoure out actions, alerts and lab results
 
 function* getIC3Patients(action) {
@@ -63,8 +64,8 @@ function* getIC3Patients(action) {
 
     yield put(patientActions.setPatientStoreUpdating());
 
-    // get the appointment report for today at this location
-    let apptRestResponse = yield call(reportingRest.getIC3Appt, {
+    // get IC3 patients=those with appts + those with visits today
+    let apptRestResponse = yield call(reportingRest.getIC3Patients, {
       location: action.location,
       endDate: action.endDate
     });
@@ -73,7 +74,10 @@ function* getIC3Patients(action) {
       return createFromReportingRestRep(result);
     });
 
+    // add the IC3 patients to the store
     yield put(patientActions.updatePatientsInStore(patients));
+
+    // then fetch the set of active visits
     yield put(visitActions.fetchActiveVisits(action.location, ACTIVE_VISITS_REP));
 
   } catch (e) {

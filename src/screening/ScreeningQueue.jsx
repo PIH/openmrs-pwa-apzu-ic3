@@ -2,21 +2,24 @@ import React from "react";
 import PropTypes from 'prop-types';
 import {
   patientActions,
-  visitActions,
   List,
   patientObjByEncounterTypeFilter,
   selectors
 } from '@openmrs/react-components';
-import { ENCOUNTER_TYPES, ACTIVE_VISITS_REP } from '../constants';
+import {ENCOUNTER_TYPES} from '../constants';
 import { connect } from "react-redux";
 import { BASIC_GRID, COLUMN_DEFS, PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
+import utils from "../utils";
+import ic3PatientActions from "../patient/patientActions";
 
 let ScreeningQueue = props => {
 
   const fetchListActionCreator = props.fetchListActionCreator ? this.props.fetchListActionCreator :
     () => {
       if (!props.updating) {
-        props.dispatch(visitActions.fetchActiveVisits((props.session.sessionLocation ? props.session.sessionLocation.uuid : null), ACTIVE_VISITS_REP));
+        props.dispatch(ic3PatientActions.getIC3Patients(
+          props.session.sessionLocation ? props.session.sessionLocation.uuid : null, utils.formatReportRestDate(new Date())
+        ));
       }
     };
 

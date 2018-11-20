@@ -2,7 +2,7 @@ import {axiosInstance} from '@openmrs/react-components';
 
 const api = {
 
-  getIC3Appt: (params) => {
+  getIC3Patients: (params) => {
     return axiosInstance.get("pihmalawi/ic3Patients"
       + (params.endDate ? "?endDate=" + params.endDate : '')
       + (params.location ? "&location=" + params.location : '')
