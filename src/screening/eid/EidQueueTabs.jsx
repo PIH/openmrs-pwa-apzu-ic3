@@ -29,7 +29,7 @@ class EidQueueTabs extends React.Component {
   render() {
     return (
       <div>
-        <h3><Label>EID List</Label></h3>
+        <h3><Label>EID Queue</Label></h3>
 
         <Tabs defaultActiveKey="1" id="vl-tabs">
           <Tab eventKey="1" title={ "in-progress(" + this.state.inProgress + ")" }>

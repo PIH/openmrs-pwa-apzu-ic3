@@ -20,7 +20,7 @@ let EidQueueComplete = props => {
         rowData={ Object.values(props.patients) }
         onRowCount={ props.onRowCount }
         rowSelectedActionCreators={rowSelectedActionCreators}
-        title="EID Completed"
+        title=""
       />
     </div>
   );

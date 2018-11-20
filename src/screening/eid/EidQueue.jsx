@@ -20,7 +20,7 @@ let EidQueue = props => {
         rowData={ Object.values(props.patients) }
         onRowCount={ props.onRowCount }
         rowSelectedActionCreators={rowSelectedActionCreators}
-        title="EID Test Queue"
+        title=""
       />
     </div>
   );
