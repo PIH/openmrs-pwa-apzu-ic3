@@ -9,6 +9,7 @@ describe('patientActions', () => {
     const expectedAction = {
       type: PATIENT_TYPES.GET_IC3_PATIENTS,
       location: "some_location",
+      loadExpectedAppointments: false,
       endDate: "some_end_date"
     };
 

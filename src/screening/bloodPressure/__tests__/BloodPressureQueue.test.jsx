@@ -3,9 +3,11 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import {DataGrid, visitActions, patientActions} from '@openmrs/react-components';
+import {DataGrid, patientActions} from '@openmrs/react-components';
 import BloodPressureQueue from '../BloodPressureQueue';
-import {ACTIVE_VISITS_REP, VISIT_REPRESENTATION} from "../../../constants";
+import {VISIT_REPRESENTATION} from "../../../constants";
+import ic3PatientActions from "../../../patient/patientActions";
+import utils from "../../../utils";
 
 let props, store;
 let mountedComponent;
@@ -57,7 +59,8 @@ describe('Component: BloodPressureQueue', () => {
     expect(bloodPressureQueue().find(DataGrid).get(0).props.rowSelectedActionCreators.length).toBe(2);
     expect(bloodPressureQueue().find(DataGrid).get(0).props.rowSelectedActionCreators[1]().payload.args[0]).toBe("/screening/bloodPressure/form");
     expect(store.getActions()).toContainEqual(patientActions.clearSelectedPatient());
-    expect(store.getActions()).toContainEqual(visitActions.fetchActiveVisits(props.session.sessionLocation.uuid, ACTIVE_VISITS_REP));
+    expect(store.getActions()).toContainEqual(
+      ic3PatientActions.getIC3Patients(props.session.sessionLocation.uuid, utils.formatReportRestDate(new Date())));
   });
 
 });
