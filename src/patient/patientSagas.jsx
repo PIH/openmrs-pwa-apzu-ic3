@@ -1,13 +1,16 @@
-import {call, put, takeLatest} from 'redux-saga/effects';
+import {call, put, takeLatest, select} from 'redux-saga/effects';
 import {
+  LOGIN_TYPES,
   patientActions,
-  patientUtil,
+  patientUtil, SESSION_TYPES,
   visitActions
 } from '@openmrs/react-components';
 import ic3PatientActions from './patientActions';
 import PATIENT_TYPES from './patientTypes';
 import {IDENTIFIER_TYPES, ACTIVE_VISITS_REP} from '../constants';
 import reportingRest from '../rest/reportingRest';
+import * as R from "ramda";
+import utils from "../utils";
 
 const createFromReportingRestRep = (restRep) => {
   let patient = {};
@@ -48,12 +51,12 @@ const createFromReportingRestRep = (restRep) => {
   return patient;
 };
 
-// change to use getting IC3 patients everywhere (instead of just active visits)
 // make sure the definition of active visits is the same?
 // or just make sure active visits doesn't add to store
+// move out the initiate actions out of check in saga
+// only load expected upon initialization
+// why does it call the ic3 twice on cancel?
 
-// move out the initiate actions out of check in sage
-// figure out why the form isn't being saved properly?
 // figure out the get patient appt  when you find a patient ad hoc??
 // figure out inactive visits. visits & filters
 // figoure out actions, alerts and lab results
@@ -64,10 +67,15 @@ function* getIC3Patients(action) {
 
     yield put(patientActions.setPatientStoreUpdating());
 
-    // get IC3 patients=those with appts + those with visits today
+    // get IC3 patients
+    // if "loadExpectedAppointments" = true, set cohort to null, which means load both expected, and patients with visits
+    // if false, explicitly ask for only patients with visits
+    // we break this up because the load expected appointment is the slow part of the query and never changes,
+    // so we can just call in on initial login, location change, or date change
     let apptRestResponse = yield call(reportingRest.getIC3Patients, {
       location: action.location,
-      endDate: action.endDate
+      endDate: action.endDate,
+      cohorts: action.loadExpectedAppointments ? null : 'patientsWithVisit'
     });
 
     let patients = apptRestResponse.map((result) => {
@@ -87,8 +95,22 @@ function* getIC3Patients(action) {
 
 }
 
+function* initiateGetIC3PatientsAction(action) {
+  patientActions.clearPatientStore();
+  var state = R.pathOr(yield select(), ['payload'], action);
+  if (R.path(['openmrs', 'session', 'authenticated'], state)) {
+    yield put(ic3PatientActions.getIC3Patients(
+      R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
+      utils.formatReportRestDate(new Date()),
+      true));  // loadExpectedPatients = true
+  }
+}
+
+
 function* ic3PatientSagas() {
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENTS, getIC3Patients);
+  yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetIC3PatientsAction);
+  yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetIC3PatientsAction);
 }
 
 export default ic3PatientSagas;

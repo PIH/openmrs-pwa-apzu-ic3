@@ -6,6 +6,7 @@ const api = {
     return axiosInstance.get("pihmalawi/ic3Patients"
       + (params.endDate ? "?endDate=" + params.endDate : '')
       + (params.location ? "&location=" + params.location : '')
+      + (params.cohorts ? "&cohorts=" + params.cohorts : '')
       + (params.patient ? "&patient=" + params.patient : '')
     )
       .then((response) => {

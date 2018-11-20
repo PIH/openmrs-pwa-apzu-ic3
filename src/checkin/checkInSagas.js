@@ -4,13 +4,10 @@ import {
   formActions,
   patientUtil,
   visitRest,
-  reportingRest,
-  LOGIN_TYPES,
-  SESSION_TYPES
+  reportingRest
 } from '@openmrs/react-components';
 import CHECK_IN_TYPES from './checkInTypes';
 import checkInActions from './checkInActions';
-import ic3PatientActions from '../patient/patientActions';
 import PATIENT_APPT_TYPES from '../patient/patientApptTypes';
 import {IDENTIFIER_TYPES} from '../constants';
 import uuidv4 from 'uuid/v4';
@@ -110,19 +107,8 @@ function* getPatientApptData(action) {
 
 }
 
-function* initiateGetIC3PatientsAction(action) {
-  yield put(patientActions.clearPatientStore());
-  var state = R.pathOr(yield select(), ['payload'], action);
-  if (R.path(['openmrs', 'session', 'authenticated'], state)){
-    yield put(ic3PatientActions.getIC3Patients(R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
-      utils.formatReportRestDate(new Date())));
-  }
-}
-
 function *checkInSagas() {
   yield takeLatest(CHECK_IN_TYPES.CHECK_IN.SUBMIT, checkIn);
-  yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetIC3PatientsAction);
-  yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetIC3PatientsAction);
   yield takeLatest(PATIENT_APPT_TYPES.GET_APPT_DATA, getPatientApptData);
 }
 
