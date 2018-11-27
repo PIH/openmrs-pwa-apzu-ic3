@@ -47,12 +47,20 @@ export const COLUMN_DEFS = {
     headerName: 'Checked-in Time',
     valueGetter: function getCheckedInTime(params) {
       return utils.getPatientCheckedInTime(params.data);
+    },
+    getQuickFilterText: function(params) {
+      return '';
+    }
+  },
+  'CHECKED_OUT_TIME': {
+    headerName: 'Checked-out Time',
+    valueGetter: function getCheckedOutTime(params) {
+      return utils.getPatientCheckOutTime(params.data);
     }
   }
 };
 
 export const BASIC_GRID = [
-  COLUMN_DEFS.UUID,
   COLUMN_DEFS.IDENTIFIER,
   COLUMN_DEFS.GIVEN_NAME,
   COLUMN_DEFS.FAMILY_NAME,
