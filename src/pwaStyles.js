@@ -23,6 +23,11 @@ export const littlePaddingTop = {
   paddingTop: '20px'
 };
 
+export const noPaddingLeftAndRight = {
+  paddingLeft: '0px',
+  paddingRight: '0px'
+};
+
 export const divContainer = {
   paddingLeft: '0px',
   paddingRight: '0px'
