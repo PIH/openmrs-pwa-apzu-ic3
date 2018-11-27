@@ -6,6 +6,11 @@ export const centerTextAlign = {
   textAlign: "center"
 };
 
+export const centerElements = {
+  display: "flex",
+  justifyContent: "center"
+};
+
 export const rowStyles = {
   backgroundColor: '#ffa500b3'
 };
