@@ -35,11 +35,9 @@ class ReferralForm extends React.Component {
       <ScreeningForm
         backLink={ this.props.backLink }
         encounterType={ ENCOUNTER_TYPES.CheckInEncounterType }
-        visitType={ VISIT_TYPES.ClinicVisitType }
         formContent={formContent}
         formId="checkin-form"
         formInstanceId="checkin-form"
-
       />
     );
   }
