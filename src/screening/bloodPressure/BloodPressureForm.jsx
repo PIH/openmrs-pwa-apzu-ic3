@@ -2,7 +2,7 @@ import React from "react";
 import {Obs, formValidations} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
-import {colHeight, leftTextAlign} from "../../pwaStyles";
+import { noPaddingLeftAndRight } from "../../pwaStyles";
 import ScreeningForm from "../ScreeningForm";
 
 /**
@@ -26,50 +26,50 @@ let BloodPressureForm = props => {
 
   const formContent = (
     <Grid>
-      <Row>
-        <Col sm={20} md={20} style={ colHeight }>
-          <span><h1>{ '' }</h1></span>
-        </Col>
-      </Row>
-      <Row>
-        <FormGroup controlId="formSystolic">
-          <Col componentClass={ControlLabel} sm={4}>
+      <Col sm={5} xsOffset={1}>
+        <Row>
+          <ControlLabel sm={6}>
             Systolic Blood Pressure
-          </Col>
-          <Col sm={2}>
+          </ControlLabel>
+        </Row>
+        <br />
+        <FormGroup controlId="formSystolic">
+          <Col sm={6}>
             <Obs
               concept={CONCEPTS.SystolicBloodPressure.uuid}
-              placeholder="Systolic value"
+              placeholder="value"
               path="systolic"
               validate={[minValue50, maxValue260]}
               warn={ abnormalMaxValue160 }
             />
           </Col>
-          <Col componentClass={ControlLabel} sm={2} style={ leftTextAlign }>
+          <ControlLabel sm={1}>
             mmHG
-          </Col>
+          </ControlLabel>
         </FormGroup>
-      </Row>
-      <Row>
-        <FormGroup controlId="formDiastolic">
-          <Col componentClass={ControlLabel} sm={4}>
+      </Col>
+      <Col sm={5}>
+        <Row>
+          <ControlLabel sm={6}>
             Diastolic Blood Pressure
-          </Col>
-          <Col sm={2}>
+          </ControlLabel>
+        </Row>
+        <br />
+        <FormGroup controlId="formDiastolic">
+          <Col sm={6}>
             <Obs
               concept={CONCEPTS.DiastolicBloodPressure.uuid}
-              placeholder="Diastolic value"
+              placeholder="value"
               validate={[minValue40, maxValue140]}
               path="diastolic"
               warn={ abnormalMaxValue110 }
             />
           </Col>
-          <Col componentClass={ControlLabel} sm={2} style={ leftTextAlign }>
+          <ControlLabel sm={2} styles={noPaddingLeftAndRight}>
             mmHG
-          </Col>
+          </ControlLabel>
         </FormGroup>
-      </Row>
-
+      </Col>
     </Grid>
   );
 
