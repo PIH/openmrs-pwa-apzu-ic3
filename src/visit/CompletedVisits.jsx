@@ -4,40 +4,15 @@ import { push } from 'connected-react-router';
 import {patientActions, visitActions, List} from '@openmrs/react-components';
 import utils from "../utils";
 import { ACTIVE_VISITS_REP } from "../constants";
-import { PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
+import {BASIC_GRID, COLUMN_DEFS, PATIENT_IDENTIFIER_FILTERS} from "../gridConstants";
 
 
 let CompletedVisits = props => {
 
   const columnDefs = [
-    { headerName: 'uuid', hide: true, field: 'uuid' },
-    {
-      headerName: 'Id',
-      autoHeight: true,
-      cellStyle: {'line-height': "26px"},
-      cellRenderer: function(params){
-        return utils.getPatientIdentifiers(params.data);
-      },
-      getQuickFilterText: function(params) {
-        return utils.getPatientIdentifiers(params.data);
-      }
-    },
-    { headerName: 'Given Name', field: 'name.givenName' },
-    { headerName: 'Family Name', field: 'name.familyName' },
-    { headerName: 'Gender', field: 'gender' },
-    { headerName: 'Age', field: 'age' },
-    { headerName: 'Village', field: 'address.village' },
-    { headerName: 'Actions', field: 'actions' },
-    { headerName: 'Checked-in Time',
-      valueGetter: function getCheckedInTime(params) {
-        return utils.getPatientCheckedInTime(params.data);
-      }
-    },
-    { headerName: 'Check-out Time',
-      valueGetter: function getCheckOutTime(params) {
-        return utils.getPatientCheckOutTime(params.data);
-      }
-    }
+    ...BASIC_GRID,
+    COLUMN_DEFS.CHECKED_IN_TIME,
+    COLUMN_DEFS.CHECKED_OUT_TIME
   ];
 
   const fetchListActionCreator =
