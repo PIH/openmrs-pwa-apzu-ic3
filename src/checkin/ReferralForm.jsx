@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Row, Col, FormGroup, ControlLabel } from "react-bootstrap";
 import { Obs } from '@openmrs/react-components';
 import ScreeningForm from '../screening/ScreeningForm';
-import {CONCEPTS, ENCOUNTER_TYPES, FORM_ANSWERS, VISIT_TYPES} from "../constants";
+import {CONCEPTS, ENCOUNTER_TYPES, FORM_ANSWERS } from "../constants";
 
 
 class ReferralForm extends React.Component {
