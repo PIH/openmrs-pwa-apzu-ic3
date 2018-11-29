@@ -33,6 +33,7 @@ let ScreeningForm = props => {
       formSubmittedActionCreators={formSubmittedActionCreators}
       title={props.title}
       toastMessage={props.toastMessage ? props.toastMessage : "Screening Form Saved"}
+      paddingTop="0px"
     />
   );
 };
