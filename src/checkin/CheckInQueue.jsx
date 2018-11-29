@@ -32,8 +32,7 @@ class CheckInQueue extends React.Component {
       formattedAppointmentDate: formattedValue
     }));
   }
-
-  clearPatientStore;
+  
 
   getAppointmentReport(){
     this.props.dispatch(patientActions.clearPatientStore());
