@@ -146,7 +146,7 @@ class NutritionForm extends React.Component {
             </FormGroup>
           </Col>
           }
-          <Row>
+          <Col sm={4}>
             <FormGroup controlId="formMalnutrition">
               <ControlLabel sm={2} style={centerElements}>
                 <span style={{visibility: this.props.showMalnutrition}}>Malnutrition</span>
@@ -162,7 +162,7 @@ class NutritionForm extends React.Component {
               </Col>
 
             </FormGroup>
-          </Row>
+          </Col>
         </Row>
       </Grid>
     );
