@@ -146,13 +146,13 @@ class NutritionForm extends React.Component {
             </FormGroup>
           </Col>
           }
-          <Row>
+          <Col sm={4}>
             <FormGroup controlId="formMalnutrition">
               <ControlLabel sm={2} style={centerElements}>
                 <span style={{visibility: this.props.showMalnutrition}}>Malnutrition</span>
               </ControlLabel>
               <br />
-              <Col sm={8}>
+              <Col sm={8} xsOffset={2}>
                 <Alert
                   bsStyle={this.props.malnutrition ? this.props.malnutrition.alert : "info"}
                   style={{visibility: (this.props.malnutrition && this.props.malnutrition.message) ? "visible" : "hidden" }}
@@ -162,7 +162,7 @@ class NutritionForm extends React.Component {
               </Col>
 
             </FormGroup>
-          </Row>
+          </Col>
         </Row>
       </Grid>
     );
