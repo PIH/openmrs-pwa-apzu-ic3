@@ -18,7 +18,6 @@ class ScreeningForm extends React.Component {
     if (props.patient && props.patient.visit && props.patient.visit.encounters) {
       encounter = encountersByEncounterTypeFilter(props.encounterType.uuid)(props.patient.visit.encounters).shift();
     }
-    () => props.patient && props.patient.uuid && visitActions.fetchPatientActiveVisit(props.patient.uuid, ACTIVE_VISITS_REP);
     // we want to update the active visit for the current patient on submit
     const formSubmittedActionCreators = [
       () => props.patient && props.patient.uuid && visitActions.fetchPatientActiveVisit(props.patient.uuid, ACTIVE_VISITS_REP)
