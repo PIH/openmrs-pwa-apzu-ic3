@@ -1,0 +1,16 @@
+div.dna-pcr-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px !important;
+}
+
+div.dna-pcr-form .col-sm-2.control-label {
+  text-align: left !important;
+  width: 100% !important;
+  padding-left: 0px;
+}
+
+div.dna-pcr-form .control-label {
+  position: relative;
+  right: -15px
+}

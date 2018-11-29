@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Grid, Row, Col, ButtonToolbar, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
-import {selectors} from '@openmrs/react-components';
-import PatientAlert from '../../patient/PatientAlert';
-import PatientLabTests from '../../patient/PatientLabTests';
+import { selectors } from '@openmrs/react-components';
 import HtcForm from '../htc/HtcForm';
 import DnaPcrForm from './DnaPcrForm';
 import { colHeight } from "../../pwaStyles";
+
 
 
 class EidForm extends React.Component {
@@ -29,32 +28,40 @@ class EidForm extends React.Component {
 
     return (
       <Grid>
-        <Row>
-          <Col sm={8}>
-        <PatientAlert/>
-          </Col>
-          <Col sm={4}>
-            <PatientLabTests />
-          </Col>
-        </Row>
 
         <Row>
           <Col sm={8}>
             <ButtonToolbar>
               <ToggleButtonGroup
                 name="eidFormType"
+                onChange={this.handleFormChange}
                 type="radio"
-                value={ this.state.form }
-                onChange={ this.handleFormChange }
+                value={this.state.form}
               >
-                <ToggleButton value="htc" bsSize="large" onChange={this.handleFormChange}>HTC</ToggleButton>
-                <ToggleButton value="dna-pcr" bsSize="large" onChange={this.handleFormChange}>DNA-PCR</ToggleButton>
-            </ToggleButtonGroup>
-          </ButtonToolbar>
+                <ToggleButton
+                  bsSize="large"
+                  onChange={this.handleFormChange}
+                  value="htc"
+                >
+                Rapid Test
+                </ToggleButton>
+                <ToggleButton
+                  bsSize="large"
+                  onChange={this.handleFormChange}
+                  value="dna-pcr"
+                >
+                DNA-PCR
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </ButtonToolbar>
           </Col>
         </Row>
         <Row>
-          <Col sm={20} md={20} style={ colHeight }>
+          <Col
+            md={20}
+            sm={20}
+            style={colHeight}
+          >
             <span><h1>{ '' }</h1></span>
           </Col>
         </Row>
@@ -63,7 +70,7 @@ class EidForm extends React.Component {
           <Row>
             <Col>
               <div>
-               <DnaPcrForm/>
+                <DnaPcrForm />
               </div>
             </Col>
           </Row>
