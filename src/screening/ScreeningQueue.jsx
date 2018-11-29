@@ -38,6 +38,7 @@ let ScreeningQueue = props => {
         onMountOtherActionCreators={onMountOtherActionCreators}
         onRowCount={props.onRowCount}
         optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
+        optionalFiltersType='or'
         rowData={props.rowData}
         rowSelectedActionCreators={[patientActions.setSelectedPatient, ...props.rowSelectedActionCreators]}
         title={props.title}
