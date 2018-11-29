@@ -107,7 +107,7 @@ function* getIC3PatientScreeningData(action) {
 }
 
 function* initiateGetIC3PatientsAction(action) {
-  patientActions.clearPatientStore();
+  yield put(patientActions.clearPatientStore());
   var state = R.pathOr(yield select(), ['payload'], action);
   if (R.path(['openmrs', 'session', 'authenticated'], state)) {
     yield put(ic3PatientActions.getIC3Patients(
