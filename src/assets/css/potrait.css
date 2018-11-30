@@ -1,0 +1,17 @@
+@media (max-width: 600px) {
+    /* PATIENT HEADER */
+    .identifiers > span {
+      display: block;
+    }
+    .gender-age {
+      font-size: 13px !important;
+      vertical-align: super !important;
+    }
+
+    .PersonName-givenName, .PersonName-familyName {
+      font-size: 15px;
+    }
+    .PersonName-givenName:after {
+      content: "\00a0";
+    }
+}

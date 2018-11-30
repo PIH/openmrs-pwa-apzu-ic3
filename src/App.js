@@ -23,6 +23,7 @@ import {
   faHome
 } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
+import '../src/assets/css/potrait.css';
 import setupStoreAndPersistor, { history } from './store';
 import Layout from './layout/Layout';
 import LoginPage from './login/LoginPage';
