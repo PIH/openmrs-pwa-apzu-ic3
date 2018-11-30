@@ -16,6 +16,10 @@ let ScreeningList = props => {
       title: "Check-In",
       completed: checkInFilters.completed,
       link: '/checkin/checkInPage',
+    },
+    {
+      title: "Clinician",
+      link: '/screening/clinician/form',
     }
   ];
 
