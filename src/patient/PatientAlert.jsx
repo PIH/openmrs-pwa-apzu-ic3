@@ -12,21 +12,12 @@ let PatientAlert = (props) => {
         (typeof props.patient.alert !== 'undefined') && props.patient.alert !== null &&
         <Row>
           <FormGroup controlId="formAlert">
-            <Col sm={4}>
+            <Col sm={ 12 }>
               <ControlLabel>Alert</ControlLabel>
               <Alert bsStyle="danger">
-                { props.patient.alert }
+                { props.patient.alert.join(', ') }
               </Alert>
             </Col>
-            {(typeof props.patient !== 'undefined') && props.patient !== null &&
-            (typeof props.patient.actions !== 'undefined') && (props.patient.actions !== props.patient.alert) &&
-            <Col sm={4}>
-              <ControlLabel>Action</ControlLabel>
-              <Alert bsStyle="warning">
-                { props.patient.actions }
-              </Alert>
-            </Col>
-            }
           </FormGroup>
         </Row>
         }

@@ -12,7 +12,7 @@ B. Viral Load Re-test
 - Action= 'Consider confirmatory VL'
  */
 const vlFilter = patient => {
-  return ( (typeof patient.actions !== 'undefined') && (patient.actions !== null) ) ? (patient.actions.toLowerCase().includes('needs routine vl') || patient.actions.toLowerCase().includes('confirmatory vl')) : false;
+  return ( ((typeof patient.alert !== 'undefined') && (patient.alert !== null)) ? patient.alert.join(";").includes('viral-load-') : false );
 };
 
 
