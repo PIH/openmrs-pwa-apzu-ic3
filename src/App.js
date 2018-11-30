@@ -46,7 +46,7 @@ import VLSummaryAndForm from "./screening/vl/VLSummaryAndForm";
 import EidQueueTabs from './screening/eid/EidQueueTabs';
 import EidQueue from './screening/eid/EidQueue';
 import EidQueueComplete from './screening/eid/EidQueueComplete';
-import EidForm from './screening/eid/EidForm';
+import EidSummaryAndForm from './screening/eid/EidSummaryAndForm';
 import NurseQueue from "./screening/nurse/NurseQueue";
 import ActiveVisitsQueue from "./visit/ActiveVisits";
 import CompletedVisitsQueue from "./visit/CompletedVisits";
@@ -183,7 +183,7 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={EidForm}
+              component={EidSummaryAndForm}
               path="/screening/eid/form"
               redirectOnLogin="/"
             />

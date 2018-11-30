@@ -5,6 +5,7 @@ import {Obs, formUtil, selectors} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
+import './styles/dna-pcr-form.css';
 
 
 class DnaPcrForm extends React.PureComponent {
@@ -102,16 +103,18 @@ class DnaPcrForm extends React.PureComponent {
     );
 
     return (
-      <ScreeningForm
-        afterSubmitLink="/screening/eid/queue"
-        backLink="/screening/eid/queue"
-        encounterType={ENCOUNTER_TYPES.DnaPcrEncounterType}
-        formContent={formContent}
-        formId="dna-pcr-form"
-        formInstanceId="dna-pcr-form"
-        toastMessage="DNA-PCR Saved"
-        title="DNA-PCR"
-      />
+      <div className="dna-pcr-form">
+        <ScreeningForm
+          afterSubmitLink="/screening/eid/queue"
+          backLink="/screening/eid/queue"
+          encounterType={ENCOUNTER_TYPES.DnaPcrEncounterType}
+          formContent={formContent}
+          formId="dna-pcr-form"
+          formInstanceId="dna-pcr-form"
+          title=""
+          toastMessage="DNA-PCR Saved"
+        />
+      </div>
     );
   }
 };
