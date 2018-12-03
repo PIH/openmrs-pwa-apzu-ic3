@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import {
   patientActions,
-  List,
+  CardList,
   patientObjByEncounterTypeFilter,
   selectors
 } from '@openmrs/react-components';
@@ -30,17 +30,17 @@ let ScreeningQueue = props => {
 
   return (
     <div>
-      <List
-        columnDefs={props.columnDefs}
+      <CardList
         fetchListActionCreator={fetchListActionCreator}
         filters={[...props.filters, patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'include')]}
         loading={props.updating}
+        getIdentifiers={utils.getPatientIdentifiers}
         onMountOtherActionCreators={onMountOtherActionCreators}
-        onRowCount={props.onRowCount}
         optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
         optionalFiltersType='or'
         rowData={props.rowData}
         rowSelectedActionCreators={[patientActions.setSelectedPatient, ...props.rowSelectedActionCreators]}
+        dispatch={props.dispatch}
         title={props.title}
       />
     </div>
