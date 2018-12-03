@@ -52,7 +52,7 @@ const utils = {
     if (identifiers.length > 0) {
       return identifiers.join('<br/>');
     } else {
-      return null;
+      return [];
     }
 
 
