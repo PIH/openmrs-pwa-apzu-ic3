@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import {patientActions, List, selectors} from '@openmrs/react-components';
+import {patientActions, CardList, selectors} from '@openmrs/react-components';
 import { BASIC_GRID, COLUMN_DEFS, PATIENT_IDENTIFIER_FILTERS } from "../../gridConstants";
 import vlFilters from "./vlFilters";
 import {push} from "connected-react-router";
@@ -31,12 +31,10 @@ class VLQueueExpected extends React.Component {
   render() {
     return (
       <div>
-        <List
-          columnDefs={ this.columnDefs }
+        <CardList
           filters={[vlFilters.expected]}
           onMountOtherActionCreators={ [this.onMountOtherActionCreators] }
           rowData={Object.values( this.props.patients )}
-          onRowCount={ this.props.onRowCount }
           rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator]}
           title=""
           optionalFilters={ PATIENT_IDENTIFIER_FILTERS }

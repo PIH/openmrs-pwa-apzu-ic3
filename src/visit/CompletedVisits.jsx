@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
-import {patientActions, visitActions, List} from '@openmrs/react-components';
+import {patientActions, visitActions, CardList} from '@openmrs/react-components';
 import utils from "../utils";
 import { ACTIVE_VISITS_REP } from "../constants";
 import {BASIC_GRID, COLUMN_DEFS, PATIENT_IDENTIFIER_FILTERS} from "../gridConstants";
@@ -37,16 +37,22 @@ let CompletedVisits = props => {
 
   return (
     <div>
-      <List
-        columnDefs={columnDefs}
+      <CardList
         fetchListActionCreator={fetchListActionCreator}
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
-        onRowCount={props.onRowCount}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title=""
         optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
       />
+
+      {/* <ScreeningQueue
+        dispatch={ props.dispatch }
+        rowData={ props.rowData }
+        onRowCount={ props.onRowCount }
+        rowSelectedActionCreators={ rowSelectedActionCreators }
+        title=""
+      /> */}
     </div>
   );
 };
