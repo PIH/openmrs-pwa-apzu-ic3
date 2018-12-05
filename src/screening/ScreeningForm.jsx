@@ -19,7 +19,15 @@ class ScreeningForm extends React.Component {
     // find any matching encounter in the active visit
     // TODO what if there are multiple encounters of the same type?  this currently just shifts in the "first"
     if (props.patient && props.patient.visit && props.patient.visit.encounters) {
-      encounter = encountersByEncounterTypeFilter(props.encounterType.uuid)(props.patient.visit.encounters).shift();
+
+      // Sorts the encounters by encounterDatetime in Desc order
+      let encounters = props.patient.visit.encounters.concat().sort((a,b) => {
+        a = new Date(a.encounterDatetime);
+        b = new Date(b.encounterDatetime);
+        return a>b ? -1 : a<b ? 1 : 0;
+      });
+      
+      encounter = encountersByEncounterTypeFilter(props.encounterType.uuid)(encounters).shift();
     }
     // we want to update the active visit for the current patient on submit
     const formSubmittedActionCreators = [
