@@ -3,6 +3,9 @@ import { EncounterFormPage, encountersByEncounterTypeFilter, visitActions, selec
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ACTIVE_VISITS_REP, ENCOUNTER_ROLES } from "../constants";
+import { centerTextAlign } from "../pwaStyles";
+import moment from 'moment';
+
 
 class ScreeningForm extends React.Component {
 
@@ -32,20 +35,26 @@ class ScreeningForm extends React.Component {
     ];
 
     return (
-      <EncounterFormPage
-        backLink={props.backLink}
-        defaultValues={props.defaultValues}
-        encounter={encounter}
-        encounterRole={ENCOUNTER_ROLES.UnknownEncounterRole}
-        encounterType={props.encounterType}
-        formContent={props.formContent}
-        formId={props.formId}
-        formInstanceId={props.formInstanceId}
-        formSubmittedActionCreators={formSubmittedActionCreators}
-        title={props.title}
-        toastMessage={props.toastMessage ? props.toastMessage : "Screening Form Saved"}
-        visitType={props.visitType}
-      />
+      <div>
+        <div style={centerTextAlign}>
+          <h2>{encounter && encounter.encounterDatetime && moment(`${encounter.encounterDatetime}`, "YYYYMMDD").fromNow()}</h2>
+          <h6>{encounter && encounter.encounterDatetime && moment(`${encounter.encounterDatetime}`).format('DD MMM YYYY')}</h6>
+        </div>
+        <EncounterFormPage
+          backLink={props.backLink}
+          defaultValues={props.defaultValues}
+          encounter={encounter}
+          encounterRole={ENCOUNTER_ROLES.UnknownEncounterRole}
+          encounterType={props.encounterType}
+          formContent={props.formContent}
+          formId={props.formId}
+          formInstanceId={props.formInstanceId}
+          formSubmittedActionCreators={formSubmittedActionCreators}
+          title={props.title}
+          toastMessage={props.toastMessage ? props.toastMessage : "Screening Form Saved"}
+          visitType={props.visitType}
+        />
+      </div>
     );
   }
 };

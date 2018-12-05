@@ -1,20 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
-import {patientActions, visitActions, List} from '@openmrs/react-components';
+import {patientActions, visitActions} from '@openmrs/react-components';
 import utils from "../utils";
 import { ACTIVE_VISITS_REP } from "../constants";
-import {BASIC_GRID, COLUMN_DEFS, PATIENT_IDENTIFIER_FILTERS} from "../gridConstants";
+import {PATIENT_IDENTIFIER_FILTERS} from "../gridConstants";
+import ScreeningQueue from '../screening/ScreeningQueue';
 
 
 let CompletedVisits = props => {
-
-  const columnDefs = [
-    ...BASIC_GRID,
-    COLUMN_DEFS.CHECKED_IN_TIME,
-    COLUMN_DEFS.CHECKED_OUT_TIME
-  ];
-
   const fetchListActionCreator =
     () => props.dispatch(visitActions.fetchInactiveVisits(
       utils.getEndOfYesterday(),
@@ -36,18 +30,15 @@ let CompletedVisits = props => {
   ];
 
   return (
-    <div>
-      <List
-        columnDefs={columnDefs}
-        fetchListActionCreator={fetchListActionCreator}
-        onMountOtherActionCreators={onMountOtherActionCreators}
-        rowData={props.rowData}
-        onRowCount={props.onRowCount}
-        rowSelectedActionCreators={rowSelectedActionCreators}
-        title=""
-        optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
-      />
-    </div>
+    <ScreeningQueue
+      fetchListActionCreator={fetchListActionCreator}
+      onMountOtherActionCreators={onMountOtherActionCreators}
+      rowData={props.rowData}
+      rowSelectedActionCreators={rowSelectedActionCreators}
+      title=""
+      optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
+      dispatch={ props.dispatch }
+    />
   );
 };
 
