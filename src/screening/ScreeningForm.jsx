@@ -18,13 +18,13 @@ class ScreeningForm extends React.Component {
     if (props.patient && props.patient.visit && props.patient.visit.encounters) {
 
       // Sorts the encounters by encounterDatetime in Desc order
-      props.patient.visit.encounters.sort((a,b) => {
+      let encounters = props.patient.visit.encounters.concat().sort((a,b) => {
         a = new Date(a.encounterDatetime);
         b = new Date(b.encounterDatetime);
         return a>b ? -1 : a<b ? 1 : 0;
       });
       
-      encounter = encountersByEncounterTypeFilter(props.encounterType.uuid)(props.patient.visit.encounters).shift();
+      encounter = encountersByEncounterTypeFilter(props.encounterType.uuid)(encounters).shift();
     }
     // we want to update the active visit for the current patient on submit
     const formSubmittedActionCreators = [
