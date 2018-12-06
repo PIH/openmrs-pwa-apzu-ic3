@@ -1,40 +1,83 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Col, Grid, Row} from "react-bootstrap";
-import {littlePaddingLeft, divContainer, rowStyles, centerTextAlign} from '../pwaStyles';
+import { Col, Grid, Row } from "react-bootstrap";
+import Swiper from 'react-id-swiper';
+import 'react-id-swiper/src/styles/css/swiper.css';
+import { littlePaddingLeft, divContainer, rowStyles, centerTextAlign } from '../pwaStyles';
 import Summary from "./Summary";
 import Form from "./Form";
-import {selectors} from "@openmrs/react-components";
+import { selectors } from "@openmrs/react-components";
 import connect from "react-redux/es/connect/connect";
+import './styles/summary-and-form.css';
 
 const SummaryAndForm = props => {
+  const params = {
+    spaceBetween: 30
+  };
+
 
   return (
-    <div style={divContainer}>
-      <Grid style={divContainer}>
-        <Row style={rowStyles}>
-          <Col sm={20} md={20} style={littlePaddingLeft}>
+    <div className="div-container summary-and-form">
+      <Grid className="div-container">
+        <Row className="row-container">
+          <Col
+            className="pad-left"
+            md={20}
+            sm={20}
+          >
             <span><h3>{props.title}</h3></span>
           </Col>
         </Row>
-        <Row className="show-grid">
-          <Summary
-            backLink={props.backLink}
-            summary={props.summary}
-          />
-          {props.patient.visit || !props.requireVisitForForm ? (
-            <Form
+        <Row className="show-grid summary-form-slider">
+          <div className="summary-form">
+            <Summary
               backLink={props.backLink}
-              form={props.form}
+              summary={props.summary}
             />
+          </div>
+          {props.patient.visit || !props.requireVisitForForm ? (
+            <div className="form-summary ">
+              <Form
+                backLink={props.backLink}
+                form={props.form}
+              />
+            </div>
           ) : (
-            <Col sm={8}>
-              <div style={centerTextAlign}>
-                <h4>Please check-in patient</h4>
-              </div>
-            </Col>
+            <div>
+              <Col sm={8}>
+                <div style={centerTextAlign}>
+                  <h4>Please check-in patient</h4>
+                </div>
+              </Col>
+            </div>
           )}
         </Row>
+        <div className="swiping-summary-and-form">
+          <Swiper {...params}>
+            <div className="summary-form">
+              <Summary
+                backLink={props.backLink}
+                summary={props.summary}
+              />
+            </div>
+            {props.patient.visit || !props.requireVisitForForm ? (
+              <div className="form-summary">
+                <Form
+                  backLink={props.backLink}
+                  form={props.form}
+                />
+              </div>
+            ) : (
+              <div>
+                <Col sm={8}>
+                  <div style={centerTextAlign}>
+                    <h4>Please check-in patient</h4>
+                  </div>
+                </Col>
+              </div>
+            )}
+          </Swiper>
+        </div>
       </Grid>
     </div>
 
