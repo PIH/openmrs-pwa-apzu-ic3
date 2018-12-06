@@ -8,7 +8,7 @@ import {
 } from '@openmrs/react-components';
 import {ENCOUNTER_TYPES} from '../constants';
 import { connect } from "react-redux";
-import { BASIC_GRID, COLUMN_DEFS, PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
+import { PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
 import utils from "../utils";
 import ic3PatientActions from "../patient/patientActions";
 

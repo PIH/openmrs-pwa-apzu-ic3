@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Col, Grid, Row } from "react-bootstrap";
 import Swiper from 'react-id-swiper';
 import 'react-id-swiper/src/styles/css/swiper.css';
-import { littlePaddingLeft, divContainer, rowStyles, centerTextAlign } from '../pwaStyles';
+import { centerTextAlign } from '../pwaStyles';
 import Summary from "./Summary";
 import Form from "./Form";
 import { selectors } from "@openmrs/react-components";
