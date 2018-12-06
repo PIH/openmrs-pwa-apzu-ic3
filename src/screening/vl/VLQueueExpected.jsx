@@ -1,20 +1,15 @@
 import React from 'react';
 import { connect } from "react-redux";
-import {patientActions, List, selectors} from '@openmrs/react-components';
-import { BASIC_GRID, COLUMN_DEFS, PATIENT_IDENTIFIER_FILTERS } from "../../gridConstants";
-import vlFilters from "./vlFilters";
+import {patientActions, selectors} from '@openmrs/react-components';
 import {push} from "connected-react-router";
-
+import { PATIENT_IDENTIFIER_FILTERS } from "../../gridConstants";
+import vlFilters from "./vlFilters";
+import ScreeningQueue from '../ScreeningQueue';
 
 class VLQueueExpected extends React.Component {
 
   constructor(props) {
     super(props);
-    this.columnDefs = [
-      ...BASIC_GRID,
-      COLUMN_DEFS.ACTIONS,
-      COLUMN_DEFS.APPOINTMENT_DATE
-    ];
 
     this.onMountOtherActionCreators = this.onMountOtherActionCreators.bind(this);
     this.redirectToCheckinPageActionCreator = this.redirectToCheckinPageActionCreator.bind(this);
@@ -31,12 +26,11 @@ class VLQueueExpected extends React.Component {
   render() {
     return (
       <div>
-        <List
-          columnDefs={ this.columnDefs }
+        <ScreeningQueue
+          dispatch={this.props.dispatch}
           filters={[vlFilters.expected]}
           onMountOtherActionCreators={ [this.onMountOtherActionCreators] }
           rowData={Object.values( this.props.patients )}
-          onRowCount={ this.props.onRowCount }
           rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator]}
           title=""
           optionalFilters={ PATIENT_IDENTIFIER_FILTERS }

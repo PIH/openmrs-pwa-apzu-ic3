@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import {
   patientActions,
-  List,
+  CardList,
   patientObjByEncounterTypeFilter,
   selectors
 } from '@openmrs/react-components';
@@ -14,7 +14,7 @@ import ic3PatientActions from "../patient/patientActions";
 
 let ScreeningQueue = props => {
 
-  const fetchListActionCreator = props.fetchListActionCreator ? this.props.fetchListActionCreator :
+  const fetchListActionCreator = props.fetchListActionCreator ? props.fetchListActionCreator :
     () => {
       if (!props.updating) {
         props.dispatch(ic3PatientActions.getIC3Patients(
@@ -23,24 +23,24 @@ let ScreeningQueue = props => {
       }
     };
 
-  const onMountOtherActionCreators = props.onMountOtherActionCreators ? this.props.onMountOtherActionCreators :
+  const onMountOtherActionCreators = props.onMountOtherActionCreators ? props.onMountOtherActionCreators :
     [
       () => props.dispatch(patientActions.clearSelectedPatient())
     ];
 
   return (
     <div>
-      <List
-        columnDefs={props.columnDefs}
+      <CardList
         fetchListActionCreator={fetchListActionCreator}
         filters={[...props.filters, patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'include')]}
         loading={props.updating}
+        getIdentifiers={utils.getPatientIdentifiers}
         onMountOtherActionCreators={onMountOtherActionCreators}
-        onRowCount={props.onRowCount}
         optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
         optionalFiltersType='or'
         rowData={props.rowData}
         rowSelectedActionCreators={[patientActions.setSelectedPatient, ...props.rowSelectedActionCreators]}
+        dispatch={props.dispatch}
         title={props.title}
       />
     </div>
@@ -48,7 +48,6 @@ let ScreeningQueue = props => {
 };
 
 ScreeningQueue.propTypes = {
-  columnDefs: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
   filters: PropTypes.array,
   rowData: PropTypes.array.isRequired,
@@ -57,10 +56,6 @@ ScreeningQueue.propTypes = {
 };
 
 ScreeningQueue.defaultProps = {
-  columnDefs: [
-    ...BASIC_GRID,
-    COLUMN_DEFS.CHECKED_IN_TIME
-  ],
   filters: []
 };
 

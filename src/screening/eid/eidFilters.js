@@ -21,7 +21,7 @@ import { ENCOUNTER_TYPES } from "../../constants";
 - Action = Confirm ART Enrollment, Refer for EID DNA-PCR Test (this is added)
  */
 const eidFilter = patient => {
-  return ( (typeof patient.alert !== 'undefined') && (patient.alert !== null) ) ? patient.alert.toLowerCase().includes(' eid ')  : false;
+  return ( ((typeof patient.alert !== 'undefined') && (patient.alert !== null)) ? patient.alert.join(";").includes('eid-') : false );
 };
 
 

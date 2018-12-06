@@ -16,6 +16,10 @@ export const PATIENT_IDENTIFIER_FILTERS = [
 ];
 
 export const COLUMN_DEFS = {
+  'ROW': {
+    headerName: 'Row',
+    valueGetter: 'parseInt(node.id) + parseInt(1)'
+  },
   'UUID': { headerName: 'uuid', hide: true, field: 'uuid' },
   'IDENTIFIER': {
     headerName: 'Identifier',
@@ -33,6 +37,24 @@ export const COLUMN_DEFS = {
   'GENDER': { headerName: 'Gender', field: 'gender' },
   'AGE': { headerName: 'Age', field: 'age' },
   'VILLAGE': { headerName: 'Village', field: 'address.village' },
+  'ALERT' : {
+    headerName: 'Alerts',
+    autoHeight: true,
+    autoWidth: true,
+    cellStyle: {
+      'line-height': "26px"
+    },
+    cellRenderer: function(params){
+      if (params.data.alert){
+        return params.data.alert.join(",");
+      }
+    },
+    getQuickFilterText: function(params) {
+      if (params.data.alert){
+        return params.data.alert.join(",");
+      }
+    }
+  },
   'ACTIONS': { headerName: 'Actions', field: 'actions' },
   'APPOINTMENT_DATE': {
     headerName: 'Appt Date',
