@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Col, Grid, Row} from "react-bootstrap";
-import {centerTextAlign, historySection} from "../pwaStyles";
+import {centerTextAlign} from "../pwaStyles";
 
 const Summary = props => {
 
   return (
-    <Col sm={4} style={historySection}>
+    <Col className="summary-layout">
       <Grid>
         <Row>
           <Col sm={6}>

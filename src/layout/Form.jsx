@@ -4,7 +4,7 @@ import {Col} from "react-bootstrap";
 
 const Form = props => {
   return (
-    <Col sm={8}>
+    <Col className="form-layout">
       {React.cloneElement(props.form, { backLink: props.backLink })}
     </Col>
   );
