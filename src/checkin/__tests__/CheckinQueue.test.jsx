@@ -2,8 +2,27 @@ import React from 'react';
 import { mount } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import { DataGrid } from '@openmrs/react-components';
+import { CardList } from '@openmrs/react-components';
 import CheckInQueue from '../CheckInQueue';
+
+jest.mock('@openmrs/react-components', () => {
+  return {
+    patientObjByEncounterTypeFilter: jest.fn(),
+    selectors: {
+      getPatientStore: jest.fn((state) => ({
+        1: {
+          name: 'somePatient'
+        }
+      })),
+      isPatientStoreUpdating: jest.fn()
+    },
+    patientActions: {
+      clearSelectedPatient: jest.fn(),
+      setSelectedPatient: jest.fn(),
+    },
+    CardList: 'CardList',
+  }
+});
 
 let props, store;
 let mountedComponent;
@@ -44,7 +63,7 @@ describe('Component: CheckInQueue', () => {
 
   it('renders properly', () => {
     //aexpect(toJson(checkInQueue())).toMatchSnapshot();
-    expect(checkInQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(2);
+    expect(checkInQueue().find(CardList).props().rowSelectedActionCreators.length).toBe(3);
     //expect(checkInQueue().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("redirectToCheckinPageActionCreator");
     //expect(checkInQueue().find(DataGrid).props().rowSelectedActionCreators[0]().payload.args[0]).toBe("/checkin/checkInPage");
   });

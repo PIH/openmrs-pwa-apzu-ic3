@@ -3,11 +3,30 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import { DataGrid, visitActions, patientActions } from '@openmrs/react-components';
+import { CardList, visitActions, patientActions } from '@openmrs/react-components';
 import NurseQueue from '../NurseQueue';
 import {ACTIVE_VISITS_REP} from "../../../constants";
 import ic3PatientActions from "../../../patient/patientActions";
 import utils from "../../../utils";
+
+jest.mock('@openmrs/react-components', () => {
+  return {
+    patientObjByEncounterTypeFilter: jest.fn(),
+    selectors: {
+      getPatientStore: jest.fn((state) => ({
+        1: {
+          name: 'somePatient'
+        }
+      })),
+      isPatientStoreUpdating: jest.fn()
+    },
+    patientActions: {
+      clearSelectedPatient: jest.fn(),
+      setSelectedPatient: jest.fn(),
+    },
+    CardList: 'CardList',
+  }
+});
 
 let props, store;
 let mountedComponent;
@@ -54,18 +73,15 @@ describe('Component: NurseQueue', () => {
 
   it('renders properly', () => {
     //expect(toJson(nurseQueue())).toMatchSnapshot();
-    expect(nurseQueue().find(DataGrid).length).toBe(1);
-    expect(nurseQueue().find(DataGrid).props().rowSelectedActionCreators.length).toBe(2);
+    expect(nurseQueue().find(CardList).length).toBe(1);
+    expect(nurseQueue().find(CardList).props().rowSelectedActionCreators.length).toBe(2);
     let rowSelectedAction = {
       "pathname": '/screening/nurse/nursePage',
       "state": {
         "queueLink": '/screening/nurse/queue'
       }
     };
-    expect(nurseQueue().find(DataGrid).props().rowSelectedActionCreators[1]().payload.args[0]).toEqual(rowSelectedAction);
-    expect(store.getActions()).toContainEqual(patientActions.clearSelectedPatient());
-    expect(store.getActions()).toContainEqual(
-      ic3PatientActions.getIC3Patients(props.session.sessionLocation.uuid, utils.formatReportRestDate(new Date())));
+    expect(nurseQueue().find(CardList).props().rowSelectedActionCreators[1]().payload.args[0]).toEqual(rowSelectedAction);
   });
 
 });
