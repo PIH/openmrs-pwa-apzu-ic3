@@ -3,11 +3,32 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import {DataGrid, patientActions} from '@openmrs/react-components';
+import {CardList, patientActions} from '@openmrs/react-components';
 import NutritionQueue from '../NutritionQueue';
 import {VISIT_REPRESENTATION} from "../../../constants";
 import ic3PatientActions from "../../../patient/patientActions";
 import utils from "../../../utils";
+
+
+jest.mock('@openmrs/react-components', () => {
+  return {
+    patientObjByEncounterTypeFilter: jest.fn(),
+    selectors: {
+      getPatientStore: jest.fn((state) => ({
+        1: {
+          name: 'somePatient'
+        }
+      })),
+      isPatientStoreUpdating: jest.fn()
+    },
+    patientActions: {
+      clearSelectedPatient: jest.fn(),
+      setSelectedPatient: jest.fn(),
+    },
+    CardList: 'CardList',
+  }
+});
+
 
 let props, store;
 let mountedComponent;
@@ -53,12 +74,9 @@ describe('Component: NutritionQueue', () => {
 
   it('renders properly', () => {
     //expect(toJson(nutritionQueue())).toMatchSnapshot();
-    expect(nutritionQueue().find(DataGrid).length).toBe(2);
-    expect(nutritionQueue().find(DataGrid).get(0).props.rowSelectedActionCreators.length).toBe(2);
-    expect(nutritionQueue().find(DataGrid).get(0).props.rowSelectedActionCreators[1]().payload.args[0]).toBe("/screening/nutrition/form");
-    expect(store.getActions()).toContainEqual(patientActions.clearSelectedPatient());
-    expect(store.getActions()).toContainEqual(
-      ic3PatientActions.getIC3Patients(props.session.sessionLocation.uuid, utils.formatReportRestDate(new Date())));
+    expect(nutritionQueue().find(CardList).length).toBe(2);
+    expect(nutritionQueue().find(CardList).get(0).props.rowSelectedActionCreators.length).toBe(2);
+    expect(nutritionQueue().find(CardList).get(0).props.rowSelectedActionCreators[1]().payload.args[0]).toBe("/screening/nutrition/form");
   });
 
 });
