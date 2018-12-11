@@ -1,10 +1,16 @@
 import React from 'react';
 import { connect } from "react-redux";
-import {patientActions, selectors} from '@openmrs/react-components';
-import {push} from "connected-react-router";
+import {
+  patientActions,
+  CardList,
+  selectors,
+  PatientCard,
+} from '@openmrs/react-components';
+
 import { PATIENT_IDENTIFIER_FILTERS } from "../../gridConstants";
 import vlFilters from "./vlFilters";
-import ScreeningQueue from '../ScreeningQueue';
+import { push } from "connected-react-router";
+import utils from "../../utils";
 
 class VLQueueExpected extends React.Component {
 
@@ -26,16 +32,26 @@ class VLQueueExpected extends React.Component {
   render() {
     return (
       <div>
-        <ScreeningQueue
-          dispatch={this.props.dispatch}
-          filters={[vlFilters.expected]}
-          onMountOtherActionCreators={ [this.onMountOtherActionCreators] }
-          rowData={Object.values( this.props.patients )}
-          rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator]}
-          title=""
+
+        <CardList
+          card={ PatientCard }
+          dispatch={ this.props.dispatch }
+          getPatientIdentifiers={ utils.getPatientIdentifiers }
+          filters={ [vlFilters.expected, vlFilters.required] }
+          loading={ this.props.updating }
+          onMountOtherActionCreators={ [
+            () => this.props.dispatch(patientActions.clearSelectedPatient())
+          ] }
           optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
+          optionalFiltersType='or'
+          rowData={ Object.values(this.props.patients) }
+          rowSelectedActionCreators={ [patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator] }
+          title=""
         />
+
       </div>
+
+
     );
   }
 }

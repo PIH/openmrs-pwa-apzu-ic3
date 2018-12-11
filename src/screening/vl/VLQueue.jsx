@@ -14,7 +14,7 @@ let VLQueue = props => {
 
   const columnDefs = [
     ...BASIC_GRID,
-    COLUMN_DEFS.ACTIONS,
+    COLUMN_DEFS.ALERT,
     COLUMN_DEFS.APPOINTMENT_DATE,
     COLUMN_DEFS.CHECKED_IN_TIME
   ];
