@@ -1,13 +1,19 @@
 import React from 'react';
 import DatePicker from 'react-16-bootstrap-date-picker';
 import { Button, ButtonToolbar, Grid, Row, Col,FormGroup, ControlLabel } from 'react-bootstrap';
-import {patientActions, List, selectors} from '@openmrs/react-components';
+import {
+  patientActions,
+  CardList,
+  patientObjByEncounterTypeFilter,
+  selectors,
+  PatientCard,
+} from '@openmrs/react-components';
+
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
-import {LOCATION_TYPES} from '../constants';
+import {ENCOUNTER_TYPES, LOCATION_TYPES} from '../constants';
 import utils from "../utils";
 import { COLUMN_DEFS, BASIC_GRID, PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
-import checkInFilters from './checkInFilters';
 import ic3PatientActions from '../patient/patientActions';
 
 class CheckInQueue extends React.Component {
@@ -84,17 +90,23 @@ class CheckInQueue extends React.Component {
 
         <br />
 
-        <List
-          columnDefs={ this.columnDefs }
-          filters={[(patient) => !checkInFilters.completed(patient)]}
-          loading={this.props.updating}
-          onMountOtherActionCreators={ [this.onMountOtherActionCreators.bind(this)] }
-          rowData={Object.values(this.props.patients)}
-          onRowCount={this.props.onRowCount}
+
+        <CardList
+          card={PatientCard}
+          dispatch={ this.props.dispatch }
+          getPatientIdentifiers={ utils.getPatientIdentifiers }
+          filters={[patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'exclude')]}
+          loading={ this.props.updating }
+          onMountOtherActionCreators={ [
+            () => this.props.dispatch(patientActions.clearSelectedPatient())
+          ] }
+          optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
+          optionalFiltersType='or'
+          rowData={ Object.values(this.props.patients) }
           rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
           title=""
-          optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
         />
+
       </div>
     );
   }
