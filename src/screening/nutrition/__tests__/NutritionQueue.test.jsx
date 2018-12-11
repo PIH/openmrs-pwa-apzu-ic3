@@ -25,7 +25,11 @@ jest.mock('@openmrs/react-components', () => {
       clearSelectedPatient: jest.fn(),
       setSelectedPatient: jest.fn(),
     },
-    CardList: 'CardList',
+    CardList: () => (
+      <div>
+        <span>card list component</span>
+      </div>
+    ),
   }
 });
 
