@@ -87,7 +87,7 @@
     padding-right: 15px;
     padding-left: 15px;
     background-color: #C3F0FF;
-    height: -webkit-fill-available;
+    height: stretch;
   }
 
   .swiping-summary-and-form {
