@@ -1,5 +1,5 @@
 import { patientObjByEncounterTypeFilter  } from "@openmrs/react-components";
-import { ENCOUNTER_TYPES, HIV_TEST_TYPES, CONCEPTS } from "../../constants";
+import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 import utils from "../../utils";
 import differenceInCalendarDays from 'date-fns/difference_in_calendar_days';
 
