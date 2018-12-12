@@ -37,8 +37,8 @@ class ScreeningForm extends React.Component {
     return (
       <div>
         <div style={centerTextAlign}>
-          <h2>{encounter && encounter.encounterDatetime && moment(`${encounter.encounterDatetime}`, "YYYYMMDD").fromNow()}</h2>
-          <h6>{encounter && encounter.encounterDatetime && moment(`${encounter.encounterDatetime}`).format('DD MMM YYYY')}</h6>
+          <h2>{encounter && encounter.encounterDatetime && moment(`${encounter.encounterDatetime}`).format('DD MMM YYYY')}</h2>
+          <h6>{encounter && encounter.encounterDatetime && moment(`${encounter.encounterDatetime}`).fromNow()}</h6>
         </div>
         <EncounterFormPage
           backLink={props.backLink}
