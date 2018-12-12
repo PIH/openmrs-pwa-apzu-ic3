@@ -1,5 +1,5 @@
 import { patientObjByEncounterTypeFilter  } from "@openmrs/react-components";
-import { ENCOUNTER_TYPES, HIV_TEST_TYPES } from "../../constants";
+import { ENCOUNTER_TYPES, HIV_TEST_TYPES, CONCEPTS } from "../../constants";
 import utils from "../../utils";
 import differenceInCalendarDays from 'date-fns/difference_in_calendar_days';
 
@@ -14,12 +14,12 @@ const helper = {
     if ( patient.age < 2) {
       return false;
     }
-    let lastHtcTest = utils.getLastLabTest(patient.labTests, HIV_TEST_TYPES.hiv_test + "; " + HIV_TEST_TYPES.rapid_test);
+    let lastHtcTest = utils.getLastLabTest(patient.labTests.hiv_tests);
     if ( lastHtcTest === null ) {
       // patient had no prior test and patient is older than 2yo
       return true;
-    } else if (lastHtcTest.result_coded === 'Non-reactive' || lastHtcTest.result_coded === 'Negative'){
-      let daysSinceLastTest = differenceInCalendarDays(new Date(), new Date(lastHtcTest.date_collected));
+    } else if (lastHtcTest.result === CONCEPTS.HTC_RESULTS.Non_Reactive.uuid ){
+      let daysSinceLastTest = differenceInCalendarDays(new Date(), new Date(lastHtcTest.specimenDate));
       if ( (patient.age >= 13 && daysSinceLastTest < 90) || (patient.age < 13 && daysSinceLastTest < 365)) {
         return false;
       } else {

@@ -84,16 +84,15 @@ const utils = {
     return utils.getPatientCheckedInEncounter(patient) !== null ? utils.formatReportRestDate((utils.getPatientCheckedInEncounter(patient)).encounterDatetime) : null;
   },
 
-  getLastLabTest: (labTests, type) => {
+  getLastLabTest: (labTests) => {
     let lastLabTest = null;
     if (labTests !== null ) {
       let filteredTests = labTests;
-      if (typeof filteredTests !== 'undefined' && filteredTests !== null && typeof type !== 'undefined' && type !== null) {
-        filteredTests = labTests.filter(test => type.indexOf(test.test_type) >=0 );
+      if (typeof filteredTests !== 'undefined' && filteredTests !== null ) {
 
         if ( filteredTests.length > 0 ) {
           filteredTests.sort(function (a, b) {
-            return +new Date(b.date_collected) - +new Date(a.date_collected);
+            return +new Date(b.resultDate) - +new Date(a.resultDate);
           });
           lastLabTest = filteredTests[0];
         }
