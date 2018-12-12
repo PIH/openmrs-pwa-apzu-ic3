@@ -4,7 +4,6 @@ import { push } from 'connected-react-router';
 import {selectors} from '@openmrs/react-components';
 import ScreeningQueue from "../ScreeningQueue";
 import vlFilters from './vlFilters';
-import { BASIC_GRID, COLUMN_DEFS } from "../../gridConstants";
 
 let VLQueue = props => {
 
@@ -12,17 +11,9 @@ let VLQueue = props => {
     () => push('/screening/vl/form')
   ];
 
-  const columnDefs = [
-    ...BASIC_GRID,
-    COLUMN_DEFS.ALERT,
-    COLUMN_DEFS.APPOINTMENT_DATE,
-    COLUMN_DEFS.CHECKED_IN_TIME
-  ];
-
   return (
     <div>
       <ScreeningQueue
-        columnDefs={ columnDefs }
         dispatch={ props.dispatch }
         filters={[vlFilters.required, (patient) => !vlFilters.completed(patient)]}
         rowData={ Object.values(props.patients) }

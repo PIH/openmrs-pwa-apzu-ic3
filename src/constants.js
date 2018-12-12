@@ -334,3 +334,20 @@ export const USER_MENU_PAGES = {
   '/logout' : { display : 'Logout', icon : 'sign-out-alt' },
 };
 
+export const VIRAL_LOAD_ALERTS = [
+  "due-for-routine-viral-load-1",
+  "due-for-routine-viral-load-2",
+  "due-for-routine-viral-load-3",
+  "due-for-confirmatory-viral-load",
+  "due-for-routine-viral-load-1p",
+  "due-for-routine-viral-load-2p",
+  "due-for-routine-viral-load-3p"
+];
+
+export const EID_ALERTS = [
+  "eid-positive-rapid-test",
+  "eid-positive-dna-pcr-test",
+  "eid-routine-dna-pcr-test",
+  "eid-routine-12-month-rapid-test",
+  "eid-routine-24-month-rapid-test"
+];

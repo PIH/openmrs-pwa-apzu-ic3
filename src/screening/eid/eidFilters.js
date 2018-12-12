@@ -1,5 +1,5 @@
 import { patientObjByEncounterTypeFilter  } from "@openmrs/react-components";
-import { ENCOUNTER_TYPES } from "../../constants";
+import {ENCOUNTER_TYPES, EID_ALERTS } from "../../constants";
 
 // only patients due for EID test
 /*
@@ -21,7 +21,7 @@ import { ENCOUNTER_TYPES } from "../../constants";
 - Action = Confirm ART Enrollment, Refer for EID DNA-PCR Test (this is added)
  */
 const eidFilter = patient => {
-  return ( ((typeof patient.alert !== 'undefined') && (patient.alert !== null)) ? patient.alert.join(";").includes('eid-') : false );
+  return ( ((typeof patient.alert !== 'undefined') && (patient.alert !== null)) ? patient.alert.some(a => EID_ALERTS.indexOf(a) >= 0) : false );
 };
 
 
