@@ -43,8 +43,11 @@ const createFromReportingRestRep = (restRep) => {
   patient.lastAppointmentDate = restRep.last_appt_date;
   patient.lastVisitDate = restRep.last_visit_date;
 
-  patient.alert = restRep.alerts; // TODO add alerts back in, change to support array
-  patient.labTests = []; // TODO add lab tests back int
+  patient.alert = restRep.alerts;
+  patient.labTests = {
+    viral_load_tests: restRep.viral_load_tests,
+    hiv_tests: restRep.hiv_tests
+  };
   patient.actions = "";  // TODO add actions back in, change to support array
 
 
