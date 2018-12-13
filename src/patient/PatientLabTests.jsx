@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Label } from 'react-bootstrap';
 import {selectors} from '@openmrs/react-components';
 import utils from '../utils';
-import { CONCEPTS } from "../constants";
 
 
 class PatientLabTests extends React.Component {
@@ -15,16 +14,19 @@ class PatientLabTests extends React.Component {
       let filteredTests = this.props.patient.labTests[this.props.test_type];
 
     if ( (typeof filteredTests !== 'undefined') && (filteredTests !== null) ) {
+      filteredTests.sort(function(a,b) {
+        return +new Date(b.specimenDate) - +new Date(a.specimenDate);
+      });
       labTests = filteredTests.map((lab, i) => {
         return (
           <div key={lab.specimenDate}>
-            <h4>{ lab.testType ? (utils.getConceptNameByUuid(CONCEPTS, lab.testType) + " @ ") : "" } {lab.specimenDate !== null ? utils.formatCalendarDate(lab.specimenDate) : '_'}</h4>
+            <h4>{ lab.testType ? (utils.getConceptNameByUuid(lab.testType) + " @ ") : "" } {lab.specimenDate !== null ? utils.formatCalendarDate(lab.specimenDate) : '_'}</h4>
             <ul>
               <li>Date
                 entered: {lab.resultDate !== null ? utils.formatCalendarDate(lab.resultDate) : utils.formatCalendarDate(lab.specimenDate)}</li>
               <li>Results: <Label
                 bsStyle="danger"> {([
-                  lab.result ? utils.getConceptNameByUuid(CONCEPTS.HTC_RESULTS, lab.result) : "",
+                  lab.result ? utils.getConceptNameByUuid(lab.result) : "",
                   lab.resultNumeric,
                   lab.resultLdl === true ? "LDL" : lab.resultLdl
               ]).filter(Boolean).join(", ")}</Label>

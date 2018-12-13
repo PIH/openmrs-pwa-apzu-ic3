@@ -102,15 +102,31 @@ const utils = {
     return lastLabTest;
   },
 
-  getConceptNameByUuid: (concepts, uuid) => {
+  findByUuid: (o, uuid) => {
+      //early return
+    if (o.uuid === uuid) {
+      return o;
+    }
+
+    let result, p;
+    for (p in  o) {
+      if ( o.hasOwnProperty(p) && typeof o[p] === 'object') {
+        result = utils.findByUuid(o[p], uuid);
+        if(result) {
+          return result;
+        }
+      }
+    }
+    return result;
+  },
+
+  getConceptNameByUuid: (uuid) => {
     let conceptName = null;
     if (uuid) {
-      conceptName = Object.keys(concepts)
-        .filter(key => concepts[key].uuid === uuid)
-        .reduce((obj, key) => {
-          obj[key] = concepts[key];
-          return concepts[key].name;
-        }, {});
+      let conceptObj = utils.findByUuid(CONCEPTS, uuid);
+      if (conceptObj) {
+        conceptName = conceptObj.name;
+      }
     }
     return conceptName;
   },
