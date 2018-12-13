@@ -39,6 +39,7 @@ let ScreeningQueue = props => {
         * what happens to the already existing filter.
         */
         cardListFilters={ScreeningFilters}
+        delayInterval={0}
         dispatch={props.dispatch}
         fetchListActionCreator={fetchListActionCreator}
         filters={[...props.filters, patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'include')]}
