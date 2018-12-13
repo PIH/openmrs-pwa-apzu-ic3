@@ -1,13 +1,10 @@
 import React from "react";
+import { ProgramEnrollment } from '@openmrs/react-components';
 
 const ClinicianSummary = props => {
   return (
     <div>
-      <h4><u>Programs</u></h4>
-      <p>Lorem Ipsum is simply dummy text of the printing and 
-        typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s</p>
-      <br />
+      <ProgramEnrollment />
       <h4><u>Diagnoses</u></h4>
       <p>Lorem Ipsum is simply dummy text of the printing and 
         typesetting industry. Lorem Ipsum has been the industry's
