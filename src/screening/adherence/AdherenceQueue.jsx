@@ -18,7 +18,6 @@ let AdherenceQueue = props => {
         dispatch={ props.dispatch }
         filters={[adherenceFilters.required, (patient) => !adherenceFilters.completed(patient)]}
         rowData={ Object.values(props.patients) }
-        onRowCount={ props.onRowCount }
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="Adherence Counseling"
       />

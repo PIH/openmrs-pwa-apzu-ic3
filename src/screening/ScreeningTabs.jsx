@@ -18,15 +18,9 @@ class ScreeningTabs extends React.Component {
     }
     this.state = {
       key: storeKey ? storeKey : 1,
-      expected: 0,
-      inProgress: 0,
-      completed: 0
     };
 
     this.handleSelect = this.handleSelect.bind(this);
-    this.handleExpectedCount = this.handleExpectedCount.bind(this);
-    this.handleInProgressCount = this.handleInProgressCount.bind(this);
-    this.handleCompletedCount = this.handleCompletedCount.bind(this);
   }
 
   componentWillUnmount() {
@@ -39,23 +33,6 @@ class ScreeningTabs extends React.Component {
     });
   }
 
-  handleExpectedCount(count) {
-    this.setState(() => ({
-      expected: count
-    }));
-  }
-  handleInProgressCount(count) {
-    this.setState(() => ({
-      inProgress: count
-    }));
-  }
-
-  handleCompletedCount(count) {
-    this.setState(() => ({
-      completed: count
-    }));
-  }
-
   render() {
     return (
       <div>
@@ -65,25 +42,21 @@ class ScreeningTabs extends React.Component {
           id={ this.props.tabsId }
           onSelect={ this.handleSelect }
           className="activeTab">
-          <Tab eventKey={ 1 } title={ "in-progress(" + this.state.inProgress + ")" }>
+          <Tab eventKey={ 1 } title={ "in-progress" }>
             <ScreeningQueue
-              columnDefs={ this.props.columnDefs }
               dispatch={ this.props.dispatch }
               filters={[this.props.filters.required, (patient) => !this.props.filters.completed(patient)]}
               rowData={ Object.values(this.props.rowData) }
               rowSelectedActionCreators={ this.props.rowSelectedActionCreators }
-              onRowCount={ this.handleInProgressCount }
               title=""
             />
           </Tab>
-          <Tab eventKey={ 2 } title={ "completed(" + this.state.completed + ")" }>
+          <Tab eventKey={ 2 } title={ "completed" }>
             <ScreeningQueue
-              columnDefs={ this.props.columnDefs }
               dispatch={ this.props.dispatch }
               filters={[this.props.filters.completed]}
               rowData={ Object.values(this.props.rowData) }
               rowSelectedActionCreators={ this.props.rowSelectedActionCreators }
-              onRowCount={ this.handleCompletedCount }
               title=""
             />
           </Tab>

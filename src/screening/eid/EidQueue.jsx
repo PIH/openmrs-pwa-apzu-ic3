@@ -18,7 +18,6 @@ let EidQueue = props => {
         dispatch={ props.dispatch }
         filters={[eidFilters.required, (patient) => !eidFilters.completed(patient)]}
         rowData={ Object.values(props.patients) }
-        onRowCount={ props.onRowCount }
         rowSelectedActionCreators={rowSelectedActionCreators}
         title=""
       />
