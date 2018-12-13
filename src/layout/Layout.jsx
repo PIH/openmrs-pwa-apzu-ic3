@@ -13,6 +13,7 @@ const Layout = props => {
           IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE,
           IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE]
       }
+      patientHeaderShowBackButton={true}
       leftRail={<ScreeningList/>}
       logo={logo}
       navMenuPages={NAV_MENU_PAGES}
