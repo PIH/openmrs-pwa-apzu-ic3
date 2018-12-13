@@ -6,7 +6,7 @@ import {EncounterHistory} from "@openmrs/react-components";
 const AdherenceSummary = props => {
   return (
     <div>
-      <PatientLabTests test_type="Viral Load"/>
+      <PatientLabTests test_type={ "viral_load_tests" }/>
       <EncounterHistory
         encounterType={ENCOUNTER_TYPES.AdherenceCounselingEncounterType}
       />
