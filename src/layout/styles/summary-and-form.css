@@ -152,3 +152,9 @@
     margin: auto;
   }
 }
+
+@media only screen and (min-width: 600px) {
+  .row-container .back-button {
+    display: none;
+  }
+}
