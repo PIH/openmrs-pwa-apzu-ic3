@@ -36,6 +36,7 @@ class VLQueueExpected extends React.Component {
         <ScreeningFilters />
         <CardList
           card={ PatientCard }
+          delayInterval={0}
           dispatch={ this.props.dispatch }
           getPatientIdentifiers={ utils.getPatientIdentifiers }
           filters={ [vlFilters.expected, vlFilters.required] }

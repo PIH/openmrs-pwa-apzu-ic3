@@ -90,6 +90,7 @@ class CheckInQueue extends React.Component {
 
         <CardList
           card={PatientCard}
+          delayInterval={0}
           dispatch={ this.props.dispatch }
           getPatientIdentifiers={ utils.getPatientIdentifiers }
           filters={[patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'exclude')]}
