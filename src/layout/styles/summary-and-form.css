@@ -73,7 +73,7 @@
   }
 
   .summary-layout {
-    height: inherit;
+    height: 100vh;
     padding: 20px;
     font-size: 120%;
     background: lightgray;
@@ -94,7 +94,7 @@
   }
 
   .form-layout {
-    height: inherit;
+    height: 100vh;
     padding-left: 10px;
     background: lightgray;
   }
@@ -138,4 +138,17 @@
     display: none;
   }
 
+}
+
+@media only screen and (max-width: 600px) {
+  .list-group button.list-group-item {
+    width: 50% !important;
+    margin: auto;
+  }
+  
+  .summary-layout .summary-layout-content {
+    width: fit-content;
+    font-size: 20px;
+    margin: auto;
+  }
 }

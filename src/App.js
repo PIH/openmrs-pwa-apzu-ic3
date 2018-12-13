@@ -57,6 +57,7 @@ import BloodPressureSummaryAndForm from "./screening/bloodPressure/BloodPressure
 import NutritionSummaryAndForm from "./screening/nutrition/NutritionSummaryAndForm";
 import HtcSummaryAndForm from "./screening/htc/HtcSummaryAndForm";
 import UserSession from "./login/UserSession";
+import ScreeningList from './screening/ScreeningList';
 
 const { store, persistor } = setupStoreAndPersistor();
 
@@ -216,6 +217,11 @@ const App = props => {
             <Layout
               component={ClinicianSummaryAndForm}
               path="/screening/clinician/form"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={ScreeningList}
+              path="/screening"
               redirectOnLogin="/"
             />
           </Switch>
