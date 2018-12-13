@@ -9,26 +9,32 @@ import utils from '../utils';
 class PatientLabTests extends React.Component {
 
   render() {
-    let labTests = this.props.patient.labTests.map((lab, i) => {
-      if ((typeof this.props.test_type === 'undefined') ||
-        (typeof this.props.test_type !== 'undefined' && this.props.test_type.indexOf(lab.test_type) >= 0)) {
+    let labTests = null;
+    if (typeof this.props.test_type !== 'undefined') {
+      let filteredTests = this.props.patient.labTests[this.props.test_type];
+
+    if ( (typeof filteredTests !== 'undefined') && (filteredTests !== null) ) {
+      labTests = filteredTests.map((lab, i) => {
         return (
-          <div key={lab.lab_test_id}>
-            <h4>{lab.test_type} @ {lab.date_collected !== null ? utils.formatCalendarDate(lab.date_collected) : '_'}</h4>
+          <div key={lab.specimenDate}>
+            <h4>{lab.testType} @ {lab.specimenDate !== null ? utils.formatCalendarDate(lab.specimenDate) : '_'}</h4>
             <ul>
               <li>Date
-                entered: {lab.date_result_entered !== null ? utils.formatCalendarDate(lab.date_result_entered) : '_'}</li>
+                entered: {lab.resultDate !== null ? utils.formatCalendarDate(lab.resultDate) : '_'}</li>
               <li>Results: <Label
-                bsStyle="danger"> {([lab.result_coded, lab.result_numeric, lab.result_exception]).filter(Boolean).join(", ")}</Label>
+                bsStyle="danger"> {([
+                  lab.result,
+                  lab.resultNumeric,
+                  lab.resultLdl === true ? "LDL" : lab.resultLdl
+              ]).filter(Boolean).join(", ")}</Label>
               </li>
             </ul>
           </div>
 
         );
-      } else {
-        return null;
-      }
-    });
+      });
+    }
+  }
 
     return (
       <div>

@@ -6,7 +6,7 @@ import {EncounterHistory} from "@openmrs/react-components";
 const HtcSummary = props => {
   return (
     <div>
-      <PatientLabTests test_type={HIV_TEST_TYPES.hiv_test + "; " + HIV_TEST_TYPES.rapid_test}/>
+      <PatientLabTests test_type={ "hiv_tests" }/>
       <EncounterHistory
         encounterType={ENCOUNTER_TYPES.HTCEncounterType}
       />

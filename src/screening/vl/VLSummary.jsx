@@ -6,7 +6,7 @@ import {EncounterHistory} from "@openmrs/react-components";
 const VLSummary = props => {
   return (
     <div>
-      <PatientLabTests/>
+      <PatientLabTests test_type={ "viral_load_tests" }/>
       <EncounterHistory
         encounterType={ENCOUNTER_TYPES.VLEncounterType}
       />
