@@ -13,17 +13,14 @@ import { push } from "connected-react-router";
 import { connect } from "react-redux";
 import {ENCOUNTER_TYPES, LOCATION_TYPES} from '../constants';
 import utils from "../utils";
-import { COLUMN_DEFS, BASIC_GRID, PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
+import { PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
 import ic3PatientActions from '../patient/patientActions';
+import ScreeningFilters from '../screening/ScreeningFilters';
 
 class CheckInQueue extends React.Component {
 
   constructor(props) {
     super(props);
-    this.columnDefs =  [
-      ...BASIC_GRID,
-      COLUMN_DEFS.APPOINTMENT_DATE
-    ];
 
     this.state = {
       appointmentDate: new Date().toISOString()
@@ -56,8 +53,8 @@ class CheckInQueue extends React.Component {
   render() {
     return (
       <div>
+        <ScreeningFilters />
         <br />
-
         <Grid>
           <Row>
             <FormGroup controlId="formApptDate">
