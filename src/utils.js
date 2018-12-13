@@ -102,6 +102,19 @@ const utils = {
     return lastLabTest;
   },
 
+  getConceptNameByUuid: (concepts, uuid) => {
+    let conceptName = null;
+    if (uuid) {
+      conceptName = Object.keys(concepts)
+        .filter(key => concepts[key].uuid === uuid)
+        .reduce((obj, key) => {
+          obj[key] = concepts[key];
+          return concepts[key].name;
+        }, {});
+    }
+    return conceptName;
+  },
+
   getAdherenceSessionNumber: (obs) => {
     let sessionNumber = null;
     obs.forEach(function(observation) {

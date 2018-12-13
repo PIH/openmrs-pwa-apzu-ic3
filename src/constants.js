@@ -130,7 +130,7 @@ export const CONCEPTS = {
     uuid: '656fbd28-977f-11e1-8993-905e29aff6c1'
   },
   'HTC_RESULTS': {
-    uuid: '654b983a-977f-11e1-8993-905e29aff6c1',
+    uuid: '655dcb7c-977f-11e1-8993-905e29aff6c1',
     'Reactive': {
       uuid: '6549be7a-977f-11e1-8993-905e29aff6c1',
       name: 'Reactive'
@@ -240,6 +240,10 @@ export const CONCEPTS = {
       uuid: 'e08212b8-955d-11e7-abc4-cec278b6b50a',
       name: 'Lisungwi GeneXpert'
     }
+  },
+  'DNA_PCR' : {
+    uuid: '654a6960-977f-11e1-8993-905e29aff6c1',
+    name: 'DNA PCR'
   },
   'SOURCE_OF_REFERRAL' : {
     uuid: '65664fc2-977f-11e1-8993-905e29aff6c1',
