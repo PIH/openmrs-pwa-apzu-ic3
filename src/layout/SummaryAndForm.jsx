@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Grid, Row, Glyphicon } from "react-bootstrap";
 import Swiper from 'react-id-swiper';
+import { withRouter } from 'react-router-dom';
 import 'react-id-swiper/src/styles/css/swiper.css';
 import { centerTextAlign } from '../pwaStyles';
 import Summary from "./Summary";
@@ -10,7 +11,7 @@ import { selectors } from "@openmrs/react-components";
 import connect from "react-redux/es/connect/connect";
 import './styles/summary-and-form.css';
 
-class SummaryAndForm extends React.Component {
+export class SummaryAndForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -66,7 +67,7 @@ class SummaryAndForm extends React.Component {
             <div>
               <span 
                 className="back-button" 
-                onClick={() => this.props.history.goBack()}
+                onClick={() => this.props.history.push('/screening')}
               >
                 <Glyphicon
                   className="back-button-icon"
@@ -117,7 +118,6 @@ class SummaryAndForm extends React.Component {
                     form={this.props.form}
                     sliderButton={this.formSwiperButton}
                   />
-                  <div>Form forward</div>
                 </div>
               ) : (
                 <div>
@@ -157,4 +157,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(SummaryAndForm);
+export default withRouter(connect(mapStateToProps)(SummaryAndForm));
