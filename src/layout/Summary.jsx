@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Col, Grid, Row} from "react-bootstrap";
-import {centerTextAlign} from "../pwaStyles";
+import { Col, Grid, Row } from "react-bootstrap";
+import { centerTextAlign } from "../pwaStyles";
 
 const Summary = props => {
 
@@ -14,13 +14,17 @@ const Summary = props => {
           </Col>
         </Row>
       </Grid>
-      {React.cloneElement(props.summary, { backLink: props.backLink })}
+      <div className="summary-layout-content">
+        {React.cloneElement(props.summary, { backLink: props.backLink })}
+      </div>
+      {props.sliderButton && props.sliderButton()}
     </Col>
   );
 };
 
 Summary.propTypes = {
   backLink: PropTypes.string.isRequired,
+  sliderButton: PropTypes.func.isRequired,
   summary: PropTypes.object.isRequired,
 };
 

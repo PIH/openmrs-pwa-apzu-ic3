@@ -4,7 +4,6 @@ import { push } from 'connected-react-router';
 import { selectors } from '@openmrs/react-components';
 import ScreeningTabs from "../ScreeningTabs";
 import htcFilters from './htcFilters';
-import { BASIC_GRID, COLUMN_DEFS } from "../../gridConstants";
 
 
 let HtcQueue = props => {
@@ -13,18 +12,10 @@ let HtcQueue = props => {
     () => push('/screening/htc/form')
   ];
 
-  const columnDefs = [
-    ...BASIC_GRID,
-    COLUMN_DEFS.CHECKED_IN_TIME,
-    COLUMN_DEFS.ACTIONS,
-    COLUMN_DEFS.APPOINTMENT_DATE
-  ];
-
   return (
     <div>
       <ScreeningTabs
         dispatch={ props.dispatch }
-        columnDefs = { columnDefs }
         filters={ htcFilters }
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={ rowSelectedActionCreators }

@@ -11,6 +11,7 @@ import { PATIENT_IDENTIFIER_FILTERS } from "../../gridConstants";
 import vlFilters from "./vlFilters";
 import { push } from "connected-react-router";
 import utils from "../../utils";
+import ScreeningFilters from '../ScreeningFilters';
 
 class VLQueueExpected extends React.Component {
 
@@ -32,7 +33,7 @@ class VLQueueExpected extends React.Component {
   render() {
     return (
       <div>
-
+        <ScreeningFilters />
         <CardList
           card={ PatientCard }
           dispatch={ this.props.dispatch }

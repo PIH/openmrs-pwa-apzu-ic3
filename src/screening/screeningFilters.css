@@ -1,0 +1,62 @@
+.queue-filters {
+  padding: 20px 0px;
+  font-size: 14px;
+}
+
+.queue-filters .identifier-filter-container {
+  padding-bottom: 10px 0;
+}
+
+.identifier-filter {
+  display: inline-flex;
+  align-items: baseline;
+  padding: 5px;
+}
+
+.identifier-filter > span {
+  padding: 0 10px;
+}
+
+.identifier-filter div:nth-child(2) {
+  background: red;
+  height: 50px;
+}
+
+.identifier-filter .div-error {
+  display: none;
+}
+
+.identifier-filter .form-control {
+  border: 1px black solid;
+  height: 25px;
+  width: 80px;
+}
+
+.name-filter-container > div {
+  margin-bottom: 10px;
+}
+
+.name-filter {
+  display: flex;
+  width: 400px;
+  position: relative;
+}
+
+.name-filter input {
+  width: 80%;
+  padding: 0px 0px 0px 40px;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  color: #003f5e;
+  display: block;
+}
+.name-filter .left-icon{
+  position: absolute;
+  left: 1%;
+  line-height: 30px;
+}
+.name-filter .right-icon {
+  position: absolute;
+  left: 75%;
+  line-height: 30px;
+}

@@ -24,7 +24,6 @@ let ActiveVisits = props => {
       <ScreeningQueue
         dispatch={ props.dispatch }
         rowData={ Object.values(props.patients) }
-        onRowCount={ props.onRowCount }
         rowSelectedActionCreators={ rowSelectedActionCreators }
         title=""
       />

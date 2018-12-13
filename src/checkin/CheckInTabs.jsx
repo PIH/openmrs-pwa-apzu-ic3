@@ -19,9 +19,6 @@ class CheckInTabs extends React.Component {
 
     this.state = {
       key: this.props.tabIndex ? this.props.tabIndex : 1,
-      expected: 0,
-      inProgress: 0,
-      completed: 0
     };
   }
 
@@ -35,44 +32,27 @@ class CheckInTabs extends React.Component {
     });
   }
 
-  handleExpectedCount(count) {
-    this.setState(() => ({
-      expected: count
-    }));
-  }
-  handleInProgressCount(count) {
-    this.setState(() => ({
-      inProgress: count
-    }));
-  }
-
-  handleCompletedCount(count) {
-    this.setState(() => ({
-      completed: count
-    }));
-  }
-
-
-
   render() {
     return (
       <div>
         <h3><Label>Check-In List</Label></h3>
         <h3><Label>{''}</Label></h3>
         <Tabs
-          defaultActiveKey={ this.state.key }
-          id={ TAB_NAME }
-          className="activeTab" onSelect={ this.handleSelect }>
-          <Tab eventKey={ 1 } title={ "expected(" + this.state.expected + ")" }>
-            <CheckInQueue onRowCount={ this.handleExpectedCount.bind(this) }/>
+          className="activeTab" 
+          defaultActiveKey={this.state.key}
+          id={TAB_NAME}
+          onSelect={this.handleSelect}
+        >
+          <Tab eventKey={1} title={"expected"}>
+            <CheckInQueue />
           </Tab>
 
-          <Tab eventKey={ 2 } title={ "in-progress(" + this.state.inProgress + ")" }>
-            <ActiveVisits onRowCount={ this.handleInProgressCount.bind(this) }/>
+          <Tab eventKey={2} title={"in-progress"}>
+            <ActiveVisits />
           </Tab>
 
-          <Tab eventKey={ 3 } title={ "completed(" + this.state.completed + ")" }>
-            <CompletedVisits onRowCount={ this.handleCompletedCount.bind(this) }/>
+          <Tab eventKey={3} title={"completed"}>
+            <CompletedVisits />
           </Tab>
 
         </Tabs>
@@ -86,6 +66,6 @@ const mapStateToProps = (state) => {
   return {
     tabIndex: R.path(['gridtabs', TAB_NAME], state)
   };
-}
+};
 
 export default connect(mapStateToProps)(CheckInTabs);

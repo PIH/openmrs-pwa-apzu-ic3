@@ -24,9 +24,6 @@ const searchPatient = () => {
 
 describe('Component: SearchPatient', () => {
   beforeEach(() => {
-    props = {
-      columnDefs: []
-    };
     store = mockStore(
       {
         dispatch: {},

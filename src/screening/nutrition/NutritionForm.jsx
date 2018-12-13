@@ -43,57 +43,51 @@ class NutritionForm extends React.Component {
   render() {
     const formContent = (
       <Grid>
+        <br />
         <Row>
-          <Col sm={4}>
-            <FormGroup controlId="formWeight">
-              <ControlLabel sm={6} style={centerElements}>
-                Weight
-              </ControlLabel>
-              <br />
+          <FormGroup controlId="formWeight">
+            <ControlLabel xs={1} style={centerElements}>
+              Weight
+            </ControlLabel>
 
-              <Col sm={7} xsOffset={2}>
-                <Obs
-                  concept={CONCEPTS.Weight.uuid}
-                  path="weight"
-                  placeholder="weight in kg"
-                  validate={this.props.patient.age > 18 ? [minValue25, maxValue140] :  [minValue2, maxValue100]}
-                />
-              </Col>
-              <ControlLabel sm={1}>
-                kg
-              </ControlLabel>
-            </FormGroup>
-          </Col>
-          <Col sm={4}>
-            <FormGroup controlId="formHeight">
-              <ControlLabel sm={6} style={centerElements}>
-                Height
-              </ControlLabel>
-              <br />
+            <Col xs={4} xsOffset={4}>
+              <Obs
+                concept={CONCEPTS.Weight.uuid}
+                path="weight"
+                placeholder="weight in kg"
+                validate={this.props.patient.age > 18 ? [minValue25, maxValue140] :  [minValue2, maxValue100]}
+              />
+            </Col>
+            <ControlLabel xs={1} style={labelTop}>
+              kg
+            </ControlLabel>
+          </FormGroup>
 
-              <Col sm={6} xsOffset={2}>
-                <Obs
-                  concept={CONCEPTS.Height.uuid}
-                  path="height"
-                  placeholder="height in cm"
-                  value={ this.state.lastHeight !== null ? this.state.lastHeight : null }
-                  validate={this.props.patient.age > 18 ? [minValue120, maxValue215] :  [minValue20, maxValue215]}
-                />
-              </Col>
-              <ControlLabel sm={1}>
-                cm
-              </ControlLabel>
-            </FormGroup>
-          </Col>
+          <FormGroup controlId="formHeight">
+            <ControlLabel xs={1} style={centerElements}>
+              Height
+            </ControlLabel>
+
+            <Col xs={4} xsOffset={4}>
+              <Obs
+                concept={CONCEPTS.Height.uuid}
+                path="height"
+                placeholder="height in cm"
+                value={ this.state.lastHeight !== null ? this.state.lastHeight : null }
+                validate={this.props.patient.age > 18 ? [minValue120, maxValue215] :  [minValue20, maxValue215]}
+              />
+            </Col>
+            <ControlLabel xs={1} style={labelTop}>
+              cm
+            </ControlLabel>
+          </FormGroup>
 
         {( (this.props.patient.age >= 18) && (this.props.patient.age < 50) && (this.props.patient.gender === 'F') ) &&
-        <Col sm={4}>
           <FormGroup controlId="formPregnant">
-            <ControlLabel sm={2} style={centerElements}>
+            <ControlLabel sm={1} style={centerElements}>
             Pregnant
             </ControlLabel>
-            < br/>
-            <Col sm={12}>
+            <Col xs={6} xsOffset={3}>
               <Obs
                 concept={CONCEPTS.Pregnant.uuid}
                 conceptAnswers={FORM_ANSWERS.trueFalse}
@@ -101,58 +95,52 @@ class NutritionForm extends React.Component {
               />
             </Col>
           </FormGroup>
-        </Col>
         }
 
         { (( this.props.patient.age >= 18 && this.props.patient.gender === 'M')
           || (this.props.patient.gender === 'F' && this.props.patient.age >= 18 && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.False.uuid))
           || (this.props.patient.gender === 'F' && this.props.patient.age > 50))&&
-          <Col sm={4}>
-            <FormGroup controlId="formBMI">
-              <ControlLabel sm={6} style={centerElements}>
-              BMI
-              </ControlLabel>
-              <br />
+          <FormGroup controlId="formBMI">
+            <ControlLabel xs={6} style={centerElements}>
+            BMI
+            </ControlLabel>
+            <br />
 
-              <Col sm={7} xsOffset={2}>
-                <h3 style={ labelTop }><Label bsStyle={this.props.bmiStyle.alert} style={{visibility: "visible"}}>{ this.props.bmi ? this.props.bmi : "00.00" }</Label>
-                </h3>
-              </Col>
+            <Col xs={4} xsOffset={4}>
+              <h3 style={ labelTop }><Label bsStyle={this.props.bmiStyle.alert} style={{visibility: "visible"}}>{ this.props.bmi ? this.props.bmi : "00.00" }</Label>
+              </h3>
+            </Col>
 
-              <ControlLabel sm={1}>
-                kg/m<sup>2</sup>
-              </ControlLabel>
-            </FormGroup>
-          </Col>
+            <ControlLabel xs={1} style={labelTop}>
+              kg/m<sup>2</sup>
+            </ControlLabel>
+          </FormGroup>
         }
 
         { ((this.props.patient.age < 18) || ( (this.props.patient.age >= 18) && (this.props.patient.gender === 'F') && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.True.uuid))) &&
-          <Col sm={4}>
             <FormGroup controlId="formMuac">
-              <ControlLabel sm={2} style={centerElements}>
+              <ControlLabel xs={2} style={centerElements}>
                 MUAC
               </ControlLabel>
               <br />
-              <Col sm={10} >
+              <Col sm={4} xsOffset={4}>
                 <Obs
                   concept={CONCEPTS.MUAC.uuid}
                   path="muac"
                   placeholder="muac in cm"
                 />
               </Col>
-              <ControlLabel sm={1}>
+              <ControlLabel xs={1} style={labelTop}>
                 cm
               </ControlLabel>
             </FormGroup>
-          </Col>
           }
-          <Col sm={4}>
             <FormGroup controlId="formMalnutrition">
-              <ControlLabel sm={2} style={centerElements}>
+              <ControlLabel xs={2} style={centerElements}>
                 <span style={{visibility: this.props.showMalnutrition}}>Malnutrition</span>
               </ControlLabel>
               <br />
-              <Col sm={8} xsOffset={2}>
+              <Col xs={4} xsOffset={4}>
                 <Alert
                   bsStyle={this.props.malnutrition ? this.props.malnutrition.alert : "info"}
                   style={{visibility: (this.props.malnutrition && this.props.malnutrition.message) ? "visible" : "hidden" }}
@@ -162,7 +150,6 @@ class NutritionForm extends React.Component {
               </Col>
 
             </FormGroup>
-          </Col>
         </Row>
       </Grid>
     );
