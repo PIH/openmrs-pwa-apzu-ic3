@@ -15,12 +15,14 @@ const Summary = props => {
         </Row>
       </Grid>
       {React.cloneElement(props.summary, { backLink: props.backLink })}
+      {props.sliderButton && props.sliderButton()}
     </Col>
   );
 };
 
 Summary.propTypes = {
   backLink: PropTypes.string.isRequired,
+  sliderButton: PropTypes.func.isRequired,
   summary: PropTypes.object.isRequired,
 };
 

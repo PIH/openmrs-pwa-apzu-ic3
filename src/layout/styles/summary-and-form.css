@@ -1,3 +1,47 @@
+.summary-and-form .back-button{
+  font-size: 30px;
+  display: inline-block;
+}
+.row-container {
+  display: grid;
+  grid-template-columns: 0 0.1fr 4fr 1fr; /* fraction*/
+}
+.summary-and-form .div-container .row-container > div {
+  display: inline-block;
+  margin: auto;
+  padding: 10px 0px;
+}
+
+.summary-and-form .div-container .row-container > div h3 {
+  margin: auto;
+}
+
+.summary-swiper-button {
+  font-size: 30px;
+  color: gray;
+  font-weight: 200;
+  float: right;
+}
+
+.summary-swiper-button > span {
+  top: 12px;
+  font-size: 40px;
+  color: darkgray;
+}
+
+.form-swiper-button {
+  font-size: 30px;
+  color: gray;
+  font-weight: 200;
+  float: left;
+}
+
+.form-swiper-button > span {
+  top: 12px;
+  font-size: 40px;
+  color: darkgray;
+}
+
 @media only screen and (max-width: 501px) {
   .show-grid.summary-form-slider.row {
     display: none;

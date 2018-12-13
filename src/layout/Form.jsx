@@ -6,6 +6,7 @@ const Form = props => {
   return (
     <Col className="form-layout">
       {React.cloneElement(props.form, { backLink: props.backLink })}
+      {props.sliderButton && props.sliderButton()}
     </Col>
   );
 
@@ -13,7 +14,8 @@ const Form = props => {
 
 Form.propTypes = {
   backLink: PropTypes.string.isRequired,
-  form: PropTypes.object.isRequired
+  form: PropTypes.object.isRequired,
+  sliderButton: PropTypes.func.isRequired,
 };
 
 

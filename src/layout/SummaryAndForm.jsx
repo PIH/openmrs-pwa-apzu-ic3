@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col, Grid, Row } from "react-bootstrap";
+import { Col, Grid, Row, Glyphicon } from "react-bootstrap";
 import Swiper from 'react-id-swiper';
 import 'react-id-swiper/src/styles/css/swiper.css';
 import { centerTextAlign } from '../pwaStyles';
@@ -10,61 +10,85 @@ import { selectors } from "@openmrs/react-components";
 import connect from "react-redux/es/connect/connect";
 import './styles/summary-and-form.css';
 
-const SummaryAndForm = props => {
-  const params = {
-    spaceBetween: 30
-  };
+class SummaryAndForm extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.goNext = this.goNext.bind(this);
+    this.goPrev = this.goPrev.bind(this);
+    this.summarySwiperButton = this.summarySwiperButton.bind(this);
+    this.formSwiperButton = this.formSwiperButton.bind(this);
+    this.swiper = null;
+  }
+  
+  goNext() {
+    if (this.swiper) {this.swiper.slideNext();};
+  }
 
-  return (
-    <div className="div-container summary-and-form">
-      <Grid className="div-container">
-        <Row className="row-container">
-          <Col
-            className="pad-left"
-            md={20}
-            sm={20}
-          >
-            <span><h3>{props.title}</h3></span>
-          </Col>
-        </Row>
-        <Row className="show-grid summary-form-slider">
-          <div className="summary-form">
-            <Summary
-              backLink={props.backLink}
-              summary={props.summary}
-            />
-          </div>
-          {props.patient.visit || !props.requireVisitForForm ? (
-            <div className="form-summary ">
-              <Form
-                backLink={props.backLink}
-                form={props.form}
-              />
-            </div>
-          ) : (
+  goPrev() {
+    if (this.swiper) {this.swiper.slidePrev();};
+  }
+
+  summarySwiperButton() {
+    return (
+      <span 
+        className="summary-swiper-button" 
+        onClick={() => this.goNext()}
+      > Today
+        <Glyphicon
+          glyph="menu-right"
+        />
+      </span>
+    );
+  }
+
+  formSwiperButton() {
+    return (
+      <span 
+        className="form-swiper-button" 
+        onClick={() => this.goPrev()}
+      > 
+        <Glyphicon
+          glyph="menu-left"
+        />Summary
+      </span>
+    );
+  }
+
+  render() {
+    const params = {
+      spaceBetween: 30,
+    };
+    return (
+      <div className="div-container summary-and-form">
+        <Grid className="div-container">
+          <Row className="row-container">
             <div>
-              <Col sm={8}>
-                <div style={centerTextAlign}>
-                  <h4>Please check-in patient</h4>
-                </div>
-              </Col>
+              <span 
+                className="back-button" 
+                onClick={() => this.props.history.goBack()}
+              >
+                <Glyphicon
+                  className="back-button-icon"
+                  glyph="menu-left"
+                /></span>
             </div>
-          )}
-        </Row>
-        <div className="swiping-summary-and-form">
-          <Swiper {...params}>
+            <div>
+              <span><h3>{this.props.title}</h3></span>
+            </div>
+          </Row>
+          <Row className="show-grid summary-form-slider">
             <div className="summary-form">
               <Summary
-                backLink={props.backLink}
-                summary={props.summary}
+                backLink={this.props.backLink}
+                summary={this.props.summary}
               />
             </div>
-            {props.patient.visit || !props.requireVisitForForm ? (
-              <div className="form-summary">
+            {this.props.patient.visit || !this.props.requireVisitForForm ? (
+              <div className="form-summary ">
                 <Form
-                  backLink={props.backLink}
-                  form={props.form}
+                  backLink={this.props.backLink}
+                  form={this.props.form}
                 />
               </div>
             ) : (
@@ -76,12 +100,41 @@ const SummaryAndForm = props => {
                 </Col>
               </div>
             )}
-          </Swiper>
-        </div>
-      </Grid>
-    </div>
+          </Row>
+          <div className="swiping-summary-and-form">
+            <Swiper {...params} ref={node => { if (node) {this.swiper = node.swiper;}}}>
+              <div className="summary-form">
+                <Summary
+                  backLink={this.props.backLink}
+                  sliderButton={this.summarySwiperButton}
+                  summary={this.props.summary}
+                />
+              </div>
+              {this.props.patient.visit || !this.props.requireVisitForForm ? (
+                <div className="form-summary">
+                  <Form
+                    backLink={this.props.backLink}
+                    form={this.props.form}
+                    sliderButton={this.formSwiperButton}
+                  />
+                  <div>Form forward</div>
+                </div>
+              ) : (
+                <div>
+                  <Col sm={8}>
+                    <div style={centerTextAlign}>
+                      <h4>Please check-in patient</h4>
+                    </div>
+                  </Col>
+                </div>
+              )}
+            </Swiper>
+          </div>
+        </Grid>
+      </div>
 
-  );
+    );
+  }
 };
 
 SummaryAndForm.propTypes = {
