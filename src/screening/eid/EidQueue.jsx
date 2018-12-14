@@ -19,7 +19,7 @@ let EidQueue = props => {
         filters={[eidFilters.required, (patient) => !eidFilters.completed(patient)]}
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={rowSelectedActionCreators}
-        title=""
+        title="EID Queue"
       />
     </div>
   );

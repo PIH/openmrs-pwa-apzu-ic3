@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 import {selectors} from "@openmrs/react-components";
-import ScreeningTabs from "../ScreeningTabs";
 import bloodPressureFilters from './bloodPressureFilters';
+import ScreeningQueue from "../ScreeningQueue";
 
 // TODO can we figure out a better way to do this without passing dispatch all the way through?
 
@@ -15,13 +15,11 @@ let BloodPressureQueue = props => {
 
   return (
     <div>
-
-      <ScreeningTabs
+      <ScreeningQueue
         dispatch={ props.dispatch }
-        filters={ bloodPressureFilters }
+        filters={[bloodPressureFilters.required, (patient) => !bloodPressureFilters.completed(patient)]}
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={ rowSelectedActionCreators }
-        tabsId="bp-tabs"
         title="Blood Pressure Queue"
       />
     </div>

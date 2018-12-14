@@ -338,10 +338,10 @@ export const FORM_ANSWERS = {
 export const NAV_MENU_PAGES = {
   '/' : { display : 'Home', icon : 'home'},
   '/searchPatient' : { display : 'Search Patient', icon : 'search'},
-  '/checkin/checkInTabs' : { display : 'Check-In', icon : 'notes-medical'},
-  '/screening/vl/tabs' : { display : 'Viral Load', icon : 'vial' },
+  '/checkin/checkInQueue': { display: 'Check-In', icon: 'notes-medical' },
+  '/screening/vl/queue': { display: 'Viral Load', icon: 'vial' },
   '/screening/adherence/queue' : { display : 'Adherence', icon : 'pills' },
-  '/screening/eid/tabs' : { display : 'EID', icon : 'child' },
+  '/screening/eid/queue': { display: 'EID', icon: 'child' },
   '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
   '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
   '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },

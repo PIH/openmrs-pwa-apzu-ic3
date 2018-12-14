@@ -30,7 +30,6 @@ import HomePage from './home/HomePage';
 import InfoPatient from './patient/PatientInfo';
 import SearchPatient from './search/SearchPatient';
 import CheckInQueue from './checkin/CheckInQueue';
-import CheckInTabs from './checkin/CheckInTabs';
 import CheckInPage from './checkin/CheckInPage';
 import NursePage from './screening/nurse/NursePage';
 import ClinicianSummaryAndForm from './screening/clinician/ClinicianSummaryAndForm';
@@ -40,13 +39,9 @@ import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import AdherenceQueue from "./screening/adherence/AdherenceQueue";
 import AdherenceSummaryAndForm from "./screening/adherence/AdherenceSummaryAndForm";
 import HtcQueue from "./screening/htc/HtcQueue";
-import VLQueueTabs from "./screening/vl/VLQueueTabs";
 import VLQueue from "./screening/vl/VLQueue";
-import VLQueueComplete from "./screening/vl/VLQueueComplete";
 import VLSummaryAndForm from "./screening/vl/VLSummaryAndForm";
-import EidQueueTabs from './screening/eid/EidQueueTabs';
 import EidQueue from './screening/eid/EidQueue';
-import EidQueueComplete from './screening/eid/EidQueueComplete';
 import EidSummaryAndForm from './screening/eid/EidSummaryAndForm';
 import NurseQueue from "./screening/nurse/NurseQueue";
 import ActiveVisitsQueue from "./visit/ActiveVisits";
@@ -87,11 +82,6 @@ const App = props => {
             <Layout
               component={SearchPatient}
               path="/searchPatient"
-              redirectOnLogin="/"
-            />
-            <Layout
-              component={CheckInTabs}
-              path="/checkin/checkInTabs"
               redirectOnLogin="/"
             />
             <Layout
@@ -150,18 +140,8 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={VLQueueTabs}
-              path="/screening/vl/tabs"
-              redirectOnLogin="/"
-            />
-            <Layout
               component={VLQueue}
               path="/screening/vl/queue"
-              redirectOnLogin="/"
-            />
-            <Layout
-              component={VLQueueComplete}
-              path="/screening/vl/complete"
               redirectOnLogin="/"
             />
             <Layout
@@ -170,18 +150,8 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={EidQueueTabs}
-              path="/screening/eid/tabs"
-              redirectOnLogin="/"
-            />
-            <Layout
               component={EidQueue}
               path="/screening/eid/queue"
-              redirectOnLogin="/"
-            />
-            <Layout
-              component={EidQueueComplete}
-              path="/screening/eid/complete"
               redirectOnLogin="/"
             />
             <Layout

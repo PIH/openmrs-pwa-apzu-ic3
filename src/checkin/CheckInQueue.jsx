@@ -112,7 +112,7 @@ class CheckInQueue extends React.Component {
           optionalFiltersType='or'
           rowData={Object.values(this.props.patients)}
           rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
-          title=""
+          title="Check-In Queue"
         />
 
       </div>

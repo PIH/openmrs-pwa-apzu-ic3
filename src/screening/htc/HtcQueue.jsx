@@ -2,9 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 import { selectors } from '@openmrs/react-components';
-import ScreeningTabs from "../ScreeningTabs";
 import htcFilters from './htcFilters';
-
+import ScreeningQueue from "../ScreeningQueue";
 
 let HtcQueue = props => {
 
@@ -14,12 +13,11 @@ let HtcQueue = props => {
 
   return (
     <div>
-      <ScreeningTabs
+      <ScreeningQueue
         dispatch={ props.dispatch }
-        filters={ htcFilters }
+        filters={[htcFilters.required, (patient) => !htcFilters.completed(patient)]}
         rowData={ Object.values(props.patients) }
         rowSelectedActionCreators={ rowSelectedActionCreators }
-        tabsId="htc-tabs"
         title="HTC Queue"
       />
     </div>
