@@ -5,6 +5,7 @@ import { selectors } from '@openmrs/react-components';
 import HtcForm from '../htc/HtcForm';
 import DnaPcrForm from './DnaPcrForm';
 import { colHeight } from "../../pwaStyles";
+import utils from "../../utils";
 
 
 
@@ -14,7 +15,7 @@ class EidForm extends React.Component {
     super(props);
 
     this.state = {
-      form: null
+      form: utils.getDefaultEidForm(this.props.patient)
     };
 
     this.handleFormChange = this.handleFormChange.bind(this);

@@ -1,6 +1,9 @@
 import dateFns from 'date-fns';
 import { patientUtil } from '@openmrs/react-components';
-import { ENCOUNTER_TYPES, IDENTIFIER_TYPES, CONCEPTS, MALNUTRITION_LEVEL } from "./constants";
+import {
+  ENCOUNTER_TYPES, IDENTIFIER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, EID_RAPID_TEST,
+  EID_DNA_PCR
+} from "./constants";
 
 const utils = {
 
@@ -129,6 +132,19 @@ const utils = {
       }
     }
     return conceptName;
+  },
+
+  getDefaultEidForm: (patient) => {
+    let eidForm = null;
+    if ( patient.alert !== null ) {
+      if ( patient.alert.some( a => EID_RAPID_TEST.indexOf(a) >= 0) ) {
+        return "htc";
+      } else if ( patient.alert.some( a => EID_DNA_PCR.indexOf(a) >= 0)) {
+        return "dna-pcr";
+      }
+    }
+
+    return eidForm;
   },
 
   getAdherenceSessionNumber: (obs) => {

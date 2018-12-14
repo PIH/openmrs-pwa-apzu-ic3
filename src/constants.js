@@ -348,10 +348,16 @@ export const VIRAL_LOAD_ALERTS = [
   "due-for-routine-viral-load-3p"
 ];
 
-export const EID_ALERTS = [
-  "eid-positive-rapid-test",
-  "eid-positive-dna-pcr-test",
-  "eid-routine-dna-pcr-test",
+export const EID_RAPID_TEST = [
   "eid-routine-12-month-rapid-test",
   "eid-routine-24-month-rapid-test"
+];
+export const EID_DNA_PCR = [
+  "eid-positive-rapid-test",
+  "eid-positive-dna-pcr-test",
+  "eid-routine-dna-pcr-test"
+];
+export const EID_ALERTS = [
+  ...EID_RAPID_TEST,
+  ...EID_DNA_PCR
 ];
