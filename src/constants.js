@@ -345,12 +345,12 @@ export const NAV_MENU_PAGES = {
   '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
   '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
   '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },
-  '/screening/nurse/queue' : { display : 'Nurse', icon : 'user-md' },
+  /*  '/screening/nurse/queue' : { display : 'Nurse', icon : 'user-md' },*/
 };
 
 export const USER_MENU_PAGES = {
-  '/user/settings' : { display : 'Settings', icon : 'cog' },
-  '/user/settings/password' : { display : 'Change Password', icon : 'key' },
+  /*'/user/settings' : { display : 'Settings', icon : 'cog' },
+  '/user/settings/password' : { display : 'Change Password', icon : 'key' },*/
   '/logout' : { display : 'Logout', icon : 'sign-out-alt' },
 };
 
