@@ -11,7 +11,7 @@ import {
 
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
-import {ENCOUNTER_TYPES, LOCATION_TYPES} from '../constants';
+import { ENCOUNTER_TYPES, LOCATION_TYPES } from '../constants';
 import utils from "../utils";
 import { PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
 import ic3PatientActions from '../patient/patientActions';
@@ -51,6 +51,15 @@ class CheckInQueue extends React.Component {
   }
 
   render() {
+    const fetchListActionCreator = this.props.fetchListActionCreator ? this.props.fetchListActionCreator :
+      () => {
+        if (!this.props.updating) {
+          this.props.dispatch(ic3PatientActions.getIC3Patients(
+            this.props.session.sessionLocation ? this.props.session.sessionLocation.uuid : null, utils.formatReportRestDate(new Date())
+          ));
+        }
+      };
+
     return (
       <div>
         <ScreeningFilters />
@@ -91,16 +100,17 @@ class CheckInQueue extends React.Component {
         <CardList
           card={PatientCard}
           delayInterval={0}
-          dispatch={ this.props.dispatch }
-          getPatientIdentifiers={ utils.getPatientIdentifiers }
+          dispatch={this.props.dispatch}
+          fetchListActionCreator={fetchListActionCreator}
           filters={[patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'exclude')]}
-          loading={ this.props.updating }
-          onMountOtherActionCreators={ [
+          getPatientIdentifiers={utils.getPatientIdentifiers}
+          loading={this.props.updating}
+          onMountOtherActionCreators={[
             () => this.props.dispatch(patientActions.clearSelectedPatient())
-          ] }
-          optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
+          ]}
+          optionalFilters={PATIENT_IDENTIFIER_FILTERS}
           optionalFiltersType='or'
-          rowData={ Object.values(this.props.patients) }
+          rowData={Object.values(this.props.patients)}
           rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
           title=""
         />
@@ -114,7 +124,8 @@ const mapStateToProps = (state) => {
   return {
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,
     patients: selectors.getPatientStore(state),
-    updating: selectors.isPatientStoreUpdating(state)
+    updating: selectors.isPatientStoreUpdating(state),
+    session: state.openmrs.session,
   };
 };
 
