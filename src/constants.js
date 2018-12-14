@@ -141,7 +141,7 @@ export const CONCEPTS = {
     uuid: '654a6960-977f-11e1-8993-905e29aff6c1',
     name: 'DNA PCR'
   },
-  'HTC_RESULTS': {
+  "HIV_TEST_RESULTS": {
     uuid: '655dcb7c-977f-11e1-8993-905e29aff6c1',
     'Reactive': {
       uuid: '6549be7a-977f-11e1-8993-905e29aff6c1',
@@ -323,10 +323,10 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.CentralLaboratory.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.CentralLaboratory.name },
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.LisungwiGeneXpert.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.LisungwiGeneXpert.name },
   ],
-  'htcAnswers': [
-    { uuid: CONCEPTS.HTC_RESULTS.Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Reactive.name },
-    { uuid: CONCEPTS.HTC_RESULTS.Non_Reactive.uuid, name: CONCEPTS.HTC_RESULTS.Non_Reactive.name },
-    { uuid: CONCEPTS.HTC_RESULTS.Not_Done.uuid, name: CONCEPTS.HTC_RESULTS.Not_Done.name },
+  "hivTestResultAnswers": [
+    { uuid: CONCEPTS.HIV_TEST_RESULTS.Reactive.uuid, name: CONCEPTS.HIV_TEST_RESULTS.Reactive.name },
+    { uuid: CONCEPTS.HIV_TEST_RESULTS.Non_Reactive.uuid, name: CONCEPTS.HIV_TEST_RESULTS.Non_Reactive.name },
+    { uuid: CONCEPTS.HIV_TEST_RESULTS.Not_Done.uuid, name: CONCEPTS.HIV_TEST_RESULTS.Not_Done.name },
   ],
   'adherenceSession': [
     { uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.uuid, name: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.name },

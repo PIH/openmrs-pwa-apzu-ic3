@@ -19,8 +19,8 @@ let HtcForm = (props) => {
         <Col sm={12}>
           <FormGroup controlId="formHtc">
             <Obs
-              concept={CONCEPTS.HTC_RESULTS.uuid}
-              conceptAnswers={FORM_ANSWERS.htcAnswers}
+              concept={CONCEPTS.HIV_TEST_RESULTS.uuid}
+              conceptAnswers={FORM_ANSWERS.hivTestResultAnswers}
               path="htc-results"/>
           </FormGroup>
         </Col>

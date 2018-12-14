@@ -18,7 +18,7 @@ const helper = {
     if ( lastHtcTest === null ) {
       // patient had no prior test and patient is older than 2yo
       return true;
-    } else if (lastHtcTest.result === CONCEPTS.HTC_RESULTS.Non_Reactive.uuid ){
+    } else if (lastHtcTest.result === CONCEPTS.HIV_TEST_RESULTS.Non_Reactive.uuid ){
       let daysSinceLastTest = differenceInCalendarDays(new Date(), new Date(lastHtcTest.specimenDate));
       if ( (patient.age >= 13 && daysSinceLastTest < 90) || (patient.age < 13 && daysSinceLastTest < 365)) {
         return false;

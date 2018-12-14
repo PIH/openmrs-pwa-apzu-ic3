@@ -26,8 +26,8 @@ class EidForm extends React.PureComponent {
     // this clears out form values when switching HIV TEST TYPE
     if (typeof this.props.testType !== 'undefined' && this.props.testType !== prevProps.bled) {
       if (this.props.testType === CONCEPTS.HIV_DNA_PCR_TEST.uuid) {
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('rapid-test-results', CONCEPTS.HTC_RESULTS.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('rapid-test-results', CONCEPTS.HTC_RESULTS.uuid)));
+        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('rapid-test-results', CONCEPTS.HIV_TEST_RESULTS.uuid), null));
+        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('rapid-test-results', CONCEPTS.HIV_TEST_RESULTS.uuid)));
       }
       else {
         this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-bled', CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid), null));

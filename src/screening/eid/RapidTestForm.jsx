@@ -18,8 +18,8 @@ class RapidTestForm extends React.PureComponent {
           <Col sm={12}>
             <FormGroup controlId="formRapidTest">
               <Obs
-                concept={ CONCEPTS.HTC_RESULTS.uuid }
-                conceptAnswers={ FORM_ANSWERS.htcAnswers }
+                concept={ CONCEPTS.HIV_TEST_RESULTS.uuid }
+                conceptAnswers={ FORM_ANSWERS.hivTestResultAnswers }
                 path="rapid-test-results"/>
             </FormGroup>
           </Col>
