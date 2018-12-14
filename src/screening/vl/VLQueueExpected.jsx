@@ -12,6 +12,7 @@ import vlFilters from "./vlFilters";
 import { push } from "connected-react-router";
 import utils from "../../utils";
 import ScreeningFilters from '../ScreeningFilters';
+import ic3PatientActions from '../../patient/patientActions';
 
 class VLQueueExpected extends React.Component {
 
@@ -31,23 +32,32 @@ class VLQueueExpected extends React.Component {
   }
 
   render() {
+    const fetchListActionCreator = this.props.fetchListActionCreator ? this.props.fetchListActionCreator :
+      () => {
+        if (!this.props.updating) {
+          this.props.dispatch(ic3PatientActions.getIC3Patients(
+            this.props.session.sessionLocation ? this.props.session.sessionLocation.uuid : null, utils.formatReportRestDate(new Date())
+          ));
+        }
+      };
     return (
       <div>
         <ScreeningFilters />
         <CardList
-          card={ PatientCard }
+          card={PatientCard}
           delayInterval={0}
-          dispatch={ this.props.dispatch }
-          getPatientIdentifiers={ utils.getPatientIdentifiers }
-          filters={ [vlFilters.expected, vlFilters.required] }
-          loading={ this.props.updating }
-          onMountOtherActionCreators={ [
+          dispatch={this.props.dispatch}
+          fetchListActionCreator={fetchListActionCreator}
+          filters={[vlFilters.expected, vlFilters.required]}
+          getPatientIdentifiers={utils.getPatientIdentifiers}
+          loading={this.props.updating}
+          onMountOtherActionCreators={[
             () => this.props.dispatch(patientActions.clearSelectedPatient())
-          ] }
-          optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
+          ]}
+          optionalFilters={PATIENT_IDENTIFIER_FILTERS}
           optionalFiltersType='or'
-          rowData={ Object.values(this.props.patients) }
-          rowSelectedActionCreators={ [patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator] }
+          rowData={Object.values(this.props.patients)}
+          rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator]}
           title=""
         />
 
@@ -60,8 +70,10 @@ class VLQueueExpected extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    patients: selectors.getPatientStore(state)
-  }
+    patients: selectors.getPatientStore(state),
+    session: state.openmrs.session,
+    updating: selectors.isPatientStoreUpdating(state)
+  };
 };
 
 export default connect(mapStateToProps)(VLQueueExpected);
