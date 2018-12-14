@@ -79,7 +79,7 @@ describe('Component: BloodPressureQueue', () => {
 
   it('renders properly', () => {
     //expect(toJson(bloodPressureQueue())).toMatchSnapshot();
-    expect(bloodPressureQueue().find(CardList).length).toBe(2);
+    expect(bloodPressureQueue().find(CardList).length).toBe(1);
     expect(bloodPressureQueue().find(CardList).get(0).props.rowSelectedActionCreators.length).toBe(2);
     expect(bloodPressureQueue().find(CardList).get(0).props.rowSelectedActionCreators[1]().payload.args[0]).toBe("/screening/bloodPressure/form");
   });

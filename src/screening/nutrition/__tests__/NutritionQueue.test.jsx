@@ -78,7 +78,7 @@ describe('Component: NutritionQueue', () => {
 
   it('renders properly', () => {
     //expect(toJson(nutritionQueue())).toMatchSnapshot();
-    expect(nutritionQueue().find(CardList).length).toBe(2);
+    expect(nutritionQueue().find(CardList).length).toBe(1);
     expect(nutritionQueue().find(CardList).get(0).props.rowSelectedActionCreators.length).toBe(2);
     expect(nutritionQueue().find(CardList).get(0).props.rowSelectedActionCreators[1]().payload.args[0]).toBe("/screening/nutrition/form");
   });
