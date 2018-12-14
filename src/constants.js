@@ -30,7 +30,7 @@ export const ENCOUNTER_TYPES = {
   'VLEncounterType': {
     uuid: '9959A261-2122-4AE1-A89D-1CA444B712EA'
   },
-  'DnaPcrEncounterType': {
+  'EidEncounterType': {
     uuid: '8383DE35-5145-4953-A018-34876B797F3E'
   },
   'AdherenceCounselingEncounterType': {
@@ -128,6 +128,18 @@ export const CONCEPTS = {
   },
   'Pregnant': {
     uuid: '656fbd28-977f-11e1-8993-905e29aff6c1'
+  },
+  'HIV_TEST_TYPE': {
+    uuid: '655bee06-977f-11e1-8993-905e29aff6c1',
+    name: 'HIV Test Type'
+  },
+  'HIV_RAPID_TEST': {
+    uuid: '654b983a-977f-11e1-8993-905e29aff6c1',
+    name: 'HIV Rapid Test'
+  },
+  'HIV_DNA_PCR_TEST': {
+    uuid: '654a6960-977f-11e1-8993-905e29aff6c1',
+    name: 'DNA PCR'
   },
   'HTC_RESULTS': {
     uuid: '655dcb7c-977f-11e1-8993-905e29aff6c1',
@@ -241,10 +253,6 @@ export const CONCEPTS = {
       name: 'Lisungwi GeneXpert'
     }
   },
-  'DNA_PCR' : {
-    uuid: '654a6960-977f-11e1-8993-905e29aff6c1',
-    name: 'DNA PCR'
-  },
   'SOURCE_OF_REFERRAL' : {
     uuid: '65664fc2-977f-11e1-8993-905e29aff6c1',
     'SHARC': {
@@ -268,6 +276,10 @@ export const CONCEPTS = {
       name: 'Other'
     }
   }
+};
+
+export const FORM_NAMES = {
+  eidFormName: 'eid-hiv-test-form'
 };
 
 export const FORM_ANSWERS = {
@@ -297,6 +309,10 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Routine.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Routine.name },
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.name },
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Target.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Target.name },
+  ],
+  'eidHivTestType': [
+    { uuid: CONCEPTS.HIV_RAPID_TEST.uuid, name: CONCEPTS.HIV_RAPID_TEST.name },
+    { uuid: CONCEPTS.HIV_DNA_PCR_TEST.uuid, name: CONCEPTS.HIV_DNA_PCR_TEST.name }
   ],
   'dnaPcrReasonForTesting': [
     { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.SixWeeksRoutine.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.SixWeeksRoutine.name },

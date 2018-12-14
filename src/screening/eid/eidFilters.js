@@ -27,5 +27,5 @@ const eidFilter = patient => {
 
 export default {
   required: eidFilter,
-  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.DnaPcrEncounterType.uuid, 'include')
+  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.EidEncounterType.uuid, 'include')
 };

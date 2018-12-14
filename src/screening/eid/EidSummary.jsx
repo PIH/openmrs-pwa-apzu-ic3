@@ -9,7 +9,7 @@ const EidSummary = props => {
       <PatientLabTests test_type={ "viral_load_tests" }/>
       <PatientLabTests test_type={ "hiv_tests" }/>
       <EncounterHistory
-        encounterType={ENCOUNTER_TYPES.DnaPcrEncounterType}
+        encounterType={ENCOUNTER_TYPES.EidEncounterType}
       />
       <EncounterHistory
         encounterType={ENCOUNTER_TYPES.HTCEncounterType}

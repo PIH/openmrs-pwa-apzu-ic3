@@ -134,13 +134,13 @@ const utils = {
     return conceptName;
   },
 
-  getDefaultEidForm: (patient) => {
+  getDefaultEidTestType: (patient) => {
     let eidForm = null;
     if ( patient.alert !== null ) {
       if ( patient.alert.some( a => EID_RAPID_TEST.indexOf(a) >= 0) ) {
-        return "htc";
+        return CONCEPTS.HIV_RAPID_TEST.uuid;
       } else if ( patient.alert.some( a => EID_DNA_PCR.indexOf(a) >= 0)) {
-        return "dna-pcr";
+        return CONCEPTS.HIV_DNA_PCR_TEST.uuid;
       }
     }
 

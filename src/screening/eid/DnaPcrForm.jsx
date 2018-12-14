@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import {change, formValueSelector, untouch} from 'redux-form';
 import {Obs, formUtil, selectors} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
-import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
-import ScreeningForm from "../ScreeningForm";
+import { CONCEPTS, FORM_NAMES, FORM_ANSWERS } from "../../constants";
 import './styles/dna-pcr-form.css';
 
 
@@ -14,15 +13,15 @@ class DnaPcrForm extends React.PureComponent {
     // this clears out form values when the "bled" question is changed
     if (typeof this.props.bled !== 'undefined' && this.props.bled !== prevProps.bled) {
       if (this.props.bled === CONCEPTS.True.uuid) {
-        this.props.dispatch(change('dna-pcr-form', formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid), null));
-        this.props.dispatch(untouch('dna-pcr-form', formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid)));
+        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid), null));
+        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid)));
       }
       else {
-        this.props.dispatch(change('dna-pcr-form', formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid), null));
-        this.props.dispatch(untouch('dna-pcr-form', formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid)));
+        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid), null));
+        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid)));
 
-        this.props.dispatch(change('dna-pcr-form', formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid), null));
-        this.props.dispatch(untouch('dna-pcr-form', formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid)));
+        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid), null));
+        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid)));
       }
     }
   }
@@ -104,22 +103,13 @@ class DnaPcrForm extends React.PureComponent {
 
     return (
       <div className="dna-pcr-form">
-        <ScreeningForm
-          afterSubmitLink="/screening/eid/queue"
-          backLink="/screening/eid/queue"
-          encounterType={ENCOUNTER_TYPES.DnaPcrEncounterType}
-          formContent={formContent}
-          formId="dna-pcr-form"
-          formInstanceId="dna-pcr-form"
-          title=""
-          toastMessage="DNA-PCR Saved"
-        />
+        { formContent }
       </div>
     );
   }
 };
 
-const selector = formValueSelector('dna-pcr-form');
+const selector = formValueSelector(FORM_NAMES.eidFormName);
 
 export default connect(state => {
   const bled = selector(state, formUtil.obsFieldName('dna-pcr-bled', CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid));
