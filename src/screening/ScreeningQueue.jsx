@@ -9,7 +9,6 @@ import {
 } from '@openmrs/react-components';
 import { ENCOUNTER_TYPES } from '../constants';
 import { connect } from "react-redux";
-import { PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
 import utils from "../utils";
 import ic3PatientActions from "../patient/patientActions";
 import ScreeningFilters from './ScreeningFilters';
@@ -34,11 +33,6 @@ let ScreeningQueue = props => {
     <div>
       <CardList
         card={PatientCard}
-        /*
-        * Calling this cardListFilters till we decide 
-        * what happens to the already existing filter.
-        */
-        cardListFilters={ScreeningFilters}
         delayInterval={0}
         dispatch={props.dispatch}
         fetchListActionCreator={fetchListActionCreator}
@@ -46,10 +40,10 @@ let ScreeningQueue = props => {
         getPatientIdentifiers={utils.getPatientIdentifiers}
         loading={props.updating}
         onMountOtherActionCreators={onMountOtherActionCreators}
-        optionalFilters={PATIENT_IDENTIFIER_FILTERS}
-        optionalFiltersType='or'
         rowData={props.rowData}
         rowSelectedActionCreators={[patientActions.setSelectedPatient, ...props.rowSelectedActionCreators]}
+        ScreeningFilters={ScreeningFilters}
+        searchFilterFields={['name.givenName', 'name.familyName', 'identifiers.0.identifier', 'identifiers.1.identifier', 'identifiers.2.identifier']}
         title={props.title}
       />
     </div>

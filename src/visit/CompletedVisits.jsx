@@ -4,7 +4,6 @@ import { push } from 'connected-react-router';
 import {patientActions, visitActions} from '@openmrs/react-components';
 import utils from "../utils";
 import { ACTIVE_VISITS_REP } from "../constants";
-import {PATIENT_IDENTIFIER_FILTERS} from "../gridConstants";
 import ScreeningQueue from '../screening/ScreeningQueue';
 
 
@@ -36,7 +35,6 @@ let CompletedVisits = props => {
       rowData={props.rowData}
       rowSelectedActionCreators={rowSelectedActionCreators}
       title=""
-      optionalFilters={ PATIENT_IDENTIFIER_FILTERS }
       dispatch={ props.dispatch }
     />
   );

@@ -13,9 +13,8 @@ import { push } from "connected-react-router";
 import { connect } from "react-redux";
 import { ENCOUNTER_TYPES, LOCATION_TYPES } from '../constants';
 import utils from "../utils";
-import { PATIENT_IDENTIFIER_FILTERS } from "../gridConstants";
 import ic3PatientActions from '../patient/patientActions';
-import ScreeningFilters from '../screening/ScreeningFilters';
+import ScreeningFilters from '../screening/ScreeningFilters'
 
 class CheckInQueue extends React.Component {
 
@@ -62,7 +61,6 @@ class CheckInQueue extends React.Component {
 
     return (
       <div>
-        <ScreeningFilters />
         <br />
         <Grid>
           <Row>
@@ -96,7 +94,6 @@ class CheckInQueue extends React.Component {
 
         <br />
 
-
         <CardList
           card={PatientCard}
           delayInterval={0}
@@ -107,11 +104,11 @@ class CheckInQueue extends React.Component {
           loading={this.props.updating}
           onMountOtherActionCreators={[
             () => this.props.dispatch(patientActions.clearSelectedPatient())
-          ]}
-          optionalFilters={PATIENT_IDENTIFIER_FILTERS}
-          optionalFiltersType='or'
-          rowData={Object.values(this.props.patients)}
+          ] }
+          rowData={ Object.values(this.props.patients) }
           rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
+          ScreeningFilters={ScreeningFilters}
+          searchFilterFields={['name.givenName', 'name.familyName', 'identifiers.0.identifier', 'identifiers.1.identifier', 'identifiers.2.identifier']}
           title="Check-In Queue"
         />
 
