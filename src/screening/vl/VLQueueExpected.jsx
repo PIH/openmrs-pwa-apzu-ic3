@@ -10,7 +10,6 @@ import {
 import vlFilters from "./vlFilters";
 import { push } from "connected-react-router";
 import utils from "../../utils";
-import ScreeningFilters from '../ScreeningFilters';
 import ic3PatientActions from '../../patient/patientActions';
 
 class VLQueueExpected extends React.Component {
@@ -41,7 +40,6 @@ class VLQueueExpected extends React.Component {
       };
     return (
       <div>
-        <ScreeningFilters />
         <CardList
           card={PatientCard}
           delayInterval={0}
@@ -55,7 +53,6 @@ class VLQueueExpected extends React.Component {
           ] }
           rowData={ Object.values(this.props.patients) }
           rowSelectedActionCreators={ [patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator] }
-          ScreeningFilters={ScreeningFilters}
           title=""
         />
 
