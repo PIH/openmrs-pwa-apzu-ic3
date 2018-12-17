@@ -3,8 +3,7 @@ import {
   Dropdown,
 } from '@openmrs/react-components';
 import { FormControl } from 'react-bootstrap';
-import utils from "../utils";
-import './screeningFilters.css';
+import './IdentifierFilters.css';
 
 class ScreeningFilters extends React.Component {
   constructor(props) {
@@ -14,28 +13,12 @@ class ScreeningFilters extends React.Component {
     this.handleTextInputSearch = this.handleTextInputSearch.bind(this);
 
     this.state = {
-      firstIdentifiers: new Set(),
-      thirdIdentifiers: new Set(),
       firstIdentifierSearchValue: '',
       secondIdentifierSearchValue: '',
       thirdIdentifierSearchValue: ''
     };
   }
 
-  componentWillMount() {
-    if (this.props.rowData) {
-      this.props.rowData.map(data => {
-        return utils.getPatientIdentifiers(data) && utils.getPatientIdentifiers(data).split('<br/>').map(identifier =>
-          this.setState(({ firstIdentifiers, thirdIdentifiers }) => ({
-            firstIdentifiers: new Set(firstIdentifiers.add(identifier.split('-')[0])),
-            thirdIdentifiers: new Set(thirdIdentifiers.add(identifier.split('-')[2])),
-          })
-          ));
-      });
-    }
-  }
-
-  sanitizedIdentifiers = array => array.filter(function(el) { return el; });
   handleUndefinedValues = (value, defaultValue) => typeof value === 'undefined' ? defaultValue : value;
 
   handleSearch(field, value, location) {
@@ -56,7 +39,7 @@ class ScreeningFilters extends React.Component {
       searchValue = `${firstIdentifierSearchValue}${secondIdentifierSearchValue}${third}`;
     }
 
-    this.props.handleSearchChange(searchValue, 'identifierFilter');
+    this.props.handleSearchChange(searchValue);
   }
 
   handleTextInputSearch(e) {
@@ -64,7 +47,6 @@ class ScreeningFilters extends React.Component {
   }
 
   render() {
-    const { firstIdentifiers, thirdIdentifiers } = this.state;
     return (
       <div className="queue-filters">
         <div className="identifier-filter-container">
@@ -75,7 +57,7 @@ class ScreeningFilters extends React.Component {
                 border: '1px solid black'
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
-              list={this.sanitizedIdentifiers([...firstIdentifiers])}
+              list={['CFGA']}
               placeholder="select ID"
             />
             <span>-</span>
@@ -90,7 +72,7 @@ class ScreeningFilters extends React.Component {
                 border: '1px solid black'
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'third')} 
-              list={this.sanitizedIdentifiers([...thirdIdentifiers])} 
+              list={['HCC']} 
               placeholder="select ID"
             />
           </span>

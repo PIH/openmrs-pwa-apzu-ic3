@@ -14,7 +14,7 @@ import { connect } from "react-redux";
 import { ENCOUNTER_TYPES, LOCATION_TYPES } from '../constants';
 import utils from "../utils";
 import ic3PatientActions from '../patient/patientActions';
-import ScreeningFilters from '../screening/ScreeningFilters'
+import IdentifierFilters from '../screening/IdentifierFilters'
 
 class CheckInQueue extends React.Component {
 
@@ -96,7 +96,7 @@ class CheckInQueue extends React.Component {
         <br />
 */}
         <CardList
-          AdditionalFilters={ScreeningFilters}
+          AdditionalFilters={IdentifierFilters}
           card={PatientCard}
           delayInterval={0}
           dispatch={this.props.dispatch}
@@ -109,7 +109,18 @@ class CheckInQueue extends React.Component {
           ] }
           rowData={ Object.values(this.props.patients) }
           rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
-          searchFilterFields={['name.givenName', 'name.familyName', 'identifiers.0.identifier', 'identifiers.1.identifier', 'identifiers.2.identifier']}
+          searchFilterFields={['name.givenName',
+            'name.familyName',
+            'identifiers.0.identifier',
+            'identifiers.1.identifier',
+            'identifiers.2.identifier',
+            'identifiers.3.identifier',
+            'identifiers.4.identifier',
+            'identifiers.5.identifier',
+            'identifiers.6.identifier',
+            'identifiers.7.identifier',
+            'identifiers.8.identifier',
+          ]}
           title="Check-In Queue"
         />
 
