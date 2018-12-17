@@ -3,10 +3,6 @@ import {
   Dropdown,
   FieldInput
 } from '@openmrs/react-components';
-import {
-  Glyphicon,
-  FormControl,
-} from 'react-bootstrap';
 import './screeningFilters.css';
 
 let ScreeningFilters = props => (
@@ -30,18 +26,6 @@ let ScreeningFilters = props => (
           }}
           placeholder="mock-ID-0"
         />
-      </span>
-    </div>
-    <div className="name-filter-container">
-      <div>Name/id search:</div>
-      <span className="name-filter">
-        <Glyphicon className="left-icon" glyph="search" />
-        <FormControl
-          autoFocus
-          placeholder="search by text"
-          type="text"
-        />           
-        <Glyphicon className="right-icon" glyph="remove-sign" />
       </span>
     </div>
   </div>

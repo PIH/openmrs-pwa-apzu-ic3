@@ -7,7 +7,6 @@ import {
   PatientCard,
 } from '@openmrs/react-components';
 
-import { PATIENT_IDENTIFIER_FILTERS } from "../../gridConstants";
 import vlFilters from "./vlFilters";
 import { push } from "connected-react-router";
 import utils from "../../utils";
@@ -53,11 +52,9 @@ class VLQueueExpected extends React.Component {
           loading={this.props.updating}
           onMountOtherActionCreators={[
             () => this.props.dispatch(patientActions.clearSelectedPatient())
-          ]}
-          optionalFilters={PATIENT_IDENTIFIER_FILTERS}
-          optionalFiltersType='or'
-          rowData={Object.values(this.props.patients)}
-          rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator]}
+          ] }
+          rowData={ Object.values(this.props.patients) }
+          rowSelectedActionCreators={ [patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator] }
           title=""
         />
 

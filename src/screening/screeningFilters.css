@@ -31,32 +31,3 @@
   height: 25px;
   width: 80px;
 }
-
-.name-filter-container > div {
-  margin-bottom: 10px;
-}
-
-.name-filter {
-  display: flex;
-  width: 400px;
-  position: relative;
-}
-
-.name-filter input {
-  width: 80%;
-  padding: 0px 0px 0px 40px;
-  background-color: #FFF;
-  border: 1px solid #DDD;
-  color: #003f5e;
-  display: block;
-}
-.name-filter .left-icon{
-  position: absolute;
-  left: 1%;
-  line-height: 30px;
-}
-.name-filter .right-icon {
-  position: absolute;
-  left: 75%;
-  line-height: 30px;
-}
