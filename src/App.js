@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import { Logout, LoadingView } from '@openmrs/react-components';
+import { Logout, LoadingView, SystemAlert } from '@openmrs/react-components';
 import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core';
 import {
   faBars,
@@ -64,6 +64,7 @@ const App = props => {
     <Provider store={store}>
       <PersistGate loading={<LoadingView />} persistor={persistor}>
         <UserSession/>
+        <SystemAlert />
         <ConnectedRouter history={history}>
           <Switch>
             <Route
