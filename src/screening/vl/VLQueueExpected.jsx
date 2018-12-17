@@ -55,6 +55,7 @@ class VLQueueExpected extends React.Component {
           ] }
           rowData={ Object.values(this.props.patients) }
           rowSelectedActionCreators={ [patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator] }
+          ScreeningFilters={ScreeningFilters}
           title=""
         />
 
