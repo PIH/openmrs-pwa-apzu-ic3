@@ -1,6 +1,6 @@
 import React from 'react';
-import DatePicker from 'react-16-bootstrap-date-picker';
-import { Button, ButtonToolbar, Grid, Row, Col,FormGroup, ControlLabel } from 'react-bootstrap';
+//import DatePicker from 'react-16-bootstrap-date-picker';
+//import { Button, ButtonToolbar, Grid, Row, Col,FormGroup, ControlLabel } from 'react-bootstrap';
 import {
   patientActions,
   CardList,
@@ -45,6 +45,7 @@ class CheckInQueue extends React.Component {
   onMountOtherActionCreators() {
     this.props.dispatch(patientActions.clearSelectedPatient());
   }
+
   redirectToCheckinPageActionCreator() {
     return push('/checkin/checkInPage');
   }
@@ -95,6 +96,7 @@ class CheckInQueue extends React.Component {
         <br />
 */}
         <CardList
+          AdditionalFilters={ScreeningFilters}
           card={PatientCard}
           delayInterval={0}
           dispatch={this.props.dispatch}
@@ -107,7 +109,6 @@ class CheckInQueue extends React.Component {
           ] }
           rowData={ Object.values(this.props.patients) }
           rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
-          ScreeningFilters={ScreeningFilters}
           searchFilterFields={['name.givenName', 'name.familyName', 'identifiers.0.identifier', 'identifiers.1.identifier', 'identifiers.2.identifier']}
           title="Check-In Queue"
         />

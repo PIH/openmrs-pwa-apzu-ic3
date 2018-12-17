@@ -32,6 +32,7 @@ let ScreeningQueue = props => {
   return (
     <div>
       <CardList
+        AdditionalFilters={ScreeningFilters}
         card={PatientCard}
         delayInterval={0}
         dispatch={props.dispatch}
@@ -42,7 +43,6 @@ let ScreeningQueue = props => {
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
         rowSelectedActionCreators={[patientActions.setSelectedPatient, ...props.rowSelectedActionCreators]}
-        ScreeningFilters={ScreeningFilters}
         searchFilterFields={['name.givenName', 'name.familyName', 'identifiers.0.identifier', 'identifiers.1.identifier', 'identifiers.2.identifier']}
         title={props.title}
       />
