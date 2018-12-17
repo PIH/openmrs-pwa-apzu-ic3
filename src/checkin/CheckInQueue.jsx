@@ -61,7 +61,7 @@ class CheckInQueue extends React.Component {
 
     return (
       <div>
-        <br />
+        {/* uncomment this to get an appt search widget that can be used for testing <br />
         <Grid>
           <Row>
             <FormGroup controlId="formApptDate">
@@ -93,7 +93,7 @@ class CheckInQueue extends React.Component {
         </Grid>
 
         <br />
-
+*/}
         <CardList
           card={PatientCard}
           delayInterval={0}
