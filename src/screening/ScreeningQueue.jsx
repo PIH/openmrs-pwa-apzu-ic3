@@ -11,7 +11,7 @@ import { ENCOUNTER_TYPES } from '../constants';
 import { connect } from "react-redux";
 import utils from "../utils";
 import ic3PatientActions from "../patient/patientActions";
-import ScreeningFilters from './ScreeningFilters';
+import IdentifierFilters from './IdentifierFilters';
 
 let ScreeningQueue = props => {
 
@@ -32,7 +32,7 @@ let ScreeningQueue = props => {
   return (
     <div>
       <CardList
-        AdditionalFilters={ScreeningFilters}
+        AdditionalFilters={IdentifierFilters}
         card={PatientCard}
         delayInterval={0}
         dispatch={props.dispatch}
