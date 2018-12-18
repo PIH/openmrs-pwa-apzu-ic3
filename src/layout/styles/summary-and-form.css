@@ -42,14 +42,6 @@
   color: darkgray;
 }
 
-@media only screen and (max-width: 501px) {
-  .show-grid.summary-form-slider.row {
-    display: none;
-    height: 100%;
-    width: 100%;
-  }
-
-}
 
 @media only screen and (min-width: 501px) and (max-width: 1024px) {
   .show-grid.summary-form-slider.row {
@@ -91,6 +83,9 @@
 
   .list-group {
     padding: 20px;
+    width: fit-content;
+    margin: auto;
+    box-shadow: none;
   }
 
   .form-layout {
@@ -138,23 +133,4 @@
     display: none;
   }
 
-}
-
-@media only screen and (max-width: 600px) {
-  .list-group button.list-group-item {
-    width: 50% !important;
-    margin: auto;
-  }
-  
-  .summary-layout .summary-layout-content {
-    width: fit-content;
-    font-size: 20px;
-    margin: auto;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .row-container .back-button {
-    display: none;
-  }
 }

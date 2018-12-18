@@ -8,7 +8,7 @@ import adherenceFilters from './adherenceFilters';
 let AdherenceQueue = props => {
 
   const rowSelectedActionCreators = [
-    () => push('/screening/adherence/form')
+    () => push('/screening')
   ];
 
 

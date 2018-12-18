@@ -10,7 +10,7 @@ import ScreeningQueue from "../ScreeningQueue";
 let NutritionQueue = props => {
 
   const rowSelectedActionCreators = [
-    () => push('/screening/nutrition/form')
+    () => push('/screening')
   ];
 
   return (

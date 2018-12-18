@@ -11,7 +11,7 @@ let NurseQueue = props => {
 
   const rowSelectedActionCreators = [
     () => push({
-      pathname: '/screening/nurse/nursePage',
+      pathname: '/screening',
       state: {
         queueLink: '/screening/nurse/queue'
       }

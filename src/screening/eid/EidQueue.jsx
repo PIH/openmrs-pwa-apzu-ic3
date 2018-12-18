@@ -8,7 +8,7 @@ import eidFilters from './eidFilters';
 let EidQueue = props => {
 
   const rowSelectedActionCreators = [
-    () => push('/screening/eid/form')
+    () => push('/screening')
   ];
 
 

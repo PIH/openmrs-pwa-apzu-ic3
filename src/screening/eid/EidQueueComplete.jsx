@@ -8,7 +8,7 @@ import eidFilters from './eidFilters';
 let EidQueueComplete = props => {
 
   const rowSelectedActionCreators = [
-    () => push('/checkin/checkInComplete')
+    () => push('/screening')
   ];
 
 
