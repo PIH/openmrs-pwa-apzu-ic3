@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ACTIVE_VISITS_REP, ENCOUNTER_ROLES } from "../constants";
 import { centerTextAlign } from "../pwaStyles";
-import moment from 'moment';
+import {format, isSameDay, parse} from 'date-fns';
 
 
 class ScreeningForm extends React.Component {
@@ -37,8 +37,7 @@ class ScreeningForm extends React.Component {
     return (
       <div>
         <div style={centerTextAlign}>
-          <h2>{encounter && encounter.encounterDatetime && ( moment(encounter.encounterDatetime).isSame(moment(), 'day') ? 'Today' : moment(`${encounter.encounterDatetime}`).format('DD MMM YYYY'))}</h2>
-          <h6>{encounter && encounter.encounterDatetime && moment(`${encounter.encounterDatetime}`).fromNow()}</h6>
+          <h2>{encounter && encounter.encounterDatetime && (isSameDay(parse(encounter.encounterDatetime), new Date()) ? 'Today' : format(parse(encounter.encounterDatetime), 'DD MMM YYYY'))}</h2>
         </div>
         <EncounterFormPage
           backLink={props.backLink}
