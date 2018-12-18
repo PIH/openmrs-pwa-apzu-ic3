@@ -80,7 +80,7 @@ describe('Component: NurseQueue', () => {
     expect(nurseQueue().find(CardList).length).toBe(1);
     expect(nurseQueue().find(CardList).props().rowSelectedActionCreators.length).toBe(2);
     let rowSelectedAction = {
-      "pathname": '/screening/nurse/nursePage',
+      "pathname": '/screening',
       "state": {
         "queueLink": '/screening/nurse/queue'
       }
