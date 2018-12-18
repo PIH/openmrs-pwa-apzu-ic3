@@ -8,7 +8,7 @@ import ScreeningQueue from "../ScreeningQueue";
 let HtcQueue = props => {
 
   const rowSelectedActionCreators = [
-    () => push('/screening/htc/form')
+    () => push('/screening')
   ];
 
   return (

@@ -10,7 +10,7 @@ import ScreeningQueue from "../ScreeningQueue";
 let BloodPressureQueue = props => {
 
   const rowSelectedActionCreators = [
-    () => push('/screening/bloodPressure/form')
+    () => push('/screening')
   ];
 
   return (
