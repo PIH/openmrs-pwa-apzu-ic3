@@ -36,6 +36,9 @@ export const ENCOUNTER_TYPES = {
   'AdherenceCounselingEncounterType': {
     uuid: '7D801495-3857-422F-BE2A-A4EEB3F36278'
   },
+  'TBEncounterType': {
+    uuid: '664b89ca-977f-11e1-8993-905e29aff6c1'
+  },
 };
 
 export const ENCOUNTER_ROLES = {
@@ -251,6 +254,32 @@ export const CONCEPTS = {
     'LisungwiGeneXpert': {
       uuid: 'e08212b8-955d-11e7-abc4-cec278b6b50a',
       name: 'Lisungwi GeneXpert'
+    }
+  },
+  'TB': {
+    'Cough': {
+      uuid: '65460a32-977f-11e1-8993-905e29aff6c1',
+      name: 'Cough'
+    },
+    'Fever': {
+      uuid: '656e9844-977f-11e1-8993-905e29aff6c1',
+      name: 'Fever'
+    },
+    'NightSweats': {
+      uuid: '656f10da-977f-11e1-8993-905e29aff6c1',
+      name: 'Night Sweats'
+    },
+    'WeightLoss': {
+      uuid: '654a56be-977f-11e1-8993-905e29aff6c1',
+      name: 'Weight loss'
+    },
+    'RecentContactWithActiveTB': {
+      uuid: 'a6c1cd1c-b4a2-405a-930c-f11c914d50c5',
+      name: 'Recent contact with active TB (<1 year)'
+    },
+    'PainfulNeckAndArmpitLymphNodes': {
+      uuid: '974d5caf-2db6-4d5d-b509-11c6f5340ea5',
+      name: 'Painful nexk and armpit lymph nodes'
     }
   },
   'SOURCE_OF_REFERRAL' : {
