@@ -86,7 +86,12 @@ export class ScreeningList extends React.Component {
         completed: htcFilters.completed,
         link: '/screening/htc/form',
         required: htcFilters.required,
-      }/*,
+      },
+      {
+        title: "TB Screening",
+        link: '/screening/tb/form',
+        // required: htcFilters.required,
+      },/*
         {
           title: "TB",
           completed: htcFilters.completed,

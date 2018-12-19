@@ -256,6 +256,32 @@ export const CONCEPTS = {
       name: 'Lisungwi GeneXpert'
     }
   },
+  'TB': {
+    'Cough': {
+      uuid: '65460a32-977f-11e1-8993-905e29aff6c1',
+      name: 'Cough'
+    },
+    'Fever': {
+      uuid: '656e9844-977f-11e1-8993-905e29aff6c1',
+      name: 'Fever'
+    },
+    'NightSweats': {
+      uuid: '656f10da-977f-11e1-8993-905e29aff6c1',
+      name: 'Night Sweats'
+    },
+    'WeightLoss': {
+      uuid: '654a56be-977f-11e1-8993-905e29aff6c1',
+      name: 'Weight loss'
+    },
+    'RecentContactWithActiveTB': {
+      uuid: 'a6c1cd1c-b4a2-405a-930c-f11c914d50c5',
+      name: 'Recent contact with active TB (<1 year)'
+    },
+    'PainfulNeckAndArmpitLymphNodes': {
+      uuid: '974d5caf-2db6-4d5d-b509-11c6f5340ea5',
+      name: 'Painful nexk and armpit lymph nodes'
+    }
+  },
   'SOURCE_OF_REFERRAL' : {
     uuid: '65664fc2-977f-11e1-8993-905e29aff6c1',
     'SHARC': {

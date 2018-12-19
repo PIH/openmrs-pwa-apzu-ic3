@@ -50,3 +50,7 @@ export const historySection = {
   backgroundColor: '#C3F0FF',
   height: '-webkit-fill-available'
 };
+
+export const padding = {
+  padding: '10px'
+};
