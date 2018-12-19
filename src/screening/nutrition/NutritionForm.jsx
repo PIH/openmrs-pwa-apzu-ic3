@@ -135,7 +135,7 @@ class NutritionForm extends React.Component {
               </ControlLabel>
             </FormGroup>
           }
-            <FormGroup controlId="formMalnutrition">
+          {/* commenting this out, will likely move functionality to centralized alerts <FormGroup controlId="formMalnutrition">
               <ControlLabel xs={2} style={centerElements}>
                 <span style={{visibility: this.props.showMalnutrition}}>Malnutrition</span>
               </ControlLabel>
@@ -149,7 +149,7 @@ class NutritionForm extends React.Component {
                 </Alert>
               </Col>
 
-            </FormGroup>
+            </FormGroup>*/}
         </Row>
       </Grid>
     );
@@ -189,20 +189,22 @@ export default connect(state => {
     bmi = utils.calculateBMI(weight, height);
     bmiStyle = utils.calculateBMIAlert(bmi);
   }
-  const malnutrition = utils.calculateMalnutritionLevel(bmi, muac, patient ? patient.age : null, pregnant);
-  let showMalnutrition = "hidden";
-  if (malnutrition &&
-    (malnutrition === MALNUTRITION_LEVEL.moderate || malnutrition === MALNUTRITION_LEVEL.severe)) {
-    showMalnutrition = "visible";
-  }
+  /*commenting this out, will likely move functionality to centralized alerts
+    const malnutrition = utils.calculateMalnutritionLevel(bmi, muac, patient ? patient.age : null, pregnant);
+    let showMalnutrition = "hidden";
+    if (malnutrition &&
+      (malnutrition === MALNUTRITION_LEVEL.moderate || malnutrition === MALNUTRITION_LEVEL.severe)) {
+      showMalnutrition = "visible";
+    }
+  */
   return {
     weight,
     height,
     pregnant,
     bmi,
     bmiStyle,
-    malnutrition,
-    showMalnutrition,
+    /* malnutrition,
+     showMalnutrition,*/
     patient,
   };
 })(NutritionForm);
