@@ -1,22 +1,25 @@
 import React from 'react';
-import { BasicLayout } from '@openmrs/react-components';
+import {BasicLayout, SystemAlert} from '@openmrs/react-components';
 import logo from "../assets/images/pih_apzu_logo_white.png";
 import { NAV_MENU_PAGES, USER_MENU_PAGES, IDENTIFIER_TYPES } from '../constants';
 
 const Layout = props => {
 
   return (
-    <BasicLayout
-      identifierTypesToDisplay={
-        [IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE,
-          IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE,
-          IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE]
-      }
-      logo={logo}
-      navMenuPages={NAV_MENU_PAGES}
-      userMenuPages={USER_MENU_PAGES}
-      {...props}
-    />
+    <div>
+      <SystemAlert/>
+      <BasicLayout
+        identifierTypesToDisplay={
+          [IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE,
+            IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE,
+            IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE]
+        }
+        logo={logo}
+        navMenuPages={NAV_MENU_PAGES}
+        userMenuPages={USER_MENU_PAGES}
+        {...props}
+      />
+    </div>
   );
 };
 
