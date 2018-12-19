@@ -71,7 +71,7 @@
     background: lightgray;
   }
 
-  .list-group-item-heading {
+  .summary-and-form .list-group-item-heading {
     font-size: 130%;
     padding-bottom: 20px;
   }
@@ -82,9 +82,6 @@
   }  
 
   .list-group {
-    padding: 20px;
-    width: fit-content;
-    margin: auto;
     box-shadow: none;
   }
 
