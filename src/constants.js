@@ -36,6 +36,9 @@ export const ENCOUNTER_TYPES = {
   'AdherenceCounselingEncounterType': {
     uuid: '7D801495-3857-422F-BE2A-A4EEB3F36278'
   },
+  'TBScreeningEncounterType': {
+    uuid: '45F221B9-7254-4B15-811B-5B8C8912F245'
+  },
 };
 
 export const ENCOUNTER_ROLES = {
@@ -336,8 +339,8 @@ export const FORM_ANSWERS = {
 };
 
 export const NAV_MENU_PAGES = {
-  '/' : { display : 'Home', icon : 'home'},
-  '/searchPatient' : { display : 'Search Patient', icon : 'search'},
+  '/' : { display : 'Home', icon : 'home' },
+  '/searchPatient' : { display : 'Search Patient', icon : 'search' },
   '/checkin/checkInQueue': { display: 'Check-In', icon: 'notes-medical' },
   '/screening/vl/queue': { display: 'Viral Load', icon: 'vial' },
   '/screening/adherence/queue' : { display : 'Adherence', icon : 'pills' },
