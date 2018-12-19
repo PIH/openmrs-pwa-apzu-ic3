@@ -114,6 +114,14 @@ export const CONCEPTS = {
     uuid: '655e3148-977f-11e1-8993-905e29aff6c1',
     name: 'No'
   },
+  'SymptomPresent': {
+    uuid: '6558d3ba-977f-11e1-8993-905e29aff6c1',
+    name: 'Symptom Present'
+  },
+  'SymptomAbsent': {
+    uuid: '655b50fe-977f-11e1-8993-905e29aff6c1',
+    name: 'Symptom Absent'
+  },
   'SystolicBloodPressure' : {
     uuid: '6569bffe-977f-11e1-8993-905e29aff6c1'
   },
@@ -361,7 +369,13 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.uuid, name: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.name },
     { uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.uuid, name: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.name },
     { uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.uuid, name: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.name },
-  ]
+  ],
+  'coughPresent': [
+    { uuid: CONCEPTS.TB.Cough.uuid, name: 'Yes' }
+  ],
+  'coughAbsent': [
+    { uuid: CONCEPTS.TB.Cough.uuid, name: 'No' }
+  ],
 };
 
 export const NAV_MENU_PAGES = {

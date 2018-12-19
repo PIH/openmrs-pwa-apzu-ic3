@@ -21,14 +21,19 @@ export default class TbForm extends React.Component {
 
                 <Col xs={8} xsOffset={2}>
                   <Obs
-                    concept={CONCEPTS.TB.Cough.uuid}
-                    conceptAnswers={FORM_ANSWERS.trueFalse}
-                    path="tb-cough"
+                    concept={CONCEPTS.SymptomPresent}
+                    conceptAnswers={FORM_ANSWERS.coughPresent}
+                    path="tb-cough-present"
+                  />
+                  <Obs
+                    concept={CONCEPTS.SymptomAbsent}
+                    conceptAnswers={FORM_ANSWERS.coughAbsent}
+                    path="tb-cough-absent"
                   />
                 </Col>
               </Col>
             </Row>
-            <Row style={padding}>
+            {/*   <Row style={padding}>
               <Col xs={6}>
                 <ControlLabel xs={1} style={centerElements}>
                   Fever
@@ -102,7 +107,7 @@ export default class TbForm extends React.Component {
                   />
                 </Col>
               </Col>
-            </Row>
+            </Row>*/}
           </FormGroup>
       </Grid>
     );
