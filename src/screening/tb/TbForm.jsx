@@ -111,7 +111,7 @@ export default class TbForm extends React.Component {
       <ScreeningForm
         // TODO Implement Queue for TB then update the link
         backLink="/screening/nutrition/queue"
-        encounterType={ENCOUNTER_TYPES.TBEncounterType}
+        encounterType={ENCOUNTER_TYPES.TBScreeningEncounterType}
         formContent={formContent}
         formId="tb-form"
         formInstanceId="tb-form"
