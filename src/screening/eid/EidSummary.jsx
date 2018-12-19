@@ -11,9 +11,6 @@ const EidSummary = props => {
       <EncounterHistory
         encounterType={ENCOUNTER_TYPES.EidEncounterType}
       />
-      <EncounterHistory
-        encounterType={ENCOUNTER_TYPES.HTCEncounterType}
-      />
     </span>
   );
 };
