@@ -5,7 +5,7 @@ import {Obs} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
-import { centerElements, padding } from "../../pwaStyles";
+import { centerElements, padding, setFlex } from "../../pwaStyles";
 
 export default class TbForm extends React.Component {
  render() {
@@ -20,31 +20,40 @@ export default class TbForm extends React.Component {
                 </ControlLabel>
 
                 <Col xs={8} xsOffset={2}>
-                  <Obs
-                    concept={CONCEPTS.SymptomPresent}
-                    conceptAnswers={FORM_ANSWERS.coughPresent}
-                    path="tb-cough-present"
-                  />
-                  <Obs
-                    concept={CONCEPTS.SymptomAbsent}
-                    conceptAnswers={FORM_ANSWERS.coughAbsent}
-                    path="tb-cough-absent"
-                  />
+                  <Row style={setFlex}>
+                    <Obs
+                      concept={CONCEPTS.SymptomPresent}
+                      conceptAnswers={FORM_ANSWERS.coughPresent}
+                      path="tb-cough-present"
+                    />
+                    <Obs
+                      concept={CONCEPTS.SymptomAbsent}
+                      conceptAnswers={FORM_ANSWERS.coughAbsent}
+                      path="tb-cough-absent"
+                    />
+                  </Row>
                 </Col>
               </Col>
             </Row>
-            {/*   <Row style={padding}>
+            <Row style={padding}>
               <Col xs={6}>
                 <ControlLabel xs={1} style={centerElements}>
                   Fever
                 </ControlLabel>
 
                 <Col xs={8} xsOffset={2}>
-                  <Obs
-                    concept={CONCEPTS.TB.Fever.uuid}
-                    conceptAnswers={FORM_ANSWERS.trueFalse}
-                    path="tb-fever"
-                  />
+                  <Row style={setFlex}>
+                    <Obs
+                      concept={CONCEPTS.SymptomPresent}
+                      conceptAnswers={FORM_ANSWERS.feverPresent}
+                      path="tb-fever-present"
+                    />
+                    <Obs
+                      concept={CONCEPTS.SymptomAbsent}
+                      conceptAnswers={FORM_ANSWERS.feverAbsent}
+                      path="tb-fever-absent"
+                    />
+                  </Row>
                 </Col>
               </Col>
             </Row>
@@ -55,11 +64,18 @@ export default class TbForm extends React.Component {
                 </ControlLabel>
 
                 <Col xs={8} xsOffset={2}>
-                  <Obs
-                    concept={CONCEPTS.TB.NightSweats.uuid}
-                    conceptAnswers={FORM_ANSWERS.trueFalse}
-                    path="tb-night-sweats"
-                  />
+                  <Row style={setFlex}>
+                    <Obs
+                      concept={CONCEPTS.SymptomPresent}
+                      conceptAnswers={FORM_ANSWERS.nightSweatPresent}
+                      path="tb-night-sweat-present"
+                    />
+                    <Obs
+                      concept={CONCEPTS.SymptomAbsent}
+                      conceptAnswers={FORM_ANSWERS.nightSweatAbsent}
+                      path="tb-night-sweat-absent"
+                    />
+                  </Row>
                 </Col>
               </Col>
             </Row>
@@ -70,11 +86,18 @@ export default class TbForm extends React.Component {
                 </ControlLabel>
 
                 <Col xs={8} xsOffset={2}>
-                  <Obs
-                    concept={CONCEPTS.TB.WeightLoss.uuid}
-                    conceptAnswers={FORM_ANSWERS.trueFalse}
-                    path="tb-weight-loss"
-                  />
+                  <Row style={setFlex}>
+                    <Obs
+                      concept={CONCEPTS.SymptomPresent}
+                      conceptAnswers={FORM_ANSWERS.weightLossPresent}
+                      path="tb-weight-loss-present"
+                    />
+                    <Obs
+                      concept={CONCEPTS.SymptomAbsent}
+                      conceptAnswers={FORM_ANSWERS.weightlossAbsent}
+                      path="tb-weight-loss-absent"
+                    />
+                  </Row>
                 </Col>
               </Col>
             </Row>
@@ -85,11 +108,18 @@ export default class TbForm extends React.Component {
                 </ControlLabel>
 
                 <Col xs={8} xsOffset={2}>
-                  <Obs
-                    concept={CONCEPTS.TB.RecentContactWithActiveTB.uuid}
-                    conceptAnswers={FORM_ANSWERS.trueFalse}
-                    path="tb-recent-contact-with-tb"
-                  />
+                  <Row style={setFlex}>
+                    <Obs
+                      concept={CONCEPTS.SymptomPresent}
+                      conceptAnswers={FORM_ANSWERS.recentContactWithActiveTBPresent}
+                      path="tb-recent-contact-with-active-TB-present"
+                    />
+                    <Obs
+                      concept={CONCEPTS.SymptomAbsent}
+                      conceptAnswers={FORM_ANSWERS.recentContactWithActiveTBAbsent}
+                      path="tb-recent-contact-with-active-TB-absent"
+                    />
+                  </Row>
                 </Col>
               </Col>
             </Row>
@@ -100,14 +130,21 @@ export default class TbForm extends React.Component {
                 </ControlLabel>
 
                 <Col xs={8} xsOffset={2}>
-                  <Obs
-                    concept={CONCEPTS.TB.PainfulNeckAndArmpitLymphNodes.uuid}
-                    conceptAnswers={FORM_ANSWERS.trueFalse}
-                    path="tb-painful-neck-and-armpit-lymph-node"
-                  />
+                  <Row style={setFlex}>
+                    <Obs
+                      concept={CONCEPTS.SymptomPresent}
+                      conceptAnswers={FORM_ANSWERS.painfulNeckAndArmpitLymphTBPresent}
+                      path="tb-painful-neck-and-armpit-lymph-node-present"
+                    />
+                    <Obs
+                      concept={CONCEPTS.SymptomAbsent}
+                      conceptAnswers={FORM_ANSWERS.painfulNeckAndArmpitLymphTBAbsent}
+                      path="tb-painful-neck-and-armpit-lymph-node-absent"
+                    />
+                  </Row>
                 </Col>
               </Col>
-            </Row>*/}
+            </Row>
           </FormGroup>
       </Grid>
     );
