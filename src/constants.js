@@ -383,6 +383,7 @@ export const NAV_MENU_PAGES = {
   '/searchPatient' : { display : 'Search Patient', icon : 'search' },
   '/checkin/checkInQueue': { display: 'Check-In', icon: 'notes-medical' },
   '/screening/vl/queue': { display: 'Viral Load', icon: 'vial' },
+  '/screening/tb/queue': { display: 'Tuberculosis', icon: 'vial' },
   '/screening/adherence/queue' : { display : 'Adherence', icon : 'pills' },
   '/screening/eid/queue': { display: 'EID', icon: 'child' },
   '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
