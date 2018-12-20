@@ -201,68 +201,68 @@ export const CONCEPTS = {
       name: 'Counseled on viral load'
     }
   },
+  'Bled': {
+    uuid: 'f792f2f9-9c24-4d6e-98fd-caffa8f2383f',
+    name: 'Bled'
+  },
+  'ReasonForNoSample': {
+    uuid: '0e447d92-a180-11e8-98d0-529269fb1459',
+    name: 'Reason for no sample'
+  },
+  'UnableToDrawBlood': {
+    uuid: '0e447720-a180-11e8-98d0-529269fb1459',
+    name: 'Unable to draw blood'
+  },
+  'PatientRefused': {
+    uuid: '6566a4ae-977f-11e1-8993-905e29aff6c1',
+    name: 'Patient refused'
+  },
+  'InadequateSupplies': {
+    uuid: '655dc866-977f-11e1-8993-905e29aff6c1',
+    name: 'Inadequate supplies for testing'
+  },
+  'NeedsAdherenceCounseling': {
+    uuid: 'bc7bd9f2-b21d-11e8-96f8-529269fb1459',
+    name: 'Needs additional adherence counseling'
+  },
+  'ReasonForTesting': {
+    uuid: '164126AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Reason for testing'
+  },
+  'Routine': {
+    uuid: 'e0821812-955d-11e7-abc4-cec278b6b50a',
+    name: 'Routine'
+  },
+  'SixWeeksRoutine': {
+    uuid: 'e0821812-955d-11e7-abc4-cec278b6b50a',
+    name: '6w Routine'
+  },
+  'Confirmatory': {
+    uuid: '65590f06-977f-11e1-8993-905e29aff6c1',
+    name: 'Confirmatory'
+  },
+  'Target': {
+    uuid: 'e0821df8-955d-11e7-abc4-cec278b6b50a',
+    name: 'Target'
+  },
+  'LabLocation': {
+    uuid: '6fc0ab50-9492-11e7-abc4-cec278b6b50a',
+    name: 'Lab Location'
+  },
+  'NenoGeneXpert': {
+    uuid: 'e08214c0-955d-11e7-abc4-cec278b6b50a',
+    name: 'Neno GeneXpert'
+  },
+  'CentralLaboratory': {
+    uuid: 'e0820552-955d-11e7-abc4-cec278b6b50a',
+    name: 'Central Laboratory'
+  },
+  'LisungwiGeneXpert': {
+    uuid: 'e08212b8-955d-11e7-abc4-cec278b6b50a',
+    name: 'Lisungwi GeneXpert'
+  },
   'VIRAL_LOAD_TEST_SET': {
-    uuid: '83931c6d-0e5a-4302-b8ce-a31175b6475e',
-    'Bled': {
-      uuid: 'f792f2f9-9c24-4d6e-98fd-caffa8f2383f',
-      name: 'Bled'
-    },
-    'ReasonForNoSample': {
-      uuid: '0e447d92-a180-11e8-98d0-529269fb1459',
-      name: 'Reason for no sample'
-    },
-    'UnableToDrawBlood': {
-      uuid: '0e447720-a180-11e8-98d0-529269fb1459',
-      name: 'Unable to draw blood'
-    },
-    'PatientRefused': {
-      uuid: '6566a4ae-977f-11e1-8993-905e29aff6c1',
-      name: 'Patient refused'
-    },
-    'InadequateSupplies': {
-      uuid: '655dc866-977f-11e1-8993-905e29aff6c1',
-      name: 'Inadequate supplies for testing'
-    },
-    'NeedsAdherenceCounseling': {
-      uuid: 'bc7bd9f2-b21d-11e8-96f8-529269fb1459',
-      name: 'Needs additional adherence counseling'
-    },
-    'ReasonForTesting': {
-      uuid: '164126AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-      name: 'Reason for testing'
-    },
-    'Routine': {
-      uuid: 'e0821812-955d-11e7-abc4-cec278b6b50a',
-      name: 'Routine'
-    },
-    'SixWeeksRoutine': {
-      uuid: 'e0821812-955d-11e7-abc4-cec278b6b50a',
-      name: '6w Routine'
-    },
-    'Confirmatory': {
-      uuid: '65590f06-977f-11e1-8993-905e29aff6c1',
-      name: 'Confirmatory'
-    },
-    'Target': {
-      uuid: 'e0821df8-955d-11e7-abc4-cec278b6b50a',
-      name: 'Target'
-    },
-    'LabLocation': {
-      uuid: '6fc0ab50-9492-11e7-abc4-cec278b6b50a',
-      name: 'Lab Location'
-    },
-    'NenoGeneXpert': {
-      uuid: 'e08214c0-955d-11e7-abc4-cec278b6b50a',
-      name: 'Neno GeneXpert'
-    },
-    'CentralLaboratory': {
-      uuid: 'e0820552-955d-11e7-abc4-cec278b6b50a',
-      name: 'Central Laboratory'
-    },
-    'LisungwiGeneXpert': {
-      uuid: 'e08212b8-955d-11e7-abc4-cec278b6b50a',
-      name: 'Lisungwi GeneXpert'
-    }
+    uuid: '83931c6d-0e5a-4302-b8ce-a31175b6475e'
   },
   'TB': {
     'Cough': {
@@ -332,33 +332,33 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.False.uuid, name: CONCEPTS.False.name },
   ],
   'eidNoSampleAnswers': [
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.name },
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.name },
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.name },
+    { uuid: CONCEPTS.UnableToDrawBlood.uuid, name: CONCEPTS.UnableToDrawBlood.name },
+    { uuid: CONCEPTS.PatientRefused.uuid, name: CONCEPTS.PatientRefused.name },
+    { uuid: CONCEPTS.InadequateSupplies.uuid, name: CONCEPTS.InadequateSupplies.name },
   ],
   'noSampleAnswers': [
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.UnableToDrawBlood.name },
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.PatientRefused.name },
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.InadequateSupplies.name },
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.NeedsAdherenceCounseling.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.NeedsAdherenceCounseling.name },
+    { uuid: CONCEPTS.UnableToDrawBlood.uuid, name: CONCEPTS.UnableToDrawBlood.name },
+    { uuid: CONCEPTS.PatientRefused.uuid, name: CONCEPTS.PatientRefused.name },
+    { uuid: CONCEPTS.InadequateSupplies.uuid, name: CONCEPTS.InadequateSupplies.name },
+    { uuid: CONCEPTS.NeedsAdherenceCounseling.uuid, name: CONCEPTS.NeedsAdherenceCounseling.name },
   ],
   'reasonForTesting': [
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Routine.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Routine.name },
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.name },
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Target.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Target.name },
+    { uuid: CONCEPTS.Routine.uuid, name: CONCEPTS.Routine.name },
+    { uuid: CONCEPTS.Confirmatory.uuid, name: CONCEPTS.Confirmatory.name },
+    { uuid: CONCEPTS.Target.uuid, name: CONCEPTS.Target.name },
   ],
   'eidHivTestType': [
     { uuid: CONCEPTS.HIV_RAPID_TEST.uuid, name: CONCEPTS.HIV_RAPID_TEST.name },
     { uuid: CONCEPTS.HIV_DNA_PCR_TEST.uuid, name: CONCEPTS.HIV_DNA_PCR_TEST.name }
   ],
   'dnaPcrReasonForTesting': [
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.SixWeeksRoutine.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.SixWeeksRoutine.name },
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.Confirmatory.name }
+    { uuid: CONCEPTS.SixWeeksRoutine.uuid, name: CONCEPTS.SixWeeksRoutine.name },
+    { uuid: CONCEPTS.Confirmatory.uuid, name: CONCEPTS.Confirmatory.name }
   ],
   'labLocation': [
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.NenoGeneXpert.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.NenoGeneXpert.name },
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.CentralLaboratory.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.CentralLaboratory.name },
-    { uuid: CONCEPTS.VIRAL_LOAD_TEST_SET.LisungwiGeneXpert.uuid, name: CONCEPTS.VIRAL_LOAD_TEST_SET.LisungwiGeneXpert.name },
+    { uuid: CONCEPTS.NenoGeneXpert.uuid, name: CONCEPTS.NenoGeneXpert.name },
+    { uuid: CONCEPTS.CentralLaboratory.uuid, name: CONCEPTS.CentralLaboratory.name },
+    { uuid: CONCEPTS.LisungwiGeneXpert.uuid, name: CONCEPTS.LisungwiGeneXpert.name },
   ],
   "hivTestResultAnswers": [
     { uuid: CONCEPTS.HIV_TEST_RESULTS.Reactive.uuid, name: CONCEPTS.HIV_TEST_RESULTS.Reactive.name },
