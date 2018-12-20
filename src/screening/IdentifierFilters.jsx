@@ -4,6 +4,7 @@ import {
 } from '@openmrs/react-components';
 import { FormControl } from 'react-bootstrap';
 import './IdentifierFilters.css';
+import { PATIENT_IDENTIFIERS_PREFIX, PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
 
 class ScreeningFilters extends React.Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class ScreeningFilters extends React.Component {
   }
 
   handleTextInputSearch(e) {
-    this.handleSearch(null, e.target.value, 'second')
+    this.handleSearch(null, e.target.value, 'second');
   }
 
   render() {
@@ -57,7 +58,7 @@ class ScreeningFilters extends React.Component {
                 border: '1px solid black'
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
-              list={['CFGA']}
+              list={PATIENT_IDENTIFIERS_PREFIX}
               placeholder="select ID"
             />
             <span>-</span>
@@ -72,7 +73,7 @@ class ScreeningFilters extends React.Component {
                 border: '1px solid black'
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'third')} 
-              list={['HCC']} 
+              list={PATIENT_IDENTIFIERS_SUFFIX} 
               placeholder="select ID"
             />
           </span>
