@@ -121,6 +121,7 @@ class CheckInQueue extends React.Component {
             'identifiers.7.identifier',
             'identifiers.8.identifier',
           ]}
+          sortFields={['name.givenName', 'name.familyName']}
           title="Check-In Queue"
         />
 

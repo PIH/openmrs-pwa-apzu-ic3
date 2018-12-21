@@ -421,5 +421,5 @@ export const EID_ALERTS = [
   ...EID_RAPID_TEST,
   ...EID_DNA_PCR
 ];
-export const PATIENT_IDENTIFIERS_PREFIX = ['CFGA', 'DAM', 'FPAM', 'KCH', 'KCH', 'LGWE', 'LSI', 'LWAN', 'MGT', 'MTDN', 'MTE', 'NNO', 'NOP', 'NKA', 'NSM', 'QECH', 'ZLA'];
+export const PATIENT_IDENTIFIERS_PREFIX = ['CFGA', 'DAM', 'FPAM', 'KCH', 'LGWE', 'LSI', 'LWAN', 'MGT', 'MTDN', 'MTE', 'NNO', 'NOP', 'NKA', 'NSM', 'QECH', 'ZLA'];
 export const PATIENT_IDENTIFIERS_SUFFIX = ['HCC', 'CCC'];
