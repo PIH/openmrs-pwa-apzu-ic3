@@ -53,6 +53,7 @@ class VLQueueExpected extends React.Component {
           ] }
           rowData={ Object.values(this.props.patients) }
           rowSelectedActionCreators={ [patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator] }
+          sortFields={['name.givenName', 'name.familyName']}
           title=""
         />
 
