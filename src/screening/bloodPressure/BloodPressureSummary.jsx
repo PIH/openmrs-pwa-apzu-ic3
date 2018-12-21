@@ -1,11 +1,11 @@
 import React from "react";
-import {EncounterHistory} from '@openmrs/react-components';
-import {ENCOUNTER_TYPES} from "../../constants";
+import {ObsHistory} from '@openmrs/react-components';
+import {CONCEPTS} from "../../constants";
 
 const BloodPressureSummary = props => {
   return (
-    <EncounterHistory
-      encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
+    <ObsHistory
+      concepts={[CONCEPTS.DiastolicBloodPressure, CONCEPTS.SystolicBloodPressure]}
     />
   );
 };

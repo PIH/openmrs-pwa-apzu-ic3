@@ -1,11 +1,11 @@
 import React from "react";
-import {ENCOUNTER_TYPES} from "../../constants";
-import {EncounterHistory} from "@openmrs/react-components";
+import {CONCEPTS} from "../../constants";
+import {ObsHistory} from "@openmrs/react-components";
 
 const NutritionSummary = props => {
   return (
-    <EncounterHistory
-      encounterType={ENCOUNTER_TYPES.NutritionEncounterType}
+    <ObsHistory
+      concepts={[CONCEPTS.Height, CONCEPTS.Weight, CONCEPTS.MUAC]}
     />
   );
 };

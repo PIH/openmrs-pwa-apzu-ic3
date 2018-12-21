@@ -1,14 +1,18 @@
 import React from "react";
 import PatientLabTests from "../../patient/PatientLabTests";
-import {ENCOUNTER_TYPES} from "../../constants";
-import {EncounterHistory} from "@openmrs/react-components";
+import {CONCEPTS} from "../../constants";
+import {ObsHistory} from "@openmrs/react-components";
 
 const VLSummary = props => {
   return (
     <div>
       <PatientLabTests test_type={ "viral_load_tests" }/>
-      <EncounterHistory
-        encounterType={ENCOUNTER_TYPES.VLEncounterType}
+      <ObsHistory
+        concepts={[CONCEPTS.Bled,
+          CONCEPTS.ReasonForNoSample,
+          CONCEPTS.ReasonForTesting,
+          CONCEPTS.LabLocation
+        ]}
       />
     </div>
   );

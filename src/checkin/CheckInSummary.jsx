@@ -1,8 +1,8 @@
 import React from 'react';
 import {Col, ControlLabel, Grid, Row} from "react-bootstrap";
-import {EncounterHistory, selectors} from "@openmrs/react-components";
+import {ObsHistory, selectors} from "@openmrs/react-components";
 import connect from "react-redux/es/connect/connect";
-import {CONCEPTS, ENCOUNTER_TYPES} from "../constants";
+import {CONCEPTS} from "../constants";
 
 const CheckInSummary = props => {
 
@@ -70,8 +70,8 @@ const CheckInSummary = props => {
           <span><h4>History</h4></span>
         </Col>
       </Row>
-      <EncounterHistory
-        encounterType={ENCOUNTER_TYPES.CheckInEncounterType}
+      <ObsHistory
+        concepts={[CONCEPTS.SOURCE_OF_REFERRAL]}
         labels={labels}
       />
     </Grid>
