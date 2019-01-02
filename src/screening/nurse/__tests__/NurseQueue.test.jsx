@@ -70,7 +70,11 @@ describe('Component: NurseQueue', () => {
             selected: null
           }
         },
-
+        router: {
+          location: {
+            pathname: '/'
+          }
+        }
       });
     mountedComponent = undefined;
   });
@@ -78,7 +82,7 @@ describe('Component: NurseQueue', () => {
   it('renders properly', () => {
     //expect(toJson(nurseQueue())).toMatchSnapshot();
     expect(nurseQueue().find(CardList).length).toBe(1);
-    expect(nurseQueue().find(CardList).props().rowSelectedActionCreators.length).toBe(2);
+    expect(nurseQueue().find(CardList).props().rowSelectedActionCreators.length).toBe(3);
     let rowSelectedAction = {
       "pathname": '/screening',
       "state": {

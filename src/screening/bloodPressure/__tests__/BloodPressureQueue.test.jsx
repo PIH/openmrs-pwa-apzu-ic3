@@ -3,9 +3,9 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import {CardList, patientActions} from '@openmrs/react-components';
+import { CardList, patientActions } from '@openmrs/react-components';
 import BloodPressureQueue from '../BloodPressureQueue';
-import {VISIT_REPRESENTATION} from "../../../constants";
+import { VISIT_REPRESENTATION } from "../../../constants";
 import ic3PatientActions from "../../../patient/patientActions";
 import utils from "../../../utils";
 
@@ -72,7 +72,11 @@ describe('Component: BloodPressureQueue', () => {
             selected: null
           }
         },
-
+        router: {
+          location: {
+            pathname: '/'
+          }
+        }
       });
     mountedComponent = undefined;
   });
@@ -80,7 +84,7 @@ describe('Component: BloodPressureQueue', () => {
   it('renders properly', () => {
     //expect(toJson(bloodPressureQueue())).toMatchSnapshot();
     expect(bloodPressureQueue().find(CardList).length).toBe(1);
-    expect(bloodPressureQueue().find(CardList).get(0).props.rowSelectedActionCreators.length).toBe(2);
+    expect(bloodPressureQueue().find(CardList).get(0).props.rowSelectedActionCreators.length).toBe(3);
     expect(bloodPressureQueue().find(CardList).get(0).props.rowSelectedActionCreators[1]().payload.args[0]).toBe("/screening");
   });
 
