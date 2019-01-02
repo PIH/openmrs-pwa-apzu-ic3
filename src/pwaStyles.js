@@ -58,3 +58,8 @@ export const padding = {
 export const setFlex = {
   display: 'flex'
 };
+
+export const flexBaseline = {
+  display: 'flex',
+  alignItems: 'baseline',
+};

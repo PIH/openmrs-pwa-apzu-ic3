@@ -1,8 +1,8 @@
 import React from "react";
 import {Obs, formValidations} from '@openmrs/react-components';
-import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
+import { Grid, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
-import { noPaddingLeftAndRight } from "../../pwaStyles";
+import { noPaddingLeftAndRight, flexBaseline } from "../../pwaStyles";
 import ScreeningForm from "../ScreeningForm";
 
 /**
@@ -26,15 +26,14 @@ let BloodPressureForm = props => {
 
   const formContent = (
     <Grid>
-      <Col sm={5} xsOffset={1}>
-        <Row>
+      <Col sm={12}>
+        <div>
           <ControlLabel sm={6}>
             Systolic Blood Pressure
           </ControlLabel>
-        </Row>
-        <br />
-        <FormGroup controlId="formSystolic">
-          <Col sm={6}>
+        </div>
+        <FormGroup controlId="formSystolic" style={flexBaseline}>
+          <Col sm={2}>
             <Obs
               concept={CONCEPTS.SystolicBloodPressure.uuid}
               placeholder="value"
@@ -43,20 +42,19 @@ let BloodPressureForm = props => {
               warn={ abnormalMaxValue160 }
             />
           </Col>
-          <ControlLabel sm={1}>
+          <ControlLabel sm={1} style={noPaddingLeftAndRight}>
             mmHG
           </ControlLabel>
         </FormGroup>
       </Col>
-      <Col sm={5}>
-        <Row>
+      <Col sm={12}>
+        <div>
           <ControlLabel sm={6}>
             Diastolic Blood Pressure
           </ControlLabel>
-        </Row>
-        <br />
-        <FormGroup controlId="formDiastolic">
-          <Col sm={6}>
+        </div>
+        <FormGroup controlId="formDiastolic" style={flexBaseline}>
+          <Col sm={2}>
             <Obs
               concept={CONCEPTS.DiastolicBloodPressure.uuid}
               placeholder="value"
@@ -65,7 +63,7 @@ let BloodPressureForm = props => {
               warn={ abnormalMaxValue110 }
             />
           </Col>
-          <ControlLabel sm={2} styles={noPaddingLeftAndRight}>
+          <ControlLabel sm={1} style={noPaddingLeftAndRight}>
             mmHG
           </ControlLabel>
         </FormGroup>
