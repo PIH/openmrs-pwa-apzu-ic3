@@ -5,7 +5,7 @@ import {Obs} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
-import { centerElements, padding, setFlex } from "../../pwaStyles";
+import { padding, setFlex } from "../../pwaStyles";
 
 export default class TbForm extends React.Component {
  render() {
@@ -14,12 +14,14 @@ export default class TbForm extends React.Component {
         <br />
           <FormGroup>
             <Row style={padding}>
-              <Col xs={6}>
-                <ControlLabel xs={1} style={centerElements}>
-                  Cough
-                </ControlLabel>
+              <Col xs={7}>
+                <div>
+                  <ControlLabel xs={1}>
+                    Cough
+                  </ControlLabel>
+                </div>
 
-                <Col xs={8} xsOffset={2}>
+                <Col xs={8}>
                   <Row style={setFlex}>
                     <Obs
                       concept={CONCEPTS.SymptomPresent}
@@ -36,12 +38,13 @@ export default class TbForm extends React.Component {
               </Col>
             </Row>
             <Row style={padding}>
-              <Col xs={6}>
-                <ControlLabel xs={1} style={centerElements}>
-                  Fever
-                </ControlLabel>
-
-                <Col xs={8} xsOffset={2}>
+              <Col xs={7}>
+                <div>
+                  <ControlLabel xs={1}>
+                    Fever
+                  </ControlLabel>
+                </div>
+                <Col xs={8}>
                   <Row style={setFlex}>
                     <Obs
                       concept={CONCEPTS.SymptomPresent}
@@ -58,12 +61,13 @@ export default class TbForm extends React.Component {
               </Col>
             </Row>
             <Row style={padding}>
-              <Col xs={6}>
-                <ControlLabel xs={1} style={centerElements}>
-                  Night sweats
-                </ControlLabel>
-
-                <Col xs={8} xsOffset={2}>
+              <Col xs={7}>
+                <div>
+                  <ControlLabel xs={1}>
+                    Night sweats
+                  </ControlLabel>
+                </div>
+                <Col xs={8}>
                   <Row style={setFlex}>
                     <Obs
                       concept={CONCEPTS.SymptomPresent}
@@ -80,12 +84,13 @@ export default class TbForm extends React.Component {
               </Col>
             </Row>
             <Row style={padding}>
-              <Col xs={6}>
-                <ControlLabel xs={1} style={centerElements}>
-                  Weight Loss
-                </ControlLabel>
-
-                <Col xs={8} xsOffset={2}>
+              <Col xs={7}>
+                <div>
+                  <ControlLabel xs={1}>
+                    Weight Loss
+                  </ControlLabel>
+                </div>
+                <Col xs={8}>
                   <Row style={setFlex}>
                     <Obs
                       concept={CONCEPTS.SymptomPresent}
@@ -102,12 +107,13 @@ export default class TbForm extends React.Component {
               </Col>
             </Row>
             <Row style={padding}>
-              <Col xs={6}>
-                <ControlLabel xs={1} style={centerElements}>
-                  Recent contact with active TB(&lt;1 year)
-                </ControlLabel>
-
-                <Col xs={8} xsOffset={2}>
+              <Col xs={7}>
+                <div>
+                  <ControlLabel xs={1}>
+                    Recent contact with active TB (&lt;1 year)
+                  </ControlLabel>
+                </div>
+                <Col xs={8}>
                   <Row style={setFlex}>
                     <Obs
                       concept={CONCEPTS.SymptomPresent}
@@ -124,12 +130,13 @@ export default class TbForm extends React.Component {
               </Col>
             </Row>
             <Row style={padding}>
-              <Col xs={6}>
-                <ControlLabel xs={1} style={centerElements}>
-                  Painful neck and armpit lymph nodes
-                </ControlLabel>
-
-                <Col xs={8} xsOffset={2}>
+              <Col xs={7}>
+                <div>
+                  <ControlLabel xs={1}>
+                    Painful neck and armpit lymph nodes
+                  </ControlLabel>
+                </div>
+                <Col xs={8}>
                   <Row style={setFlex}>
                     <Obs
                       concept={CONCEPTS.SymptomPresent}
@@ -152,7 +159,7 @@ export default class TbForm extends React.Component {
     return (
       <ScreeningForm
         // TODO Implement Queue for TB then update the link
-        backLink="/screening/nutrition/queue"
+        backLink="/screening/tb/queue"
         encounterType={ENCOUNTER_TYPES.TBScreeningEncounterType}
         formContent={formContent}
         formId="tb-form"
