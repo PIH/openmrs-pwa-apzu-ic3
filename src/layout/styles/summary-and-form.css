@@ -16,6 +16,10 @@
   margin: auto;
 }
 
+.swiper-slide {
+  background: lightgray;
+}
+
 .summary-swiper-button {
   font-size: 30px;
   color: gray;

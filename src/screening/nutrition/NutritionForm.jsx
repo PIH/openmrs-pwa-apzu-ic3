@@ -8,7 +8,7 @@ import { Alert, Grid, Row, FormGroup, ControlLabel, Label, Col } from 'react-boo
 import { ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, FORM_ANSWERS } from "../../constants";
 import utils from "../../utils";
 import ScreeningForm from "../ScreeningForm";
-import { centerElements, labelTop } from "../../pwaStyles";
+import { labelTop, flexBaseline } from "../../pwaStyles";
 
 const minValue2 = formValidations.minValue(2);
 const minValue20 = formValidations.minValue(20);
@@ -45,95 +45,113 @@ class NutritionForm extends React.Component {
       <Grid>
         <br />
         <Row>
-          <FormGroup controlId="formWeight">
-            <ControlLabel xs={1} style={centerElements}>
-              Weight
-            </ControlLabel>
+          <Col sm={12}>
+            <div>
+              <ControlLabel sm={6}>
+                Weight
+              </ControlLabel>
+            </div>
+            <FormGroup controlId="formWeight" style={flexBaseline}>
+              <Col sm={4}>
+                <Obs
+                  concept={CONCEPTS.Weight.uuid}
+                  path="weight"
+                  placeholder="weight in kg"
+                  validate={this.props.patient.age > 18 ? [minValue25, maxValue140] :  [minValue2, maxValue100]}
+                />
+              </Col>
+              <ControlLabel sm={1}>
+                kg
+              </ControlLabel>
+            </FormGroup>
+          </Col>
 
-            <Col xs={4} xsOffset={4}>
-              <Obs
-                concept={CONCEPTS.Weight.uuid}
-                path="weight"
-                placeholder="weight in kg"
-                validate={this.props.patient.age > 18 ? [minValue25, maxValue140] :  [minValue2, maxValue100]}
-              />
-            </Col>
-            <ControlLabel xs={1} style={labelTop}>
-              kg
-            </ControlLabel>
-          </FormGroup>
-
-          <FormGroup controlId="formHeight">
-            <ControlLabel xs={1} style={centerElements}>
-              Height
-            </ControlLabel>
-
-            <Col xs={4} xsOffset={4}>
-              <Obs
-                concept={CONCEPTS.Height.uuid}
-                path="height"
-                placeholder="height in cm"
-                value={ this.state.lastHeight !== null ? this.state.lastHeight : null }
-                validate={this.props.patient.age > 18 ? [minValue120, maxValue215] :  [minValue20, maxValue215]}
-              />
-            </Col>
-            <ControlLabel xs={1} style={labelTop}>
-              cm
-            </ControlLabel>
-          </FormGroup>
+          <Col sm={12}>
+            <div>
+              <ControlLabel sm={6}>
+                Height
+              </ControlLabel>
+            </div>
+            <FormGroup controlId="formHeight" style={flexBaseline}>
+              <Col sm={4}>
+                <Obs
+                  concept={CONCEPTS.Height.uuid}
+                  path="height"
+                  placeholder="height in cm"
+                  value={ this.state.lastHeight !== null ? this.state.lastHeight : null }
+                  validate={this.props.patient.age > 18 ? [minValue120, maxValue215] :  [minValue20, maxValue215]}
+                />
+              </Col>
+              <ControlLabel sm={1}>
+                cm
+              </ControlLabel>
+            </FormGroup>
+          </Col>
 
         {( (this.props.patient.age >= 18) && (this.props.patient.age < 50) && (this.props.patient.gender === 'F') ) &&
-          <FormGroup controlId="formPregnant">
-            <ControlLabel sm={1} style={centerElements}>
-            Pregnant
-            </ControlLabel>
-            <Col xs={6} xsOffset={3}>
-              <Obs
-                concept={CONCEPTS.Pregnant.uuid}
-                conceptAnswers={FORM_ANSWERS.trueFalse}
-                path="pregnant"
-              />
-            </Col>
-          </FormGroup>
+          <Col sm={12}>
+            <div>
+              <ControlLabel sm={6}>
+                Pregnant
+              </ControlLabel>
+            </div>
+            <FormGroup controlId="formPregnant">
+              <Col xs={5}>
+                <Obs
+                  concept={CONCEPTS.Pregnant.uuid}
+                  conceptAnswers={FORM_ANSWERS.trueFalse}
+                  path="pregnant"
+                />
+              </Col>
+            </FormGroup>
+          </Col>
         }
 
         { (( this.props.patient.age >= 18 && this.props.patient.gender === 'M')
           || (this.props.patient.gender === 'F' && this.props.patient.age >= 18 && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.False.uuid))
           || (this.props.patient.gender === 'F' && this.props.patient.age > 50))&&
-          <FormGroup controlId="formBMI">
-            <ControlLabel xs={6} style={centerElements}>
-            BMI
-            </ControlLabel>
-            <br />
+            <Col sm={12}>
+              <div>
+              <ControlLabel xs={6}>
+              BMI
+              </ControlLabel>
+              </div>
+            <FormGroup controlId="formBMI" style={flexBaseline}>
+              <br />
 
-            <Col xs={4} xsOffset={4}>
-              <h3 style={ labelTop }><Label bsStyle={this.props.bmiStyle.alert} style={{visibility: "visible"}}>{ this.props.bmi ? this.props.bmi : "00.00" }</Label>
-              </h3>
-            </Col>
+              <Col sm={4}>
+                <h3 style={ labelTop }><Label bsStyle={this.props.bmiStyle.alert} style={{visibility: "visible"}}>{ this.props.bmi ? this.props.bmi : "00.00" }</Label>
+                </h3>
+              </Col>
 
-            <ControlLabel xs={1} style={labelTop}>
-              kg/m<sup>2</sup>
-            </ControlLabel>
-          </FormGroup>
+              <ControlLabel sm={1}>
+                kg/m<sup>2</sup>
+              </ControlLabel>
+            </FormGroup>
+          </Col>
         }
 
         { ((this.props.patient.age < 18) || ( (this.props.patient.age >= 18) && (this.props.patient.gender === 'F') && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.True.uuid))) &&
-            <FormGroup controlId="formMuac">
-              <ControlLabel xs={2} style={centerElements}>
-                MUAC
-              </ControlLabel>
+          <Col sm={12}>
+            <div>
+                <ControlLabel xs={6}>
+                  MUAC
+                </ControlLabel>
+            </div>
+            <FormGroup controlId="formMuac"  style={flexBaseline}>
               <br />
-              <Col sm={4} xsOffset={4}>
+              <Col sm={4}>
                 <Obs
                   concept={CONCEPTS.MUAC.uuid}
                   path="muac"
                   placeholder="muac in cm"
                 />
               </Col>
-              <ControlLabel xs={1} style={labelTop}>
+              <ControlLabel sm={1}>
                 cm
               </ControlLabel>
             </FormGroup>
+          </Col>
           }
           {/* commenting this out, will likely move functionality to centralized alerts <FormGroup controlId="formMalnutrition">
               <ControlLabel xs={2} style={centerElements}>

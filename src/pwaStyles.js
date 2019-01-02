@@ -54,3 +54,8 @@ export const historySection = {
 export const padding = {
   padding: '10px'
 };
+
+export const flexBaseline = {
+  display: 'flex',
+  alignItems: 'baseline',
+};
