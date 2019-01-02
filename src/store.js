@@ -19,7 +19,7 @@ import completedVisitsReducer from './visit/completedVisitsReducer';
 import {persistStore, persistReducer} from 'redux-persist';
 import storageSession from 'redux-persist/lib/storage/session';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
-import { default as tabsReducer } from './screening/actions/reducer';
+import { default as screeningReducer } from './screening/actions/reducer';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
 import patientSagas from './patient/patientSagas';
@@ -54,7 +54,7 @@ const combinedReducer = combineReducers({
   openmrs: openmrsReducers,
   form: reduxFormReducer,
   toastr: toastrReducer,
-  gridtabs: tabsReducer,
+  screening: screeningReducer,
   completedVisits: completedVisitsReducer,
 });
 

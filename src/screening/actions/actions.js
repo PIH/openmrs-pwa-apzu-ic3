@@ -1,4 +1,4 @@
-import TABS_TYPES from "./types";
+import TABS_TYPES, { SET_LAST_SCREENING_QUEUE } from "./types";
 
 const save = (name, key) => ( {
   type: TABS_TYPES.SAVE,
@@ -6,4 +6,9 @@ const save = (name, key) => ( {
   key: key
 });
 
-export default { save };
+const setLastScreeningQueue = (url) => ( {
+  type: SET_LAST_SCREENING_QUEUE,
+  url
+});
+
+export default { save, setLastScreeningQueue };
