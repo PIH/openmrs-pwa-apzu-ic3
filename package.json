@@ -41,7 +41,8 @@
     "redux-persist": "^5.10.0",
     "redux-saga": "^0.16.0",
     "redux-types": "^2.0.3",
-    "source-map-explorer": "^1.6.0"
+    "source-map-explorer": "^1.6.0",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "enzyme": "^3.4.0",

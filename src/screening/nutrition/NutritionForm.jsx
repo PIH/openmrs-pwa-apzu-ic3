@@ -178,7 +178,7 @@ class NutritionForm extends React.Component {
         encounterType={ENCOUNTER_TYPES.NutritionEncounterType}
         formContent={formContent}
         formId="nutrition-form"
-        formInstanceId="nutrition-form"
+        formInstanceId={this.props.formInstanceId}
         defaultValues={ this.state.lastHeight !== null ? [{
           type: "obs",
           path: "height",
@@ -193,10 +193,10 @@ class NutritionForm extends React.Component {
 
 }
 
-const selector = formValueSelector('nutrition-form');
 
-export default connect(state => {
+export default connect((state, props) => {
   const patient = selectors.getSelectedPatientFromStore(state);
+  const selector = formValueSelector(props.formInstanceId);
   const weight = selector(state, formUtil.obsFieldName('weight', CONCEPTS.Weight.uuid));
   const height = selector(state, formUtil.obsFieldName('height', CONCEPTS.Height.uuid));
   const muac = selector(state, formUtil.obsFieldName('muac', CONCEPTS.MUAC.uuid));

@@ -5,7 +5,7 @@ import {Col} from "react-bootstrap";
 const Form = props => {
   return (
     <Col className="form-layout">
-      {React.cloneElement(props.form, { backLink: props.backLink })}
+      {React.cloneElement(props.form, { backLink: props.backLink, formInstanceId: props.formInstanceId })}
       {props.sliderButton && props.sliderButton()}
     </Col>
   );
