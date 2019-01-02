@@ -96,7 +96,7 @@ class EidForm extends React.PureComponent {
           }
           formContent={ formContent }
           formId={ FORM_NAMES.eidFormName }
-          formInstanceId={ FORM_NAMES.eidFormName }
+          formInstanceId={this.props.formInstanceId}
           title=""
           toastMessage="EID HIV Test Saved"
         />
@@ -105,9 +105,9 @@ class EidForm extends React.PureComponent {
     );
   }
 }
-const selector = formValueSelector(FORM_NAMES.eidFormName);
 
-export default connect(state => {
+export default connect((state, props) => {
+  const selector = formValueSelector(props.formInstanceId);
   const testType = selector(state, formUtil.obsFieldName('hiv-test-type', CONCEPTS.HIV_TEST_TYPE.uuid));
   return {
     testType,

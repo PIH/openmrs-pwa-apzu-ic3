@@ -78,6 +78,7 @@ let BloodPressureForm = props => {
       formContent={formContent}
       toastMessage="Blood Pressure Saved"
       formId="bp-form"
+      formInstanceId={props.formInstanceId}
     />
   );
 };

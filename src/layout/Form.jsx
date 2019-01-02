@@ -5,7 +5,10 @@ import {Col} from "react-bootstrap";
 const Form = props => {
   return (
     <Col className="form-layout">
-      {React.cloneElement(props.form, { backLink: props.backLink, formInstanceId: props.formInstanceId })}
+      {React.cloneElement(props.form, {
+        backLink: props.backLink,
+        formInstanceId: props.formInstanceId
+      })}
       {props.sliderButton && props.sliderButton()}
     </Col>
   );
@@ -15,6 +18,7 @@ const Form = props => {
 Form.propTypes = {
   backLink: PropTypes.string.isRequired,
   form: PropTypes.object.isRequired,
+  formInstanceId: PropTypes.string.isRequired,
   sliderButton: PropTypes.func.isRequired,
 };
 

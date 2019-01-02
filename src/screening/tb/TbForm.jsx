@@ -163,7 +163,7 @@ export default class TbForm extends React.Component {
         encounterType={ENCOUNTER_TYPES.TBScreeningEncounterType}
         formContent={formContent}
         formId="tb-form"
-        formInstanceId="tb-form"
+        formInstanceId={this.props.formInstanceId}
         toastMessage="Tb Saved"
       />
     );

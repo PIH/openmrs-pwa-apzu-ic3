@@ -34,6 +34,7 @@ let HtcForm = (props) => {
       encounterType={ENCOUNTER_TYPES.HTCEncounterType}
       formContent={formContent}
       formId="htc-form"
+      formInstanceId={props.formInstanceId}
       toastMessage="HTC Saved"
     />
   );

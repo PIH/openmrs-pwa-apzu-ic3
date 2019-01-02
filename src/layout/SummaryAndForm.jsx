@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Col, Grid, Row, Glyphicon } from "react-bootstrap";
 import Swiper from 'react-id-swiper';
 import { withRouter } from 'react-router-dom';
+import {submit} from 'redux-form';
 import uuidv4 from 'uuid/v4';
 import {selectors, formActions, FORM_STATES} from "@openmrs/react-components";
 import 'react-id-swiper/src/styles/css/swiper.css';
@@ -13,12 +14,13 @@ import connect from "react-redux/es/connect/connect";
 import './styles/summary-and-form.css';
 
 // TODO can we organize this at all better?  the idea that we are passing the form instance ID around everywhere, and doing enter/edit here is kind of painful
+// TODO if we generally like the way this works, we can extract back out into react-components
 
 export class SummaryAndForm extends React.Component {
   constructor(props) {
     super(props);
     this.enterEditMode = this.enterEditMode.bind(this);
-    this.exitEditMode = this.exitEditMode.bind(this);
+    this.submitForm = this.submitForm.bind(this);
     this.getForm = this.getForm.bind(this);
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
@@ -71,8 +73,9 @@ export class SummaryAndForm extends React.Component {
     this.props.dispatch(formActions.setFormState(this.formInstanceId, FORM_STATES.EDITING));
   }
 
-  exitEditMode() {
+  submitForm() {
     this.props.dispatch(formActions.setFormState(this.formInstanceId, FORM_STATES.VIEWING));
+    this.props.dispatch(submit(this.formInstanceId));
   }
 
   getForm() {
@@ -101,7 +104,7 @@ export class SummaryAndForm extends React.Component {
               <span><h3>{this.props.title}</h3></span>
             </div>
             {this.getForm() && this.getForm().state === FORM_STATES.EDITING ?
-              (<button onClick={this.exitEditMode}>Save</button>) :
+              (<button onClick={this.submitForm}>Save</button>) :
               (<button onClick={this.enterEditMode}>Edit</button>)
             }
           </Row>

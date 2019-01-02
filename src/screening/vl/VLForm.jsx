@@ -124,7 +124,7 @@ class VLForm extends React.PureComponent {
         encounterType={ENCOUNTER_TYPES.VLEncounterType}
         formContent={formContent}
         formId="vl-form"
-        formInstanceId="vl-form"
+        formInstanceId={this.props.formInstanceId}
         toastMessage="Viral Load Saved"
       />
     );
@@ -132,9 +132,9 @@ class VLForm extends React.PureComponent {
   }
 }
 
-const selector = formValueSelector('vl-form');
 
-export default connect(state => {
+export default connect((state, props) => {
+  const selector = formValueSelector(props.formInstanceId);
   const bled = selector(state, formUtil.obsFieldName('vl-bled', CONCEPTS.Bled.uuid));
   return {
     bled,
