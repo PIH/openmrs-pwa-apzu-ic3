@@ -4,20 +4,21 @@ import { push } from 'connected-react-router';
 import { selectors } from '@openmrs/react-components';
 import htcFilters from './htcFilters';
 import ScreeningQueue from "../ScreeningQueue";
+import screeningActions from "../actions/actions";
 
-let HtcQueue = props => {
-
+const HtcQueue = props => {
   const rowSelectedActionCreators = [
-    () => push('/screening')
+    () => push('/screening'),
+    () => screeningActions.setLastScreeningQueue(props.location)
   ];
 
   return (
     <div>
       <ScreeningQueue
-        dispatch={ props.dispatch }
+        dispatch={props.dispatch}
         filters={[htcFilters.required, (patient) => !htcFilters.completed(patient)]}
-        rowData={ Object.values(props.patients) }
-        rowSelectedActionCreators={ rowSelectedActionCreators }
+        rowData={Object.values(props.patients)}
+        rowSelectedActionCreators={rowSelectedActionCreators}
         title="HTC Queue"
       />
     </div>
@@ -26,7 +27,8 @@ let HtcQueue = props => {
 
 const mapStateToProps = (state) => {
   return {
-    patients: selectors.getPatientStore(state)
+    patients: selectors.getPatientStore(state),
+    location: state.router.location.pathname
   };
 };
 
