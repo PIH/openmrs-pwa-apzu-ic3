@@ -1,5 +1,5 @@
 import React from "react";
-import { EncounterFormPage, encountersByEncounterTypeFilter, visitActions, selectors } from '@openmrs/react-components';
+import {EncounterFormPanel, encountersByEncounterTypeFilter, visitActions, selectors} from '@openmrs/react-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ACTIVE_VISITS_REP, ENCOUNTER_ROLES } from "../constants";
@@ -39,7 +39,7 @@ class ScreeningForm extends React.Component {
         <div style={centerTextAlign}>
           <h2>{encounter && encounter.encounterDatetime && (isSameDay(parse(encounter.encounterDatetime), new Date()) ? 'Today' : format(parse(encounter.encounterDatetime), 'DD MMM YYYY'))}</h2>
         </div>
-        <EncounterFormPage
+        <EncounterFormPanel
           backLink={props.backLink}
           defaultValues={props.defaultValues}
           encounter={encounter}
