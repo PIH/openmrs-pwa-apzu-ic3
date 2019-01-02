@@ -13,15 +13,15 @@ class DnaPcrForm extends React.PureComponent {
     // this clears out form values when the "bled" question is changed
     if (typeof this.props.bled !== 'undefined' && this.props.bled !== prevProps.bled) {
       if (this.props.bled === CONCEPTS.True.uuid) {
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid)));
+        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid), null));
+        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid)));
       }
       else {
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid)));
+        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid), null));
+        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid)));
 
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid)));
+        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid), null));
+        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid)));
       }
     }
   }
@@ -37,7 +37,7 @@ class DnaPcrForm extends React.PureComponent {
             </Col>
             <Col sm={8}>
               <Obs
-                concept={CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid}
+                concept={CONCEPTS.Bled.uuid}
                 path="dna-pcr-bled"
                 conceptAnswers={FORM_ANSWERS.trueFalse}
               />
@@ -54,7 +54,7 @@ class DnaPcrForm extends React.PureComponent {
             </Col>
             <Col sm={10}>
               <Obs
-                concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
+                concept={CONCEPTS.ReasonForNoSample.uuid}
                 path="dna-pcrdr-reason-no-sample"
                 conceptAnswers={FORM_ANSWERS.eidNoSampleAnswers}
               />
@@ -72,7 +72,7 @@ class DnaPcrForm extends React.PureComponent {
             </Col>
             <Col sm={8}>
               <Obs
-                concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid}
+                concept={CONCEPTS.ReasonForTesting.uuid}
                 path="dna-pcr-reason-for-testing"
                 conceptAnswers={FORM_ANSWERS.dnaPcrReasonForTesting}
               />
@@ -90,7 +90,7 @@ class DnaPcrForm extends React.PureComponent {
             </Col>
             <Col sm={8}>
               <Obs
-                concept={CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid}
+                concept={CONCEPTS.LabLocation.uuid}
                 path="dna-pcr-lab-location"
                 conceptAnswers={FORM_ANSWERS.labLocation}
               />
@@ -112,7 +112,7 @@ class DnaPcrForm extends React.PureComponent {
 const selector = formValueSelector(FORM_NAMES.eidFormName);
 
 export default connect(state => {
-  const bled = selector(state, formUtil.obsFieldName('dna-pcr-bled', CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid));
+  const bled = selector(state, formUtil.obsFieldName('dna-pcr-bled', CONCEPTS.Bled.uuid));
   return {
     bled,
     patient: selectors.getSelectedPatientFromStore(state)

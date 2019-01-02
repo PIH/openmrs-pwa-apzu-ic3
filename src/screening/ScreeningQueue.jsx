@@ -44,6 +44,7 @@ let ScreeningQueue = props => {
         rowData={props.rowData}
         rowSelectedActionCreators={[patientActions.setSelectedPatient, ...props.rowSelectedActionCreators]}
         searchFilterFields={['name.givenName', 'name.familyName', 'identifiers.0.identifier', 'identifiers.1.identifier', 'identifiers.2.identifier']}
+        sortFields={['name.givenName', 'name.familyName']}
         title={props.title}
       />
     </div>

@@ -1,11 +1,12 @@
 import React from "react";
-import { ENCOUNTER_TYPES } from "../../constants";
-import { EncounterHistory } from "@openmrs/react-components";
+import {CONCEPTS} from "../../constants";
+import {ObsHistory} from "@openmrs/react-components";
 
 const TbSummary = props => {
   return (
-    <EncounterHistory
-      encounterType={ENCOUNTER_TYPES.TBScreeningEncounterType}
+    <ObsHistory
+      concepts={[CONCEPTS.SymptomPresent,
+        CONCEPTS.SymptomAbsent]}
     />
   );
 };

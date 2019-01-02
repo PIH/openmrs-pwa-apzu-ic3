@@ -12,15 +12,15 @@ class VLForm extends React.PureComponent {
     // this clears out form values when the "bled" question is changed
     if (typeof this.props.bled !== 'undefined' && this.props.bled !== prevProps.bled) {
       if (this.props.bled === CONCEPTS.True.uuid) {
-        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-reason-no-sample', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid), null));
-        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-reason-no-sample', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid)));
+        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid), null));
+        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid)));
       }
       else {
-        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-reason-for-testing', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid), null));
-        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-reason-for-testing', CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid)));
+        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-reason-for-testing', CONCEPTS.ReasonForTesting.uuid), null));
+        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-reason-for-testing', CONCEPTS.ReasonForTesting.uuid)));
 
-        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-lab-location', CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid), null));
-        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-lab-location', CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid)));
+        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-lab-location', CONCEPTS.LabLocation.uuid), null));
+        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-lab-location', CONCEPTS.LabLocation.uuid)));
       }
     }
   }
@@ -41,7 +41,7 @@ class VLForm extends React.PureComponent {
           <Col sm={12}>
             <FormGroup controlId="formBled">
               <Obs
-                concept={CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid}
+                concept={CONCEPTS.Bled.uuid}
                 conceptAnswers={FORM_ANSWERS.trueFalse}
                 path="vl-bled"
               />
@@ -61,7 +61,7 @@ class VLForm extends React.PureComponent {
                 <FormGroup controlId="formReasonForNoSample">
                   <Col sm={12}>
                     <Obs
-                      concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForNoSample.uuid}
+                      concept={CONCEPTS.ReasonForNoSample.uuid}
                       conceptAnswers={FORM_ANSWERS.noSampleAnswers}
                       path="vl-reason-no-sample"
                     />
@@ -83,7 +83,7 @@ class VLForm extends React.PureComponent {
                 <FormGroup controlId="formReasonForTesting">
                   <Col sm={12}>
                     <Obs
-                      concept={CONCEPTS.VIRAL_LOAD_TEST_SET.ReasonForTesting.uuid}
+                      concept={CONCEPTS.ReasonForTesting.uuid}
                       conceptAnswers={FORM_ANSWERS.reasonForTesting}
                       path="vl-reason-for-testing"
                     />
@@ -105,7 +105,7 @@ class VLForm extends React.PureComponent {
                 <FormGroup controlId="formLabLocation">
                   <Col sm={12}>
                     <Obs
-                      concept={CONCEPTS.VIRAL_LOAD_TEST_SET.LabLocation.uuid}
+                      concept={CONCEPTS.LabLocation.uuid}
                       conceptAnswers={FORM_ANSWERS.labLocation}
                       path="vl-lab-location"
                     />
@@ -135,7 +135,7 @@ class VLForm extends React.PureComponent {
 const selector = formValueSelector('vl-form');
 
 export default connect(state => {
-  const bled = selector(state, formUtil.obsFieldName('vl-bled', CONCEPTS.VIRAL_LOAD_TEST_SET.Bled.uuid));
+  const bled = selector(state, formUtil.obsFieldName('vl-bled', CONCEPTS.Bled.uuid));
   return {
     bled,
     patient: selectors.getSelectedPatientFromStore(state)
