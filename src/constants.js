@@ -378,6 +378,36 @@ export const FORM_ANSWERS = {
   'coughAbsent': [
     { uuid: CONCEPTS.TB.Cough.uuid, name: 'No' }
   ],
+  'feverPresent': [
+    { uuid: CONCEPTS.TB.Fever.uuid, name: 'Yes' }
+  ],
+  'feverAbsent': [
+    { uuid: CONCEPTS.TB.Fever.uuid, name: 'No' }
+  ],
+  'nightSweatPresent': [
+    { uuid: CONCEPTS.TB.NightSweats.uuid, name: 'Yes' }
+  ],
+  'nightSweatAbsent': [
+    { uuid: CONCEPTS.TB.NightSweats.uuid, name: 'No' }
+  ],
+  'weightLossPresent': [
+    { uuid: CONCEPTS.TB.WeightLoss.uuid, name: 'Yes' }
+  ],
+  'weightlossAbsent': [
+    { uuid: CONCEPTS.TB.WeightLoss.uuid, name: 'No' }
+  ],
+  'recentContactWithActiveTBPresent': [
+    { uuid: CONCEPTS.TB.RecentContactWithActiveTB.uuid, name: 'Yes' }
+  ],
+  'recentContactWithActiveTBAbsent': [
+    { uuid: CONCEPTS.TB.RecentContactWithActiveTB.uuid, name: 'No' }
+  ],
+  'painfulNeckAndArmpitLymphTBPresent': [
+    { uuid: CONCEPTS.TB.PainfulNeckAndArmpitLymphNodes.uuid, name: 'Yes' }
+  ],
+  'painfulNeckAndArmpitLymphTBAbsent': [
+    { uuid: CONCEPTS.TB.PainfulNeckAndArmpitLymphNodes.uuid, name: 'No' }
+  ],
 };
 
 export const NAV_MENU_PAGES = {

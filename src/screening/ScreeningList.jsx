@@ -9,6 +9,7 @@ import vlFilters from './vl/vlFilters';
 import eidFilters from './eid/eidFilters';
 import adherenceFilters from './adherence/adherenceFilters';
 import checkInFilters from "../checkin/checkInFilters";
+import tbFilters from "./tb/tbFilters";
 
 export class ScreeningList extends React.Component {
   render() {
@@ -90,7 +91,8 @@ export class ScreeningList extends React.Component {
       {
         title: "TB Screening",
         link: '/screening/tb/form',
-        // required: htcFilters.required,
+        required: tbFilters.required,
+        completed: htcFilters.completed,
       },/*
         {
           title: "TB",

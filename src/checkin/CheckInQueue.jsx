@@ -15,6 +15,7 @@ import { ENCOUNTER_TYPES, LOCATION_TYPES } from '../constants';
 import utils from "../utils";
 import ic3PatientActions from '../patient/patientActions';
 import IdentifierFilters from '../screening/IdentifierFilters'
+import screeningActions from '../screening/actions/actions'
 
 class CheckInQueue extends React.Component {
 
@@ -108,7 +109,7 @@ class CheckInQueue extends React.Component {
             () => this.props.dispatch(patientActions.clearSelectedPatient())
           ] }
           rowData={ Object.values(this.props.patients) }
-          rowSelectedActionCreators={[patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
+          rowSelectedActionCreators={[() => screeningActions.setLastScreeningQueue(this.props.screeningLocation), patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
           searchFilterFields={['name.givenName',
             'name.familyName',
             'identifiers.0.identifier',
@@ -136,6 +137,7 @@ const mapStateToProps = (state) => {
     patients: selectors.getPatientStore(state),
     updating: selectors.isPatientStoreUpdating(state),
     session: state.openmrs.session,
+    screeningLocation: state.router.location.pathname
   };
 };
 
