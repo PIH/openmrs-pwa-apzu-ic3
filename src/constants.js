@@ -123,10 +123,12 @@ export const CONCEPTS = {
     name: 'Symptom Absent'
   },
   'SystolicBloodPressure' : {
-    uuid: '6569bffe-977f-11e1-8993-905e29aff6c1'
+    uuid: '6569bffe-977f-11e1-8993-905e29aff6c1',
+    hiNormal: 160
   },
   'DiastolicBloodPressure' : {
-    uuid: '6569c116-977f-11e1-8993-905e29aff6c1'
+    uuid: '6569c116-977f-11e1-8993-905e29aff6c1',
+    hiNormal: 110
   },
   'Height': {
     uuid: '6569c562-977f-11e1-8993-905e29aff6c1'
