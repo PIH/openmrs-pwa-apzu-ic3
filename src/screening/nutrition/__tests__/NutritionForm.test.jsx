@@ -25,7 +25,9 @@ const nutritionForm = () => {
 
 describe('Component: NutritionForm', () => {
   beforeEach(() => {
-    props = {};
+    props = {
+      formInstanceId: "test-uuid"
+    };
     store = mockStore(
       {
         openmrs: {
