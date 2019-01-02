@@ -1,6 +1,6 @@
 import React from "react";
 import {Obs, formValidations} from '@openmrs/react-components';
-import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
+import { Grid, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 import { noPaddingLeftAndRight, flexBaseline } from "../../pwaStyles";
 import ScreeningForm from "../ScreeningForm";
