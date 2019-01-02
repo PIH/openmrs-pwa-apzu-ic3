@@ -83,6 +83,7 @@ function* getIC3Patients(action) {
 
   } catch (e) {
     yield put(ic3PatientActions.getIC3PatientsFailed(e.message));
+    yield put(patientActions.setPatientStoreNotUpdating());
   }
 }
 
@@ -105,6 +106,7 @@ function* getIC3PatientScreeningData(action) {
 
   } catch (e) {
     yield put(ic3PatientActions.getIC3PatientScreeningDataFailed(e));
+    yield put(patientActions.setPatientStoreNotUpdating());
   }
 
 }
