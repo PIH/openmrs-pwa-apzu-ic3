@@ -24,7 +24,7 @@ const Summary = props => {
 
 Summary.propTypes = {
   backLink: PropTypes.string.isRequired,
-  sliderButton: PropTypes.func.isRequired,
+  sliderButton: PropTypes.func,
   summary: PropTypes.object.isRequired,
 };
 
