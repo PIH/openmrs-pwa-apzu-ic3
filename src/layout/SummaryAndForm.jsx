@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col, Grid, Row, Glyphicon } from "react-bootstrap";
+import {Col, Grid, Row, Glyphicon, Button} from "react-bootstrap";
 import Swiper from 'react-id-swiper';
 import { withRouter } from 'react-router-dom';
-import {submit} from 'redux-form';
+import {submit, isInvalid, isSubmitting} from 'redux-form';
 import uuidv4 from 'uuid/v4';
 import {selectors, formActions, FORM_STATES} from "@openmrs/react-components";
 import 'react-id-swiper/src/styles/css/swiper.css';
@@ -21,7 +21,9 @@ export class SummaryAndForm extends React.Component {
     super(props);
     this.enterEditMode = this.enterEditMode.bind(this);
     this.submitForm = this.submitForm.bind(this);
-    this.getForm = this.getForm.bind(this);
+    this.getFormState = this.getFormState.bind(this);
+    this.getFormSubmitting = this.getFormSubmitting.bind(this);
+    this.getFormInvalid = this.getFormInvalid.bind(this);
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
     this.summarySwiperButton = this.summarySwiperButton.bind(this);
@@ -84,8 +86,20 @@ export class SummaryAndForm extends React.Component {
     this.props.dispatch(submit(this.formInstanceId));
   }
 
-  getForm() {
-    return this.props.forms ? this.props.forms[this.formInstanceId] : null;
+  getFormState() {
+    return this.props.forms && this.props.forms[this.formInstanceId] ? this.props.forms[this.formInstanceId].state : null;
+  }
+
+  // TODO these are ugly: preferrably this and getFormInvalid would happen in mapStatesToProps but we don't have access to form instance uuid there
+  // TODO (reduxForm) => reduxForm is needed because we aren't passing in the full state, just the form component
+  // TODO we should refactor all this when we pull some of the stuff into react-components
+  // TODO could we potentially apply the FormContext sooner?
+  getFormSubmitting() {
+    return isSubmitting(this.formInstanceId, (reduxForm) => reduxForm)(this.props.reduxForm);
+  }
+
+  getFormInvalid() {
+    return isInvalid(this.formInstanceId, (reduxForm) => reduxForm)(this.props.reduxForm);
   }
 
   render() {
@@ -113,9 +127,10 @@ export class SummaryAndForm extends React.Component {
             <div>
               <span><h3>{this.props.title}</h3></span>
             </div>
-            {this.getForm() && this.getForm().state === FORM_STATES.EDITING ?
-              (<button onClick={this.submitForm}>Save</button>) :
-              (<button onClick={this.enterEditMode}>Edit</button>)
+            {this.getFormState() === FORM_STATES.EDITING ?
+              (<Button disabled={this.getFormSubmitting() || this.getFormInvalid()}
+                       onClick={this.submitForm}>Save</Button>) :
+              (<Button onClick={this.enterEditMode}>Edit</Button>)
             }
           </Row>
           <Row className="show-grid summary-form-slider">
@@ -196,7 +211,8 @@ const mapStateToProps = (state) => {
   let storePatient = selectors.getSelectedPatientFromStore(state);
   return {
     patient: storePatient,
-    forms: state.openmrs.form
+    forms: state.openmrs.form,
+    reduxForm: state.form   // TODO ugh that we have to map in the entire state.form... can we assign uuid earlier?
   };
 };
 
