@@ -22,8 +22,7 @@ class PatientLabTests extends React.Component {
           <div key={lab.specimenDate}>
             <h4>{ lab.testType ? (utils.getConceptNameByUuid(lab.testType) + " @ ") : "" } {lab.specimenDate !== null ? utils.formatCalendarDate(lab.specimenDate) : '_'}</h4>
             <ul>
-              <li>Date
-                entered: {lab.resultDate !== null ? utils.formatCalendarDate(lab.resultDate) : utils.formatCalendarDate(lab.specimenDate)}</li>
+              <li>Date: {lab.effectiveDate !== null ? utils.formatCalendarDate(lab.effectiveDate) : utils.formatCalendarDate(lab.specimenDate)}</li>
               <li>Results: <Label
                 bsStyle="danger"> {([
                   lab.result ? utils.getConceptNameByUuid(lab.result) : "",
