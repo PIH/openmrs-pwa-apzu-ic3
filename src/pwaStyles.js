@@ -61,5 +61,5 @@ export const setFlex = {
 
 export const flexBaseline = {
   display: 'flex',
-  alignItems: 'baseline',
+  justifyContent: 'center',
 };
