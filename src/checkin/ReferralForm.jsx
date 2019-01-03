@@ -37,7 +37,7 @@ class ReferralForm extends React.Component {
         encounterType={ ENCOUNTER_TYPES.CheckInEncounterType }
         formContent={formContent}
         formId="checkin-form"
-        formInstanceId="checkin-form"
+        formInstanceId={this.props.formInstanceId}
       />
     );
   }
