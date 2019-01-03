@@ -123,6 +123,7 @@ let AdherenceForm = (props) => {
       encounterType={ENCOUNTER_TYPES.AdherenceCounselingEncounterType}
       formContent={formContent}
       formId="adherence-form"
+      formInstanceId={props.formInstanceId}
       toastMessage="Adherence Counseling Saved"
     />
   );
