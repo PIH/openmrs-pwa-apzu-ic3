@@ -15,9 +15,9 @@ const AdherenceQueue = props => {
   return (
     <div>
       <ScreeningQueue
-        dispatch={this.props.dispatch}
+        dispatch={props.dispatch}
         filters={[adherenceFilters.required, (patient) => !adherenceFilters.completed(patient)]}
-        rowData={Object.values(this.props.patients)}
+        rowData={Object.values(props.patients)}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="Adherence Counseling"
       />
