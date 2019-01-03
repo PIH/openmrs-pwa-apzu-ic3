@@ -28,16 +28,25 @@ export class SummaryAndForm extends React.Component {
     this.formSwiperButton = this.formSwiperButton.bind(this);
     this.swiper = null;
     this.formInstanceId = uuidv4();
+    this.state = {
+      currentView: ''
+    };
   }
   
   goNext() {
     if (this.swiper) {
+      this.setState({
+        currentView: 'form'
+      });
       this.swiper.slideNext();
     }
   }
 
   goPrev() {
     if (this.swiper) {
+      this.setState({
+        currentView: 'summary'
+      });
       this.swiper.slidePrev();
     }
     ;
@@ -48,10 +57,7 @@ export class SummaryAndForm extends React.Component {
       <span 
         className="summary-swiper-button" 
         onClick={() => this.goNext()}
-      > Today
-        <Glyphicon
-          glyph="menu-right"
-        />
+      > Add New
       </span>
     );
   }
@@ -64,7 +70,7 @@ export class SummaryAndForm extends React.Component {
       > 
         <Glyphicon
           glyph="menu-left"
-        />Summary
+        />
       </span>
     );
   }
@@ -91,14 +97,18 @@ export class SummaryAndForm extends React.Component {
         <Grid className="div-container">
           <Row className="row-container">
             <div>
-              <span 
-                className="back-button" 
-                onClick={() => this.props.history.push('/screening')}
-              >
-                <Glyphicon
-                  className="back-button-icon"
-                  glyph="menu-left"
-                /></span>
+              {this.state.currentView !== 'form' &&
+              (
+                <span 
+                  className="back-button" 
+                  onClick={() => this.props.history.push('/screening')}
+                >
+                  <Glyphicon
+                    className="back-button-icon"
+                    glyph="menu-left"
+                  /></span>
+              )
+              }
             </div>
             <div>
               <span><h3>{this.props.title}</h3></span>

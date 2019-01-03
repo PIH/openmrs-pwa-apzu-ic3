@@ -21,10 +21,12 @@
 }
 
 .summary-swiper-button {
-  font-size: 30px;
+  font-size: 20px;
   color: gray;
-  font-weight: 200;
-  float: right;
+  font-weight: 800;
+  cursor: pointer;
+  color: darkblue;
+  text-decoration: underline;
 }
 
 .summary-swiper-button > span {
@@ -42,8 +44,14 @@
 
 .form-swiper-button > span {
   top: 12px;
-  font-size: 40px;
-  color: darkgray;
+  font-size: 30px;
+  color: black;
+}
+
+.summary-layout-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 
@@ -69,7 +77,8 @@
   }
 
   .summary-layout {
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     padding: 20px;
     font-size: 120%;
     background: lightgray;
@@ -90,9 +99,16 @@
   }
 
   .form-layout {
-    height: 100vh;
+    max-height: 100vh;
+    height: auto;
+    min-height: 100vh;
     padding-left: 10px;
     background: lightgray;
+  }
+
+  .swiper-add-new-btn {
+    display: flex;
+    justify-content: center;
   }
 }
 
