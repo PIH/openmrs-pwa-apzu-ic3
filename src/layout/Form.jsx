@@ -19,7 +19,7 @@ Form.propTypes = {
   backLink: PropTypes.string.isRequired,
   form: PropTypes.object.isRequired,
   formInstanceId: PropTypes.string.isRequired,
-  sliderButton: PropTypes.func.isRequired,
+  sliderButton: PropTypes.func,
 };
 
 
