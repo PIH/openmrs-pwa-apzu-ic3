@@ -8,7 +8,7 @@
  */
 import { createHashHistory } from 'history';
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
-import logger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 import { reducer as reduxFormReducer } from 'redux-form';
@@ -81,6 +81,11 @@ const rootSagas = function* () {
     patientSagas()
   ]);
 };
+
+const logger = createLogger({
+  predicate: (getState, action) => !['SYSTEM_POLL_START', 'SYSTEM_POLL_SUCCESS'].includes(action.type),
+  collapsed: true,
+});
 
 if (process.env.NODE_ENV !== 'production') {
   middlewares.push(logger);
