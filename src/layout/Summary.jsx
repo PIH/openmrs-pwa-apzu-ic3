@@ -9,15 +9,17 @@ const Summary = props => {
     <Col className="summary-layout">
       <Grid>
         <Row>
-          <Col sm={6}>
+          <Col sm={12}>
             <span style={centerTextAlign}><h2>Summary</h2></span>
           </Col>
+        </Row>
+        <Row className="swiper-add-new-btn">
+          {props.sliderButton && props.sliderButton()}
         </Row>
       </Grid>
       <div className="summary-layout-content">
         {React.cloneElement(props.summary, { backLink: props.backLink })}
       </div>
-      {props.sliderButton && props.sliderButton()}
     </Col>
   );
 };
