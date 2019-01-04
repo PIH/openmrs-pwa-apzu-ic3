@@ -4,14 +4,12 @@ import { push } from 'connected-react-router';
 import { selectors } from "@openmrs/react-components";
 import bloodPressureFilters from './bloodPressureFilters';
 import ScreeningQueue from "../ScreeningQueue";
-import screeningActions from "../actions/actions";
 
 // TODO can we figure out a better way to do this without passing dispatch all the way through?
 
 const BloodPressureQueue = props => {
   const rowSelectedActionCreators = [
-    () => push('/screening'),
-    () => screeningActions.setLastScreeningQueue(props.location)
+    () => push('/screening')
   ];
   return (
     <div>
@@ -29,7 +27,6 @@ const BloodPressureQueue = props => {
 const mapStateToProps = (state) => {
   return {
     patients: selectors.getPatientStore(state),
-    location: state.router.location.pathname
   };
 };
 

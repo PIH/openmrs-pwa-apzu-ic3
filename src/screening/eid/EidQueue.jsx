@@ -4,12 +4,10 @@ import { push } from 'connected-react-router';
 import { selectors } from '@openmrs/react-components';
 import ScreeningQueue from "../ScreeningQueue";
 import eidFilters from './eidFilters';
-import screeningActions from '../actions/actions';
 
 const EidQueue = props => {
   const rowSelectedActionCreators = [
-    () => push('/screening'),
-    () => screeningActions.setLastScreeningQueue(props.location)
+    () => push('/screening')
   ];
   return (
     <div>
@@ -27,7 +25,6 @@ const EidQueue = props => {
 const mapStateToProps = (state) => {
   return {
     patients: selectors.getPatientStore(state),
-    location: state.router.location.pathname
   };
 };
 

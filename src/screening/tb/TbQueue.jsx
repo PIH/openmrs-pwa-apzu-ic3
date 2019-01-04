@@ -12,7 +12,6 @@ let TbQueue = props => {
 
   const rowSelectedActionCreators = [
     () => push('/screening'),
-    () => screeningActions.setLastScreeningQueue(props.location)
   ];
 
   return (
@@ -31,7 +30,6 @@ let TbQueue = props => {
 const mapStateToProps = (state) => {
   return {
     patients: selectors.getPatientStore(state),
-    location: state.router.location.pathname
   };
 };
 
