@@ -3,6 +3,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
+import { format, startOfDay } from 'date-fns';
 import {Obs, formValidations, obsRest, formUtil, selectors} from '@openmrs/react-components';
 import { Alert, Grid, Row, FormGroup, ControlLabel, Label, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, FORM_ANSWERS } from "../../constants";
@@ -23,7 +24,8 @@ class NutritionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      lastHeight: null
+      lastHeight: null,
+      lastResultDate: null,
     };
   }
 
@@ -34,13 +36,27 @@ class NutritionForm extends React.Component {
         this.props.patient.uuid, CONCEPTS.Height.uuid, 1
       ).then(data => {
         this.setState({
-          lastHeight: data.results[0] ? data.results[0].value : null
+          lastHeight: data.results[0] ? data.results[0].value : null,
+          lastResultDate: data.results[0] ? (data.results[0].encounter.encounterDatetime || data.results[0].obsDatetime) : null
         });
       });
     }
   }
 
   render() {
+    let bmi = null;
+    let bmiStyle = MALNUTRITION_LEVEL.none;
+
+    if ( typeof this.props.weight !== 'undefined' && typeof this.props.height === 'undefined') {
+      bmi = utils.calculateBMI(this.props.weight, this.state.lastHeight);
+      bmiStyle = utils.calculateBMIAlert(bmi);
+    } else {
+      bmi = utils.calculateBMI(this.props.weight, this.props.height);
+      bmiStyle = utils.calculateBMIAlert(bmi);
+    }
+    if (typeof this.props.weight === 'undefined') {
+      bmi = '00.00';
+    }
     const formContent = (
       <Grid>
         <br />
@@ -68,6 +84,16 @@ class NutritionForm extends React.Component {
 
           <Col sm={12}>
             <div>
+              {(this.state.lastHeight !== null) &&
+                (<p>
+                  <span>
+                    <em>
+                      <b>Previous height taken as {this.state.lastHeight}cm on {format(startOfDay(this.state.lastResultDate), 'DD MMM YYYY')}</b>
+                    </em>
+                  </span>
+                </p>
+                )
+              }
               <ControlLabel sm={6}>
                 Height
               </ControlLabel>
@@ -78,7 +104,6 @@ class NutritionForm extends React.Component {
                   concept={CONCEPTS.Height.uuid}
                   path="height"
                   placeholder="height in cm"
-                  value={ this.state.lastHeight !== null ? this.state.lastHeight : null }
                   validate={this.props.patient.age > 18 ? [minValue120, maxValue215] :  [minValue20, maxValue215]}
                 />
               </Col>
@@ -120,7 +145,7 @@ class NutritionForm extends React.Component {
               <br />
 
               <Col sm={4}>
-                <h3 style={ labelTop }><Label bsStyle={this.props.bmiStyle.alert} style={{visibility: "visible"}}>{ this.props.bmi ? this.props.bmi : "00.00" }</Label>
+                <h3 style={ labelTop }><Label bsStyle={bmiStyle.alert} style={{visibility: "visible"}}>{ bmi ? bmi : "00.00" }</Label>
                 </h3>
               </Col>
 
@@ -183,7 +208,6 @@ class NutritionForm extends React.Component {
           type: "obs",
           path: "height",
           concept: CONCEPTS.Height.uuid,
-          value: this.state.lastHeight
         }] : null
         }
         toastMessage="Nutrition Saved"
@@ -201,12 +225,7 @@ export default connect((state, props) => {
   const height = selector(state, formUtil.obsFieldName('height', CONCEPTS.Height.uuid));
   const muac = selector(state, formUtil.obsFieldName('muac', CONCEPTS.MUAC.uuid));
   const pregnant = selector(state, formUtil.obsFieldName('pregnant', CONCEPTS.Pregnant.uuid));
-  let bmi = null;
-  let bmiStyle = MALNUTRITION_LEVEL.none;
-  if ( typeof weight !== 'undefined' && typeof height !== 'undefined') {
-    bmi = utils.calculateBMI(weight, height);
-    bmiStyle = utils.calculateBMIAlert(bmi);
-  }
+
   /*commenting this out, will likely move functionality to centralized alerts
     const malnutrition = utils.calculateMalnutritionLevel(bmi, muac, patient ? patient.age : null, pregnant);
     let showMalnutrition = "hidden";
@@ -219,8 +238,6 @@ export default connect((state, props) => {
     weight,
     height,
     pregnant,
-    bmi,
-    bmiStyle,
     /* malnutrition,
      showMalnutrition,*/
     patient,
