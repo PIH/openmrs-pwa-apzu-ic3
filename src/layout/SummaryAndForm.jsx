@@ -66,14 +66,14 @@ export class SummaryAndForm extends React.Component {
 
   formSwiperButton() {
     return (
-      <span 
+      <div 
         className="form-swiper-button" 
         onClick={() => this.goPrev()}
       > 
         <Glyphicon
           glyph="menu-left"
         />
-      </span>
+      </div>
     );
   }
 
@@ -106,12 +106,13 @@ export class SummaryAndForm extends React.Component {
     const params = {
       spaceBetween: 30,
     };
+    const formViewIsActive = this.state.currentView === 'form';
     return (
       <div className="div-container summary-and-form">
         <Grid className="div-container">
           <Row className="row-container">
             <div>
-              {this.state.currentView !== 'form' &&
+              {!formViewIsActive &&
               (
                 <span 
                   className="back-button" 
@@ -127,10 +128,16 @@ export class SummaryAndForm extends React.Component {
             <div>
               <span><h3>{this.props.title}</h3></span>
             </div>
-            {this.getFormState() === FORM_STATES.EDITING ?
-              (<Button disabled={this.getFormSubmitting() || this.getFormInvalid()}
-                       onClick={this.submitForm}>Save</Button>) :
-              (<Button onClick={this.enterEditMode}>Edit</Button>)
+            {formViewIsActive &&
+              (
+                <div className="form-action-btns">
+                  {this.getFormState() === FORM_STATES.EDITING ?
+                    (<Button disabled={this.getFormSubmitting() || this.getFormInvalid()}
+                      onClick={this.submitForm}>Save</Button>) :
+                    (<Button onClick={this.enterEditMode}>Edit</Button>)
+                  }
+                </div>
+              )
             }
           </Row>
           <Row className="show-grid summary-form-slider">
