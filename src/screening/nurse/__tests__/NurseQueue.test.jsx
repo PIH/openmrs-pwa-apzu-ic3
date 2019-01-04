@@ -89,7 +89,7 @@ describe('Component: NurseQueue', () => {
         "queueLink": '/screening/nurse/queue'
       }
     };
-    expect(nurseQueue().find(CardList).props().rowSelectedActionCreators[1]().payload.args[0]).toEqual(rowSelectedAction);
+    expect(nurseQueue().find(CardList).props().rowSelectedActionCreators[2]().payload.args[0]).toEqual(rowSelectedAction);
   });
 
 });
