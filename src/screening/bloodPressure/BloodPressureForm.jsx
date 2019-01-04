@@ -14,13 +14,10 @@ import ScreeningForm from "../ScreeningForm";
  * SBP > 160
  * DBP > 110
  */
-const minValue40 = formValidations.minValue(40);
-const minValue50 = formValidations.minValue(50);
-const maxValue140 = formValidations.maxValue(140);
-const maxValue260 = formValidations.maxValue(260);
-
-const abnormalMaxValue110 = formValidations.abnormalMaxValue(110);
-const abnormalMaxValue160 = formValidations.abnormalMaxValue(160);
+const systolicBloodPressureNormalRange = formValidations.getNormalRangeFromConcept(CONCEPTS.SystolicBloodPressure);
+const systolicBloodPressureAbNormalRange = formValidations.getAbNormalRangeFromConcept(CONCEPTS.SystolicBloodPressure);
+const DiastolicBloodPressureNormalRange = formValidations.getNormalRangeFromConcept(CONCEPTS.DiastolicBloodPressure);
+const DiastolicBloodPressureAbNormalRange = formValidations.getAbNormalRangeFromConcept(CONCEPTS.DiastolicBloodPressure);
 
 let BloodPressureForm = props => {
 
@@ -38,8 +35,8 @@ let BloodPressureForm = props => {
               concept={CONCEPTS.SystolicBloodPressure.uuid}
               placeholder="value"
               path="systolic"
-              validate={[minValue50, maxValue260]}
-              warn={ abnormalMaxValue160 }
+              validate={props.validate || systolicBloodPressureNormalRange}
+              warn={props.warn || systolicBloodPressureAbNormalRange}
             />
           </Col>
           <ControlLabel sm={1} style={noPaddingLeftAndRight}>
@@ -58,9 +55,9 @@ let BloodPressureForm = props => {
             <Obs
               concept={CONCEPTS.DiastolicBloodPressure.uuid}
               placeholder="value"
-              validate={[minValue40, maxValue140]}
               path="diastolic"
-              warn={ abnormalMaxValue110 }
+              validate={props.validate || DiastolicBloodPressureNormalRange}
+              warn={props.warn || DiastolicBloodPressureAbNormalRange}
             />
           </Col>
           <ControlLabel sm={1} style={noPaddingLeftAndRight}>
