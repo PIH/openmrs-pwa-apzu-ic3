@@ -4,7 +4,6 @@ import { push } from 'connected-react-router';
 import { selectors } from '@openmrs/react-components';
 import tbFilters from './tbFilters';
 import ScreeningQueue from "../ScreeningQueue";
-import screeningActions from '../actions/actions';
 
 // TODO can we figure out a better way to do this without passing dispatch all the way through?
 
