@@ -2,7 +2,7 @@ import React from "react";
 import {
   Dropdown,
 } from '@openmrs/react-components';
-import { FormControl } from 'react-bootstrap';
+import { FormControl, Glyphicon } from 'react-bootstrap';
 import './IdentifierFilters.css';
 import { PATIENT_IDENTIFIERS_PREFIX, PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
 
@@ -11,6 +11,7 @@ class ScreeningFilters extends React.Component {
     super(props);
 
     this.handleSearch = this.handleSearch.bind(this);
+    this.secondIdentifierSearchValueClear = this.secondIdentifierSearchValueClear.bind(this);
     this.handleTextInputSearch = this.handleTextInputSearch.bind(this);
 
     this.state = {
@@ -43,6 +44,10 @@ class ScreeningFilters extends React.Component {
     this.props.handleSearchChange(searchValue);
   }
 
+  secondIdentifierSearchValueClear() {
+    this.setState({ secondIdentifierSearchValue: '' });
+  }
+
   handleTextInputSearch(e) {
     this.handleSearch(null, e.target.value, 'second');
   }
@@ -55,26 +60,40 @@ class ScreeningFilters extends React.Component {
           <span className='identifier-filter'>
             <Dropdown
               dropDownStyle={{
-                border: '1px solid black'
+                border: '1px solid black',
+                height: '30px',
+                textAlignLast: 'center',
+                textAlign: 'center',
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
               list={PATIENT_IDENTIFIERS_PREFIX}
-              placeholder="select ID"
+              placeholder="-"
             />
             <span>-</span>
-            <FormControl
-              onChange={this.handleTextInputSearch}
-              type="text"
-              value={this.state.secondIdentifierSearchValue}
-            />  
+            <div className="identifier-filter-number-input-container">
+              <FormControl
+                className="identifier-filter-number-input"
+                onChange={this.handleTextInputSearch}
+                type="number"
+                value={this.state.secondIdentifierSearchValue}
+              />  
+              <Glyphicon 
+                className="right-remove-sign-icon"
+                glyph="remove-sign" 
+                onClick={this.secondIdentifierSearchValueClear}
+              />
+            </div>
             <span>-</span>
             <Dropdown
               dropDownStyle={{
-                border: '1px solid black'
+                border: '1px solid black',
+                height: '30px',
+                textAlignLast: 'center',
+                textAlign: 'center',
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'third')} 
               list={PATIENT_IDENTIFIERS_SUFFIX} 
-              placeholder="select ID"
+              placeholder="-"
             />
           </span>
         </div>
