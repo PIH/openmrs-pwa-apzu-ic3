@@ -97,7 +97,7 @@ class CheckInQueue extends React.Component {
         <br />
 */}
         <CardList
-          AdditionalFilters={IdentifierFilters}
+          AdditionalSearchFilters={IdentifierFilters}
           card={PatientCard}
           delayInterval={0}
           dispatch={this.props.dispatch}

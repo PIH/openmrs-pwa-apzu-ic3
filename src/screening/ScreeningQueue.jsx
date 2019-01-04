@@ -32,7 +32,7 @@ let ScreeningQueue = props => {
   return (
     <div>
       <CardList
-        AdditionalFilters={IdentifierFilters}
+        AdditionalSearchFilters={IdentifierFilters}
         card={PatientCard}
         delayInterval={0}
         dispatch={props.dispatch}
