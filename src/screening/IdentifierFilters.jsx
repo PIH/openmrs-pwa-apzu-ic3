@@ -45,7 +45,7 @@ class ScreeningFilters extends React.Component {
   }
 
   secondIdentifierSearchValueClear() {
-    this.setState({ secondIdentifierSearchValue: '' });
+    this.handleSearch(null, '', 'second');
   }
 
   handleTextInputSearch(e) {
