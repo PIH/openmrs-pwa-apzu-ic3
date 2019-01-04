@@ -85,7 +85,7 @@ describe('Component: NutritionQueue', () => {
     //expect(toJson(nutritionQueue())).toMatchSnapshot();
     expect(nutritionQueue().find(CardList).length).toBe(1);
     expect(nutritionQueue().find(CardList).get(0).props.rowSelectedActionCreators.length).toBe(3);
-    expect(nutritionQueue().find(CardList).get(0).props.rowSelectedActionCreators[1]().payload.args[0]).toBe("/screening");
+    expect(nutritionQueue().find(CardList).get(0).props.rowSelectedActionCreators[2]().payload.args[0]).toBe("/screening");
   });
 
 });
