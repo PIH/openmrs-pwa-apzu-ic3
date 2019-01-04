@@ -26,22 +26,40 @@ class ScreeningFilters extends React.Component {
   handleSearch(field, value, location) {
     const { firstIdentifierSearchValue, secondIdentifierSearchValue, thirdIdentifierSearchValue } = this.state;
     let first, second, third, searchValue;
+    const { searchType } = this.props;
 
     if (location === 'first') {
       first = this.handleUndefinedValues(value, '');
       this.setState({ firstIdentifierSearchValue : this.handleUndefinedValues(value, '') });
       searchValue = `${first}${secondIdentifierSearchValue}${thirdIdentifierSearchValue}`;
+      if (searchType !== 'server') {
+        this.props.handleSearchChange(searchValue);
+      }
     } else if (location === 'second') {
       second = this.handleUndefinedValues(value, '');
       this.setState({ secondIdentifierSearchValue: this.handleUndefinedValues(value, '') });
       searchValue = `${firstIdentifierSearchValue}${second}${thirdIdentifierSearchValue}`;
+      if (searchType === 'server') {
+        return this.props.handleSearchChange({
+          query: `${firstIdentifierSearchValue}-${second}`,
+          identifier: true
+        });
+      } else {
+        this.props.handleSearchChange(searchValue);
+      }
     } else if (location === 'third') {
       third = this.handleUndefinedValues(value, '');
       this.setState({ thirdIdentifierSearchValue: this.handleUndefinedValues(value, '') });
       searchValue = `${firstIdentifierSearchValue}${secondIdentifierSearchValue}${third}`;
+      if (searchType === 'server') {
+        return this.props.handleSearchChange({
+          query: `${firstIdentifierSearchValue}-${secondIdentifierSearchValue}-${third}`,
+          identifier: true
+        });
+      } else {
+        this.props.handleSearchChange(searchValue);
+      }
     }
-
-    this.props.handleSearchChange(searchValue);
   }
 
   secondIdentifierSearchValueClear() {
@@ -53,6 +71,14 @@ class ScreeningFilters extends React.Component {
   }
 
   render() {
+    const { searchType } = this.props;
+    let secondIdentifierDisabled = false;
+    let thirdIdentifierDisabled = false;
+    if (searchType === 'server') {
+      secondIdentifierDisabled = this.state.firstIdentifierSearchValue === '';
+      thirdIdentifierDisabled = this.state.secondIdentifierSearchValue === '';
+    }
+
     return (
       <div className="queue-filters">
         <div className="identifier-filter-container">
@@ -72,6 +98,7 @@ class ScreeningFilters extends React.Component {
             <span>-</span>
             <div className="identifier-filter-number-input-container">
               <FormControl
+                disabled={secondIdentifierDisabled}
                 className="identifier-filter-number-input"
                 onChange={this.handleTextInputSearch}
                 type="number"
@@ -79,12 +106,13 @@ class ScreeningFilters extends React.Component {
               />  
               <Glyphicon 
                 className="right-remove-sign-icon"
-                glyph="remove-sign" 
+                glyph="remove-sign"
                 onClick={this.secondIdentifierSearchValueClear}
               />
             </div>
             <span>-</span>
             <Dropdown
+              disabled={thirdIdentifierDisabled}
               dropDownStyle={{
                 border: '1px solid black',
                 height: '30px',
