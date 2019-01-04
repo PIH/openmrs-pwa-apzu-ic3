@@ -4,13 +4,11 @@ import { push } from 'connected-react-router';
 import { selectors } from '@openmrs/react-components';
 import ScreeningQueue from "../ScreeningQueue";
 import vlFilters from './vlFilters';
-import screeningActions from '../actions/actions';
 
 let VLQueue = props => {
 
   const rowSelectedActionCreators = [
     () => push('/screening'),
-    () => screeningActions.setLastScreeningQueue(props.location)
   ];
 
   return (
@@ -29,7 +27,6 @@ let VLQueue = props => {
 const mapStateToProps = (state) => {
   return {
     patients: selectors.getPatientStore(state),
-    location: state.router.location.pathname
   };
 };
 

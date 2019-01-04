@@ -4,12 +4,10 @@ import { push } from 'connected-react-router';
 import { selectors } from '@openmrs/react-components';
 import htcFilters from './htcFilters';
 import ScreeningQueue from "../ScreeningQueue";
-import screeningActions from "../actions/actions";
 
 const HtcQueue = props => {
   const rowSelectedActionCreators = [
     () => push('/screening'),
-    () => screeningActions.setLastScreeningQueue(props.location)
   ];
 
   return (
@@ -28,7 +26,6 @@ const HtcQueue = props => {
 const mapStateToProps = (state) => {
   return {
     patients: selectors.getPatientStore(state),
-    location: state.router.location.pathname
   };
 };
 

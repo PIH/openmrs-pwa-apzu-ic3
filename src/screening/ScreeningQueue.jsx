@@ -12,6 +12,7 @@ import { connect } from "react-redux";
 import utils from "../utils";
 import ic3PatientActions from "../patient/patientActions";
 import IdentifierFilters from './IdentifierFilters';
+import screeningActions from './actions/actions';
 
 let ScreeningQueue = props => {
 
@@ -42,7 +43,7 @@ let ScreeningQueue = props => {
         loading={props.updating}
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
-        rowSelectedActionCreators={[patientActions.setSelectedPatient, ...props.rowSelectedActionCreators]}
+        rowSelectedActionCreators={[patientActions.setSelectedPatient, () => screeningActions.setLastScreeningQueue(props.location), ...props.rowSelectedActionCreators]}
         searchFilterFields={['name.givenName', 'name.familyName', 'identifiers.0.identifier', 'identifiers.1.identifier', 'identifiers.2.identifier']}
         sortFields={['name.givenName', 'name.familyName']}
         title={props.title}
@@ -66,7 +67,8 @@ ScreeningQueue.defaultProps = {
 const mapStateToProps = (state) => {
   return {
     session: state.openmrs.session,
-    updating: selectors.isPatientStoreUpdating(state)
+    updating: selectors.isPatientStoreUpdating(state),
+    location: state.router.location.pathname
   };
 };
 
