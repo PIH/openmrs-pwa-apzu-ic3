@@ -440,6 +440,10 @@ export const VIRAL_LOAD_ALERTS = [
   "due-for-routine-viral-load-3p"
 ];
 
+export const VIRAL_LOAD_ALERTS_CATEGORIES = [
+  "viral-load"
+];
+
 export const EID_RAPID_TEST = [
   "eid-routine-12-month-rapid-test",
   "eid-routine-24-month-rapid-test"
