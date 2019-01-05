@@ -1,5 +1,5 @@
 import { patientObjByEncounterTypeFilter  } from "@openmrs/react-components";
-import { ENCOUNTER_TYPES } from "../../constants";
+import { ENCOUNTER_TYPES, VIRAL_LOAD_ALERTS_CATEGORIES } from "../../constants";
 import utils from "../../utils";
 
 // only patients due for VL test
@@ -13,7 +13,7 @@ B. Viral Load Re-test
 - Action= 'Consider confirmatory VL'
  */
 const vlFilter = patient => {
-  return utils.hasViralLoadAlert(patient.alert);
+  return utils.hasAlert(patient.alert, VIRAL_LOAD_ALERTS_CATEGORIES);
 };
 
 

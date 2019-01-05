@@ -2,7 +2,7 @@ import dateFns from 'date-fns';
 import { patientUtil } from '@openmrs/react-components';
 import {
   ENCOUNTER_TYPES, IDENTIFIER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, EID_RAPID_TEST,
-  EID_DNA_PCR, VIRAL_LOAD_ALERTS_CATEGORIES
+  EID_DNA_PCR
 } from "./constants";
 
 const utils = {
@@ -147,7 +147,7 @@ const utils = {
     return eidForm;
   },
 
-  hasViralLoadAlert: (alerts) => {
+  hasAlert: (alerts, category) => {
     if ((typeof alerts === 'undefined') ||
       (alerts === null) ||
       ( Object.keys(alerts).length < 1)) {
@@ -156,7 +156,7 @@ const utils = {
     let retValue = false;
     let alertsArray = Object.keys(alerts);
     for (let i = 0; i < alertsArray.length; i++) {
-      retValue = (alerts[alertsArray[i]]).some(a => VIRAL_LOAD_ALERTS_CATEGORIES.indexOf(a) >= 0);
+      retValue = (alerts[alertsArray[i]]).some(a => category.indexOf(a) >= 0);
       if ( retValue === true) {
         break;
       }

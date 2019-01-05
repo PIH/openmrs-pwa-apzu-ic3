@@ -443,6 +443,9 @@ export const VIRAL_LOAD_ALERTS = [
 export const VIRAL_LOAD_ALERTS_CATEGORIES = [
   "viral-load"
 ];
+export const HTC_ALERTS_CATEGORIES = [
+  "htc"
+];
 
 export const EID_RAPID_TEST = [
   "eid-routine-12-month-rapid-test",
