@@ -111,7 +111,9 @@ function* getIC3PatientScreeningData(action) {
 
 }
 
+// eslint-disable-next-line require-yield
 function* initiateGetIC3PatientsAction(action) {
+
   // eslint-disable-next-line no-restricted-globals
   location.reload();
   window.onload = function* () {
