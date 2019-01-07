@@ -447,6 +447,10 @@ export const HTC_ALERTS_CATEGORIES = [
   "htc"
 ];
 
+export const EID_ALERTS_CATEGORIES = [
+  "eid"
+];
+
 export const EID_RAPID_TEST = [
   "eid-routine-12-month-rapid-test",
   "eid-routine-24-month-rapid-test"
