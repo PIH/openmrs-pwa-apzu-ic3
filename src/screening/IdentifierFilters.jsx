@@ -6,6 +6,17 @@ import { FormControl, Glyphicon } from 'react-bootstrap';
 import './IdentifierFilters.css';
 import { PATIENT_IDENTIFIERS_PREFIX, PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
 
+const formatIdentifier = (identifier) => {
+  const terms = identifier.split('-');
+  let query = identifier;
+  if (terms.length > 2) {
+    query = `${terms[0]} ${terms[1].replace(/^0+/, '')} ${terms[2]}`;
+  } else {
+    query = `${terms[0]} ${terms[1].replace(/^0+/, '')}`;
+  }
+  return query;
+};
+
 class ScreeningFilters extends React.Component {
   constructor(props) {
     super(props);
@@ -40,10 +51,7 @@ class ScreeningFilters extends React.Component {
       this.setState({ secondIdentifierSearchValue: this.handleUndefinedValues(value, '') });
       searchValue = `${firstIdentifierSearchValue}${second}${thirdIdentifierSearchValue}`;
       if (searchType === 'server') {
-        return this.props.handleSearchChange({
-          query: `${firstIdentifierSearchValue}-${second}`,
-          identifier: true
-        });
+        return this.props.handleSearchChange(formatIdentifier(`${firstIdentifierSearchValue}-${second}`));
       } else {
         this.props.handleSearchChange(searchValue);
       }
@@ -52,10 +60,7 @@ class ScreeningFilters extends React.Component {
       this.setState({ thirdIdentifierSearchValue: this.handleUndefinedValues(value, '') });
       searchValue = `${firstIdentifierSearchValue}${secondIdentifierSearchValue}${third}`;
       if (searchType === 'server') {
-        return this.props.handleSearchChange({
-          query: `${firstIdentifierSearchValue}-${secondIdentifierSearchValue}-${third}`,
-          identifier: true
-        });
+        return this.props.handleSearchChange(formatIdentifier(`${firstIdentifierSearchValue}-${secondIdentifierSearchValue}-${third}`));
       } else {
         this.props.handleSearchChange(searchValue);
       }
