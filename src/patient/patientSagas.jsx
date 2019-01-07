@@ -112,19 +112,16 @@ function* getIC3PatientScreeningData(action) {
 }
 
 function* initiateGetIC3PatientsAction(action) {
-  // eslint-disable-next-line no-restricted-globals
-  location.reload();
-  window.onload = function* () {
-    yield put(patientActions.clearPatientStore());
-    var state = R.pathOr(yield select(), ['payload'], action);
-    if (R.path(['openmrs', 'session', 'authenticated'], state)) {
-      yield put(ic3PatientActions.getIC3Patients(
-        R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
-        utils.formatReportRestDate(new Date()),
-        true));  // loadExpectedPatients = true
-    }
+  yield put(patientActions.clearPatientStore());
+  var state = R.pathOr(yield select(), ['payload'], action);
+  if (R.path(['openmrs', 'session', 'authenticated'], state)) {
+    yield put(ic3PatientActions.getIC3Patients(
+      R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
+      utils.formatReportRestDate(new Date()),
+      true));  // loadExpectedPatients = true
   }
 }
+
 
 function* ic3PatientSagas() {
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENTS, getIC3Patients);
