@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import {
   Dropdown,
-  selectors,
 } from '@openmrs/react-components';
+import * as R from 'ramda';
 import { FormControl, Glyphicon } from 'react-bootstrap';
 import './IdentifierFilters.css';
 import { PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
@@ -77,8 +77,13 @@ class ScreeningFilters extends React.Component {
     this.handleSearch(null, e.target.value, 'second');
   }
 
+  getPrefixFromLocations = (locations) => {
+    const prefixes = R.map(R.path(['attributes', '0', 'value']))(locations);
+    return prefixes.filter(Boolean);
+  };
+
   render() {
-    const { searchType, locationsPrefix } = this.props;
+    const { searchType, locations } = this.props;
     let secondIdentifierDisabled = false;
     let thirdIdentifierDisabled = false;
     if (searchType === 'server') {
@@ -99,7 +104,7 @@ class ScreeningFilters extends React.Component {
                 textAlign: 'center',
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
-              list={locationsPrefix}
+              list={this.getPrefixFromLocations(locations)}
               placeholder=" "
             />
             <span>-</span>
@@ -140,7 +145,7 @@ class ScreeningFilters extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    locationsPrefix: selectors.getPrefixFromLocations(state)
+    locations: state.openmrs.metadata.locations
   };
 };
 
