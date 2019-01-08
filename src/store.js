@@ -59,7 +59,7 @@ const combinedReducer = combineReducers({
 });
 
 const rootReducer = (state, action) => {
-  if (action.type === LOGIN_TYPES.LOGOUT.SUCCEEDED) {
+  if (action.type === LOGIN_TYPES.LOGOUT.SUCCEEDED || action.type === LOGIN_TYPES.LOGOUT.FAILED) {  // still clear store if logout failed (network error should not prevent logout)
     state = undefined;
   }
   return combinedReducer(state, action);
