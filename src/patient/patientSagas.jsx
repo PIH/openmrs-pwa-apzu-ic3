@@ -97,7 +97,7 @@ function* getIC3PatientScreeningData(action) {
       patients: action.patient.uuid
     });
 
-    let patients = apptRestResponse.patients.map((result) => {
+    let patients = apptRestResponse.map((result) => {
       return createFromReportingRestRep(result);
     });
     if (patients && patients.length > 0) {
