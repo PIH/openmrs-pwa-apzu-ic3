@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import {DataGrid, PatientSearch, patientActions} from '@openmrs/react-components';
+import { DataGrid, PatientSearch, patientActions } from '@openmrs/react-components';
 import { spy } from 'sinon';
 import SearchPatient from '../SearchPatient';
 
@@ -16,7 +16,7 @@ const searchPatient = () => {
   if (!mountedComponent) {
     mountedComponent = mount(
       <Provider store={store}>
-        <SearchPatient {...props}></SearchPatient>
+        <SearchPatient {...props} />
       </Provider>);
   }
   return mountedComponent;
@@ -43,7 +43,10 @@ describe('Component: SearchPatient', () => {
               }
             ]
           },
-          selectedPatient: null
+          selectedPatient: null,
+          metadata: {
+            locations: []
+          }
         },
       });
     mountedComponent = undefined;
