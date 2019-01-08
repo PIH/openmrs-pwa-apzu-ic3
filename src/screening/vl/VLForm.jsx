@@ -12,15 +12,15 @@ class VLForm extends React.PureComponent {
     // this clears out form values when the "bled" question is changed
     if (typeof this.props.bled !== 'undefined' && this.props.bled !== prevProps.bled) {
       if (this.props.bled === CONCEPTS.True.uuid) {
-        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid), null));
-        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('vl-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('vl-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid)));
       }
       else {
-        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-reason-for-testing', CONCEPTS.ReasonForTesting.uuid), null));
-        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-reason-for-testing', CONCEPTS.ReasonForTesting.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('vl-reason-for-testing', CONCEPTS.ReasonForTesting.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('vl-reason-for-testing', CONCEPTS.ReasonForTesting.uuid)));
 
-        this.props.dispatch(change('vl-form', formUtil.obsFieldName('vl-lab-location', CONCEPTS.LabLocation.uuid), null));
-        this.props.dispatch(untouch('vl-form', formUtil.obsFieldName('vl-lab-location', CONCEPTS.LabLocation.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('vl-lab-location', CONCEPTS.LabLocation.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('vl-lab-location', CONCEPTS.LabLocation.uuid)));
       }
     }
   }
@@ -49,71 +49,66 @@ class VLForm extends React.PureComponent {
           </Col>
         </Row>
 
-        {(typeof this.props.bled !== 'undefined') &&
-        (this.props.bled === CONCEPTS.False.uuid) && (
-          <span>
-              <Row>
-                <Col componentClass={ControlLabel}>
-                  Reason for no sample
-                </Col>
-              </Row>
-              <Row>
-                <FormGroup controlId="formReasonForNoSample">
-                  <Col sm={12}>
-                    <Obs
-                      concept={CONCEPTS.ReasonForNoSample.uuid}
-                      conceptAnswers={FORM_ANSWERS.noSampleAnswers}
-                      path="vl-reason-no-sample"
-                    />
-                  </Col>
-                </FormGroup>
-              </Row>
-            </span>)
-        }
+        <span
+          style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.False.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <Col componentClass={ControlLabel}>
+              Reason for no sample
+            </Col>
+          </Row>
+          <Row>
+            <FormGroup controlId="formReasonForNoSample">
+              <Col sm={12}>
+                <Obs
+                  concept={CONCEPTS.ReasonForNoSample.uuid}
+                  conceptAnswers={FORM_ANSWERS.noSampleAnswers}
+                  path="vl-reason-no-sample"
+                />
+              </Col>
+            </FormGroup>
+          </Row>
+        </span>
 
-        {(typeof this.props.bled !== 'undefined') &&
-        (this.props.bled === CONCEPTS.True.uuid) && (
-          <span>
-              <Row>
-                <Col componentClass={ControlLabel}>
-                  Reason for testing
-                </Col>
-              </Row>
-              <Row>
-                <FormGroup controlId="formReasonForTesting">
-                  <Col sm={12}>
-                    <Obs
-                      concept={CONCEPTS.ReasonForTesting.uuid}
-                      conceptAnswers={FORM_ANSWERS.reasonForTesting}
-                      path="vl-reason-for-testing"
-                    />
-                  </Col>
-                </FormGroup>
-              </Row>
-            </span>)
-        }
 
-        {(typeof this.props.bled !== 'undefined') &&
-        (this.props.bled === CONCEPTS.True.uuid) && (
-          <span>
-              <Row>
-                <Col componentClass={ControlLabel}>
-                  Reason for testing
-                </Col>
-              </Row>
-              <Row>
-                <FormGroup controlId="formLabLocation">
-                  <Col sm={12}>
-                    <Obs
-                      concept={CONCEPTS.LabLocation.uuid}
-                      conceptAnswers={FORM_ANSWERS.labLocation}
-                      path="vl-lab-location"
-                    />
-                  </Col>
-                </FormGroup>
-              </Row>
-            </span>)
-        }
+        <span
+          style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <Col componentClass={ControlLabel}>
+              Reason for testing
+            </Col>
+          </Row>
+          <Row>
+            <FormGroup controlId="formReasonForTesting">
+              <Col sm={12}>
+                <Obs
+                  concept={CONCEPTS.ReasonForTesting.uuid}
+                  conceptAnswers={FORM_ANSWERS.reasonForTesting}
+                  path="vl-reason-for-testing"
+                />
+              </Col>
+            </FormGroup>
+          </Row>
+        </span>
+
+        <span
+          style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <Col componentClass={ControlLabel}>
+              Reason for testing
+            </Col>
+          </Row>
+          <Row>
+            <FormGroup controlId="formLabLocation">
+              <Col sm={12}>
+                <Obs
+                  concept={CONCEPTS.LabLocation.uuid}
+                  conceptAnswers={FORM_ANSWERS.labLocation}
+                  path="vl-lab-location"
+                />
+              </Col>
+            </FormGroup>
+          </Row>
+        </span>
 
       </Grid>
     );

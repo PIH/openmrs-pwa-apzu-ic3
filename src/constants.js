@@ -124,11 +124,15 @@ export const CONCEPTS = {
   },
   'SystolicBloodPressure' : {
     uuid: '6569bffe-977f-11e1-8993-905e29aff6c1',
-    hiNormal: 160
+    hiNormal: 160,
+    hiAbsolute: 260,
+    lowAbsolute: 50
   },
   'DiastolicBloodPressure' : {
     uuid: '6569c116-977f-11e1-8993-905e29aff6c1',
-    hiNormal: 110
+    hiNormal: 110,
+    hiAbsolute: 140,
+    lowAbsolute: 40
   },
   'Height': {
     uuid: '6569c562-977f-11e1-8993-905e29aff6c1'
@@ -438,6 +442,17 @@ export const VIRAL_LOAD_ALERTS = [
   "due-for-routine-viral-load-1p",
   "due-for-routine-viral-load-2p",
   "due-for-routine-viral-load-3p"
+];
+
+export const VIRAL_LOAD_ALERTS_CATEGORIES = [
+  "viral-load"
+];
+export const HTC_ALERTS_CATEGORIES = [
+  "htc"
+];
+
+export const EID_ALERTS_CATEGORIES = [
+  "eid"
 ];
 
 export const EID_RAPID_TEST = [

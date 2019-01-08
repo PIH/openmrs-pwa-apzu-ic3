@@ -128,6 +128,7 @@ function* initiateGetIC3PatientsAction(action) {
   }
 }
 
+
 function* ic3PatientSagas() {
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENTS, getIC3Patients);
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENT_SCREENING_DATA, getIC3PatientScreeningData);
