@@ -1,14 +1,14 @@
 {
   "version": "1.0.0",
-  "name": "Screening Workflow",
-  "description": "PIH Screening Workflow OWA.",
+  "name": "Screening Apzu Ic3",
+  "description": "PIH Screening Apzu Ic3 OWA.",
   "launch_path": "index.html",
   "icons": {
     "48": "/img/omrs-button.png"
   },
   "developer": {
     "name": "PIH",
-    "url": "https://github.com/PIH/openmrs-pwa-workflow"
+    "url": "https://github.com/PIH/openmrs-pwa-apzu-ic3"
   },
   "default_locale": "en",
     "activities": {
