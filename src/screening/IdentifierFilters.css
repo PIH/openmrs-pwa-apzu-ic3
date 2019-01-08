@@ -42,3 +42,10 @@
   position: absolute;
   font-size: 18px;
 }
+
+.identifier-filter-container .search-button {
+  border: 1px solid black;
+  margin-left: 20px;
+  font-size: 20px;
+  height: 30px;
+}
