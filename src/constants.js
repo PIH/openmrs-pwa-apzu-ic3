@@ -469,3 +469,4 @@ export const EID_ALERTS = [
   ...EID_DNA_PCR
 ];
 export const PATIENT_IDENTIFIERS_SUFFIX = ['HCC', 'CCC'];
+export const LOCATION_CODE_UUID = '62eb8441-0326-11e6-8c93-e82aea237783';

@@ -3,10 +3,9 @@ import { connect } from "react-redux";
 import {
   Dropdown,
 } from '@openmrs/react-components';
-import * as R from 'ramda';
 import { FormControl, Glyphicon } from 'react-bootstrap';
 import './IdentifierFilters.css';
-import { PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
+import { LOCATION_CODE_UUID, PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
 
 const formatIdentifier = (identifier) => {
   const terms = identifier.split('-');
@@ -77,9 +76,20 @@ class ScreeningFilters extends React.Component {
     this.handleSearch(null, e.target.value, 'second');
   }
 
-  getPrefixFromLocations = (locations) => {
-    const prefixes = R.map(R.path(['attributes', '0', 'value']))(locations);
-    return prefixes.filter(Boolean);
+  getLocationsPrefix = (locations) => {
+    const addedLocations = [];
+    if (locations && locations.length > 0) {
+      locations.map(location => {
+        if (location.attributes.length > 0) {
+          location.attributes.map(attribute => {
+            if (attribute.attributeType.uuid === LOCATION_CODE_UUID) {
+              addedLocations.push(attribute.value);
+            }
+          });
+        }
+      });
+    };
+    return addedLocations;
   };
 
   render() {
@@ -104,14 +114,14 @@ class ScreeningFilters extends React.Component {
                 textAlign: 'center',
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
-              list={this.getPrefixFromLocations(locations)}
+              list={this.getLocationsPrefix(locations)}
               placeholder=" "
             />
             <span>-</span>
             <div className="identifier-filter-number-input-container">
               <FormControl
-                disabled={secondIdentifierDisabled}
                 className="identifier-filter-number-input"
+                disabled={secondIdentifierDisabled}
                 onChange={this.handleTextInputSearch}
                 type="number"
                 value={this.state.secondIdentifierSearchValue}
