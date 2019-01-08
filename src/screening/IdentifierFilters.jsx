@@ -98,7 +98,7 @@ class ScreeningFilters extends React.Component {
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
               list={PATIENT_IDENTIFIERS_PREFIX}
-              placeholder="-"
+              placeholder=" "
             />
             <span>-</span>
             <div className="identifier-filter-number-input-container">
@@ -126,8 +126,9 @@ class ScreeningFilters extends React.Component {
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'third')} 
               list={PATIENT_IDENTIFIERS_SUFFIX} 
-              placeholder="-"
+              placeholder=" "
             />
+            <button className="search-button">search</button>
           </span>
         </div>
       </div>

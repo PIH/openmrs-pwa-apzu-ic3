@@ -98,6 +98,17 @@ class CheckInQueue extends React.Component {
 */}
         <CardList
           AdditionalSearchFilters={IdentifierFilters}
+          additionalSearchFilterFields={[
+            'identifiers.0.identifier',
+            'identifiers.1.identifier',
+            'identifiers.2.identifier',
+            'identifiers.3.identifier',
+            'identifiers.4.identifier',
+            'identifiers.5.identifier',
+            'identifiers.6.identifier',
+            'identifiers.7.identifier',
+            'identifiers.8.identifier'
+          ]}
           card={PatientCard}
           delayInterval={0}
           dispatch={this.props.dispatch}
@@ -110,18 +121,7 @@ class CheckInQueue extends React.Component {
           ] }
           rowData={ Object.values(this.props.patients) }
           rowSelectedActionCreators={[() => screeningActions.setLastScreeningQueue(this.props.screeningLocation), patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
-          searchFilterFields={['name.givenName',
-            'name.familyName',
-            'identifiers.0.identifier',
-            'identifiers.1.identifier',
-            'identifiers.2.identifier',
-            'identifiers.3.identifier',
-            'identifiers.4.identifier',
-            'identifiers.5.identifier',
-            'identifiers.6.identifier',
-            'identifiers.7.identifier',
-            'identifiers.8.identifier',
-          ]}
+          searchFilterFields={['name.givenName', 'name.familyName']}
           sortFields={['name.givenName', 'name.familyName']}
           title="Check-In Queue"
         />

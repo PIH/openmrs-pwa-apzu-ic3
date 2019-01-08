@@ -34,6 +34,7 @@ let ScreeningQueue = props => {
     <div>
       <CardList
         AdditionalSearchFilters={IdentifierFilters}
+        additionalSearchFilterFields={['identifiers.0.identifier', 'identifiers.1.identifier', 'identifiers.2.identifier']}
         card={PatientCard}
         delayInterval={0}
         dispatch={props.dispatch}
@@ -44,7 +45,7 @@ let ScreeningQueue = props => {
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
         rowSelectedActionCreators={[patientActions.setSelectedPatient, () => screeningActions.setLastScreeningQueue(props.location), ...props.rowSelectedActionCreators]}
-        searchFilterFields={['name.givenName', 'name.familyName', 'identifiers.0.identifier', 'identifiers.1.identifier', 'identifiers.2.identifier']}
+        searchFilterFields={['name.givenName', 'name.familyName']}
         sortFields={['name.givenName', 'name.familyName']}
         title={props.title}
       />
