@@ -79,8 +79,10 @@ class ScreeningFilters extends React.Component {
   getLocationsPrefix = (locations) => {
     const addedLocations = [];
     if (locations && locations.length > 0) {
+      // eslint-disable-next-line
       locations.map(location => {
         if (location.attributes.length > 0) {
+          // eslint-disable-next-line
           location.attributes.map(attribute => {
             if (attribute.attributeType.uuid === LOCATION_CODE_UUID) {
               addedLocations.push(attribute.value);
