@@ -468,5 +468,5 @@ export const EID_ALERTS = [
   ...EID_RAPID_TEST,
   ...EID_DNA_PCR
 ];
-export const PATIENT_IDENTIFIERS_PREFIX = ['CFGA', 'DAM', 'FPAM', 'KCH', 'LGWE', 'LSI', 'LWAN', 'MGT', 'MTDN', 'MTE', 'NNO', 'NOP', 'NKA', 'NSM', 'QECH', 'ZLA'];
 export const PATIENT_IDENTIFIERS_SUFFIX = ['HCC', 'CCC'];
+export const LOCATION_CODE_UUID = '62eb8441-0326-11e6-8c93-e82aea237783';

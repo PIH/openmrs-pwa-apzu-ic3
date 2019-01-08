@@ -1,10 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 import {
   Dropdown,
 } from '@openmrs/react-components';
 import { FormControl, Glyphicon } from 'react-bootstrap';
 import './IdentifierFilters.css';
-import { PATIENT_IDENTIFIERS_PREFIX, PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
+import { LOCATION_CODE_UUID, PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
 
 const formatIdentifier = (identifier) => {
   const terms = identifier.split('-');
@@ -75,8 +76,24 @@ class ScreeningFilters extends React.Component {
     this.handleSearch(null, e.target.value, 'second');
   }
 
+  getLocationsPrefix = (locations) => {
+    const addedLocations = [];
+    if (locations && locations.length > 0) {
+      locations.map(location => {
+        if (location.attributes.length > 0) {
+          location.attributes.map(attribute => {
+            if (attribute.attributeType.uuid === LOCATION_CODE_UUID) {
+              addedLocations.push(attribute.value);
+            }
+          });
+        }
+      });
+    };
+    return addedLocations;
+  };
+
   render() {
-    const { searchType } = this.props;
+    const { searchType, locations } = this.props;
     let secondIdentifierDisabled = false;
     let thirdIdentifierDisabled = false;
     if (searchType === 'server') {
@@ -97,14 +114,14 @@ class ScreeningFilters extends React.Component {
                 textAlign: 'center',
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
-              list={PATIENT_IDENTIFIERS_PREFIX}
+              list={this.getLocationsPrefix(locations)}
               placeholder=" "
             />
             <span>-</span>
             <div className="identifier-filter-number-input-container">
               <FormControl
-                disabled={secondIdentifierDisabled}
                 className="identifier-filter-number-input"
+                disabled={secondIdentifierDisabled}
                 onChange={this.handleTextInputSearch}
                 type="number"
                 value={this.state.secondIdentifierSearchValue}
@@ -136,4 +153,10 @@ class ScreeningFilters extends React.Component {
   }
 };
 
-export default ScreeningFilters;
+const mapStateToProps = (state) => {
+  return {
+    locations: state.openmrs.metadata.locations
+  };
+};
+
+export default connect(mapStateToProps)(ScreeningFilters);
