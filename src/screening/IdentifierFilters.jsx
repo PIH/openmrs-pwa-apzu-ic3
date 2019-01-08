@@ -1,10 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
 import {
   Dropdown,
+  selectors,
 } from '@openmrs/react-components';
 import { FormControl, Glyphicon } from 'react-bootstrap';
 import './IdentifierFilters.css';
-import { PATIENT_IDENTIFIERS_PREFIX, PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
+import { PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
 
 const formatIdentifier = (identifier) => {
   const terms = identifier.split('-');
@@ -76,7 +78,7 @@ class ScreeningFilters extends React.Component {
   }
 
   render() {
-    const { searchType } = this.props;
+    const { searchType, locationsPrefix } = this.props;
     let secondIdentifierDisabled = false;
     let thirdIdentifierDisabled = false;
     if (searchType === 'server') {
@@ -97,7 +99,7 @@ class ScreeningFilters extends React.Component {
                 textAlign: 'center',
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
-              list={PATIENT_IDENTIFIERS_PREFIX}
+              list={locationsPrefix}
               placeholder=" "
             />
             <span>-</span>
@@ -136,4 +138,10 @@ class ScreeningFilters extends React.Component {
   }
 };
 
-export default ScreeningFilters;
+const mapStateToProps = (state) => {
+  return {
+    locationsPrefix: selectors.getPrefixFromLocations(state)
+  };
+};
+
+export default connect(mapStateToProps)(ScreeningFilters);
