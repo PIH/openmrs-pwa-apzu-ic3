@@ -9,11 +9,18 @@ import { LOCATION_CODE_UUID, PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
 
 const formatIdentifier = (identifier) => {
   const terms = identifier.split('-');
+  const filteredTerms = terms.filter((term) => term !== 'undefined' && term !== "");
+  const numberOfTerms = filteredTerms.length;
   let query = identifier;
-  if (terms.length > 2) {
-    query = `${terms[0]} ${terms[1].replace(/^0+/, '')} ${terms[2]}`;
-  } else {
-    query = `${terms[0]} ${terms[1].replace(/^0+/, '')}`;
+  if (numberOfTerms === 1) {
+    query = `${filteredTerms[0]} `;
+  }
+  if (numberOfTerms === 2) {
+    query = `${filteredTerms[0]} ${filteredTerms[1].replace(/^0+/, '')}`;
+  }
+
+  if (numberOfTerms === 3) {
+    query = `${filteredTerms[0]} ${filteredTerms[1].replace(/^0+/, '')} ${filteredTerms[2]}`;
   }
   return query;
 };
@@ -25,11 +32,14 @@ class ScreeningFilters extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.secondIdentifierSearchValueClear = this.secondIdentifierSearchValueClear.bind(this);
     this.handleTextInputSearch = this.handleTextInputSearch.bind(this);
+    this.handleSearchClick = this.handleSearchClick.bind(this);
 
     this.state = {
       firstIdentifierSearchValue: this.getCurrentLocationPrefix()[0] ? this.getCurrentLocationPrefix()[0] : '',
       secondIdentifierSearchValue: '',
-      thirdIdentifierSearchValue: ''
+      thirdIdentifierSearchValue: '',
+      patientIdentifier: '',
+      searchValue: '',
     };
   }
 
@@ -42,29 +52,41 @@ class ScreeningFilters extends React.Component {
 
     if (location === 'first') {
       first = this.handleUndefinedValues(value, '');
-      this.setState({ firstIdentifierSearchValue : this.handleUndefinedValues(value, '') });
-      searchValue = `${first}${secondIdentifierSearchValue}${thirdIdentifierSearchValue}`;
-      if (searchType !== 'server') {
-        this.props.handleSearchChange(searchValue);
-      }
+      searchValue = `${first}-${secondIdentifierSearchValue}-${thirdIdentifierSearchValue}`;
+      this.setState({
+        firstIdentifierSearchValue : this.handleUndefinedValues(value, ''),
+        searchValue,
+      });
     } else if (location === 'second') {
       second = this.handleUndefinedValues(value, '');
-      this.setState({ secondIdentifierSearchValue: this.handleUndefinedValues(value, '') });
-      searchValue = `${firstIdentifierSearchValue}${second}${thirdIdentifierSearchValue}`;
-      if (searchType === 'server') {
-        return this.props.handleSearchChange(formatIdentifier(`${firstIdentifierSearchValue}-${second}`));
-      } else {
-        this.props.handleSearchChange(searchValue);
-      }
+      searchValue = `${firstIdentifierSearchValue}-${second}-${thirdIdentifierSearchValue}`;
+      this.setState({
+        secondIdentifierSearchValue: this.handleUndefinedValues(value, ''),
+        searchValue,
+      });
+      
     } else if (location === 'third') {
       third = this.handleUndefinedValues(value, '');
-      this.setState({ thirdIdentifierSearchValue: this.handleUndefinedValues(value, '') });
-      searchValue = `${firstIdentifierSearchValue}${secondIdentifierSearchValue}${third}`;
-      if (searchType === 'server') {
-        return this.props.handleSearchChange(formatIdentifier(`${firstIdentifierSearchValue}-${secondIdentifierSearchValue}-${third}`));
-      } else {
-        this.props.handleSearchChange(searchValue);
-      }
+      searchValue = `${firstIdentifierSearchValue}-${secondIdentifierSearchValue}-${third}`;
+      this.setState({
+        thirdIdentifierSearchValue: this.handleUndefinedValues(value, ''),
+        searchValue
+      });
+    }
+
+    if ( searchType !== 'server') {
+      this.props.handleSearchChange(searchValue.replace(/-/g, ''));
+    }
+  }
+
+  handleSearchClick(e) {
+    e.preventDefault();
+    const { searchType } = this.props;
+    const { searchValue } = this.state;
+    if (searchType === 'server') {
+      this.props.handleSearchChange(formatIdentifier(searchValue));
+    } else {
+      this.props.handleSearchChange(searchValue.replace(/-/g, ''));
     }
   }
 
@@ -155,7 +177,6 @@ class ScreeningFilters extends React.Component {
             </div>
             <span>-</span>
             <Dropdown
-              disabled={thirdIdentifierDisabled}
               dropDownStyle={{
                 border: '1px solid black',
                 height: '30px',
@@ -166,7 +187,7 @@ class ScreeningFilters extends React.Component {
               list={PATIENT_IDENTIFIERS_SUFFIX} 
               placeholder=" "
             />
-            <button className="search-button">search</button>
+            <button className="search-button" onClick={this.handleSearchClick}>search</button>
           </span>
         </div>
       </div>
