@@ -33,7 +33,7 @@ class NutritionForm extends React.Component {
     // measure at each visit for less than 19 y.o., use previous height for >19 years
     if (this.props.patient.age > 19) {
       obsRest.fetchObsByPatient(
-        this.props.patient.uuid, CONCEPTS.Height.uuid, 1
+        this.props.patient.uuid, CONCEPTS.Height.uuid, [], [], 1
       ).then(data => {
         this.setState({
           lastHeight: data.results[0] ? data.results[0].value : null,
