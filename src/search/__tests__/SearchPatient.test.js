@@ -1,10 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { PatientSearch, patientActions } from '@openmrs/react-components';
-import { spy } from 'sinon';
 import SearchPatient from '../SearchPatient';
 
 let props, store;
