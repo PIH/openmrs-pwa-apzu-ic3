@@ -108,6 +108,8 @@ class ScreeningFilters extends React.Component {
       } else {
         return [];
       }
+    } else {
+      return [];
     }
   }
 
