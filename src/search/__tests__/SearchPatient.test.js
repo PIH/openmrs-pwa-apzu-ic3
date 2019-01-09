@@ -43,6 +43,9 @@ describe('Component: SearchPatient', () => {
               }
             ]
           },
+          session: {
+            sessionLocation: [],
+          },
           selectedPatient: null,
           metadata: {
             locations: []
