@@ -27,7 +27,7 @@ class ScreeningFilters extends React.Component {
     this.handleTextInputSearch = this.handleTextInputSearch.bind(this);
 
     this.state = {
-      firstIdentifierSearchValue: '',
+      firstIdentifierSearchValue: this.getCurrentLocationPrefix()[0] ? this.getCurrentLocationPrefix()[0] : '',
       secondIdentifierSearchValue: '',
       thirdIdentifierSearchValue: ''
     };
@@ -81,7 +81,7 @@ class ScreeningFilters extends React.Component {
     if (locations && locations.length > 0) {
       // eslint-disable-next-line
       locations.map(location => {
-        if (location.attributes.length > 0) {
+        if (location.attributes && location.attributes.length > 0) {
           // eslint-disable-next-line
           location.attributes.map(attribute => {
             if (attribute.attributeType.uuid === LOCATION_CODE_UUID) {
@@ -94,6 +94,23 @@ class ScreeningFilters extends React.Component {
     return addedLocations;
   };
 
+  getCurrentLocationPrefix() {
+    const { locations, currentLocation } = this.props;
+    if (locations && locations.length > 0) {
+      let location = locations.filter(location => location.uuid === currentLocation.uuid)[0];
+      if (location.attributes && location.attributes.length > 0) {
+        // eslint-disable-next-line
+        return location.attributes.map(attribute => {
+          if (attribute.attributeType.uuid === LOCATION_CODE_UUID) {
+            return attribute.value;
+          }
+        });
+      } else {
+        return [];
+      }
+    }
+  }
+
   render() {
     const { searchType, locations } = this.props;
     let secondIdentifierDisabled = false;
@@ -102,7 +119,6 @@ class ScreeningFilters extends React.Component {
       secondIdentifierDisabled = this.state.firstIdentifierSearchValue === '';
       thirdIdentifierDisabled = this.state.secondIdentifierSearchValue === '';
     }
-
     return (
       <div className="queue-filters">
         <div className="identifier-filter-container">
@@ -115,6 +131,7 @@ class ScreeningFilters extends React.Component {
                 textAlignLast: 'center',
                 textAlign: 'center',
               }}
+              dropdownValue={this.state.firstIdentifierSearchValue}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
               list={this.getLocationsPrefix(locations)}
               placeholder=" "
@@ -157,7 +174,8 @@ class ScreeningFilters extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    locations: state.openmrs.metadata.locations
+    locations: state.openmrs.metadata.locations,
+    currentLocation: state.openmrs.session.sessionLocation
   };
 };
 
