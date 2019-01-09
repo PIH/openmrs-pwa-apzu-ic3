@@ -140,6 +140,9 @@ export const CONCEPTS = {
   'Weight': {
     uuid: '6569c44a-977f-11e1-8993-905e29aff6c1'
   },
+  'ChronicCareDiagnosis': {
+    uuid: '65671c9a-977f-11e1-8993-905e29aff6c1'
+  },
   'MUAC': {
     uuid: '6558d09a-977f-11e1-8993-905e29aff6c1'
   },
