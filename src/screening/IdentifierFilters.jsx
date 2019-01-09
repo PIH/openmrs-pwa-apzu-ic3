@@ -136,7 +136,7 @@ class ScreeningFilters extends React.Component {
   }
 
   render() {
-    const { searchType, locations } = this.props;
+    const { locations } = this.props;
 
     return (
       <div className="queue-filters">
