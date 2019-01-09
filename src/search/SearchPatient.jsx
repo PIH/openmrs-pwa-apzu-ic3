@@ -11,10 +11,10 @@ let SearchPatient = (props) => {
       <h3>Search for Patient</h3>
       <PatientSearch
         AdditionalFilters={IdentifierFilters}
-        rowSelectedActionCreators={(patient) => {
-          patientActions.getIC3PatientScreeningData(patient);
-          return push('/checkin/checkInPage');
-        }}
+        rowSelectedActionCreators={[
+          patientActions.getIC3PatientScreeningData,
+          () => push('/checkin/checkInPage')
+        ]}
       />
     </div>
   );
