@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import { DataGrid, PatientSearch, patientActions } from '@openmrs/react-components';
+import { PatientSearch, patientActions } from '@openmrs/react-components';
 import { spy } from 'sinon';
 import SearchPatient from '../SearchPatient';
 
@@ -48,8 +48,19 @@ describe('Component: SearchPatient', () => {
           },
           selectedPatient: null,
           metadata: {
-            locations: []
-          }
+            locations: [{
+              attributes: [],
+              display: "Binje Outreach Clinic",
+              name: "Binje Outreach Clinic",
+              tags: [],
+              uuid: "abc"
+            }]
+          },
+          session: {
+            sessionLocation: {
+              uuid: 'abc'
+            }
+          },
         },
       });
     mountedComponent = undefined;
@@ -58,12 +69,6 @@ describe('Component: SearchPatient', () => {
   it('renders properly', () => {
     //expect(toJson(searchPatient())).toMatchSnapshot();
     expect(searchPatient().find(PatientSearch).length).toBe(1);
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators.length).toBe(4);
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[0].name).toBe("updatePatientInStore");
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[1].name).toBe("setSelectedPatient");
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[2].name).toBe("getIC3PatientScreeningData");
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[3].name).toBe("");
-    expect(searchPatient().find(DataGrid).props().rowSelectedActionCreators[3]().payload.args[0]).toBe("/checkin/checkInPage");
     expect(store.getActions()).toContainEqual(patientActions.clearSelectedPatient());
   });
 
