@@ -116,6 +116,7 @@ class CheckInQueue extends React.Component {
           filters={[patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'exclude')]}
           getPatientIdentifiers={utils.getPatientIdentifiers}
           loading={this.props.updating}
+          noDataMessage="No patients to display"
           onMountOtherActionCreators={[
             () => this.props.dispatch(patientActions.clearSelectedPatient())
           ] }
