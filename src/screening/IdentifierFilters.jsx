@@ -137,12 +137,7 @@ class ScreeningFilters extends React.Component {
 
   render() {
     const { searchType, locations } = this.props;
-    let secondIdentifierDisabled = false;
-    let thirdIdentifierDisabled = false;
-    if (searchType === 'server') {
-      secondIdentifierDisabled = this.state.firstIdentifierSearchValue === '';
-      thirdIdentifierDisabled = this.state.secondIdentifierSearchValue === '';
-    }
+
     return (
       <div className="queue-filters">
         <div className="identifier-filter-container">
@@ -164,7 +159,6 @@ class ScreeningFilters extends React.Component {
             <div className="identifier-filter-number-input-container">
               <FormControl
                 className="identifier-filter-number-input"
-                disabled={secondIdentifierDisabled}
                 onChange={this.handleTextInputSearch}
                 type="number"
                 value={this.state.secondIdentifierSearchValue}
