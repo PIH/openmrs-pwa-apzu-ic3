@@ -55,20 +55,12 @@
 }
 
 .form-action-btns > button {
-  color: darkblue;
-  font-family: helvetica;
-  text-decoration: none;
   text-transform: uppercase;
   background: none;
   border: none;
-  box-shadow: none;
-  font-weight: 700;
-  font-weight: 600;
-  text-shadow: none;
-  font-size: 15px;
-  text-decoration: underline;
+  font-size: 20px;
+  outline: none;
 }
-
 
 @media only screen and (min-width: 501px) and (max-width: 1024px) {
   .back-action-btn {

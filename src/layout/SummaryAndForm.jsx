@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Col, Grid, Row, Glyphicon, Button} from "react-bootstrap";
+import {Col, Grid, Row, Glyphicon} from "react-bootstrap";
 import Swiper from 'react-id-swiper';
 import { withRouter } from 'react-router-dom';
 import {submit, isInvalid, isSubmitting} from 'redux-form';
@@ -132,9 +132,9 @@ export class SummaryAndForm extends React.Component {
               (
                 <div className="form-action-btns">
                   {this.getFormState() === FORM_STATES.EDITING ?
-                    (<Button disabled={this.getFormSubmitting() || this.getFormInvalid()}
-                      onClick={this.submitForm}>Save</Button>) :
-                    (<Button onClick={this.enterEditMode}>Edit</Button>)
+                    (<button disabled={this.getFormSubmitting() || this.getFormInvalid()}
+                      onClick={this.submitForm}>Save</button>) :
+                    (<button onClick={this.enterEditMode}>Edit</button>)
                   }
                 </div>
               )
