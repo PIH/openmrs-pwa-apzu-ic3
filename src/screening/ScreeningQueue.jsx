@@ -42,6 +42,7 @@ let ScreeningQueue = props => {
         filters={[...props.filters, patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'include')]}
         getPatientIdentifiers={utils.getPatientIdentifiers}
         loading={props.updating}
+        noDataMessage="No patients to display"
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
         rowSelectedActionCreators={[patientActions.setSelectedPatient, () => screeningActions.setLastScreeningQueue(props.location), ...props.rowSelectedActionCreators]}
