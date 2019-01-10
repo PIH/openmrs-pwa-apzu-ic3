@@ -5,7 +5,6 @@ import {Col} from "react-bootstrap";
 const Form = props => {
   return (
     <Col className="form-layout">
-      <span className="back-action-btn">{props.sliderButton && props.sliderButton()}</span>
       {React.cloneElement(props.form, {
         backLink: props.backLink,
         formInstanceId: props.formInstanceId
