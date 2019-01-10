@@ -27,7 +27,6 @@ export class SummaryAndForm extends React.Component {
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
     this.summarySwiperButton = this.summarySwiperButton.bind(this);
-    this.formSwiperButton = this.formSwiperButton.bind(this);
     this.swiper = null;
     this.formInstanceId = uuidv4();
     this.state = {
@@ -61,19 +60,6 @@ export class SummaryAndForm extends React.Component {
         onClick={() => this.goNext()}
       > Add New
       </span>
-    );
-  }
-
-  formSwiperButton() {
-    return (
-      <div 
-        className="form-swiper-button" 
-        onClick={() => this.goPrev()}
-      > 
-        <Glyphicon
-          glyph="menu-left"
-        />
-      </div>
     );
   }
 
@@ -112,11 +98,17 @@ export class SummaryAndForm extends React.Component {
         <Grid className="div-container">
           <Row className="row-container">
             <div>
-              {!formViewIsActive &&
+              {
               (
                 <span 
                   className="back-button" 
-                  onClick={() => this.props.history.push('/screening')}
+                  onClick={() => {
+                    if (formViewIsActive) {
+                      return this.goPrev()
+                    } else {
+                      return this.props.history.push('/screening');
+                    }
+                  }}
                 >
                   <Glyphicon
                     className="back-button-icon"
@@ -166,7 +158,7 @@ export class SummaryAndForm extends React.Component {
             )}
           </Row>
           <div className="swiping-summary-and-form">
-            <Swiper {...params} ref={node => { if (node) {this.swiper = node.swiper;}}}>
+            <Swiper {...params} noSwiping={true} ref={node => { if (node) {this.swiper = node.swiper;}}}>
               <div className="summary-form">
                 <Summary
                   backLink={this.props.backLink}
@@ -180,7 +172,6 @@ export class SummaryAndForm extends React.Component {
                     backLink={this.props.backLink}
                     form={this.props.form}
                     formInstanceId={this.formInstanceId}
-                    sliderButton={this.formSwiperButton}
                   />
                 </div>
               ) : (

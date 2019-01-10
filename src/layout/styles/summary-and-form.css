@@ -64,7 +64,6 @@
 
 @media only screen and (min-width: 501px) and (max-width: 1024px) {
   .back-action-btn {
-    position: absolute;
     top: -53px;
     cursor: pointer;
   }
@@ -87,7 +86,6 @@
 
   .swiper-container {
     height: inherit;
-    overflow: visible !important;
   }
 
   .summary-layout {
