@@ -27,30 +27,37 @@ const createFromReportingRestRep = (restRep) => {
     familyName: restRep.last_name
   };
 
-  // TODO move the add identifier logic here?
-  patient = patientUtil.addIdentifier(patient, restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
-  patient = patientUtil.addIdentifier(patient, restRep.hcc_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE);
-  patient = patientUtil.addIdentifier(patient, restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE);
+  if (restRep.art_number) {
+    patient = patientUtil.addIdentifier(patient, restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
+  }
+  if (restRep.hcc_number) {
+    patient = patientUtil.addIdentifier(patient, restRep.hcc_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE);
+  }
+  if (restRep.ncd_number) {
+    patient = patientUtil.addIdentifier(patient, restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE);
+  }
 
-  // TODO how do we get these in a proper format
-  patient.chw = restRep.vhw;
   patient.address = {
     village: restRep.village,
     traditionalAuthority: restRep.traditional_authority,
     district: restRep.district
   };
 
+  // these are all non-standard props not part of the basic Patient rest rep (at least not yet)
+  patient.chw = restRep.vhw;
+
   patient.phoneNumber = restRep.phone_number;
   patient.lastAppointmentDate = restRep.last_appt_date;
   patient.lastVisitDate = restRep.last_visit_date;
 
   patient.alert = restRep.alerts;
+
   patient.labTests = {
     viral_load_tests: restRep.viral_load_tests,
     hiv_tests: restRep.hiv_tests
   };
-  patient.actions = "";  // TODO add actions back in, change to support array
 
+  patient.allIdentifiers = restRep.identifiers;
 
   return patient;
 };

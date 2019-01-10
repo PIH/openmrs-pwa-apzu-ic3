@@ -34,7 +34,7 @@ let ScreeningQueue = props => {
     <div>
       <CardList
         AdditionalSearchFilters={IdentifierFilters}
-        additionalSearchFilterFields={['identifiers.0.identifier', 'identifiers.1.identifier', 'identifiers.2.identifier']}
+        additionalSearchFilterFields={[(patient) => patient.allIdentifiers]}
         card={PatientCard}
         delayInterval={0}
         dispatch={props.dispatch}
