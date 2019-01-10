@@ -8,7 +8,7 @@ import {
 } from '@openmrs/react-components';
 import ic3PatientActions from './patientActions';
 import PATIENT_TYPES from './patientTypes';
-import { IDENTIFIER_TYPES, ACTIVE_VISITS_REP } from '../constants';
+import {ACTIVE_VISITS_REP} from '../constants';
 import reportingRest from '../rest/reportingRest';
 import * as R from "ramda";
 import utils from "../utils";
@@ -27,14 +27,10 @@ const createFromReportingRestRep = (restRep) => {
     familyName: restRep.last_name
   };
 
-  if (restRep.art_number) {
-    patient = patientUtil.addIdentifier(patient, restRep.art_number, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
-  }
-  if (restRep.hcc_number) {
-    patient = patientUtil.addIdentifier(patient, restRep.hcc_number, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE);
-  }
-  if (restRep.ncd_number) {
-    patient = patientUtil.addIdentifier(patient, restRep.ncd_number, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE);
+  if (restRep.identifiers) {
+    restRep.identifiers.forEach((identifier) => {
+      patient = patientUtil.addIdentifier(patient, identifier.identifier, { uuid: identifier.identifierType }, identifier.preferred);
+    });
   }
 
   patient.address = {
@@ -56,8 +52,6 @@ const createFromReportingRestRep = (restRep) => {
     viral_load_tests: restRep.viral_load_tests,
     hiv_tests: restRep.hiv_tests
   };
-
-  patient.allIdentifiers = restRep.identifiers;
 
   return patient;
 };
