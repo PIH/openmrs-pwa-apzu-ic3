@@ -36,6 +36,8 @@ export const history = createHashHistory({
   basename: contextPath
 });
 
+history.listen(() => window.scrollTo(0, 0));
+
 const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [
