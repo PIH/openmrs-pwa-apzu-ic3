@@ -42,6 +42,11 @@ describe('Component: NutritionForm', () => {
             },
             selected: "abc"
           },
+          session: {
+            sessionLocation: {
+              uuid: ''
+            }
+          },
         }
       });
     mountedComponent = undefined;
