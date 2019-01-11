@@ -12,15 +12,15 @@ class DnaPcrForm extends React.PureComponent {
     // this clears out form values when the "bled" question is changed
     if (typeof this.props.bled !== 'undefined' && this.props.bled !== prevProps.bled) {
       if (this.props.bled === CONCEPTS.True.uuid) {
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid)));
       }
       else {
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid)));
 
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid)));
       }
     }
   }
