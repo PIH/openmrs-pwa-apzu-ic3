@@ -1,9 +1,9 @@
 import dateFns from 'date-fns';
+import {patientUtil} from '@openmrs/react-components';
 import {
   ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, EID_RAPID_TEST,
   EID_DNA_PCR
 } from "./constants";
-import patientUtil from "@openmrs/react-components/src/domain/patient/patientUtil";
 
 const utils = {
 
