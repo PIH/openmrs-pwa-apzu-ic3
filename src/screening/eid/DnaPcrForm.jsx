@@ -6,7 +6,6 @@ import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { CONCEPTS, FORM_NAMES, FORM_ANSWERS } from "../../constants";
 import './styles/dna-pcr-form.css';
 
-
 class DnaPcrForm extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
@@ -29,7 +28,6 @@ class DnaPcrForm extends React.PureComponent {
   render() {
     const formContent = (
       <Grid>
-
         <Row>
           <FormGroup controlId="formBled">
             <Col componentClass={ControlLabel} sm={2}>
@@ -45,59 +43,56 @@ class DnaPcrForm extends React.PureComponent {
           </FormGroup>
         </Row>
 
-        {(typeof this.props.bled !== 'undefined') &&
-        (this.props.bled === CONCEPTS.False.uuid) &&
-        <Row>
-          <FormGroup controlId="formReasonForNoSample">
-            <Col componentClass={ControlLabel} sm={2}>
-              Reason for no sample
-            </Col>
-            <Col sm={10}>
-              <Obs
-                concept={CONCEPTS.ReasonForNoSample.uuid}
-                path="dna-pcrdr-reason-no-sample"
-                conceptAnswers={FORM_ANSWERS.eidNoSampleAnswers}
-              />
-            </Col>
-          </FormGroup>
-        </Row>
-        }
+        <span style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.False.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <FormGroup controlId="formReasonForNoSample">
+              <Col componentClass={ControlLabel} sm={2}>
+                Reason for no sample
+              </Col>
+              <Col sm={10}>
+                <Obs
+                  concept={CONCEPTS.ReasonForNoSample.uuid}
+                  path="dna-pcrdr-reason-no-sample"
+                  conceptAnswers={FORM_ANSWERS.eidNoSampleAnswers}
+                />
+              </Col>
+            </FormGroup>
+          </Row>
+        </span>
 
-        {(typeof this.props.bled !== 'undefined') &&
-        (this.props.bled === CONCEPTS.True.uuid) &&
-        <Row>
-          <FormGroup controlId="formReasonForTesting">
-            <Col componentClass={ControlLabel} sm={2}>
-              Reason for testing
-            </Col>
-            <Col sm={8}>
-              <Obs
-                concept={CONCEPTS.ReasonForTesting.uuid}
-                path="dna-pcr-reason-for-testing"
-                conceptAnswers={FORM_ANSWERS.dnaPcrReasonForTesting}
-              />
-            </Col>
-          </FormGroup>
-        </Row>
-        }
+        <span style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <FormGroup controlId="formReasonForTesting">
+              <Col componentClass={ControlLabel} sm={2}>
+                Reason for testing
+              </Col>
+              <Col sm={8}>
+                <Obs
+                  concept={CONCEPTS.ReasonForTesting.uuid}
+                  path="dna-pcr-reason-for-testing"
+                  conceptAnswers={FORM_ANSWERS.dnaPcrReasonForTesting}
+                />
+              </Col>
+            </FormGroup>
+          </Row>
+        </span>
 
-        {(typeof this.props.bled !== 'undefined') &&
-        (this.props.bled === CONCEPTS.True.uuid) &&
-        <Row>
-          <FormGroup controlId="formLabLocation">
-            <Col componentClass={ControlLabel} sm={2}>
-              Laboratory
-            </Col>
-            <Col sm={8}>
-              <Obs
-                concept={CONCEPTS.LabLocation.uuid}
-                path="dna-pcr-lab-location"
-                conceptAnswers={FORM_ANSWERS.labLocation}
-              />
-            </Col>
-          </FormGroup>
-        </Row>
-        }
+        <span style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <FormGroup controlId="formLabLocation">
+              <Col componentClass={ControlLabel} sm={2}>
+                Laboratory
+              </Col>
+              <Col sm={8}>
+                <Obs
+                  concept={CONCEPTS.LabLocation.uuid}
+                  path="dna-pcr-lab-location"
+                  conceptAnswers={FORM_ANSWERS.labLocation}
+                />
+              </Col>
+            </FormGroup>
+          </Row>
+        </span>
       </Grid>
     );
 

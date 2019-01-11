@@ -64,21 +64,18 @@ class EidForm extends React.PureComponent {
           </FormGroup>
         </Row>
 
-        {(typeof this.props.testType !== 'undefined') &&
-        (this.props.testType === CONCEPTS.HIV_DNA_PCR_TEST.uuid) &&
-        <Row>
-          <DnaPcrForm/>
-        </Row>
-        }
+        <span style={{ display: (typeof this.props.testType !== 'undefined') && (this.props.testType === CONCEPTS.HIV_DNA_PCR_TEST.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <DnaPcrForm/>
+          </Row>
+        </span>
 
-        {(typeof this.props.testType !== 'undefined') &&
-        (this.props.testType === CONCEPTS.HIV_RAPID_TEST.uuid) &&
-        <Row>
-          <RapidTestForm/>
-        </Row>
-        }
+        <span style={{ display: (typeof this.props.testType !== 'undefined') && (this.props.testType === CONCEPTS.HIV_RAPID_TEST.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <RapidTestForm/>
+          </Row>
+        </span>
       </Grid>
-
     );
 
     return (
