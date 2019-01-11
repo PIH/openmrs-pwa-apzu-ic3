@@ -1,6 +1,6 @@
 import React from 'react';
 import {HomePage as ReactComponentsHomePage} from '@openmrs/react-components';
-import homeImage from "../assets/images/Magaleta_IC3_clinic.jpg";
+import homeImage from "../assets/images/Malawi_hut.jpg";
 
 const HomePage = (props) => {
 
