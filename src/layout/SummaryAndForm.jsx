@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from "react-redux";
 import {Col, Grid, Row, Glyphicon} from "react-bootstrap";
 import Swiper from 'react-id-swiper';
 import { withRouter } from 'react-router-dom';
@@ -10,7 +11,6 @@ import 'react-id-swiper/src/styles/css/swiper.css';
 import { centerTextAlign } from '../pwaStyles';
 import Summary from "./Summary";
 import Form from "./Form";
-import connect from "react-redux/es/connect/connect";
 import './styles/summary-and-form.css';
 
 // TODO can we organize this at all better?  the idea that we are passing the form instance ID around everywhere, and doing enter/edit here is kind of painful
