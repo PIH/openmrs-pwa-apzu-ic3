@@ -41,6 +41,11 @@ describe('Component: BloodPressureForm', () => {
             },
             selected: "abc"
           },
+          session: {
+            sessionLocation: {
+              uuid: ''
+            }
+          }
         }
       });
     mountedComponent = undefined;

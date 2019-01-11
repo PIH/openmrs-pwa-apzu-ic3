@@ -10,10 +10,12 @@ import {format, isSameDay, parse} from 'date-fns';
 class ScreeningForm extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(visitActions.fetchPatientActiveVisit(this.props.patient.uuid, ACTIVE_VISITS_REP));
+    const location = this.props.sessionLocation ? this.props.sessionLocation.uuid : null;
+    this.props.dispatch(visitActions.fetchPatientActiveVisit(this.props.patient.uuid, location, ACTIVE_VISITS_REP));
   }
 
   render() {
+    const location = this.props.sessionLocation ? this.props.sessionLocation.uuid : null;
     let encounter;
     let props = this.props;
     // find any matching encounter in the active visit
@@ -31,7 +33,7 @@ class ScreeningForm extends React.Component {
     }
     // we want to update the active visit for the current patient on submit
     const formSubmittedActionCreators = [
-      () => props.patient && props.patient.uuid && visitActions.fetchPatientActiveVisit(props.patient.uuid, ACTIVE_VISITS_REP)
+      () => props.patient && props.patient.uuid && visitActions.fetchPatientActiveVisit(props.patient.uuid, location, ACTIVE_VISITS_REP)
     ];
 
     return (
@@ -64,13 +66,15 @@ ScreeningForm.propTypes = {
   encounterType: PropTypes.object.isRequired,
   formContent: PropTypes.object.isRequired,
   formId: PropTypes.string.isRequired,
+  sessionLocation: PropTypes.object,
   toastMessage: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
 };
 
 const mapStateToProps = (state) => {
   return {
-    patient: selectors.getSelectedPatientFromStore(state)
+    patient: selectors.getSelectedPatientFromStore(state),
+    sessionLocation: state.openmrs.session.sessionLocation
   };
 };
 
