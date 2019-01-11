@@ -87,7 +87,7 @@ export const VISIT_TYPES = {
   }
 };
 
-export const IDENTIFIER_TYPES = {
+/*export const IDENTIFIER_TYPES = {
   'ART_IDENTIFIER_TYPE': {
     uuid: '66784d84-977f-11e1-8993-905e29aff6c1'
   },
@@ -95,9 +95,9 @@ export const IDENTIFIER_TYPES = {
     uuid: '66786256-977f-11e1-8993-905e29aff6c1'
   },
   'NCD_IDENTIFIER_TYPE': {
-    uuid: '11a76c3e-1db8-4d16-9252-9a18b5ed1843'
+    uuid: 'f24f52b7-daf4-4a35-9124-fbc00160a98d'
   }
-};
+};*/
 
 export const LOCATION_TYPES = {
   'UnknownLocation': {
