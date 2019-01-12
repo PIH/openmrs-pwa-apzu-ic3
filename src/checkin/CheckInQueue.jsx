@@ -122,7 +122,7 @@ class CheckInQueue extends React.Component {
           ] }
           rowData={ Object.values(this.props.patients) }
           rowSelectedActionCreators={[() => screeningActions.setLastScreeningQueue(this.props.screeningLocation), patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
-          searchFilterFields={['name.givenName', 'name.familyName']}
+          searchFilterFields={['name.fullName']}
           sortFields={['name.givenName', 'name.familyName']}
           title="Check-In Queue"
         />
