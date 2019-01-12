@@ -40,7 +40,14 @@ class ScreeningFilters extends React.Component {
       thirdIdentifierSearchValue: '',
       patientIdentifier: '',
       searchValue: '',
+      currentLocationPrefix: this.getCurrentLocationPrefix()
     };
+  }
+
+  componentDidMount() {
+    if (this.state.currentLocationPrefix) {
+      this.handleSearch({}, this.state.currentLocationPrefix, 'first');
+    }
   }
 
   handleUndefinedValues = (value, defaultValue) => typeof value === 'undefined' ? defaultValue : value;
@@ -98,7 +105,8 @@ class ScreeningFilters extends React.Component {
     this.handleSearch(null, e.target.value, 'second');
   }
 
-  getLocationsPrefix = (locations) => {
+  getLocationsPrefix = () => {
+    const { locations } = this.props;
     const addedLocations = [];
     if (locations && locations.length > 0) {
       // eslint-disable-next-line
@@ -136,8 +144,6 @@ class ScreeningFilters extends React.Component {
   }
 
   render() {
-    const { locations } = this.props;
-
     return (
       <div className="queue-filters">
         <div className="identifier-filter-container">
@@ -152,7 +158,7 @@ class ScreeningFilters extends React.Component {
               }}
               dropdownValue={this.state.firstIdentifierSearchValue}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
-              list={this.getLocationsPrefix(locations)}
+              list={this.getLocationsPrefix()}
               placeholder=" "
             />
             <span>-</span>
