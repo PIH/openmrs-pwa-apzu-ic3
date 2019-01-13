@@ -62,104 +62,62 @@
   outline: none;
 }
 
-@media only screen and (min-width: 501px) and (max-width: 1024px) {
-  .back-action-btn {
-    top: -53px;
-    cursor: pointer;
-  }
-
-  .show-grid.summary-form-slider.row {
-    display: none;
-    height: 100%;
-    width: 100%;
-  }
-
-  .swiping-summary-and-form {
-    display: block;
-    height: 100%;
-  }
-
-  .show-grid.summary-form-slider.row > div {
-    display: inline-block;
-    text-align: center;
-  }
-
-  .swiper-container {
-    height: inherit;
-  }
-
-  .summary-layout {
-    height: auto;
-    min-height: 100vh;
-    padding: 20px;
-    font-size: 120%;
-    background: lightgray;
-  }
-
-  .summary-and-form .list-group-item-heading {
-    font-size: 130%;
-    padding-bottom: 20px;
-  }
-
-  .list-group-item {
-    font-size: 130%;
-    padding: 20px;
-  }  
-
-  .list-group {
-    box-shadow: none;
-  }
-
-  .form-layout {
-    max-height: 100vh;
-    height: auto;
-    min-height: 100vh;
-    padding-left: 10px;
-    background: lightgray;
-  }
-
-  .swiper-add-new-btn {
-    display: flex;
-    justify-content: center;
-  }
+.back-action-btn {
+  top: -53px;
+  cursor: pointer;
 }
 
-@media only screen and (min-width: 1025px) {
-  .div-container {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
+.show-grid.summary-form-slider.row {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
 
-  .row-container {
-    background-color: #ffa500b3;
-  }
+.swiping-summary-and-form {
+  display: block;
+  height: 100%;
+}
 
-  .pad-left {
-    padding-left: 20px;
-  }
+.show-grid.summary-form-slider.row > div {
+  display: inline-block;
+  text-align: center;
+}
 
-  .form-layout {
-    width: 66.667%;
-    float: left;
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+.swiper-container {
+  height: inherit;
+}
 
-  .summary-layout {
-    width: 33.333%;
-    float: left;
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    background-color: #C3F0FF;
-    height: stretch;
-  }
+.summary-layout {
+  height: auto;
+  min-height: 100vh;
+  padding: 20px;
+  font-size: 120%;
+  background: lightgray;
+}
 
-  .swiping-summary-and-form {
-    display: none;
-  }
+.summary-and-form .list-group-item-heading {
+  font-size: 130%;
+  padding-bottom: 20px;
+}
 
+.list-group-item {
+  font-size: 130%;
+  padding: 20px;
+}  
+
+.list-group {
+  box-shadow: none;
+}
+
+.form-layout {
+  max-height: 100vh;
+  height: auto;
+  min-height: 100vh;
+  padding-left: 10px;
+  background: lightgray;
+}
+
+.swiper-add-new-btn {
+  display: flex;
+  justify-content: center;
 }
