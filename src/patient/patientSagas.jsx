@@ -15,12 +15,12 @@ import utils from "../utils";
 
 const createFromReportingRestRep = (restRep) => {
   let patient = {};
-
   patient._openmrsClass = "Patient";
   patient.uuid = restRep.patient_uuid;
   patient.gender = restRep.gender;
   patient.age = restRep.age_years;
   patient.birthdate = restRep.birthdate;
+  patient.chronic_care_diagnoses = restRep.chronic_care_diagnoses
 
   patient.name = {
     givenName: restRep.first_name,
