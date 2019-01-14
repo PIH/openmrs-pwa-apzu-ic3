@@ -126,12 +126,23 @@ function* initiateGetIC3PatientsAction(action) {
   }
 }
 
+function* sessionInitiateGetIC3PatientsAction(action) {
+  yield put(locationActions.fetchAllLocations());
+  var state = R.pathOr(yield select(), ['payload'], action);
+  if (R.path(['openmrs', 'session', 'authenticated'], state)) {
+    yield put(ic3PatientActions.getIC3Patients(
+      R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
+      utils.formatReportRestDate(new Date()),
+      true));  // loadExpectedPatients = true
+  }
+}
+
 
 function* ic3PatientSagas() {
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENTS, getIC3Patients);
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENT_SCREENING_DATA, getIC3PatientScreeningData);
   yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetIC3PatientsAction);
-  yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetIC3PatientsAction);
+  yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, sessionInitiateGetIC3PatientsAction);
 }
 
 export default ic3PatientSagas;

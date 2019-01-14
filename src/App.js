@@ -209,7 +209,6 @@ const App = props => {
           </Switch>
         </ConnectedRouter>
       </PersistGate>
-
     </Provider>
   );
 
