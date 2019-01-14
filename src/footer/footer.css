@@ -6,4 +6,5 @@
   width: 100%;
   color: white;
   text-align: center;
+  z-index: 2;
 }
