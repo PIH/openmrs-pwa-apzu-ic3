@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { conceptActions, selectors } from '@openmrs/react-components'
 import { format, startOfDay } from 'date-fns';
 
@@ -17,6 +16,7 @@ class ChronicCareDiagnoses extends React.Component {
 
   componentDidMount() {
     if (this.props.selectedPatient.chronic_care_diagnoses) {
+      // eslint-disable-next-line
       this.props.selectedPatient.chronic_care_diagnoses.map((chronicCareDiagnoses) => {
         if (!this.props.concepts[chronicCareDiagnoses.value]) {
           this.props.dispatch(conceptActions.fetchConcepts([chronicCareDiagnoses.value]));
@@ -33,6 +33,7 @@ class ChronicCareDiagnoses extends React.Component {
   }
 
   updateChronicCareDiagnoses() {
+    // eslint-disable-next-line
     this.props.selectedPatient.chronic_care_diagnoses && this.props.selectedPatient.chronic_care_diagnoses.map(chronicCareDiagnoses => {
       const concept = this.props.concepts[chronicCareDiagnoses.value];
       const isChronicCareDiagnosesInState = this.state.chronicCareDiagnoses.find(diagnosis => diagnosis.display === concept.display)
@@ -76,9 +77,6 @@ class ChronicCareDiagnoses extends React.Component {
     );
   }
 }
-
-ChronicCareDiagnoses.propTypes = {
-};
 
 const mapStateToProps = (state) => {
   return {
