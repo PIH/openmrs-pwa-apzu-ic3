@@ -37,7 +37,6 @@ import CheckInComplete from './checkin/CheckInComplete';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import TbQueue from "./screening/tb/TbQueue";
-import TbTestQueue from "./screening/tbTest/TBTestQueue";
 import AdherenceQueue from "./screening/adherence/AdherenceQueue";
 import AdherenceSummaryAndForm from "./screening/adherence/AdherenceSummaryAndForm";
 import HtcQueue from "./screening/htc/HtcQueue";
@@ -52,7 +51,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import BloodPressureSummaryAndForm from "./screening/bloodPressure/BloodPressureSummaryAndForm";
 import NutritionSummaryAndForm from "./screening/nutrition/NutritionSummaryAndForm";
-import TBTestSummaryAndForm from "./screening/tbTest/TBTestSummaryAndForm";
+import TbTestResultSummaryAndForm from "./screening/tbTest/TbTestResultSummaryAndForm";
 import TbSummaryAndForm from "./screening/tb/TbSummaryAndForm";
 import HtcSummaryAndForm from "./screening/htc/HtcSummaryAndForm";
 import UserSession from "./login/UserSession";
@@ -129,12 +128,7 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={TbTestQueue}
-              path="/screening/tb-test/queue"
-              redirectOnLogin="/"
-            />
-            <Layout
-              component={TBTestSummaryAndForm}
+              component={TbTestResultSummaryAndForm}
               path="/screening/tb-test/form"
               redirectOnLogin="/"
             />

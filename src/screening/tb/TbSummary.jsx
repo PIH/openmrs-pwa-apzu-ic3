@@ -3,7 +3,7 @@ import PatientLabTests from "../../patient/PatientLabTests";
 import { CONCEPTS } from "../../constants";
 import { ObsHistory } from "@openmrs/react-components";
 
-const TBTestSummary = props => {
+const TbSummary = props => {
   return (
     <div>
       <PatientLabTests test_type={ "tb_test" } />
@@ -18,4 +18,4 @@ const TBTestSummary = props => {
   );
 };
 
-export default TBTestSummary;
+export default TbSummary;

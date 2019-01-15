@@ -6,7 +6,7 @@ import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
 
-class TBTestForm extends React.PureComponent {
+class TbTestResultForm extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
     if (typeof this.props.testType !== 'undefined' && this.props.testType !== prevProps.testType) {
@@ -216,5 +216,5 @@ export default connect((state, props) => {
     tbSmearResult,
     patient: selectors.getSelectedPatientFromStore(state)
   };
-})(TBTestForm);
+})(TbTestResultForm);
 

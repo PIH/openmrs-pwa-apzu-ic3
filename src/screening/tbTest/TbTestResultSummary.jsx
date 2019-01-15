@@ -2,7 +2,7 @@ import React from "react";
 import {CONCEPTS} from "../../constants";
 import {ObsHistory} from "@openmrs/react-components";
 
-const TBTestSummary = props => {
+const TbTestResultSummary = props => {
   return (
     <ObsHistory
       concepts={[
@@ -16,4 +16,4 @@ const TBTestSummary = props => {
   );
 };
 
-export default TBTestSummary;
+export default TbTestResultSummary;
