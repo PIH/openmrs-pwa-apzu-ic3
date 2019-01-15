@@ -5,6 +5,7 @@ import {
   patientUtil, SESSION_TYPES,
   visitActions,
   locationActions,
+  patientIdentifierTypesActions
 } from '@openmrs/react-components';
 import { history } from '../store';
 import ic3PatientActions from './patientActions';
@@ -118,6 +119,7 @@ function* getIC3PatientScreeningData(action) {
 function* initiateGetIC3PatientsAction(action) {
   yield put(patientActions.clearPatientStore());
   yield put(locationActions.fetchAllLocations());
+  yield put(patientIdentifierTypesActions.fetchPatientIdentifierTypes());
   var state = R.pathOr(yield select(), ['payload'], action);
   if (R.path(['openmrs', 'session', 'authenticated'], state)) {
     yield put(ic3PatientActions.getIC3Patients(
