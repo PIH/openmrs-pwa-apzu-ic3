@@ -92,7 +92,7 @@ export class ScreeningList extends React.Component {
         title: "TB Screening",
         link: '/screening/tb/form',
         required: tbFilters.required,
-        completed: htcFilters.completed,
+        completed: tbFilters.completed,
       },/*
         {
           title: "TB",
