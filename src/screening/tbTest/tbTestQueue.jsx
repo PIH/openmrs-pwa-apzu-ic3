@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 import { selectors } from "@openmrs/react-components";
 import ScreeningQueue from "../ScreeningQueue";
-import tbTestFilters from './tbTestFilters';
+import tbTestFilters from './TBTestFilters';
 
 
 const TBTestQueue = props => {

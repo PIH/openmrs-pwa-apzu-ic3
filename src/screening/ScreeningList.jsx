@@ -10,6 +10,7 @@ import eidFilters from './eid/eidFilters';
 import adherenceFilters from './adherence/adherenceFilters';
 import checkInFilters from "../checkin/checkInFilters";
 import tbFilters from "./tb/tbFilters";
+import tbTestFilters from "./tbTest/TBTestFilters";
 
 export class ScreeningList extends React.Component {
   render() {
@@ -43,6 +44,12 @@ export class ScreeningList extends React.Component {
         completed: eidFilters.completed,
         link: '/screening/eid/form',
         required: eidFilters.required,
+      },
+      {
+        title: "Tuberculosis Test",
+        completed: vlFilters.completed,
+        link: '/screening/tb-test/form',
+        required: tbTestFilters.required,
       },
     /*    {
           title: "A1C",
