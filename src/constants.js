@@ -372,7 +372,7 @@ export const CONCEPTS = {
     name: 'Equipment Failure'
   },
   'UnsatisfactorySample': {
-    uuid: '656fa55e-977f-11e1-8993-905e29aff6c1',
+    uuid: '66188fb6-977f-11e1-8993-905e29aff6c1',
     name: 'Unsatisfacctory sample'
   },
   'InappropriateSampleContainer': {
@@ -384,7 +384,7 @@ export const CONCEPTS = {
     name: 'Supplies not available'
   },
   'Other': {
-    uuid: '655a7c88-977f-11e1-8993-905e29aff6c1',
+    uuid: '657140f8-977f-11e1-8993-905e29aff6c1',
     name: 'Other'
   },
   'TBSmearResult': {
