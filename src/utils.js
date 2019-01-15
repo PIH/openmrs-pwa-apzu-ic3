@@ -1,7 +1,7 @@
 import dateFns from 'date-fns';
-import { patientUtil } from '@openmrs/react-components';
+import {patientUtil} from '@openmrs/react-components';
 import {
-  ENCOUNTER_TYPES, IDENTIFIER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, EID_RAPID_TEST,
+  ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, EID_RAPID_TEST,
   EID_DNA_PCR
 } from "./constants";
 
@@ -28,30 +28,19 @@ const utils = {
     return utils.formatRestDate(dateFns.endOfYesterday());
   },
 
-  getPatientArtIdentifier: (patient) => {
-    return patientUtil.getIdentifier(patient, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
-  },
-  getPatientEidIdentifier: (patient) => {
-    return patientUtil.getIdentifier(patient, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE);
-  },
-  getPatientNcdIdentifier: (patient) => {
-    return patientUtil.getIdentifier(patient, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE);
-  },
+  /* getPatientArtIdentifier: (patient) => {
+     return patientUtil.getIdentifier(patient, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
+   },
+   getPatientEidIdentifier: (patient) => {
+     return patientUtil.getIdentifier(patient, IDENTIFIER_TYPES.EID_IDENTIFIER_TYPE);
+   },
+   getPatientNcdIdentifier: (patient) => {
+     return patientUtil.getIdentifier(patient, IDENTIFIER_TYPES.NCD_IDENTIFIER_TYPE);
+   },*/
   getPatientIdentifiers: (patient) => {
 
-    let identifiers = [];
-    let id = utils.getPatientArtIdentifier(patient);
-    if (id) {
-      identifiers.push(id);
-    }
-    id = utils.getPatientEidIdentifier(patient);
-    if (id) {
-      identifiers.push(id);
-    }
-    id = utils.getPatientNcdIdentifier(patient);
-    if (id) {
-      identifiers.push(id);
-    }
+    const identifiers = patientUtil.getIdentifiers(patient);
+
     if (identifiers.length > 0) {
       return identifiers.join('<br/>');
     } else {

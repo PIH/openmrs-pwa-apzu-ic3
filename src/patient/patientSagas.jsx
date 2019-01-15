@@ -6,6 +6,7 @@ import {
   visitActions,
   locationActions,
 } from '@openmrs/react-components';
+import { history } from '../store';
 import ic3PatientActions from './patientActions';
 import PATIENT_TYPES from './patientTypes';
 import {ACTIVE_VISITS_REP} from '../constants';
@@ -15,16 +16,17 @@ import utils from "../utils";
 
 const createFromReportingRestRep = (restRep) => {
   let patient = {};
-
   patient._openmrsClass = "Patient";
   patient.uuid = restRep.patient_uuid;
   patient.gender = restRep.gender;
   patient.age = restRep.age_years;
   patient.birthdate = restRep.birthdate;
+  patient.chronic_care_diagnoses = restRep.chronic_care_diagnoses
 
   patient.name = {
     givenName: restRep.first_name,
-    familyName: restRep.last_name
+    familyName: restRep.last_name,
+    fullName: `${restRep.first_name} ${restRep.last_name}` 
   };
 
   if (restRep.identifiers) {
@@ -125,12 +127,25 @@ function* initiateGetIC3PatientsAction(action) {
   }
 }
 
+function* sessionInitiateGetIC3PatientsAction(action) {
+  yield call(history.push, '/');
+  yield put(patientActions.clearPatientStore());
+  yield put(locationActions.fetchAllLocations());
+  var state = R.pathOr(yield select(), ['payload'], action);
+  if (R.path(['openmrs', 'session', 'authenticated'], state)) {
+    yield put(ic3PatientActions.getIC3Patients(
+      R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
+      utils.formatReportRestDate(new Date()),
+      true));  // loadExpectedPatients = true
+  }
+}
+
 
 function* ic3PatientSagas() {
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENTS, getIC3Patients);
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENT_SCREENING_DATA, getIC3PatientScreeningData);
   yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetIC3PatientsAction);
-  yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateGetIC3PatientsAction);
+  yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, sessionInitiateGetIC3PatientsAction);
 }
 
 export default ic3PatientSagas;

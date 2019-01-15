@@ -26,21 +26,21 @@ class EidForm extends React.PureComponent {
     // this clears out form values when switching HIV TEST TYPE
     if (typeof this.props.testType !== 'undefined' && this.props.testType !== prevProps.bled) {
       if (this.props.testType === CONCEPTS.HIV_DNA_PCR_TEST.uuid) {
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('rapid-test-results', CONCEPTS.HIV_TEST_RESULTS.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('rapid-test-results', CONCEPTS.HIV_TEST_RESULTS.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('rapid-test-results', CONCEPTS.HIV_TEST_RESULTS.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('rapid-test-results', CONCEPTS.HIV_TEST_RESULTS.uuid)));
       }
       else {
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-bled', CONCEPTS.Bled.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-bled', CONCEPTS.Bled.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-bled', CONCEPTS.Bled.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-bled', CONCEPTS.Bled.uuid)));
 
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid)));
 
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid)));
 
-        this.props.dispatch(change(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid), null));
-        this.props.dispatch(untouch(FORM_NAMES.eidFormName, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid)));
       }
     }
   }
@@ -64,21 +64,18 @@ class EidForm extends React.PureComponent {
           </FormGroup>
         </Row>
 
-        {(typeof this.props.testType !== 'undefined') &&
-        (this.props.testType === CONCEPTS.HIV_DNA_PCR_TEST.uuid) &&
-        <Row>
-          <DnaPcrForm/>
-        </Row>
-        }
+        <span style={{ display: (typeof this.props.testType !== 'undefined') && (this.props.testType === CONCEPTS.HIV_DNA_PCR_TEST.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <DnaPcrForm/>
+          </Row>
+        </span>
 
-        {(typeof this.props.testType !== 'undefined') &&
-        (this.props.testType === CONCEPTS.HIV_RAPID_TEST.uuid) &&
-        <Row>
-          <RapidTestForm/>
-        </Row>
-        }
+        <span style={{ display: (typeof this.props.testType !== 'undefined') && (this.props.testType === CONCEPTS.HIV_RAPID_TEST.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <RapidTestForm/>
+          </Row>
+        </span>
       </Grid>
-
     );
 
     return (

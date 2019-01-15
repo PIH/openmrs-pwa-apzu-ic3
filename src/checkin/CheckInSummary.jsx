@@ -1,7 +1,7 @@
 import React from 'react';
 import {Col, ControlLabel, Grid, Row} from "react-bootstrap";
 import {ObsHistory, selectors} from "@openmrs/react-components";
-import connect from "react-redux/es/connect/connect";
+import {connect} from "react-redux";
 import {CONCEPTS} from "../constants";
 
 const CheckInSummary = props => {

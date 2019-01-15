@@ -37,9 +37,9 @@
 }
 
 .identifier-filter .right-remove-sign-icon {
-  left: 205px;
-  top: 248px;
-  position: absolute;
+  right: 25px;
+  top: 8px;
+  margin-right: -18px;
   font-size: 18px;
 }
 
@@ -47,5 +47,5 @@
   border: 1px solid black;
   margin-left: 20px;
   font-size: 20px;
-  height: 30px;
+  height: 29px;
 }

@@ -47,8 +47,8 @@ class CheckInQueue extends React.Component {
     this.props.dispatch(patientActions.clearSelectedPatient());
   }
 
-  redirectToCheckinPageActionCreator() {
-    return push('/checkin/checkInPage');
+  redirectToScreeningTaskList() {
+    return push('/screening');
   }
 
   render() {
@@ -121,8 +121,8 @@ class CheckInQueue extends React.Component {
             () => this.props.dispatch(patientActions.clearSelectedPatient())
           ] }
           rowData={ Object.values(this.props.patients) }
-          rowSelectedActionCreators={[() => screeningActions.setLastScreeningQueue(this.props.screeningLocation), patientActions.setSelectedPatient, this.redirectToCheckinPageActionCreator.bind(this)]}
-          searchFilterFields={['name.givenName', 'name.familyName']}
+          rowSelectedActionCreators={[() => screeningActions.setLastScreeningQueue(this.props.screeningLocation), patientActions.setSelectedPatient, this.redirectToScreeningTaskList.bind(this)]}
+          searchFilterFields={['name.fullName']}
           sortFields={['name.givenName', 'name.familyName']}
           title="Check-In Queue"
         />
