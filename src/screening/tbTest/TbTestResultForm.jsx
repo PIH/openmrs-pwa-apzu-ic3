@@ -193,7 +193,7 @@ class TbTestResultForm extends React.PureComponent {
     return (
       <ScreeningForm
         backLink="/screening/tb-test/queue"
-        encounterType={ENCOUNTER_TYPES.TBTestEncounterType}
+        encounterType={ENCOUNTER_TYPES.TBTestResults}
         formContent={formContent}
         formId="tb-test-type-form"
         formInstanceId={this.props.formInstanceId}

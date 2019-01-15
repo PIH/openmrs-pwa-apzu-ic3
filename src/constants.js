@@ -39,10 +39,9 @@ export const ENCOUNTER_TYPES = {
   'TBScreeningEncounterType': {
     uuid: '45F221B9-7254-4B15-811B-5B8C8912F245'
   },
-  'TBTestEncounterType' : {
-    // TODO : This currently uses TB_FOLLOWUP Encounter type, would need to be changed sometime.
-    uuid: '664b8ab0-977f-11e1-8993-905e29aff6c1'
-  }
+  'TBTestResults': {
+    uuid: 'C770232A-4847-42D9-8F70-B01B5BA0EED8'
+},
 };
 
 export const ENCOUNTER_ROLES = {
