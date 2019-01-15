@@ -7,9 +7,15 @@ import 'react-widgets/dist/css/react-widgets.css';
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { systemActions } from '@openmrs/react-components';
+import store from './store'
 import './index.css';
 import App from './App';
-import { unregister } from './registerServiceWorker';
+import register from './registerServiceWorker';
+
+const onUpdateSW = () => {
+  store.dispatch(systemActions.updateServiceworker())
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
-unregister();
+register(onUpdateSW);
