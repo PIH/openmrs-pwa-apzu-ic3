@@ -23,7 +23,7 @@ import {
   faHome
 } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
-import setupStoreAndPersistor, { history } from './store';
+import reduxStore, { history } from './store';
 import Layout from './layout/Layout';
 import LoginPage from './login/LoginPage';
 import HomePage from './home/HomePage';
@@ -56,7 +56,7 @@ import HtcSummaryAndForm from "./screening/htc/HtcSummaryAndForm";
 import UserSession from "./login/UserSession";
 import ScreeningList from './screening/ScreeningList';
 
-const { store, persistor } = setupStoreAndPersistor();
+const { store, persistor } = reduxStore;
 
 fontAwesomeLibrary.add(faBars, faEdit, faPills, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome);
 
@@ -209,7 +209,6 @@ const App = props => {
           </Switch>
         </ConnectedRouter>
       </PersistGate>
-
     </Provider>
   );
 
