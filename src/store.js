@@ -93,16 +93,18 @@ if (process.env.NODE_ENV !== 'production') {
   middlewares.push(logger);
 }
 
-export default () => {
-  const store = createStore(
-    connectRouter(history)(pReducer),
-    compose(
-      applyMiddleware(...middlewares),
-      window.devToolsExtension && process.env.NODE_ENV !== 'production'
-        ? window.devToolsExtension() : f => f,
-    ));
-  sagaMiddleware.run(rootSagas);
-  const persistor = persistStore(store);
-  return { store, persistor };
+const store = createStore(
+  connectRouter(history)(pReducer),
+  compose(
+    applyMiddleware(...middlewares),
+    window.devToolsExtension && process.env.NODE_ENV !== 'production'
+      ? window.devToolsExtension() : f => f,
+  ));
+sagaMiddleware.run(rootSagas);
+
+const persistor = persistStore(store);
+
+export default  {
+  store, persistor
 };
 

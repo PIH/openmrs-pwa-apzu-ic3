@@ -8,14 +8,14 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { systemActions } from '@openmrs/react-components';
-import setupStoreAndPersistor from './store'
+import reduxStore from './store'
 import './index.css';
 import App from './App';
 import register from './registerServiceWorker';
 
 
 const onUpdateSW = () => {
-  const { store } = setupStoreAndPersistor();
+  const { store } = reduxStore;
   store.dispatch(systemActions.updateServiceworker());
 }
 
