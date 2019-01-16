@@ -3,13 +3,14 @@ import {
   LOGIN_TYPES,
   patientActions,
   patientUtil, SESSION_TYPES,
+  PATIENT_TYPES,
   visitActions,
   locationActions,
   patientIdentifierTypesActions
 } from '@openmrs/react-components';
 import { history } from '../store';
 import ic3PatientActions from './patientActions';
-import PATIENT_TYPES from './patientTypes';
+import IC3_PATIENT_TYPES from './patientTypes';
 import {ACTIVE_VISITS_REP} from '../constants';
 import reportingRest from '../rest/reportingRest';
 import * as R from "ramda";
@@ -100,7 +101,8 @@ function* getIC3PatientScreeningData(action) {
     // get patient appointment info
     let apptRestResponse = yield call(reportingRest.getScreeningData, {
       endDate: utils.formatReportRestDate(new Date()),
-      patients: action.patient.uuid
+      patients: action.patient.uuid,
+//      useCachedValues: false
     });
 
     let patients = apptRestResponse.map((result) => {
@@ -117,14 +119,16 @@ function* getIC3PatientScreeningData(action) {
 
 }
 
+// we should just have the patient selected action trigger the getIC3PatientScreeningData directly, but this will trigger a new action,
+// making it easiest to debug in the console, and allows us to add other actions if needed
+function* patientSelected(action) {
+  yield put(ic3PatientActions.getIC3PatientScreeningData(action.patient));
+}
+
 // TODO we are bundling other actions we want to do on login here--should these be in another saga?
 function* initiateLoginActions(action) {
   yield put(locationActions.fetchAllLocations());  // this will eventually need to happen before login?
   yield put(patientIdentifierTypesActions.fetchPatientIdentifierTypes());
-  // each time we select a new patient, trigger the action to fetch the IC3 screening data for that patient
-  yield put(patientActions.registerSelectPatientActionCreators([
-    ic3PatientActions.getIC3PatientScreeningData
-  ]));
   yield initiateIC3PatientsAction(action);
 }
 
@@ -149,8 +153,9 @@ function* initiateIC3PatientsAction(action) {
 
 
 function* ic3PatientSagas() {
-  yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENTS, getIC3Patients);
-  yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENT_SCREENING_DATA, getIC3PatientScreeningData);
+  yield takeLatest(IC3_PATIENT_TYPES.GET_IC3_PATIENTS, getIC3Patients);
+  yield takeLatest(IC3_PATIENT_TYPES.GET_IC3_PATIENT_SCREENING_DATA, getIC3PatientScreeningData);
+  yield takeLatest(PATIENT_TYPES.SET_SELECTED_PATIENT, patientSelected);
   yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateLoginActions);
   yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateLocationChangeActions);
 }
