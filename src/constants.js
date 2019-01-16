@@ -122,11 +122,13 @@ export const CONCEPTS = {
   },
   'SymptomPresent': {
     uuid: '6558d3ba-977f-11e1-8993-905e29aff6c1',
-    name: 'Symptom Present'
+    name: 'Symptom Present',
+    display: 'Yes'
   },
   'SymptomAbsent': {
     uuid: '655b50fe-977f-11e1-8993-905e29aff6c1',
-    name: 'Symptom Absent'
+    name: 'Symptom Absent',
+    display: 'No'
   },
   'SystolicBloodPressure' : {
     uuid: '6569bffe-977f-11e1-8993-905e29aff6c1',
