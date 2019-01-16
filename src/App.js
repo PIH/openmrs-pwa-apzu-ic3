@@ -51,6 +51,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import BloodPressureSummaryAndForm from "./screening/bloodPressure/BloodPressureSummaryAndForm";
 import NutritionSummaryAndForm from "./screening/nutrition/NutritionSummaryAndForm";
+import TbTestResultSummaryAndForm from "./screening/tbTest/TbTestResultSummaryAndForm";
 import TbSummaryAndForm from "./screening/tb/TbSummaryAndForm";
 import HtcSummaryAndForm from "./screening/htc/HtcSummaryAndForm";
 import UserSession from "./login/UserSession";
@@ -124,6 +125,11 @@ const App = props => {
             <Layout
               component={TbQueue}
               path="/screening/tb/queue"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={TbTestResultSummaryAndForm}
+              path="/screening/tb-test/form"
               redirectOnLogin="/"
             />
             <Layout

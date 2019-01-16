@@ -324,7 +324,87 @@ export const CONCEPTS = {
       uuid: '656cce7e-977f-11e1-8993-905e29aff6c1',
       name: 'Other'
     }
+  },
+  'TBTestType': {
+    uuid: '38c4512a-5aef-487d-a450-ecea4bc5df7e',
+    name: 'Tuberculosis test type'
+  },
+  'GeneXpert': {
+    uuid: '162202AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'GeneXpert'
+  },
+  'Smear': {
+    uuid: '65628568-977f-11e1-8993-905e29aff6c1',
+    name: 'Smear'
+  },
+  'TBDetected': {
+    uuid: '1301AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Detected'
+  },
+  'TBUndetected': {
+    uuid: '1302AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Undetected'
+  },
+  'ReasonForNoResult': {
+    uuid: '656fa450-977f-11e1-8993-905e29aff6c1',
+    name: 'No Result'
+  },
+  'RifampinResistance': {
+    uuid: '164937AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Rifampin Resistance'
+  },
+  'PositiveRifampinResistance': {
+    uuid: '162203AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Positive'
+  },
+  'NegativeRifampinResistance': {
+    uuid: '162204AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Negative'
+  },
+  'IndeterminateRifampinResistance': {
+    uuid: '164104AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Indeterminate'
+  },
+  'Contaminated': {
+    uuid: '65597a5e-977f-11e1-8993-905e29aff6c1',
+    name: 'Contaminated'
+  },
+  'EquipmentFailure': {
+    uuid: '165179AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Equipment Failure'
+  },
+  'UnsatisfactorySample': {
+    uuid: '66188fb6-977f-11e1-8993-905e29aff6c1',
+    name: 'Unsatisfacctory sample'
+  },
+  'InappropriateSampleContainer': {
+    uuid: '165181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Inappropriate sample container used'
+  },
+  'UnavailableSupplies': {
+    uuid: '165183AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Supplies not available'
+  },
+  'Other': {
+    uuid: '657140f8-977f-11e1-8993-905e29aff6c1',
+    name: 'Other'
+  },
+  'TBSmearResult': {
+    'Positive': {
+      uuid: '6549be7a-977f-11e1-8993-905e29aff6c1',
+      name: 'Positive'
+    },
+    'Negative': {
+      uuid: '654994c2-977f-11e1-8993-905e29aff6c1',
+      name: 'Negative'
+    },
+    'NoResult': {
+      uuid: '6557987e-977f-11e1-8993-905e29aff6c1',
+      name: 'No Result'
+    }
   }
+
+  
 };
 
 export const FORM_NAMES = {
@@ -332,6 +412,33 @@ export const FORM_NAMES = {
 };
 
 export const FORM_ANSWERS = {
+  'tbTestTypeanswers': [
+    { uuid: CONCEPTS.GeneXpert.uuid, name: CONCEPTS.GeneXpert.name },
+    { uuid: CONCEPTS.Smear.uuid, name: CONCEPTS.Smear.name }
+  ],
+  'GeneXpertAnswers': [
+    { uuid: CONCEPTS.TBDetected.uuid, name: CONCEPTS.TBDetected.name },
+    { uuid: CONCEPTS.TBUndetected.uuid, name: CONCEPTS.TBUndetected.name },
+    { uuid: CONCEPTS.ReasonForNoResult.uuid, name: CONCEPTS.ReasonForNoResult.name }
+  ],
+  'SmearAnswers': [
+    { uuid: CONCEPTS.TBSmearResult.Positive.uuid, name: CONCEPTS.TBSmearResult.Positive.name },
+    { uuid: CONCEPTS.TBSmearResult.Negative.uuid, name: CONCEPTS.TBSmearResult.Negative.name },
+    { uuid: CONCEPTS.TBSmearResult.NoResult.uuid, name: CONCEPTS.TBSmearResult.NoResult.name }
+  ],
+  'RifampinResistanceAnswers': [
+    { uuid: CONCEPTS.PositiveRifampinResistance.uuid, name: CONCEPTS.PositiveRifampinResistance.name },
+    { uuid: CONCEPTS.NegativeRifampinResistance.uuid, name: CONCEPTS.NegativeRifampinResistance.name },
+    { uuid: CONCEPTS.IndeterminateRifampinResistance.uuid, name: CONCEPTS.IndeterminateRifampinResistance.name },
+  ],
+  'ReasonForNoTBResultAnswers': [
+    { uuid: CONCEPTS.Contaminated.uuid, name: CONCEPTS.Contaminated.name },
+    { uuid: CONCEPTS.UnsatisfactorySample.uuid, name: CONCEPTS.UnsatisfactorySample.name },
+    { uuid: CONCEPTS.EquipmentFailure.uuid, name: CONCEPTS.EquipmentFailure.name },
+    { uuid: CONCEPTS.InappropriateSampleContainer.uuid, name: CONCEPTS.InappropriateSampleContainer.name },
+    { uuid: CONCEPTS.UnavailableSupplies.uuid, name: CONCEPTS.UnavailableSupplies.name },
+    { uuid: CONCEPTS.Other.uuid, name: CONCEPTS.Other.name },
+  ],
   'referrals': [
     { uuid: CONCEPTS.SOURCE_OF_REFERRAL.SHARC.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.SHARC.name },
     { uuid: CONCEPTS.SOURCE_OF_REFERRAL.OPD_at_health_center.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.OPD_at_health_center.name },
