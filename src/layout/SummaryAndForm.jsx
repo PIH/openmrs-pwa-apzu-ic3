@@ -53,12 +53,23 @@ export class SummaryAndForm extends React.Component {
     ;
   }
 
+  formatNavMessage() {
+    const { completed } = this.props;
+    if (this.props.currentPathname.includes('checkin')) {
+      return completed ?
+        `View/Edit ${this.props.title} information` : 'Check-in Patient';
+    } else {
+      return completed ?
+        `View/Edit ${this.props.title} information` : `Add ${this.props.title} information`;
+    }
+  }
+
   summarySwiperButton() {
     return (
       <span 
         className="summary-swiper-button" 
         onClick={() => this.goNext()}
-      > Add New
+      > {this.formatNavMessage()}
       </span>
     );
   }
@@ -99,22 +110,22 @@ export class SummaryAndForm extends React.Component {
           <Row className="row-container">
             <div>
               {
-              (
-                <span 
-                  className="back-button" 
-                  onClick={() => {
-                    if (formViewIsActive) {
-                      return this.goPrev()
-                    } else {
-                      return this.props.history.push('/screening');
-                    }
-                  }}
-                >
-                  <Glyphicon
-                    className="back-button-icon"
-                    glyph="menu-left"
-                  /></span>
-              )
+                (
+                  <span 
+                    className="back-button" 
+                    onClick={() => {
+                      if (formViewIsActive) {
+                        return this.goPrev()
+                      } else {
+                        return this.props.history.push('/screening');
+                      }
+                    }}
+                  >
+                    <Glyphicon
+                      className="back-button-icon"
+                      glyph="menu-left"
+                    /></span>
+                )
               }
             </div>
             <div>
@@ -210,7 +221,8 @@ const mapStateToProps = (state) => {
   return {
     patient: storePatient,
     forms: state.openmrs.form,
-    reduxForm: state.form   // TODO ugh that we have to map in the entire state.form... can we assign uuid earlier?
+    reduxForm: state.form,   // TODO ugh that we have to map in the entire state.form... can we assign uuid earlier?
+    currentPathname: state.router.location.pathname
   };
 };
 
