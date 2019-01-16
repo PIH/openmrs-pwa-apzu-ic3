@@ -46,7 +46,7 @@ let ScreeningQueue = props => {
         onMountOtherActionCreators={onMountOtherActionCreators}
         rowData={props.rowData}
         rowSelectedActionCreators={[patientActions.setSelectedPatient, () => screeningActions.setLastScreeningQueue(props.location), ...props.rowSelectedActionCreators]}
-        searchFilterFields={['name.fullName']}
+        searchFilterFields={['name.fullName', 'name.reverseFullName']}
         sortFields={['name.givenName', 'name.familyName']}
         title={props.title}
       />

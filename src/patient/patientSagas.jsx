@@ -27,7 +27,8 @@ const createFromReportingRestRep = (restRep) => {
   patient.name = {
     givenName: restRep.first_name,
     familyName: restRep.last_name,
-    fullName: `${restRep.first_name} ${restRep.last_name}` 
+    fullName: `${restRep.first_name} ${restRep.last_name}`,
+    reverseFullName: `${restRep.last_name} ${restRep.first_name}` 
   };
 
   if (restRep.identifiers) {
