@@ -6,13 +6,9 @@ import { ObsHistory } from "@openmrs/react-components";
 const TbSummary = props => {
   return (
     <div>
-      <PatientLabTests test_type={ "tb_test" } />
       <ObsHistory
-        concepts={[CONCEPTS.Bled,
-          CONCEPTS.ReasonForNoSample,
-          CONCEPTS.ReasonForTesting,
-          CONCEPTS.LabLocation
-        ]}
+        concepts={[CONCEPTS.SymptomPresent,
+          CONCEPTS.SymptomAbsent]}
       />
     </div>
   );
