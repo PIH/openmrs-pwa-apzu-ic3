@@ -3,5 +3,5 @@ import { ENCOUNTER_TYPES } from "../../constants";
 
 export default {
   required: patient => false,
-  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.TBTestEncounterType.uuid, 'include')
+  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.TBTestResults.uuid, 'include')
 };
