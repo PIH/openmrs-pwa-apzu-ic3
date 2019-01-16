@@ -41,7 +41,10 @@ export const ENCOUNTER_TYPES = {
   },
   'TBTestResults': {
     uuid: 'C770232A-4847-42D9-8F70-B01B5BA0EED8'
-},
+  },
+  'ClinicianPlan': {
+    uuid: '04E668BA-E24F-43FF-A135-A085EC3DBE40'
+  },
 };
 
 export const ENCOUNTER_ROLES = {
