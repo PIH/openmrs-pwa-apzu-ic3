@@ -117,23 +117,26 @@ function* getIC3PatientScreeningData(action) {
 
 }
 
-function* initiateGetIC3PatientsAction(action) {
-  yield put(patientActions.clearPatientStore());
-  yield put(locationActions.fetchAllLocations());
+// TODO we are bundling other actions we want to do on login here--should these be in another saga?
+function* initiateLoginActions(action) {
+  yield put(locationActions.fetchAllLocations());  // this will eventually need to happen before login?
   yield put(patientIdentifierTypesActions.fetchPatientIdentifierTypes());
-  var state = R.pathOr(yield select(), ['payload'], action);
-  if (R.path(['openmrs', 'session', 'authenticated'], state)) {
-    yield put(ic3PatientActions.getIC3Patients(
-      R.path(['openmrs', 'session', 'sessionLocation', 'uuid'], state),
-      utils.formatReportRestDate(new Date()),
-      true));  // loadExpectedPatients = true
-  }
+  // each time we select a new patient, trigger the action to fetch the IC3 screening data for that patient
+  yield put(patientActions.registerSelectPatientActionCreators([
+    ic3PatientActions.getIC3PatientScreeningData
+  ]));
+  yield initiateIC3PatientsAction(action);
 }
 
-function* sessionInitiateGetIC3PatientsAction(action) {
+function* initiateLocationChangeActions(action) {
   yield call(history.push, '/');
+  yield initiateIC3PatientsAction(action);
+}
+
+function* initiateIC3PatientsAction(action) {
+
   yield put(patientActions.clearPatientStore());
-  yield put(locationActions.fetchAllLocations());
+
   var state = R.pathOr(yield select(), ['payload'], action);
   if (R.path(['openmrs', 'session', 'authenticated'], state)) {
     yield put(ic3PatientActions.getIC3Patients(
@@ -141,14 +144,15 @@ function* sessionInitiateGetIC3PatientsAction(action) {
       utils.formatReportRestDate(new Date()),
       true));  // loadExpectedPatients = true
   }
+
 }
 
 
 function* ic3PatientSagas() {
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENTS, getIC3Patients);
   yield takeLatest(PATIENT_TYPES.GET_IC3_PATIENT_SCREENING_DATA, getIC3PatientScreeningData);
-  yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateGetIC3PatientsAction);
-  yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, sessionInitiateGetIC3PatientsAction);
+  yield takeLatest(LOGIN_TYPES.LOGIN.SUCCEEDED, initiateLoginActions);
+  yield takeLatest(SESSION_TYPES.SET_SUCCEEDED, initiateLocationChangeActions);
 }
 
 export default ic3PatientSagas;
