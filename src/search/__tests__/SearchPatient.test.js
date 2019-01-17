@@ -51,7 +51,11 @@ describe('Component: SearchPatient', () => {
           selectedPatient: null,
           metadata: {
             locations: [{
-              attributes: [],
+              attributes: {
+                attributeType: {
+                  uuid: '1234'
+                }
+              },
               display: "Binje Outreach Clinic",
               name: "Binje Outreach Clinic",
               tags: [],

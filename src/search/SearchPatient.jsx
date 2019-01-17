@@ -2,7 +2,7 @@ import React from 'react';
 import { PatientSearch } from '@openmrs/react-components';
 import { push } from 'connected-react-router';
 import IdentifierFilters from '../screening/IdentifierFilters';
-import utils from '../utils'
+import utils from '../utils';
 
 
 let SearchPatient = (props) => {

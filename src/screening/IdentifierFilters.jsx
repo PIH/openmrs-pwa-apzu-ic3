@@ -35,19 +35,13 @@ class ScreeningFilters extends React.Component {
     this.handleSearchClick = this.handleSearchClick.bind(this);
 
     this.state = {
-      firstIdentifierSearchValue: this.getCurrentLocationPrefix()[0] ? this.getCurrentLocationPrefix()[0] : '',
+      firstIdentifierSearchValue: '',
       secondIdentifierSearchValue: '',
       thirdIdentifierSearchValue: '',
       patientIdentifier: '',
       searchValue: '',
       currentLocationPrefix: this.getCurrentLocationPrefix()
     };
-  }
-
-  componentDidMount() {
-    if (this.state.currentLocationPrefix) {
-      this.handleSearch({}, this.state.currentLocationPrefix, 'first');
-    }
   }
 
   handleUndefinedValues = (value, defaultValue) => typeof value === 'undefined' ? defaultValue : value;
@@ -121,7 +115,10 @@ class ScreeningFilters extends React.Component {
         }
       });
     };
-    return addedLocations;
+    if (this.getCurrentLocationPrefix()[0]) {
+      addedLocations.unshift(this.getCurrentLocationPrefix()[0]);
+    }
+    return [...new Set(addedLocations)];
   };
 
   getCurrentLocationPrefix() {
@@ -156,7 +153,6 @@ class ScreeningFilters extends React.Component {
                 textAlignLast: 'center',
                 textAlign: 'center',
               }}
-              dropdownValue={this.state.firstIdentifierSearchValue}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
               list={this.getLocationsPrefix()}
               placeholder=" "
@@ -187,7 +183,10 @@ class ScreeningFilters extends React.Component {
               list={PATIENT_IDENTIFIERS_SUFFIX} 
               placeholder=" "
             />
-            <button className="search-button" onClick={this.handleSearchClick}>search</button>
+            <button
+              className="search-button"
+              onClick={this.handleSearchClick}
+            >search</button>
           </span>
         </div>
       </div>
