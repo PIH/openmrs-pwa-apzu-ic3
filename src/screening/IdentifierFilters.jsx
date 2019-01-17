@@ -115,7 +115,9 @@ class ScreeningFilters extends React.Component {
         }
       });
     };
-    addedLocations.unshift(this.getCurrentLocationPrefix()[0] && this.getCurrentLocationPrefix()[0]);
+    if (this.getCurrentLocationPrefix()[0]) {
+      addedLocations.unshift(this.getCurrentLocationPrefix()[0]);
+    }
     return [...new Set(addedLocations)];
   };
 
@@ -181,7 +183,10 @@ class ScreeningFilters extends React.Component {
               list={PATIENT_IDENTIFIERS_SUFFIX} 
               placeholder=" "
             />
-            <button className="search-button" onClick={this.handleSearchClick}>search</button>
+            <button
+              className="search-button"
+              onClick={this.handleSearchClick}
+            >search</button>
           </span>
         </div>
       </div>
