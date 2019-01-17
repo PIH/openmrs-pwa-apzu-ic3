@@ -102,7 +102,7 @@ function* getIC3PatientScreeningData(action) {
     let apptRestResponse = yield call(reportingRest.getScreeningData, {
       endDate: utils.formatReportRestDate(new Date()),
       patients: action.patient.uuid,
-//      useCachedValues: false
+      useCachedValues: false
     });
 
     let patients = apptRestResponse.map((result) => {
