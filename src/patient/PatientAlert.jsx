@@ -15,7 +15,7 @@ let PatientAlert = (props) => {
             <Col sm={ 12 }>
               <ControlLabel>Alert</ControlLabel>
               <Alert bsStyle="danger">
-                { props.patient.alert.join(', ') }
+                { props.patient.alert.map(a => a.name) }
               </Alert>
             </Col>
           </FormGroup>

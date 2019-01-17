@@ -144,18 +144,18 @@ const utils = {
   hasAlert: (alerts, category) => {
     if ((typeof alerts === 'undefined') ||
       (alerts === null) ||
-      ( Object.keys(alerts).length < 1)) {
+      ( alerts.length < 1)) {
       return false;
     }
     let retValue = false;
-    let alertsArray = Object.keys(alerts);
-    for (let i = 0; i < alertsArray.length; i++) {
-      retValue = (alerts[alertsArray[i]]).some(a => category.indexOf(a) >= 0);
-      if ( retValue === true) {
+
+    for (let i = 0; i < alerts.length; i++) {
+      retValue =  alerts[i].categories.some(a => category.indexOf(a) >= 0);
+      if (retValue === true) {
         break;
       }
     }
-   return retValue;
+    return retValue;
   },
 
   getAdherenceSessionNumber: (obs) => {
