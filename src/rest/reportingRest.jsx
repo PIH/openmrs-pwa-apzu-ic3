@@ -38,6 +38,9 @@ const api = {
     if (params.endDate != null) {   // specifically using != instead of !== to catch undefined
       queryParams.push("endDate=" + params.endDate);
     }
+    if (params.location != null) {
+      queryParams.push("location=" + params.location);
+    }
     if (params.patients != null) {
       queryParams.push("patients=" + params.patients);
     }

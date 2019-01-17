@@ -6,7 +6,8 @@ import {
   PATIENT_TYPES,
   visitActions,
   locationActions,
-  patientIdentifierTypesActions
+  patientIdentifierTypesActions,
+  selectors
 } from '@openmrs/react-components';
 import { history } from '../store';
 import ic3PatientActions from './patientActions';
@@ -94,12 +95,15 @@ function* getIC3Patients(action) {
   }
 }
 
-// get the screening data for a single patient
+// get the screening data for a single patient at the current location on the current date
 function* getIC3PatientScreeningData(action) {
+
+  const sessionLocation = yield select(selectors.getSessionLocation);
 
   try {
     // get patient appointment info
     let apptRestResponse = yield call(reportingRest.getScreeningData, {
+      location: sessionLocation ? sessionLocation.uuid : null,
       endDate: utils.formatReportRestDate(new Date()),
       patients: action.patient.uuid,
       useCachedValues: false
