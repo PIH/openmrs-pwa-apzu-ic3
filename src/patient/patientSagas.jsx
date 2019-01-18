@@ -104,7 +104,7 @@ function* getIC3PatientScreeningData(action) {
     // get patient appointment info
     let apptRestResponse = yield call(reportingRest.getScreeningData, {
       location: sessionLocation ? sessionLocation.uuid : null,
-      endDate: utils.formatReportRestDate(new Date()),
+      //endDate: utils.formatReportRestDate(new Date()),  // server will automatically set to "today", avoid time zone issues
       patients: action.patient.uuid,
       useCachedValues: false
     });

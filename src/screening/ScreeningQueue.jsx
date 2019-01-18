@@ -20,7 +20,7 @@ let ScreeningQueue = props => {
     () => {
       if (!props.updating) {
         props.dispatch(ic3PatientActions.getIC3Patients(
-          props.session.sessionLocation ? props.session.sessionLocation.uuid : null, utils.formatReportRestDate(new Date())
+          props.session.sessionLocation ? props.session.sessionLocation.uuid : null, null  // endDate null means use "today"
         ));
       }
     };

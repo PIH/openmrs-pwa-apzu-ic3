@@ -34,7 +34,7 @@ class VLQueueExpected extends React.Component {
       () => {
         if (!this.props.updating) {
           this.props.dispatch(ic3PatientActions.getIC3Patients(
-            this.props.session.sessionLocation ? this.props.session.sessionLocation.uuid : null, utils.formatReportRestDate(new Date())
+            this.props.session.sessionLocation ? this.props.session.sessionLocation.uuid : null, null
           ));
         }
       };

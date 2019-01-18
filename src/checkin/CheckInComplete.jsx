@@ -5,14 +5,12 @@ import { Link } from 'react-router-dom';
 import {selectors} from '@openmrs/react-components';
 import CompletedScreenings from "../screening/CompletedScreenings";
 import patientActions from "../patient/patientActions";
-import utils from "../utils";
-
 
 class CheckInComplete extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(patientActions.getIC3Patients(
-      (this.props.session.sessionLocation ? this.props.session.sessionLocation.uuid : null, utils.formatReportRestDate(new Date()))
+      (this.props.session.sessionLocation ? this.props.session.sessionLocation.uuid : null, null)
     ));
   }
 
