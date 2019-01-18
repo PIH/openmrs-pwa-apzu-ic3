@@ -2,9 +2,10 @@ import React from "react";
 import {EncounterFormPanel, encountersByEncounterTypeFilter, visitActions, selectors} from '@openmrs/react-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import {format, isSameDay, parse} from 'date-fns';
+import patientActions from '../patient/patientActions';
 import { ACTIVE_VISITS_REP, ENCOUNTER_ROLES } from "../constants";
 import { centerTextAlign } from "../pwaStyles";
-import {format, isSameDay, parse} from 'date-fns';
 
 
 class ScreeningForm extends React.Component {
@@ -31,9 +32,10 @@ class ScreeningForm extends React.Component {
       
       encounter = encountersByEncounterTypeFilter(props.encounterType.uuid)(encounters).shift();
     }
-    // we want to update the active visit for the current patient on submit
+    // we want to update the active visit and the IC3 screening report for the current patient after submit
     const formSubmittedActionCreators = [
-      () => props.patient && props.patient.uuid && visitActions.fetchPatientActiveVisit(props.patient.uuid, location, ACTIVE_VISITS_REP)
+      () => props.patient && props.patient.uuid && visitActions.fetchPatientActiveVisit(props.patient.uuid, location, ACTIVE_VISITS_REP),
+      () => props.patient && props.patient.uuid && patientActions.getIC3PatientScreeningData(props.patient)
     ];
 
     return (
