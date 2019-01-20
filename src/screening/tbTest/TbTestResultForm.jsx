@@ -5,6 +5,7 @@ import {Obs, formUtil, selectors} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
+import "./styles/tb-test-result-form.css";
 
 class TbTestResultForm extends React.PureComponent {
 
@@ -156,7 +157,10 @@ class TbTestResultForm extends React.PureComponent {
           </Row>
           <Row>
             <FormGroup controlId="formReasonForNoResult">
-              <Col sm={12}>
+              <Col
+                bsClass="no-reason-form"
+                sm={12}
+              >
                 <Obs
                   concept={CONCEPTS.ReasonForNoResult.uuid}
                   conceptAnswers={FORM_ANSWERS.ReasonForNoTBResultAnswers}
@@ -176,7 +180,10 @@ class TbTestResultForm extends React.PureComponent {
           </Row>
           <Row>
             <FormGroup controlId="formReasonForNoResult">
-              <Col sm={12}>
+              <Col
+                bsClass="no-reason-form"
+                sm={12}
+              >
                 <Obs
                   concept={CONCEPTS.ReasonForNoResult.uuid}
                   conceptAnswers={FORM_ANSWERS.ReasonForNoTBResultAnswers}

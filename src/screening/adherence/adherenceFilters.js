@@ -21,7 +21,11 @@ Lab Tests Types
 
 
 const adherenceFilter = patient => {
-  let lastVlTest = utils.getLastLabTest(patient.labTests.viral_load_tests);
+  let viralLoadTests = null;
+  if (patient.labTests && patient.labTests.viral_load_tests) {
+    viralLoadTests = patient.labTests.viral_load_tests;
+  }
+  let lastVlTest = utils.getLastLabTest(viralLoadTests);
   if (lastVlTest !== null && lastVlTest.resultNumeric !== null && lastVlTest.resultNumeric > 0) {
     return true;
   }

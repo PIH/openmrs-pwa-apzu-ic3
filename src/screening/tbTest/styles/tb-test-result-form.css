@@ -1,0 +1,12 @@
+
+.no-reason-form-sm-12 > div > div.btn-group > label {
+  font-size: 12px;
+  padding: 2px;
+}
+
+.no-reason-form-sm-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
