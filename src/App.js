@@ -33,6 +33,7 @@ import CheckInQueue from './checkin/CheckInQueue';
 import CheckInPage from './checkin/CheckInPage';
 import NursePage from './screening/nurse/NursePage';
 import ClinicianSummaryAndForm from './screening/clinician/ClinicianSummaryAndForm';
+import ClinicianQueue from './screening/clinician/ClinicianQueue';
 import CheckInComplete from './checkin/CheckInComplete';
 import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
@@ -205,6 +206,11 @@ const App = props => {
             <Layout
               component={ClinicianSummaryAndForm}
               path="/screening/clinician/form"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={ClinicianQueue}
+              path="/screening/clinician/queue"
               redirectOnLogin="/"
             />
             <Layout
