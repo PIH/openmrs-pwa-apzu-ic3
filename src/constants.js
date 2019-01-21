@@ -377,7 +377,7 @@ export const CONCEPTS = {
   },
   'UnsatisfactorySample': {
     uuid: '66188fb6-977f-11e1-8993-905e29aff6c1',
-    name: 'Unsatisfacctory sample'
+    name: 'Unsatisfactory sample'
   },
   'InappropriateSampleContainer': {
     uuid: '165181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
