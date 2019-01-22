@@ -540,6 +540,7 @@ export const NAV_MENU_PAGES = {
   '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
   '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
   '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },
+  '/screening/clinician/queue': { display : 'Clinician'}
   /*  '/screening/nurse/queue' : { display : 'Nurse', icon : 'user-md' },*/
 };
 
