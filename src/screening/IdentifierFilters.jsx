@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  Dropdown,
+  Dropdown, sessionActions
 } from '@openmrs/react-components';
 import { FormControl, Glyphicon } from 'react-bootstrap';
 import './IdentifierFilters.css';
@@ -122,13 +122,14 @@ class ScreeningFilters extends React.Component {
   };
 
   getCurrentLocationPrefix() {
-    const { locations, currentLocation } = this.props;
+    const { locations, currentLocation, dispatch } = this.props;
     if (locations && locations.length > 0) {
       let location = locations.filter(location => location.uuid === currentLocation.uuid)[0];
       if (location.attributes && location.attributes.length > 0) {
         // eslint-disable-next-line
         return location.attributes.map(attribute => {
           if (attribute.attributeType.uuid === LOCATION_CODE_UUID) {
+            dispatch(sessionActions.setSessionCurrentLocationPrefix(attribute.value))
             return attribute.value;
           }
         });
