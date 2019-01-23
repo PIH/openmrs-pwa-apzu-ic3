@@ -45,6 +45,9 @@ export const ENCOUNTER_TYPES = {
   'ClinicalPlan': {
     uuid: '04E668BA-E24F-43FF-A135-A085EC3DBE40'
   },
+  'TBSputumSubmitted': {
+    uuid: '664bb97c-977f-11e1-8993-905e29aff6c1'
+  },
 };
 
 export const ENCOUNTER_ROLES = {
