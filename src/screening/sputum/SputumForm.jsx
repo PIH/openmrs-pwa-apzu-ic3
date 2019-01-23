@@ -79,7 +79,7 @@ class SputumForm extends React.PureComponent {
               <Col sm={12}>
                 <Obs
                   concept={CONCEPTS.LabLocation.uuid}
-                  conceptAnswers={FORM_ANSWERS.SputumLabLocation}
+                  conceptAnswers={FORM_ANSWERS.labLocation}
                   path="sputum-laboratory-location"
                 />
               </Col>

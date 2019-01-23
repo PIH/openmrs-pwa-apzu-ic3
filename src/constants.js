@@ -519,11 +519,6 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.NenoGeneXpert.uuid, name: CONCEPTS.NenoGeneXpert.name },
     { uuid: CONCEPTS.CentralLaboratory.uuid, name: CONCEPTS.CentralLaboratory.name },
     { uuid: CONCEPTS.LisungwiGeneXpert.uuid, name: CONCEPTS.LisungwiGeneXpert.name },
-  ],
-  'SputumLabLocation': [
-    { uuid: CONCEPTS.NenoGeneXpert.uuid, name: CONCEPTS.NenoGeneXpert.name },
-    { uuid: CONCEPTS.CentralLaboratory.uuid, name: CONCEPTS.CentralLaboratory.name },
-    { uuid: CONCEPTS.LisungwiGeneXpert.uuid, name: CONCEPTS.LisungwiGeneXpert.name },
     { uuid: CONCEPTS.microscopy.uuid, name: CONCEPTS.microscopy.name },
   ],
   "hivTestResultAnswers": [
