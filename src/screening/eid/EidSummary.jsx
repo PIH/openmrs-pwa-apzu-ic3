@@ -1,13 +1,10 @@
 import React from "react";
-import {ObsHistory} from '@openmrs/react-components';
-import PatientLabTests from "../../patient/PatientLabTests";
-import {CONCEPTS} from "../../constants";
+import { ObsHistory } from '@openmrs/react-components';
+import { CONCEPTS } from "../../constants";
 
 const EidSummary = props => {
   return (
     <span>
-      <PatientLabTests test_type={ "viral_load_tests" }/>
-      <PatientLabTests test_type={ "hiv_tests" }/>
       <ObsHistory
         concepts={[CONCEPTS.HIV_TEST_TYPE,
           CONCEPTS.Bled,
