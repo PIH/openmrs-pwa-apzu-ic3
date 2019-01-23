@@ -5,6 +5,7 @@ import { Obs, formUtil, selectors } from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
+import { setFlex, padding } from "../../pwaStyles";
 
 class SputumForm extends React.PureComponent {
 
@@ -24,7 +25,6 @@ class SputumForm extends React.PureComponent {
   render() {
     const formContent = (
       <Grid>
-
         <Row>
           <Col
             componentClass={ControlLabel}
@@ -37,7 +37,7 @@ class SputumForm extends React.PureComponent {
             <FormGroup controlId="formBled">
               <Obs
                 concept={CONCEPTS.SputumReceived.uuid}
-                conceptAnswers={FORM_ANSWERS.sputumReceived}
+                conceptAnswers={FORM_ANSWERS.trueFalse}
                 path="sputum-received"
               />
             </FormGroup>
@@ -45,10 +45,10 @@ class SputumForm extends React.PureComponent {
         </Row>
 
         <span
-          style={{ display: (typeof this.props.sputumReceived !== 'undefined') && (this.props.sputumReceived === CONCEPTS.SputumReceivedTrue.uuid) ? 'block' : 'none' }}
+          style={{ display: (typeof this.props.sputumReceived !== 'undefined') && (this.props.sputumReceived === CONCEPTS.True.uuid) ? 'block' : 'none' }}
         >
           <Row>
-            <Col componentClass={ControlLabel}>
+            <Col>
               Sample quality
             </Col>
           </Row>
@@ -63,7 +63,7 @@ class SputumForm extends React.PureComponent {
               </Col>
             </FormGroup>
           </Row>
-        </span>
+        </span> 
 
 
         <span
@@ -75,7 +75,7 @@ class SputumForm extends React.PureComponent {
             </Col>
           </Row>
           <Row>
-            <FormGroup controlId="formReasonForTesting">
+            <FormGroup>
               <Col sm={12}>
                 <Obs
                   concept={CONCEPTS.LabLocation.uuid}
@@ -92,7 +92,7 @@ class SputumForm extends React.PureComponent {
     return (
       <ScreeningForm
         backLink="/screening"
-        encounterType={ENCOUNTER_TYPES.SputumEncounterType}
+        encounterType={ENCOUNTER_TYPES.TBSputumSubmitted}
         formContent={formContent}
         formId="sputum-form"
         formInstanceId={this.props.formInstanceId}

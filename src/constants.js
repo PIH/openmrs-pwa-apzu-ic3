@@ -45,8 +45,8 @@ export const ENCOUNTER_TYPES = {
   'ClinicalPlan': {
     uuid: '04E668BA-E24F-43FF-A135-A085EC3DBE40'
   },
-  'SputumEncounterType': {
-    uuid: '04E668BA-E24F-43FF-A135-A085EC3DBE40'
+  'TBSputumSubmitted': {
+    uuid: '664bb97c-977f-11e1-8993-905e29aff6c1'
   },
 };
 
@@ -483,7 +483,7 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.satisfactorySampleQuality.uuid, name: CONCEPTS.satisfactorySampleQuality.name },
     { uuid: CONCEPTS.unsatisfactorySampleQuality.uuid, name: CONCEPTS.unsatisfactorySampleQuality.name },
   ],
-  'sputumReceived': [
+  'sputumReceivedAnswers': [
     { uuid: CONCEPTS.SputumReceivedTrue.uuid, name: CONCEPTS.SputumReceivedTrue.name },
     { uuid: CONCEPTS.SputumReceivedFalse.uuid, name: CONCEPTS.SputumReceivedFalse.name },
   ],
