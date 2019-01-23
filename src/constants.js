@@ -355,7 +355,6 @@ export const CONCEPTS = {
     },
     'Other': {
       uuid: '656cce7e-977f-11e1-8993-905e29aff6c1',
-      name: 'Other'
     }
   },
   'TBTestType': {
@@ -609,6 +608,10 @@ export const HTC_ALERTS_CATEGORIES = [
 
 export const EID_ALERTS_CATEGORIES = [
   "eid"
+];
+
+export const SPUTUM_ALERTS_CATEGORIES = [
+  "sputum"
 ];
 
 export const EID_RAPID_TEST = [
