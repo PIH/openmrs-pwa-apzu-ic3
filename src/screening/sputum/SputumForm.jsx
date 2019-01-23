@@ -5,7 +5,6 @@ import { Obs, formUtil, selectors } from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
-import { setFlex, padding } from "../../pwaStyles";
 
 class SputumForm extends React.PureComponent {
 
@@ -48,7 +47,7 @@ class SputumForm extends React.PureComponent {
           style={{ display: (typeof this.props.sputumReceived !== 'undefined') && (this.props.sputumReceived === CONCEPTS.True.uuid) ? 'block' : 'none' }}
         >
           <Row>
-            <Col>
+            <Col componentClass={ControlLabel}>
               Sample quality
             </Col>
           </Row>
