@@ -37,7 +37,7 @@ class SputumForm extends React.PureComponent {
             <FormGroup controlId="formBled">
               <Obs
                 concept={CONCEPTS.SputumReceived.uuid}
-                conceptAnswers={FORM_ANSWERS.sputumReceivedYesNo}
+                conceptAnswers={FORM_ANSWERS.sputumReceived}
                 path="sputum-received"
               />
             </FormGroup>
