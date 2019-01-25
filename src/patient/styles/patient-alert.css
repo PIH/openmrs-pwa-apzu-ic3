@@ -1,0 +1,71 @@
+
+.well {
+  margin-bottom: 0px !important;
+  border-radius: 0px !important;
+  background: #f4757b;
+  border: 1px solid #dd131d;
+  padding: 15px !important;
+  font-size: 20px;
+  height: 100%;
+}
+
+.alert-summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+}
+
+.patient-alert.closed {
+  height: 50px;
+}
+
+.patient-alert.open {
+  height: unset;
+}
+
+.alert-icon {
+  color: #d8020c;
+  font-size: 15px;
+}
+
+.alert-dropdown, .alert-dropdown-close {
+  color: #d8020c;
+  position: relative;
+  font-size: 25px;
+  left: 20px;
+  bottom: 5px;
+}
+
+.alert-dropdown-close {
+    font-size: 18px;
+    bottom: 0px;
+}
+
+.alert-items {
+  display: table;
+  width: 100%;
+}
+
+.critical-alert, .abnormal-alert, .alert-description {
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.critical-alert{
+  color: #d8020c;
+}
+
+.alert-item {
+  display: table-row;
+}
+
+.alert-item > span {
+  display: table-cell;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.alert-count {
+  font-weight: 800;
+}
