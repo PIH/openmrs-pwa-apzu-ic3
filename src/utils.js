@@ -1,5 +1,5 @@
 import dateFns from 'date-fns';
-import {patientUtil} from '@openmrs/react-components';
+import { patientUtil } from '@openmrs/react-components';
 import {
   ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, EID_RAPID_TEST,
   EID_DNA_PCR
@@ -28,6 +28,59 @@ const utils = {
     return utils.formatRestDate(dateFns.endOfYesterday());
   },
 
+  getIdentifiersToDisplay(patient, currentLocationPrefix, cccNumber, hccNumber) {
+    let identifiers = [], additionalIdentifiers = [];
+    const baseIdentifiers = patientUtil.getIdentifiers(patient);
+    const hasCCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, cccNumber);
+    const hasHCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, hccNumber);
+
+    // Check if it had CCC identifier, if only 1 use as default
+    if (hasCCCIdentifier.length === 1) {
+      identifiers.push(hasCCCIdentifier[0].identifier);
+    } else if (hasCCCIdentifier.length > 1) {
+      // If more than 1 CCC identifier, use current location identifier
+      const getCccCurrentLocation = hasCCCIdentifier.find(identifier => identifier.identifier.match(currentLocationPrefix));
+      if (getCccCurrentLocation && currentLocationPrefix) {
+        identifiers.push(getCccCurrentLocation[0].identifier);
+      } else {
+        // If more than 1 CCC identifier and no currentLocation use preferred
+        const getCccPreferred = hasCCCIdentifier.find(identifier => identifier.preferred === true);
+        if (getCccPreferred) {
+          identifiers.push(getCccPreferred[0].identifier);
+        } else {
+          // if NO preferred CCC identifier, use first one
+          identifiers.push(hasCCCIdentifier[0].identifier);
+        }
+      }
+    }
+
+    if (hasHCCIdentifier.length === 1) {
+      identifiers.push(hasHCCIdentifier[0].identifier);
+    } else if (hasHCCIdentifier.length > 1) {
+      const getHccCurrentLocation = hasCCCIdentifier.find(identifier => identifier.identifier.match(currentLocationPrefix));
+      if (getHccCurrentLocation && currentLocationPrefix) {
+        identifiers.push(getHccCurrentLocation[0].identifier);
+      } else {
+        const getHccPreferred = hasHCCIdentifier.find(identifier => identifier.preferred === true);
+        if (getHccPreferred) {
+          identifiers.push(getHccPreferred[0].identifier);
+        } else {
+          identifiers.push(hasHCCIdentifier[0].identifier);
+        }
+      }
+    }
+      
+    const patientIdentifiersLength = identifiers.length;
+    let uniqueIdentifiers = [...new Set(identifiers.concat(baseIdentifiers))];
+    uniqueIdentifiers.splice(0, patientIdentifiersLength);
+
+    if (identifiers.length === 0) {
+      identifiers.push(uniqueIdentifiers[0]);
+      uniqueIdentifiers.splice(0, 1);
+    }
+    additionalIdentifiers = uniqueIdentifiers;
+    return { identifiers, additionalIdentifiers };
+  },
   /* getPatientArtIdentifier: (patient) => {
      return patientUtil.getIdentifier(patient, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
    },
@@ -95,7 +148,7 @@ const utils = {
   },
 
   findByUuid: (o, uuid) => {
-      //early return
+    //early return
     if (o.uuid === uuid) {
       return o;
     }
@@ -104,7 +157,7 @@ const utils = {
     for (p in  o) {
       if ( o.hasOwnProperty(p) && typeof o[p] === 'object') {
         result = utils.findByUuid(o[p], uuid);
-        if(result) {
+        if (result) {
           return result;
         }
       }
@@ -162,7 +215,7 @@ const utils = {
     let sessionNumber = null;
     obs.forEach(function(observation) {
       if (observation.concept.uuid === CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.uuid ) {
-        switch(observation.value.uuid) {
+        switch (observation.value.uuid) {
           case CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.uuid:
             sessionNumber = CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.name;
             break;
