@@ -156,7 +156,7 @@ class NutritionForm extends React.Component {
           </Col>
         }
 
-        { ((this.props.patient.age < 18) || ( (this.props.patient.age >= 18) && (this.props.patient.gender === 'F') && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.True.uuid))) &&
+          {((this.props.patient.age < 18) || ((this.props.patient.age >= 18) && (this.props.patient.gender === 'F') && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.Yes.uuid))) &&
           <Col sm={12}>
             <div>
                 <ControlLabel xs={6}>
