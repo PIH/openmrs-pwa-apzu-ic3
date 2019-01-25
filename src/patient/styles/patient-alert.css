@@ -43,8 +43,8 @@
 }
 
 .alert-items {
-  display: flex;
-  flex-direction: column;
+  display: table;
+  width: 100%;
 }
 
 .critical-alert, .abnormal-alert, .alert-description {
@@ -57,9 +57,13 @@
 }
 
 .alert-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  display: table-row;
+}
+
+.alert-item > span {
+  display: table-cell;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
 .alert-count {
