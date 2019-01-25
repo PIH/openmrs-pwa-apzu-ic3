@@ -46,6 +46,10 @@ Need to set Android to remote debugging using the "magic" steps here:
 
 https://developers.google.com/web/tools/chrome-devtools/remote-debugging/?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3
 
+After setting up remote debugging, setup PORT forwarding using the resources here, we need this so the tablet can open links served by local servers:
+
+https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server
+
 ## CORS Configuration on TomCat7 Server
 
 A CORS filter was added to web.xml at /usr/local/~project-folder~/config/web.xml.
