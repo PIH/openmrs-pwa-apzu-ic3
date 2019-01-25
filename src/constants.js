@@ -114,6 +114,7 @@ export const LOCATION_TYPES = {
   }
 };
 
+// annoyingly we use both "True/False" and "Yes/No" in Malawi behind the scenes, separate concepts with separate uuids
 export const CONCEPTS = {
   'True': {
     uuid: '655e2f90-977f-11e1-8993-905e29aff6c1',
@@ -121,6 +122,14 @@ export const CONCEPTS = {
   },
   'False': {
     uuid: '655e3148-977f-11e1-8993-905e29aff6c1',
+    name: 'No'
+  },
+  'Yes': {
+    uuid: '65576354-977f-11e1-8993-905e29aff6c1',
+    name: 'Yes'
+  },
+  'No': {
+    uuid: '6557646c-977f-11e1-8993-905e29aff6c1',
     name: 'No'
   },
   'SputumReceived': {
@@ -490,6 +499,10 @@ export const FORM_ANSWERS = {
   'trueFalse' : [
     { uuid: CONCEPTS.True.uuid, name: CONCEPTS.True.name },
     { uuid: CONCEPTS.False.uuid, name: CONCEPTS.False.name },
+  ],
+  'yesNo': [
+    { uuid: CONCEPTS.Yes.uuid, name: CONCEPTS.Yes.name },
+    { uuid: CONCEPTS.No.uuid, name: CONCEPTS.No.name },
   ],
   'eidNoSampleAnswers': [
     { uuid: CONCEPTS.UnableToDrawBlood.uuid, name: CONCEPTS.UnableToDrawBlood.name },

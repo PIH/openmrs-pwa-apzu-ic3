@@ -124,7 +124,7 @@ class NutritionForm extends React.Component {
               <Col xs={5}>
                 <Obs
                   concept={CONCEPTS.Pregnant.uuid}
-                  conceptAnswers={FORM_ANSWERS.trueFalse}
+                  conceptAnswers={FORM_ANSWERS.yesNo}
                   path="pregnant"
                 />
               </Col>
