@@ -190,6 +190,10 @@ export const CONCEPTS = {
   'Pregnant': {
     uuid: '656fbd28-977f-11e1-8993-905e29aff6c1'
   },
+  'BMI': {
+    uuid: '655d615a-977f-11e1-8993-905e29aff6c1',
+    display: 'BMI (calculated)'
+  },
   'HIV_TEST_TYPE': {
     uuid: '655bee06-977f-11e1-8993-905e29aff6c1',
     name: 'HIV Test Type'

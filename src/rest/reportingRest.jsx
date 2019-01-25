@@ -57,8 +57,18 @@ const api = {
           return response.data;
         }
       });
-  }
+  },
 
+  getIC3NutritionHistory: (params) => {
+    return axiosInstance.get("pihmalawi/ic3NutritionHistory?patient=" + params.patient)
+      .then((response) => {
+        if (response.status !== 200) {
+          throw response;
+        } else {
+          return response.data;
+        }
+      });
+  }
 
 };
 
