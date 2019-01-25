@@ -2,7 +2,7 @@ import dateFns from 'date-fns';
 import { patientUtil } from '@openmrs/react-components';
 import {
   ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, EID_RAPID_TEST,
-  EID_DNA_PCR
+  EID_DNA_PCR, LOCATION_CODE_UUID
 } from "./constants";
 
 const utils = {
@@ -28,11 +28,12 @@ const utils = {
     return utils.formatRestDate(dateFns.endOfYesterday());
   },
 
-  getIdentifiersToDisplay(patient, currentLocationPrefix, cccNumber, hccNumber) {
-    let identifiers = [], additionalIdentifiers = [];
+  getIdentifiersToDisplay(patient, locations, currentLocation, cccNumber, hccNumber) {
     const baseIdentifiers = patientUtil.getIdentifiers(patient);
     const hasCCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, cccNumber);
     const hasHCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, hccNumber);
+    const currentLocationPrefix = utils.getCurrentLocationPrefix(locations, currentLocation);
+    let identifiers = [], additionalIdentifiers = [];
 
     // Check if it had CCC identifier, if only 1 use as default
     if (hasCCCIdentifier.length === 1) {
@@ -70,9 +71,15 @@ const utils = {
       }
     }
       
-    const patientIdentifiersLength = identifiers.length;
+    // If no identifiers matched those criterias above, chose the first one with the same current location
+    if (!identifiers.length) {
+      const currentLocationPatientIdentifier = baseIdentifiers.find(identifier => identifier.match(currentLocationPrefix));
+      if (currentLocationPatientIdentifier) {
+        identifiers.push(currentLocationPatientIdentifier)
+      }
+    }
     let uniqueIdentifiers = [...new Set(identifiers.concat(baseIdentifiers))];
-    uniqueIdentifiers.splice(0, patientIdentifiersLength);
+    uniqueIdentifiers.splice(0, identifiers.length);
 
     if (identifiers.length === 0) {
       identifiers.push(uniqueIdentifiers[0]);
@@ -81,6 +88,47 @@ const utils = {
     additionalIdentifiers = uniqueIdentifiers;
     return { identifiers, additionalIdentifiers };
   },
+
+  getLocationsPrefix (locations, currentLocation) {
+    const addedLocations = [];
+    if (locations && locations.length > 0) {
+      // eslint-disable-next-line
+      locations.map(location => {
+        if (location.attributes && location.attributes.length > 0) {
+          // eslint-disable-next-line
+          location.attributes.map(attribute => {
+            if (attribute.attributeType.uuid === LOCATION_CODE_UUID) {
+              addedLocations.push(attribute.value);
+            }
+          });
+        }
+      });
+    };
+    const currentLocationPrefix = utils.getCurrentLocationPrefix(locations, currentLocation)[0];
+    if (currentLocationPrefix) {
+      addedLocations.unshift(currentLocationPrefix);
+    }
+    return [...new Set(addedLocations)];
+  },
+
+  getCurrentLocationPrefix(locations, currentLocation) {
+    if (locations && locations.length > 0) {
+      let location = locations.filter(location => location.uuid === currentLocation.uuid)[0];
+      if (location.attributes && location.attributes.length > 0) {
+        // eslint-disable-next-line
+        return location.attributes.map(attribute => {
+          if (attribute.attributeType.uuid === LOCATION_CODE_UUID) {
+            return attribute.value;
+          }
+        });
+      } else {
+        return '';
+      }
+    } else {
+      return '';
+    }
+  },
+
   /* getPatientArtIdentifier: (patient) => {
      return patientUtil.getIdentifier(patient, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
    },
