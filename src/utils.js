@@ -2,7 +2,7 @@ import dateFns from 'date-fns';
 import { patientUtil } from '@openmrs/react-components';
 import {
   ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, EID_RAPID_TEST,
-  EID_DNA_PCR, LOCATION_CODE_UUID
+  EID_DNA_PCR, LOCATION_CODE_UUID, CCC_NUMBER, HCC_NUMBER
 } from "./constants";
 
 const utils = {
@@ -28,10 +28,10 @@ const utils = {
     return utils.formatRestDate(dateFns.endOfYesterday());
   },
 
-  getIdentifiersToDisplay(patient, locations, currentLocation, cccNumber, hccNumber) {
+  getIdentifiersToDisplay(patient, locations, currentLocation) {
     const baseIdentifiers = patientUtil.getIdentifiers(patient);
-    const hasCCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, cccNumber);
-    const hasHCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, hccNumber);
+    const hasCCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, CCC_NUMBER);
+    const hasHCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, HCC_NUMBER);
     const currentLocationPrefix = utils.getCurrentLocationPrefix(locations, currentLocation);
     let identifiers = [], additionalIdentifiers = [];
 

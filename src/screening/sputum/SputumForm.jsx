@@ -11,10 +11,14 @@ class SputumForm extends React.PureComponent {
   componentDidUpdate(prevProps) {
     // this clears out form values when the "Sputum received" question is changed
     if (typeof this.props.sputumReceived !== 'undefined' && this.props.sputumReceived !== prevProps.sputumReceived) {
-      if (this.props.sputumReceived === CONCEPTS.SputumReceivedFalse.uuid) {
+      if (this.props.sputumReceived === CONCEPTS.False.uuid) {
         this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('sputum-sample-quality', CONCEPTS.SampleQuality.uuid), null));
         this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('sputum-sample-quality', CONCEPTS.SampleQuality.uuid)));
 
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('sputum-laboratory-location', CONCEPTS.LabLocation.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('sputum-laboratory-location', CONCEPTS.LabLocation.uuid)));
+      }
+      if (this.props.sputumSampleQuality === CONCEPTS.unsatisfactorySampleQuality.uuid) {
         this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('sputum-laboratory-location', CONCEPTS.LabLocation.uuid), null));
         this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('sputum-laboratory-location', CONCEPTS.LabLocation.uuid)));
       }
@@ -28,7 +32,7 @@ class SputumForm extends React.PureComponent {
           <Col
             componentClass={ControlLabel}
           >
-            Sputum received
+            Sputum Received
           </Col>
         </Row>
         <Row>
@@ -48,7 +52,7 @@ class SputumForm extends React.PureComponent {
         >
           <Row>
             <Col componentClass={ControlLabel}>
-              Sample quality
+              Sample Quality
             </Col>
           </Row>
           <Row>
@@ -66,11 +70,12 @@ class SputumForm extends React.PureComponent {
 
 
         <span
-          style={{ display: (typeof this.props.sputumSampleQuality !== 'undefined') && (this.props.sputumSampleQuality === CONCEPTS.satisfactorySampleQuality.uuid) ? 'block' : 'none' }}
+          style={{ display: (typeof this.props.sputumSampleQuality !== 'undefined' || typeof this.props.sputumReceived !== 'undefined') && (this.props.sputumSampleQuality === CONCEPTS.satisfactorySampleQuality.uuid
+            && this.props.sputumReceived === CONCEPTS.True.uuid) ? 'block' : 'none' }}
         >
           <Row>
             <Col componentClass={ControlLabel}>
-             Laboratory location
+             Laboratory Location
             </Col>
           </Row>
           <Row>
@@ -78,7 +83,7 @@ class SputumForm extends React.PureComponent {
               <Col sm={12}>
                 <Obs
                   concept={CONCEPTS.LabLocation.uuid}
-                  conceptAnswers={FORM_ANSWERS.labLocation}
+                  conceptAnswers={FORM_ANSWERS.sputumLabLocation}
                   path="sputum-laboratory-location"
                 />
               </Col>
