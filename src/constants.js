@@ -651,3 +651,5 @@ export const EID_ALERTS = [
 ];
 export const PATIENT_IDENTIFIERS_SUFFIX = ['HCC', 'CCC'];
 export const LOCATION_CODE_UUID = '62eb8441-0326-11e6-8c93-e82aea237783';
+export const CCC_NUMBER = 'f24f52b7-daf4-4a35-9124-fbc00160a98d';
+export const HCC_NUMBER = '66786256-977f-11e1-8993-905e29aff6c1';
