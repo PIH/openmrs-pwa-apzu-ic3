@@ -150,11 +150,11 @@ export const CONCEPTS = {
   },
   'satisfactorySampleQuality': {
     uuid: '6559dde6-977f-11e1-8993-905e29aff6c1',
-    name: 'satisfactory'
+    name: 'Satisfactory'
   },
   'unsatisfactorySampleQuality': {
     uuid: '1304AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'unsatisfactory'
+    name: 'Unsatisfactory'
   },
   'SymptomPresent': {
     uuid: '6558d3ba-977f-11e1-8993-905e29aff6c1',
@@ -317,7 +317,7 @@ export const CONCEPTS = {
   },
   'microscopy': {
     uuid: '006bbf38-168b-4d7a-8012-ca81d5e9b059',
-    name: 'microscopy'
+    name: 'Microscopy'
   },
   'VIRAL_LOAD_TEST_SET': {
     uuid: '83931c6d-0e5a-4302-b8ce-a31175b6475e'
@@ -421,7 +421,7 @@ export const CONCEPTS = {
   },
   'UnsatisfactorySample': {
     uuid: '66188fb6-977f-11e1-8993-905e29aff6c1',
-    name: 'Unsatisfactory sample'
+    name: 'Unsatisfactory Sample'
   },
   'InappropriateSampleContainer': {
     uuid: '165181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
@@ -535,6 +535,10 @@ export const FORM_ANSWERS = {
   'labLocation': [
     { uuid: CONCEPTS.NenoGeneXpert.uuid, name: CONCEPTS.NenoGeneXpert.name },
     { uuid: CONCEPTS.CentralLaboratory.uuid, name: CONCEPTS.CentralLaboratory.name },
+    { uuid: CONCEPTS.LisungwiGeneXpert.uuid, name: CONCEPTS.LisungwiGeneXpert.name },
+  ],
+  'sputumLabLocation': [
+    { uuid: CONCEPTS.NenoGeneXpert.uuid, name: CONCEPTS.NenoGeneXpert.name },
     { uuid: CONCEPTS.LisungwiGeneXpert.uuid, name: CONCEPTS.LisungwiGeneXpert.name },
     { uuid: CONCEPTS.microscopy.uuid, name: CONCEPTS.microscopy.name },
   ],
