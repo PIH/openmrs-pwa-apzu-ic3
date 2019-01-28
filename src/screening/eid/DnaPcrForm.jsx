@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {change, formValueSelector, untouch} from 'redux-form';
 import {Obs, formUtil, selectors} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
-import { CONCEPTS, FORM_NAMES, FORM_ANSWERS } from "../../constants";
+import {CONCEPTS, FORM_ANSWERS} from "../../constants";
 import './styles/dna-pcr-form.css';
 
 class DnaPcrForm extends React.PureComponent {
@@ -103,8 +103,6 @@ class DnaPcrForm extends React.PureComponent {
     );
   }
 };
-
-const selector = formValueSelector(FORM_NAMES.eidFormName);
 
 export default connect((state, props) => {
   const selector = formValueSelector(props.formInstanceId);
