@@ -106,7 +106,8 @@ class DnaPcrForm extends React.PureComponent {
 
 const selector = formValueSelector(FORM_NAMES.eidFormName);
 
-export default connect(state => {
+export default connect((state, props) => {
+  const selector = formValueSelector(props.formInstanceId);
   const bled = selector(state, formUtil.obsFieldName('dna-pcr-bled', CONCEPTS.Bled.uuid));
   return {
     bled,
