@@ -9,7 +9,7 @@ import ScreeningForm from "../ScreeningForm";
 class ClinicianForm extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
-    if (typeof this.props.clinicalOutcome !== 'undefined' && this.props.clinicalOutcome !== prevProps.bled) {
+    if (typeof this.props.clinicalOutcome !== 'undefined' && this.props.clinicalOutcome !== prevProps.clinicalOutcome) {
       if (this.props.clinicalOutcome === CONCEPTS.ClinicalFollowUp.uuid) {
         this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('transfer-to-another-facility', CONCEPTS.TransferToAnotherFacility.uuid), null));
         this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('advanced-care', CONCEPTS.AdvancedCare.uuid), null));
