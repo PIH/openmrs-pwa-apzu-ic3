@@ -368,7 +368,7 @@ export const CONCEPTS = {
     },
     'Other': {
       uuid: '656cce7e-977f-11e1-8993-905e29aff6c1',
-      name: 'other'
+      name: 'Other'
     }
   },
   'TBTestType': {
