@@ -2,7 +2,7 @@ import dateFns from 'date-fns';
 import { patientUtil } from '@openmrs/react-components';
 import {
   ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, EID_RAPID_TEST,
-  EID_DNA_PCR, LOCATION_CODE_UUID, CCC_NUMBER, HCC_NUMBER
+  EID_DNA_PCR, LOCATION_CODE_UUID, CCC_NUMBER, HCC_NUMBER, ART_NUMBER
 } from "./constants";
 
 const utils = {
@@ -32,6 +32,7 @@ const utils = {
     const baseIdentifiers = patientUtil.getIdentifiers(patient);
     const hasCCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, CCC_NUMBER);
     const hasHCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, HCC_NUMBER);
+    const hasARTIdentifier = patientUtil.getIdentifiersAndPreferred(patient, ART_NUMBER);
     const currentLocationPrefix = utils.getCurrentLocationPrefix(locations, currentLocation);
     let identifiers = [], additionalIdentifiers = [];
 
@@ -67,6 +68,22 @@ const utils = {
           identifiers.push(getHccPreferred[0].identifier);
         } else {
           identifiers.push(hasHCCIdentifier[0].identifier);
+        }
+      }
+    }
+
+    if (hasARTIdentifier.length === 1) {
+      identifiers.push(hasARTIdentifier[0].identifier);
+    } else if (hasARTIdentifier.length > 1) {
+      const getArtCurrentLocation = hasARTIdentifier.find(identifier => identifier.identifier.match(currentLocationPrefix));
+      if (getArtCurrentLocation && currentLocationPrefix) {
+        identifiers.push(getArtCurrentLocation[0].identifier);
+      } else {
+        const getArtPreferred = hasARTIdentifier.find(identifier => identifier.preferred === true);
+        if (getArtPreferred) {
+          identifiers.push(getArtPreferred[0].identifier);
+        } else {
+          identifiers.push(hasARTIdentifier[0].identifier);
         }
       }
     }
