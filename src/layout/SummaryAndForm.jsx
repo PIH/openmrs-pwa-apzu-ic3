@@ -168,34 +168,36 @@ export class SummaryAndForm extends React.Component {
               </div>
             )}
           </Row>
-          <div className="swiping-summary-and-form">
-            <Swiper {...params} noSwiping={true} ref={node => { if (node) {this.swiper = node.swiper;}}}>
-              <div className="summary-form">
-                <Summary
-                  backLink={this.props.backLink}
-                  sliderButton={this.summarySwiperButton}
-                  summary={this.props.summary}
-                />
-              </div>
-              {this.props.patient.visit || !this.props.requireVisitForForm ? (
-                <div className="form-summary">
-                  <Form
+          <Row>
+            <div className="swiping-summary-and-form">
+              <Swiper {...params} noSwiping={true} ref={node => { if (node) {this.swiper = node.swiper;}}}>
+                <div className="summary-form">
+                  <Summary
                     backLink={this.props.backLink}
-                    form={this.props.form}
-                    formInstanceId={this.formInstanceId}
+                    sliderButton={this.summarySwiperButton}
+                    summary={this.props.summary}
                   />
                 </div>
-              ) : (
-                <div>
-                  <Col sm={8}>
-                    <div style={centerTextAlign}>
-                      <h4>Please check-in patient</h4>
-                    </div>
-                  </Col>
-                </div>
-              )}
-            </Swiper>
-          </div>
+                {this.props.patient.visit || !this.props.requireVisitForForm ? (
+                  <div className="form-summary">
+                    <Form
+                      backLink={this.props.backLink}
+                      form={this.props.form}
+                      formInstanceId={this.formInstanceId}
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <Col sm={8}>
+                      <div style={centerTextAlign}>
+                        <h4>Please check-in patient</h4>
+                      </div>
+                    </Col>
+                  </div>
+                )}
+              </Swiper>
+            </div>
+          </Row>
         </Grid>
       </div>
 
