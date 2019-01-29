@@ -47,16 +47,14 @@ class NutritionForm extends React.Component {
     let bmi = null;
     let bmiStyle = MALNUTRITION_LEVEL.none;
 
-    if ( typeof this.props.weight !== 'undefined' && typeof this.props.height === 'undefined') {
+    if (this.props.weight && !this.props.height) {
       bmi = utils.calculateBMI(this.props.weight, this.state.lastHeight);
       bmiStyle = utils.calculateBMIAlert(bmi);
-    } else {
+    } else if (this.props.weight && this.props.height) {
       bmi = utils.calculateBMI(this.props.weight, this.props.height);
       bmiStyle = utils.calculateBMIAlert(bmi);
     }
-    if (typeof this.props.weight === 'undefined') {
-      bmi = '00.00';
-    }
+
     const formContent = (
       <Grid>
         <br />
@@ -135,6 +133,7 @@ class NutritionForm extends React.Component {
         { (( this.props.patient.age >= 18 && this.props.patient.gender === 'M')
           || (this.props.patient.gender === 'F' && this.props.patient.age >= 18 && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.False.uuid))
           || (this.props.patient.gender === 'F' && this.props.patient.age > 50))&&
+        bmi &&
             <Col sm={12}>
               <div>
               <ControlLabel xs={6}>
@@ -145,7 +144,7 @@ class NutritionForm extends React.Component {
               <br />
 
               <Col sm={4}>
-                <h3 style={ labelTop }><Label bsStyle={bmiStyle.alert} style={{visibility: "visible"}}>{ bmi ? bmi : "00.00" }</Label>
+                <h3 style={labelTop}><Label bsStyle={bmiStyle.alert} style={{ visibility: "visible" }}>{bmi}</Label>
                 </h3>
               </Col>
 

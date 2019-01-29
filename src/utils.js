@@ -2,7 +2,7 @@ import dateFns from 'date-fns';
 import { patientUtil } from '@openmrs/react-components';
 import {
   ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, EID_RAPID_TEST,
-  EID_DNA_PCR, LOCATION_CODE_UUID, CCC_NUMBER, HCC_NUMBER, ART_NUMBER
+  EID_DNA_PCR, LOCATION_CODE_UUID, CCC_NUMBER, HCC_NUMBER, ART_NUMBER,
 } from "./constants";
 
 const utils = {
@@ -320,7 +320,7 @@ const utils = {
 
   calculateBMI: (weight, height) => {
     let bmi = null;
-    if (weight !== null && height !== null ) {
+    if (weight && height) {  // would be better to test against null here, but it appears that in most cases we pass in empty string if null, which is what we get passed through
       bmi = (( weight / ( height * height) ) * 10000).toFixed(1);
     }
     return bmi;
@@ -328,11 +328,11 @@ const utils = {
 
   calculateBMIAlert: (bmi) => {
     let alert = MALNUTRITION_LEVEL.default;
-    if ( bmi < 16) {
+    if (bmi < CONCEPTS.BMI.lowCritical) {
       alert = MALNUTRITION_LEVEL.severe;
-    } else if ( bmi >= 16 && bmi < 18.4) {
+    } else if (bmi >= CONCEPTS.BMI.lowCritical && bmi <= CONCEPTS.BMI.lowNormal) {
       alert = MALNUTRITION_LEVEL.moderate;
-    } else if ( bmi >=18.4 && bmi < 24.9) {
+    } else if (bmi >= CONCEPTS.BMI.lowNormal && bmi < CONCEPTS.BMI.hiNormal) {
       alert = MALNUTRITION_LEVEL.normal;
     } else {
       alert = MALNUTRITION_LEVEL.overweight;

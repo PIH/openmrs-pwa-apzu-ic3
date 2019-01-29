@@ -192,7 +192,10 @@ export const CONCEPTS = {
   },
   'BMI': {
     uuid: '655d615a-977f-11e1-8993-905e29aff6c1',
-    display: 'BMI (calculated)'
+    display: 'BMI (calculated)',
+    hiNormal: 24.9,
+    lowNormal: 18.4,
+    lowCritical: 16
   },
   'HIV_TEST_TYPE': {
     uuid: '655bee06-977f-11e1-8993-905e29aff6c1',
