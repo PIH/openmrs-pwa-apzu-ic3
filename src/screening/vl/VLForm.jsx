@@ -94,7 +94,7 @@ class VLForm extends React.PureComponent {
           style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}>
           <Row>
             <Col componentClass={ControlLabel}>
-              Reason for testing
+              Lab location
             </Col>
           </Row>
           <Row>
