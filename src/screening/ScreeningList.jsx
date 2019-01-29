@@ -141,7 +141,6 @@ export class ScreeningList extends React.Component {
       },
       {
         key: 4,
-        expanded: false,
         title: "Optional",
         // the list of tasks is the targeted + routine combined but with their "required" function inversed
         // (... ie all those that are not required)
