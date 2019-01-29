@@ -177,21 +177,6 @@ class NutritionForm extends React.Component {
             </FormGroup>
           </Col>
           }
-          {/* commenting this out, will likely move functionality to centralized alerts <FormGroup controlId="formMalnutrition">
-              <ControlLabel xs={2} style={centerElements}>
-                <span style={{visibility: this.props.showMalnutrition}}>Malnutrition</span>
-              </ControlLabel>
-              <br />
-              <Col xs={4} xsOffset={4}>
-                <Alert
-                  bsStyle={this.props.malnutrition ? this.props.malnutrition.alert : "info"}
-                  style={{visibility: (this.props.malnutrition && this.props.malnutrition.message) ? "visible" : "hidden" }}
-                >
-                  {this.props.malnutrition ? this.props.malnutrition.message : " "}
-                </Alert>
-              </Col>
-
-            </FormGroup>*/}
         </Row>
       </Grid>
     );
@@ -225,20 +210,10 @@ export default connect((state, props) => {
   const muac = selector(state, formUtil.obsFieldName('muac', CONCEPTS.MUAC.uuid));
   const pregnant = selector(state, formUtil.obsFieldName('pregnant', CONCEPTS.Pregnant.uuid));
 
-  /*commenting this out, will likely move functionality to centralized alerts
-    const malnutrition = utils.calculateMalnutritionLevel(bmi, muac, patient ? patient.age : null, pregnant);
-    let showMalnutrition = "hidden";
-    if (malnutrition &&
-      (malnutrition === MALNUTRITION_LEVEL.moderate || malnutrition === MALNUTRITION_LEVEL.severe)) {
-      showMalnutrition = "visible";
-    }
-  */
   return {
     weight,
     height,
     pregnant,
-    /* malnutrition,
-     showMalnutrition,*/
     patient,
   };
 })(NutritionForm);
