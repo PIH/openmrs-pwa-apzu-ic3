@@ -197,6 +197,9 @@ export const CONCEPTS = {
     lowNormal: 18.4,
     lowCritical: 16
   },
+  'HIV_TEST_CONSTRUCT': {
+    uuid: '655dca78-977f-11e1-8993-905e29aff6c1'
+  },
   'HIV_TEST_TYPE': {
     uuid: '655bee06-977f-11e1-8993-905e29aff6c1',
     name: 'HIV Test Type'
