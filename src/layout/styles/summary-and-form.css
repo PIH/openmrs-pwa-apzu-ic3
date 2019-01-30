@@ -121,3 +121,7 @@
   display: flex;
   justify-content: center;
 }
+
+.div-container.summary-and-form {
+  padding-top: 300px;
+}

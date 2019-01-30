@@ -11,12 +11,12 @@ const Layout = props => {
 
   return (
     <div>
-      <SystemAlert />
       <BasicLayout
         identifiersToDisplay={utils.getIdentifiersToDisplay}
         logo={logo}
         navMenuPages={NAV_MENU_PAGES}
         PatientAlert={PatientAlert}
+        SystemAlert={SystemAlert}
         smallWidthLogo={potraitLogo}
         userMenuPages={USER_MENU_PAGES}
         {...props}
