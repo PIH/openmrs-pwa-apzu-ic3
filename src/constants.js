@@ -319,7 +319,7 @@ export const CONCEPTS = {
     name: 'Lisungwi GeneXpert'
   },
   'microscopy': {
-    uuid: '006bbf38-168b-4d7a-8012-ca81d5e9b059',
+    uuid: '65628356-977f-11e1-8993-905e29aff6c1',
     name: 'Microscopy'
   },
   'VIRAL_LOAD_TEST_SET': {
