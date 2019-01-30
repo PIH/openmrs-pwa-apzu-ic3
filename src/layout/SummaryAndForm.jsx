@@ -80,7 +80,6 @@ export class SummaryAndForm extends React.Component {
   }
 
   submitForm() {
-    console.log('yoho');
     this.props.dispatch(formActions.setFormState(this.formInstanceId, FORM_STATES.VIEWING));
     this.props.dispatch(submit(this.formInstanceId));
   }
