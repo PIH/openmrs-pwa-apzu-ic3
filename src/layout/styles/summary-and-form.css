@@ -125,3 +125,7 @@
 .div-container.summary-and-form {
   padding-top: 300px;
 }
+
+.disabled-btn {
+  color: gray;
+}
