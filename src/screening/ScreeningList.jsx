@@ -11,6 +11,7 @@ import adherenceFilters from './adherence/adherenceFilters';
 import checkInFilters from "../checkin/checkInFilters";
 import tbFilters from "./tb/tbFilters";
 import tbTestResultFilters from "./tbTest/tbTestResultFilters";
+import sputumFilters from "./sputum/sputumFilters";
 
 export class ScreeningList extends React.Component {
   render() {
@@ -50,6 +51,12 @@ export class ScreeningList extends React.Component {
         completed: tbTestResultFilters.completed,
         link: '/screening/tb-test/form',
         required: tbTestResultFilters.required,
+      },
+      {
+        title: "Sputum",
+        completed: sputumFilters.completed,
+        link: '/screening/sputum/form',
+        required: sputumFilters.required,
       },
     /*    {
           title: "A1C",
@@ -134,7 +141,6 @@ export class ScreeningList extends React.Component {
       },
       {
         key: 4,
-        expanded: false,
         title: "Optional",
         // the list of tasks is the targeted + routine combined but with their "required" function inversed
         // (... ie all those that are not required)

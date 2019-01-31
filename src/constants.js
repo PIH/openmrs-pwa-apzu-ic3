@@ -45,6 +45,9 @@ export const ENCOUNTER_TYPES = {
   'ClinicalPlan': {
     uuid: '04E668BA-E24F-43FF-A135-A085EC3DBE40'
   },
+  'TBSputumSubmitted': {
+    uuid: '664bb97c-977f-11e1-8993-905e29aff6c1'
+  },
 };
 
 export const ENCOUNTER_ROLES = {
@@ -111,6 +114,7 @@ export const LOCATION_TYPES = {
   }
 };
 
+// annoyingly we use both "True/False" and "Yes/No" in Malawi behind the scenes, separate concepts with separate uuids
 export const CONCEPTS = {
   'True': {
     uuid: '655e2f90-977f-11e1-8993-905e29aff6c1',
@@ -119,6 +123,38 @@ export const CONCEPTS = {
   'False': {
     uuid: '655e3148-977f-11e1-8993-905e29aff6c1',
     name: 'No'
+  },
+  'Yes': {
+    uuid: '65576354-977f-11e1-8993-905e29aff6c1',
+    name: 'Yes'
+  },
+  'No': {
+    uuid: '6557646c-977f-11e1-8993-905e29aff6c1',
+    name: 'No'
+  },
+  'SputumReceived': {
+    uuid: '165252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Sputum received'
+  },
+  'SampleQuality': {
+    uuid: '165253AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Sputum received'
+  },
+  'SputumReceivedTrue': {
+    uuid: '3cd6f600-26fe-102b-80cb-0017a47871b2',
+    name: 'Yes'
+  },
+  'SputumReceivedFalse': {
+    uuid: '3cd6f86c-26fe-102b-80cb-0017a47871b2',
+    name: 'No'
+  },
+  'satisfactorySampleQuality': {
+    uuid: '6559dde6-977f-11e1-8993-905e29aff6c1',
+    name: 'Satisfactory'
+  },
+  'unsatisfactorySampleQuality': {
+    uuid: '1304AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    name: 'Unsatisfactory'
   },
   'SymptomPresent': {
     uuid: '6558d3ba-977f-11e1-8993-905e29aff6c1',
@@ -153,6 +189,16 @@ export const CONCEPTS = {
   },
   'Pregnant': {
     uuid: '656fbd28-977f-11e1-8993-905e29aff6c1'
+  },
+  'BMI': {
+    uuid: '655d615a-977f-11e1-8993-905e29aff6c1',
+    display: 'BMI (calculated)',
+    hiNormal: 24.9,
+    lowNormal: 18.4,
+    lowCritical: 16
+  },
+  'HIV_TEST_CONSTRUCT': {
+    uuid: '655dca78-977f-11e1-8993-905e29aff6c1'
   },
   'HIV_TEST_TYPE': {
     uuid: '655bee06-977f-11e1-8993-905e29aff6c1',
@@ -275,6 +321,10 @@ export const CONCEPTS = {
     uuid: 'e08212b8-955d-11e7-abc4-cec278b6b50a',
     name: 'Lisungwi GeneXpert'
   },
+  'microscopy': {
+    uuid: '65628356-977f-11e1-8993-905e29aff6c1',
+    name: 'Microscopy'
+  },
   'VIRAL_LOAD_TEST_SET': {
     uuid: '83931c6d-0e5a-4302-b8ce-a31175b6475e'
   },
@@ -377,7 +427,7 @@ export const CONCEPTS = {
   },
   'UnsatisfactorySample': {
     uuid: '66188fb6-977f-11e1-8993-905e29aff6c1',
-    name: 'Unsatisfacctory sample'
+    name: 'Unsatisfactory Sample'
   },
   'InappropriateSampleContainer': {
     uuid: '165181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
@@ -470,9 +520,21 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.name },
     { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Other.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.Other.name }
   ],
+  'sampleQualityAnswers': [
+    { uuid: CONCEPTS.satisfactorySampleQuality.uuid, name: CONCEPTS.satisfactorySampleQuality.name },
+    { uuid: CONCEPTS.unsatisfactorySampleQuality.uuid, name: CONCEPTS.unsatisfactorySampleQuality.name },
+  ],
+  'sputumReceivedAnswers': [
+    { uuid: CONCEPTS.SputumReceivedTrue.uuid, name: CONCEPTS.SputumReceivedTrue.name },
+    { uuid: CONCEPTS.SputumReceivedFalse.uuid, name: CONCEPTS.SputumReceivedFalse.name },
+  ],
   'trueFalse' : [
     { uuid: CONCEPTS.True.uuid, name: CONCEPTS.True.name },
     { uuid: CONCEPTS.False.uuid, name: CONCEPTS.False.name },
+  ],
+  'yesNo': [
+    { uuid: CONCEPTS.Yes.uuid, name: CONCEPTS.Yes.name },
+    { uuid: CONCEPTS.No.uuid, name: CONCEPTS.No.name },
   ],
   'eidNoSampleAnswers': [
     { uuid: CONCEPTS.UnableToDrawBlood.uuid, name: CONCEPTS.UnableToDrawBlood.name },
@@ -502,6 +564,11 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.NenoGeneXpert.uuid, name: CONCEPTS.NenoGeneXpert.name },
     { uuid: CONCEPTS.CentralLaboratory.uuid, name: CONCEPTS.CentralLaboratory.name },
     { uuid: CONCEPTS.LisungwiGeneXpert.uuid, name: CONCEPTS.LisungwiGeneXpert.name },
+  ],
+  'sputumLabLocation': [
+    { uuid: CONCEPTS.NenoGeneXpert.uuid, name: CONCEPTS.NenoGeneXpert.name },
+    { uuid: CONCEPTS.LisungwiGeneXpert.uuid, name: CONCEPTS.LisungwiGeneXpert.name },
+    { uuid: CONCEPTS.microscopy.uuid, name: CONCEPTS.microscopy.name },
   ],
   "hivTestResultAnswers": [
     { uuid: CONCEPTS.HIV_TEST_RESULTS.Reactive.uuid, name: CONCEPTS.HIV_TEST_RESULTS.Reactive.name },
@@ -599,6 +666,10 @@ export const EID_ALERTS_CATEGORIES = [
   "eid"
 ];
 
+export const SPUTUM_ALERTS_CATEGORIES = [
+  "sputum"
+];
+
 export const EID_RAPID_TEST = [
   "eid-routine-12-month-rapid-test",
   "eid-routine-24-month-rapid-test"
@@ -614,3 +685,6 @@ export const EID_ALERTS = [
 ];
 export const PATIENT_IDENTIFIERS_SUFFIX = ['HCC', 'CCC'];
 export const LOCATION_CODE_UUID = '62eb8441-0326-11e6-8c93-e82aea237783';
+export const CCC_NUMBER = 'f24f52b7-daf4-4a35-9124-fbc00160a98d';
+export const HCC_NUMBER = '66786256-977f-11e1-8993-905e29aff6c1';
+export const ART_NUMBER = '66784d84-977f-11e1-8993-905e29aff6c1';

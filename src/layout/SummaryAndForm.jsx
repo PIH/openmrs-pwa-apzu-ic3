@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {Col, Grid, Row, Glyphicon} from "react-bootstrap";
 import Swiper from 'react-id-swiper';
 import { withRouter } from 'react-router-dom';
-import {submit, isInvalid, isSubmitting} from 'redux-form';
+import {submit, isInvalid, isSubmitting, isPristine } from 'redux-form';
 import uuidv4 from 'uuid/v4';
 import {selectors, formActions, FORM_STATES} from "@openmrs/react-components";
 import 'react-id-swiper/src/styles/css/swiper.css';
@@ -23,6 +23,7 @@ export class SummaryAndForm extends React.Component {
     this.submitForm = this.submitForm.bind(this);
     this.getFormState = this.getFormState.bind(this);
     this.getFormSubmitting = this.getFormSubmitting.bind(this);
+    this.getFormPristine = this.getFormPristine.bind(this);
     this.getFormInvalid = this.getFormInvalid.bind(this);
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
@@ -99,11 +100,16 @@ export class SummaryAndForm extends React.Component {
     return isInvalid(this.formInstanceId, (reduxForm) => reduxForm)(this.props.reduxForm);
   }
 
+  getFormPristine() {
+    return isPristine(this.formInstanceId, (reduxForm) => reduxForm)(this.props.reduxForm);
+  }
+
   render() {
     const params = {
       spaceBetween: 30,
     };
     const formViewIsActive = this.state.currentView === 'form';
+    const isSaveDisabled = this.getFormSubmitting() || this.getFormInvalid() || this.getFormPristine();
     return (
       <div className="div-container summary-and-form">
         <Grid className="div-container">
@@ -135,7 +141,8 @@ export class SummaryAndForm extends React.Component {
               (
                 <div className="form-action-btns">
                   {this.getFormState() === FORM_STATES.EDITING ?
-                    (<button disabled={this.getFormSubmitting() || this.getFormInvalid()}
+                    (<button disabled={isSaveDisabled}
+                      className={isSaveDisabled ? 'disabled-btn' : 'enabled-btn'}
                       onClick={this.submitForm}>Save</button>) :
                     (<button onClick={this.enterEditMode}>Edit</button>)
                   }
@@ -168,34 +175,36 @@ export class SummaryAndForm extends React.Component {
               </div>
             )}
           </Row>
-          <div className="swiping-summary-and-form">
-            <Swiper {...params} noSwiping={true} ref={node => { if (node) {this.swiper = node.swiper;}}}>
-              <div className="summary-form">
-                <Summary
-                  backLink={this.props.backLink}
-                  sliderButton={this.summarySwiperButton}
-                  summary={this.props.summary}
-                />
-              </div>
-              {this.props.patient.visit || !this.props.requireVisitForForm ? (
-                <div className="form-summary">
-                  <Form
+          <Row>
+            <div className="swiping-summary-and-form">
+              <Swiper {...params} noSwiping={true} ref={node => { if (node) {this.swiper = node.swiper;}}}>
+                <div className="summary-form">
+                  <Summary
                     backLink={this.props.backLink}
-                    form={this.props.form}
-                    formInstanceId={this.formInstanceId}
+                    sliderButton={this.summarySwiperButton}
+                    summary={this.props.summary}
                   />
                 </div>
-              ) : (
-                <div>
-                  <Col sm={8}>
-                    <div style={centerTextAlign}>
-                      <h4>Please check-in patient</h4>
-                    </div>
-                  </Col>
-                </div>
-              )}
-            </Swiper>
-          </div>
+                {this.props.patient.visit || !this.props.requireVisitForForm ? (
+                  <div className="form-summary">
+                    <Form
+                      backLink={this.props.backLink}
+                      form={this.props.form}
+                      formInstanceId={this.formInstanceId}
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <Col sm={8}>
+                      <div style={centerTextAlign}>
+                        <h4>Please check-in patient</h4>
+                      </div>
+                    </Col>
+                  </div>
+                )}
+              </Swiper>
+            </div>
+          </Row>
         </Grid>
       </div>
 

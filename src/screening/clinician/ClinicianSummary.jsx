@@ -24,10 +24,6 @@ const ClinicianSummary = props => {
         obs={obs}
         showDates={false}
       />
-      <h4><u>Alert this visit</u></h4>
-      <p>Lorem Ipsum is simply dummy text of the printing and 
-        typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s</p>
     </div>
   );
 };

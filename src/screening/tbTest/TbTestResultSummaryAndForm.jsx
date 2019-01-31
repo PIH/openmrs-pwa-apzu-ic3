@@ -7,7 +7,7 @@ const TbTestResultSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
-      backLink="/screening/vl/tabs"
+      backLink="/screening"
       form={<TbTestResultForm />}
       summary={<TbTestResultSummary />}
       title="Tuberculosis Test Result"

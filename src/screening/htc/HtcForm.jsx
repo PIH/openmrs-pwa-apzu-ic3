@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Obs, selectors} from '@openmrs/react-components';
+import {Obs, ObsGroup, selectors} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import {ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS} from "../../constants";
 import '../../assets/css/tabs.css';
@@ -18,10 +18,23 @@ let HtcForm = (props) => {
       <Row>
         <Col sm={12}>
           <FormGroup controlId="formHtc">
-            <Obs
-              concept={CONCEPTS.HIV_TEST_RESULTS.uuid}
-              conceptAnswers={FORM_ANSWERS.hivTestResultAnswers}
-              path="htc-results"/>
+            <ObsGroup
+              groupingConcept={CONCEPTS.HIV_TEST_CONSTRUCT}
+              path="htc-test-construct"
+            >
+              <Obs
+                concept={CONCEPTS.HIV_TEST_RESULTS.uuid}
+                conceptAnswers={FORM_ANSWERS.hivTestResultAnswers}
+                path="htc-results"
+              />
+              <span style={{ display: 'none' }}>
+                <Obs
+                  concept={CONCEPTS.HIV_TEST_TYPE}
+                  conceptAnswers={[CONCEPTS.HIV_RAPID_TEST]}
+                  path="htc-test-type"
+                />
+              </span>
+            </ObsGroup>
           </FormGroup>
         </Col>
       </Row>
@@ -31,6 +44,12 @@ let HtcForm = (props) => {
   return (
     <ScreeningForm
       backLink={props.backLink ? props.backLink : "/screening/htc/queue"}
+      defaultValues={[{
+        type: "obs",
+        path: ["htc-test-construct", "htc-test-type"],
+        conceptPath: [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.HIV_TEST_TYPE.uuid],
+        value: CONCEPTS.HIV_RAPID_TEST.uuid
+      }]}
       encounterType={ENCOUNTER_TYPES.HTCEncounterType}
       formContent={formContent}
       formId="htc-form"

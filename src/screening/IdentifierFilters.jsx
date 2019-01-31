@@ -1,11 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  Dropdown,
+  Dropdown
 } from '@openmrs/react-components';
 import { FormControl, Glyphicon } from 'react-bootstrap';
 import './IdentifierFilters.css';
-import { LOCATION_CODE_UUID, PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
+import { PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
+import utils from '../utils';
 
 const formatIdentifier = (identifier) => {
   const terms = identifier.split('-');
@@ -40,7 +41,7 @@ class ScreeningFilters extends React.Component {
       thirdIdentifierSearchValue: '',
       patientIdentifier: '',
       searchValue: '',
-      currentLocationPrefix: this.getCurrentLocationPrefix()
+      currentLocationPrefix: utils.getCurrentLocationPrefix(this.props.locations, this.props.currentLocation)
     };
   }
 
@@ -99,48 +100,10 @@ class ScreeningFilters extends React.Component {
     this.handleSearch(null, e.target.value, 'second');
   }
 
-  getLocationsPrefix = () => {
-    const { locations } = this.props;
-    const addedLocations = [];
-    if (locations && locations.length > 0) {
-      // eslint-disable-next-line
-      locations.map(location => {
-        if (location.attributes && location.attributes.length > 0) {
-          // eslint-disable-next-line
-          location.attributes.map(attribute => {
-            if (attribute.attributeType.uuid === LOCATION_CODE_UUID) {
-              addedLocations.push(attribute.value);
-            }
-          });
-        }
-      });
-    };
-    if (this.getCurrentLocationPrefix()[0]) {
-      addedLocations.unshift(this.getCurrentLocationPrefix()[0]);
-    }
-    return [...new Set(addedLocations)];
-  };
 
-  getCurrentLocationPrefix() {
-    const { locations, currentLocation } = this.props;
-    if (locations && locations.length > 0) {
-      let location = locations.filter(location => location.uuid === currentLocation.uuid)[0];
-      if (location.attributes && location.attributes.length > 0) {
-        // eslint-disable-next-line
-        return location.attributes.map(attribute => {
-          if (attribute.attributeType.uuid === LOCATION_CODE_UUID) {
-            return attribute.value;
-          }
-        });
-      } else {
-        return [];
-      }
-    } else {
-      return [];
-    }
-  }
 
   render() {
+    const { locations, currentLocation } = this.props;
     return (
       <div className="queue-filters">
         <div className="identifier-filter-container">
@@ -154,7 +117,7 @@ class ScreeningFilters extends React.Component {
                 textAlign: 'center',
               }}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
-              list={this.getLocationsPrefix()}
+              list={utils.getLocationsPrefix(locations, currentLocation)}
               placeholder=" "
             />
             <span>-</span>

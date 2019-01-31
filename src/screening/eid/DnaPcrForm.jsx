@@ -3,24 +3,29 @@ import { connect } from 'react-redux';
 import {change, formValueSelector, untouch} from 'redux-form';
 import {Obs, formUtil, selectors} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
-import { CONCEPTS, FORM_NAMES, FORM_ANSWERS } from "../../constants";
+import {CONCEPTS, FORM_ANSWERS} from "../../constants";
 import './styles/dna-pcr-form.css';
 
 class DnaPcrForm extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
+
+    const reasonNoSampleFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcrdr-reason-no-sample'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.ReasonForNoSample.uuid]);
+    const reasonForTestingFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-reason-for-testing'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.ReasonForTesting.uuid]);
+    const labLocationFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-lab-location'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.LabLocation.uuid]);
+
     // this clears out form values when the "bled" question is changed
     if (typeof this.props.bled !== 'undefined' && this.props.bled !== prevProps.bled) {
       if (this.props.bled === CONCEPTS.True.uuid) {
-        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid), null));
-        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('dna-pcrdr-reason-no-sample', CONCEPTS.ReasonForNoSample.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, reasonNoSampleFieldName, null));
+        this.props.dispatch(untouch(this.props.formInstanceId, reasonNoSampleFieldName));
       }
       else {
-        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid), null));
-        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-reason-for-testing', CONCEPTS.ReasonForTesting.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, reasonForTestingFieldName, null));
+        this.props.dispatch(untouch(this.props.formInstanceId, reasonForTestingFieldName));
 
-        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid), null));
-        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('dna-pcr-lab-location', CONCEPTS.LabLocation.uuid)));
+        this.props.dispatch(change(this.props.formInstanceId, labLocationFieldName, null));
+        this.props.dispatch(untouch(this.props.formInstanceId, labLocationFieldName));
       }
     }
   }
@@ -104,10 +109,9 @@ class DnaPcrForm extends React.PureComponent {
   }
 };
 
-const selector = formValueSelector(FORM_NAMES.eidFormName);
-
-export default connect(state => {
-  const bled = selector(state, formUtil.obsFieldName('dna-pcr-bled', CONCEPTS.Bled.uuid));
+export default connect((state, props) => {
+  const selector = formValueSelector(props.formInstanceId);
+  const bled = selector(state, formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-bled'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.Bled.uuid]));
   return {
     bled,
     patient: selectors.getSelectedPatientFromStore(state)

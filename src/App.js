@@ -39,6 +39,7 @@ import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import TbQueue from "./screening/tb/TbQueue";
 import AdherenceQueue from "./screening/adherence/AdherenceQueue";
+import SputumSummaryAndForm from "./screening/sputum/SputumSummaryAndForm";
 import AdherenceSummaryAndForm from "./screening/adherence/AdherenceSummaryAndForm";
 import HtcQueue from "./screening/htc/HtcQueue";
 import VLQueue from "./screening/vl/VLQueue";
@@ -111,6 +112,11 @@ const App = props => {
             <Layout
               component={BloodPressureSummaryAndForm}
               path="/screening/bloodPressure/form"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={SputumSummaryAndForm}
+              path="/screening/sputum/form"
               redirectOnLogin="/"
             />
             <Layout

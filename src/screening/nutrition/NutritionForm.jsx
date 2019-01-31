@@ -47,16 +47,14 @@ class NutritionForm extends React.Component {
     let bmi = null;
     let bmiStyle = MALNUTRITION_LEVEL.none;
 
-    if ( typeof this.props.weight !== 'undefined' && typeof this.props.height === 'undefined') {
+    if (this.props.weight && !this.props.height) {
       bmi = utils.calculateBMI(this.props.weight, this.state.lastHeight);
       bmiStyle = utils.calculateBMIAlert(bmi);
-    } else {
+    } else if (this.props.weight && this.props.height) {
       bmi = utils.calculateBMI(this.props.weight, this.props.height);
       bmiStyle = utils.calculateBMIAlert(bmi);
     }
-    if (typeof this.props.weight === 'undefined') {
-      bmi = '00.00';
-    }
+
     const formContent = (
       <Grid>
         <br />
@@ -124,7 +122,7 @@ class NutritionForm extends React.Component {
               <Col xs={5}>
                 <Obs
                   concept={CONCEPTS.Pregnant.uuid}
-                  conceptAnswers={FORM_ANSWERS.trueFalse}
+                  conceptAnswers={FORM_ANSWERS.yesNo}
                   path="pregnant"
                 />
               </Col>
@@ -135,6 +133,7 @@ class NutritionForm extends React.Component {
         { (( this.props.patient.age >= 18 && this.props.patient.gender === 'M')
           || (this.props.patient.gender === 'F' && this.props.patient.age >= 18 && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.False.uuid))
           || (this.props.patient.gender === 'F' && this.props.patient.age > 50))&&
+        bmi &&
             <Col sm={12}>
               <div>
               <ControlLabel xs={6}>
@@ -145,7 +144,7 @@ class NutritionForm extends React.Component {
               <br />
 
               <Col sm={4}>
-                <h3 style={ labelTop }><Label bsStyle={bmiStyle.alert} style={{visibility: "visible"}}>{ bmi ? bmi : "00.00" }</Label>
+                <h3 style={labelTop}><Label bsStyle={bmiStyle.alert} style={{ visibility: "visible" }}>{bmi}</Label>
                 </h3>
               </Col>
 
@@ -156,7 +155,7 @@ class NutritionForm extends React.Component {
           </Col>
         }
 
-        { ((this.props.patient.age < 18) || ( (this.props.patient.age >= 18) && (this.props.patient.gender === 'F') && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.True.uuid))) &&
+          {((this.props.patient.age < 18) || ((this.props.patient.age >= 18) && (this.props.patient.gender === 'F') && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.Yes.uuid))) &&
           <Col sm={12}>
             <div>
                 <ControlLabel xs={6}>
@@ -178,21 +177,6 @@ class NutritionForm extends React.Component {
             </FormGroup>
           </Col>
           }
-          {/* commenting this out, will likely move functionality to centralized alerts <FormGroup controlId="formMalnutrition">
-              <ControlLabel xs={2} style={centerElements}>
-                <span style={{visibility: this.props.showMalnutrition}}>Malnutrition</span>
-              </ControlLabel>
-              <br />
-              <Col xs={4} xsOffset={4}>
-                <Alert
-                  bsStyle={this.props.malnutrition ? this.props.malnutrition.alert : "info"}
-                  style={{visibility: (this.props.malnutrition && this.props.malnutrition.message) ? "visible" : "hidden" }}
-                >
-                  {this.props.malnutrition ? this.props.malnutrition.message : " "}
-                </Alert>
-              </Col>
-
-            </FormGroup>*/}
         </Row>
       </Grid>
     );
@@ -226,20 +210,10 @@ export default connect((state, props) => {
   const muac = selector(state, formUtil.obsFieldName('muac', CONCEPTS.MUAC.uuid));
   const pregnant = selector(state, formUtil.obsFieldName('pregnant', CONCEPTS.Pregnant.uuid));
 
-  /*commenting this out, will likely move functionality to centralized alerts
-    const malnutrition = utils.calculateMalnutritionLevel(bmi, muac, patient ? patient.age : null, pregnant);
-    let showMalnutrition = "hidden";
-    if (malnutrition &&
-      (malnutrition === MALNUTRITION_LEVEL.moderate || malnutrition === MALNUTRITION_LEVEL.severe)) {
-      showMalnutrition = "visible";
-    }
-  */
   return {
     weight,
     height,
     pregnant,
-    /* malnutrition,
-     showMalnutrition,*/
     patient,
   };
 })(NutritionForm);

@@ -62,7 +62,7 @@ let AdherenceForm = (props) => {
           <FormGroup controlId="formCounseledOnPillCounts">
             <Obs
               concept={CONCEPTS.ADHERENCE_COUNSELING.CounseledOnPillCounts.uuid}
-              conceptAnswers={FORM_ANSWERS.trueFalse}
+              conceptAnswers={FORM_ANSWERS.yesNo}
               path="adherence-counseled-on-pill-counts"
             />
           </FormGroup>
@@ -107,7 +107,7 @@ let AdherenceForm = (props) => {
           <FormGroup controlId="formCounseledOnVL">
             <Obs
               concept={CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad.uuid}
-              conceptAnswers={FORM_ANSWERS.trueFalse}
+              conceptAnswers={FORM_ANSWERS.yesNo}
               path="adherence-counseled-on-vl"
             />
           </FormGroup>
