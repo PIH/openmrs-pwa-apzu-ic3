@@ -138,7 +138,7 @@ export const CONCEPTS = {
   },
   'SampleQuality': {
     uuid: '165253AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Sputum received'
+    name: 'Sample Quality'
   },
   'SputumReceivedTrue': {
     uuid: '3cd6f600-26fe-102b-80cb-0017a47871b2',
@@ -155,16 +155,6 @@ export const CONCEPTS = {
   'unsatisfactorySampleQuality': {
     uuid: '1304AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
     name: 'Unsatisfactory'
-  },
-  'SymptomPresent': {
-    uuid: '6558d3ba-977f-11e1-8993-905e29aff6c1',
-    name: 'Symptom Present',
-    display: 'Yes'
-  },
-  'SymptomAbsent': {
-    uuid: '655b50fe-977f-11e1-8993-905e29aff6c1',
-    name: 'Symptom Absent',
-    display: 'No'
   },
   'SystolicBloodPressure' : {
     uuid: '6569bffe-977f-11e1-8993-905e29aff6c1',
@@ -335,6 +325,9 @@ export const CONCEPTS = {
     name: 'Microscopy'
   },
   'TB': {
+    'TuberculosisScreeningSet': {
+      uuid: '6000c2f8-4eb5-4fd9-ac83-a9a9d6bd8478',
+    },
     'Cough': {
       uuid: '65460a32-977f-11e1-8993-905e29aff6c1',
       name: 'Cough'
@@ -358,6 +351,16 @@ export const CONCEPTS = {
     'PainfulNeckAndArmpitLymphNodes': {
       uuid: '974d5caf-2db6-4d5d-b509-11c6f5340ea5',
       name: 'Painful nexk and armpit lymph nodes'
+    },
+    'SymptomPresent': {
+      uuid: '6558d3ba-977f-11e1-8993-905e29aff6c1',
+      name: 'Symptom Present',
+      display: 'Yes'
+    },
+    'SymptomAbsent': {
+      uuid: '655b50fe-977f-11e1-8993-905e29aff6c1',
+      name: 'Symptom Absent',
+      display: 'No'
     }
   },
   'SOURCE_OF_REFERRAL' : {
