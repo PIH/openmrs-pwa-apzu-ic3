@@ -454,9 +454,11 @@ export const CONCEPTS = {
       uuid: '6557987e-977f-11e1-8993-905e29aff6c1',
       name: 'No Result'
     }
-  }
-
-  
+  },
+  'ClinicalNotes': {
+    uuid: '655ff3fc-977f-11e1-8993-905e29aff6c1',
+    name: 'Clinical Notes'
+  },
 };
 
 export const FORM_NAMES = {
