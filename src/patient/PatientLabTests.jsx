@@ -13,7 +13,9 @@ class PatientLabTests extends React.Component {
     if (typeof this.props.test_type !== 'undefined') {
       if ((typeof this.props.patient.labTests[this.props.test_type] !== 'undefined')
         && (this.props.patient.labTests[this.props.test_type] !== null)) {
-        labTests = [...this.props.patient.labTests[this.props.test_type]].reverse().map((lab, i) => {
+        labTests = [...this.props.patient.labTests[this.props.test_type]].sort(function (a, b) {
+          return +new Date(b.effectiveDate) - +new Date(a.effectiveDate);
+        }).map((lab, i) => {
           return (
             <div key={lab.effectiveDate}>
               <h4>{lab.testType ? (utils.getConceptNameByUuid(lab.testType)) : ""}</h4>

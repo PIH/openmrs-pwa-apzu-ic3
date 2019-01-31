@@ -261,6 +261,15 @@ export const CONCEPTS = {
       name: 'Counseled on viral load'
     }
   },
+  'ViralLoadTestSet': {
+    uuid: '83931c6d-0e5a-4302-b8ce-a31175b6475e'
+  },
+  'ViralLoadResult': {
+    uuid: '654a7694-977f-11e1-8993-905e29aff6c1'
+  },
+  'ViralLoadLowerThanDetectionLimit': {
+    uuid: 'e97b36a2-16f5-11e6-b6ba-3e1d05defe78'
+  },
   'Bled': {
     uuid: 'f792f2f9-9c24-4d6e-98fd-caffa8f2383f',
     name: 'Bled'
@@ -324,9 +333,6 @@ export const CONCEPTS = {
   'microscopy': {
     uuid: '65628356-977f-11e1-8993-905e29aff6c1',
     name: 'Microscopy'
-  },
-  'VIRAL_LOAD_TEST_SET': {
-    uuid: '83931c6d-0e5a-4302-b8ce-a31175b6475e'
   },
   'TB': {
     'Cough': {

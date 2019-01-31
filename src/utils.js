@@ -197,12 +197,12 @@ const utils = {
   getLastLabTest: (labTests) => {
     let lastLabTest = null;
     if (labTests !== null ) {
-      let filteredTests = labTests;
+      let filteredTests = [...labTests]; // copy to avoid mutation
       if (typeof filteredTests !== 'undefined' && filteredTests !== null ) {
 
         if ( filteredTests.length > 0 ) {
           filteredTests.sort(function (a, b) {
-            return +new Date(b.resultDate) - +new Date(a.resultDate);
+            return +new Date(b.effectiveDate) - +new Date(a.effectiveDate);
           });
           lastLabTest = filteredTests[0];
         }
