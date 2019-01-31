@@ -426,7 +426,7 @@ export const CONCEPTS = {
     name: 'Equipment Failure'
   },
   'UnsatisfactorySample': {
-    uuid: '66188fb6-977f-11e1-8993-905e29aff6c1',
+    uuid: '656fa55e-977f-11e1-8993-905e29aff6c1',
     name: 'Unsatisfactory Sample'
   },
   'InappropriateSampleContainer': {
