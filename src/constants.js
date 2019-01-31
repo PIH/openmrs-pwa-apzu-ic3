@@ -459,26 +459,6 @@ export const CONCEPTS = {
     uuid: '655ff3fc-977f-11e1-8993-905e29aff6c1',
     name: 'Clinical Notes'
   },
-  'ClinicalOutcome': {
-    uuid: 'ClinicalOutcome',
-    name: 'Clinical Outcome'
-  },
-  'ClinicalFollowUp': {
-    uuid: '6569cbd4-977f-11e1-8993-905e29aff6c1',
-    name: 'Clinical Follow-up'
-  },
-  'TransferToAnotherFacility': {
-    uuid: 'TransferToAnotherFacility',
-    name: 'Transfer to another facility'
-  },
-  'AdvancedCare': {
-    uuid: 'AdvancedCare',
-    name: 'Exit from IC3 care'
-  },
-  'OtherClinicalOutcome': {
-    uuid: '657140f8-977f-11e1-8993-905e29aff6c1',
-    name: 'Other'
-  },
 };
 
 export const FORM_NAMES = {
@@ -616,12 +596,6 @@ export const FORM_ANSWERS = {
   'painfulNeckAndArmpitLymphTBAbsent': [
     { uuid: CONCEPTS.TB.PainfulNeckAndArmpitLymphNodes.uuid, name: 'No' }
   ],
-  'clinicalOutcomes':[
-    { uuid: CONCEPTS.ClinicalFollowUp.uuid, name: CONCEPTS.ClinicalFollowUp.name },
-    { uuid: CONCEPTS.TransferToAnotherFacility.uuid, name: CONCEPTS.TransferToAnotherFacility.name },
-    { uuid: CONCEPTS.AdvancedCare.uuid, name: CONCEPTS.AdvancedCare.name },
-    { uuid: CONCEPTS.OtherClinicalOutcome.uuid, name: CONCEPTS.OtherClinicalOutcome.name }
-  ]
 };
 
 export const NAV_MENU_PAGES = {
