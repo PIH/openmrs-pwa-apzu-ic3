@@ -8,6 +8,7 @@ const TbSummary = props => {
       <ObsHistory
         concepts={[CONCEPTS.TB.SymptomPresent,
           CONCEPTS.TB.SymptomAbsent]}
+        groupingConcepts={[CONCEPTS.TB.TuberculosisScreeningSet]}
         reverseLabelAndValue={true}
       />
     </div>
