@@ -6,7 +6,7 @@ import {ObsHistory} from "@openmrs/react-components";
 const AdherenceSummary = props => {
   return (
     <div>
-      <PatientLabTests test_type={ "viral_load_tests" }/>
+      {/* <PatientLabTests test_type={ "viral_load_tests" }/>*/}
       <ObsHistory
         concepts={[CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession,
           CONCEPTS.ADHERENCE_COUNSELING.NameOfCounselor,
