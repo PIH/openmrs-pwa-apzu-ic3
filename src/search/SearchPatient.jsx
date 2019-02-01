@@ -11,7 +11,7 @@ let SearchPatient = (props) => {
       <PatientSearch
         AdditionalFilters={IdentifierFilters}
         rowSelectedActionCreators={[
-          () => push('/checkin/checkInPage')
+          () => push('/screening')
         ]}
         getPatientIdentifiers={utils.getPatientIdentifiers}
         title="Search for Patient"
