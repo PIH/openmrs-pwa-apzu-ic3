@@ -8,5 +8,5 @@ const sputumFilter = patient => {
 
 export default {
   required: sputumFilter,
-  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.TBSputumSubmitted.uuid, 'include'),
+  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.TBTestResults.uuid, 'include'),
 };

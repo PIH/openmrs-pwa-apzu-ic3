@@ -12,7 +12,7 @@ const TbTestResultSummaryAndForm = props => {
     <SummaryAndForm
       backLink="/screening"
       completed={tbTestResultFilters.completed(props.patient)}
-      form={<TbTestResultForm />}
+      form={<TbTestResultForm displayResultsSection={true}/>}
       summary={<TbTestResultSummary />}
       title="Tuberculosis Test Result"
     />

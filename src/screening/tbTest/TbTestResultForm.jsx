@@ -10,6 +10,22 @@ import "./styles/tb-test-result-form.css";
 class TbTestResultForm extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
+
+    // this clears out form values when the "Sputum received" question is changed
+    if (typeof this.props.sputumReceived !== 'undefined' && this.props.sputumReceived !== prevProps.sputumReceived) {
+      if (this.props.sputumReceived === CONCEPTS.False.uuid) {
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('sputum-sample-quality', CONCEPTS.SampleQuality.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('sputum-sample-quality', CONCEPTS.SampleQuality.uuid)));
+
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('sputum-laboratory-location', CONCEPTS.LabLocation.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('sputum-laboratory-location', CONCEPTS.LabLocation.uuid)));
+      }
+      if (this.props.sputumSampleQuality === CONCEPTS.unsatisfactorySampleQuality.uuid) {
+        this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('sputum-laboratory-location', CONCEPTS.LabLocation.uuid), null));
+        this.props.dispatch(untouch(this.props.formInstanceId, formUtil.obsFieldName('sputum-laboratory-location', CONCEPTS.LabLocation.uuid)));
+      }
+    }
+
     if (typeof this.props.testType !== 'undefined' && this.props.testType !== prevProps.testType) {
       if (this.props.testType === CONCEPTS.GeneXpert.uuid) {
         this.props.dispatch(change(this.props.formInstanceId, formUtil.obsFieldName('tb-smear-result', CONCEPTS.Smear.uuid), null));
@@ -68,130 +84,201 @@ class TbTestResultForm extends React.PureComponent {
 
     const formContent = (
       <Grid>
+        <span
+          style={{ display: (this.props.displaySputumSection === true) ? 'block' : 'none' }}
+        >
+          <Row>
+            <Col
+              componentClass={ControlLabel}
+            >
+              Sputum Received
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12}>
+              <FormGroup controlId="formBled">
+                <Obs
+                  concept={CONCEPTS.SampleCollected.uuid}
+                  conceptAnswers={FORM_ANSWERS.trueFalse}
+                  path="sputum-received"
+                />
+              </FormGroup>
+            </Col>
+          </Row>
 
-        <Row>
-          <Col
-            componentClass={ControlLabel}
+          <span
+            style={{ display: (typeof this.props.sputumReceived !== 'undefined') && (this.props.sputumReceived === CONCEPTS.True.uuid) ? 'block' : 'none' }}
           >
-            TB Test Type
-          </Col>
-        </Row>
-        <Row>
-          <Col sm={12}>
-            <FormGroup controlId="form-tb-test-type">
-              <Obs
-                concept={CONCEPTS.TBTestType.uuid}
-                conceptAnswers={FORM_ANSWERS.tbTestTypeanswers}
-                path="tb-test-type"
-              />
-            </FormGroup>
-          </Col>
-        </Row>
-
-        <span
-          style={{ display: (typeof this.props.testType !== 'undefined') && (this.props.testType === CONCEPTS.GeneXpert.uuid) ? 'block' : 'none' }}>
-          <Row>
-            <Col componentClass={ControlLabel}>
-              GeneXpert Result
-            </Col>
-          </Row>
-          <Row>
-            <FormGroup controlId="formGeneXpert">
-              <Col sm={12}>
-                <Obs
-                  concept={CONCEPTS.GeneXpert.uuid}
-                  conceptAnswers={FORM_ANSWERS.GeneXpertAnswers}
-                  path="tb-genexpert-result"
-                />
+            <Row>
+              <Col componentClass={ControlLabel}>
+                Sample Quality
               </Col>
-            </FormGroup>
-          </Row>
+            </Row>
+            <Row>
+              <FormGroup controlId="formReasonForNoSample">
+                <Col sm={12}>
+                  <Obs
+                    concept={CONCEPTS.SampleQuality.uuid}
+                    conceptAnswers={FORM_ANSWERS.sampleQualityAnswers}
+                    path="sputum-sample-quality"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+          </span>
+
+          <span
+            style={{
+              display: (typeof this.props.sputumSampleQuality !== 'undefined' || typeof this.props.sputumReceived !== 'undefined') && (this.props.sputumSampleQuality === CONCEPTS.satisfactorySampleQuality.uuid
+                && this.props.sputumReceived === CONCEPTS.True.uuid) ? 'block' : 'none'
+            }}
+          >
+            <Row>
+              <Col componentClass={ControlLabel}>
+               Laboratory Location
+              </Col>
+            </Row>
+            <Row>
+              <FormGroup>
+                <Col sm={12}>
+                  <Obs
+                    concept={CONCEPTS.LabLocation.uuid}
+                    conceptAnswers={FORM_ANSWERS.sputumLabLocation}
+                    path="sputum-laboratory-location"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+          </span>
         </span>
 
         <span
-          style={{ display: (typeof this.props.testType !== 'undefined') && (this.props.testType === CONCEPTS.Smear.uuid) ? 'block' : 'none' }}>
+          style={{ display: (this.props.displayResultsSection === true) ? 'block' : 'none' }}
+        >
           <Row>
-            <Col componentClass={ControlLabel}>
-            TB Smear Result
+            <Col
+              componentClass={ControlLabel}
+            >
+              TB Test Type
             </Col>
           </Row>
           <Row>
-            <FormGroup controlId="formReasonForTesting">
-              <Col sm={12}>
+            <Col sm={12}>
+              <FormGroup controlId="form-tb-test-type">
                 <Obs
-                  concept={CONCEPTS.Smear.uuid}
-                  conceptAnswers={FORM_ANSWERS.SmearAnswers}
-                  path="tb-smear-result"
+                  concept={CONCEPTS.TBTestType.uuid}
+                  conceptAnswers={FORM_ANSWERS.tbTestTypeanswers}
+                  path="tb-test-type"
                 />
-              </Col>
-            </FormGroup>
+              </FormGroup>
+            </Col>
           </Row>
-        </span>
 
-        <span
-          style={{ display: (typeof this.props.genexpertResult !== 'undefined') && (this.props.genexpertResult === CONCEPTS.TBDetected.uuid) ? 'block' : 'none' }}>
-          <Row>
-            <Col componentClass={ControlLabel}>
-              Rifampin Resistance
-            </Col>
-          </Row>
-          <Row>
-            <FormGroup controlId="formTBDetected">
-              <Col sm={12}>
-                <Obs
-                  concept={CONCEPTS.RifampinResistance.uuid}
-                  conceptAnswers={FORM_ANSWERS.RifampinResistanceAnswers}
-                  path="tb-detected"
-                />
+          <span
+            style={{ display: (typeof this.props.testType !== 'undefined') && (this.props.testType === CONCEPTS.GeneXpert.uuid) ? 'block' : 'none' }}>
+            <Row>
+              <Col componentClass={ControlLabel}>
+                GeneXpert Result
               </Col>
-            </FormGroup>
-          </Row>
-        </span>
+            </Row>
+            <Row>
+              <FormGroup controlId="formGeneXpert">
+                <Col sm={12}>
+                  <Obs
+                    concept={CONCEPTS.GeneXpert.uuid}
+                    conceptAnswers={FORM_ANSWERS.GeneXpertAnswers}
+                    path="tb-genexpert-result"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+          </span>
 
-        <span
-          style={{ display: (typeof this.props.genexpertResult !== 'undefined') && (this.props.genexpertResult === CONCEPTS.ReasonForNoResult.uuid) ? 'block' : 'none' }}>
-          <Row>
-            <Col componentClass={ControlLabel}>
-              Reason for No Result
-            </Col>
-          </Row>
-          <Row>
-            <FormGroup controlId="formReasonForNoResult">
-              <Col
-                bsClass="no-reason-form"
-                sm={12}
-              >
-                <Obs
-                  concept={CONCEPTS.ReasonForNoResult.uuid}
-                  conceptAnswers={FORM_ANSWERS.ReasonForNoTBResultAnswers}
-                  path="tb-no-result-genexpert"
-                />
+          <span
+            style={{ display: (typeof this.props.testType !== 'undefined') && (this.props.testType === CONCEPTS.Smear.uuid) ? 'block' : 'none' }}>
+            <Row>
+              <Col componentClass={ControlLabel}>
+              TB Smear Result
               </Col>
-            </FormGroup>
-          </Row>
-        </span>
+            </Row>
+            <Row>
+              <FormGroup controlId="formReasonForTesting">
+                <Col sm={12}>
+                  <Obs
+                    concept={CONCEPTS.Smear.uuid}
+                    conceptAnswers={FORM_ANSWERS.SmearAnswers}
+                    path="tb-smear-result"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+          </span>
 
-        <span
-          style={{ display: (typeof this.props.tbSmearResult !== 'undefined') && (this.props.tbSmearResult === CONCEPTS.TBSmearResult.NoResult.uuid) ? 'block' : 'none' }}>
-          <Row>
-            <Col componentClass={ControlLabel}>
-              Reason for No Result
-            </Col>
-          </Row>
-          <Row>
-            <FormGroup controlId="formReasonForNoResult">
-              <Col
-                bsClass="no-reason-form"
-                sm={12}
-              >
-                <Obs
-                  concept={CONCEPTS.ReasonForNoResult.uuid}
-                  conceptAnswers={FORM_ANSWERS.ReasonForNoTBResultAnswers}
-                  path="tb-no-result-smear"
-                />
+          <span
+            style={{ display: (typeof this.props.genexpertResult !== 'undefined') && (this.props.genexpertResult === CONCEPTS.TBDetected.uuid) ? 'block' : 'none' }}>
+            <Row>
+              <Col componentClass={ControlLabel}>
+                Rifampin Resistance
               </Col>
-            </FormGroup>
-          </Row>
+            </Row>
+            <Row>
+              <FormGroup controlId="formTBDetected">
+                <Col sm={12}>
+                  <Obs
+                    concept={CONCEPTS.RifampinResistance.uuid}
+                    conceptAnswers={FORM_ANSWERS.RifampinResistanceAnswers}
+                    path="tb-detected"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+          </span>
+
+          <span
+            style={{ display: (typeof this.props.genexpertResult !== 'undefined') && (this.props.genexpertResult === CONCEPTS.ReasonForNoResult.uuid) ? 'block' : 'none' }}>
+            <Row>
+              <Col componentClass={ControlLabel}>
+                Reason for No Result
+              </Col>
+            </Row>
+            <Row>
+              <FormGroup controlId="formReasonForNoResult">
+                <Col
+                  bsClass="no-reason-form"
+                  sm={12}
+                >
+                  <Obs
+                    concept={CONCEPTS.ReasonForNoResult.uuid}
+                    conceptAnswers={FORM_ANSWERS.ReasonForNoTBResultAnswers}
+                    path="tb-no-result-genexpert"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+          </span>
+
+          <span
+            style={{ display: (typeof this.props.tbSmearResult !== 'undefined') && (this.props.tbSmearResult === CONCEPTS.TBSmearResult.NoResult.uuid) ? 'block' : 'none' }}>
+            <Row>
+              <Col componentClass={ControlLabel}>
+                Reason for No Result
+              </Col>
+            </Row>
+            <Row>
+              <FormGroup controlId="formReasonForNoResult">
+                <Col
+                  bsClass="no-reason-form"
+                  sm={12}
+                >
+                  <Obs
+                    concept={CONCEPTS.ReasonForNoResult.uuid}
+                    conceptAnswers={FORM_ANSWERS.ReasonForNoTBResultAnswers}
+                    path="tb-no-result-smear"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+          </span>
         </span>
 
       </Grid>
@@ -214,10 +301,14 @@ class TbTestResultForm extends React.PureComponent {
 
 export default connect((state, props) => {
   const selector = formValueSelector(props.formInstanceId);
+  const sputumReceived = selector(state, formUtil.obsFieldName('sputum-received', CONCEPTS.SampleCollected.uuid));
+  const sputumSampleQuality = selector(state, formUtil.obsFieldName('sputum-sample-quality', CONCEPTS.SampleQuality.uuid));
   const testType = selector(state, formUtil.obsFieldName('tb-test-type', CONCEPTS.TBTestType.uuid));
   const genexpertResult = selector(state, formUtil.obsFieldName('tb-genexpert-result', CONCEPTS.GeneXpert.uuid));
   const tbSmearResult = selector(state, formUtil.obsFieldName('tb-smear-result', CONCEPTS.Smear.uuid));
   return {
+    sputumReceived,
+    sputumSampleQuality,
     testType,
     genexpertResult,
     tbSmearResult,

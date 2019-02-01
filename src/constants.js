@@ -44,10 +44,7 @@ export const ENCOUNTER_TYPES = {
   },
   'ClinicalPlan': {
     uuid: '04E668BA-E24F-43FF-A135-A085EC3DBE40'
-  },
-  'TBSputumSubmitted': {
-    uuid: '664bb97c-977f-11e1-8993-905e29aff6c1'
-  },
+  }
 };
 
 export const ENCOUNTER_ROLES = {
@@ -132,21 +129,13 @@ export const CONCEPTS = {
     uuid: '6557646c-977f-11e1-8993-905e29aff6c1',
     name: 'No'
   },
-  'SputumReceived': {
+  'SampleCollected': {
     uuid: '165252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
     name: 'Sputum received'
   },
   'SampleQuality': {
     uuid: '165253AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
     name: 'Sample Quality'
-  },
-  'SputumReceivedTrue': {
-    uuid: '3cd6f600-26fe-102b-80cb-0017a47871b2',
-    name: 'Yes'
-  },
-  'SputumReceivedFalse': {
-    uuid: '3cd6f86c-26fe-102b-80cb-0017a47871b2',
-    name: 'No'
   },
   'satisfactorySampleQuality': {
     uuid: '6559dde6-977f-11e1-8993-905e29aff6c1',
@@ -516,10 +505,6 @@ export const FORM_ANSWERS = {
   'sampleQualityAnswers': [
     { uuid: CONCEPTS.satisfactorySampleQuality.uuid, name: CONCEPTS.satisfactorySampleQuality.name },
     { uuid: CONCEPTS.unsatisfactorySampleQuality.uuid, name: CONCEPTS.unsatisfactorySampleQuality.name },
-  ],
-  'sputumReceivedAnswers': [
-    { uuid: CONCEPTS.SputumReceivedTrue.uuid, name: CONCEPTS.SputumReceivedTrue.name },
-    { uuid: CONCEPTS.SputumReceivedFalse.uuid, name: CONCEPTS.SputumReceivedFalse.name },
   ],
   'trueFalse' : [
     { uuid: CONCEPTS.True.uuid, name: CONCEPTS.True.name },

@@ -10,7 +10,10 @@ const TbTestResultSummary = props => {
         CONCEPTS.GeneXpert,
         CONCEPTS.Smear,
         CONCEPTS.RifampinResistance,
-        CONCEPTS.ReasonForNoResult
+        CONCEPTS.ReasonForNoResult,
+        CONCEPTS.SampleCollected,
+        CONCEPTS.LabLocation,
+        CONCEPTS.SampleQuality,
       ]}
     />
   );
