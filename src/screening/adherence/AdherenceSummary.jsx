@@ -1,5 +1,4 @@
 import React from "react";
-import PatientLabTests from "../../patient/PatientLabTests";
 import {CONCEPTS} from "../../constants";
 import {ObsHistory} from "@openmrs/react-components";
 
