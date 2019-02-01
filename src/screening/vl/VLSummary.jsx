@@ -15,6 +15,7 @@ const VLSummary = props => {
             CONCEPTS.ReasonForTesting,
             CONCEPTS.LabLocation
           ]}
+        groupingConcepts={[CONCEPTS.ViralLoadTestSet]}
       />
     </div>
   );
