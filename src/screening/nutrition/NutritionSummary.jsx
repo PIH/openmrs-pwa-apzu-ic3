@@ -41,7 +41,7 @@ class NutritionSummary extends React.PureComponent {
     return (
       <ObsHistory
         obs={this.state.obs}
-        concepts={[CONCEPTS.Height, CONCEPTS.Weight, CONCEPTS.BMI, CONCEPTS.Pregnant, CONCEPTS.MUAC]}
+        concepts={[CONCEPTS.Weight, CONCEPTS.Height, CONCEPTS.BMI, CONCEPTS.Pregnant, CONCEPTS.MUAC]}
       />
     );
   }
