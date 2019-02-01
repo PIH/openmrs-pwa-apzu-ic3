@@ -15,8 +15,8 @@ class DnaPcrForm extends React.PureComponent {
     const labLocationFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-lab-location'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.LabLocation.uuid]);
 
     // this clears out form values when the "bled" question is changed
-    if (typeof this.props.bled !== 'undefined' && this.props.bled !== prevProps.bled) {
-      if (this.props.bled === CONCEPTS.True.uuid) {
+    if (typeof this.props.sampleCollected !== 'undefined' && this.props.sampleCollected !== prevProps.sampleCollected) {
+      if (this.props.sampleCollected === CONCEPTS.Yes.uuid) {
         this.props.dispatch(change(this.props.formInstanceId, reasonNoSampleFieldName, null));
         this.props.dispatch(untouch(this.props.formInstanceId, reasonNoSampleFieldName));
       }
@@ -40,15 +40,16 @@ class DnaPcrForm extends React.PureComponent {
             </Col>
             <Col sm={8}>
               <Obs
-                concept={CONCEPTS.Bled.uuid}
+                concept={CONCEPTS.SampleCollected.uuid}
                 path="dna-pcr-bled"
-                conceptAnswers={FORM_ANSWERS.trueFalse}
+                conceptAnswers={FORM_ANSWERS.yesNo}
               />
             </Col>
           </FormGroup>
         </Row>
 
-        <span style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.False.uuid) ? 'block' : 'none' }}>
+        <span
+          style={{ display: (typeof this.props.sampleCollected !== 'undefined') && (this.props.sampleCollected === CONCEPTS.No.uuid) ? 'block' : 'none' }}>
           <Row>
             <FormGroup controlId="formReasonForNoSample">
               <Col componentClass={ControlLabel} sm={2}>
@@ -65,7 +66,8 @@ class DnaPcrForm extends React.PureComponent {
           </Row>
         </span>
 
-        <span style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}>
+        <span
+          style={{ display: (typeof this.props.sampleCollected !== 'undefined') && (this.props.sampleCollected === CONCEPTS.No.uuid) ? 'block' : 'none' }}>
           <Row>
             <FormGroup controlId="formReasonForTesting">
               <Col componentClass={ControlLabel} sm={2}>
@@ -82,7 +84,8 @@ class DnaPcrForm extends React.PureComponent {
           </Row>
         </span>
 
-        <span style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}>
+        <span
+          style={{ display: (typeof this.props.sampleCollected !== 'undefined') && (this.props.sampleCollected === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}>
           <Row>
             <FormGroup controlId="formLabLocation">
               <Col componentClass={ControlLabel} sm={2}>
@@ -111,9 +114,9 @@ class DnaPcrForm extends React.PureComponent {
 
 export default connect((state, props) => {
   const selector = formValueSelector(props.formInstanceId);
-  const bled = selector(state, formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-bled'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.Bled.uuid]));
+  const sampleCollected = selector(state, formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-bled'], [CONCEPTS.HIV_TEST_CONSTRUCT, CONCEPTS.SampleCollected]));
   return {
-    bled,
+    sampleCollected,
     patient: selectors.getSelectedPatientFromStore(state)
   };
 })(DnaPcrForm);
