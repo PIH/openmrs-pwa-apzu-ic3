@@ -170,13 +170,17 @@ export const CONCEPTS = {
     uuid: '6569bffe-977f-11e1-8993-905e29aff6c1',
     hiNormal: 160,
     hiAbsolute: 260,
-    lowAbsolute: 50
+    lowAbsolute: 50,
+    hiCritical: 200,
+    lowCritical: 80,
   },
   'DiastolicBloodPressure' : {
     uuid: '6569c116-977f-11e1-8993-905e29aff6c1',
     hiNormal: 110,
     hiAbsolute: 140,
-    lowAbsolute: 40
+    lowAbsolute: 40,
+    hiCritical: 120,
+    lowCritical: 80,
   },
   'Height': {
     uuid: '6569c562-977f-11e1-8993-905e29aff6c1'
