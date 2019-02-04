@@ -122,35 +122,6 @@
   justify-content: center;
 }
 
-.div-container.summary-and-form {
-  padding-top: 40%;
-}
-
-@media only screen and (min-width: 501px) and (max-width: 559px) {
-  .div-container.summary-and-form {
-    padding-top: 280px;
-  }
-}
-
-@media only screen and (min-width: 560px) and (max-width: 689px) {
-  .div-container.summary-and-form {
-    padding-top: 290px;
-  }
-}
-
-@media only screen and (min-width: 690px) and (max-width: 700px) {
-  .div-container.summary-and-form {
-    padding-top: 270px;
-  }
-}
-
-
-@media only screen and (min-width: 800px) {
-  .div-container.summary-and-form {
-    padding-top: 256px;
-  }
-}
-
 .disabled-btn {
   color: gray;
 }
