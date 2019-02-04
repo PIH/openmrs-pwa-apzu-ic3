@@ -34,14 +34,14 @@ class ScreeningFilters extends React.Component {
     this.secondIdentifierSearchValueClear = this.secondIdentifierSearchValueClear.bind(this);
     this.handleTextInputSearch = this.handleTextInputSearch.bind(this);
     this.handleSearchClick = this.handleSearchClick.bind(this);
+    const currentLocationPrefix = utils.getCurrentLocationPrefix(props.locations, props.currentLocation);
 
     this.state = {
-      firstIdentifierSearchValue: '',
+      firstIdentifierSearchValue: currentLocationPrefix[0] ? currentLocationPrefix[0] : '',
       secondIdentifierSearchValue: '',
       thirdIdentifierSearchValue: '',
       patientIdentifier: '',
       searchValue: '',
-      currentLocationPrefix: utils.getCurrentLocationPrefix(this.props.locations, this.props.currentLocation)
     };
   }
 
@@ -125,6 +125,7 @@ class ScreeningFilters extends React.Component {
                 textAlignLast: 'center',
                 textAlign: 'center',
               }}
+              dropdownValue={searchType === 'server' ? this.state.firstIdentifierSearchValue : undefined}
               handleSelect={(field, value) => this.handleSearch(field, value, 'first')} 
               list={utils.getLocationsPrefix(locations, currentLocation)}
               placeholder=" "
