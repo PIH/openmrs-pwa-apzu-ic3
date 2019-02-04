@@ -82,6 +82,7 @@ const App = props => {
             <Layout
               component={HomePage}
               exact
+              fullViewHeight
               path="/"
             />
             <Layout
