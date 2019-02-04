@@ -21,6 +21,7 @@ let BloodPressureForm = props => {
               concept={CONCEPTS.SystolicBloodPressure}
               placeholder="value"
               path="systolic"
+              required
             />
           </Col>
           <ControlLabel sm={1} style={noPaddingLeftAndRight}>
@@ -40,6 +41,7 @@ let BloodPressureForm = props => {
               concept={CONCEPTS.DiastolicBloodPressure}
               placeholder="value"
               path="diastolic"
+              required
             />
           </Col>
           <ControlLabel sm={1} style={noPaddingLeftAndRight}>
