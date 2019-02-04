@@ -79,62 +79,66 @@ class PatientAlert extends PureComponent {
       const { dropdownState } = this.state;
       const isClosed = dropdownState === "closed";
       const isOpen = dropdownState === "open";
-      return (
-        <div className={this.getPatientAlertClassName()}>
-          <Well bsSize="large">
-            <div className="alert-summary">
-              <span className="alert-icon">
-                <FontAwesomeIcon
-                  icon="exclamation-triangle"
-                  size="lg"
-                />
-              </span>
-              <span className="alert-count">{patientAlerts.count} ALERT(S)</span>
-              <span>{patientAlerts.criticalCount} Critical Result,</span>
-              <span>{patientAlerts.abnormalCount} Abnormal Result</span>
-              {isClosed &&
-                <span
-                  className="alert-dropdown"
-                  onClick={this.handleExpandAlert}
-                >
+      if (patientAlerts.count < 1) {
+        this.props.handleAlertDisplay(patientAlerts)
+      } else {
+        return (
+          <div className={this.getPatientAlertClassName()}>
+            <Well bsSize="large">
+              <div className="alert-summary">
+                <span className="alert-icon">
                   <FontAwesomeIcon
-                    icon="caret-down"
+                    icon="exclamation-triangle"
                     size="lg"
                   />
                 </span>
-              }
-              {isOpen &&
-                <span
-                  className="alert-dropdown-close"
-                  onClick={this.handleCloseAlert}
-                >
-                  <FontAwesomeIcon
-                    icon="times"
-                    size="lg"
-                  />
-                </span>
-              }
-            </div>
-            {isOpen &&
-              <div className="alert-items">
-                {patientAlerts.alerts.map((alert, index) => {
-                  return (
-                    <div
-                      className="alert-item"
-                      key={index}
-                    >
-                      <span className={`${alert.status}-alert`}>{alert.status}: </span>
-                      <span className="alert-description">{alert.alert} </span>
-                      <span>{formatEnrollmentText(alert.action)} </span>
-                    </div>
-                  )
-                })
+                <span className="alert-count">{patientAlerts.count} ALERT(S)</span>
+                <span>{patientAlerts.criticalCount} Critical Result,</span>
+                <span>{patientAlerts.abnormalCount} Abnormal Result</span>
+                {isClosed &&
+                  <span
+                    className="alert-dropdown"
+                    onClick={this.handleExpandAlert}
+                  >
+                    <FontAwesomeIcon
+                      icon="caret-down"
+                      size="lg"
+                    />
+                  </span>
+                }
+                {isOpen &&
+                  <span
+                    className="alert-dropdown-close"
+                    onClick={this.handleCloseAlert}
+                  >
+                    <FontAwesomeIcon
+                      icon="times"
+                      size="lg"
+                    />
+                  </span>
                 }
               </div>
-            }
-          </Well>
-        </div>
-      );
+              {isOpen &&
+                <div className="alert-items">
+                  {patientAlerts.alerts.map((alert, index) => {
+                    return (
+                      <div
+                        className="alert-item"
+                        key={index}
+                      >
+                        <span className={`${alert.status}-alert`}>{alert.status}: </span>
+                        <span className="alert-description">{alert.alert} </span>
+                        <span>{formatEnrollmentText(alert.action)} </span>
+                      </div>
+                    )
+                  })
+                  }
+                </div>
+              }
+            </Well>
+          </div>
+        );
+      }
     }
     return (
       <span />
