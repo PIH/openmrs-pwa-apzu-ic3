@@ -55,6 +55,9 @@ class ScreeningFilters extends React.Component {
     if (location === 'first') {
       first = this.handleUndefinedValues(value, '');
       searchValue = `${first}-${secondIdentifierSearchValue}-${thirdIdentifierSearchValue}`;
+      if (searchType === 'server') {
+        this.props.handleSearchChange(formatIdentifier(searchValue));
+      }
       this.setState({
         firstIdentifierSearchValue : this.handleUndefinedValues(value, ''),
         searchValue,
@@ -62,6 +65,9 @@ class ScreeningFilters extends React.Component {
     } else if (location === 'second') {
       second = this.handleUndefinedValues(value, '');
       searchValue = `${firstIdentifierSearchValue}-${second}-${thirdIdentifierSearchValue}`;
+      if (searchType === 'server') {
+        this.props.handleSearchChange(formatIdentifier(searchValue));
+      }
       this.setState({
         secondIdentifierSearchValue: this.handleUndefinedValues(value, ''),
         searchValue,
@@ -70,6 +76,9 @@ class ScreeningFilters extends React.Component {
     } else if (location === 'third') {
       third = this.handleUndefinedValues(value, '');
       searchValue = `${firstIdentifierSearchValue}-${secondIdentifierSearchValue}-${third}`;
+      if (searchType === 'server') {
+        this.props.handleSearchChange(formatIdentifier(searchValue));
+      }
       this.setState({
         thirdIdentifierSearchValue: this.handleUndefinedValues(value, ''),
         searchValue
@@ -103,7 +112,7 @@ class ScreeningFilters extends React.Component {
 
 
   render() {
-    const { locations, currentLocation } = this.props;
+    const { locations, currentLocation, searchType } = this.props;
     return (
       <div className="queue-filters">
         <div className="identifier-filter-container">
@@ -146,10 +155,12 @@ class ScreeningFilters extends React.Component {
               list={PATIENT_IDENTIFIERS_SUFFIX} 
               placeholder=" "
             />
+            {searchType !== 'server' &&
             <button
               className="search-button"
               onClick={this.handleSearchClick}
             >search</button>
+            }
           </span>
         </div>
       </div>
