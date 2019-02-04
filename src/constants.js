@@ -2,13 +2,13 @@
 // TODO: this will be refactored out into an external config at some point
 
 export const SESSION_TIMEOUT = 1000 * 60 * 10; // 10 minutes
-// TODO tweak this as needed depending on other data points
+// TODO tweak this as needed depending on other data points; note that it only supports two levels of obs groups at this point
 export const ACTIVE_VISITS_REP =
   'custom:(id,uuid,location:(uuid,display,name),startDatetime,stopDatetime,' +
   'patient:(id,uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),' +
   'person:(id,uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,preferredName:(familyName,givenName,middleName,display))),' +
   'encounters:(id,uuid,encounterDatetime,location:(id,uuid,name),encounterType:(id,uuid,name),' +
-  'obs:(uuid,id,value,concept:(uuid),comment,display)' +
+  'obs:(uuid,id,value,concept:(uuid),comment,display,groupMembers:(uuid,id,value,concept:(uuid),comment,display,groupMembers))' +
   ')';
 
 export const ENCOUNTER_TYPES = {

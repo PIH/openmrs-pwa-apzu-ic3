@@ -13,7 +13,9 @@ const ClinicianSummary = props => {
       return [...acc, ...encounter.obs];
     }, []);
   }
-  obs = formUtil.flattenObs(obs);
+
+  obs = formUtil.flattenObs(obs)
+    .filter((o) => (o.value !== null));
 
   return (
     <div>
