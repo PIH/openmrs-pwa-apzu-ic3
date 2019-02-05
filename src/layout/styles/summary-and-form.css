@@ -76,6 +76,8 @@
 .swiping-summary-and-form {
   display: block;
   height: 100%;
+  overflow: scroll;
+  max-height: 90vh;
 }
 
 .show-grid.summary-form-slider.row > div {
