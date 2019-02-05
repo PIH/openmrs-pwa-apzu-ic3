@@ -317,6 +317,11 @@ export const CONCEPTS = {
     uuid: '65628356-977f-11e1-8993-905e29aff6c1',
     name: 'Microscopy'
   },
+  'TbTest' : {
+    'TuberculosisTestScreeningSet': {
+      uuid: '4c92373c-28d6-11e9-b210-d663bd873d93'
+    }
+  },
   'TB': {
     'TuberculosisScreeningSet': {
       uuid: '6000c2f8-4eb5-4fd9-ac83-a9a9d6bd8478',

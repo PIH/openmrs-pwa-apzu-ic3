@@ -15,6 +15,7 @@ const TbTestResultSummary = props => {
         CONCEPTS.LabLocation,
         CONCEPTS.SampleQuality,
       ]}
+      groupingConcepts={[CONCEPTS.TbTest.TuberculosisTestScreeningSet]}
     />
   );
 };
