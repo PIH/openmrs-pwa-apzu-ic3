@@ -11,7 +11,8 @@ class NutritionSummary extends React.PureComponent {
     super(props);
 
     this.state = {
-      obs: []
+      obs: [],
+      loading: true
     };
   }
 
@@ -32,7 +33,8 @@ class NutritionSummary extends React.PureComponent {
     reportingRest.getIC3NutritionHistory({ patient: this.props.patient.uuid })
       .then(data => {
         this.setState({
-          obs: data
+          obs: data,
+          loading: false
         });
       });
   }
@@ -41,6 +43,7 @@ class NutritionSummary extends React.PureComponent {
     return (
       <ObsHistory
         obs={this.state.obs}
+        loading={this.state.loading}
         concepts={[CONCEPTS.Weight, CONCEPTS.Height, CONCEPTS.BMI, CONCEPTS.Pregnant, CONCEPTS.MUAC]}
       />
     );
