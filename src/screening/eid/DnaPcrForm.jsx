@@ -19,11 +19,11 @@ class DnaPcrForm extends React.PureComponent {
       if (this.props.sampleCollected === CONCEPTS.Yes.uuid) {
         this.props.dispatch(change(this.props.formInstanceId, reasonNoSampleFieldName, null));
         this.props.dispatch(untouch(this.props.formInstanceId, reasonNoSampleFieldName));
-      }
-      else {
+
         this.props.dispatch(change(this.props.formInstanceId, reasonForTestingFieldName, null));
         this.props.dispatch(untouch(this.props.formInstanceId, reasonForTestingFieldName));
-
+      }
+      else {
         this.props.dispatch(change(this.props.formInstanceId, labLocationFieldName, null));
         this.props.dispatch(untouch(this.props.formInstanceId, labLocationFieldName));
       }
