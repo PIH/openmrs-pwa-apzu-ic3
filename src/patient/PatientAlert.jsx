@@ -80,7 +80,7 @@ class PatientAlert extends PureComponent {
       const isClosed = dropdownState === "closed";
       const isOpen = dropdownState === "open";
       if (patientAlerts.count < 1) {
-        this.props.handleAlertDisplay(patientAlerts)
+        return null;
       } else {
         return (
           <div className={this.getPatientAlertClassName()}>
@@ -140,9 +140,7 @@ class PatientAlert extends PureComponent {
         );
       }
     }
-    return (
-      <span />
-    )
+    return null;
   }
 };
 
