@@ -87,6 +87,7 @@ const App = props => {
             />
             <Layout
               component={SearchPatient}
+              fullViewHeight
               path="/searchPatient"
               redirectOnLogin="/"
             />
