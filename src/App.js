@@ -98,6 +98,7 @@ const App = props => {
             />
             <Layout
               component={CheckInPage}
+              noScroll
               path="/checkin/checkInPage"
               redirectOnLogin="/"
             />
@@ -113,11 +114,13 @@ const App = props => {
             />
             <Layout
               component={BloodPressureSummaryAndForm}
+              noScroll
               path="/screening/bloodPressure/form"
               redirectOnLogin="/"
             />
             <Layout
               component={SputumSummaryAndForm}
+              noScroll
               path="/screening/sputum/form"
               redirectOnLogin="/"
             />
@@ -128,6 +131,7 @@ const App = props => {
             />
             <Layout
               component={NutritionSummaryAndForm}
+              noScroll
               path="/screening/nutrition/form"
               redirectOnLogin="/"
             />
@@ -138,11 +142,13 @@ const App = props => {
             />
             <Layout
               component={TbTestResultSummaryAndForm}
+              noScroll
               path="/screening/tb-test/form"
               redirectOnLogin="/"
             />
             <Layout
               component={TbSummaryAndForm}
+              noScroll
               path="/screening/tb/form"
               redirectOnLogin="/"
             />
@@ -153,6 +159,7 @@ const App = props => {
             />
             <Layout
               component={AdherenceSummaryAndForm}
+              noScroll
               path="/screening/adherence/form"
               redirectOnLogin="/"
             />
@@ -163,6 +170,7 @@ const App = props => {
             />
             <Layout
               component={HtcSummaryAndForm}
+              noScroll
               path="/screening/htc/form"
               redirectOnLogin="/"
             />
@@ -173,6 +181,7 @@ const App = props => {
             />
             <Layout
               component={VLSummaryAndForm}
+              noScroll
               path="/screening/vl/form"
               redirectOnLogin="/"
             />
@@ -183,6 +192,7 @@ const App = props => {
             />
             <Layout
               component={EidSummaryAndForm}
+              noScroll
               path="/screening/eid/form"
               redirectOnLogin="/"
             />
@@ -213,6 +223,7 @@ const App = props => {
             />
             <Layout
               component={ClinicianSummaryAndForm}
+              noScroll
               path="/screening/clinician/form"
               redirectOnLogin="/"
             />
