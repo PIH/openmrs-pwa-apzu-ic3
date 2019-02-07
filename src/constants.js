@@ -633,14 +633,37 @@ export const VIRAL_LOAD_ALERTS = [
 ];
 
 export const VIRAL_LOAD_ALERTS_CATEGORIES = [
-  "viral-load"
+  "viral-load",
+  "screening-eligibility"
 ];
 export const HTC_ALERTS_CATEGORIES = [
-  "htc"
+  "htc",
+  "screening-eligibility"
+];
+
+export const BP_ALERTS_CATEGORIES = [
+  "bp",
+  "screening-eligibility"
+];
+
+export const NUTRITION_ALERTS_CATEGORIES = [
+  "nutrition",
+  "screening-eligibility"
+];
+
+export const TB_ALERTS_CATEGORIES = [
+  "tb",
+  "screening-eligibility"
 ];
 
 export const EID_ALERTS_CATEGORIES = [
-  "eid"
+  "eid",
+  "screening-eligibility"
+];
+
+export const ADHERENCE_ALERTS_CATEGORIES = [
+  "adherence",
+  "screening-eligibility"
 ];
 
 export const SPUTUM_ALERTS_CATEGORIES = [
