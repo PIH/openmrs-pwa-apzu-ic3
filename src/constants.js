@@ -463,10 +463,60 @@ export const CONCEPTS = {
       name: 'No Result'
     }
   },
-  'ClinicalNotes': {
-    uuid: '655ff3fc-977f-11e1-8993-905e29aff6c1',
-    name: 'Clinical Notes'
-  },
+  'Clinical': {
+    'ClinicalNotes': {
+      uuid: '655928e2-977f-11e1-8993-905e29aff6c1',
+      name: 'Clinical Notes'
+    },
+    'Outcome': {
+      uuid: '6571d95a-977f-11e1-8993-905e29aff6c1',
+      name: 'Outcome'
+    },
+    'FollowUp': {
+      uuid: '65700d1e-977f-11e1-8993-905e29aff6c1',
+      name: 'Clinical follow-up'
+    },
+    'TransferToAnotherFacility': {
+      uuid: '6576ffc0-977f-11e1-8993-905e29aff6c1',
+      name: 'transfer to another facility'
+    },
+    'ExitFromCare': {
+      uuid: '6566dba4-977f-11e1-8993-905e29aff6c1',
+      name: 'Exit from care'
+    },
+    'Other': {
+      uuid: '657140f8-977f-11e1-8993-905e29aff6c1',
+      name: 'Other'
+    },
+    'NextAppointmentDate': {
+      uuid: '6569cbd4-977f-11e1-8993-905e29aff6c1',
+      name: 'Next appointment date'
+    },
+    'QualitativeTime': {
+      uuid: '4c923fca-28d6-11e9-b210-d663bd873d93',
+      name: 'Qualitative time'
+    },
+    'QualitativeTimeAM': {
+      uuid: '656f9bc2-977f-11e1-8993-905e29aff6c1',
+      name: 'In the morning'
+    },
+    'QualitativeTimePM': {
+      uuid: '656f9cc6-977f-11e1-8993-905e29aff6c1',
+      name: 'In the evening'
+    },
+    'TransferFacility': {
+      uuid: '65624b3e-977f-11e1-8993-905e29aff6c1',
+      name: 'Transfer Facility (transfer to another facility)'
+    },
+    'ReasonToStopCare': {
+      uuid: '558a783a-2990-11e9-b210-d663bd873d93',
+      name: 'Reason to stop care'
+    },
+    'OtherOutcome': {
+      uuid: '558a7114-2990-11e9-b210-d663bd873d93',
+      name: 'Other outcome'
+    }
+  }
 };
 
 export const FORM_NAMES = {
@@ -474,6 +524,20 @@ export const FORM_NAMES = {
 };
 
 export const FORM_ANSWERS = {
+  'clinicalOutcome': [
+    { uuid: CONCEPTS.Clinical.FollowUp.uuid, name: CONCEPTS.Clinical.FollowUp.name },
+    { uuid: CONCEPTS.Clinical.TransferToAnotherFacility.uuid, name: CONCEPTS.Clinical.TransferToAnotherFacility.name },
+    { uuid: CONCEPTS.Clinical.ExitFromCare.uuid, name: CONCEPTS.Clinical.ExitFromCare.name },
+    { uuid: CONCEPTS.Clinical.Other.uuid, name: CONCEPTS.Clinical.Other.name },
+  ],
+  'clinicalFollowUp': [
+    { uuid: CONCEPTS.Clinical.NextAppointmentDate.uuid, name: CONCEPTS.Clinical.NextAppointmentDate.name },
+    { uuid: CONCEPTS.Clinical.QualitativeTime.uuid, name: CONCEPTS.Clinical.QualitativeTime.name },
+  ],
+  'clinicalQualitativeTime': [
+    { uuid: CONCEPTS.Clinical.QualitativeTimeAM.uuid, name: CONCEPTS.Clinical.QualitativeTimeAM.name },
+    { uuid: CONCEPTS.Clinical.QualitativeTimePM.uuid, name: CONCEPTS.Clinical.QualitativeTimePM.name },
+  ],
   'tbTestTypeanswers': [
     { uuid: CONCEPTS.GeneXpert.uuid, name: CONCEPTS.GeneXpert.name },
     { uuid: CONCEPTS.Smear.uuid, name: CONCEPTS.Smear.name }
@@ -613,7 +677,7 @@ export const NAV_MENU_PAGES = {
   '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
   '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
   '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },
-  '/screening/clinician/queue': { display : 'Clinician'}
+  '/screening/clinician/queue': { display : 'Clinician' }
   /*  '/screening/nurse/queue' : { display : 'Nurse', icon : 'user-md' },*/
 };
 
