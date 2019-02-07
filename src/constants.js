@@ -132,7 +132,7 @@ export const CONCEPTS = {
   },
   'SampleCollected': {
     uuid: '165252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Sputum received'
+    name: 'Sample Collected'
   },
   'SampleQuality': {
     uuid: '165253AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',

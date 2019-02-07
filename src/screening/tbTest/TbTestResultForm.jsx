@@ -13,13 +13,16 @@ class TbTestResultForm extends React.PureComponent {
 
     // this clears out form values when the "Sputum received" question is changed
     if (typeof this.props.sputumReceived.value !== 'undefined' && this.props.sputumReceived.value !== prevProps.sputumReceived.value) {
-      if (this.props.sputumReceived.value === CONCEPTS.False.uuid) {
+      if (this.props.sputumReceived.value === CONCEPTS.No.uuid) {
         this.props.dispatch(change(this.props.formInstanceId, this.props.sputumSampleQuality.fieldName, null));
         this.props.dispatch(untouch(this.props.formInstanceId, this.props.sputumSampleQuality.fieldName));
 
         this.props.dispatch(change(this.props.formInstanceId, this.props.sputumLaboratoryLocation.fieldName, null));
         this.props.dispatch(untouch(this.props.formInstanceId, this.props.sputumLaboratoryLocation.fieldName));
       }
+    }
+
+    if (typeof this.props.sputumSampleQuality.value !== 'undefined' && this.props.sputumSampleQuality.value !== prevProps.sputumSampleQuality.value) {
       if (this.props.sputumSampleQuality.value === CONCEPTS.unsatisfactorySampleQuality.uuid) {
         this.props.dispatch(change(this.props.formInstanceId, this.props.sputumLaboratoryLocation.fieldName, null));
         this.props.dispatch(untouch(this.props.formInstanceId, this.props.sputumLaboratoryLocation.fieldName));
@@ -103,15 +106,15 @@ class TbTestResultForm extends React.PureComponent {
                 <FormGroup controlId="formBled">
                   <Obs
                     concept={CONCEPTS.SampleCollected.uuid}
-                    conceptAnswers={FORM_ANSWERS.trueFalse}
-                    path="sputum-received"
+                    conceptAnswers={FORM_ANSWERS.yesNo}
+                    path="tb-sputum-received"
                   />
                 </FormGroup>
               </Col>
             </Row>
 
             <span
-              style={{ display: (typeof this.props.sputumReceived.value !== 'undefined') && (this.props.sputumReceived.value === CONCEPTS.True.uuid) ? 'block' : 'none' }}
+              style={{ display: (typeof this.props.sputumReceived.value !== 'undefined') && (this.props.sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}
             >
               <Row>
                 <Col componentClass={ControlLabel}>
@@ -124,7 +127,7 @@ class TbTestResultForm extends React.PureComponent {
                     <Obs
                       concept={CONCEPTS.SampleQuality.uuid}
                       conceptAnswers={FORM_ANSWERS.sampleQualityAnswers}
-                      path="sputum-sample-quality"
+                      path="tb-sputum-sample-quality"
                     />
                   </Col>
                 </FormGroup>
@@ -133,8 +136,8 @@ class TbTestResultForm extends React.PureComponent {
 
             <span
               style={{
-                display: (typeof this.props.sputumSampleQuality.value !== 'undefined' || typeof this.props.sputumReceived.value !== 'undefined') && (this.props.sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid
-                && this.props.sputumReceived === CONCEPTS.True.uuid) ? 'block' : 'none'
+                display: (this.props.sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid
+                  && this.props.sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none'
               }}
             >
               <Row>
@@ -148,7 +151,7 @@ class TbTestResultForm extends React.PureComponent {
                     <Obs
                       concept={CONCEPTS.LabLocation.uuid}
                       conceptAnswers={FORM_ANSWERS.sputumLabLocation}
-                      path="sputum-laboratory-location"
+                      path="tb-sputum-laboratory-location"
                     />
                   </Col>
                 </FormGroup>
@@ -321,15 +324,15 @@ export default connect((state, props) => {
   const genexpertResultField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-genexpert-result'],
     [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.GeneXpert]);
   const tbNoResultGeneexpertField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-no-result-genexpert'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoResult.uuid]);
+    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoResult]);
   const tbSmearResultField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-smear-result'],
     [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.Smear]);
-  const sputumLaboratoryLocationField = formUtil.obsFieldName(['tb-test-screening-set', 'sputum-laboratory-location'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.LabLocation.uuid]);
+  const sputumLaboratoryLocationField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-sputum-laboratory-location'],
+    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.LabLocation]);
   const tbNoResultSmearField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-no-result-smear'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoResult.uuid]);
+    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoResult]);
   const tbDetectedField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-detected'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.RifampinResistance.uuid]);
+    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.RifampinResistance]);
 
   return {
     sputumReceived: {
