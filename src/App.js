@@ -110,6 +110,7 @@ const App = props => {
             />
             <Layout
               component={BloodPressureQueue}
+              fullViewHeight
               path="/screening/bloodPressure/queue"
               redirectOnLogin="/"
             />
@@ -127,6 +128,7 @@ const App = props => {
             />
             <Layout
               component={NutritionQueue}
+              fullViewHeight
               path="/screening/nutrition/queue"
               redirectOnLogin="/"
             />
@@ -138,6 +140,7 @@ const App = props => {
             />
             <Layout
               component={TbQueue}
+              fullViewHeight
               path="/screening/tb/queue"
               redirectOnLogin="/"
             />
@@ -155,6 +158,7 @@ const App = props => {
             />
             <Layout
               component={ AdherenceQueue }
+              fullViewHeight
               path="/screening/adherence/queue"
               redirectOnLogin="/"
             />
@@ -166,6 +170,7 @@ const App = props => {
             />
             <Layout
               component={HtcQueue}
+              fullViewHeight
               path="/screening/htc/queue"
               redirectOnLogin="/"
             />
