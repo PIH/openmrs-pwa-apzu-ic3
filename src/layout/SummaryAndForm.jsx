@@ -34,6 +34,10 @@ export class SummaryAndForm extends React.Component {
       currentView: ''
     };
   }
+
+  componentDidMount() {
+    this.swiper.updateSize();
+  }
   
   goNext() {
     if (this.swiper) {
@@ -107,6 +111,10 @@ export class SummaryAndForm extends React.Component {
   render() {
     const params = {
       spaceBetween: 30,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+      },
     };
     const formViewIsActive = this.state.currentView === 'form';
     const isSaveDisabled = this.getFormSubmitting() || this.getFormInvalid() || this.getFormPristine();

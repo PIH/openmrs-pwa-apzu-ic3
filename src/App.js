@@ -93,6 +93,7 @@ const App = props => {
             />
             <Layout
               component={CheckInQueue}
+              fullViewHeight
               path="/checkin/checkInQueue"
               redirectOnLogin="/"
             />
@@ -176,6 +177,7 @@ const App = props => {
             />
             <Layout
               component={VLQueue}
+              fullViewHeight
               path="/screening/vl/queue"
               redirectOnLogin="/"
             />
@@ -187,6 +189,7 @@ const App = props => {
             />
             <Layout
               component={EidQueue}
+              fullViewHeight
               path="/screening/eid/queue"
               redirectOnLogin="/"
             />
@@ -203,16 +206,19 @@ const App = props => {
             />
             <Layout
               component={ActiveVisitsQueue}
+              fullViewHeight
               path="/visit/queue"
               redirectOnLogin="/"
             />
             <Layout
               component={CompletedVisitsQueue}
+              fullViewHeight
               path="/visit/completedVisits"
               redirectOnLogin="/"
             />
             <Layout
               component={NurseQueue}
+              fullViewHeight
               path="/screening/nurse/queue"
               redirectOnLogin="/"
             />
@@ -229,6 +235,7 @@ const App = props => {
             />
             <Layout
               component={ClinicianQueue}
+              fullViewHeight
               path="/screening/clinician/queue"
               redirectOnLogin="/"
             />
