@@ -131,7 +131,7 @@ class NutritionForm extends React.Component {
         }
 
         { (( this.props.patient.age >= 18 && this.props.patient.gender === 'M')
-          || (this.props.patient.gender === 'F' && this.props.patient.age >= 18 && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.False.uuid))
+          || (this.props.patient.gender === 'F' && this.props.patient.age >= 18 && (this.props.pregnant !== null) && (this.props.pregnant === CONCEPTS.No.uuid))
           || (this.props.patient.gender === 'F' && this.props.patient.age > 50))&&
         bmi &&
             <Col sm={12}>
