@@ -259,7 +259,8 @@ const utils = {
     return eidForm;
   },
 
-  hasAlert: (alerts, category) => {
+  hasAlert: (alerts, categories) => {
+    
     if ((typeof alerts === 'undefined') ||
       (alerts === null) ||
       ( alerts.length < 1)) {
@@ -268,7 +269,13 @@ const utils = {
     let retValue = false;
 
     for (let i = 0; i < alerts.length; i++) {
-      retValue =  alerts[i].categories.some(a => category.indexOf(a) >= 0);
+      let alertCategories = alerts[i].categories;
+      retValue =  alertCategories.every(
+        alertCategory => categories.every(
+          category => alertCategories.includes(category) && categories.includes(alertCategory)
+        )
+      );
+
       if (retValue === true) {
         break;
       }

@@ -1,10 +1,16 @@
 import { patientObjByEncounterTypeFilter  } from "@openmrs/react-components";
-import { ENCOUNTER_TYPES } from "../../constants";
+import { ENCOUNTER_TYPES, ALERTS_CATEGORIES } from "../../constants";
+import utils from '../../utils';
 
-const ageFilter = patient => patient.age >= 18;   // only adults
+const bloodPressureFilter = patient => {
+  return utils.hasAlert(patient.alert, [
+    ALERTS_CATEGORIES.BP_ALERT,
+    ALERTS_CATEGORIES.SCREENING_ELIGIBILITY_ALERT
+  ]);
+}
 
 export default {
-  required: ageFilter,
+  required: bloodPressureFilter,
   completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.BloodPressureEncounterType.uuid, 'include'),
 };
 

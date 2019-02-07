@@ -697,20 +697,17 @@ export const VIRAL_LOAD_ALERTS = [
   "due-for-routine-viral-load-3p"
 ];
 
-export const VIRAL_LOAD_ALERTS_CATEGORIES = [
-  "viral-load"
-];
-export const HTC_ALERTS_CATEGORIES = [
-  "htc"
-];
-
-export const EID_ALERTS_CATEGORIES = [
-  "eid"
-];
-
-export const SPUTUM_ALERTS_CATEGORIES = [
-  "sputum"
-];
+export const ALERTS_CATEGORIES = {
+  VIRAL_LOAD_ALERT: "viral-load",
+  HTC_ALERT: "htc",
+  BP_ALERT: "bp",
+  NUTRITION_ALERT: "nutrition",
+  TB_ALERT: "tb",
+  EID_ALERT: "eid",
+  ADHERENCE_ALERT: "adherence",
+  SPUTUM_ALERT: "sputum",
+  SCREENING_ELIGIBILITY_ALERT: "screening-eligibility"
+};
 
 export const EID_RAPID_TEST = [
   "eid-routine-12-month-rapid-test",

@@ -1,5 +1,5 @@
 import { patientObjByEncounterTypeFilter  } from "@openmrs/react-components";
-import { ENCOUNTER_TYPES } from "../../constants";
+import { ENCOUNTER_TYPES, ALERTS_CATEGORIES } from "../../constants";
 import utils from "../../utils";
 
 // ADHERENCE COUNSELING QUEUE
@@ -19,19 +19,12 @@ Lab Tests Types
 4. HIV rapid test, qualitative
 */
 
-
 const adherenceFilter = patient => {
-  let viralLoadTests = null;
-  if (patient.labTests && patient.labTests.viral_load_tests) {
-    viralLoadTests = patient.labTests.viral_load_tests;
-  }
-  let lastVlTest = utils.getLastLabTest(viralLoadTests);
-  if (lastVlTest !== null && lastVlTest.resultNumeric !== null && lastVlTest.resultNumeric > 0) {
-    return true;
-  }
-  return false;
-};
-
+  return utils.hasAlert(patient.alert, [
+    ALERTS_CATEGORIES.ADHERENCE_ALERT,
+    ALERTS_CATEGORIES.SCREENING_ELIGIBILITY_ALERT
+  ])
+}
 
 export default {
   required: adherenceFilter,

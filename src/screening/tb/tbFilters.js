@@ -1,7 +1,16 @@
 import { patientObjByEncounterTypeFilter  } from "@openmrs/react-components";
-import { ENCOUNTER_TYPES } from "../../constants";
+import { ENCOUNTER_TYPES, ALERTS_CATEGORIES } from "../../constants";
+import utils from "../../utils";
+
+
+const tbFilter = patient => {
+  return utils.hasAlert(patient.alert, [
+    ALERTS_CATEGORIES.NUTRITION_ALERT,
+    ALERTS_CATEGORIES.SCREENING_ELIGIBILITY_ALERT
+  ]);
+};
 
 export default {
-  required: patient => true,
+  required: tbFilter,
   completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.TBScreeningEncounterType.uuid, 'include')
 };
