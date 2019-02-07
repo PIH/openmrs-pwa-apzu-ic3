@@ -77,8 +77,6 @@ class ClinicianForm extends React.Component {
 
   render() {
     const { clinicalOutcome, clinicalFollowUp } = this.props;
-    console.log('----clinicalFollowUp', clinicalFollowUp)
-    console.log('----CONCEPTS.Clinical.QualitativeTime.uuid', CONCEPTS.Clinical.QualitativeTime.uuid)
     const formContent = (
       <Grid>
         <Row>
