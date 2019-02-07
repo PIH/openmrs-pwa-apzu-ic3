@@ -1,5 +1,5 @@
 import { patientObjByEncounterTypeFilter  } from "@openmrs/react-components";
-import { ENCOUNTER_TYPES, HTC_ALERTS_CATEGORIES } from "../../constants";
+import { ENCOUNTER_TYPES, ALERTS_CATEGORIES } from "../../constants";
 import utils from "../../utils";
 
 
@@ -11,7 +11,10 @@ import utils from "../../utils";
 
 // only patients due for HTC
 const htcFilter = patient => {
-  return utils.hasAlert(patient.alert, HTC_ALERTS_CATEGORIES);
+  return utils.hasAlert(patient.alert, [
+    ALERTS_CATEGORIES.HTC_ALERT,
+    ALERTS_CATEGORIES.SCREENING_ELIGIBILITY_ALERT
+  ]);
 };
 
 

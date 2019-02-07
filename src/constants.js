@@ -632,43 +632,17 @@ export const VIRAL_LOAD_ALERTS = [
   "due-for-routine-viral-load-3p"
 ];
 
-export const VIRAL_LOAD_ALERTS_CATEGORIES = [
-  "viral-load",
-  "screening-eligibility"
-];
-export const HTC_ALERTS_CATEGORIES = [
-  "htc",
-  "screening-eligibility"
-];
-
-export const BP_ALERTS_CATEGORIES = [
-  "bp",
-  "screening-eligibility"
-];
-
-export const NUTRITION_ALERTS_CATEGORIES = [
-  "nutrition",
-  "screening-eligibility"
-];
-
-export const TB_ALERTS_CATEGORIES = [
-  "tb",
-  "screening-eligibility"
-];
-
-export const EID_ALERTS_CATEGORIES = [
-  "eid",
-  "screening-eligibility"
-];
-
-export const ADHERENCE_ALERTS_CATEGORIES = [
-  "adherence",
-  "screening-eligibility"
-];
-
-export const SPUTUM_ALERTS_CATEGORIES = [
-  "sputum"
-];
+export const ALERTS_CATEGORIES = {
+  VIRAL_LOAD_ALERT: "viral-load",
+  HTC_ALERT: "htc",
+  BP_ALERT: "bp",
+  NUTRITION_ALERT: "nutrition",
+  TB_ALERT: "tb",
+  EID_ALERT: "eid",
+  ADHERENCE_ALERT: "adherence",
+  SPUTUM_ALERT: "sputum",
+  SCREENING_ELIGIBILITY_ALERT: "screening-eligibility"
+};
 
 export const EID_RAPID_TEST = [
   "eid-routine-12-month-rapid-test",
