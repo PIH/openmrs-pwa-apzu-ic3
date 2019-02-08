@@ -244,13 +244,12 @@ const utils = {
   getDefaultEidTestType: (patient) => {
 
     let eidForm = null;
-    if ( (typeof patient.alert !== 'undefined') && (patient.alert !== null) &&  ( Object.keys(patient.alert).length > 0 )) {
-      let alertsArray = Object.keys(patient.alert);
-      for (let i = 0; i < alertsArray.length; i++) {
-        let a = alertsArray[i];
-        if ( EID_RAPID_TEST.indexOf(a) >= 0 ) {
+    if ( (typeof patient.alert !== 'undefined') && (patient.alert !== null) &&  ( patient.alert.length > 0 )) {
+      for (let i = 0; i < patient.alert.length; i++) {
+        let a = patient.alert[i];
+        if ( EID_RAPID_TEST.indexOf(a.name) >= 0 ) {
           return CONCEPTS.HIV_RAPID_TEST.uuid;
-        } else if ( EID_DNA_PCR.indexOf(a) >= 0 ) {
+        } else if ( EID_DNA_PCR.indexOf(a.name) >= 0 ) {
           return CONCEPTS.HIV_DNA_PCR_TEST.uuid;
         }
       }
