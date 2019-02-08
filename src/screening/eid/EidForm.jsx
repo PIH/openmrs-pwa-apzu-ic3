@@ -106,7 +106,7 @@ class EidForm extends React.PureComponent {
           defaultValues={ this.state.test_type !== null ? [{
             type: "obs",
             path: ["hiv-test-construct", "hiv-test-type"],
-            concept: [CONCEPTS.HIV_TEST_CONSTRUCT, CONCEPTS.HIV_TEST_TYPE.uuid],
+            conceptPath: [CONCEPTS.HIV_TEST_CONSTRUCT, CONCEPTS.HIV_TEST_TYPE],
             value: this.state.test_type
           }] : null
           }
