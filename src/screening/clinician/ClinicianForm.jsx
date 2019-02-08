@@ -11,16 +11,16 @@ class ClinicianForm extends React.Component {
     const { dispatch, clinicalOutcome, 
       clinicalQualitativeTimeField, 
       clinicalReasonToStopCareField, 
-      clinicalFollowUpField, 
       clinicalOtherOutcomeField, 
+      clinicalNextAppointmentDateField,
       clinicalTransferToAnotherFacilityField  } = this.props;
 
     if (clinicalOutcome === CONCEPTS.Clinical.TransferToAnotherFacility.uuid) {
       dispatch(change(this.props.formInstanceId, clinicalQualitativeTimeField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalQualitativeTimeField));
 
-      dispatch(change(this.props.formInstanceId, clinicalFollowUpField, null));
-      dispatch(untouch(this.props.formInstanceId, clinicalFollowUpField));
+      dispatch(change(this.props.formInstanceId, clinicalNextAppointmentDateField, null));
+      dispatch(untouch(this.props.formInstanceId, clinicalNextAppointmentDateField));
 
       dispatch(change(this.props.formInstanceId, clinicalQualitativeTimeField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalQualitativeTimeField));
@@ -34,8 +34,8 @@ class ClinicianForm extends React.Component {
       dispatch(change(this.props.formInstanceId, clinicalQualitativeTimeField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalQualitativeTimeField));
 
-      dispatch(change(this.props.formInstanceId, clinicalFollowUpField, null));
-      dispatch(untouch(this.props.formInstanceId, clinicalFollowUpField));
+      dispatch(change(this.props.formInstanceId, clinicalNextAppointmentDateField, null));
+      dispatch(untouch(this.props.formInstanceId, clinicalNextAppointmentDateField));
 
       dispatch(change(this.props.formInstanceId, clinicalQualitativeTimeField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalQualitativeTimeField));
@@ -49,8 +49,8 @@ class ClinicianForm extends React.Component {
       dispatch(change(this.props.formInstanceId, clinicalQualitativeTimeField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalQualitativeTimeField));
 
-      dispatch(change(this.props.formInstanceId, clinicalFollowUpField, null));
-      dispatch(untouch(this.props.formInstanceId, clinicalFollowUpField));
+      dispatch(change(this.props.formInstanceId, clinicalNextAppointmentDateField, null));
+      dispatch(untouch(this.props.formInstanceId, clinicalNextAppointmentDateField));
 
       dispatch(change(this.props.formInstanceId, clinicalQualitativeTimeField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalQualitativeTimeField));
@@ -64,9 +64,6 @@ class ClinicianForm extends React.Component {
       dispatch(change(this.props.formInstanceId, clinicalOtherOutcomeField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalOtherOutcomeField));
 
-      dispatch(change(this.props.formInstanceId, clinicalQualitativeTimeField, null));
-      dispatch(untouch(this.props.formInstanceId, clinicalQualitativeTimeField));
-
       dispatch(change(this.props.formInstanceId, clinicalTransferToAnotherFacilityField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalTransferToAnotherFacilityField));
 
@@ -76,7 +73,7 @@ class ClinicianForm extends React.Component {
   }
 
   render() {
-    const { clinicalOutcome, clinicalFollowUp } = this.props;
+    const { clinicalOutcome } = this.props;
     const formContent = (
       <Grid>
         <Row>
@@ -118,41 +115,25 @@ class ClinicianForm extends React.Component {
         {(typeof clinicalOutcome !== 'undefined' && clinicalOutcome === CONCEPTS.Clinical.FollowUp.uuid) && <span>
           <Row>
             <Col componentClass={ControlLabel}>
-          Clinic Follow up
+              Appointment time
             </Col>
           </Row>
-          <Row>
-            <FormGroup controlId="">
-              <Col sm={12}>
-                <Obs
-                  concept={CONCEPTS.Clinical.FollowUp.uuid}
-                  conceptAnswers={FORM_ANSWERS.clinicalFollowUp}
-                  path="clinical-follow-up"
-                />
-              </Col>
-            </FormGroup>
-          </Row>
+          <div style={{ display: 'flex' }}>
+            <Obs
+              concept={CONCEPTS.Clinical.NextAppointmentDate.uuid}
+              datatype="date"
+              path="clinical-next-appointment-date"
+            />
+            <span style={{ marginLeft: '20px', marginTop: '1px' }}>
+              <Obs
+                concept={CONCEPTS.Clinical.QualitativeTime.uuid}
+                conceptAnswers={FORM_ANSWERS.clinicalQualitativeTime}
+                path="clinical-qualitative-time"
+              />
+            </span>
+          </div>
         </span>}
         
-        {(typeof clinicalFollowUp !== 'undefined' && clinicalFollowUp === CONCEPTS.Clinical.QualitativeTime.uuid) && <span>
-          <Row>
-            <Col componentClass={ControlLabel}>
-            AM/PM Qualitative time
-            </Col>
-          </Row>
-          <Row>
-            <FormGroup controlId="">
-              <Col sm={12}>
-                <Obs
-                  concept={CONCEPTS.Clinical.QualitativeTime.uuid}
-                  conceptAnswers={FORM_ANSWERS.clinicalQualitativeTime}
-                  path="clinical-qualitative-time"
-                />
-              </Col>
-            </FormGroup>
-          </Row>
-        </span>}
-
         {(typeof clinicalOutcome !== 'undefined' && clinicalOutcome === CONCEPTS.Clinical.TransferToAnotherFacility.uuid) && <span>
           <Row>
             <Col componentClass={ControlLabel}>
@@ -230,23 +211,21 @@ export default connect((state, props) => {
   const selector = formValueSelector(props.formInstanceId);
   const clinicalOutcomeField = formUtil.obsFieldName('clinical-outcome', CONCEPTS.Clinical.Outcome.uuid);
   const clinicalQualitativeTimeField = formUtil.obsFieldName('clinical-qualitative-time', CONCEPTS.Clinical.QualitativeTime.uuid);
-  const clinicalFollowUpField = formUtil.obsFieldName('clinical-follow-up', CONCEPTS.Clinical.FollowUp.uuid);
   const clinicalReasonToStopCareField = formUtil.obsFieldName('clinical-reason-to-stop-care', CONCEPTS.Clinical.ReasonToStopCare.uuid);
   const clinicalOtherOutcomeField = formUtil.obsFieldName('clinical-other-outcome', CONCEPTS.Clinical.OtherOutcome.uuid);
   const clinicalTransferToAnotherFacilityField = formUtil.obsFieldName('clinical-transfer-to-another-facility', CONCEPTS.Clinical.TransferFacility.uuid);
+  const clinicalNextAppointmentDateField = formUtil.obsFieldName('clinical-next-appointment-date', CONCEPTS.Clinical.NextAppointmentDate.uuid);
 
   const clinicalOutcome = selector(state, clinicalOutcomeField);
-  const clinicalFollowUp = selector(state, clinicalFollowUpField);
-
+  const clinicalNextAppointmentDate = selector(state, clinicalNextAppointmentDateField);
 
   return {
     clinicalOutcome,
-    clinicalFollowUp,
     clinicalQualitativeTimeField,
-    clinicalFollowUpField,
     clinicalReasonToStopCareField,
     clinicalOtherOutcomeField,
     clinicalTransferToAnotherFacilityField,
+    clinicalNextAppointmentDate,
     patient: selectors.getSelectedPatientFromStore(state),
   };
 })(ClinicianForm);
