@@ -24,6 +24,7 @@ const createFromReportingRestRep = (restRep) => {
   patient.gender = restRep.gender;
   patient.age = restRep.age_years;
   patient.birthdate = restRep.birthdate;
+  patient.deceased = restRep.deceased;
   patient.chronic_care_diagnoses = restRep.chronic_care_diagnoses
 
   patient.name = {
