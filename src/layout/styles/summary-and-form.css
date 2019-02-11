@@ -27,12 +27,7 @@
   cursor: pointer;
   color: darkblue;
   text-decoration: underline;
-}
-
-.summary-swiper-button > span {
-  top: 12px;
-  font-size: 40px;
-  color: darkgray;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .form-swiper-button {

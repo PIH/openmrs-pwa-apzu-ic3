@@ -71,11 +71,11 @@ export class SummaryAndForm extends React.Component {
 
   summarySwiperButton() {
     return (
-      <span 
+      <button 
         className="summary-swiper-button" 
         onClick={() => this.goNext()}
       > {this.formatNavMessage()}
-      </span>
+      </button>
     );
   }
 
