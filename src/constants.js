@@ -159,8 +159,7 @@ export const CONCEPTS = {
     hiNormal: 110,
     hiAbsolute: 140,
     lowAbsolute: 40,
-    hiCritical: 120,
-    lowCritical: 80,
+    hiCritical: 120
   },
   'Height': {
     uuid: '6569c562-977f-11e1-8993-905e29aff6c1'
