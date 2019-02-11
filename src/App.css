@@ -1,3 +1,8 @@
+a, button, svg, .list-group-item-heading, .glyphicon {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: 0;
+}
+
 .App {
   text-align: center;
 }
