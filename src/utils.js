@@ -44,7 +44,7 @@ const utils = {
       // If more than 1 CCC identifier, use current location identifier
       const getCccCurrentLocation = hasCCCIdentifier.find(identifier => identifier.identifier.match(currentLocationPrefix));
       if (getCccCurrentLocation && currentLocationPrefix) {
-        identifiers.push(getCccCurrentLocation[0].identifier);
+        identifiers.push(getCccCurrentLocation.identifier);
       } else {
         // If more than 1 CCC identifier and no currentLocation use preferred
         const getCccPreferred = hasCCCIdentifier.find(identifier => identifier.preferred === true);
@@ -60,9 +60,9 @@ const utils = {
     if (hasHCCIdentifier.length === 1) {
       identifiers.push(hasHCCIdentifier[0].identifier);
     } else if (hasHCCIdentifier.length > 1) {
-      const getHccCurrentLocation = hasCCCIdentifier.find(identifier => identifier.identifier.match(currentLocationPrefix));
+      const getHccCurrentLocation = hasHCCIdentifier.find(identifier => identifier.identifier.match(currentLocationPrefix));
       if (getHccCurrentLocation && currentLocationPrefix) {
-        identifiers.push(getHccCurrentLocation[0].identifier);
+        identifiers.push(getHccCurrentLocation.identifier);
       } else {
         const getHccPreferred = hasHCCIdentifier.find(identifier => identifier.preferred === true);
         if (getHccPreferred) {
@@ -78,7 +78,7 @@ const utils = {
     } else if (hasARTIdentifier.length > 1) {
       const getArtCurrentLocation = hasARTIdentifier.find(identifier => identifier.identifier.match(currentLocationPrefix));
       if (getArtCurrentLocation && currentLocationPrefix) {
-        identifiers.push(getArtCurrentLocation[0].identifier);
+        identifiers.push(getArtCurrentLocation.identifier);
       } else {
         const getArtPreferred = hasARTIdentifier.find(identifier => identifier.preferred === true);
         if (getArtPreferred) {
