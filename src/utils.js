@@ -2,7 +2,7 @@ import dateFns from 'date-fns';
 import { patientUtil } from '@openmrs/react-components';
 import {
   ENCOUNTER_TYPES, CONCEPTS, MALNUTRITION_LEVEL, EID_RAPID_TEST,
-  EID_DNA_PCR, LOCATION_CODE_UUID, CCC_NUMBER, HCC_NUMBER, ART_NUMBER,
+  EID_DNA_PCR, LOCATION_CODE_UUID, IDENTIFIER_TYPES,
 } from "./constants";
 
 const utils = {
@@ -30,9 +30,10 @@ const utils = {
 
   getIdentifiersToDisplay(patient, locations, currentLocation) {
     const baseIdentifiers = patientUtil.getIdentifiers(patient);
-    const hasCCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, CCC_NUMBER);
-    const hasHCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, HCC_NUMBER);
-    const hasARTIdentifier = patientUtil.getIdentifiersAndPreferred(patient, ART_NUMBER);
+    const hasCCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, IDENTIFIER_TYPES.CCC_IDENTIFIER_TYPE);
+    const hasHCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, IDENTIFIER_TYPES.HCC_IDENTIFIER_TYPE);
+    const hasARTIdentifier = patientUtil.getIdentifiersAndPreferred(patient, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
+    
     const currentLocationPrefix = utils.getCurrentLocationPrefix(locations, currentLocation);
     let identifiers = [], additionalIdentifiers = [];
 
@@ -48,10 +49,10 @@ const utils = {
         // If more than 1 CCC identifier and no currentLocation use preferred
         const getCccPreferred = hasCCCIdentifier.find(identifier => identifier.preferred === true);
         if (getCccPreferred) {
-          identifiers.push(getCccPreferred[0].identifier);
+          identifiers.push(getCccPreferred.identifier);
         } else {
           // if NO preferred CCC identifier, use first one
-          identifiers.push(hasCCCIdentifier[0].identifier);
+          identifiers.push(hasCCCIdentifier.identifier);
         }
       }
     }
@@ -65,9 +66,9 @@ const utils = {
       } else {
         const getHccPreferred = hasHCCIdentifier.find(identifier => identifier.preferred === true);
         if (getHccPreferred) {
-          identifiers.push(getHccPreferred[0].identifier);
+          identifiers.push(getHccPreferred.identifier);
         } else {
-          identifiers.push(hasHCCIdentifier[0].identifier);
+          identifiers.push(hasHCCIdentifier.identifier);
         }
       }
     }
@@ -81,9 +82,9 @@ const utils = {
       } else {
         const getArtPreferred = hasARTIdentifier.find(identifier => identifier.preferred === true);
         if (getArtPreferred) {
-          identifiers.push(getArtPreferred[0].identifier);
+          identifiers.push(getArtPreferred.identifier);
         } else {
-          identifiers.push(hasARTIdentifier[0].identifier);
+          identifiers.push(hasARTIdentifier.identifier);
         }
       }
     }
