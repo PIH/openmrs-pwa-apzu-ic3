@@ -116,35 +116,35 @@ export const LOCATION_TYPES = {
 export const CONCEPTS = {
   'True': {
     uuid: '655e2f90-977f-11e1-8993-905e29aff6c1',
-    name: 'Yes'
+    display: 'Yes'
   },
   'False': {
     uuid: '655e3148-977f-11e1-8993-905e29aff6c1',
-    name: 'No'
+    display: 'No'
   },
   'Yes': {
     uuid: '65576354-977f-11e1-8993-905e29aff6c1',
-    name: 'Yes'
+    display: 'Yes'
   },
   'No': {
     uuid: '6557646c-977f-11e1-8993-905e29aff6c1',
-    name: 'No'
+    display: 'No'
   },
   'SampleCollected': {
     uuid: '165252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Sample Collected'
+    display: 'Sample Collected'
   },
   'SampleQuality': {
     uuid: '165253AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Sample Quality'
+    display: 'Sample Quality'
   },
   'satisfactorySampleQuality': {
     uuid: '6559dde6-977f-11e1-8993-905e29aff6c1',
-    name: 'Satisfactory'
+    display: 'Satisfactory'
   },
   'unsatisfactorySampleQuality': {
     uuid: '1304AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Unsatisfactory'
+    display: 'Unsatisfactory'
   },
   'SystolicBloodPressure' : {
     uuid: '6569bffe-977f-11e1-8993-905e29aff6c1',
@@ -168,7 +168,8 @@ export const CONCEPTS = {
     uuid: '6569c44a-977f-11e1-8993-905e29aff6c1'
   },
   'MUAC': {
-    uuid: '6558d09a-977f-11e1-8993-905e29aff6c1'
+    uuid: '6558d09a-977f-11e1-8993-905e29aff6c1',
+    display: "MUAC"
   },
   'Pregnant': {
     uuid: '656fbd28-977f-11e1-8993-905e29aff6c1'
@@ -185,63 +186,63 @@ export const CONCEPTS = {
   },
   'HIV_TEST_TYPE': {
     uuid: '655bee06-977f-11e1-8993-905e29aff6c1',
-    name: 'HIV Test Type'
+    display: 'HIV Test Type'
   },
   'HIV_RAPID_TEST': {
     uuid: '654b983a-977f-11e1-8993-905e29aff6c1',
-    name: 'HIV Rapid Test'
+    display: 'HIV Rapid Test'
   },
   'HIV_DNA_PCR_TEST': {
     uuid: '654a6960-977f-11e1-8993-905e29aff6c1',
-    name: 'DNA PCR'
+    display: 'DNA PCR'
   },
   "HIV_TEST_RESULTS": {
     uuid: '655dcb7c-977f-11e1-8993-905e29aff6c1',
     'Reactive': {
       uuid: '6549be7a-977f-11e1-8993-905e29aff6c1',
-      name: 'Reactive'
+      display: 'Reactive'
     },
     'Non_Reactive': {
       uuid: '654994c2-977f-11e1-8993-905e29aff6c1',
-      name: 'Non-Reactive'
+      display: 'Non-Reactive'
     },
     'Not_Done': {
       uuid: '6557a4ae-977f-11e1-8993-905e29aff6c1',
-      name: 'Not performed today'
+      display: 'Not performed today'
     }
   },
   'ADHERENCE_COUNSELING': {
     'AdherenceSession': {
       uuid: '06b1f7d8-b6cc-11e8-96f8-529269fb1459',
-      name: 'Adherence Session',
+      display: 'Adherence Session',
       'FirstSession': {
         uuid: '697e9461-f2d6-4ab1-a140-48f768ce002a',
-        name: '1st Session'
+        display: '1st Session'
       },
       'SecondSession': {
         uuid: '11c0f708-6950-4e94-b080-5c76174a4947',
-        name: '2nd Session'
+        display: '2nd Session'
       },
       'ThirdSession': {
         uuid: '224e3d57-f6d1-4244-bbe2-b81a574ba7aa',
-        name: '3rd Session'
+        display: '3rd Session'
       }
     },
     'NameOfCounselor': {
       uuid: '6562b4fc-977f-11e1-8993-905e29aff6c1',
-      name: 'Name of counselor'
+      display: 'Name of counselor'
     },
     'CounseledOnPillCounts': {
       uuid: '06b2005c-b6cc-11e8-96f8-529269fb1459',
-      name: 'Counseled on pill counts'
+      display: 'Counseled on pill counts'
     },
     'DrugAdherencePercentage': {
       uuid: '20E91F16-BA4F-4058-B17A-998A82F4B803',
-      name: 'Drug adherence percentage'
+      display: 'Drug adherence percentage'
     },
     'CounseledOnViralLoad': {
       uuid: '06b20a2a-b6cc-11e8-96f8-529269fb1459',
-      name: 'Counseled on viral load'
+      display: 'Counseled on viral load'
     }
   },
   'ViralLoadTestSet': {
@@ -255,67 +256,67 @@ export const CONCEPTS = {
   },
   'Bled': {
     uuid: 'f792f2f9-9c24-4d6e-98fd-caffa8f2383f',
-    name: 'Bled'
+    display: 'Bled'
   },
   'ReasonForNoSample': {
     uuid: '0e447d92-a180-11e8-98d0-529269fb1459',
-    name: 'Reason for no sample'
+    display: 'Reason for no sample'
   },
   'UnableToDrawBlood': {
     uuid: '0e447720-a180-11e8-98d0-529269fb1459',
-    name: 'Unable to draw blood'
+    display: 'Unable to draw blood'
   },
   'PatientRefused': {
     uuid: '6566a4ae-977f-11e1-8993-905e29aff6c1',
-    name: 'Patient refused'
+    display: 'Patient refused'
   },
   'InadequateSupplies': {
     uuid: '655dc866-977f-11e1-8993-905e29aff6c1',
-    name: 'Inadequate supplies for testing'
+    display: 'Inadequate supplies for testing'
   },
   'NeedsAdherenceCounseling': {
     uuid: 'bc7bd9f2-b21d-11e8-96f8-529269fb1459',
-    name: 'Needs additional adherence counseling'
+    display: 'Needs additional adherence counseling'
   },
   'ReasonForTesting': {
     uuid: '164126AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Reason for testing'
+    display: 'Reason for testing'
   },
   'Routine': {
     uuid: 'e0821812-955d-11e7-abc4-cec278b6b50a',
-    name: 'Routine'
+    display: 'Routine'
   },
   'SixWeeksRoutine': {
     uuid: 'e0821812-955d-11e7-abc4-cec278b6b50a',
-    name: '6w Routine'
+    display: '6w Routine'
   },
   'Confirmatory': {
     uuid: '65590f06-977f-11e1-8993-905e29aff6c1',
-    name: 'Confirmatory'
+    display: 'Confirmatory'
   },
   'Target': {
     uuid: 'e0821df8-955d-11e7-abc4-cec278b6b50a',
-    name: 'Target'
+    display: 'Target'
   },
   'LabLocation': {
     uuid: '6fc0ab50-9492-11e7-abc4-cec278b6b50a',
-    name: 'Lab Location'
+    display: 'Lab Location'
   },
   'NenoGeneXpert': {
     uuid: 'e08214c0-955d-11e7-abc4-cec278b6b50a',
-    name: 'Neno GeneXpert'
+    display: 'Neno GeneXpert'
   },
   'CentralLaboratory': {
     uuid: 'e0820552-955d-11e7-abc4-cec278b6b50a',
-    name: 'Central Laboratory'
+    display: 'Central Laboratory'
   },
   'LisungwiGeneXpert': {
     uuid: 'e08212b8-955d-11e7-abc4-cec278b6b50a',
-    name: 'Lisungwi GeneXpert'
+    display: 'Lisungwi GeneXpert'
   },
   'microscopy': {
     uuid: '65628356-977f-11e1-8993-905e29aff6c1',
-    name: 'Microscopy'
+    display: 'Microscopy'
   },
   'TbTest' : {
     'TuberculosisTestScreeningSet': {
@@ -328,36 +329,34 @@ export const CONCEPTS = {
     },
     'Cough': {
       uuid: '65460a32-977f-11e1-8993-905e29aff6c1',
-      name: 'Cough'
+      display: 'Cough'
     },
     'Fever': {
       uuid: '656e9844-977f-11e1-8993-905e29aff6c1',
-      name: 'Fever'
+      display: 'Fever'
     },
     'NightSweats': {
       uuid: '656f10da-977f-11e1-8993-905e29aff6c1',
-      name: 'Night Sweats'
+      display: 'Night Sweats'
     },
     'WeightLoss': {
       uuid: '654a56be-977f-11e1-8993-905e29aff6c1',
-      name: 'Weight loss'
+      display: 'Weight loss'
     },
     'RecentContactWithActiveTB': {
       uuid: 'a6c1cd1c-b4a2-405a-930c-f11c914d50c5',
-      name: 'Recent contact with active TB (<1 year)'
+      display: 'Recent contact with active TB (<1 year)'
     },
     'PainfulNeckAndArmpitLymphNodes': {
       uuid: '974d5caf-2db6-4d5d-b509-11c6f5340ea5',
-      name: 'Painful nexk and armpit lymph nodes'
+      display: 'Painful nexk and armpit lymph nodes'
     },
     'SymptomPresent': {
       uuid: '6558d3ba-977f-11e1-8993-905e29aff6c1',
-      name: 'Symptom Present',
       display: 'Yes'
     },
     'SymptomAbsent': {
       uuid: '655b50fe-977f-11e1-8993-905e29aff6c1',
-      name: 'Symptom Absent',
       display: 'No'
     }
   },
@@ -365,155 +364,155 @@ export const CONCEPTS = {
     uuid: '65664fc2-977f-11e1-8993-905e29aff6c1',
     'SHARC': {
       uuid: '6f48dfac-9ffa-11e8-98d0-529269fb1459',
-      name: 'SHARC'
+      display: 'SHARC'
     },
     'OPD_at_health_center': {
       uuid: '655ac68e-977f-11e1-8993-905e29aff6c1',
-      name: 'OPD at health center'
+      display: 'OPD at health center'
     },
     'Inpatient': {
       uuid: '655d1772-977f-11e1-8993-905e29aff6c1',
-      name: 'Inpatient'
+      display: 'Inpatient'
     },
     'Outside_Neno_District': {
       uuid: '6f48e5b0-9ffa-11e8-98d0-529269fb1459',
-      name: 'Outside Neno District'
+      display: 'Outside Neno District'
     },
     'Other': {
       uuid: '656cce7e-977f-11e1-8993-905e29aff6c1',
-      name: 'Other'
+      display: 'Other'
     }
   },
   'TBTestType': {
     uuid: '38c4512a-5aef-487d-a450-ecea4bc5df7e',
-    name: 'Tuberculosis test type'
+    display: 'Tuberculosis test type'
   },
   'GeneXpert': {
     uuid: '162202AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'GeneXpert'
+    display: 'GeneXpert'
   },
   'Smear': {
     uuid: '65628568-977f-11e1-8993-905e29aff6c1',
-    name: 'Smear'
+    display: 'Smear'
   },
   'TBDetected': {
     uuid: '1301AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Detected'
+    display: 'Detected'
   },
   'TBUndetected': {
     uuid: '1302AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Undetected'
+    display: 'Undetected'
   },
   'ReasonForNoResult': {
     uuid: '656fa450-977f-11e1-8993-905e29aff6c1',
-    name: 'No Result'
+    display: 'No Result'
   },
   'RifampinResistance': {
     uuid: '164937AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Rifampin Resistance'
+    display: 'Rifampin Resistance'
   },
   'PositiveRifampinResistance': {
     uuid: '162203AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Positive'
+    display: 'Positive'
   },
   'NegativeRifampinResistance': {
     uuid: '162204AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Negative'
+    display: 'Negative'
   },
   'IndeterminateRifampinResistance': {
     uuid: '164104AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Indeterminate'
+    display: 'Indeterminate'
   },
   'Contaminated': {
     uuid: '65597a5e-977f-11e1-8993-905e29aff6c1',
-    name: 'Contaminated'
+    display: 'Contaminated'
   },
   'EquipmentFailure': {
     uuid: '165179AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Equipment Failure'
+    display: 'Equipment Failure'
   },
   'UnsatisfactorySample': {
     uuid: '656fa55e-977f-11e1-8993-905e29aff6c1',
-    name: 'Unsatisfactory Sample'
+    display: 'Unsatisfactory Sample'
   },
   'InappropriateSampleContainer': {
     uuid: '165181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Inappropriate sample container used'
+    display: 'Inappropriate sample container used'
   },
   'UnavailableSupplies': {
     uuid: '165183AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    name: 'Supplies not available'
+    display: 'Supplies not available'
   },
   'Other': {
     uuid: '657140f8-977f-11e1-8993-905e29aff6c1',
-    name: 'Other'
+    display: 'Other'
   },
   'TBSmearResult': {
     'Positive': {
       uuid: '6549be7a-977f-11e1-8993-905e29aff6c1',
-      name: 'Positive'
+      display: 'Positive'
     },
     'Negative': {
       uuid: '654994c2-977f-11e1-8993-905e29aff6c1',
-      name: 'Negative'
+      display: 'Negative'
     },
     'NoResult': {
       uuid: '6557987e-977f-11e1-8993-905e29aff6c1',
-      name: 'No Result'
+      display: 'No Result'
     }
   },
   'Clinical': {
     'ClinicalNotes': {
       uuid: '655928e2-977f-11e1-8993-905e29aff6c1',
-      name: 'Clinical Notes'
+      display: 'Clinical Notes'
     },
     'Outcome': {
       uuid: '6571d95a-977f-11e1-8993-905e29aff6c1',
-      name: 'Outcome'
+      display: 'Outcome'
     },
     'FollowUp': {
       uuid: '65700d1e-977f-11e1-8993-905e29aff6c1',
-      name: 'Clinical follow-up'
+      display: 'Clinical follow-up'
     },
     'TransferToAnotherFacility': {
       uuid: '6576ffc0-977f-11e1-8993-905e29aff6c1',
-      name: 'transfer to another facility'
+      display: 'transfer to another facility'
     },
     'ExitFromCare': {
       uuid: '6566dba4-977f-11e1-8993-905e29aff6c1',
-      name: 'Exit from care'
+      display: 'Exit from care'
     },
     'Other': {
       uuid: '657140f8-977f-11e1-8993-905e29aff6c1',
-      name: 'Other'
+      display: 'Other'
     },
     'NextAppointmentDate': {
       uuid: '6569cbd4-977f-11e1-8993-905e29aff6c1',
-      name: 'Next appointment date'
+      display: 'Next appointment date'
     },
     'QualitativeTime': {
       uuid: '4c923fca-28d6-11e9-b210-d663bd873d93',
-      name: 'Qualitative time'
+      display: 'Time of day'
     },
     'QualitativeTimeAM': {
       uuid: '656f9bc2-977f-11e1-8993-905e29aff6c1',
-      name: 'In the morning'
+      display: 'In the morning'
     },
     'QualitativeTimePM': {
       uuid: '656f9cc6-977f-11e1-8993-905e29aff6c1',
-      name: 'In the evening'
+      display: 'In the evening'
     },
     'TransferFacility': {
       uuid: '65624b3e-977f-11e1-8993-905e29aff6c1',
-      name: 'Transfer Facility (transfer to another facility)'
+      display: 'Transfer Facility (transfer to another facility)'
     },
     'ReasonToStopCare': {
       uuid: '558a783a-2990-11e9-b210-d663bd873d93',
-      name: 'Reason to stop care'
+      display: 'Reason to stop care'
     },
     'OtherOutcome': {
       uuid: '558a7114-2990-11e9-b210-d663bd873d93',
-      name: 'Other outcome'
+      display: 'Other outcome'
     }
   }
 };
@@ -524,144 +523,162 @@ export const FORM_NAMES = {
 
 export const FORM_ANSWERS = {
   'clinicalOutcome': [
-    { uuid: CONCEPTS.Clinical.FollowUp.uuid, name: CONCEPTS.Clinical.FollowUp.name },
-    { uuid: CONCEPTS.Clinical.TransferToAnotherFacility.uuid, name: CONCEPTS.Clinical.TransferToAnotherFacility.name },
-    { uuid: CONCEPTS.Clinical.ExitFromCare.uuid, name: CONCEPTS.Clinical.ExitFromCare.name },
-    { uuid: CONCEPTS.Clinical.Other.uuid, name: CONCEPTS.Clinical.Other.name },
+    { uuid: CONCEPTS.Clinical.FollowUp.uuid, display: CONCEPTS.Clinical.FollowUp.display },
+    {
+      uuid: CONCEPTS.Clinical.TransferToAnotherFacility.uuid,
+      display: CONCEPTS.Clinical.TransferToAnotherFacility.display
+    },
+    { uuid: CONCEPTS.Clinical.ExitFromCare.uuid, display: CONCEPTS.Clinical.ExitFromCare.display },
+    { uuid: CONCEPTS.Clinical.Other.uuid, display: CONCEPTS.Clinical.Other.display },
   ],
   'clinicalFollowUp': [
-    { uuid: CONCEPTS.Clinical.NextAppointmentDate.uuid, name: CONCEPTS.Clinical.NextAppointmentDate.name },
-    { uuid: CONCEPTS.Clinical.QualitativeTime.uuid, name: CONCEPTS.Clinical.QualitativeTime.name },
+    { uuid: CONCEPTS.Clinical.NextAppointmentDate.uuid, display: CONCEPTS.Clinical.NextAppointmentDate.display },
+    { uuid: CONCEPTS.Clinical.QualitativeTime.uuid, display: CONCEPTS.Clinical.QualitativeTime.display },
   ],
   'clinicalQualitativeTime': [
-    { uuid: CONCEPTS.Clinical.QualitativeTimeAM.uuid, name: CONCEPTS.Clinical.QualitativeTimeAM.name },
-    { uuid: CONCEPTS.Clinical.QualitativeTimePM.uuid, name: CONCEPTS.Clinical.QualitativeTimePM.name },
+    { uuid: CONCEPTS.Clinical.QualitativeTimeAM.uuid, display: CONCEPTS.Clinical.QualitativeTimeAM.display },
+    { uuid: CONCEPTS.Clinical.QualitativeTimePM.uuid, display: CONCEPTS.Clinical.QualitativeTimePM.display },
   ],
   'tbTestTypeanswers': [
-    { uuid: CONCEPTS.GeneXpert.uuid, name: CONCEPTS.GeneXpert.name },
-    { uuid: CONCEPTS.Smear.uuid, name: CONCEPTS.Smear.name }
+    { uuid: CONCEPTS.GeneXpert.uuid, display: CONCEPTS.GeneXpert.display },
+    { uuid: CONCEPTS.Smear.uuid, display: CONCEPTS.Smear.display }
   ],
   'GeneXpertAnswers': [
-    { uuid: CONCEPTS.TBDetected.uuid, name: CONCEPTS.TBDetected.name },
-    { uuid: CONCEPTS.TBUndetected.uuid, name: CONCEPTS.TBUndetected.name },
-    { uuid: CONCEPTS.ReasonForNoResult.uuid, name: CONCEPTS.ReasonForNoResult.name }
+    { uuid: CONCEPTS.TBDetected.uuid, display: CONCEPTS.TBDetected.display },
+    { uuid: CONCEPTS.TBUndetected.uuid, display: CONCEPTS.TBUndetected.display },
+    { uuid: CONCEPTS.ReasonForNoResult.uuid, display: CONCEPTS.ReasonForNoResult.display }
   ],
   'SmearAnswers': [
-    { uuid: CONCEPTS.TBSmearResult.Positive.uuid, name: CONCEPTS.TBSmearResult.Positive.name },
-    { uuid: CONCEPTS.TBSmearResult.Negative.uuid, name: CONCEPTS.TBSmearResult.Negative.name },
-    { uuid: CONCEPTS.TBSmearResult.NoResult.uuid, name: CONCEPTS.TBSmearResult.NoResult.name }
+    { uuid: CONCEPTS.TBSmearResult.Positive.uuid, display: CONCEPTS.TBSmearResult.Positive.display },
+    { uuid: CONCEPTS.TBSmearResult.Negative.uuid, display: CONCEPTS.TBSmearResult.Negative.display },
+    { uuid: CONCEPTS.TBSmearResult.NoResult.uuid, display: CONCEPTS.TBSmearResult.NoResult.display }
   ],
   'RifampinResistanceAnswers': [
-    { uuid: CONCEPTS.PositiveRifampinResistance.uuid, name: CONCEPTS.PositiveRifampinResistance.name },
-    { uuid: CONCEPTS.NegativeRifampinResistance.uuid, name: CONCEPTS.NegativeRifampinResistance.name },
-    { uuid: CONCEPTS.IndeterminateRifampinResistance.uuid, name: CONCEPTS.IndeterminateRifampinResistance.name },
+    { uuid: CONCEPTS.PositiveRifampinResistance.uuid, display: CONCEPTS.PositiveRifampinResistance.display },
+    { uuid: CONCEPTS.NegativeRifampinResistance.uuid, display: CONCEPTS.NegativeRifampinResistance.display },
+    { uuid: CONCEPTS.IndeterminateRifampinResistance.uuid, display: CONCEPTS.IndeterminateRifampinResistance.display },
   ],
   'ReasonForNoTBResultAnswers': [
-    { uuid: CONCEPTS.Contaminated.uuid, name: CONCEPTS.Contaminated.name },
-    { uuid: CONCEPTS.UnsatisfactorySample.uuid, name: CONCEPTS.UnsatisfactorySample.name },
-    { uuid: CONCEPTS.EquipmentFailure.uuid, name: CONCEPTS.EquipmentFailure.name },
-    { uuid: CONCEPTS.InappropriateSampleContainer.uuid, name: CONCEPTS.InappropriateSampleContainer.name },
-    { uuid: CONCEPTS.UnavailableSupplies.uuid, name: CONCEPTS.UnavailableSupplies.name },
-    { uuid: CONCEPTS.Other.uuid, name: CONCEPTS.Other.name },
+    { uuid: CONCEPTS.Contaminated.uuid, display: CONCEPTS.Contaminated.display },
+    { uuid: CONCEPTS.UnsatisfactorySample.uuid, display: CONCEPTS.UnsatisfactorySample.display },
+    { uuid: CONCEPTS.EquipmentFailure.uuid, display: CONCEPTS.EquipmentFailure.display },
+    { uuid: CONCEPTS.InappropriateSampleContainer.uuid, display: CONCEPTS.InappropriateSampleContainer.display },
+    { uuid: CONCEPTS.UnavailableSupplies.uuid, display: CONCEPTS.UnavailableSupplies.display },
+    { uuid: CONCEPTS.Other.uuid, display: CONCEPTS.Other.display },
   ],
   'referrals': [
-    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.SHARC.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.SHARC.name },
-    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.OPD_at_health_center.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.OPD_at_health_center.name },
-    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Inpatient.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.Inpatient.name },
-    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.name },
-    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Other.uuid, name: CONCEPTS.SOURCE_OF_REFERRAL.Other.name }
+    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.SHARC.uuid, display: CONCEPTS.SOURCE_OF_REFERRAL.SHARC.display },
+    {
+      uuid: CONCEPTS.SOURCE_OF_REFERRAL.OPD_at_health_center.uuid,
+      display: CONCEPTS.SOURCE_OF_REFERRAL.OPD_at_health_center.display
+    },
+    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Inpatient.uuid, display: CONCEPTS.SOURCE_OF_REFERRAL.Inpatient.display },
+    {
+      uuid: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.uuid,
+      display: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.display
+    },
+    { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Other.uuid, display: CONCEPTS.SOURCE_OF_REFERRAL.Other.display }
   ],
   'sampleQualityAnswers': [
-    { uuid: CONCEPTS.satisfactorySampleQuality.uuid, name: CONCEPTS.satisfactorySampleQuality.name },
-    { uuid: CONCEPTS.unsatisfactorySampleQuality.uuid, name: CONCEPTS.unsatisfactorySampleQuality.name },
+    { uuid: CONCEPTS.satisfactorySampleQuality.uuid, display: CONCEPTS.satisfactorySampleQuality.display },
+    { uuid: CONCEPTS.unsatisfactorySampleQuality.uuid, display: CONCEPTS.unsatisfactorySampleQuality.display },
   ],
   'trueFalse' : [
-    { uuid: CONCEPTS.True.uuid, name: CONCEPTS.True.name },
-    { uuid: CONCEPTS.False.uuid, name: CONCEPTS.False.name },
+    { uuid: CONCEPTS.True.uuid, display: CONCEPTS.True.display },
+    { uuid: CONCEPTS.False.uuid, display: CONCEPTS.False.display },
   ],
   'yesNo': [
-    { uuid: CONCEPTS.Yes.uuid, name: CONCEPTS.Yes.name },
-    { uuid: CONCEPTS.No.uuid, name: CONCEPTS.No.name },
+    { uuid: CONCEPTS.Yes.uuid, display: CONCEPTS.Yes.display },
+    { uuid: CONCEPTS.No.uuid, display: CONCEPTS.No.display },
   ],
   'eidNoSampleAnswers': [
-    { uuid: CONCEPTS.UnableToDrawBlood.uuid, name: CONCEPTS.UnableToDrawBlood.name },
-    { uuid: CONCEPTS.PatientRefused.uuid, name: CONCEPTS.PatientRefused.name },
-    { uuid: CONCEPTS.InadequateSupplies.uuid, name: CONCEPTS.InadequateSupplies.name },
+    { uuid: CONCEPTS.UnableToDrawBlood.uuid, display: CONCEPTS.UnableToDrawBlood.display },
+    { uuid: CONCEPTS.PatientRefused.uuid, display: CONCEPTS.PatientRefused.display },
+    { uuid: CONCEPTS.InadequateSupplies.uuid, display: CONCEPTS.InadequateSupplies.display },
   ],
   'noSampleAnswers': [
-    { uuid: CONCEPTS.UnableToDrawBlood.uuid, name: CONCEPTS.UnableToDrawBlood.name },
-    { uuid: CONCEPTS.PatientRefused.uuid, name: CONCEPTS.PatientRefused.name },
-    { uuid: CONCEPTS.InadequateSupplies.uuid, name: CONCEPTS.InadequateSupplies.name },
-    { uuid: CONCEPTS.NeedsAdherenceCounseling.uuid, name: CONCEPTS.NeedsAdherenceCounseling.name },
+    { uuid: CONCEPTS.UnableToDrawBlood.uuid, display: CONCEPTS.UnableToDrawBlood.display },
+    { uuid: CONCEPTS.PatientRefused.uuid, display: CONCEPTS.PatientRefused.display },
+    { uuid: CONCEPTS.InadequateSupplies.uuid, display: CONCEPTS.InadequateSupplies.display },
+    { uuid: CONCEPTS.NeedsAdherenceCounseling.uuid, display: CONCEPTS.NeedsAdherenceCounseling.display },
   ],
   'reasonForTesting': [
-    { uuid: CONCEPTS.Routine.uuid, name: CONCEPTS.Routine.name },
-    { uuid: CONCEPTS.Confirmatory.uuid, name: CONCEPTS.Confirmatory.name },
-    { uuid: CONCEPTS.Target.uuid, name: CONCEPTS.Target.name },
+    { uuid: CONCEPTS.Routine.uuid, display: CONCEPTS.Routine.display },
+    { uuid: CONCEPTS.Confirmatory.uuid, display: CONCEPTS.Confirmatory.display },
+    { uuid: CONCEPTS.Target.uuid, display: CONCEPTS.Target.display },
   ],
   'eidHivTestType': [
-    { uuid: CONCEPTS.HIV_RAPID_TEST.uuid, name: CONCEPTS.HIV_RAPID_TEST.name },
-    { uuid: CONCEPTS.HIV_DNA_PCR_TEST.uuid, name: CONCEPTS.HIV_DNA_PCR_TEST.name }
+    { uuid: CONCEPTS.HIV_RAPID_TEST.uuid, display: CONCEPTS.HIV_RAPID_TEST.display },
+    { uuid: CONCEPTS.HIV_DNA_PCR_TEST.uuid, display: CONCEPTS.HIV_DNA_PCR_TEST.display }
   ],
   'dnaPcrReasonForTesting': [
-    { uuid: CONCEPTS.SixWeeksRoutine.uuid, name: CONCEPTS.SixWeeksRoutine.name },
-    { uuid: CONCEPTS.Confirmatory.uuid, name: CONCEPTS.Confirmatory.name }
+    { uuid: CONCEPTS.SixWeeksRoutine.uuid, display: CONCEPTS.SixWeeksRoutine.display },
+    { uuid: CONCEPTS.Confirmatory.uuid, display: CONCEPTS.Confirmatory.display }
   ],
   'labLocation': [
-    { uuid: CONCEPTS.NenoGeneXpert.uuid, name: CONCEPTS.NenoGeneXpert.name },
-    { uuid: CONCEPTS.CentralLaboratory.uuid, name: CONCEPTS.CentralLaboratory.name },
-    { uuid: CONCEPTS.LisungwiGeneXpert.uuid, name: CONCEPTS.LisungwiGeneXpert.name },
+    { uuid: CONCEPTS.NenoGeneXpert.uuid, display: CONCEPTS.NenoGeneXpert.display },
+    { uuid: CONCEPTS.CentralLaboratory.uuid, display: CONCEPTS.CentralLaboratory.display },
+    { uuid: CONCEPTS.LisungwiGeneXpert.uuid, display: CONCEPTS.LisungwiGeneXpert.display },
   ],
   'sputumLabLocation': [
-    { uuid: CONCEPTS.NenoGeneXpert.uuid, name: CONCEPTS.NenoGeneXpert.name },
-    { uuid: CONCEPTS.LisungwiGeneXpert.uuid, name: CONCEPTS.LisungwiGeneXpert.name },
-    { uuid: CONCEPTS.microscopy.uuid, name: CONCEPTS.microscopy.name },
+    { uuid: CONCEPTS.NenoGeneXpert.uuid, display: CONCEPTS.NenoGeneXpert.display },
+    { uuid: CONCEPTS.LisungwiGeneXpert.uuid, display: CONCEPTS.LisungwiGeneXpert.display },
+    { uuid: CONCEPTS.microscopy.uuid, display: CONCEPTS.microscopy.display },
   ],
   "hivTestResultAnswers": [
-    { uuid: CONCEPTS.HIV_TEST_RESULTS.Reactive.uuid, name: CONCEPTS.HIV_TEST_RESULTS.Reactive.name },
-    { uuid: CONCEPTS.HIV_TEST_RESULTS.Non_Reactive.uuid, name: CONCEPTS.HIV_TEST_RESULTS.Non_Reactive.name },
-    { uuid: CONCEPTS.HIV_TEST_RESULTS.Not_Done.uuid, name: CONCEPTS.HIV_TEST_RESULTS.Not_Done.name },
+    { uuid: CONCEPTS.HIV_TEST_RESULTS.Reactive.uuid, display: CONCEPTS.HIV_TEST_RESULTS.Reactive.display },
+    { uuid: CONCEPTS.HIV_TEST_RESULTS.Non_Reactive.uuid, display: CONCEPTS.HIV_TEST_RESULTS.Non_Reactive.display },
+    { uuid: CONCEPTS.HIV_TEST_RESULTS.Not_Done.uuid, display: CONCEPTS.HIV_TEST_RESULTS.Not_Done.display },
   ],
   'adherenceSession': [
-    { uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.uuid, name: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.name },
-    { uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.uuid, name: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.name },
-    { uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.uuid, name: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.name },
+    {
+      uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.uuid,
+      display: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.display
+    },
+    {
+      uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.uuid,
+      display: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.display
+    },
+    {
+      uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.uuid,
+      display: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.display
+    },
   ],
   'coughPresent': [
-    { uuid: CONCEPTS.TB.Cough.uuid, name: 'Yes' }
+    { uuid: CONCEPTS.TB.Cough.uuid, display: 'Yes' }
   ],
   'coughAbsent': [
-    { uuid: CONCEPTS.TB.Cough.uuid, name: 'No' }
+    { uuid: CONCEPTS.TB.Cough.uuid, display: 'No' }
   ],
   'feverPresent': [
-    { uuid: CONCEPTS.TB.Fever.uuid, name: 'Yes' }
+    { uuid: CONCEPTS.TB.Fever.uuid, display: 'Yes' }
   ],
   'feverAbsent': [
-    { uuid: CONCEPTS.TB.Fever.uuid, name: 'No' }
+    { uuid: CONCEPTS.TB.Fever.uuid, display: 'No' }
   ],
   'nightSweatPresent': [
-    { uuid: CONCEPTS.TB.NightSweats.uuid, name: 'Yes' }
+    { uuid: CONCEPTS.TB.NightSweats.uuid, display: 'Yes' }
   ],
   'nightSweatAbsent': [
-    { uuid: CONCEPTS.TB.NightSweats.uuid, name: 'No' }
+    { uuid: CONCEPTS.TB.NightSweats.uuid, display: 'No' }
   ],
   'weightLossPresent': [
-    { uuid: CONCEPTS.TB.WeightLoss.uuid, name: 'Yes' }
+    { uuid: CONCEPTS.TB.WeightLoss.uuid, display: 'Yes' }
   ],
   'weightlossAbsent': [
-    { uuid: CONCEPTS.TB.WeightLoss.uuid, name: 'No' }
+    { uuid: CONCEPTS.TB.WeightLoss.uuid, display: 'No' }
   ],
   'recentContactWithActiveTBPresent': [
-    { uuid: CONCEPTS.TB.RecentContactWithActiveTB.uuid, name: 'Yes' }
+    { uuid: CONCEPTS.TB.RecentContactWithActiveTB.uuid, display: 'Yes' }
   ],
   'recentContactWithActiveTBAbsent': [
-    { uuid: CONCEPTS.TB.RecentContactWithActiveTB.uuid, name: 'No' }
+    { uuid: CONCEPTS.TB.RecentContactWithActiveTB.uuid, display: 'No' }
   ],
   'painfulNeckAndArmpitLymphTBPresent': [
-    { uuid: CONCEPTS.TB.PainfulNeckAndArmpitLymphNodes.uuid, name: 'Yes' }
+    { uuid: CONCEPTS.TB.PainfulNeckAndArmpitLymphNodes.uuid, display: 'Yes' }
   ],
   'painfulNeckAndArmpitLymphTBAbsent': [
-    { uuid: CONCEPTS.TB.PainfulNeckAndArmpitLymphNodes.uuid, name: 'No' }
+    { uuid: CONCEPTS.TB.PainfulNeckAndArmpitLymphNodes.uuid, display: 'No' }
   ],
 };
 

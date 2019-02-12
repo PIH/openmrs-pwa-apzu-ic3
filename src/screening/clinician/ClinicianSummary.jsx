@@ -58,8 +58,19 @@ const ClinicianSummary = props => {
           CONCEPTS.ADHERENCE_COUNSELING.NameOfCounselor,
           CONCEPTS.ADHERENCE_COUNSELING.CounseledOnPillCounts,
           CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage,
-          CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad
+          CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad,
+          CONCEPTS.Clinical.ClinicalNotes,
+          CONCEPTS.Clinical.Outcome,
+          CONCEPTS.Clinical.NextAppointmentDate,
+          CONCEPTS.Clinical.QualitativeTime,
+          CONCEPTS.Clinical.TransferFacility,
+          CONCEPTS.Clinical.ReasonToStopCare,
+          CONCEPTS.Clinical.OtherOutcome
         ]}
+        labels={{
+          [CONCEPTS.Clinical.QualitativeTimeAM.uuid]: CONCEPTS.Clinical.QualitativeTimeAM.display,
+          [CONCEPTS.Clinical.QualitativeTimePM.uuid]: CONCEPTS.Clinical.QualitativeTimePM.display
+        }}
         obs={obs}
         showDates={false}
       />
