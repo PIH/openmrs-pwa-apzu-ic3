@@ -1,7 +1,10 @@
-import { patientObjByEncounterTypeFilter  } from "@openmrs/react-components";
-import { ENCOUNTER_TYPES } from "../../constants";
+import { patientObjByEncounterTypeAndObsFilter  } from "@openmrs/react-components";
+import { ENCOUNTER_TYPES, CONCEPTS } from "../../constants";
 
 export default {
   required: patient => false,
-  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.TBTestResults.uuid, 'include')
+  completed: patientObjByEncounterTypeAndObsFilter(
+    ENCOUNTER_TYPES.TBTestResults.uuid,
+    [ CONCEPTS.TBTestType.uuid ],
+    'include')
 };
