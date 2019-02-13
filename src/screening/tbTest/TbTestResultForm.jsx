@@ -91,72 +91,68 @@ class TbTestResultForm extends React.PureComponent {
           groupingConcept={CONCEPTS.TbTest.TuberculosisTestScreeningSet}
           path="tb-test-screening-set"
         >
+          <Row>
+            <Col
+              componentClass={ControlLabel}
+            >
+              Sputum Received
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12}>
+              <FormGroup controlId="formBled">
+                <Obs
+                  concept={CONCEPTS.SampleCollected.uuid}
+                  conceptAnswers={FORM_ANSWERS.yesNo}
+                  path="tb-sputum-received"
+                />
+              </FormGroup>
+            </Col>
+          </Row>
+
           <span
-            style={{ display: (this.props.displaySputumSection === true) ? 'block' : 'none' }}
+            style={{ display: (typeof this.props.sputumReceived.value !== 'undefined') && (this.props.sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}
           >
             <Row>
-              <Col
-                componentClass={ControlLabel}
-              >
-              Sputum Received
+              <Col componentClass={ControlLabel}>
+              Sample Quality
               </Col>
             </Row>
             <Row>
-              <Col sm={12}>
-                <FormGroup controlId="formBled">
+              <FormGroup controlId="formReasonForNoSample">
+                <Col sm={12}>
                   <Obs
-                    concept={CONCEPTS.SampleCollected.uuid}
-                    conceptAnswers={FORM_ANSWERS.yesNo}
-                    path="tb-sputum-received"
+                    concept={CONCEPTS.SampleQuality.uuid}
+                    conceptAnswers={FORM_ANSWERS.sampleQualityAnswers}
+                    path="tb-sputum-sample-quality"
                   />
-                </FormGroup>
+                </Col>
+              </FormGroup>
+            </Row>
+          </span>
+
+          <span
+            style={{
+              display: (this.props.sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid
+                && this.props.sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none'
+            }}
+          >
+            <Row>
+              <Col componentClass={ControlLabel}>
+             Laboratory Location
               </Col>
             </Row>
-
-            <span
-              style={{ display: (typeof this.props.sputumReceived.value !== 'undefined') && (this.props.sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}
-            >
-              <Row>
-                <Col componentClass={ControlLabel}>
-                Sample Quality
+            <Row>
+              <FormGroup>
+                <Col sm={12}>
+                  <Obs
+                    concept={CONCEPTS.LabLocation.uuid}
+                    conceptAnswers={FORM_ANSWERS.sputumLabLocation}
+                    path="tb-sputum-laboratory-location"
+                  />
                 </Col>
-              </Row>
-              <Row>
-                <FormGroup controlId="formReasonForNoSample">
-                  <Col sm={12}>
-                    <Obs
-                      concept={CONCEPTS.SampleQuality.uuid}
-                      conceptAnswers={FORM_ANSWERS.sampleQualityAnswers}
-                      path="tb-sputum-sample-quality"
-                    />
-                  </Col>
-                </FormGroup>
-              </Row>
-            </span>
-
-            <span
-              style={{
-                display: (this.props.sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid
-                  && this.props.sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none'
-              }}
-            >
-              <Row>
-                <Col componentClass={ControlLabel}>
-               Laboratory Location
-                </Col>
-              </Row>
-              <Row>
-                <FormGroup>
-                  <Col sm={12}>
-                    <Obs
-                      concept={CONCEPTS.LabLocation.uuid}
-                      conceptAnswers={FORM_ANSWERS.sputumLabLocation}
-                      path="tb-sputum-laboratory-location"
-                    />
-                  </Col>
-                </FormGroup>
-              </Row>
-            </span>
+              </FormGroup>
+            </Row>
           </span>
 
           <span

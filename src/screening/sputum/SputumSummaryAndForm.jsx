@@ -13,7 +13,7 @@ const SputumSummaryAndForm = props => {
     <SummaryAndForm
       backLink="/screening/sputum"
       completed={sputumFilters.completed(props.patient)}
-      form={<TbTestResultForm displaySputumSection={true}/>}
+      form={<TbTestResultForm displayResultsSection={false}/>}
       summary={<TbTestResultSummary/>}
       title="Sputum"
     />
