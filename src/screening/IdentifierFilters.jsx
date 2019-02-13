@@ -8,6 +8,8 @@ import './IdentifierFilters.css';
 import { PATIENT_IDENTIFIERS_SUFFIX } from '../constants';
 import utils from '../utils';
 
+const reformat = (n) => ("0000" + n).slice(-4);
+
 const formatIdentifier = (identifier) => {
   const terms = identifier.split('-');
   const filteredTerms = terms.filter((term) => term !== 'undefined' && term !== "");
@@ -35,11 +37,12 @@ class ScreeningFilters extends React.Component {
     this.handleTextInputSearch = this.handleTextInputSearch.bind(this);
     this.handleSearchClick = this.handleSearchClick.bind(this);
     const currentLocationPrefix = utils.getCurrentLocationPrefix(props.locations, props.currentLocation);
+    const identifier = props.value.split(" ");
 
     this.state = {
       firstIdentifierSearchValue: currentLocationPrefix[0] ? currentLocationPrefix[0] : '',
-      secondIdentifierSearchValue: '',
-      thirdIdentifierSearchValue: '',
+      secondIdentifierSearchValue: identifier[1] ? reformat(identifier[1]) : '',
+      thirdIdentifierSearchValue: identifier[2] ? identifier[2] : '',
       patientIdentifier: '',
       searchValue: '',
     };
@@ -152,6 +155,7 @@ class ScreeningFilters extends React.Component {
                 textAlignLast: 'center',
                 textAlign: 'center',
               }}
+              dropdownValue={searchType === 'server' ? this.state.thirdIdentifierSearchValue : undefined}
               handleSelect={(field, value) => this.handleSearch(field, value, 'third')} 
               list={PATIENT_IDENTIFIERS_SUFFIX} 
               placeholder=" "
