@@ -8,7 +8,7 @@ describe('Search', function () {
     });
 
 
-    // TODO remove "skip" to enable test
+    // TODO remove "skip" t enable test
     it('Should search for patient by name', function () {
       cy.visit('/');
 
