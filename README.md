@@ -34,11 +34,16 @@ First, you'll need to run npm install to install Cypress.  (Then, as always, you
 version of React Components).
 
 Create a file "cypress.env.local" at the root level of this repo which sets two environmental variables for the username and password you will be using to 
-connect to the server (for example, the username and password of a user on Bwenzi)
+connect to the server (for example, the username and password of a user on Bwenzi).  If you want to log into a location other than Danbe, you can
+set the name and uuid of the location as well.
 
 ```
-username={your_username}
-password={your_password}
+{
+  "username"="{your_username}"
+  "password"="{your_password}"
+  "location": "Chifunga HC",
+  "locationUuid": "0d4166a0-5ab4-11e0-870c-9f6107fee88e"
+}
 ```
 
 To run all tets:

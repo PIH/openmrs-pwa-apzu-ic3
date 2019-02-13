@@ -3,7 +3,7 @@
   "baseUrl": "http://localhost:3000",
   "env": {
     "apiServer": "https://bwenzi.pih",
-    "location": "Chifunga HC",
-    "locationUuid": "0d4166a0-5ab4-11e0-870c-9f6107fee88e"
+    "location": "Danbe Clinic",
+    "locationUuid": "976dcd06-c40e-4e2e-a0de-35a54c7a52ef"
   }
 }
