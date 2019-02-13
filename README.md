@@ -46,7 +46,7 @@ set the name and uuid of the location as well.
 }
 ```
 
-To run all tets:
+To run all tests:
 npm run test-cypress
 (this should fire up your server for you as well)
 
