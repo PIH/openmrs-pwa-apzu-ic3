@@ -3,7 +3,7 @@
   "baseUrl": "http://localhost:3000",
   "env": {
     "apiServer": "https://bwenzi.pih",
-    "location": "Danbe Clinic",
+    "location": "Dambe Clinic",
     "locationUuid": "976dcd06-c40e-4e2e-a0de-35a54c7a52ef"
   }
 }
