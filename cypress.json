@@ -1,0 +1,9 @@
+{
+  "chromeWebSecurity": false,
+  "baseUrl": "http://localhost:3000",
+  "env": {
+    "apiServer": "https://bwenzi.pih",
+    "location": "Chifunga HC",
+    "locationUuid": "0d4166a0-5ab4-11e0-870c-9f6107fee88e"
+  }
+}

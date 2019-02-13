@@ -28,6 +28,25 @@ REACT_APP_SERVER_ADDRESS=http://localhost:8080/
 REACT_APP_SERVER_CONTEXT_PATH=openmrs
 ```
 
+## Running Cypress tests
+
+First, you'll need to run npm install to install Cypress.  (Then, as always, you'll need to run "npm link @openmrs/react-components" to link to the correct
+version of React Components).
+
+Create a file "cypress.env.local" at the root level of this repo which sets two environmental variables for the username and password you will be using to 
+connect to the server (for example, the username and password of a user on Bwenzi)
+
+```
+username={your_username}
+password={your_password}
+```
+
+Make sure the app is running on localhost:3000
+
+npm run cypress:open
+
+See docs for cypress here: https://www.cypress.io/
+
 ## Setting up Chrome to emulate the tablet
 
 For everyone developing and testing the IC3 screening app, just a reminder that we should be primarily testing for the tablet and not a laptop.
