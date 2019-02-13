@@ -67,7 +67,18 @@ describe('Component: SearchPatient', () => {
               uuid: 'abc'
             }
           },
+          patients: {
+            selected: 'some-patient-uuid',
+            set: {
+              'some-patient-uuid': {}
+            }
+          }
         },
+        router: {
+          location: {
+            pathname: '/searchPatient'
+          }
+        }
       });
     mountedComponent = undefined;
   });
@@ -75,7 +86,6 @@ describe('Component: SearchPatient', () => {
   it('renders properly', () => {
     //expect(toJson(searchPatient())).toMatchSnapshot();
     expect(searchPatient().find(PatientSearch).length).toBe(1);
-    expect(store.getActions()).toContainEqual(patientActions.clearSelectedPatient());
   });
 
 });
