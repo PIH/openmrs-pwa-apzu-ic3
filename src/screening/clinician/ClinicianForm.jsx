@@ -122,6 +122,7 @@ class ClinicianForm extends React.Component {
             <Obs
               concept={CONCEPTS.Clinical.NextAppointmentDate.uuid}
               datatype="date"
+              defaultDate={undefined}
               path="clinical-next-appointment-date"
             />
             <span style={{ marginLeft: '20px', marginTop: '1px' }}>
