@@ -51,7 +51,8 @@
     "enzyme-to-json": "^3.3.4",
     "react-mock-router": "^1.0.15",
     "redux-saga-tester": "^1.0.379",
-    "sinon": "^6.0.0"
+    "sinon": "^6.0.0",
+    "start-server-and-test": "^1.7.11"
   },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
@@ -61,7 +62,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext js --ext jsx src test; exit 0",
     "lint:fix": "eslint --fix --ext js --ext jsx src test; exit 0",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cy:run": "cypress run",
+    "test-cypress": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "homepage": "."
 }

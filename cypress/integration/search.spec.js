@@ -8,7 +8,8 @@ describe('Search', function () {
   });
 
 
-  it('Should search for patient by name', function () {
+  // TODO remove "skip" to enable test
+  it.skip('Should search for patient by name', function () {
     cy.visit('/');
 
     // TODO why doesn't this work?
@@ -17,7 +18,8 @@ describe('Search', function () {
     // TODO
   });
 
-  it('Should search for patient by identifier', function () {
+  // TODO remove "skip" to enable test
+  it.skip('Should search for patient by identifier', function () {
     cy.visit('/');
 
     // TODO why doesn't this work?

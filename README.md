@@ -41,9 +41,14 @@ username={your_username}
 password={your_password}
 ```
 
-Make sure the app is running on localhost:3000
+To run all tets:
+npm run test-cypress
+(this should fire up your server for you as well)
 
-npm run cypress:open
+To fire up Cypress in interactive mode:
+
+1) Make sure the app is running on localhost:3000
+2) npm run cypress:open
 
 See docs for cypress here: https://www.cypress.io/
 
