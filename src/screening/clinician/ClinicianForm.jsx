@@ -124,6 +124,7 @@ class ClinicianForm extends React.Component {
               datatype="date"
               defaultDate={undefined}
               path="clinical-next-appointment-date"
+              usePortalMode
             />
             <span style={{ marginLeft: '20px', marginTop: '1px' }}>
               <Obs
