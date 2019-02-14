@@ -7,7 +7,8 @@ import {
   visitActions,
   locationActions,
   patientIdentifierTypesActions,
-  selectors
+  selectors,
+  conceptActions
 } from '@openmrs/react-components';
 import { history } from '../store';
 import ic3PatientActions from './patientActions';
@@ -16,6 +17,7 @@ import {ACTIVE_VISITS_REP} from '../constants';
 import reportingRest from '../rest/reportingRest';
 import * as R from "ramda";
 import utils from "../utils";
+import {CONCEPTS} from "../constants";
 
 const createFromReportingRestRep = (restRep) => {
   let patient = {};
@@ -132,7 +134,12 @@ function* patientSelected(action) {
 
 // TODO we are bundling other actions we want to do on login here--should these be in another saga?
 function* initiateLoginActions(action) {
-  yield put(locationActions.fetchAllLocations());  // this will eventually need to happen before login?
+  yield put(locationActions.fetchAllLocations());
+  // TODO we should consider fetching *all* concepts at this point--now just fetching the concept answers we want to set "display" values for
+  yield put(conceptActions.fetchConcepts([
+    CONCEPTS.Clinical.QualitativeTimeAM,
+    CONCEPTS.Clinical.QualitativeTimePM,
+  ]));
   yield put(patientIdentifierTypesActions.fetchPatientIdentifierTypes());
   yield initiateIC3PatientsAction(action);
 }

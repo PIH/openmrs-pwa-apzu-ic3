@@ -67,10 +67,6 @@ const ClinicianSummary = props => {
           CONCEPTS.Clinical.ReasonToStopCare,
           CONCEPTS.Clinical.OtherOutcome
         ]}
-        labels={{
-          [CONCEPTS.Clinical.QualitativeTimeAM.uuid]: CONCEPTS.Clinical.QualitativeTimeAM.display,
-          [CONCEPTS.Clinical.QualitativeTimePM.uuid]: CONCEPTS.Clinical.QualitativeTimePM.display
-        }}
         obs={obs}
         showDates={false}
       />
