@@ -72,11 +72,15 @@ export const MALNUTRITION_LEVEL = {
   },
   'severe': {
     alert: "danger",
-    message: "Severe"
+    message: "Severe",
+    display: "Critical value",
+    displayClassName: "field-error"
   },
   'moderate': {
     alert: "warning",
-    message: "Moderate"
+    message: "Moderate",
+    display: "Abnormal value",
+    displayClassName: "field-warning"
   },
   'normal': {
     alert: "success",

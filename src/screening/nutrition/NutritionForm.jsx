@@ -142,7 +142,6 @@ class NutritionForm extends React.Component {
               </div>
             <FormGroup controlId="formBMI" style={flexBaseline}>
               <br />
-
               <Col sm={4}>
                 <h3 style={labelTop}><Label bsStyle={bmiStyle.alert} style={{ visibility: "visible" }}>{bmi}</Label>
                 </h3>
@@ -151,6 +150,13 @@ class NutritionForm extends React.Component {
               <ControlLabel sm={1}>
                 kg/m<sup>2</sup>
               </ControlLabel>
+
+              {bmiStyle.display &&
+                <Col sm={4}>
+                  <span style={labelTop}><span className={bmiStyle.displayClassName} style={{ visibility: "visible" }}>({bmiStyle.display})</span>
+                  </span>
+                </Col>
+              }
             </FormGroup>
           </Col>
         }
