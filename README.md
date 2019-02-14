@@ -79,6 +79,16 @@ After setting up remote debugging, setup PORT forwarding using the resources her
 
 https://developers.google.com/web/tools/chrome-devtools/remote-debugging/local-server
 
+## Running Chromium without web-security(CORS issue)
+* Download and install Chromium
+ https://www.chromium.org/getting-involved/download-chromium 
+* Install Chromium
+* From the command line run without web-security
+```
+$ /Applications/Chromium.app/Contents/MacOS/Chromium --disable-web-security --user-data-dir=""
+```
+* Navigate to http://localhost:3000
+
 ## CORS Configuration on TomCat7 Server
 
 A CORS filter was added to web.xml at /usr/local/~project-folder~/config/web.xml.
