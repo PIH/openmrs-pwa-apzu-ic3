@@ -48,12 +48,12 @@ export class ScreeningList extends React.Component {
         link: '/screening/eid/form',
         required: eidFilters.required,
       },
-      {
-        title: "TB Test Results",
-        completed: tbTestResultFilters.completed,
-        link: '/screening/tb-test/form',
-        required: tbTestResultFilters.required,
-      },
+      /* {
+         title: "TB Test Results",
+         completed: tbTestResultFilters.completed,
+         link: '/screening/tb-test/form',
+         required: tbTestResultFilters.required,
+       },*/
       {
         title: "Sputum",
         completed: sputumFilters.completed,
