@@ -11,7 +11,6 @@ import adherenceFilters from './adherence/adherenceFilters';
 import checkInFilters from "../checkin/checkInFilters";
 import cliniicianFilters from "../screening/clinician/cliniicianFilters";
 import tbFilters from "./tb/tbFilters";
-import tbTestResultFilters from "./tbTest/tbTestResultFilters";
 import sputumFilters from "./sputum/sputumFilters";
 
 export class ScreeningList extends React.Component {
