@@ -236,7 +236,7 @@ const utils = {
     if (uuid) {
       let conceptObj = utils.findByUuid(CONCEPTS, uuid);
       if (conceptObj) {
-        conceptName = conceptObj.name;
+        conceptName = conceptObj.display;
       }
     }
     return conceptName;
@@ -289,13 +289,13 @@ const utils = {
       if (observation.concept.uuid === CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.uuid ) {
         switch (observation.value.uuid) {
           case CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.uuid:
-            sessionNumber = CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.name;
+            sessionNumber = CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.display;
             break;
           case CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.uuid:
-            sessionNumber = CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.name;
+            sessionNumber = CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.SecondSession.display;
             break;
           case CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.uuid:
-            sessionNumber = CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.name;
+            sessionNumber = CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.ThirdSession.display;
             break;
           default:
             break;

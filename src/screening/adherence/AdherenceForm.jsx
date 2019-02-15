@@ -15,7 +15,7 @@ let AdherenceForm = (props) => {
         <Col
           componentClass={ControlLabel}
         >
-          {CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.name}
+          {CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.display}
         </Col>
       </Row>
       <Row>
@@ -34,7 +34,7 @@ let AdherenceForm = (props) => {
         <Col
           componentClass={ControlLabel}
         >
-          {CONCEPTS.ADHERENCE_COUNSELING.NameOfCounselor.name}
+          {CONCEPTS.ADHERENCE_COUNSELING.NameOfCounselor.display}
         </Col>
       </Row>
       <Row>
@@ -54,7 +54,7 @@ let AdherenceForm = (props) => {
         <Col
           componentClass={ControlLabel}
         >
-          {CONCEPTS.ADHERENCE_COUNSELING.CounseledOnPillCounts.name}
+          {CONCEPTS.ADHERENCE_COUNSELING.CounseledOnPillCounts.display}
         </Col>
       </Row>
       <Row>
@@ -73,7 +73,7 @@ let AdherenceForm = (props) => {
         <Col
           componentClass={ControlLabel}
         >
-          {CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage.name}
+          {CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage.display}
         </Col>
       </Row>
       <Row>
@@ -99,7 +99,7 @@ let AdherenceForm = (props) => {
         <Col
           componentClass={ControlLabel}
         >
-          {CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad.name}
+          {CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad.display}
         </Col>
       </Row>
       <Row>
