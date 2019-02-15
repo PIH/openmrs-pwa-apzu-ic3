@@ -8,11 +8,15 @@ import screeningActions from '../screening/actions/actions';
 
 
 let SearchPatient = (props) => {
+
+  // we "cache" the search results only if we get here via a "PUSH" action, which seems to be only when clicking a BACK
+  // bit of a hack, we should explore further
+
   return (
     <div>
       <PatientSearch
         AdditionalFilters={IdentifierFilters}
-        cacheSearchResults
+        cacheSearchResults={props.action === 'PUSH'}
         getPatientIdentifiers={utils.getPatientIdentifiers}
         rowSelectedActionCreators={[
           () => push('/screening'),
@@ -26,7 +30,8 @@ let SearchPatient = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    location: state.router.location.pathname
+    location: state.router.location.pathname,
+    action: state.router.action
   };
 };
 
