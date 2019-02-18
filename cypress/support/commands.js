@@ -52,6 +52,44 @@ Cypress.Commands.add('login', () => {
 
 });
 
+Cypress.Commands.add("searchPatientByName", (patientName) => {
+  cy.visit('/#/searchPatient');
+  cy.get('.name-filter')
+    .find('[name="patient-name"]')
+    .type(patientName);
+
+  cy.get('.server-search > button')
+    .click();
+
+  cy.wait(15000);
+  cy.get('.card-list')
+    .should('exist');
+});
+
+Cypress.Commands.add("searchPatientByID", (patientID) => {
+  const patientIdentifier = patientID.split('-');
+
+  cy.visit('/#/searchPatient');
+  cy.get('.identifier-filter  select')
+    .first()
+    .select(patientIdentifier[0]);
+
+  cy.get('.identifier-filter-number-input')
+    .type(patientIdentifier[1]);
+
+  patientIdentifier[2] && cy.get('.identifier-filter  select')
+    .last()
+    .select(patientIdentifier[2]);
+
+  cy.get('.server-search > button')
+    .click();
+
+  cy.wait(7000);
+  cy.get('.card-list')
+    .should('exist');
+
+});
+
 
 Cypress.Commands.add("logout", () => {
   // TODO get this to work

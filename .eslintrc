@@ -1,4 +1,8 @@
 {
+  globals: {
+    'cy': true,
+    'Cypress': true
+  },
   root: true,
   parser: 'babel-eslint',
   plugins: [/*'import', */'jsx-a11y', 'react'],
