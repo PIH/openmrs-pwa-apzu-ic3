@@ -49,7 +49,6 @@ Cypress.Commands.add('login', () => {
   cy.get('.user-display')
     .should('exist')
     .should('be.visible');
-
 });
 
 Cypress.Commands.add("searchPatientByName", (patientName) => {
@@ -94,16 +93,44 @@ Cypress.Commands.add("searchPatientByID", (patientID) => {
 Cypress.Commands.add("logout", () => {
   // TODO get this to work
 
-  /* cy.get('.user-display')
-     .find('[data-icon="user"]')
-     .first()
-     .click();
+  cy.get('.user-display')
+    .find('[data-icon="user"]')
+    .first()
+    .click();
 
-   cy.contains('Logout')
-     .find(':visible')
-     .click();
+  cy.get('[href="#/logout"]')
+    .first()
+    .click({force: true});
 
-   cy.get('.user-display')
-     .should('not.exist');*/
+  cy.wait(5000);
 
+  cy.get('.user-display')
+    .should('not.exist');
+});
+
+Cypress.Commands.add('loginWithInvalidInfo', () => {
+
+  cy.visit('/');
+
+  cy.get('[name=username]')
+    .type('some-ranndom-username')
+    .should('have.value', 'some-ranndom-username');
+
+  cy.get('[name=password]')
+    .type('password')
+    .should('have.value', 'password');
+
+  cy.get('[name=location]')
+    .select(Cypress.env('location'));
+
+  cy.get('[type=submit]')
+    .click();
+
+  cy.wait(5000);
+
+  cy.get('.user-display')
+    .should('not.exist');
+  
+  cy.get('.alert.alert-info').contains('Invalid username or password')
+    .should('exist');
 });
