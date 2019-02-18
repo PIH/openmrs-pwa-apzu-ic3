@@ -84,7 +84,7 @@ Cypress.Commands.add("searchPatientByID", (patientID) => {
   cy.get('.server-search > button')
     .click();
 
-  cy.wait(15000);
+  cy.wait(7000);
   cy.get('.card-list')
     .should('exist');
 
