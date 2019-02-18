@@ -518,7 +518,33 @@ export const CONCEPTS = {
       uuid: '558a7114-2990-11e9-b210-d663bd873d93',
       display: 'Other outcome'
     }
-  }
+  },
+  'BreastFeeding': {
+    uuid: '657a289e-977f-11e1-8993-905e29aff6c1',
+    display: 'Breastfeediing'
+  },
+  'ExclusiveBreastfeeding': {
+    uuid: '656c5264-977f-11e1-8993-905e29aff6c1',
+    display: 'Breastfed exclusively'
+  },
+  'MixedFeeding': {
+    uuid: '656f5c2a-977f-11e1-8993-905e29aff6c1',
+    display: 'Mixed feeding'
+  },
+  'ComplimentaryBreastfeeding': {
+    uuid: '657a29a2-977f-11e1-8993-905e29aff6c1',
+    display: 'Breastfeeding complimentary'
+  },
+  'StoppedBreastfeeding': {
+    'OverSixWeeks': {
+      uuid: '657a2bb4-977f-11e1-8993-905e29aff6c1',
+      display: 'Breastfeeding stopped over 6 weeks ago'
+    },
+    'InLastSixWeeks': {
+      uuid: '657a2aa6-977f-11e1-8993-905e29aff6c1',
+      display: 'Breastfeeding stopped in last 6 weeks',
+    },
+  },
 };
 
 export const FORM_NAMES = {
@@ -684,6 +710,13 @@ export const FORM_ANSWERS = {
   'painfulNeckAndArmpitLymphTBAbsent': [
     { uuid: CONCEPTS.TB.PainfulNeckAndArmpitLymphNodes.uuid, display: 'No' }
   ],
+  'breastfeedingAnswers': [
+    { uuid: CONCEPTS.ExclusiveBreastfeeding.uuid, display: CONCEPTS.ExclusiveBreastfeeding.display },
+    { uuid: CONCEPTS.MixedFeeding.uuid, display: CONCEPTS.MixedFeeding.display },
+    { uuid: CONCEPTS.ComplimentaryBreastfeeding.uuid, display: CONCEPTS.ComplimentaryBreastfeeding.display },
+    { uuid: CONCEPTS.StoppedBreastfeeding.InLastSixWeeks.uuid, display: CONCEPTS.StoppedBreastfeeding.InLastSixWeeks.display },
+    { uuid: CONCEPTS.StoppedBreastfeeding.OverSixWeeks.uuid, display: CONCEPTS.StoppedBreastfeeding.OverSixWeeks.display }
+  ]
 };
 
 export const NAV_MENU_PAGES = {
