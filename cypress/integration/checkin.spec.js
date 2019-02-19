@@ -4,9 +4,9 @@ describe('Check in', function () {
     cy.login();
   });
 
-  it('Should search for patient and checkin patienr', function () {
+  it('Should search for patient and checkin patient into NEW location', function () {
     // Search for a patient
-    cy.searchPatientByID('MGT-508');
+    cy.searchPatientByID('MGT-387');
 
     // Select the patient
     cy.get('.card-list')
@@ -44,7 +44,35 @@ describe('Check in', function () {
           cy.get('.form-group .button-group-view')
             .first()
             .should('contain', 'SHARC');
-        } else {
+        }
+      });
+  });
+
+  it('Should search already checked-in patient and update the checkin location', function () {
+    // Search for a patient
+    cy.searchPatientByID('MGT-387');
+
+    // Select the patient
+    cy.get('.card-list')
+      .first()
+      .click();
+
+    // Navigate to check-in summary
+    cy.get('[href="#/checkin/checkInPage"]')
+      .first()
+      .click();
+
+    // Navigate to check-in form
+    cy.get('.summary-swiper-button')
+      .click();
+
+    // Check if form is in edit mode
+    cy.get('.form-action-btns > button')
+      .first()
+      .then(($button) => {
+        const text = $button.text();
+        // if form is in EDIT mode ...
+        if (text === 'Edit') {
 
           cy.wait(3000);
           // Put form in EDIT mode
@@ -76,7 +104,7 @@ describe('Check in', function () {
       });
   });
 
-  // after(function () {
-  //   cy.logout();
-  // });
+  after(function () {
+    cy.logout();
+  });
 });
