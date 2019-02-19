@@ -1,5 +1,3 @@
-import { ALPN_ENABLED } from "constants";
-
 describe('Check in', function () {
 
   before(function () {
