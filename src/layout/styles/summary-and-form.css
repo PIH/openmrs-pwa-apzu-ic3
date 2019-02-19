@@ -62,22 +62,11 @@
   cursor: pointer;
 }
 
-.show-grid.summary-form-slider.row {
-  display: none;
-  height: 100%;
-  width: 100%;
-}
-
 .swiping-summary-and-form {
   display: block;
   height: 100%;
   overflow: scroll;
   max-height: 90vh;
-}
-
-.show-grid.summary-form-slider.row > div {
-  display: inline-block;
-  text-align: center;
 }
 
 .swiper-container {

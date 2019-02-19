@@ -30,10 +30,12 @@ Cypress.Commands.add('login', () => {
   cy.visit('/');
 
   cy.get('[name=username]')
+    .clear()
     .type(Cypress.env('username'))
     .should('have.value', Cypress.env('username'));
 
   cy.get('[name=password]')
+    .clear()
     .type(Cypress.env('password'))
     .should('have.value', Cypress.env('password'));
 
@@ -46,6 +48,7 @@ Cypress.Commands.add('login', () => {
   cy.get('[type=submit]')
     .click();
 
+  cy.wait(3000);
   cy.get('.user-display')
     .should('exist')
     .should('be.visible');
@@ -60,7 +63,7 @@ Cypress.Commands.add("searchPatientByName", (patientName) => {
   cy.get('.server-search > button')
     .click();
 
-  cy.wait(15000);
+  cy.wait(25000);
   cy.get('.card-list')
     .should('exist');
 });
@@ -83,7 +86,7 @@ Cypress.Commands.add("searchPatientByID", (patientID) => {
   cy.get('.server-search > button')
     .click();
 
-  cy.wait(7000);
+  cy.wait(17000);
   cy.get('.card-list')
     .should('exist');
 

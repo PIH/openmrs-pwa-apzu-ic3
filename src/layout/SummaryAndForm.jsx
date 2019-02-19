@@ -158,31 +158,6 @@ export class SummaryAndForm extends React.Component {
               )
             }
           </Row>
-          <Row className="show-grid summary-form-slider">
-            <div className="summary-form">
-              <Summary
-                backLink={this.props.backLink}
-                summary={this.props.summary}
-              />
-            </div>
-            {this.props.patient.visit || !this.props.requireVisitForForm ? (
-              <div className="form-summary ">
-                <Form
-                  backLink={this.props.backLink}
-                  form={this.props.form}
-                  formInstanceId={this.formInstanceId}
-                />
-              </div>
-            ) : (
-              <div>
-                <Col sm={8}>
-                  <div style={centerTextAlign}>
-                    <h4>Please check-in patient</h4>
-                  </div>
-                </Col>
-              </div>
-            )}
-          </Row>
           <Row>
             <div className="swiping-summary-and-form">
               <Swiper {...params} noSwiping={true} ref={node => { if (node) {this.swiper = node.swiper;}}}>
