@@ -103,20 +103,12 @@ Cypress.Commands.add("logout", () => {
 
   cy.get('[href="#/logout"]')
     .first()
-    .click({ force: true });
+    .click({force: true});
 
   cy.wait(5000);
 
   cy.get('.user-display')
     .should('not.exist');
-
-  // Clear the value of the username field
-  cy.get('[name=username]')
-    .clear();
-
-  // Clear the value of the password field
-  cy.get('[name=password]')
-    .clear();
 });
 
 Cypress.Commands.add('loginWithInvalidInfo', () => {
