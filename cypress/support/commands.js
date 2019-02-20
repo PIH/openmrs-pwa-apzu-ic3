@@ -26,6 +26,26 @@
 
 import { URL, RESPONSE } from './constants.js';
 
+Cypress.Commands.add('init', () => {
+  cy.server();
+  cy.route({
+    method: 'GET',
+    url: URL.GET_PATIENT_BY_NAME,
+    status: 200,
+    response: {
+      results: RESPONSE.MULTIPLE_PATIENTS
+    }
+  });
+  cy.route({
+    method: 'GET',
+    url: URL.GET_PATIENT_BY_ID,
+    status: 200,
+    response: {
+      results: RESPONSE.SINGLE_PATIENT
+    }
+  });
+});
+
 Cypress.Commands.add('login', () => {
 
   cy.visit('/');
@@ -56,16 +76,6 @@ Cypress.Commands.add('login', () => {
 });
 
 Cypress.Commands.add("searchPatientByName", (patientName) => {
-  cy.server();
-  cy.route({
-    method: 'GET',
-    url: URL.GET_PATIENT_BY_NAME,
-    status: 200,
-    response: {
-      results: RESPONSE.MULTIPLE_PATIENTS
-    }
-  });
-
   cy.visit('/#/searchPatient');
   cy.get('.name-filter')
     .find('[name="patient-name"]')
@@ -79,18 +89,6 @@ Cypress.Commands.add("searchPatientByName", (patientName) => {
 });
 
 Cypress.Commands.add("searchPatientByID", (patientID) => {
-
-  cy.server();
-  cy.route({
-    method: 'GET',
-    url: URL.GET_PATIENT_BY_ID,
-    status: 200,
-    response: {
-      results: RESPONSE.SINGLE_PATIENT
-    }
-  });
-
-  
   const patientIdentifier = patientID.split('-');
 
   cy.visit('/#/searchPatient');
