@@ -24,6 +24,27 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
+import { URL, RESPONSE } from './constants.js';
+
+Cypress.Commands.add('init', () => {
+  cy.server();
+  cy.route({
+    method: 'GET',
+    url: URL.GET_PATIENT_BY_NAME,
+    status: 200,
+    response: {
+      results: RESPONSE.MULTIPLE_PATIENTS
+    }
+  });
+  cy.route({
+    method: 'GET',
+    url: URL.GET_PATIENT_BY_ID,
+    status: 200,
+    response: {
+      results: RESPONSE.SINGLE_PATIENT
+    }
+  });
+});
 
 Cypress.Commands.add('login', () => {
 
@@ -58,12 +79,11 @@ Cypress.Commands.add("searchPatientByName", (patientName) => {
   cy.visit('/#/searchPatient');
   cy.get('.name-filter')
     .find('[name="patient-name"]')
-    .type(patientName);
+    .type('john'); // Hardcoding "john" here because the URL for the stubbing was hardcoded with john
 
   cy.get('.server-search > button')
     .click();
 
-  cy.wait(25000);
   cy.get('.card-list')
     .should('exist');
 });
@@ -86,7 +106,6 @@ Cypress.Commands.add("searchPatientByID", (patientID) => {
   cy.get('.server-search > button')
     .click();
 
-  cy.wait(17000);
   cy.get('.card-list')
     .should('exist');
 
@@ -103,7 +122,7 @@ Cypress.Commands.add("logout", () => {
 
   cy.get('[href="#/logout"]')
     .first()
-    .click({force: true});
+    .click({ force: true });
 
   cy.wait(5000);
 
