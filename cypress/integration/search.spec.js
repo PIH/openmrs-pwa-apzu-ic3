@@ -2,10 +2,7 @@ describe('Search', function () {
 
   before(function () {
     cy.init();
-    // cy.clearLoginPage();
-    // cy.wait(3000);
-    // cy.login();
-    cy.wait(5000);
+    cy.login();
   });
 
   it('Should search for patient by name', function () {
@@ -16,7 +13,7 @@ describe('Search', function () {
     cy.searchPatientByID('MGT-0148-CCC');
   });
 
-  // after(function () {
-  //   cy.logout();
-  // });
+  after(function () {
+    cy.logout();
+  });
 });
