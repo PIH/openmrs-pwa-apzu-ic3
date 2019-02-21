@@ -12,7 +12,8 @@ const EidSummary = props => {
           CONCEPTS.ReasonForNoSample,
           CONCEPTS.ReasonForTesting,
           CONCEPTS.LabLocation,
-          CONCEPTS.HIV_TEST_RESULTS
+          CONCEPTS.HIV_TEST_RESULTS,
+          CONCEPTS.BreastFeeding,
         ]}
         groupingConcepts={[CONCEPTS.HIV_TEST_CONSTRUCT]}
       />
