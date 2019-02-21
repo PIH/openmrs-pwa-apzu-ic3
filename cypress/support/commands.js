@@ -46,21 +46,38 @@ Cypress.Commands.add('init', () => {
   });
 });
 
-Cypress.Commands.add('login', () => {
+Cypress.Commands.add('clearLoginPage', () => {
+
 
   cy.visit('/');
 
   cy.get('[name=username]')
-    .clear()
-    .type(Cypress.env('username'))
-    .should('have.value', Cypress.env('username'));
+    .clear();
 
   cy.get('[name=password]')
-    .clear()
-    .type(Cypress.env('password'))
-    .should('have.value', Cypress.env('password'));
+    .clear();
 
   cy.get('[name=location]')
+    .clear();
+});
+
+Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cypress.env('password')) => {
+
+
+  cy.visit('/');
+
+  cy.get('[name=username]')
+    // .clear()
+    .type(username)
+    .should('have.value', username);
+
+  cy.get('[name=password]')
+    // .clear()
+    .type(password)
+    .should('have.value', password);
+
+  cy.get('[name=location]')
+    // .clear()
     .select(Cypress.env('location'));
 
   cy.get('[name=location]')
@@ -68,11 +85,6 @@ Cypress.Commands.add('login', () => {
 
   cy.get('[type=submit]')
     .click();
-
-  cy.wait(3000);
-  cy.get('.user-display')
-    .should('exist')
-    .should('be.visible');
 });
 
 Cypress.Commands.add("searchPatientByName", (patientName) => {
@@ -180,12 +192,4 @@ Cypress.Commands.add('loginWithInvalidInfo', () => {
 
   cy.get('[type=submit]')
     .click();
-
-  cy.wait(5000);
-
-  cy.get('.user-display')
-    .should('not.exist');
-  
-  cy.get('.alert.alert-info').contains('Invalid username or password')
-    .should('exist');
 });
