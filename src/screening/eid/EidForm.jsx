@@ -1,4 +1,5 @@
 import React from 'react';
+import { differenceInMonths } from 'date-fns';
 import { connect } from 'react-redux';
 import {change, formValueSelector, untouch} from 'redux-form';
 import {Grid, Row, Col, FormGroup, ControlLabel} from 'react-bootstrap';
@@ -77,8 +78,14 @@ class EidForm extends React.PureComponent {
 
   render() {
     let displayFollowupQuestions = true;
+    const { birthdate } = this.props.patient;
 
-    const shouldAskBreastFedQuestion = this.props.patient.age > 2;
+    var ageInMonths = birthdate && differenceInMonths(
+      new Date(),
+      new Date(birthdate)
+    );
+
+    const shouldAskBreastFedQuestion = ageInMonths > 23;
     if (shouldAskBreastFedQuestion) {
       displayFollowupQuestions = false;
     }
