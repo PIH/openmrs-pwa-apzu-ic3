@@ -111,6 +111,39 @@ Cypress.Commands.add("searchPatientByID", (patientID) => {
 
 });
 
+Cypress.Commands.add('openmrsapi', () => {
+
+  cy.visit(Cypress.env('apiServer'));
+  cy.get('#login-button').should('exist');
+
+});
+
+Cypress.Commands.add('loginwithrestapi', () => {
+
+
+  //cy.visit(Cypress.env('apiServer'));
+
+  cy.request({
+    method: 'POST',
+    url: Cypress.env('apiServer') + '/ws/rest/v1/appui/session?v=ref',
+    options: {
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Authorization': 'Basic ' + btoa(Cypress.env('username') + ':' + Cypress.env('password')),
+        'Content-Type': "application/json"
+      }
+    },
+    body: {
+      location: '0d414ce2-5ab4-11e0-870c-9f6107fee88e'
+    }
+  }).then( (response) => {
+    expect(response.status).to.eq(200);
+  });
+
+
+
+
+});
 
 Cypress.Commands.add("logout", () => {
   // TODO get this to work
