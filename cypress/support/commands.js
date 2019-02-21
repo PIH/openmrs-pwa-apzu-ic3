@@ -76,6 +76,8 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
     .type(password)
     .should('have.value', password);
 
+  cy.wait(10000);
+
   cy.get('[name=location]')
     // .clear()
     .select(Cypress.env('location'));
@@ -117,6 +119,8 @@ Cypress.Commands.add("searchPatientByID", (patientID) => {
 
   cy.get('.server-search > button')
     .click();
+
+  cy.wait(5000);
 
   cy.get('.card-list')
     .should('exist');
