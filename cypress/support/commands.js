@@ -26,7 +26,7 @@
 
 import { URL, RESPONSE } from './constants.js';
 
-Cypress.Commands.add('init', () => {
+Cypress.Commands.add('init', (dynamicEncounterResponseStub) => {
   cy.server();
   cy.route({
     method: 'GET',
@@ -73,7 +73,7 @@ Cypress.Commands.add('init', () => {
     url: URL.PATIENT_ENCOUNTER,
     status: 200,
     response: {
-      results: RESPONSE.GET_PATIENT_ENCOUNTER
+      results: dynamicEncounterResponseStub
     }
   });
 });
