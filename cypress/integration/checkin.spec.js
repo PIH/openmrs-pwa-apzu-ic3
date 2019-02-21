@@ -9,7 +9,7 @@ describe('Check in', function () {
   //   beforeEach(() => {
   //   });
     
-  it('Should search for patient and Check-in patient into NEW location', function () {
+  it.skip('Should search for patient and Check-in patient into NEW location', function () {
     // cy.login();
     // cy.server();
     // cy.init();
