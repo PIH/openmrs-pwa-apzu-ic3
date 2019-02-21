@@ -1,7 +1,6 @@
 describe('Search', function () {
 
   before(function () {
-    cy.init();
     cy.login();
   });
 
