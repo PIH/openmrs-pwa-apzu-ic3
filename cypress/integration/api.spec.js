@@ -1,12 +1,12 @@
 describe('API Tests', function () {
 
-  it('Should check if API server is up', function () {
+  it.skip('Should check if API server is up', function () {
 
    cy.openmrsapi();
 
   });
 
-  it('Should check if we could log on via the legacy OpenMRS UI', function () {
+  it.skip('Should check if we could log on via the legacy OpenMRS UI', function () {
 
     cy.openmrsapi();
     cy.get('#username')
@@ -21,7 +21,7 @@ describe('API Tests', function () {
 
   });
 
-  it('Should login via the REST API', function () {
+  it.skip('Should login via the REST API', function () {
 
     cy.loginwithrestapi();
 

@@ -44,6 +44,38 @@ Cypress.Commands.add('init', () => {
       results: RESPONSE.SINGLE_PATIENT
     }
   });
+  cy.route({
+    method: 'GET',
+    url: URL.GET_PATIENT_OBS,
+    status: 200,
+    response: {
+      results: RESPONSE.PATIENT_OBS
+    }
+  });
+  cy.route({
+    method: 'GET',
+    url: URL.PATIENT_VISIT,
+    status: 200,
+    response: {
+      results: RESPONSE.GET_PATIENT_VISIT
+    }
+  });
+  cy.route({
+    method: 'GET',
+    url: URL.PATIENT_ENCOUNTER,
+    status: 200,
+    response: {
+      results: RESPONSE.POST_PATIENT_ENCOUNTER
+    }
+  });
+  cy.route({
+    method: 'POST',
+    url: URL.PATIENT_ENCOUNTER,
+    status: 200,
+    response: {
+      results: RESPONSE.GET_PATIENT_ENCOUNTER
+    }
+  });
 });
 
 Cypress.Commands.add('clearLoginPage', () => {
@@ -90,6 +122,15 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
 });
 
 Cypress.Commands.add("searchPatientByName", (patientName) => {
+  cy.server();
+  cy.route({
+    method: 'GET',
+    url: URL.GET_PATIENT_BY_NAME,
+    status: 200,
+    response: {
+      results: RESPONSE.MULTIPLE_PATIENTS
+    }
+  });
   cy.visit('/#/searchPatient');
   cy.get('.name-filter')
     .find('[name="patient-name"]')
@@ -103,6 +144,15 @@ Cypress.Commands.add("searchPatientByName", (patientName) => {
 });
 
 Cypress.Commands.add("searchPatientByID", (patientID) => {
+  cy.server();
+  cy.route({
+    method: 'GET',
+    url: URL.GET_PATIENT_BY_ID,
+    status: 200,
+    response: {
+      results: RESPONSE.SINGLE_PATIENT
+    }
+  });
   const patientIdentifier = patientID.split('-');
 
   cy.visit('/#/searchPatient');
