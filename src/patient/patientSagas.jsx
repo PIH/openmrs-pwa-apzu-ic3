@@ -82,13 +82,9 @@ function* getIC3Patients(action) {
       cohorts: action.loadExpectedAppointments ? null : 'patientsWithVisit'
     });
 
-    console.log('----apptRestResponse', apptRestResponse);
-
     let patients = apptRestResponse.map((result) => {
       return createFromReportingRestRep(result);
     });
-
-    console.log('----patients', patients);
 
     // add the IC3 patients to the store
     yield put(patientActions.updatePatientsInStore(patients));
