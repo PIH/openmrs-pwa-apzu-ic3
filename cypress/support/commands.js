@@ -134,6 +134,8 @@ Cypress.Commands.add('login', () => {
   cy.get('[name=location]')
     .select(Cypress.env('location'));
 
+  cy.wait(2000);
+
   cy.get('[name=location]')
     .should('have.value', Cypress.env('locationUuid'));
 
