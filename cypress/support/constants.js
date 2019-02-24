@@ -111,7 +111,7 @@ export const RESPONSE = {
       "obsGroup": null
     }
   ],
-  GET_PATIENT_ENCOUNTER: {
+  PATIENT_ENCOUNTER: {
     "id": 764451,
     "uuid": "57a125a8-3a54-4d94-8cb0-e5a6a5a66fc7",
     "encounterDatetime": "2019-02-21T11:03:24.000+0000",
@@ -187,7 +187,7 @@ export const RESPONSE = {
       }
     ]
   },
-  GET_PATIENT_ENCOUNTER_CLINICIAN: { "id":764457,"uuid":"a8ce9904-2df5-4fa2-b28d-c29c78ae745e","encounterDatetime":"2019-02-21T15:08:26.000+0000","location":{ "id":54,"uuid":"3093e2ab-0eee-4bc2-aacf-8d51d77c7698","name":"Binje Outreach Clinic" },"encounterType":{ "id":156,"uuid":"04E668BA-E24F-43FF-A135-A085EC3DBE40","name":"Clinical Plan" },"obs":[{ "id":3860013,"uuid":"3951e7c1-70e5-4462-af1e-cb8ff84d1c0c","value":"koko1","concept":{ "uuid":"558a783a-2990-11e9-b210-d663bd873d93","display":"Reason to stop care (text)","name":{ "display":"Reason to stop care (text)","uuid":"558a7984-2990-11e9-b210-d663bd873d93","name":"Reason to stop care (text)","locale":"en","localePreferred":true,"conceptNameType":"FULLY_SPECIFIED","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/558a783a-2990-11e9-b210-d663bd873d93/name/558a7984-2990-11e9-b210-d663bd873d93" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/558a783a-2990-11e9-b210-d663bd873d93/name/558a7984-2990-11e9-b210-d663bd873d93?v=full" }],"resourceVersion":"1.9" },"datatype":{ "uuid":"8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f","display":"Text","name":"Text","description":"Free text","hl7Abbreviation":"ST","retired":false,"links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f?v=full" }],"resourceVersion":"1.8" },"units":null },"comment":"clinician-form^clinical-reason-to-stop-care","display":"Reason to stop care (text): koko1","groupMembers":null },{ "id":3860015,"uuid":"572eede4-9e21-46ba-bb4a-7b2c32a403b6","value":{ "id":3626,"uuid":"6566dba4-977f-11e1-8993-905e29aff6c1","display":"Discharged","name":{ "uuid":"66090582-977f-11e1-8993-905e29aff6c1","name":"Discharged" } },"concept":{ "uuid":"6571d95a-977f-11e1-8993-905e29aff6c1","display":"Outcome","name":{ "display":"Outcome","uuid":"661bc51e-977f-11e1-8993-905e29aff6c1","name":"Outcome","locale":"en","localePreferred":false,"conceptNameType":"FULLY_SPECIFIED","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6571d95a-977f-11e1-8993-905e29aff6c1/name/661bc51e-977f-11e1-8993-905e29aff6c1" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6571d95a-977f-11e1-8993-905e29aff6c1/name/661bc51e-977f-11e1-8993-905e29aff6c1?v=full" }],"resourceVersion":"1.9" },"datatype":{ "uuid":"8d4a48b6-c2cc-11de-8d13-0010c6dffd0f","display":"Coded","name":"Coded","description":"Value determined by term dictionary lookup (i.e., term identifier)","hl7Abbreviation":"CWE","retired":false,"links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a48b6-c2cc-11de-8d13-0010c6dffd0f" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a48b6-c2cc-11de-8d13-0010c6dffd0f?v=full" }],"resourceVersion":"1.8" },"units":null },"comment":"clinician-form^clinical-outcome","display":"Outcome: Discharged","groupMembers":null },{ "id":3860014,"uuid":"c84a9747-59d8-437d-8c57-32ab2e20b9ce","value":"demo1","concept":{ "uuid":"655928e2-977f-11e1-8993-905e29aff6c1","display":"Clinical impression comments","name":{ "display":"Clinical impression comments","uuid":"65f66c1a-977f-11e1-8993-905e29aff6c1","name":"Clinical impression comments","locale":"en","localePreferred":false,"conceptNameType":"FULLY_SPECIFIED","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655928e2-977f-11e1-8993-905e29aff6c1/name/65f66c1a-977f-11e1-8993-905e29aff6c1" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655928e2-977f-11e1-8993-905e29aff6c1/name/65f66c1a-977f-11e1-8993-905e29aff6c1?v=full" }],"resourceVersion":"1.9" },"datatype":{ "uuid":"8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f","display":"Text","name":"Text","description":"Free text","hl7Abbreviation":"ST","retired":false,"links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f?v=full" }],"resourceVersion":"1.8" },"units":null },"comment":"clinician-form^clinical-notes","display":"Clinical impression comments: demo1","groupMembers":null }] },
+  PATIENT_ENCOUNTER_CLINICIAN: { "id":764457,"uuid":"a8ce9904-2df5-4fa2-b28d-c29c78ae745e","encounterDatetime":"2019-02-21T15:08:26.000+0000","location":{ "id":54,"uuid":"3093e2ab-0eee-4bc2-aacf-8d51d77c7698","name":"Binje Outreach Clinic" },"encounterType":{ "id":156,"uuid":"04E668BA-E24F-43FF-A135-A085EC3DBE40","name":"Clinical Plan" },"obs":[{ "id":3860013,"uuid":"3951e7c1-70e5-4462-af1e-cb8ff84d1c0c","value":"koko1","concept":{ "uuid":"558a783a-2990-11e9-b210-d663bd873d93","display":"Reason to stop care (text)","name":{ "display":"Reason to stop care (text)","uuid":"558a7984-2990-11e9-b210-d663bd873d93","name":"Reason to stop care (text)","locale":"en","localePreferred":true,"conceptNameType":"FULLY_SPECIFIED","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/558a783a-2990-11e9-b210-d663bd873d93/name/558a7984-2990-11e9-b210-d663bd873d93" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/558a783a-2990-11e9-b210-d663bd873d93/name/558a7984-2990-11e9-b210-d663bd873d93?v=full" }],"resourceVersion":"1.9" },"datatype":{ "uuid":"8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f","display":"Text","name":"Text","description":"Free text","hl7Abbreviation":"ST","retired":false,"links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f?v=full" }],"resourceVersion":"1.8" },"units":null },"comment":"clinician-form^clinical-reason-to-stop-care","display":"Reason to stop care (text): koko1","groupMembers":null },{ "id":3860015,"uuid":"572eede4-9e21-46ba-bb4a-7b2c32a403b6","value":{ "id":3626,"uuid":"6566dba4-977f-11e1-8993-905e29aff6c1","display":"Discharged","name":{ "uuid":"66090582-977f-11e1-8993-905e29aff6c1","name":"Discharged" } },"concept":{ "uuid":"6571d95a-977f-11e1-8993-905e29aff6c1","display":"Outcome","name":{ "display":"Outcome","uuid":"661bc51e-977f-11e1-8993-905e29aff6c1","name":"Outcome","locale":"en","localePreferred":false,"conceptNameType":"FULLY_SPECIFIED","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6571d95a-977f-11e1-8993-905e29aff6c1/name/661bc51e-977f-11e1-8993-905e29aff6c1" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6571d95a-977f-11e1-8993-905e29aff6c1/name/661bc51e-977f-11e1-8993-905e29aff6c1?v=full" }],"resourceVersion":"1.9" },"datatype":{ "uuid":"8d4a48b6-c2cc-11de-8d13-0010c6dffd0f","display":"Coded","name":"Coded","description":"Value determined by term dictionary lookup (i.e., term identifier)","hl7Abbreviation":"CWE","retired":false,"links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a48b6-c2cc-11de-8d13-0010c6dffd0f" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a48b6-c2cc-11de-8d13-0010c6dffd0f?v=full" }],"resourceVersion":"1.8" },"units":null },"comment":"clinician-form^clinical-outcome","display":"Outcome: Discharged","groupMembers":null },{ "id":3860014,"uuid":"c84a9747-59d8-437d-8c57-32ab2e20b9ce","value":"demo1","concept":{ "uuid":"655928e2-977f-11e1-8993-905e29aff6c1","display":"Clinical impression comments","name":{ "display":"Clinical impression comments","uuid":"65f66c1a-977f-11e1-8993-905e29aff6c1","name":"Clinical impression comments","locale":"en","localePreferred":false,"conceptNameType":"FULLY_SPECIFIED","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655928e2-977f-11e1-8993-905e29aff6c1/name/65f66c1a-977f-11e1-8993-905e29aff6c1" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655928e2-977f-11e1-8993-905e29aff6c1/name/65f66c1a-977f-11e1-8993-905e29aff6c1?v=full" }],"resourceVersion":"1.9" },"datatype":{ "uuid":"8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f","display":"Text","name":"Text","description":"Free text","hl7Abbreviation":"ST","retired":false,"links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f?v=full" }],"resourceVersion":"1.8" },"units":null },"comment":"clinician-form^clinical-notes","display":"Clinical impression comments: demo1","groupMembers":null }] },
   POST_PATIENT_ENCOUNTER: {
     "id": 764451,
     "uuid": "57a125a8-3a54-4d94-8cb0-e5a6a5a66fc7",
@@ -264,188 +264,309 @@ export const RESPONSE = {
       }
     ]
   },
-  GET_PATIENT_VISIT: {
-    "results": [
-      {
-        "id": 53,
-        "uuid": "7038ac57-3104-4da8-aff1-33aba7d5ae2d",
-        "location": {
-          "uuid": "3093e2ab-0eee-4bc2-aacf-8d51d77c7698",
-          "display": "Binje Outreach Clinic",
-          "name": "Binje Outreach Clinic"
-        },
-        "startDatetime": "2019-02-21T11:03:24.000+0000",
-        "stopDatetime": null,
-        "patient": {
+  PATIENT_VISIT: [
+    {
+      "id": 53,
+      "uuid": "7038ac57-3104-4da8-aff1-33aba7d5ae2d",
+      "location": {
+        "uuid": "3093e2ab-0eee-4bc2-aacf-8d51d77c7698",
+        "display": "Binje Outreach Clinic",
+        "name": "Binje Outreach Clinic"
+      },
+      "startDatetime": "2019-02-21T11:03:24.000+0000",
+      "stopDatetime": null,
+      "patient": {
+        "id": 68803,
+        "uuid": "57af6d0c-9f5d-4812-b3d9-5c93aeb64cff",
+        "display": "MGT 508 - Ellen Diane John",
+        "identifiers": [
+          {
+            "uuid": "7f8e1f36-7fdd-4abc-a56e-5bdca8f44a30",
+            "identifier": "MGT 508",
+            "identifierType": {
+              "uuid": "66784d84-977f-11e1-8993-905e29aff6c1"
+            },
+            "preferred": true
+          }
+        ],
+        "person": {
           "id": 68803,
           "uuid": "57af6d0c-9f5d-4812-b3d9-5c93aeb64cff",
-          "display": "MGT 508 - Ellen Diane John",
-          "identifiers": [
-            {
-              "uuid": "7f8e1f36-7fdd-4abc-a56e-5bdca8f44a30",
-              "identifier": "MGT 508",
-              "identifierType": {
-                "uuid": "66784d84-977f-11e1-8993-905e29aff6c1"
-              },
-              "preferred": true
-            }
-          ],
-          "person": {
-            "id": 68803,
-            "uuid": "57af6d0c-9f5d-4812-b3d9-5c93aeb64cff",
-            "display": "Ellen Diane John",
-            "gender": "M",
-            "age": 39,
-            "birthdate": "1980-01-01T00:00:00.000+0000",
-            "birthdateEstimated": false,
-            "dead": false,
-            "deathDate": null,
-            "causeOfDeath": null,
-            "preferredName": {
-              "familyName": "John",
-              "givenName": "Ellen",
-              "middleName": "Diane",
-              "display": "Ellen Diane John"
-            }
+          "display": "Ellen Diane John",
+          "gender": "M",
+          "age": 39,
+          "birthdate": "1980-01-01T00:00:00.000+0000",
+          "birthdateEstimated": false,
+          "dead": false,
+          "deathDate": null,
+          "causeOfDeath": null,
+          "preferredName": {
+            "familyName": "John",
+            "givenName": "Ellen",
+            "middleName": "Diane",
+            "display": "Ellen Diane John"
           }
-        },
-        "encounters": [
-          {
-            "id": 764451,
-            "uuid": "57a125a8-3a54-4d94-8cb0-e5a6a5a66fc7",
-            "encounterDatetime": "2019-02-21T11:03:24.000+0000",
-            "location": {
-              "id": 54,
-              "uuid": "3093e2ab-0eee-4bc2-aacf-8d51d77c7698",
-              "name": "Binje Outreach Clinic"
-            },
-            "encounterType": {
-              "id": 141,
-              "uuid": "55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b",
-              "name": "Check-in"
-            },
-            "obs": [
-              {
-                "uuid": "751132ca-3428-40bf-aa35-33cecfcf05c1",
-                "id": 3860003,
-                "value": {
-                  "uuid": "655d1772-977f-11e1-8993-905e29aff6c1",
+        }
+      },
+      "encounters": [
+        {
+          "id": 764451,
+          "uuid": "57a125a8-3a54-4d94-8cb0-e5a6a5a66fc7",
+          "encounterDatetime": "2019-02-21T11:03:24.000+0000",
+          "location": {
+            "id": 54,
+            "uuid": "3093e2ab-0eee-4bc2-aacf-8d51d77c7698",
+            "name": "Binje Outreach Clinic"
+          },
+          "encounterType": {
+            "id": 141,
+            "uuid": "55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b",
+            "name": "Check-in"
+          },
+          "obs": [
+            {
+              "uuid": "751132ca-3428-40bf-aa35-33cecfcf05c1",
+              "id": 3860003,
+              "value": {
+                "uuid": "655d1772-977f-11e1-8993-905e29aff6c1",
+                "display": "Hospital",
+                "name": {
                   "display": "Hospital",
-                  "name": {
-                    "display": "Hospital",
-                    "uuid": "65fa5b0e-977f-11e1-8993-905e29aff6c1",
-                    "name": "Hospital",
-                    "locale": "en",
-                    "localePreferred": true,
-                    "conceptNameType": "FULLY_SPECIFIED",
-                    "links": [
-                      {
-                        "rel": "self",
-                        "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/name/65fa5b0e-977f-11e1-8993-905e29aff6c1"
-                      },
-                      {
-                        "rel": "full",
-                        "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/name/65fa5b0e-977f-11e1-8993-905e29aff6c1?v=full"
-                      }
-                    ],
-                    "resourceVersion": "1.9"
-                  },
-                  "datatype": {
-                    "uuid": "8d4a4c94-c2cc-11de-8d13-0010c6dffd0f",
-                    "display": "N/A",
-                    "links": [
-                      {
-                        "rel": "self",
-                        "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4c94-c2cc-11de-8d13-0010c6dffd0f"
-                      }
-                    ]
-                  },
-                  "conceptClass": {
-                    "uuid": "8d492774-c2cc-11de-8d13-0010c6dffd0f",
-                    "display": "Misc",
-                    "links": [
-                      {
-                        "rel": "self",
-                        "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptclass/8d492774-c2cc-11de-8d13-0010c6dffd0f"
-                      }
-                    ]
-                  },
-                  "set": false,
-                  "version": null,
-                  "retired": false,
-                  "names": [
-                    {
-                      "uuid": "65fa5b0e-977f-11e1-8993-905e29aff6c1",
-                      "display": "Hospital",
-                      "links": [
-                        {
-                          "rel": "self",
-                          "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/name/65fa5b0e-977f-11e1-8993-905e29aff6c1"
-                        }
-                      ]
-                    }
-                  ],
-                  "descriptions": [
-                    {
-                      "uuid": "65b92ab2-977f-11e1-8993-905e29aff6c1",
-                      "display": "hospital",
-                      "links": [
-                        {
-                          "rel": "self",
-                          "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/description/65b92ab2-977f-11e1-8993-905e29aff6c1"
-                        }
-                      ]
-                    }
-                  ],
-                  "mappings": [
-                    {
-                      "uuid": "72c84797-0496-11e6-b545-0010f345c8d0",
-                      "display": "PIH Malawi: 2070",
-                      "links": [
-                        {
-                          "rel": "self",
-                          "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/mapping/72c84797-0496-11e6-b545-0010f345c8d0"
-                        }
-                      ]
-                    }
-                  ],
-                  "answers": [],
-                  "setMembers": [],
+                  "uuid": "65fa5b0e-977f-11e1-8993-905e29aff6c1",
+                  "name": "Hospital",
+                  "locale": "en",
+                  "localePreferred": true,
+                  "conceptNameType": "FULLY_SPECIFIED",
                   "links": [
                     {
                       "rel": "self",
-                      "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1"
+                      "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/name/65fa5b0e-977f-11e1-8993-905e29aff6c1"
                     },
                     {
                       "rel": "full",
-                      "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1?v=full"
+                      "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/name/65fa5b0e-977f-11e1-8993-905e29aff6c1?v=full"
                     }
                   ],
                   "resourceVersion": "1.9"
                 },
-                "concept": {
-                  "uuid": "65664fc2-977f-11e1-8993-905e29aff6c1"
+                "datatype": {
+                  "uuid": "8d4a4c94-c2cc-11de-8d13-0010c6dffd0f",
+                  "display": "N/A",
+                  "links": [
+                    {
+                      "rel": "self",
+                      "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4c94-c2cc-11de-8d13-0010c6dffd0f"
+                    }
+                  ]
                 },
-                "comment": "checkin-form^referral",
-                "display": "Type of referring clinic or hospital: Hospital",
-                "encounter": {
-                  "uuid": "57a125a8-3a54-4d94-8cb0-e5a6a5a66fc7"
+                "conceptClass": {
+                  "uuid": "8d492774-c2cc-11de-8d13-0010c6dffd0f",
+                  "display": "Misc",
+                  "links": [
+                    {
+                      "rel": "self",
+                      "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptclass/8d492774-c2cc-11de-8d13-0010c6dffd0f"
+                    }
+                  ]
                 },
-                "obsGroup": null,
-                "groupMembers": null
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+                "set": false,
+                "version": null,
+                "retired": false,
+                "names": [
+                  {
+                    "uuid": "65fa5b0e-977f-11e1-8993-905e29aff6c1",
+                    "display": "Hospital",
+                    "links": [
+                      {
+                        "rel": "self",
+                        "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/name/65fa5b0e-977f-11e1-8993-905e29aff6c1"
+                      }
+                    ]
+                  }
+                ],
+                "descriptions": [
+                  {
+                    "uuid": "65b92ab2-977f-11e1-8993-905e29aff6c1",
+                    "display": "hospital",
+                    "links": [
+                      {
+                        "rel": "self",
+                        "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/description/65b92ab2-977f-11e1-8993-905e29aff6c1"
+                      }
+                    ]
+                  }
+                ],
+                "mappings": [
+                  {
+                    "uuid": "72c84797-0496-11e6-b545-0010f345c8d0",
+                    "display": "PIH Malawi: 2070",
+                    "links": [
+                      {
+                        "rel": "self",
+                        "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/mapping/72c84797-0496-11e6-b545-0010f345c8d0"
+                      }
+                    ]
+                  }
+                ],
+                "answers": [],
+                "setMembers": [],
+                "links": [
+                  {
+                    "rel": "self",
+                    "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1"
+                  },
+                  {
+                    "rel": "full",
+                    "uri": "https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1?v=full"
+                  }
+                ],
+                "resourceVersion": "1.9"
+              },
+              "concept": {
+                "uuid": "65664fc2-977f-11e1-8993-905e29aff6c1"
+              },
+              "comment": "checkin-form^referral",
+              "display": "Type of referring clinic or hospital: Hospital",
+              "encounter": {
+                "uuid": "57a125a8-3a54-4d94-8cb0-e5a6a5a66fc7"
+              },
+              "obsGroup": null,
+              "groupMembers": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  IC3_PATIENT: [
+    {
+      "today": 1550966400000,
+      "location": "3093e2ab-0eee-4bc2-aacf-8d51d77c7698",
+      "internal_id": 68803,
+      "patient_uuid": "57af6d0c-9f5d-4812-b3d9-5c93aeb64cff",
+      "first_name": "Ellen",
+      "last_name": "John",
+      "village": "Gonthi",
+      "traditional_authority": "Mlauli",
+      "district": "Neno",
+      "phone_number": null,
+      "vhw": null,
+      "gender": "M",
+      "birthdate": 315532800000,
+      "age_years": 39,
+      "age_months": 469,
+      "age_days": 14299,
+      "deceased": false,
+      "identifiers": [
+        {
+          "location": "0d414eae-5ab4-11e0-870c-9f6107fee88e",
+          "identifierType": "66784d84-977f-11e1-8993-905e29aff6c1",
+          "identifier": "MGT-0508",
+          "raw_identifier": "MGT 508",
+          "preferred": true
+        }
+      ],
+      "hcc_number": null,
+      "art_number": null,
+      "ncd_number": null,
+      "cc_treatment_status": null,
+      "last_visit_date": 1551019832000,
+      "last_appt_date": 1548633600000,
+      "hiv_treatment_status": "6687fa7c-977f-11e1-8993-905e29aff6c1",
+      "art_start_date": 1523836800000,
+      "eid_start_date": null,
+      "viral_load_tests": null,
+      "last_viral_load_collection_date": null,
+      "last_viral_load_result_date": null,
+      "last_viral_load_date": null,
+      "last_viral_load_type": null,
+      "last_viral_load_numeric": null,
+      "last_viral_load_ldl": null,
+      "last_art_regimen_change_date": 1548633600000,
+      "last_adherence_counselling_session_number": null,
+      "last_adherence_counselling_session_date": null,
+      "chronic_care_diagnoses": null,
+      "hiv_tests": null,
+      "last_hiv_dna_pcr_result": null,
+      "last_hiv_dna_pcr_result_date": null,
+      "last_hiv_rapid_test_result": null,
+      "last_hiv_rapid_test_result_date": null,
+      "last_hba1c_result_date": null,
+      "last_blood_sugar_result_date": null,
+      "last_creatinine_result_date": null,
+      "last_creatinine_result": null,
+      "last_bmi": 17.301038062283737,
+      "current_weight": null,
+      "last_height": 170,
+      "current_height": null,
+      "current_muac": null,
+      "family_history_diabetes": null,
+      "last_breastfeeding_status": null,
+      "is_pregnant": null,
+      "current_symptoms": null,
+      "current_diastolic_bp": null,
+      "current_systolic_bp": null,
+      "alerts": [
+        {
+          "alert": "Routine Blood Sugar for high risk population",
+          "action": "Routine Blood Sugar for high risk population",
+          "categories": [
+            "diabetes"
+          ],
+          "name": "routine-blood-sugar-high-risk"
+        },
+        {
+          "alert": "Due for BP Screening",
+          "action": "Refer to BP Screening station",
+          "categories": [
+            "bp",
+            "screening-eligibility"
+          ],
+          "name": "eligible-for-bp-screening"
+        },
+        {
+          "alert": "Enroll if confirmed by clinician meets criteria",
+          "action": "Action: Eligible for blood sugar test",
+          "categories": [
+            "blood-glucose",
+            "screening-eligibility"
+          ],
+          "name": "eligible-for-blood-glucose-screening-not-enrolled"
+        },
+        {
+          "alert": "Due for Nutrition Screening",
+          "action": "Refer to Nutrition Screening station",
+          "categories": [
+            "nutrition",
+            "screening-eligibility"
+          ],
+          "name": "eligible-for-weight"
+        },
+        {
+          "alert": "Eligible for TB screening",
+          "action": "Action: Refer to the TB screening station",
+          "categories": [
+            "tb",
+            "screening-eligibility"
+          ],
+          "name": "eligible-for-tb-screening"
+        }
+      ]
+    }
+  ]
+};
+export const CLINICIAL_RESPONSE = {
+  GET_PATIENT_ENCOUNTER_CLINICIAN: { "id":764469,"uuid":"c5f2a8a1-d9ea-4464-9dbd-f104cbac38ae","encounterDatetime":"2019-02-22T11:49:15.053+0000","location":{ "id":54,"uuid":"3093e2ab-0eee-4bc2-aacf-8d51d77c7698","name":"Binje Outreach Clinic" },"encounterType":{ "id":156,"uuid":"04E668BA-E24F-43FF-A135-A085EC3DBE40","name":"Clinical Plan" },"obs":[{ "id":3860047,"uuid":"fbc4597b-dca1-4f43-b360-0f58978f59a7","value":{ "id":3626,"uuid":"6566dba4-977f-11e1-8993-905e29aff6c1","display":"Discharged","name":{ "uuid":"66090582-977f-11e1-8993-905e29aff6c1","name":"Discharged" } },"concept":{ "uuid":"6571d95a-977f-11e1-8993-905e29aff6c1","display":"Outcome","name":{ "display":"Outcome","uuid":"661bc51e-977f-11e1-8993-905e29aff6c1","name":"Outcome","locale":"en","localePreferred":false,"conceptNameType":"FULLY_SPECIFIED","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6571d95a-977f-11e1-8993-905e29aff6c1/name/661bc51e-977f-11e1-8993-905e29aff6c1" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6571d95a-977f-11e1-8993-905e29aff6c1/name/661bc51e-977f-11e1-8993-905e29aff6c1?v=full" }],"resourceVersion":"1.9" },"datatype":{ "uuid":"8d4a48b6-c2cc-11de-8d13-0010c6dffd0f","display":"Coded","name":"Coded","description":"Value determined by term dictionary lookup (i.e., term identifier)","hl7Abbreviation":"CWE","retired":false,"links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a48b6-c2cc-11de-8d13-0010c6dffd0f" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a48b6-c2cc-11de-8d13-0010c6dffd0f?v=full" }],"resourceVersion":"1.8" },"units":null },"comment":"clinician-form^clinical-outcome","display":"Outcome: Discharged","groupMembers":null },{ "id":3860048,"uuid":"476d9764-f199-47b0-b65d-5c7cf39c48c1","value":"kokoo","concept":{ "uuid":"558a783a-2990-11e9-b210-d663bd873d93","display":"Reason to stop care (text)","name":{ "display":"Reason to stop care (text)","uuid":"558a7984-2990-11e9-b210-d663bd873d93","name":"Reason to stop care (text)","locale":"en","localePreferred":true,"conceptNameType":"FULLY_SPECIFIED","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/558a783a-2990-11e9-b210-d663bd873d93/name/558a7984-2990-11e9-b210-d663bd873d93" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/558a783a-2990-11e9-b210-d663bd873d93/name/558a7984-2990-11e9-b210-d663bd873d93?v=full" }],"resourceVersion":"1.9" },"datatype":{ "uuid":"8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f","display":"Text","name":"Text","description":"Free text","hl7Abbreviation":"ST","retired":false,"links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f?v=full" }],"resourceVersion":"1.8" },"units":null },"comment":"clinician-form^clinical-reason-to-stop-care","display":"Reason to stop care (text): kokoo","groupMembers":null },{ "id":3860049,"uuid":"80388db9-c6fe-4280-90f4-bda38363022d","value":"koko","concept":{ "uuid":"655928e2-977f-11e1-8993-905e29aff6c1","display":"Clinical impression comments","name":{ "display":"Clinical impression comments","uuid":"65f66c1a-977f-11e1-8993-905e29aff6c1","name":"Clinical impression comments","locale":"en","localePreferred":false,"conceptNameType":"FULLY_SPECIFIED","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655928e2-977f-11e1-8993-905e29aff6c1/name/65f66c1a-977f-11e1-8993-905e29aff6c1" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655928e2-977f-11e1-8993-905e29aff6c1/name/65f66c1a-977f-11e1-8993-905e29aff6c1?v=full" }],"resourceVersion":"1.9" },"datatype":{ "uuid":"8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f","display":"Text","name":"Text","description":"Free text","hl7Abbreviation":"ST","retired":false,"links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4ab4-c2cc-11de-8d13-0010c6dffd0f?v=full" }],"resourceVersion":"1.8" },"units":null },"comment":"clinician-form^clinical-notes","display":"Clinical impression comments: koko","groupMembers":null }] },
+  GET_IC3_SCREENING_DATA: [{ "today":1550793600000,"location":"3093e2ab-0eee-4bc2-aacf-8d51d77c7698","internal_id":68803,"patient_uuid":"57af6d0c-9f5d-4812-b3d9-5c93aeb64cff","first_name":"Ellen","last_name":"John","village":"Gonthi","traditional_authority":"Mlauli","district":"Neno","phone_number":null,"vhw":null,"gender":"M","birthdate":315532800000,"age_years":39,"age_months":469,"age_days":14297,"deceased":false,"identifiers":[{ "location":"0d414eae-5ab4-11e0-870c-9f6107fee88e","identifierType":"66784d84-977f-11e1-8993-905e29aff6c1","identifier":"MGT-0508","raw_identifier":"MGT 508","preferred":true }],"hcc_number":null,"art_number":null,"ncd_number":null,"cc_treatment_status":null,"last_visit_date":1550836155000,"last_appt_date":1548633600000,"hiv_treatment_status":"6687fa7c-977f-11e1-8993-905e29aff6c1","art_start_date":1523836800000,"eid_start_date":null,"viral_load_tests":null,"last_viral_load_collection_date":null,"last_viral_load_result_date":null,"last_viral_load_date":null,"last_viral_load_type":null,"last_viral_load_numeric":null,"last_viral_load_ldl":null,"last_art_regimen_change_date":1548633600000,"last_adherence_counselling_session_number":null,"last_adherence_counselling_session_date":null,"chronic_care_diagnoses":null,"hiv_tests":null,"last_hiv_dna_pcr_result":null,"last_hiv_dna_pcr_result_date":null,"last_hiv_rapid_test_result":null,"last_hiv_rapid_test_result_date":null,"last_hba1c_result_date":null,"last_blood_sugar_result_date":null,"last_creatinine_result_date":null,"last_creatinine_result":null,"last_bmi":17.301038062283737,"current_weight":null,"last_height":170.0,"current_height":null,"current_muac":null,"family_history_diabetes":null,"last_breastfeeding_status":null,"is_pregnant":null,"current_symptoms":null,"current_diastolic_bp":null,"current_systolic_bp":null,"alerts":[{ "categories":["diabetes"],"alert":"Routine Blood Sugar for high risk population","action":"Routine Blood Sugar for high risk population","name":"routine-blood-sugar-high-risk" },{ "categories":["bp","screening-eligibility"],"alert":"Due for BP Screening","action":"Refer to BP Screening station","name":"eligible-for-bp-screening" },{ "categories":["blood-glucose","screening-eligibility"],"alert":"Enroll if confirmed by clinician meets criteria","action":"Action: Eligible for blood sugar test","name":"eligible-for-blood-glucose-screening-not-enrolled" },{ "categories":["nutrition","screening-eligibility"],"alert":"Due for Nutrition Screening","action":"Refer to Nutrition Screening station","name":"eligible-for-weight" },{ "categories":["tb","screening-eligibility"],"alert":"Eligible for TB screening","action":"Action: Refer to the TB screening station","name":"eligible-for-tb-screening" }] }],
+  // GET_VISIT: [{ "id":61,"uuid":"14221fac-8ac7-46c7-9d05-82aa115af802","location":{ "uuid":"3093e2ab-0eee-4bc2-aacf-8d51d77c7698","display":"Binje Outreach Clinic","name":"Binje Outreach Clinic" },"startDatetime":"2019-02-22T11:17:23.000+0000","stopDatetime":null,"patient":{ "id":68803,"uuid":"57af6d0c-9f5d-4812-b3d9-5c93aeb64cff","display":"MGT 508 - Ellen Diane John","identifiers":[{ "uuid":"7f8e1f36-7fdd-4abc-a56e-5bdca8f44a30","identifier":"MGT 508","identifierType":{ "uuid":"66784d84-977f-11e1-8993-905e29aff6c1" },"preferred":true }],"person":{ "id":68803,"uuid":"57af6d0c-9f5d-4812-b3d9-5c93aeb64cff","display":"Ellen Diane John","gender":"M","age":39,"birthdate":"1980-01-01T00:00:00.000+0000","birthdateEstimated":false,"dead":false,"deathDate":null,"causeOfDeath":null,"preferredName":{ "familyName":"John","givenName":"Ellen","middleName":"Diane","display":"Ellen Diane John" } } },"encounters":[{ "id":764469,"uuid":"c5f2a8a1-d9ea-4464-9dbd-f104cbac38ae","encounterDatetime":"2019-02-22T11:49:15.000+0000","location":{ "id":54,"uuid":"3093e2ab-0eee-4bc2-aacf-8d51d77c7698","name":"Binje Outreach Clinic" },"encounterType":{ "id":156,"uuid":"04E668BA-E24F-43FF-A135-A085EC3DBE40","name":"Clinical Plan" },"obs":[{ "uuid":"fbc4597b-dca1-4f43-b360-0f58978f59a7","id":3860047,"value":{ "uuid":"6566dba4-977f-11e1-8993-905e29aff6c1","display":"Discharged","name":{ "display":"Discharged","uuid":"66090582-977f-11e1-8993-905e29aff6c1","name":"Discharged","locale":"en","localePreferred":false,"conceptNameType":"FULLY_SPECIFIED","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6566dba4-977f-11e1-8993-905e29aff6c1/name/66090582-977f-11e1-8993-905e29aff6c1" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6566dba4-977f-11e1-8993-905e29aff6c1/name/66090582-977f-11e1-8993-905e29aff6c1?v=full" }],"resourceVersion":"1.9" },"datatype":{ "uuid":"8d4a4c94-c2cc-11de-8d13-0010c6dffd0f","display":"N/A","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4c94-c2cc-11de-8d13-0010c6dffd0f" }] },"conceptClass":{ "uuid":"65ab79bc-977f-11e1-8993-905e29aff6c1","display":"State","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptclass/65ab79bc-977f-11e1-8993-905e29aff6c1" }] },"set":false,"version":"","retired":false,"names":[{ "uuid":"66090582-977f-11e1-8993-905e29aff6c1","display":"Discharged","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6566dba4-977f-11e1-8993-905e29aff6c1/name/66090582-977f-11e1-8993-905e29aff6c1" }] }],"descriptions":[{ "uuid":"65c6df2c-977f-11e1-8993-905e29aff6c1","display":"Patient was discharged from the program.","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6566dba4-977f-11e1-8993-905e29aff6c1/description/65c6df2c-977f-11e1-8993-905e29aff6c1" }] }],"mappings":[{ "uuid":"731b4d0d-0496-11e6-b545-0010f345c8d0","display":"PIH Malawi: 3626","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6566dba4-977f-11e1-8993-905e29aff6c1/mapping/731b4d0d-0496-11e6-b545-0010f345c8d0" }] }],"answers":[],"setMembers":[],"links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6566dba4-977f-11e1-8993-905e29aff6c1" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/6566dba4-977f-11e1-8993-905e29aff6c1?v=full" }],"resourceVersion":"1.9" },"concept":{ "uuid":"6571d95a-977f-11e1-8993-905e29aff6c1" },"comment":"clinician-form^clinical-outcome","display":"Outcome: Discharged","encounter":{ "uuid":"c5f2a8a1-d9ea-4464-9dbd-f104cbac38ae" },"obsGroup":null,"groupMembers":null },{ "uuid":"476d9764-f199-47b0-b65d-5c7cf39c48c1","id":3860048,"value":"kokoo","concept":{ "uuid":"558a783a-2990-11e9-b210-d663bd873d93" },"comment":"clinician-form^clinical-reason-to-stop-care","display":"Reason to stop care (text): kokoo","encounter":{ "uuid":"c5f2a8a1-d9ea-4464-9dbd-f104cbac38ae" },"obsGroup":null,"groupMembers":null },{ "uuid":"80388db9-c6fe-4280-90f4-bda38363022d","id":3860049,"value":"koko","concept":{ "uuid":"655928e2-977f-11e1-8993-905e29aff6c1" },"comment":"clinician-form^clinical-notes","display":"Clinical impression comments: koko","encounter":{ "uuid":"c5f2a8a1-d9ea-4464-9dbd-f104cbac38ae" },"obsGroup":null,"groupMembers":null }] },{ "id":764468,"uuid":"7b1da37b-7783-4659-a44e-528a3f4114fa","encounterDatetime":"2019-02-22T11:17:23.000+0000","location":{ "id":54,"uuid":"3093e2ab-0eee-4bc2-aacf-8d51d77c7698","name":"Binje Outreach Clinic" },"encounterType":{ "id":141,"uuid":"55a0d3ea-a4d7-4e88-8f01-5aceb2d3c61b","name":"Check-in" },"obs":[{ "uuid":"118148ee-dc5f-4dc3-a2b7-fa1b4ce66afb","id":3860046,"value":{ "uuid":"655d1772-977f-11e1-8993-905e29aff6c1","display":"Hospital","name":{ "display":"Hospital","uuid":"65fa5b0e-977f-11e1-8993-905e29aff6c1","name":"Hospital","locale":"en","localePreferred":true,"conceptNameType":"FULLY_SPECIFIED","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/name/65fa5b0e-977f-11e1-8993-905e29aff6c1" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/name/65fa5b0e-977f-11e1-8993-905e29aff6c1?v=full" }],"resourceVersion":"1.9" },"datatype":{ "uuid":"8d4a4c94-c2cc-11de-8d13-0010c6dffd0f","display":"N/A","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptdatatype/8d4a4c94-c2cc-11de-8d13-0010c6dffd0f" }] },"conceptClass":{ "uuid":"8d492774-c2cc-11de-8d13-0010c6dffd0f","display":"Misc","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/conceptclass/8d492774-c2cc-11de-8d13-0010c6dffd0f" }] },"set":false,"version":null,"retired":false,"names":[{ "uuid":"65fa5b0e-977f-11e1-8993-905e29aff6c1","display":"Hospital","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/name/65fa5b0e-977f-11e1-8993-905e29aff6c1" }] }],"descriptions":[{ "uuid":"65b92ab2-977f-11e1-8993-905e29aff6c1","display":"hospital","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/description/65b92ab2-977f-11e1-8993-905e29aff6c1" }] }],"mappings":[{ "uuid":"72c84797-0496-11e6-b545-0010f345c8d0","display":"PIH Malawi: 2070","links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1/mapping/72c84797-0496-11e6-b545-0010f345c8d0" }] }],"answers":[],"setMembers":[],"links":[{ "rel":"self","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1" },{ "rel":"full","uri":"https://bwenzi.pih-emr.org:443/openmrs/ws/rest/v1/concept/655d1772-977f-11e1-8993-905e29aff6c1?v=full" }],"resourceVersion":"1.9" },"concept":{ "uuid":"65664fc2-977f-11e1-8993-905e29aff6c1" },"comment":"checkin-form^referral","display":"Type of referring clinic or hospital: Hospital","encounter":{ "uuid":"7b1da37b-7783-4659-a44e-528a3f4114fa" },"obsGroup":null,"groupMembers":null }] }] }] }
 };
 export const URL = {
   GET_PATIENT_BY_ID: 'https://bwenzi.pih-emr.org//openmrs/ws/rest/v1/patient?q=MGT 148 CCC&**',
   GET_PATIENT_BY_NAME: 'https://bwenzi.pih-emr.org//openmrs/ws/rest/v1/patient?q=john&**',
   GET_PATIENT_OBS: 'https://bwenzi.pih-emr.org//openmrs/ws/rest/v1/obs/?patient=57af6d0c-9f5d-4812-b3d9-5c93aeb64cff&**',
-  PATIENT_ENCOUNTER: 'https://bwenzi.pih-emr.org//openmrs/ws/rest/v1/encounter/**',
-  PATIENT_VISIT: 'https://bwenzi.pih-emr.org//openmrs/ws/rest/v1/visit?includeInactive=false&patient=57af6d0c-9f5d-4812-b3d9-5c93aeb64cff**'
+  GET_PATIENT_ENCOUNTER: 'https://bwenzi.pih-emr.org//openmrs/ws/rest/v1/encounter/**',
+  GET_PATIENT_VISIT: 'https://bwenzi.pih-emr.org//openmrs/ws/rest/v1/visit?includeInactive=false**',
+  GET_IC3_SCREENING_DATA: 'https://bwenzi.pih-emr.org//openmrs/ws/rest/v1/pihmalawi/ic3ScreeningData**',
+  GET_IC3_PATIENTS: 'https://bwenzi.pih-emr.org//openmrs/ws/rest/v1/pihmalawi/ic3Patients?**'
   
 };

@@ -26,7 +26,7 @@
 
 import { URL, RESPONSE } from './constants.js';
 
-Cypress.Commands.add('init', (dynamicEncounterResponseStub) => {
+Cypress.Commands.add('init', (EncounterResponseStub, Ic3ScreeningResponseStub) => {
   cy.server();
   cy.route({
     method: 'GET',
@@ -46,6 +46,14 @@ Cypress.Commands.add('init', (dynamicEncounterResponseStub) => {
   });
   cy.route({
     method: 'GET',
+    url: URL.GET_IC3_PATIENTS,
+    status: 200,
+    response: {
+      results: RESPONSE.IC3_PATIENT
+    }
+  });
+  cy.route({
+    method: 'GET',
     url: URL.GET_PATIENT_OBS,
     status: 200,
     response: {
@@ -54,31 +62,54 @@ Cypress.Commands.add('init', (dynamicEncounterResponseStub) => {
   });
   cy.route({
     method: 'GET',
-    url: URL.PATIENT_VISIT,
+    url: URL.GET_PATIENT_VISIT,
     status: 200,
     response: {
-      results: RESPONSE.GET_PATIENT_VISIT
+      results: RESPONSE.PATIENT_VISIT
     }
   });
   cy.route({
     method: 'GET',
-    url: URL.PATIENT_ENCOUNTER,
+    url: URL.GET_PATIENT_ENCOUNTER,
     status: 200,
     response: {
       results: RESPONSE.POST_PATIENT_ENCOUNTER
     }
   });
   cy.route({
-    method: 'POST',
-    url: URL.PATIENT_ENCOUNTER,
+    method: 'GET',
+    url: URL.GET_IC3_SCREENING_DATA,
     status: 200,
     response: {
-      results: dynamicEncounterResponseStub
+      results: Ic3ScreeningResponseStub
+    }
+  });
+  cy.route({
+    method: 'POST',
+    url: URL.GET_PATIENT_ENCOUNTER,
+    status: 200,
+    response: {
+      results: EncounterResponseStub
     }
   });
 });
 
 Cypress.Commands.add('login', () => {
+  cy.server();
+  cy.route({
+    method: 'GET',
+    url: URL.GET_IC3_PATIENTS,
+    status: 200,
+    response: RESPONSE.IC3_PATIENT
+  });
+  cy.route({
+    method: 'GET',
+    url: URL.GET_PATIENT_VISIT,
+    status: 200,
+    response: {
+      results: RESPONSE.PATIENT_VISIT
+    }
+  });
 
   cy.visit('/');
 
@@ -101,7 +132,7 @@ Cypress.Commands.add('login', () => {
   cy.get('[type=submit]')
     .click();
 
-  cy.wait(3000);
+  cy.wait(5000);
   cy.get('.user-display')
     .should('exist')
     .should('be.visible');

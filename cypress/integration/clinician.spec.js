@@ -1,12 +1,15 @@
-import { RESPONSE } from '../support/constants';
+import { CLINICIAL_RESPONSE } from '../support/constants';
 describe('Clinician station', function () {
-
-  before(function () {
-    cy.init(RESPONSE.GET_PATIENT_ENCOUNTER_CLINICIAN);
+  before(() => {
     cy.login();
   });
-      
-  it('Should search for patient and fill his clinician form', function () {
+
+  beforeEach(() => {
+    const { GET_PATIENT_ENCOUNTER_CLINICIAN, GET_IC3_SCREENING_DATA } = CLINICIAL_RESPONSE;
+    cy.init(GET_PATIENT_ENCOUNTER_CLINICIAN, GET_IC3_SCREENING_DATA);
+  });
+  
+  it('Should search for patient and select "Exit from care" clinical outcome', function () {
     cy.searchPatientByID('MGT-0148-CCC');
   
     // Select the patient
@@ -40,7 +43,7 @@ describe('Clinician station', function () {
         }
   
         // Fill the clinician note
-        cy.get('.textarea.form-control')
+        cy.get('.form-group textarea')
           .first()
           .type('this is a demo clinician note');
             
@@ -50,9 +53,14 @@ describe('Clinician station', function () {
           .click();
         
         // Fill the reason to stop care
-        cy.get('.textarea.form-control')
+        cy.get('.form-group textarea')
           .last()
           .type('this is a demo reason to stop care');
+
+        // Assert that the correct form is being populated
+        cy.get('label.control-label')
+          .eq(2)
+          .contains('Reason to stop care');
 
         // Click the save form button
         cy.get('.form-action-btns > button')
@@ -60,12 +68,123 @@ describe('Clinician station', function () {
           .click();
   
         cy.wait(3000);
-    
-        // Check that the new location was saved properly
-        cy.get('.form-group .button-group-view')
+
+        // Check that the form attempted to save
+        cy.get('.custom-loader')
           .first()
-          .should('not.contain', 'OPD at health center');
+          .should('be.visible');       
       });
+  });
+
+  it('should select "transfer to another facility" clinical outcome', () => {
+    // Put the form in edit mode
+    cy.get('.form-action-btns > button')
+      .first()
+      .click();
+    cy.wait(2000);
+    
+    // Select Clinical outcome (transfer to another facility)
+    cy.get('.form-group label')
+      .eq(1)
+      .click();
+  
+    // Fill the transfer facility
+    cy.get('.form-group textarea')
+      .last()
+      .type('this is a demo transfer facility');
+
+    // Assert that the correct form is being populated
+    cy.get('label.control-label')
+      .eq(2)
+      .contains('Transfer Facility (Transfer out to location)');
+
+    // Click the save form button
+    cy.get('.form-action-btns > button')
+      .first()
+      .click();
+
+    cy.wait(3000);
+
+    // Check that the form attempted to save
+    cy.get('.custom-loader')
+      .first()
+      .should('be.visible');    
+  });
+
+  it('should select "Other" clinical outcome', () => {
+    // Put the form in edit mode
+    cy.get('.form-action-btns > button')
+      .first()
+      .click();
+    cy.wait(2000);
+    
+    // Select Clinical outcome (Other)
+    cy.get('.form-group label')
+      .eq(3)
+      .click();
+  
+    // Fill the Other outcome
+    cy.get('.form-group textarea')
+      .last()
+      .type('this is a demo other outcome');
+
+    // Assert that the correct form is being populated
+    cy.get('label.control-label')
+      .eq(2)
+      .contains('Other outcome');
+
+    // Click the save form button
+    cy.get('.form-action-btns > button')
+      .first()
+      .click();
+
+    cy.wait(3000);
+
+    // Check that the form attempted to save
+    cy.get('.custom-loader')
+      .first()
+      .should('be.visible');    
+  });
+
+  it('should select "Clinical follow-up" clinical outcome', () => {
+    // Put the form in edit mode
+    cy.get('.form-action-btns > button')
+      .first()
+      .click();
+    cy.wait(2000);
+    
+    // Select Clinical follow-up (Clinical outcome)
+    cy.get('.form-group label')
+      .first()
+      .click();
+  
+    // Todo figure out how to test the date-picker
+    // Fill the Appointment time
+    // cy.get('.form-group textarea')
+    //   .last()
+    //   .type('this is a demo other outcome');
+
+    // Fill the appointment time (AM/PM)
+    cy.get('label')
+      .last()
+      .click();
+
+    // Assert that the correct form is being populated
+    cy.get('label.control-label')
+      .eq(2)
+      .contains('Appointment time');
+
+    // Click the save form button
+    cy.get('.form-action-btns > button')
+      .first()
+      .click();
+
+    cy.wait(3000);
+
+    // Check that the form attempted to save
+    cy.get('.custom-loader')
+      .first()
+      .should('be.visible');    
   });
   
   after(function () {

@@ -13,11 +13,11 @@ import {
 import { history } from '../store';
 import ic3PatientActions from './patientActions';
 import IC3_PATIENT_TYPES from './patientTypes';
-import {ACTIVE_VISITS_REP} from '../constants';
+import { ACTIVE_VISITS_REP } from '../constants';
 import reportingRest from '../rest/reportingRest';
 import * as R from "ramda";
 import utils from "../utils";
-import {CONCEPTS} from "../constants";
+import { CONCEPTS } from "../constants";
 
 const createFromReportingRestRep = (restRep) => {
   let patient = {};
@@ -27,7 +27,7 @@ const createFromReportingRestRep = (restRep) => {
   patient.age = restRep.age_years;
   patient.birthdate = restRep.birthdate;
   patient.deceased = restRep.deceased;
-  patient.chronic_care_diagnoses = restRep.chronic_care_diagnoses
+  patient.chronic_care_diagnoses = restRep.chronic_care_diagnoses;
 
   patient.name = {
     givenName: restRep.first_name,
@@ -82,9 +82,13 @@ function* getIC3Patients(action) {
       cohorts: action.loadExpectedAppointments ? null : 'patientsWithVisit'
     });
 
+    console.log('----apptRestResponse', apptRestResponse);
+
     let patients = apptRestResponse.map((result) => {
       return createFromReportingRestRep(result);
     });
+
+    console.log('----patients', patients);
 
     // add the IC3 patients to the store
     yield put(patientActions.updatePatientsInStore(patients));
@@ -111,7 +115,7 @@ function* getIC3PatientScreeningData(action) {
       patients: action.patient.uuid,
       useCachedValues: false
     });
-
+    
     let patients = apptRestResponse.map((result) => {
       return createFromReportingRestRep(result);
     });
