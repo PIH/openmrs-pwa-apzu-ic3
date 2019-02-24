@@ -110,6 +110,14 @@ Cypress.Commands.add('login', () => {
       results: RESPONSE.PATIENT_VISIT
     }
   });
+  cy.route({
+    method: 'GET',
+    url: URL.GET_LOCATIONS,
+    status: 200,
+    response: {
+      results: RESPONSE.LOGIN_LOCATIONS
+    }
+  });
 
   cy.visit('/');
 
