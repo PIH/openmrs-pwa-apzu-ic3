@@ -1,19 +1,12 @@
-// Temporary comenting out this file so I can merge this PR
-
+import { RESPONSE } from '../support/constants';
 describe('Check in', function () {
 
   before(function () {
-    cy.init();
+    cy.init(RESPONSE.GET_PATIENT_ENCOUNTER);
     cy.login();
   });
-  //   beforeEach(() => {
-  //   });
     
-  it.skip('Should search for patient and Check-in patient into NEW location', function () {
-    // cy.login();
-    // cy.server();
-    // cy.init();
-    // Search for a patient
+  it('Should search for patient and Check-in patient into NEW location', function () {
     cy.searchPatientByID('MGT-0148-CCC');
 
     // Select the patient
