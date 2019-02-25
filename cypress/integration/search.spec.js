@@ -1,18 +1,18 @@
-describe('Search', function () {
+describe('Search', () => {
 
-  before(function () {
+  before(() => {
     cy.login();
   });
 
-  it('Should search for patient by name', function () {
+  it('Should search for patient by name', () => {
     cy.searchPatientByName('john');
   });
 
-  it('Should search for patient by identifier', function () {
+  it('Should search for patient by identifier', () => {
     cy.searchPatientByID('MGT-0148-CCC');
   });
 
-  after(function () {
+  after(() => {
     cy.logout();
   });
 });

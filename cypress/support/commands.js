@@ -26,7 +26,7 @@
 
 import { URL, RESPONSE } from './constants.js';
 
-Cypress.Commands.add('init', () => {
+Cypress.Commands.add('init', (EncounterResponseStub, Ic3ScreeningResponseStub) => {
   cy.server();
   cy.route({
     method: 'GET',
@@ -46,6 +46,14 @@ Cypress.Commands.add('init', () => {
   });
   cy.route({
     method: 'GET',
+    url: URL.GET_IC3_PATIENTS,
+    status: 200,
+    response: {
+      results: RESPONSE.IC3_PATIENT
+    }
+  });
+  cy.route({
+    method: 'GET',
     url: URL.GET_PATIENT_OBS,
     status: 200,
     response: {
@@ -54,32 +62,39 @@ Cypress.Commands.add('init', () => {
   });
   cy.route({
     method: 'GET',
-    url: URL.PATIENT_VISIT,
+    url: URL.GET_PATIENT_VISIT,
     status: 200,
     response: {
-      results: RESPONSE.GET_PATIENT_VISIT
+      results: RESPONSE.PATIENT_VISIT
     }
   });
   cy.route({
     method: 'GET',
-    url: URL.PATIENT_ENCOUNTER,
+    url: URL.GET_PATIENT_ENCOUNTER,
     status: 200,
     response: {
       results: RESPONSE.POST_PATIENT_ENCOUNTER
     }
   });
   cy.route({
-    method: 'POST',
-    url: URL.PATIENT_ENCOUNTER,
+    method: 'GET',
+    url: URL.GET_IC3_SCREENING_DATA,
     status: 200,
     response: {
-      results: RESPONSE.GET_PATIENT_ENCOUNTER
+      results: Ic3ScreeningResponseStub
+    }
+  });
+  cy.route({
+    method: 'POST',
+    url: URL.GET_PATIENT_ENCOUNTER,
+    status: 200,
+    response: {
+      results: EncounterResponseStub
     }
   });
 });
 
 Cypress.Commands.add('clearLoginPage', () => {
-
 
   cy.visit('/');
 
@@ -94,7 +109,29 @@ Cypress.Commands.add('clearLoginPage', () => {
 });
 
 Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cypress.env('password')) => {
-
+  cy.server();
+  cy.route({
+    method: 'GET',
+    url: URL.GET_IC3_PATIENTS,
+    status: 200,
+    response: RESPONSE.IC3_PATIENT
+  });
+  cy.route({
+    method: 'GET',
+    url: URL.GET_PATIENT_VISIT,
+    status: 200,
+    response: {
+      results: RESPONSE.PATIENT_VISIT
+    }
+  });
+  cy.route({
+    method: 'GET',
+    url: URL.GET_LOCATIONS,
+    status: 200,
+    response: {
+      results: RESPONSE.LOGIN_LOCATIONS
+    }
+  });
 
   cy.visit('/');
 
@@ -114,11 +151,18 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
     // .clear()
     .select(Cypress.env('location'));
 
+  cy.wait(2000);
+
   cy.get('[name=location]')
     .should('have.value', Cypress.env('locationUuid'));
 
   cy.get('[type=submit]')
     .click();
+
+  cy.wait(5000);
+  cy.get('.user-display')
+    .should('exist')
+    .should('be.visible');
 });
 
 Cypress.Commands.add("searchPatientByName", (patientName) => {

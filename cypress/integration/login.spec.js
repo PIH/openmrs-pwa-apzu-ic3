@@ -1,6 +1,6 @@
-describe('Login Tests', function () {
+describe('Login Tests', () => {
 
-  it('Should login in and log out', function () {
+  it('Should login in and log out', () => {
 
     // these are custom command I defined into commands.js
     cy.login();
