@@ -1,4 +1,4 @@
-describe('HTC station', function () {
+describe('HTC station', () => {
   before(() => {
     cy.login();
   });
@@ -7,7 +7,7 @@ describe('HTC station', function () {
     cy.init();
   });
   
-  it('Should search for patient and select "Non-Reactive" in HTC form', function () {
+  it('Should search for patient and select "Non-Reactive" in HTC form', () => {
     cy.searchPatientByID('MGT-0148-CCC');
   
     // Select the patient
@@ -64,7 +64,7 @@ describe('HTC station', function () {
       });
   });
 
-  it('should select "Reactive" in HTC form', function () {
+  it('should select "Reactive" in HTC form', () => {
     // Put form in EDIT mode
     cy.get('.form-action-btns > button')
       .first()
@@ -94,7 +94,7 @@ describe('HTC station', function () {
       .should('be.visible');       
   });
 
-  it('should select "Not performed today" in HTC form', function () {
+  it('should select "Not performed today" in HTC form', () => {
     // Put form in EDIT mode
     cy.get('.form-action-btns > button')
       .first()
@@ -124,7 +124,7 @@ describe('HTC station', function () {
       .should('be.visible');       
   });
 
-  after(function () {
+  after(() => {
     cy.logout();
   });
 });

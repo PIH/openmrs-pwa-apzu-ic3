@@ -1,4 +1,4 @@
-describe('Viral Load station', function () {
+describe('Viral Load station', () => {
   before(() => {
     cy.login();
   });
@@ -7,7 +7,7 @@ describe('Viral Load station', function () {
     cy.init();
   });
   
-  it('Should search for patient and select "NO" in "BLED" Obs in the Viral-load form', function () {
+  it('Should search for patient and select "NO" in "BLED" Obs in the Viral-load form',() => {
     cy.searchPatientByID('MGT-0148-CCC');
   
     // Select the patient
@@ -74,7 +74,7 @@ describe('Viral Load station', function () {
       });
   });
 
-  it('Should select "YES" in "BLED" Obs in the Viral-load form', function () {
+  it('Should select "YES" in "BLED" Obs in the Viral-load form',() => {
     // Put form in EDIT mode
     cy.get('.form-action-btns > button')
       .first()
@@ -124,7 +124,7 @@ describe('Viral Load station', function () {
       .should('be.visible');       
   });
 
-  after(function () {
+  after(() => {
     cy.logout();
   });
 });

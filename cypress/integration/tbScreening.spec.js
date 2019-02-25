@@ -1,4 +1,4 @@
-describe('tbScreening station', function () {
+describe('tbScreening station', () => {
   before(() => {
     cy.login();
   });
@@ -7,7 +7,7 @@ describe('tbScreening station', function () {
     cy.init();
   });
   
-  it('Should search for patient and select YES/NO in the form', function () {
+  it('Should search for patient and select YES/NO in the form', () => {
     cy.searchPatientByID('MGT-0148-CCC');
   
     // Select the patient
@@ -114,7 +114,7 @@ describe('tbScreening station', function () {
       });
   });
 
-  after(function () {
+  after(() => {
     cy.logout();
   });
 });

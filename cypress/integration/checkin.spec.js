@@ -1,12 +1,12 @@
 import { RESPONSE } from '../support/constants';
-describe('Check in', function () {
+describe('Check in', () => {
 
-  before(function () {
+  before(() => {
     cy.init(RESPONSE.GET_PATIENT_ENCOUNTER);
     cy.login();
   });
     
-  it('Should search for patient and Check-in patient into NEW location', function () {
+  it('Should search for patient and Check-in patient into NEW location', () => {
     cy.searchPatientByID('MGT-0148-CCC');
 
     // Select the patient
@@ -59,7 +59,7 @@ describe('Check in', function () {
       });
   });
 
-  after(function () {
+  after(() => {
     cy.logout();
   });
 });

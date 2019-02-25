@@ -1,4 +1,4 @@
-describe('Sputum station', function () {
+describe('Sputum station', () => {
   before(() => {
     cy.login();
   });
@@ -7,7 +7,7 @@ describe('Sputum station', function () {
     cy.init();
   });
   
-  it('Should search for patient and select "No" in "Sputum received Obs" in SPUTUM form', function () {
+  it('Should search for patient and select "No" in "Sputum received Obs" in SPUTUM form', () => {
     cy.searchPatientByID('MGT-0148-CCC');
   
     // Select the patient
@@ -64,7 +64,7 @@ describe('Sputum station', function () {
       });
   });
 
-  it('should select "Yes" in "Sputum Received Obs" and "Un-satisfactory" in "Sample Quality Obs" in SPUTUM form', function () {
+  it('should select "Yes" in "Sputum Received Obs" and "Un-satisfactory" in "Sample Quality Obs" in SPUTUM form', () => {
     // Put form in EDIT mode
     cy.get('.form-action-btns > button')
       .first()
@@ -104,7 +104,7 @@ describe('Sputum station', function () {
       .should('be.visible');       
   });
 
-  it('should select "Yes" in "Sputum Received Obs" and "Satisfactory" in "Sample Quality Obs" in SPUTUM form', function () {
+  it('should select "Yes" in "Sputum Received Obs" and "Satisfactory" in "Sample Quality Obs" in SPUTUM form', () => {
     // Put form in EDIT mode
     cy.get('.form-action-btns > button')
       .first()
@@ -155,7 +155,7 @@ describe('Sputum station', function () {
       .should('be.visible');       
   });
 
-  after(function () {
+  after(() => {
     cy.logout();
   });
 });
