@@ -1,12 +1,12 @@
 describe('API Tests', () => {
 
-  it.skip('Should check if API server is up', () => {
+  it('Should check if API server is up', () => {
 
     cy.openmrsapi();
 
   });
 
-  it.skip('Should check if we could log on via the legacy OpenMRS UI', () => {
+  it('Should check if we could log on via the legacy OpenMRS UI', () => {
 
     cy.openmrsapi();
     cy.get('#username')
@@ -21,9 +21,22 @@ describe('API Tests', () => {
 
   });
 
-  it.skip('Should login via the REST API', () => {
+  it('Should login via the REST API', () => {
 
     cy.loginwithrestapi();
+  });
+
+  it('Should retrieve Login Locations via REST API', function () {
+
+    cy.request({
+      method: 'GET',
+      url: Cypress.env('apiServer') + '/ws/rest/v1/location/?tag=Login Location'
+
+    }).then( (response) => {
+
+      expect(response.status).to.eq(200);
+      expect(response.body.results.length).to.greaterThan(0); // it should be more than one Login Location
+    });
 
   });
 

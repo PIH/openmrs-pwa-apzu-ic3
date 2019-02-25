@@ -26,6 +26,22 @@
 
 import { URL, RESPONSE } from './constants.js';
 
+Cypress.Commands.overwrite('request', (originalFn, ...options) => {
+  const optionsObject = options[0];
+
+  // add default authorization header to all cy.request
+  if (optionsObject === Object(optionsObject)) {
+    optionsObject.headers = {
+      authorization: 'Bearer ' + btoa(Cypress.env('username') + ':' + Cypress.env('password')),
+      ...optionsObject.headers,
+    };
+
+    return originalFn(optionsObject);
+  }
+
+  return originalFn(...options);
+});
+
 Cypress.Commands.add('init', (EncounterResponseStub, Ic3ScreeningResponseStub) => {
   cy.server();
   cy.route({
@@ -212,16 +228,12 @@ Cypress.Commands.add('openmrsapi', () => {
 
 Cypress.Commands.add('loginwithrestapi', () => {
 
-
-  //cy.visit(Cypress.env('apiServer'));
-
   cy.request({
     method: 'POST',
     url: Cypress.env('apiServer') + '/ws/rest/v1/appui/session?v=ref',
     options: {
       headers: {
         'Accept': 'application/json, text/plain, */*',
-        'Authorization': 'Basic ' + btoa(Cypress.env('username') + ':' + Cypress.env('password')),
         'Content-Type': "application/json"
       }
     },
@@ -230,10 +242,27 @@ Cypress.Commands.add('loginwithrestapi', () => {
     }
   }).then( (response) => {
     expect(response.status).to.eq(200);
+    expect(response.body.authenticated).to.eq(true);
   });
 
+});
 
 
+Cypress.Commands.add('restApiGetLocations', () => {
+
+  cy.request({
+    method: 'GET',
+    url: Cypress.env('apiServer') + '/ws/rest/v1/location?v=custom:(uuid,display,name,tags:(uuid,display),attributes:(uuid,attributeType:(uuid,name),value)',
+    options: {
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Authorization': 'Basic Y2lvYW46Q2lvYW4xMjM='
+      }
+    }
+  }).then( (response) => {
+    console.log('response.headers.body.results: ' + response.headers.body.results);
+    expect(response.status).to.eq(200);
+  });
 
 });
 
