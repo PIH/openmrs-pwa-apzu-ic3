@@ -1,5 +1,3 @@
-// Temporary comenting out this file so I can merge this PR
-
 describe('Blood Pressure', function () {
 
   before(function () {
