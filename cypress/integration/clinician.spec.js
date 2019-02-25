@@ -1,15 +1,15 @@
-import { CLINICIAL_RESPONSE } from '../support/constants';
-describe('Clinician station', function () {
+import { RESPONSE } from '../support/constants';
+describe('Clinician station', () => {
   before(() => {
     cy.login();
   });
 
   beforeEach(() => {
-    const { GET_PATIENT_ENCOUNTER_CLINICIAN, GET_IC3_SCREENING_DATA } = CLINICIAL_RESPONSE;
-    cy.init(GET_PATIENT_ENCOUNTER_CLINICIAN, GET_IC3_SCREENING_DATA);
+    const { PATIENT_ENCOUNTER_CLINICIAN, IC3_SCREENING_DATA } = RESPONSE;
+    cy.init(PATIENT_ENCOUNTER_CLINICIAN, IC3_SCREENING_DATA);
   });
   
-  it('Should search for patient and select "Exit from care" clinical outcome', function () {
+  it('Should search for patient and select "Exit from care" clinical outcome', () => {
     cy.searchPatientByID('MGT-0148-CCC');
   
     // Select the patient
@@ -187,7 +187,7 @@ describe('Clinician station', function () {
       .should('be.visible');    
   });
   
-  after(function () {
+  after(() => {
     cy.logout();
   });
 });

@@ -1,4 +1,4 @@
-describe('Adherence station', function () {
+describe('Adherence station', () => {
   before(() => {
     cy.login();
   });
@@ -7,7 +7,7 @@ describe('Adherence station', function () {
     cy.init();
   });
   
-  it('Should search for patient and select YES/NO in the form', function () {
+  it('Should search for patient and select YES/NO in the form', () => {
     cy.searchPatientByID('MGT-0148-CCC');
   
     // Select the patient
@@ -104,7 +104,7 @@ describe('Adherence station', function () {
       });
   });
 
-  after(function () {
+  after(() => {
     cy.logout();
   });
 });
