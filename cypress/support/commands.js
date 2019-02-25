@@ -248,24 +248,6 @@ Cypress.Commands.add('loginwithrestapi', () => {
 });
 
 
-Cypress.Commands.add('restApiGetLocations', () => {
-
-  cy.request({
-    method: 'GET',
-    url: Cypress.env('apiServer') + '/ws/rest/v1/location?v=custom:(uuid,display,name,tags:(uuid,display),attributes:(uuid,attributeType:(uuid,name),value)',
-    options: {
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Authorization': 'Basic Y2lvYW46Q2lvYW4xMjM='
-      }
-    }
-  }).then( (response) => {
-    console.log('response.headers.body.results: ' + response.headers.body.results);
-    expect(response.status).to.eq(200);
-  });
-
-});
-
 Cypress.Commands.add("logout", () => {
   // TODO get this to work
 
