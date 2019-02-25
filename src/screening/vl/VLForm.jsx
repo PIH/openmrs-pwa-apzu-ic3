@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {formValueSelector, change, untouch} from 'redux-form';
-import {Obs, formUtil, selectors, ObsGroup} from '@openmrs/react-components';
+import { formValueSelector, change, untouch } from 'redux-form';
+import { Obs, formUtil, selectors, ObsGroup } from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
@@ -58,7 +58,8 @@ class VLForm extends React.PureComponent {
           </Row>
 
           <span
-            style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.False.uuid) ? 'block' : 'none' }}>
+            style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.False.uuid) ? 'block' : 'none' }}
+          >
             <Row>
               <Col componentClass={ControlLabel}>
                 Reason for no sample
@@ -79,7 +80,8 @@ class VLForm extends React.PureComponent {
 
 
           <span
-            style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}>
+            style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}
+          >
             <Row>
               <Col componentClass={ControlLabel}>
                 Reason for testing
@@ -99,7 +101,8 @@ class VLForm extends React.PureComponent {
           </span>
 
           <span
-            style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}>
+            style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}
+          >
             <Row>
               <Col componentClass={ControlLabel}>
                 Lab location
