@@ -3,17 +3,14 @@
 describe('Blood Pressure', function () {
 
   before(function () {
-    cy.init();
     cy.login();
   });
-  //   beforeEach(() => {
-  //   });
+  beforeEach(() => {
+    cy.init();
+  });
     
-  it.skip('Should search for patient and Check-in patient into NEW location', function () {
-    // cy.login();
-    // cy.server();
-    // cy.init();
-    // Search for a patient
+  it('should navigate to the blood pressure form and enter valid values for systolic and diastolic blood pressure', function () {
+
     cy.searchPatientByID('MGT-0148-CCC');
 
     // Select the patient
@@ -21,12 +18,92 @@ describe('Blood Pressure', function () {
       .first()
       .click();
 
-    // Navigate to check-in summary
-    cy.get('[href="#/checkin/checkInPage"]')
+    // Navigate to blood pressure summary
+    cy.get('[href="#/screening/bloodPressure/form"]')
       .first()
       .click();
 
-    // Navigate to check-in form
+    // Navigate to blood pressure form
+    cy.get('.summary-swiper-button')
+      .click();
+
+    cy.wait(3000);
+    // Check if form is in edit mode
+    cy.get('.form-action-btns > button')
+      .first()
+      .then(($button) => {
+        const text = $button.text();
+        // if form is in EDIT mode ...
+        if (text === 'Edit') {
+
+          // Put form in EDIT mode
+          cy.get('.form-action-btns > button')
+            .first()
+            .click();
+          cy.wait(2000); 
+
+          // Input value for systolic BP
+          cy.get('#formSystolic')
+            .type('170');
+          
+          // Input value for diastolic BP
+          cy.get('#formDiastolic')
+            .type('90');
+        }
+
+
+        // assert that required validations is shown when form values are empty
+        cy.get('#formSystolic + div.div-error > span.field-error')
+          .contains('Required')
+          .should('exist');
+
+        cy.get('#formDiastolic + div.div-error > span.field-error')
+          .contains('Required')
+          .should('exist');
+
+
+        // Input value for systolic BP
+        cy.get('#formSystolic')
+          .type('140');
+
+        // Input value for diastolic BP
+        cy.get('#formDiastolic')
+          .type('90');
+
+        // assert that there are no validations shown when form values are good
+        cy.get('#formSystolic + div.div-error > span.field-error')
+          .should('not.exist');
+
+        cy.get('#formDiastolic + div.div-error > span.field-error')
+          .should('not.exist');
+
+        
+        // Click the save form button
+        cy.get('.form-action-btns > button')
+          .first()
+          .click();
+
+        cy.get('.custom-loader')
+          .first()
+          .should('be.visible');
+      });
+  });
+
+  it('should navigate to the blood pressure form and enter abnormal values for systolic and diastolic blood pressure', function () {
+
+    cy.searchPatientByID('MGT-0148-CCC');
+
+    // Select the patient
+    cy.get('.card-list')
+      .first()
+      .click();
+
+    // Navigate to blood pressure summary
+    cy.get('[href="#/screening/bloodPressure/form"]')
+      .first()
+      .click();
+
+    // Navigate to blood pressure form
     cy.get('.summary-swiper-button')
       .click();
 
@@ -44,25 +121,271 @@ describe('Blood Pressure', function () {
             .first()
             .click();
           cy.wait(2000);
+
+          // assert that required validations is shown when form values are empty
+          cy.get('#formSystolic + div.div-error > span.field-error')
+            .contains('Required')
+            .should('exist');
+
+          cy.get('#formDiastolic + div.div-error > span.field-error')
+            .contains('Required')
+            .should('exist');
+
+          // Input value for systolic BP
+          cy.get('#formSystolic')
+            .type('190');
+          
+          // Input value for diastolic BP
+          cy.get('#formDiastolic')
+            .type('120');
+
+          // Click the save form button
+          cy.get('.form-action-btns > button')
+            .first()
+            .click();
+
+          cy.get('.custom-loader')
+            .first()
+            .should('be.visible');
         }
 
-        // Select a check-in location
-        cy.get('.form-group label')
-          .eq(1)
-          .click();
-          
+
+        // assert that required validations is shown when form values are empty
+        cy.get('#formSystolic + div.div-error > span.field-error')
+          .contains('Required')
+          .should('exist');
+
+        cy.get('#formDiastolic + div.div-error > span.field-error')
+          .contains('Required')
+          .should('exist');
+
+
+        // Input value for systolic BP
+        cy.get('#formSystolic')
+          .type('190');
+
+        // Input value for diastolic BP
+        cy.get('#formDiastolic')
+          .type('120');
+
+        // assert that warning validation is shown when form values are at abnormal limit
+        cy.get('#formSystolic + div.div-error > span.field-warning')
+          .contains('Abnormal value')
+          .should('exist');
+
+        cy.get('#formDiastolic + div.div-error > span.field-warning')
+          .contains('Abnormal value')
+          .should('exist');
+
         cy.wait(2000);
-        // Save the new check-in location 
+
+        
+        // Click the save form button
         cy.get('.form-action-btns > button')
           .first()
           .click();
 
-        cy.wait(3000);
-  
-        // Check that the new location was saved properly
-        cy.get('.form-group .button-group-view')
+        cy.get('.custom-loader')
           .first()
-          .should('not.contain', 'OPD at health center');
+          .should('be.visible');
+      });
+  });
+
+  it('should navigate to the blood pressure form and enter critical values for systolic and diastolic blood pressure', function () {
+
+    cy.searchPatientByID('MGT-0148-CCC');
+
+    // Select the patient
+    cy.get('.card-list')
+      .first()
+      .click();
+
+    // Navigate to blood pressure summary
+    cy.get('[href="#/screening/bloodPressure/form"]')
+      .first()
+      .click();
+
+    // Navigate to blood pressure form
+    cy.get('.summary-swiper-button')
+      .click();
+
+    cy.wait(3000);
+    // Check if form is in edit mode
+    cy.get('.form-action-btns > button')
+      .first()
+      .then(($button) => {
+        const text = $button.text();
+        // if form is in EDIT mode ...
+        if (text === 'Edit') {
+
+          // Put form in EDIT mode
+          cy.get('.form-action-btns > button')
+            .first()
+            .click();
+          cy.wait(2000);
+
+          // assert that required validations is shown when form values are empty
+          cy.get('#formSystolic + div.div-error > span.field-error')
+            .contains('Required')
+            .should('exist');
+
+          cy.get('#formDiastolic + div.div-error > span.field-error')
+            .contains('Required')
+            .should('exist');
+
+          // Input value for systolic BP
+          cy.get('#formSystolic')
+            .type('230');
+          
+          // Input value for diastolic BP
+          cy.get('#formDiastolic')
+            .type('140');
+
+          // Click the save form button
+          cy.get('.form-action-btns > button')
+            .first()
+            .click();
+
+          cy.get('.custom-loader')
+            .first()
+            .should('be.visible');
+        }
+
+
+        // assert that required validations is shown when form values are empty
+        cy.get('#formSystolic + div.div-error > span.field-error')
+          .contains('Required')
+          .should('exist');
+
+        cy.get('#formDiastolic + div.div-error > span.field-error')
+          .contains('Required')
+          .should('exist');
+
+
+        // Input value for systolic BP
+        cy.get('#formSystolic')
+          .type('230');
+
+        // Input value for diastolic BP
+        cy.get('#formDiastolic')
+          .type('140');
+
+        // assert that warning validation is shown when form values are at critical limit
+        cy.get('#formSystolic + div.div-error > span.field-warning')
+          .contains('Critical value')
+          .should('exist');
+
+        cy.get('#formDiastolic + div.div-error > span.field-warning')
+          .contains('Critical value')
+          .should('exist');
+
+        cy.wait(2000);
+
+        
+        // Click the save form button
+        cy.get('.form-action-btns > button')
+          .first()
+          .click();
+
+        cy.get('.custom-loader')
+          .first()
+          .should('be.visible');
+      });
+  });
+
+  it('save button should be disabled when there are validation errors', function () {
+
+    cy.searchPatientByID('MGT-0148-CCC');
+
+    // Select the patient
+    cy.get('.card-list')
+      .first()
+      .click();
+
+    // Navigate to blood pressure summary
+    cy.get('[href="#/screening/bloodPressure/form"]')
+      .first()
+      .click();
+
+    // Navigate to blood pressure form
+    cy.get('.summary-swiper-button')
+      .click();
+
+    cy.wait(3000);
+    // Check if form is in edit mode
+    cy.get('.form-action-btns > button')
+      .first()
+      .then(($button) => {
+        const text = $button.text();
+        // if form is in EDIT mode ...
+        if (text === 'Edit') {
+
+          // Put form in EDIT mode
+          cy.get('.form-action-btns > button')
+            .first()
+            .click();
+          cy.wait(2000);
+
+          // assert that required validations is shown when form values are empty
+          cy.get('#formSystolic + div.div-error > span.field-error')
+            .contains('Required')
+            .should('exist');
+
+          cy.get('#formDiastolic + div.div-error > span.field-error')
+            .contains('Required')
+            .should('exist');
+
+          // Input value for systolic BP
+          cy.get('#formSystolic')
+            .type('290');
+          
+          // Input value for diastolic BP
+          cy.get('#formDiastolic')
+            .type('200');
+
+          // asser that the save buttonn iis disabled
+          cy.get('.form-action-btns > button')
+            .first()
+            .should('be.disabled');
+
+        }
+
+
+        // assert that required validations is shown when form values are empty
+        cy.get('#formSystolic + div.div-error > span.field-error')
+          .contains('Required')
+          .should('exist');
+
+        cy.get('#formDiastolic + div.div-error > span.field-error')
+          .contains('Required')
+          .should('exist');
+
+
+        // Input value for systolic BP
+        cy.get('#formSystolic')
+          .type('290');
+
+        // Input value for diastolic BP
+        cy.get('#formDiastolic')
+          .type('200');
+
+        // assert that validation errors are shown when value exceed their limits
+        cy.get('#formSystolic + div.div-error > span.field-error')
+          .contains('Must be less than 261')
+          .should('exist');
+
+        cy.get('#formDiastolic + div.div-error > span.field-error')
+          .contains('Must be less than 141')
+          .should('exist');
+
+        cy.wait(2000);
+
+        
+        // asser that the save buttonn iis disabled
+        cy.get('.form-action-btns > button')
+          .first()
+          .should('be.disabled');
+
       });
   });
 
