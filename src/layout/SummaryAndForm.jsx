@@ -122,7 +122,7 @@ export class SummaryAndForm extends React.Component {
       <div className="div-container summary-and-form">
         <Grid className="div-container">
           <Row className="row-container">
-            <div>
+            <div className="glyph-back-button">
               {
                 (
                   <span 
