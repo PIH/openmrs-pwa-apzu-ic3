@@ -94,7 +94,7 @@ Cypress.Commands.add('init', (EncounterResponseStub, Ic3ScreeningResponseStub) =
   });
 });
 
-Cypress.Commands.add('login', () => {
+Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cypress.env('password')) => {
   cy.server();
   cy.route({
     method: 'GET',
@@ -123,15 +123,18 @@ Cypress.Commands.add('login', () => {
 
   cy.get('[name=username]')
     .clear()
-    .type(Cypress.env('username'))
-    .should('have.value', Cypress.env('username'));
+    .type(username)
+    .should('have.value', username);
 
   cy.get('[name=password]')
     .clear()
-    .type(Cypress.env('password'))
-    .should('have.value', Cypress.env('password'));
+    .type(password)
+    .should('have.value', password);
+
+  cy.wait(10000);
 
   cy.get('[name=location]')
+    // .clear()
     .select(Cypress.env('location'));
 
   cy.wait(2000);
@@ -141,11 +144,6 @@ Cypress.Commands.add('login', () => {
 
   cy.get('[type=submit]')
     .click();
-
-  cy.wait(5000);
-  cy.get('.user-display')
-    .should('exist')
-    .should('be.visible');
 });
 
 Cypress.Commands.add("searchPatientByName", (patientName) => {
@@ -196,6 +194,8 @@ Cypress.Commands.add("searchPatientByID", (patientID) => {
 
   cy.get('.server-search > button')
     .click();
+
+  cy.wait(5000);
 
   cy.get('.card-list')
     .should('exist');
@@ -271,12 +271,4 @@ Cypress.Commands.add('loginWithInvalidInfo', () => {
 
   cy.get('[type=submit]')
     .click();
-
-  cy.wait(5000);
-
-  cy.get('.user-display')
-    .should('not.exist');
-  
-  cy.get('.alert.alert-info').contains('Invalid username or password')
-    .should('exist');
 });
