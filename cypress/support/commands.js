@@ -94,20 +94,6 @@ Cypress.Commands.add('init', (EncounterResponseStub, Ic3ScreeningResponseStub) =
   });
 });
 
-Cypress.Commands.add('clearLoginPage', () => {
-
-  cy.visit('/');
-
-  cy.get('[name=username]')
-    .clear();
-
-  cy.get('[name=password]')
-    .clear();
-
-  cy.get('[name=location]')
-    .clear();
-});
-
 Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cypress.env('password')) => {
   cy.server();
   cy.route({
