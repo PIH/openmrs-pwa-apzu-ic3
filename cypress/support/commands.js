@@ -144,6 +144,7 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
 
   cy.get('[type=submit]')
     .click();
+  cy.wait(5000);
 });
 
 Cypress.Commands.add("searchPatientByName", (patientName) => {
