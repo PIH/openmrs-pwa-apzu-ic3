@@ -8,8 +8,13 @@ describe('Login Tests', () => {
     cy.get('.user-display')
       .should('exist')
       .should('be.visible');
+    
     cy.wait(5000);
-    cy.logout();  //TODO get this working
+
+    cy.get('.user-display')
+      .should('exist')
+      .should('be.visible');
+    cy.logout();
   });
   it('Should not login with invalid username', function () {
     const username = 'some-ranndom-username';

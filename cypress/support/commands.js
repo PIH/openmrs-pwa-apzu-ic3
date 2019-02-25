@@ -122,12 +122,12 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
   cy.visit('/');
 
   cy.get('[name=username]')
-    // .clear()
+    .clear()
     .type(username)
     .should('have.value', username);
 
   cy.get('[name=password]')
-    // .clear()
+    .clear()
     .type(password)
     .should('have.value', password);
 
@@ -144,11 +144,6 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
 
   cy.get('[type=submit]')
     .click();
-
-  cy.wait(5000);
-  cy.get('.user-display')
-    .should('exist')
-    .should('be.visible');
 });
 
 Cypress.Commands.add("searchPatientByName", (patientName) => {
