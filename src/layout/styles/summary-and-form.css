@@ -1,6 +1,7 @@
 .summary-and-form .back-button{
   font-size: 48px;
   display: inline-block;
+  width: inherit;
 }
 .row-container {
   display: grid;
@@ -110,4 +111,8 @@
 
 .disabled-btn {
   color: gray;
+}
+
+.glyph-back-button {
+  width: 120%;
 }
