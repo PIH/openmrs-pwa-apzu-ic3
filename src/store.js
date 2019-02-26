@@ -104,6 +104,10 @@ sagaMiddleware.run(rootSagas);
 
 const persistor = persistStore(store);
 
+if (window.Cypress) {
+  window.store = store
+}
+
 export default  {
   store, persistor
 };

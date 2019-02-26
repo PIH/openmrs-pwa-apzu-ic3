@@ -137,30 +137,31 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
 
   cy.visit('/');
 
-  cy.get('[name=username]')
+  const getUserName = $el => $el.find('#username');
+
+  cy.get('body')
+    .pipe(getUserName)
     .clear()
     .type(username)
     .should('have.value', username);
 
-  cy.get('[name=password]')
+  const getUserPassword = $el => $el.find('#password');
+
+  cy.get('body')
+    .pipe(getUserPassword)
     .clear()
     .type(password)
     .should('have.value', password);
 
-  cy.wait(10000);
+  cy.get('#location').select(Cypress.env('location'));
+  cy.get('#location').should('have.value', Cypress.env('locationUuid'));
 
-  cy.get('[name=location]')
-    // .clear()
-    .select(Cypress.env('location'));
+  const getLoginButton = $el => $el.find('.loginButton');
 
-  cy.wait(2000);
-
-  cy.get('[name=location]')
-    .should('have.value', Cypress.env('locationUuid'));
-
-  cy.get('[type=submit]')
+  cy.get('body')
+    .pipe(getLoginButton)
     .click();
-  cy.wait(5000);
+
 });
 
 Cypress.Commands.add("searchPatientByName", (patientName) => {
