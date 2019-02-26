@@ -10,19 +10,18 @@ class RapidTestForm extends React.PureComponent {
     const formContent = (
       <Grid>
         <Row>
-          <Col componentClass={ControlLabel}>
-            Results
-          </Col>
-        </Row>
-        <Row>
-          <Col sm={12}>
-            <FormGroup controlId="formRapidTest">
-              <Obs
-                concept={ CONCEPTS.HIV_TEST_RESULTS.uuid }
-                conceptAnswers={ FORM_ANSWERS.hivTestResultAnswers }
-                path="rapid-test-results"/>
+          <FormGroup controlId="formRapidTest">
+              <Col componentClass={ControlLabel} sm={2}>
+                Results
+              </Col>
+              <Col sm={8}>
+                <Obs
+                  concept={ CONCEPTS.HIV_TEST_RESULTS.uuid }
+                  conceptAnswers={ FORM_ANSWERS.hivTestResultAnswers }
+                  path="rapid-test-results"
+                />
+              </Col>
             </FormGroup>
-          </Col>
         </Row>
       </Grid>
     );
