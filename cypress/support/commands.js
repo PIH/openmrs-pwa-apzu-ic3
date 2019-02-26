@@ -135,6 +135,9 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
     }
   });
 
+  cy.route('GET', '**/session').as('getSession');
+  cy.route('GET', '**/concept/**').as('getConcept');
+
   cy.visit('/');
 
   const getUserName = $el => $el.find('#username');
@@ -161,6 +164,9 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
   cy.get('body')
     .pipe(getLoginButton)
     .click();
+
+  cy.wait('@getSession').its('status').should('be', 200);
+  cy.wait('@getConcept').its('status').should('be', 200);
 
 });
 
