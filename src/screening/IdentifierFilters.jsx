@@ -38,9 +38,10 @@ class ScreeningFilters extends React.Component {
     this.handleSearchClick = this.handleSearchClick.bind(this);
     const currentLocationPrefix = utils.getCurrentLocationPrefix(props.locations, props.currentLocation);
     const identifier = props.value.split(" ");
+    const locationPrefix = currentLocationPrefix[0] ? currentLocationPrefix[0] : '';
 
     this.state = {
-      firstIdentifierSearchValue: currentLocationPrefix[0] ? currentLocationPrefix[0] : '',
+      firstIdentifierSearchValue: props.searchType === 'server' ? locationPrefix : '',
       secondIdentifierSearchValue: identifier[1] ? reformat(identifier[1]) : '',
       thirdIdentifierSearchValue: identifier[2] ? identifier[2] : '',
       patientIdentifier: '',
