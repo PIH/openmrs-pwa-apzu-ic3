@@ -33,6 +33,9 @@ const utils = {
     const hasCCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, IDENTIFIER_TYPES.CCC_IDENTIFIER_TYPE);
     const hasHCCIdentifier = patientUtil.getIdentifiersAndPreferred(patient, IDENTIFIER_TYPES.HCC_IDENTIFIER_TYPE);
     const hasARTIdentifier = patientUtil.getIdentifiersAndPreferred(patient, IDENTIFIER_TYPES.ART_IDENTIFIER_TYPE);
+
+    // This check if the patient already has an ART Identifier so the EID Identifier is not displayed
+    let hasARTNumber = false;
     
     const currentLocationPrefix = utils.getCurrentLocationPrefix(locations, currentLocation);
     let identifiers = [], additionalIdentifiers = [];
@@ -56,26 +59,12 @@ const utils = {
         }
       }
     }
-
-    if (hasHCCIdentifier.length === 1) {
-      identifiers.push(hasHCCIdentifier[0].identifier);
-    } else if (hasHCCIdentifier.length > 1) {
-      const getHccCurrentLocation = hasHCCIdentifier.find(identifier => identifier.identifier.match(currentLocationPrefix));
-      if (getHccCurrentLocation && currentLocationPrefix) {
-        identifiers.push(getHccCurrentLocation.identifier);
-      } else {
-        const getHccPreferred = hasHCCIdentifier.find(identifier => identifier.preferred === true);
-        if (getHccPreferred) {
-          identifiers.push(getHccPreferred.identifier);
-        } else {
-          identifiers.push(hasHCCIdentifier.identifier);
-        }
-      }
-    }
-
+    
     if (hasARTIdentifier.length === 1) {
+      hasARTNumber = true;
       identifiers.push(hasARTIdentifier[0].identifier);
     } else if (hasARTIdentifier.length > 1) {
+      hasARTNumber = true;
       const getArtCurrentLocation = hasARTIdentifier.find(identifier => identifier.identifier.match(currentLocationPrefix));
       if (getArtCurrentLocation && currentLocationPrefix) {
         identifiers.push(getArtCurrentLocation.identifier);
@@ -88,12 +77,30 @@ const utils = {
         }
       }
     }
+    
+    if (!hasARTNumber) {
+      if (hasHCCIdentifier.length === 1) {
+        identifiers.push(hasHCCIdentifier[0].identifier);
+      } else if (hasHCCIdentifier.length > 1) {
+        const getHccCurrentLocation = hasHCCIdentifier.find(identifier => identifier.identifier.match(currentLocationPrefix));
+        if (getHccCurrentLocation && currentLocationPrefix) {
+          identifiers.push(getHccCurrentLocation.identifier);
+        } else {
+          const getHccPreferred = hasHCCIdentifier.find(identifier => identifier.preferred === true);
+          if (getHccPreferred) {
+            identifiers.push(getHccPreferred.identifier);
+          } else {
+            identifiers.push(hasHCCIdentifier.identifier);
+          }
+        }
+      }
+    }
       
     // If no identifiers matched those criterias above, chose the first one with the same current location
     if (!identifiers.length) {
       const currentLocationPatientIdentifier = baseIdentifiers.find(identifier => identifier.match(currentLocationPrefix));
       if (currentLocationPatientIdentifier) {
-        identifiers.push(currentLocationPatientIdentifier)
+        identifiers.push(currentLocationPatientIdentifier);
       }
     }
     let uniqueIdentifiers = [...new Set(identifiers.concat(baseIdentifiers))];
