@@ -134,7 +134,6 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
       results: RESPONSE.LOGIN_LOCATIONS
     }
   });
-
   skipXHRResponse && cy.route('GET', '**/session').as('getSession');
   skipXHRResponse && cy.route('GET', '**/concept/**').as('getConcept');
 
