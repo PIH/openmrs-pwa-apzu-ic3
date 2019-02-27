@@ -17,11 +17,10 @@ describe('Login Tests', () => {
     cy.logout();
   });
 
-  // ToDo currently no /concept XHR request is being made, so this is failing on the login command, I'll work on this
-  it.skip('Should not login with invalid username', function () {
+  it('Should not login with invalid username', function () {
     const username = 'some-ranndom-username';
     const password = 'password';
-    cy.login(username, password);
+    cy.login(username, password, false);
     cy.wait(5000);
 
     cy.get('.user-display')
