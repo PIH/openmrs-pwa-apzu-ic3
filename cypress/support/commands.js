@@ -110,7 +110,7 @@ Cypress.Commands.add('init', (EncounterResponseStub, Ic3ScreeningResponseStub) =
   });
 });
 
-Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cypress.env('password')) => {
+Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cypress.env('password'), skipXHRResponse = true) => {
   cy.server();
   cy.route({
     method: 'GET',
@@ -135,8 +135,8 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
     }
   });
 
-  cy.route('GET', '**/session').as('getSession');
-  cy.route('GET', '**/concept/**').as('getConcept');
+  skipXHRResponse && cy.route('GET', '**/session').as('getSession');
+  skipXHRResponse && cy.route('GET', '**/concept/**').as('getConcept');
 
   cy.visit('/');
 
@@ -165,8 +165,8 @@ Cypress.Commands.add('login', (username = Cypress.env('username'), password = Cy
     .pipe(getLoginButton)
     .click();
 
-  cy.wait('@getSession').its('status').should('be', 200);
-  cy.wait('@getConcept').its('status').should('be', 200);
+  skipXHRResponse && cy.wait('@getSession').its('status').should('be', 200);
+  skipXHRResponse && cy.wait('@getConcept').its('status').should('be', 200);
 
 });
 
