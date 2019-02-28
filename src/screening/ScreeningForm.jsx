@@ -2,10 +2,8 @@ import React from "react";
 import {EncounterFormPanel, encountersByEncounterTypeFilter, visitActions, selectors} from '@openmrs/react-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {format, isSameDay, parse} from 'date-fns';
 import patientActions from '../patient/patientActions';
 import { ACTIVE_VISITS_REP, ENCOUNTER_ROLES } from "../constants";
-import { centerTextAlign } from "../pwaStyles";
 
 
 class ScreeningForm extends React.Component {
