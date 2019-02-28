@@ -21,6 +21,7 @@ const TbTestResultSummary = props => {
         onEditCallbacks={[
           props.goNext
         ]}
+        requireVisitForForm={false}
       />
     </span>
   );
