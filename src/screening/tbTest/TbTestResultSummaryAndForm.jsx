@@ -14,7 +14,7 @@ const TbTestResultSummaryAndForm = props => {
       completed={tbTestResultFilters.completed(props.patient)}
       form={<TbTestResultForm displayResultsSection={true}/>}
       summary={<TbTestResultSummary />}
-      title="Tuberculosis Test Result"
+      title="Tuberculosis Test Results"
     />
   );
 

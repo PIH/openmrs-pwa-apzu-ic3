@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { selectors } from '@openmrs/react-components';
 import SummaryAndForm from "../../layout/SummaryAndForm";
-import TbTestResultSummary from "../tbTest/TbTestResultSummary";
+import SputumSummary from './SputumSummary';
 import sputumFilters from './sputumFilters';
 import TbTestResultForm from "../tbTest/TbTestResultForm";
 
@@ -14,7 +14,7 @@ const SputumSummaryAndForm = props => {
       backLink="/screening/sputum"
       completed={sputumFilters.completed(props.patient)}
       form={<TbTestResultForm displayResultsSection={false}/>}
-      summary={<TbTestResultSummary/>}
+      summary={<SputumSummary/>}
       title="Sputum"
     />
   );

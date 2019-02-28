@@ -70,13 +70,18 @@ export class SummaryAndForm extends React.Component {
   }
 
   summarySwiperButton() {
-    return (
-      <button 
-        className="summary-swiper-button" 
-        onClick={() => this.goNext()}
-      > {this.formatNavMessage()}
-      </button>
-    );
+    // hack since we don't want a new/edit button on the tb-test form
+    if (this.props.currentPathname.includes('tb-test')) {
+      return null;
+    } else {
+      return (
+        <button
+          className="summary-swiper-button"
+          onClick={() => this.goNext()}
+        > {this.formatNavMessage()}
+        </button>
+      );
+    }
   }
 
   enterEditMode() {
@@ -164,6 +169,8 @@ export class SummaryAndForm extends React.Component {
                 <div className="summary-form">
                   <Summary
                     backLink={this.props.backLink}
+                    formInstanceId={this.formInstanceId}
+                    goNext={this.goNext}
                     sliderButton={this.summarySwiperButton}
                     summary={this.props.summary}
                   />

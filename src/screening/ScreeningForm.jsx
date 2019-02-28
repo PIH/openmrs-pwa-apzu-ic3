@@ -40,9 +40,6 @@ class ScreeningForm extends React.Component {
 
     return (
       <div>
-        <div style={centerTextAlign}>
-          <h2>{encounter && encounter.encounterDatetime && (isSameDay(parse(encounter.encounterDatetime), new Date()) ? 'Today' : format(parse(encounter.encounterDatetime), 'DD MMM YYYY'))}</h2>
-        </div>
         <EncounterFormPanel
           backLink={props.backLink}
           defaultValues={props.defaultValues}
@@ -54,6 +51,7 @@ class ScreeningForm extends React.Component {
           formInstanceId={props.formInstanceId}
           formSubmittedActionCreators={formSubmittedActionCreators}
           hideActionButtons={true}
+          showDate={true}
           title={props.title}
           toastMessage={props.toastMessage ? props.toastMessage : "Screening Form Saved"}
           visitType={props.visitType}

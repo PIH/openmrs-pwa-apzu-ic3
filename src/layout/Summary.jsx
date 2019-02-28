@@ -18,7 +18,11 @@ const Summary = props => {
         </Row>
       </Grid>
       <div className="summary-layout-content">
-        {React.cloneElement(props.summary, { backLink: props.backLink })}
+        {React.cloneElement(props.summary, {
+          backLink: props.backLink,
+          formInstanceId: props.formInstanceId,
+          goNext: props.goNext
+        })}
       </div>
     </Col>
   );
@@ -26,6 +30,7 @@ const Summary = props => {
 
 Summary.propTypes = {
   backLink: PropTypes.string.isRequired,
+  formInstanceId: PropTypes.string.isRequired,
   sliderButton: PropTypes.func,
   summary: PropTypes.object.isRequired,
 };
