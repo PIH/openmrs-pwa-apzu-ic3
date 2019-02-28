@@ -163,12 +163,6 @@ class ScreeningFilters extends React.Component {
               onKeyPress={this.props.onKeyPress}
               placeholder=" "
             />
-            {searchType !== 'server' &&
-            <button
-              className="search-button"
-              onClick={this.handleSearchClick}
-            >search</button>
-            }
           </span>
         </div>
       </div>
