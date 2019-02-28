@@ -139,6 +139,7 @@ class ScreeningFilters extends React.Component {
               <FormControl
                 className="identifier-filter-number-input"
                 onChange={this.handleTextInputSearch}
+                onKeyPress={this.props.onKeyPress}
                 type="number"
                 value={this.state.secondIdentifierSearchValue}
               />  
@@ -159,6 +160,7 @@ class ScreeningFilters extends React.Component {
               dropdownValue={searchType === 'server' ? this.state.thirdIdentifierSearchValue : undefined}
               handleSelect={(field, value) => this.handleSearch(field, value, 'third')} 
               list={PATIENT_IDENTIFIERS_SUFFIX} 
+              onKeyPress={this.props.onKeyPress}
               placeholder=" "
             />
             {searchType !== 'server' &&
