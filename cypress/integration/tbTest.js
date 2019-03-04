@@ -16,7 +16,7 @@ describe('Sputum station', () => {
       .click();
   
     // Navigate to htc summary
-    cy.get('[href="#/screening/sputum/form"]')
+    cy.get('[href="#/screening/tb-test/form"]')
       .first()
       .click();
   
