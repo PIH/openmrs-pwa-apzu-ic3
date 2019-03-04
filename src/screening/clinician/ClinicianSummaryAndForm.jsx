@@ -5,6 +5,7 @@ import SummaryAndForm from "../../layout/SummaryAndForm";
 import ClinicianSummary from "./ClinicianSummary";
 import ClinicianForm from "./ClinicianForm";
 import cliniicianFilters from "./cliniicianFilters";
+import {ENCOUNTER_TYPES} from "../../constants";
 
 const ClinicianSummaryAndForm = props => {
 
@@ -12,6 +13,7 @@ const ClinicianSummaryAndForm = props => {
     <SummaryAndForm
       backLink="/screening/clinician/form"
       completed={cliniicianFilters.completed(props.patient)}
+      encounterType={ENCOUNTER_TYPES.ClinicalPlan}
       form={<ClinicianForm/>}
       summary={<ClinicianSummary/>}
       title="Clinician"

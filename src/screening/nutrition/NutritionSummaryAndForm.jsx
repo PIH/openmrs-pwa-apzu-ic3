@@ -5,6 +5,7 @@ import SummaryAndForm from "../../layout/SummaryAndForm";
 import NutritionSummary from "./NutritionSummary";
 import NutritionForm from "./NutritionForm";
 import nutritionFilters from './nutritionFilters';
+import {ENCOUNTER_TYPES} from "../../constants";
 
 const NutritionSummaryAndForm = props => {
 
@@ -12,6 +13,7 @@ const NutritionSummaryAndForm = props => {
     <SummaryAndForm
       backLink="/screening/nutrition/queue"
       completed={nutritionFilters.completed(props.patient)}
+      encounterType={ENCOUNTER_TYPES.NutritionEncounterType}
       form={<NutritionForm/>}
       summary={<NutritionSummary/>}
       title="Nutrition"

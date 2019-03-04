@@ -14,14 +14,14 @@ const Summary = props => {
           </Col>
         </Row>
         <Row className="swiper-add-new-btn">
-          {props.sliderButton && props.sliderButton()}
+          {props.openFormForCurrentVisitButton && props.openFormForCurrentVisitButton()}
         </Row>
       </Grid>
       <div className="summary-layout-content">
         {React.cloneElement(props.summary, {
           backLink: props.backLink,
           formInstanceId: props.formInstanceId,
-          goNext: props.goNext
+          gotoForm: props.gotoForm
         })}
       </div>
     </Col>

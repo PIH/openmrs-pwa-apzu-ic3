@@ -5,6 +5,7 @@ import CheckInSummary from "./CheckInSummary";
 import ReferralForm from "./ReferralForm";
 import SummaryAndForm from "../layout/SummaryAndForm";
 import checkInFilters from "./checkInFilters";
+import {ENCOUNTER_TYPES} from "../constants";
 
 const CheckInPage = (props) =>  {
   return (
@@ -12,6 +13,7 @@ const CheckInPage = (props) =>  {
       <SummaryAndForm
         backLink="/checkin/checkInTabs"
         completed={checkInFilters.completed(props.patient)}
+        encounterType={ENCOUNTER_TYPES.CheckInEncounterType}
         form={<ReferralForm />}
         requireVisitForForm={false}
         summary={<CheckInSummary />}

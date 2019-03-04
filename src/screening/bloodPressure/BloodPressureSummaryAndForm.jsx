@@ -5,6 +5,7 @@ import SummaryAndForm from "../../layout/SummaryAndForm";
 import BloodPressureSummary from "./BloodPressureSummary";
 import BloodPressureForm from "./BloodPressureForm";
 import bloodPressureFilters from "./bloodPressureFilters";
+import {ENCOUNTER_TYPES} from "../../constants";
 
 const BloodPressureSummaryAndForm = props => {
 
@@ -12,6 +13,7 @@ const BloodPressureSummaryAndForm = props => {
     <SummaryAndForm
       backLink="/screening/bloodPressure/queue"
       completed={bloodPressureFilters.completed(props.patient)}
+      encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       form={<BloodPressureForm />}
       summary={<BloodPressureSummary />}
       title="Blood Pressure"

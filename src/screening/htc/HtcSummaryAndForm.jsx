@@ -5,6 +5,7 @@ import SummaryAndForm from "../../layout/SummaryAndForm";
 import HtcSummary from "./HtcSummary";
 import HtcForm from "./HtcForm";
 import htcFilters from "./htcFilters";
+import {ENCOUNTER_TYPES} from "../../constants";
 
 const HtcSummaryAndForm = props => {
 
@@ -12,6 +13,7 @@ const HtcSummaryAndForm = props => {
     <SummaryAndForm
       backLink="/screening/htc/queue"
       completed={htcFilters.completed(props.patient)}
+      encounterType={ENCOUNTER_TYPES.HTCEncounterType}
       form={<HtcForm/>}
       summary={<HtcSummary/>}
       title="HTC"

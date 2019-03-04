@@ -39,7 +39,6 @@ import BloodPressureQueue from "./screening/bloodPressure/BloodPressureQueue";
 import NutritionQueue from "./screening/nutrition/NutritionQueue";
 import TbQueue from "./screening/tb/TbQueue";
 import AdherenceQueue from "./screening/adherence/AdherenceQueue";
-import SputumSummaryAndForm from "./screening/sputum/SputumSummaryAndForm";
 import AdherenceSummaryAndForm from "./screening/adherence/AdherenceSummaryAndForm";
 import HtcQueue from "./screening/htc/HtcQueue";
 import VLQueue from "./screening/vl/VLQueue";
@@ -53,7 +52,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import BloodPressureSummaryAndForm from "./screening/bloodPressure/BloodPressureSummaryAndForm";
 import NutritionSummaryAndForm from "./screening/nutrition/NutritionSummaryAndForm";
-import TbTestResultSummaryAndForm from "./screening/tbTest/TbTestResultSummaryAndForm";
+import TbTestResultSummaryAndForm from "./screening/tbTest/TbTestSummaryAndForm";
 import TbSummaryAndForm from "./screening/tb/TbSummaryAndForm";
 import HtcSummaryAndForm from "./screening/htc/HtcSummaryAndForm";
 import UserSession from "./login/UserSession";
@@ -118,12 +117,6 @@ const App = props => {
               component={BloodPressureSummaryAndForm}
               noScroll
               path="/screening/bloodPressure/form"
-              redirectOnLogin="/"
-            />
-            <Layout
-              component={SputumSummaryAndForm}
-              noScroll
-              path="/screening/sputum/form"
               redirectOnLogin="/"
             />
             <Layout

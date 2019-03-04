@@ -5,6 +5,7 @@ import SummaryAndForm from "../../layout/SummaryAndForm";
 import EidSummary  from "./EidSummary";
 import EidForm from "./EidForm";
 import eidFilters from "./eidFilters";
+import {ENCOUNTER_TYPES} from "../../constants";
 
 const EidSummaryAndForm = props => {
 
@@ -12,6 +13,7 @@ const EidSummaryAndForm = props => {
     <SummaryAndForm
       backLink="/screening/eid/queue"
       completed={eidFilters.completed(props.patient)}
+      encounterType={ENCOUNTER_TYPES.EidEncounterType}
       form={<EidForm />}
       summary={<EidSummary />}
       title="EID"

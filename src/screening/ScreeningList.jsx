@@ -11,8 +11,7 @@ import adherenceFilters from './adherence/adherenceFilters';
 import checkInFilters from "../checkin/checkInFilters";
 import cliniicianFilters from "../screening/clinician/cliniicianFilters";
 import tbFilters from "./tb/tbFilters";
-import sputumFilters from './sputum/sputumFilters';
-import tbTestResultFilters from './tbTest/tbTestResultFilters';
+import tbTestFilters from './tbTest/tbTestFilters';
 
 export class ScreeningList extends React.Component {
   render() {
@@ -49,16 +48,10 @@ export class ScreeningList extends React.Component {
         required: eidFilters.required,
       },
       {
-        title: "Sputum",
-        completed: sputumFilters.completed,
-        link: '/screening/sputum/form',
-        required: sputumFilters.required
-      },
-      {
-        title: "TB Test Results",
-        completed: tbTestResultFilters.completed,
+        title: "TB Test",
+        completed: tbTestFilters.completed,
         link: '/screening/tb-test/form',
-        required: tbTestResultFilters.required,
+        required: tbTestFilters.required,
       },
     /*    {
           title: "A1C",

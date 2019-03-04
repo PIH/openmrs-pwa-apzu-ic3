@@ -6,17 +6,25 @@ import Swiper from 'react-id-swiper';
 import { withRouter } from 'react-router-dom';
 import {submit, isInvalid, isSubmitting, isPristine } from 'redux-form';
 import uuidv4 from 'uuid/v4';
-import {selectors, formActions, FORM_STATES} from "@openmrs/react-components";
+import {
+  selectors,
+  formActions,
+  FORM_STATES,
+  visitActions,
+  encountersByEncounterTypeFilter
+} from "@openmrs/react-components";
 import 'react-id-swiper/src/styles/css/swiper.css';
 import { centerTextAlign } from '../pwaStyles';
 import Summary from "./Summary";
 import Form from "./Form";
 import './styles/summary-and-form.css';
+import {ACTIVE_VISITS_REP} from "../constants";
 
 // TODO can we organize this at all better?  the idea that we are passing the form instance ID around everywhere, and doing enter/edit here is kind of painful
 // TODO if we generally like the way this works, we can extract back out into react-components
 
 export class SummaryAndForm extends React.Component {
+
   constructor(props) {
     super(props);
     this.enterEditMode = this.enterEditMode.bind(this);
@@ -25,9 +33,10 @@ export class SummaryAndForm extends React.Component {
     this.getFormSubmitting = this.getFormSubmitting.bind(this);
     this.getFormPristine = this.getFormPristine.bind(this);
     this.getFormInvalid = this.getFormInvalid.bind(this);
-    this.goNext = this.goNext.bind(this);
-    this.goPrev = this.goPrev.bind(this);
-    this.summarySwiperButton = this.summarySwiperButton.bind(this);
+    this.gotoForm = this.gotoForm.bind(this);
+    this.gotoSummary = this.gotoSummary.bind(this);
+    this.openFormForCurrentVisitButton = this.openFormForCurrentVisitButton.bind(this);
+    this.handleFormForCurrentVisitButton = this.handleFormForCurrentVisitButton.bind(this);
     this.swiper = null;
     this.formInstanceId = uuidv4();
     this.state = {
@@ -36,10 +45,12 @@ export class SummaryAndForm extends React.Component {
   }
 
   componentDidMount() {
+    const location = this.props.sessionLocation ? this.props.sessionLocation.uuid : null;
+    this.props.dispatch(visitActions.fetchPatientActiveVisit(this.props.patient.uuid, location, ACTIVE_VISITS_REP));
     this.swiper.updateSize();
   }
-  
-  goNext() {
+
+  gotoForm() {
     if (this.swiper) {
       this.setState({
         currentView: 'form'
@@ -48,7 +59,7 @@ export class SummaryAndForm extends React.Component {
     }
   }
 
-  goPrev() {
+  gotoSummary() {
     if (this.swiper) {
       this.setState({
         currentView: 'summary'
@@ -69,19 +80,22 @@ export class SummaryAndForm extends React.Component {
     }
   }
 
-  summarySwiperButton() {
-    // hack since we don't want a new/edit button on the tb-test form
-    if (this.props.currentPathname.includes('tb-test')) {
-      return null;
-    } else {
-      return (
-        <button
-          className="summary-swiper-button"
-          onClick={() => this.goNext()}
-        > {this.formatNavMessage()}
-        </button>
-      );
+  openFormForCurrentVisitButton() {
+    return (
+      <button
+        className="summary-swiper-button"
+        onClick={this.handleFormForCurrentVisitButton}
+      > {this.formatNavMessage()}
+      </button>
+    );
+  }
+
+  handleFormForCurrentVisitButton() {
+    const encounter = this.getMatchingEncounterFromActiveVisit(this.props.encounterType);
+    if (encounter && encounter.uuid) {
+      this.props.dispatch(formActions.loadFormBackingEncounter(this.formInstanceId, encounter.uuid));
     }
+    this.gotoForm();
   }
 
   enterEditMode() {
@@ -113,6 +127,27 @@ export class SummaryAndForm extends React.Component {
     return isPristine(this.formInstanceId, (reduxForm) => reduxForm)(this.props.reduxForm);
   }
 
+  getMatchingEncounterFromActiveVisit(encounterType) {
+
+    let encounter;
+    let props = this.props;
+
+    // TODO what if there are multiple encounters of the same type?  this currently just shifts in the "first"
+    if (props.patient && props.patient.visit && props.patient.visit.encounters) {
+
+      // Sorts the encounters by encounterDatetime in Desc order
+      let encounters = props.patient.visit.encounters.concat().sort((a, b) => {
+        a = new Date(a.encounterDatetime);
+        b = new Date(b.encounterDatetime);
+        return a > b ? -1 : a < b ? 1 : 0;
+      });
+
+      encounter = encountersByEncounterTypeFilter(encounterType.uuid)(encounters).shift();
+    }
+
+    return encounter;
+  }
+
   render() {
     const params = {
       spaceBetween: 30,
@@ -134,7 +169,7 @@ export class SummaryAndForm extends React.Component {
                     className="back-button" 
                     onClick={() => {
                       if (formViewIsActive) {
-                        return this.goPrev()
+                        return this.gotoSummary();
                       } else {
                         return this.props.history.push('/screening');
                       }
@@ -170,8 +205,8 @@ export class SummaryAndForm extends React.Component {
                   <Summary
                     backLink={this.props.backLink}
                     formInstanceId={this.formInstanceId}
-                    goNext={this.goNext}
-                    sliderButton={this.summarySwiperButton}
+                    gotoForm={this.gotoForm}
+                    openFormForCurrentVisitButton={this.openFormForCurrentVisitButton}
                     summary={this.props.summary}
                   />
                 </div>
@@ -204,6 +239,7 @@ export class SummaryAndForm extends React.Component {
 
 SummaryAndForm.propTypes = {
   backLink: PropTypes.string.isRequired,
+  encounterType: PropTypes.object.isRequired,
   form: PropTypes.object.isRequired,
   patient: PropTypes.object,
   requireVisitForForm: PropTypes.bool.isRequired,
@@ -221,7 +257,8 @@ const mapStateToProps = (state) => {
     patient: storePatient,
     forms: state.openmrs.form,
     reduxForm: state.form,   // TODO ugh that we have to map in the entire state.form... can we assign uuid earlier?
-    currentPathname: state.router.location.pathname
+    currentPathname: state.router.location.pathname,
+    sessionLocation: state.openmrs.session.sessionLocation
   };
 };
 

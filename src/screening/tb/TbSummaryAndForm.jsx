@@ -5,6 +5,7 @@ import SummaryAndForm from "../../layout/SummaryAndForm";
 import TbSummary from "./TbSummary";
 import TbForm from "./TbForm";
 import tbFilters from "./tbFilters";
+import {ENCOUNTER_TYPES} from "../../constants";
 
 const TbSummaryAndForm = props => {
 
@@ -12,6 +13,7 @@ const TbSummaryAndForm = props => {
     <SummaryAndForm
       backLink="/screening/tb/queue"
       completed={tbFilters.completed(props.patient)}
+      encounterType={ENCOUNTER_TYPES.TBScreeningEncounterType}
       form={<TbForm />}
       summary={<TbSummary />}
       title="Tuberculosis"

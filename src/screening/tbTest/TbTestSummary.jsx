@@ -2,7 +2,7 @@ import React from "react";
 import {CONCEPTS, ENCOUNTER_TYPES} from "../../constants";
 import {EncounterHistory, formActions} from "@openmrs/react-components";
 
-const TbTestResultSummary = props => {
+const TbTestSummary = props => {
   return (
     <span>
       <EncounterHistory
@@ -19,7 +19,7 @@ const TbTestResultSummary = props => {
           (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)
         ]}
         onEditCallbacks={[
-          props.goNext
+          props.gotoForm
         ]}
         requireVisitForForm={false}
       />
@@ -27,4 +27,4 @@ const TbTestResultSummary = props => {
   );
 };
 
-export default TbTestResultSummary;
+export default TbTestSummary;

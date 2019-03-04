@@ -5,6 +5,7 @@ import SummaryAndForm from "../../layout/SummaryAndForm";
 import AdherenceSummary from "./AdherenceSummary";
 import AdherenceForm from "./AdherenceForm";
 import adherenceFilters from './adherenceFilters';
+import {ENCOUNTER_TYPES} from "../../constants";
 
 
 const AdherenceSummaryAndForm = props => {
@@ -13,6 +14,7 @@ const AdherenceSummaryAndForm = props => {
     <SummaryAndForm
       backLink="/screening/adherence/queue"
       completed={adherenceFilters.completed(props.patient)}
+      encounterType={ENCOUNTER_TYPES.AdherenceCounselingEncounterType}
       form={<AdherenceForm/>}
       summary={<AdherenceSummary/>}
       title="Adherence Counseling"
