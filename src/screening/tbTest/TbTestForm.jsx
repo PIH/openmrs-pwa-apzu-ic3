@@ -93,6 +93,14 @@ class TbTestForm extends React.PureComponent {
           groupingConcept={CONCEPTS.TbTest.TuberculosisTestScreeningSet}
           path="tb-test-screening-set"
         >
+          <span>
+            <Row>
+              <Col>
+                <h4 className="form-subheading">Sample Information</h4>
+              </Col>
+            </Row>
+          </span>
+          <br />
           <Row>
             <Col
               componentClass={ControlLabel}
@@ -113,30 +121,8 @@ class TbTestForm extends React.PureComponent {
           </Row>
 
           <span
-            style={{ display: (typeof this.props.sputumReceived.value !== 'undefined') && (this.props.sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}
-          >
-            <Row>
-              <Col componentClass={ControlLabel}>
-              Sample Quality
-              </Col>
-            </Row>
-            <Row>
-              <FormGroup controlId="formReasonForNoSample">
-                <Col sm={12}>
-                  <Obs
-                    concept={CONCEPTS.SampleQuality.uuid}
-                    conceptAnswers={FORM_ANSWERS.sampleQualityAnswers}
-                    path="tb-sputum-sample-quality"
-                  />
-                </Col>
-              </FormGroup>
-            </Row>
-          </span>
-
-          <span
             style={{
-              display: (this.props.sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid
-                && this.props.sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none'
+              display: (this.props.sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none'
             }}
           >
             <Row>
@@ -157,8 +143,43 @@ class TbTestForm extends React.PureComponent {
             </Row>
           </span>
 
+          <br />
+
           <span
-            style={{ display: (this.props.sputumLaboratoryLocation.value) ? 'block' : 'none' }}
+            style={{ display: (typeof this.props.sputumLaboratoryLocation.value !== 'undefined') && (this.props.sputumLaboratoryLocation.value) ? 'block' : 'none' }}
+          >
+            <Row>
+              <Col>
+                <h4 className="form-subheading" >Result Information</h4>
+              </Col>
+            </Row>
+          </span>
+          <br />
+
+          <span
+            style={{ display: (typeof this.props.sputumLaboratoryLocation.value !== 'undefined') && (this.props.sputumLaboratoryLocation.value) ? 'block' : 'none' }}
+          >
+            <Row>
+              <Col componentClass={ControlLabel}>
+              Sample Quality
+              </Col>
+            </Row>
+            <Row>
+              <FormGroup controlId="formReasonForNoSample">
+                <Col sm={12}>
+                  <Obs
+                    concept={CONCEPTS.SampleQuality.uuid}
+                    conceptAnswers={FORM_ANSWERS.sampleQualityAnswers}
+                    path="tb-sputum-sample-quality"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+          </span>
+
+          <span
+            style={{ display: ((this.props.sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid
+              && this.props.sputumReceived.value === CONCEPTS.Yes.uuid)) ? 'block' : 'none' }}
           >
             <Row>
               <Col
