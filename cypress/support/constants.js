@@ -1699,6 +1699,7 @@ export const RESPONSE = {
           "uuid": "57a125a8-3a54-4d94-8cb0-e5a6a5a66fc7",
           "encounterDatetime": "2019-02-21T11:03:24.000+0000",
           "location": {
+            "lop": 13,
             "id": 54,
             "uuid": "3093e2ab-0eee-4bc2-aacf-8d51d77c7698",
             "name": "Binje Outreach Clinic"
