@@ -89,7 +89,7 @@ Cypress.Commands.add('init', (EncounterResponseStub, Ic3ScreeningResponseStub) =
     url: URL.GET_PATIENT_ENCOUNTER,
     status: 200,
     response: {
-      results: RESPONSE.POST_PATIENT_ENCOUNTER
+      results: [RESPONSE.POST_PATIENT_ENCOUNTER]
     }
   });
   cy.route({

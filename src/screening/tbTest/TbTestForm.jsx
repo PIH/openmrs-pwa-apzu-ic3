@@ -131,7 +131,7 @@ class TbTestForm extends React.PureComponent {
               </Col>
             </Row>
             <Row>
-              <FormGroup>
+              <FormGroup controlId="formLabLocation">
                 <Col sm={12}>
                   <Obs
                     concept={CONCEPTS.LabLocation.uuid}
