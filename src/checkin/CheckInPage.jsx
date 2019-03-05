@@ -12,11 +12,13 @@ const CheckInPage = (props) =>  {
     <div>
       <SummaryAndForm
         backLink="/checkin/checkInTabs"
+        afterSubmitLink="/checkin/checkInPage"
         completed={checkInFilters.completed(props.patient)}
         encounterType={ENCOUNTER_TYPES.CheckInEncounterType}
         form={<ReferralForm />}
         requireVisitForForm={false}
         summary={<CheckInSummary />}
+        toastMessage="Checked-In!"
         title="Patient Check-In"
       />
     </div>

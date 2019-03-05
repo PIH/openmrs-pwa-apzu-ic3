@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import {Col, Grid, Row, Glyphicon} from "react-bootstrap";
+import { actions as toastrActions } from 'react-redux-toastr';
 import Swiper from 'react-id-swiper';
 import { withRouter } from 'react-router-dom';
 import {submit, isInvalid, isSubmitting, isPristine } from 'redux-form';
@@ -18,7 +19,9 @@ import { centerTextAlign } from '../pwaStyles';
 import Summary from "./Summary";
 import Form from "./Form";
 import './styles/summary-and-form.css';
-import {ACTIVE_VISITS_REP} from "../constants";
+import {ACTIVE_VISITS_REP, ENCOUNTER_ROLES, ENCOUNTER_TYPES, CONCEPTS} from "../constants";
+import patientActions from "../patient/patientActions";
+import utils from '../utils';
 
 // TODO can we organize this at all better?  the idea that we are passing the form instance ID around everywhere, and doing enter/edit here is kind of painful
 // TODO if we generally like the way this works, we can extract back out into react-components
@@ -37,6 +40,7 @@ export class SummaryAndForm extends React.Component {
     this.gotoSummary = this.gotoSummary.bind(this);
     this.openFormForCurrentVisitButton = this.openFormForCurrentVisitButton.bind(this);
     this.handleFormForCurrentVisitButton = this.handleFormForCurrentVisitButton.bind(this);
+    this.checkIn = this.checkIn.bind(this);
     this.swiper = null;
     this.formInstanceId = uuidv4();
     this.state = {
@@ -69,6 +73,29 @@ export class SummaryAndForm extends React.Component {
     ;
   }
 
+  checkIn() {
+    let valuesPath = 'obs|path=referral|conceptPath=' + CONCEPTS.SOURCE_OF_REFERRAL.uuid;
+    let valuesObj = {};
+    valuesObj[valuesPath] = CONCEPTS.SOURCE_OF_REFERRAL.Other.uuid;
+    this.props.dispatch(formActions.formSubmitted({
+      formId: "checkin-form",
+      formInstanceId: this.formInstanceId,
+      values: valuesObj,
+      encounterRole: ENCOUNTER_ROLES.UnknownEncounterRole,
+      encounterType: ENCOUNTER_TYPES.CheckInEncounterType,
+      location: this.props.sessionLocation,
+      patient: this.props.patient,
+      formSubmittedActionCreator: [
+        () => this.props.patient && this.props.patient.uuid && visitActions.fetchPatientActiveVisit(this.props.patient.uuid, this.props.sessionLocation.uuid, ACTIVE_VISITS_REP),
+        () => this.props.patient && this.props.patient.uuid && patientActions.getIC3PatientScreeningData(this.props.patient),
+        () => toastrActions.add({
+          title: this.props.toastMessage ? this.props.toastMessage : "Data Saved",
+          type: "success"
+        })
+      ]
+    }));
+  }
+
   formatNavMessage() {
     const { completed } = this.props;
     if (this.props.currentPathname.includes('checkin')) {
@@ -91,11 +118,20 @@ export class SummaryAndForm extends React.Component {
   }
 
   handleFormForCurrentVisitButton() {
-    const encounter = this.getMatchingEncounterFromActiveVisit(this.props.encounterType);
-    if (encounter && encounter.uuid) {
-      this.props.dispatch(formActions.loadFormBackingEncounter(this.formInstanceId, encounter.uuid));
+    const { completed } = this.props;
+    if (this.props.currentPathname.includes('checkin')
+      && utils.isSameDay(new Date(), new Date(this.props.patient.lastAppointmentDate))
+      &&!completed) {
+      //IS-106, If patient has an appointment then just check-in
+      this.checkIn();
+
+    } else {
+      const encounter = this.getMatchingEncounterFromActiveVisit(this.props.encounterType);
+      if (encounter && encounter.uuid) {
+        this.props.dispatch(formActions.loadFormBackingEncounter(this.formInstanceId, encounter.uuid));
+      }
+      this.gotoForm();
     }
-    this.gotoForm();
   }
 
   enterEditMode() {

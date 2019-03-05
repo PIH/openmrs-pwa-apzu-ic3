@@ -11,6 +11,10 @@ const utils = {
     return dateFns.format(new Date(datetime), 'h[:]mma');
   },
 
+  isSameDay:(date1, date2) => {
+    return dateFns.isSameDay(date1, date2);
+  },
+
   formatRestDate: (datetime) => {
     return dateFns.format(datetime, 'YYYY-MM-DDTHH:mm:ss.SSS');
   },
