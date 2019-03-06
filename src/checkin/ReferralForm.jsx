@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { selectors } from '@openmrs/react-components';
 import { Grid, Row, Col, FormGroup, ControlLabel } from "react-bootstrap";
-import { Obs } from '@openmrs/react-components';
+import { Obs, formUtil, selectors } from '@openmrs/react-components';
 import ScreeningForm from '../screening/ScreeningForm';
 import { CONCEPTS, ENCOUNTER_TYPES, FORM_ANSWERS } from "../constants";
+import {formValueSelector} from "redux-form";
 
 
 class ReferralForm extends React.Component {
@@ -39,6 +39,25 @@ class ReferralForm extends React.Component {
               </FormGroup>
             </Col>
           </Row>
+          <span style={{ display: (typeof this.props.referralObs !== 'undefined') && (this.props.referralObs === CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.uuid) ? 'block' : 'none' }}>
+            <Row>
+              <Col componentClass={ControlLabel}>
+                {CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care_ID.display}
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={8}>
+                <FormGroup controlId="formLinkageToCareId">
+                  <Obs
+                    concept={CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care_ID.uuid}
+                    datatype="text"
+                    path="linkage-to-care-id"
+                    placeholder="Enter Linkage to Care ID"
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+          </span>
         </Grid>
       );
     }
@@ -56,9 +75,12 @@ class ReferralForm extends React.Component {
 
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
+  const selector = formValueSelector(props.formInstanceId);
+  const referralObs = selector(state, formUtil.obsFieldName('referral', CONCEPTS.SOURCE_OF_REFERRAL.uuid));
   return {
     patient: selectors.getSelectedPatientFromStore(state),
+    referralObs
   };
 };
 
