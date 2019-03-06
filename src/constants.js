@@ -385,6 +385,18 @@ export const CONCEPTS = {
     'Other': {
       uuid: '656cce7e-977f-11e1-8993-905e29aff6c1',
       display: 'Other'
+    },
+    'Linkage_to_care': {
+      uuid: '5f941306-3f64-11e9-b210-d663bd873d93',
+      display: 'Linkage to care'
+    },
+    'Linkage_to_care_ID': {
+      uuid: 'B9E98A62-8437-4807-9DF8-37F0046FD0E8',
+      display: 'Linkage to care ID'
+    },
+    'IC3_appointment': {
+      uuid: '5004B09D-16D6-4439-9481-C9EAA2E939B5',
+      display: 'IC3 Appointment'
     }
   },
   'TBTestType': {
@@ -606,6 +618,14 @@ export const FORM_ANSWERS = {
     {
       uuid: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.uuid,
       display: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.display
+    },
+    {
+      uuid: CONCEPTS.SOURCE_OF_REFERRAL.IC3_appointment.uuid,
+      display: CONCEPTS.SOURCE_OF_REFERRAL.IC3_appointment.display
+    },
+    {
+      uuid: CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.uuid,
+      display: CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.display
     },
     { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Other.uuid, display: CONCEPTS.SOURCE_OF_REFERRAL.Other.display }
   ],

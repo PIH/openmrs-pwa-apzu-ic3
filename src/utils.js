@@ -12,7 +12,8 @@ const utils = {
   },
 
   isSameDay:(date1, date2) => {
-    return dateFns.isSameDay(date1, date2);
+    //the appointment date is usually set at midnight, so this should handle different time zones
+    return (Math.abs(dateFns.differenceInHours(date1, date2)) < 24);
   },
 
   formatRestDate: (datetime) => {

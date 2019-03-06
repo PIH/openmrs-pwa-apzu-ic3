@@ -76,7 +76,7 @@ export class SummaryAndForm extends React.Component {
   checkIn() {
     let valuesPath = 'obs|path=referral|conceptPath=' + CONCEPTS.SOURCE_OF_REFERRAL.uuid;
     let valuesObj = {};
-    valuesObj[valuesPath] = CONCEPTS.SOURCE_OF_REFERRAL.Other.uuid;
+    valuesObj[valuesPath] = CONCEPTS.SOURCE_OF_REFERRAL.IC3_appointment.uuid;
     this.props.dispatch(formActions.formSubmitted({
       formId: "checkin-form",
       formInstanceId: this.formInstanceId,
