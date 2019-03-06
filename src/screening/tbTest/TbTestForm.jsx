@@ -1,9 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {formValueSelector, change, untouch} from 'redux-form';
-import {Obs, ObsGroup, formUtil, selectors} from '@openmrs/react-components';
-import {Grid, Row, FormGroup, ControlLabel, Col} from 'react-bootstrap';
-import {ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS} from "../../constants";
+import { connect } from 'react-redux';
+import { formValueSelector, change, untouch } from 'redux-form';
+import { Obs, ObsGroup, formUtil, selectors } from '@openmrs/react-components';
+import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
+import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
 import "./styles/tb-test-result-form.css";
 
@@ -32,7 +32,6 @@ class TbTestForm extends React.PureComponent {
 
     if (typeof this.props.sputumSampleQuality.value !== 'undefined' && this.props.sputumSampleQuality.value !== prevProps.sputumSampleQuality.value) {
       if (this.props.sputumSampleQuality.value === CONCEPTS.unsatisfactorySampleQuality.uuid) {
-        this.clearField(this.props.sputumLaboratoryLocation.fieldName);
         this.clearField(this.props.testType.fieldName);
         this.clearField(this.props.tbSmearResult.fieldName);
         this.clearField(this.props.genexpertResult.fieldName);
