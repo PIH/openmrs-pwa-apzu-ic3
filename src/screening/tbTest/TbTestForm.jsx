@@ -14,13 +14,23 @@ class TbTestForm extends React.PureComponent {
     this.props.dispatch(untouch(this.props.formInstanceId, field));
   }
 
+  setField(field, value) {
+    this.props.dispatch(change(this.props.formInstanceId, field, value));
+  }
+
+  hasChanged(field, props, prevProps) {
+    return typeof props[field].value !== 'undefined' && typeof prevProps[field].value !== 'undefined'
+      && this.props[field].value !== prevProps[field].value;
+  }
+
   componentDidUpdate(prevProps) {
 
     // this clears out form values when the "Sputum received" question is changed
-    if (typeof this.props.sputumReceived.value !== 'undefined' && this.props.sputumReceived.value !== prevProps.sputumReceived.value) {
+    if (this.hasChanged('sputumReceived', this.props, prevProps)) {
+
       if (this.props.sputumReceived.value === CONCEPTS.No.uuid) {
-        this.clearField(this.props.sputumSampleQuality.fieldName);
         this.clearField(this.props.sputumLaboratoryLocation.fieldName);
+        this.clearField(this.props.sputumSampleQuality.fieldName);
         this.clearField(this.props.testType.fieldName);
         this.clearField(this.props.tbSmearResult.fieldName);
         this.clearField(this.props.genexpertResult.fieldName);
@@ -30,21 +40,8 @@ class TbTestForm extends React.PureComponent {
       }
     }
 
-    if (typeof this.props.sputumSampleQuality.value !== 'undefined' && this.props.sputumSampleQuality.value !== prevProps.sputumSampleQuality.value) {
-      if (this.props.sputumSampleQuality.value === CONCEPTS.unsatisfactorySampleQuality.uuid) {
-        this.clearField(this.props.testType.fieldName);
-        this.clearField(this.props.tbSmearResult.fieldName);
-        this.clearField(this.props.genexpertResult.fieldName);
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultSmear.fieldName);
-      }
-    }
-
-    if (typeof this.props.sputumLaboratoryLocation.value !== 'undefined' && typeof prevProps.sputumLaboratoryLocation.value !== 'undefined'   // also check previous so we don't clear out on load
-      && this.props.sputumLaboratoryLocation.value !== prevProps.sputumLaboratoryLocation.value) {
-      this.clearField(this.props.testType.fieldName);
+    if (this.hasChanged('sputumLaboratoryLocation', this.props, prevProps)) {
+      this.clearField(this.props.sputumSampleQuality.fieldName);
       this.clearField(this.props.testType.fieldName);
       this.clearField(this.props.tbSmearResult.fieldName);
       this.clearField(this.props.genexpertResult.fieldName);
@@ -54,7 +51,26 @@ class TbTestForm extends React.PureComponent {
       this.clearField(this.props.tbNoResultSmear.fieldName);
     }
 
-    if (typeof this.props.testType.value !== 'undefined' && this.props.testType.value !== prevProps.testType.value) {
+    if (this.hasChanged('sputumSampleQuality', this.props, prevProps)) {
+      if (this.props.sputumSampleQuality.value === CONCEPTS.unsatisfactorySampleQuality.uuid) {
+        this.clearField(this.props.testType.fieldName);
+        this.clearField(this.props.tbSmearResult.fieldName);
+        this.clearField(this.props.genexpertResult.fieldName);
+        this.clearField(this.props.tbRifampinResistance.fieldName);
+        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
+        this.clearField(this.props.tbRifampinResistance.fieldName);
+        this.clearField(this.props.tbNoResultSmear.fieldName);
+      } else if (this.props.sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid) {
+        if (this.props.sputumLaboratoryLocation.value === CONCEPTS.LisungwiGeneXpert.uuid
+          || this.props.sputumLaboratoryLocation.value === CONCEPTS.NenoGeneXpert.uuid) {
+          this.setField(this.props.testType.fieldName, CONCEPTS.GeneXpert.uuid);
+        } else if (this.props.sputumLaboratoryLocation.value === CONCEPTS.microscopy.uuid) {
+          this.setField(this.props.testType.fieldName, CONCEPTS.Smear.uuid);
+        }
+      }
+    }
+
+    if (this.hasChanged('testType', this.props, prevProps)) {
       if (this.props.testType.value === CONCEPTS.GeneXpert.uuid) {
         this.clearField(this.props.tbSmearResult.fieldName);
         this.clearField(this.props.tbNoResultSmear.fieldName);
@@ -65,7 +81,7 @@ class TbTestForm extends React.PureComponent {
       }
     }
 
-    if (typeof this.props.genexpertResult.value !== 'undefined' && this.props.genexpertResult.value !== prevProps.genexpertResult.value) {
+    if (this.hasChanged('genexpertResult', this.props, prevProps)) {
       if (this.props.genexpertResult.value === CONCEPTS.TBDetected) {
         this.clearField(this.props.tbNoResultGeneexpert.fieldName);
       } else if (this.props.genexpertResult.value === CONCEPTS.TBUndetected.uuid) {
@@ -73,12 +89,6 @@ class TbTestForm extends React.PureComponent {
         this.clearField(this.props.tbNoResultGeneexpert.fieldName);
       } else if (this.props.genexpertResult.value === CONCEPTS.ReasonForNoResult.uuid) {
         this.clearField(this.props.tbRifampinResistance.fieldName);
-      }
-    }
-
-    if (typeof this.props.tbSmearResult.value !== 'undefined' && this.props.tbSmearResult.value !== prevProps.tbSmearResult.value) {
-      if (this.props.tbSmearResult.value === CONCEPTS.TBSmearResult.Positive.uuid || this.props.tbSmearResult.value === CONCEPTS.TBSmearResult.Negative.uuid) {
-        this.clearField(this.props.tbNoResultSmear.fieldName);
       }
     }
 
