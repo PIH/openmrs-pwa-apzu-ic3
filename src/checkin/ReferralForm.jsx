@@ -4,10 +4,30 @@ import { Grid, Row, Col, FormGroup, ControlLabel } from "react-bootstrap";
 import { Obs, formUtil, selectors } from '@openmrs/react-components';
 import ScreeningForm from '../screening/ScreeningForm';
 import { CONCEPTS, ENCOUNTER_TYPES, FORM_ANSWERS } from "../constants";
-import {formValueSelector} from "redux-form";
+import {change, formValueSelector, untouch} from "redux-form";
 
 
 class ReferralForm extends React.Component {
+
+
+  clearField(field) {
+    this.props.dispatch(change(this.props.formInstanceId, field, null));
+    this.props.dispatch(untouch(this.props.formInstanceId, field));
+  }
+
+  hasChanged(field, props, prevProps) {
+    return typeof props[field].value !== 'undefined' && typeof prevProps[field].value !== 'undefined'
+      && this.props[field].value !== prevProps[field].value;
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.hasChanged('referral', this.props, prevProps)) {
+      if (this.props.referral.value !== CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.uuid) {
+        this.clearField(this.props.linkageToCare.fieldName);
+      }
+    }
+  }
+
   render() {
     const { patient } = this.props;
     let formContent = null;
@@ -39,7 +59,8 @@ class ReferralForm extends React.Component {
               </FormGroup>
             </Col>
           </Row>
-          <span style={{ display: (typeof this.props.referralObs !== 'undefined') && (this.props.referralObs === CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.uuid) ? 'block' : 'none' }}>
+          <span
+            style={{ display: (typeof this.props.referral.value !== 'undefined') && (this.props.referral.value === CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.uuid) ? 'block' : 'none' }}>
             <Row>
               <Col componentClass={ControlLabel}>
                 {CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care_ID.display}
@@ -77,10 +98,21 @@ class ReferralForm extends React.Component {
 
 const mapStateToProps = (state, props) => {
   const selector = formValueSelector(props.formInstanceId);
-  const referralObs = selector(state, formUtil.obsFieldName('referral', CONCEPTS.SOURCE_OF_REFERRAL.uuid));
+
+  const referralField = formUtil.obsFieldName('referral', CONCEPTS.SOURCE_OF_REFERRAL.uuid);
+  const linkageToCareField = formUtil.obsFieldName('linkage-to-care-id', CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care_ID.uuid);
+
   return {
     patient: selectors.getSelectedPatientFromStore(state),
-    referralObs
+
+    referral: {
+      fieldName: referralField,
+      value: selector(state, referralField)
+    },
+    linkageToCare: {
+      fieldName: linkageToCareField,
+      value: selector(state, linkageToCareField)
+    }
   };
 };
 

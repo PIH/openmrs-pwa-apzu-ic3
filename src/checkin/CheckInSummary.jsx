@@ -71,7 +71,10 @@ const CheckInSummary = props => {
         </Col>
       </Row>
       <ObsHistory
-        concepts={[CONCEPTS.SOURCE_OF_REFERRAL]}
+        concepts={[
+          CONCEPTS.SOURCE_OF_REFERRAL,
+          CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care_ID
+        ]}
         labels={labels}
       />
     </Grid>
