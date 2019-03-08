@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import {Col, Grid, Row, Glyphicon} from "react-bootstrap";
+import {Grid, Row, Glyphicon} from "react-bootstrap";
 import { actions as toastrActions } from 'react-redux-toastr';
 import Swiper from 'react-id-swiper';
 import { withRouter } from 'react-router-dom';
@@ -15,7 +15,6 @@ import {
   encountersByEncounterTypeFilter
 } from "@openmrs/react-components";
 import 'react-id-swiper/src/styles/css/swiper.css';
-import { centerTextAlign } from '../pwaStyles';
 import Summary from "./Summary";
 import Form from "./Form";
 import './styles/summary-and-form.css';
@@ -243,26 +242,17 @@ export class SummaryAndForm extends React.Component {
                     formInstanceId={this.formInstanceId}
                     gotoForm={this.gotoForm}
                     openFormForCurrentVisitButton={this.openFormForCurrentVisitButton}
+                    requireVisitForForm={this.props.requireVisitForForm}
                     summary={this.props.summary}
                   />
                 </div>
-                {this.props.patient.visit || !this.props.requireVisitForForm ? (
-                  <div className="form-summary">
-                    <Form
-                      backLink={this.props.backLink}
-                      form={this.props.form}
-                      formInstanceId={this.formInstanceId}
-                    />
-                  </div>
-                ) : (
-                  <div>
-                    <Col sm={8}>
-                      <div style={centerTextAlign}>
-                        <h4>Please check-in patient</h4>
-                      </div>
-                    </Col>
-                  </div>
-                )}
+                <div className="form-summary">
+                  <Form
+                    backLink={this.props.backLink}
+                    form={this.props.form}
+                    formInstanceId={this.formInstanceId}
+                  />
+                </div>
               </Swiper>
             </div>
           </Row>

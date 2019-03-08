@@ -15,7 +15,6 @@ const TbTestSummaryAndForm = props => {
       completed={tbTestResultFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.TBTestResults}
       form={<TbTestResultForm displayResultsSection={true}/>}
-      requireVisitForForm={false}
       summary={<TbTestSummary/>}
       title="Tuberculosis Test"
     />

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Grid, Row } from "react-bootstrap";
 import { centerTextAlign } from "../pwaStyles";
+import connect from "react-redux/es/connect/connect";
+import {selectors} from "@openmrs/react-components";
 
 const Summary = props => {
 
@@ -13,9 +15,13 @@ const Summary = props => {
             <span style={centerTextAlign}><h2>Summary</h2></span>
           </Col>
         </Row>
-        <Row className="swiper-add-new-btn">
-          {props.openFormForCurrentVisitButton && props.openFormForCurrentVisitButton()}
-        </Row>
+        {(props.patient.visit || !props.requireVisitForForm) &&
+        (
+          <Row className="swiper-add-new-btn">
+            {props.openFormForCurrentVisitButton && props.openFormForCurrentVisitButton()}
+          </Row>
+        )
+        }
       </Grid>
       <div className="summary-layout-content">
         {React.cloneElement(props.summary, {
@@ -31,8 +37,21 @@ const Summary = props => {
 Summary.propTypes = {
   backLink: PropTypes.string.isRequired,
   formInstanceId: PropTypes.string.isRequired,
+  requireVisitForForm: PropTypes.bool.isRequired,
   sliderButton: PropTypes.func,
   summary: PropTypes.object.isRequired,
 };
 
-export default Summary;
+
+Summary.defaultProps = {
+  requireVisitForForm: true
+};
+
+const mapStateToProps = (state) => {
+  return {
+    patient: selectors.getSelectedPatientFromStore(state)
+  };
+};
+
+export default connect(mapStateToProps)(Summary);
+
