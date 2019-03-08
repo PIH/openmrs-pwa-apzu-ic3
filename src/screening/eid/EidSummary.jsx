@@ -1,6 +1,6 @@
 import React from "react";
-import {ObsHistory} from "@openmrs/react-components";
-import {CONCEPTS} from "../../constants";
+import {formActions, ObsHistory} from "@openmrs/react-components";
+import {CONCEPTS, ENCOUNTER_TYPES} from "../../constants";
 
 const EidSummary = props => {
   return (
@@ -15,7 +15,14 @@ const EidSummary = props => {
           CONCEPTS.HIV_TEST_RESULTS,
           CONCEPTS.BreastFeeding,
         ]}
+        editableEncounterTypes={[ENCOUNTER_TYPES.EidEncounterType]}
         groupingConcepts={[CONCEPTS.HIV_TEST_CONSTRUCT]}
+        onEditEncounterActionCreators={[
+          (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)
+        ]}
+        onEditEncounterCallbacks={[
+          props.gotoForm
+        ]}
       />
     </span>
   );

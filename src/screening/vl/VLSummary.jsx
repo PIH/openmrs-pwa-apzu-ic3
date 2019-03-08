@@ -1,6 +1,6 @@
 import React from "react";
-import {CONCEPTS} from "../../constants";
-import {ObsHistory} from "@openmrs/react-components";
+import {CONCEPTS, ENCOUNTER_TYPES} from "../../constants";
+import {formActions, ObsHistory} from "@openmrs/react-components";
 
 const VLSummary = props => {
   return (
@@ -15,7 +15,14 @@ const VLSummary = props => {
             CONCEPTS.ReasonForTesting,
             CONCEPTS.LabLocation
           ]}
+        editableEncounterTypes={[ENCOUNTER_TYPES.VLEncounterType]}
         groupingConcepts={[CONCEPTS.ViralLoadTestSet]}
+        onEditEncounterActionCreators={[
+          (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)
+        ]}
+        onEditEncounterCallbacks={[
+          props.gotoForm
+        ]}
       />
     </div>
   );

@@ -533,7 +533,7 @@ export const CONCEPTS = {
   },
   'BreastFeeding': {
     uuid: '657a289e-977f-11e1-8993-905e29aff6c1',
-    display: 'Breastfeediing'
+    display: 'Breastfeeding'
   },
   'ExclusiveBreastfeeding': {
     uuid: '656c5264-977f-11e1-8993-905e29aff6c1',
