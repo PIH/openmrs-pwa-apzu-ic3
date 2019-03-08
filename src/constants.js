@@ -620,6 +620,10 @@ export const FORM_ANSWERS = {
       display: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.display
     },
     {
+      uuid: CONCEPTS.SOURCE_OF_REFERRAL.IC3_appointment.uuid,
+      display: CONCEPTS.SOURCE_OF_REFERRAL.IC3_appointment.display
+    },
+    {
       uuid: CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.uuid,
       display: CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.display
     },
