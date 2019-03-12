@@ -14,3 +14,9 @@ div.dna-pcr-form .control-label {
   position: relative;
   right: -15px
 }
+
+div.eid-form-section-title {
+  font-size: 20px;
+  padding: 20px;
+  color: gray;
+}

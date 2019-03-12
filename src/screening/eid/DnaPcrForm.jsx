@@ -8,24 +8,30 @@ import './styles/dna-pcr-form.css';
 
 class DnaPcrForm extends React.PureComponent {
 
+  clearField(field) {
+    this.props.dispatch(change(this.props.formInstanceId, field, null));
+    this.props.dispatch(untouch(this.props.formInstanceId, field));
+  }
+
+
   componentDidUpdate(prevProps) {
 
     const reasonNoSampleFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-reason-no-sample'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.ReasonForNoSample.uuid]);
     const reasonForTestingFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-reason-for-testing'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.ReasonForTesting.uuid]);
     const labLocationFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-lab-location'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.LabLocation.uuid]);
+    const reasonForNoTestResultFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-reason-for-no-result'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.ReasonForNoResult.uuid]);
+    const dnaPcrTestResultFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-test-result'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.DNA_PCR_TEST_RESULT.uuid]);
 
     // this clears out form values when the "bled" question is changed
     if (typeof this.props.sampleCollected !== 'undefined' && this.props.sampleCollected !== prevProps.sampleCollected) {
       if (this.props.sampleCollected === CONCEPTS.Yes.uuid) {
-        this.props.dispatch(change(this.props.formInstanceId, reasonNoSampleFieldName, null));
-        this.props.dispatch(untouch(this.props.formInstanceId, reasonNoSampleFieldName));
+        this.clearField(reasonNoSampleFieldName);
       }
       else {
-        this.props.dispatch(change(this.props.formInstanceId, reasonForTestingFieldName, null));
-        this.props.dispatch(untouch(this.props.formInstanceId, reasonForTestingFieldName));
-        
-        this.props.dispatch(change(this.props.formInstanceId, labLocationFieldName, null));
-        this.props.dispatch(untouch(this.props.formInstanceId, labLocationFieldName));
+        this.clearField(reasonForNoTestResultFieldName);
+        this.clearField(dnaPcrTestResultFieldName);
+        this.clearField(reasonForTestingFieldName);
+        this.clearField(labLocationFieldName);
       }
     }
   }
@@ -33,6 +39,10 @@ class DnaPcrForm extends React.PureComponent {
   render() {
     const formContent = (
       <Grid>
+        <Row>
+          <div className="eid-form-section-title">Sample Infromation</div>
+        </Row>
+        
         <Row>
           <FormGroup controlId="formBled">
             <Col componentClass={ControlLabel} sm={2}>
@@ -101,6 +111,46 @@ class DnaPcrForm extends React.PureComponent {
             </FormGroup>
           </Row>
         </span>
+
+        <span
+          style={{ display: (typeof this.props.sampleCollected !== 'undefined') && (this.props.sampleCollected === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <div className="eid-form-section-title">Result Infromation</div>
+          </Row>
+
+          <Row>
+            <FormGroup controlId="formDnaPcrResult">
+              <Col componentClass={ControlLabel} sm={2}>
+                DNA PCR Result:
+              </Col>
+              <Col sm={8}>
+                <Obs
+                  concept={CONCEPTS.DNA_PCR_TEST_RESULT.uuid}
+                  path="dna-pcr-test-result"
+                  conceptAnswers={FORM_ANSWERS.dnaPcrTestResults}
+                />
+              </Col>
+            </FormGroup>
+          </Row>
+        </span>
+
+        <span
+          style={{ display: (typeof this.props.dnaPcrTestResult !== 'undefined') && (this.props.dnaPcrTestResult === CONCEPTS.DNA_PCR_TEST_RESULT_NO_RESULT.uuid) ? 'block' : 'none' }}>
+          <Row>
+            <FormGroup controlId="formDnaPcrResult">
+              <Col componentClass={ControlLabel} sm={2}>
+                Reason for No Result:
+              </Col>
+              <Col bsClass="no-reason-form" sm={12}>
+                <Obs
+                  concept={CONCEPTS.ReasonForNoResult.uuid}
+                  path="dna-pcr-reason-for-no-result"
+                  conceptAnswers={FORM_ANSWERS.ReasonForNoDnaPcrResult}
+                />
+              </Col>
+            </FormGroup>
+          </Row>
+        </span>
       </Grid>
     );
 
@@ -115,8 +165,11 @@ class DnaPcrForm extends React.PureComponent {
 export default connect((state, props) => {
   const selector = formValueSelector(props.formInstanceId);
   const sampleCollected = selector(state, formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-bled'], [CONCEPTS.HIV_TEST_CONSTRUCT, CONCEPTS.SampleCollected]));
+  const dnaPcrTestResult = selector(state, formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-test-result'], [CONCEPTS.HIV_TEST_CONSTRUCT, CONCEPTS.DNA_PCR_TEST_RESULT]));
+
   return {
     sampleCollected,
+    dnaPcrTestResult,
     patient: selectors.getSelectedPatientFromStore(state)
   };
 })(DnaPcrForm);

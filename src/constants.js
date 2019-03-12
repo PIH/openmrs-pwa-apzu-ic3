@@ -200,6 +200,22 @@ export const CONCEPTS = {
     uuid: '654a6960-977f-11e1-8993-905e29aff6c1',
     display: 'DNA PCR'
   },
+  'DNA_PCR_TEST_RESULT': {
+    uuid: '655dcb7c-977f-11e1-8993-905e29aff6c1',
+    display: 'DNA PCR Result'
+  },
+  'DNA_PCR_TEST_RESULT_POSITIVE': {
+    uuid: '6549be7a-977f-11e1-8993-905e29aff6c1',
+    display: 'Positive'
+  },
+  'DNA_PCR_TEST_RESULT_NEGATIVE': {
+    uuid: '654994c2-977f-11e1-8993-905e29aff6c1',
+    display: 'Negative'
+  },
+  'DNA_PCR_TEST_RESULT_NO_RESULT': {
+    uuid: '6557baa2-977f-11e1-8993-905e29aff6c1',
+    display: 'No Result'
+  },
   "HIV_TEST_RESULTS": {
     uuid: '655dcb7c-977f-11e1-8993-905e29aff6c1',
     'Reactive': {
@@ -664,6 +680,19 @@ export const FORM_ANSWERS = {
   'dnaPcrReasonForTesting': [
     { uuid: CONCEPTS.SixWeeksRoutine.uuid, display: CONCEPTS.SixWeeksRoutine.display },
     { uuid: CONCEPTS.Confirmatory.uuid, display: CONCEPTS.Confirmatory.display }
+  ],
+  'dnaPcrTestResults': [
+    { uuid: CONCEPTS.DNA_PCR_TEST_RESULT_POSITIVE.uuid, display: CONCEPTS.DNA_PCR_TEST_RESULT_POSITIVE.display },
+    { uuid: CONCEPTS.DNA_PCR_TEST_RESULT_NEGATIVE.uuid, display: CONCEPTS.DNA_PCR_TEST_RESULT_NEGATIVE.display },
+    { uuid: CONCEPTS.DNA_PCR_TEST_RESULT_NO_RESULT.uuid, display: CONCEPTS.DNA_PCR_TEST_RESULT_NO_RESULT.display },
+  ],
+  'ReasonForNoDnaPcrResult': [
+    { uuid: CONCEPTS.Contaminated.uuid, display: CONCEPTS.Contaminated.display },
+    { uuid: CONCEPTS.UnsatisfactorySample.uuid, display: CONCEPTS.UnsatisfactorySample.display },
+    { uuid: CONCEPTS.EquipmentFailure.uuid, display: CONCEPTS.EquipmentFailure.display },
+    { uuid: CONCEPTS.InappropriateSampleContainer.uuid, display: CONCEPTS.InappropriateSampleContainer.display },
+    { uuid: CONCEPTS.UnavailableSupplies.uuid, display: CONCEPTS.UnavailableSupplies.display },
+    { uuid: CONCEPTS.Other.uuid, display: CONCEPTS.Other.display },
   ],
   'labLocation': [
     { uuid: CONCEPTS.NenoGeneXpert.uuid, display: CONCEPTS.NenoGeneXpert.display },
