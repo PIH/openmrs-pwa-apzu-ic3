@@ -51,7 +51,7 @@ class ScreeningFilters extends React.Component {
   handleUndefinedValues = (value, defaultValue) => typeof value === 'undefined' ? defaultValue : value;
 
   handleSearch(field, value, location) {
-    const customMatchSorterConfigs = { threshold: 8 };
+    const customMatchSorterConfigs = { threshold: 3 };
     const { firstIdentifierSearchValue, secondIdentifierSearchValue, thirdIdentifierSearchValue } = this.state;
     let first, second, third, searchValue;
     const { searchType } = this.props;
