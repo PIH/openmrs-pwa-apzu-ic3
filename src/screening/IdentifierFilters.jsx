@@ -122,7 +122,6 @@ class ScreeningFilters extends React.Component {
                 className="identifier-filter-number-input"
                 onChange={this.handleTextInputSearch}
                 onKeyPress={this.props.onKeyPress}
-                type="number"
                 value={this.state.secondIdentifierSearchValue}
               />  
               <Glyphicon 
