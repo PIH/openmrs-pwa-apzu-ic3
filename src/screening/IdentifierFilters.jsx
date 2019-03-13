@@ -58,7 +58,7 @@ class ScreeningFilters extends React.Component {
 
     if (location === 'first') {
       first = this.handleUndefinedValues(value, '');
-      searchValue = `${first}-${secondIdentifierSearchValue}-${thirdIdentifierSearchValue}`;
+      searchValue = `${first}${secondIdentifierSearchValue && '-'}${secondIdentifierSearchValue}${thirdIdentifierSearchValue && '-'}${thirdIdentifierSearchValue}`;
       if (searchType === 'server') {
         this.props.handleSearchChange(formatIdentifier(searchValue));
       }
@@ -68,7 +68,7 @@ class ScreeningFilters extends React.Component {
       });
     } else if (location === 'second') {
       second = this.handleUndefinedValues(value, '');
-      searchValue = `${firstIdentifierSearchValue}-${second}-${thirdIdentifierSearchValue}`;
+      searchValue = `${firstIdentifierSearchValue}${firstIdentifierSearchValue && '-'}${second}${thirdIdentifierSearchValue && '-'}${thirdIdentifierSearchValue}`;
       if (searchType === 'server') {
         this.props.handleSearchChange(formatIdentifier(searchValue));
       }
@@ -79,7 +79,7 @@ class ScreeningFilters extends React.Component {
       
     } else if (location === 'third') {
       third = this.handleUndefinedValues(value, '');
-      searchValue = `${firstIdentifierSearchValue}-${secondIdentifierSearchValue}-${third}`;
+      searchValue = `${firstIdentifierSearchValue}${secondIdentifierSearchValue && '-'}${secondIdentifierSearchValue}${third && '-'}${third}`;
       if (searchType === 'server') {
         this.props.handleSearchChange(formatIdentifier(searchValue));
       }
@@ -90,7 +90,7 @@ class ScreeningFilters extends React.Component {
     }
 
     if ( searchType !== 'server') {
-      this.props.handleSearchChange(searchValue.replace(/-/g, ''));
+      this.props.handleSearchChange(searchValue);
     }
   }
 
@@ -101,7 +101,7 @@ class ScreeningFilters extends React.Component {
     if (searchType === 'server') {
       this.props.handleSearchChange(formatIdentifier(searchValue));
     } else {
-      this.props.handleSearchChange(searchValue.replace(/-/g, ''));
+      this.props.handleSearchChange(searchValue);
     }
   }
 
