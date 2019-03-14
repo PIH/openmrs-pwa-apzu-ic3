@@ -5,6 +5,7 @@ import { Obs, selectors, formUtil } from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from '../../constants';
 import ScreeningForm from "../ScreeningForm";
+import '../../../src/assets/css/ClinicianForm.css';
 
 class ClinicianForm extends React.Component {
   componentDidUpdate(prevProps) {
