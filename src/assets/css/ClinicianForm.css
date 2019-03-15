@@ -10,3 +10,7 @@
 .react-datepicker__navigation {
     border: 1em solid transparent !important;
 }
+
+.react-datepicker > button {
+    width: 120px;
+}
