@@ -89,6 +89,11 @@ $ /Applications/Chromium.app/Contents/MacOS/Chromium --disable-web-security --us
 ```
 * Navigate to http://localhost:3000
 
+## Deploying a new version to CI and promoting to gold
+* Upon each build new version will be deployed to bwenzi.pih-emr.org (though bwenzi polls for the latest every five minutes, so it might not immediately be avaiable)
+* Upon each build this new version is also deployed to the "unstable" directory of the PWA-REPO (http://bamboo.pih-emr.org/pwa-repo/), overriding any previous version deployed there, but tagged with the version and build number
+* Running the "promote to gold" task copies the version in the "unstable" directory into the "stable" directory
+
 ## CORS Configuration on TomCat7 Server
 
 A CORS filter was added to web.xml at /usr/local/~project-folder~/config/web.xml.
