@@ -35,7 +35,6 @@ class ScreeningFilters extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.secondIdentifierSearchValueClear = this.secondIdentifierSearchValueClear.bind(this);
     this.handleTextInputSearch = this.handleTextInputSearch.bind(this);
-    this.handleSearchClick = this.handleSearchClick.bind(this);
     const currentLocationPrefix = utils.getCurrentLocationPrefix(props.locations, props.currentLocation);
     const identifier = props.value.split(" ");
     const locationPrefix = currentLocationPrefix[0] ? currentLocationPrefix[0] : '';
@@ -52,26 +51,21 @@ class ScreeningFilters extends React.Component {
   handleUndefinedValues = (value, defaultValue) => typeof value === 'undefined' ? defaultValue : value;
 
   handleSearch(field, value, location) {
+    const customMatchSorterConfigs = { threshold: 3 };
     const { firstIdentifierSearchValue, secondIdentifierSearchValue, thirdIdentifierSearchValue } = this.state;
     let first, second, third, searchValue;
     const { searchType } = this.props;
 
     if (location === 'first') {
       first = this.handleUndefinedValues(value, '');
-      searchValue = `${first}-${secondIdentifierSearchValue}-${thirdIdentifierSearchValue}`;
-      if (searchType === 'server') {
-        this.props.handleSearchChange(formatIdentifier(searchValue));
-      }
+      searchValue = `${first}${secondIdentifierSearchValue && '-'}${secondIdentifierSearchValue}${thirdIdentifierSearchValue && '-'}${thirdIdentifierSearchValue}`;
       this.setState({
         firstIdentifierSearchValue : this.handleUndefinedValues(value, ''),
         searchValue,
       });
     } else if (location === 'second') {
       second = this.handleUndefinedValues(value, '');
-      searchValue = `${firstIdentifierSearchValue}-${second}-${thirdIdentifierSearchValue}`;
-      if (searchType === 'server') {
-        this.props.handleSearchChange(formatIdentifier(searchValue));
-      }
+      searchValue = `${firstIdentifierSearchValue}${firstIdentifierSearchValue && '-'}${second}${thirdIdentifierSearchValue && '-'}${thirdIdentifierSearchValue}`;
       this.setState({
         secondIdentifierSearchValue: this.handleUndefinedValues(value, ''),
         searchValue,
@@ -79,29 +73,17 @@ class ScreeningFilters extends React.Component {
       
     } else if (location === 'third') {
       third = this.handleUndefinedValues(value, '');
-      searchValue = `${firstIdentifierSearchValue}-${secondIdentifierSearchValue}-${third}`;
-      if (searchType === 'server') {
-        this.props.handleSearchChange(formatIdentifier(searchValue));
-      }
+      searchValue = `${firstIdentifierSearchValue}${secondIdentifierSearchValue && '-'}${secondIdentifierSearchValue}${third && '-'}${third}`;
       this.setState({
         thirdIdentifierSearchValue: this.handleUndefinedValues(value, ''),
         searchValue
       });
     }
-
-    if ( searchType !== 'server') {
-      this.props.handleSearchChange(searchValue.replace(/-/g, ''));
-    }
-  }
-
-  handleSearchClick(e) {
-    e.preventDefault();
-    const { searchType } = this.props;
-    const { searchValue } = this.state;
+    
     if (searchType === 'server') {
       this.props.handleSearchChange(formatIdentifier(searchValue));
     } else {
-      this.props.handleSearchChange(searchValue.replace(/-/g, ''));
+      this.props.handleSearchChange(searchValue, customMatchSorterConfigs);
     }
   }
 
@@ -140,7 +122,6 @@ class ScreeningFilters extends React.Component {
                 className="identifier-filter-number-input"
                 onChange={this.handleTextInputSearch}
                 onKeyPress={this.props.onKeyPress}
-                type="number"
                 value={this.state.secondIdentifierSearchValue}
               />  
               <Glyphicon 

@@ -44,7 +44,7 @@ class PatientAlert extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      dropdownState: 'closed'
+      dropdownState: 'open'
     };
     this.handleExpandAlert = this.handleExpandAlert.bind(this);
     this.handleCloseAlert = this.handleCloseAlert.bind(this);
