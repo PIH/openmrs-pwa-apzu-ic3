@@ -11,8 +11,8 @@ import { systemActions } from '@openmrs/react-components';
 import reduxStore from './store';
 import './index.css';
 import App from './App';
-import {unregister} from './registerServiceWorker';
-//import register from './registerServiceWorker';
+//import {unregister} from './registerServiceWorker';
+import register from './registerServiceWorker';
 
 
 const onUpdateSW = () => {
@@ -21,5 +21,5 @@ const onUpdateSW = () => {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
-//register(onUpdateSW);
-unregister();
+register(onUpdateSW);
+//unregister();
