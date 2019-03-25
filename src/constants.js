@@ -271,6 +271,12 @@ export const CONCEPTS = {
   'ViralLoadResult': {
     uuid: '654a7694-977f-11e1-8993-905e29aff6c1'
   },
+  'HIVViralLoadStatus': {
+    uuid: '163310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+  },
+  'DetectableLowerLimit': {
+    uuid: '53cb83ed-5d55-4b63-922f-d6b8fc67a5f8'
+  },
   'ViralLoadLowerThanDetectionLimit': {
     uuid: 'e97b36a2-16f5-11e6-b6ba-3e1d05defe78'
   },
