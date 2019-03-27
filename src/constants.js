@@ -284,11 +284,6 @@ export const CONCEPTS = {
   },
   'ViralLoadLowerThanDetectionLimit': {
     uuid: 'e97b36a2-16f5-11e6-b6ba-3e1d05defe78',
-    display: 'Yes'
-  },
-  'ViralLoadNotLowerThanDetectionLimit': {
-    uuid: '',
-    display: 'No'
   },
   'ViralLoadDetectablelowerLimit': {
     uuid: '53cb83ed-5d55-4b63-922f-d6b8fc67a5f8',

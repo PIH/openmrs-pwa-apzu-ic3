@@ -201,14 +201,14 @@ class VLForm extends React.PureComponent {
             <Row>
               <FormGroup controlId="formLabLocation">
                 <Col xs={3} >
-                    <Obs
-                      concept={CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid}
-                      conceptAnswers={[CONCEPTS.ViralLoadLowerThanDetectionLimit, CONCEPTS.ViralLoadNotLowerThanDetectionLimit]}
-                      path="vl-lower-than-detectable-limits"
-                    />
+                  <Obs
+                    concept={CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid}
+                    conceptAnswers={[CONCEPTS.True, CONCEPTS.False]}
+                    path="vl-lower-than-detectable-limits"
+                  />
                 </Col>
                 <span
-                  style={{ display: (typeof this.props.vlLowerthanDetectableLimitsFieldName !== 'undefined') && (this.props.vlLowerthanDetectableLimitsFieldName === CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid) ? 'block' : 'none' }}
+                  style={{ display: (typeof this.props.vlLowerthanDetectableLimitsFieldName !== 'undefined') && (this.props.vlLowerthanDetectableLimitsFieldName === CONCEPTS.True.uuid) ? 'block' : 'none' }}
                 >
                   <Col xs={2}>
                     <ControlLabel style={LargeSizedNoPaddingWithMarginTop}>
