@@ -19,6 +19,7 @@ const Layout = (props) => {
         logo={logo}
         navMenuPages={NAV_MENU_PAGES}
         patientHeaderBacklink="/screening"
+        patientLink="/screening"
         smallWidthLogo={potraitLogo}
         userMenuPages={USER_MENU_PAGES}
         {...props}

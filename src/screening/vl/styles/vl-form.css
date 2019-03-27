@@ -1,0 +1,15 @@
+.vl-form label#contaminated {
+  width: 1.4%;
+}
+
+.vl-form label#unsatisfactory_sample {
+  width: 1.4%;
+}
+
+.vl-form label#equipment_failure {
+  width: 1.1%;
+}
+
+.vl-form label#inappropriate_sample_container_used {
+  width: 1.3%;
+}
