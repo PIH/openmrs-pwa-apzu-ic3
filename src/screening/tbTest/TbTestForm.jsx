@@ -288,7 +288,7 @@ class TbTestForm extends React.PureComponent {
                   >
                     <Obs
                       concept={CONCEPTS.ReasonForNoResult.uuid}
-                      conceptAnswers={FORM_ANSWERS.ReasonForNoTBResultAnswers}
+                      conceptAnswers={FORM_ANSWERS.ReasonForNoResult}
                       path="tb-no-result-genexpert"
                     />
                   </Col>
@@ -312,7 +312,7 @@ class TbTestForm extends React.PureComponent {
                   >
                     <Obs
                       concept={CONCEPTS.ReasonForNoResult.uuid}
-                      conceptAnswers={FORM_ANSWERS.ReasonForNoTBResultAnswers}
+                      conceptAnswers={FORM_ANSWERS.ReasonForNoResult}
                       path="tb-no-result-smear"
                     />
                   </Col>

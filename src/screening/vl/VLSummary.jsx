@@ -8,7 +8,7 @@ const VLSummary = props => {
       <ObsHistory
         concepts={
           [
-            CONCEPTS.ViralLoadResult,
+            CONCEPTS.ViralLoad,
             CONCEPTS.ViralLoadLowerThanDetectionLimit,
             CONCEPTS.Bled,
             CONCEPTS.ReasonForNoSample,

@@ -32,7 +32,7 @@ const ClinicianSummary = props => {
           CONCEPTS.MUAC,
           CONCEPTS.DiastolicBloodPressure,
           CONCEPTS.SystolicBloodPressure,
-          CONCEPTS.ViralLoadResult,
+          CONCEPTS.ViralLoad,
           CONCEPTS.ViralLoadLowerThanDetectionLimit,
           CONCEPTS.Bled,
           CONCEPTS.ReasonForNoSample,

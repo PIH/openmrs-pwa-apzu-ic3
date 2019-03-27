@@ -268,17 +268,30 @@ export const CONCEPTS = {
   'ViralLoadTestSet': {
     uuid: '83931c6d-0e5a-4302-b8ce-a31175b6475e'
   },
-  'ViralLoadResult': {
+  'ViralLoad': {
     uuid: '654a7694-977f-11e1-8993-905e29aff6c1'
+  },
+  'ViralLoadResultCompleted': {
+    uuid: '6558b0c4-977f-11e1-8993-905e29aff6c1',
+    display: 'Completed'
+  },
+  'ViralLoadResultUnableToProcess': {
+    uuid: '3cd75550-26fe-102b-80cb-0017a47871b2',
+    display: 'Unable to process'
   },
   'HIVViralLoadStatus': {
     uuid: '163310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
   },
-  'DetectableLowerLimit': {
-    uuid: '53cb83ed-5d55-4b63-922f-d6b8fc67a5f8'
-  },
   'ViralLoadLowerThanDetectionLimit': {
-    uuid: 'e97b36a2-16f5-11e6-b6ba-3e1d05defe78'
+    uuid: 'e97b36a2-16f5-11e6-b6ba-3e1d05defe78',
+    display: 'Yes'
+  },
+  'ViralLoadNotLowerThanDetectionLimit': {
+    uuid: '',
+    display: 'No'
+  },
+  'ViralLoadDetectablelowerLimit': {
+    uuid: '53cb83ed-5d55-4b63-922f-d6b8fc67a5f8',
   },
   'Bled': {
     uuid: 'f792f2f9-9c24-4d6e-98fd-caffa8f2383f',
@@ -622,7 +635,7 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.NegativeRifampinResistance.uuid, display: CONCEPTS.NegativeRifampinResistance.display },
     { uuid: CONCEPTS.IndeterminateRifampinResistance.uuid, display: CONCEPTS.IndeterminateRifampinResistance.display },
   ],
-  'ReasonForNoTBResultAnswers': [
+  'ReasonForNoResult': [
     { uuid: CONCEPTS.Contaminated.uuid, display: CONCEPTS.Contaminated.display },
     { uuid: CONCEPTS.UnsatisfactorySample.uuid, display: CONCEPTS.UnsatisfactorySample.display },
     { uuid: CONCEPTS.EquipmentFailure.uuid, display: CONCEPTS.EquipmentFailure.display },
@@ -654,6 +667,10 @@ export const FORM_ANSWERS = {
   'sampleQualityAnswers': [
     { uuid: CONCEPTS.satisfactorySampleQuality.uuid, display: CONCEPTS.satisfactorySampleQuality.display },
     { uuid: CONCEPTS.unsatisfactorySampleQuality.uuid, display: CONCEPTS.unsatisfactorySampleQuality.display },
+  ],
+  'ViralLoadResult' : [
+    { uuid: CONCEPTS.ViralLoadResultCompleted.uuid, display: CONCEPTS.ViralLoadResultCompleted.display },
+    { uuid: CONCEPTS.ViralLoadResultUnableToProcess.uuid, display: CONCEPTS.ViralLoadResultUnableToProcess.display },
   ],
   'trueFalse' : [
     { uuid: CONCEPTS.True.uuid, display: CONCEPTS.True.display },
