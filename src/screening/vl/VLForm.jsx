@@ -16,6 +16,7 @@ class VLForm extends React.PureComponent {
     const labLocationFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-lab-location'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.LabLocation.uuid]);
     const reasonForNoResultFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-reason-for-no-result'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ReasonForNoResult.uuid]);
     const vlNumericFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-numeric'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoad.uuid]);
+    const vlDetectableLowerLimitFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-detectable-lower-limit'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoadDetectablelowerLimit.uuid]);
 
     if (typeof this.props.bled !== 'undefined' && this.props.bled !== prevProps.bled) {
       if (this.props.bled === CONCEPTS.True.uuid) {
@@ -33,6 +34,12 @@ class VLForm extends React.PureComponent {
       }
       else {
         this.clearField(vlNumericFieldName);
+      }
+    }
+
+    if (typeof this.props.vlLowerthanDetectableLimits !== 'undefined' && this.props.vlLowerthanDetectableLimits !== prevProps.vlLowerthanDetectableLimits) {
+      if (this.props.vlLowerthanDetectableLimits === CONCEPTS.False.uuid) {
+        this.clearField(vlDetectableLowerLimitFieldName);
       }
     }
   }
@@ -203,12 +210,12 @@ class VLForm extends React.PureComponent {
                 <Col xs={3} >
                   <Obs
                     concept={CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid}
-                    conceptAnswers={[CONCEPTS.True, CONCEPTS.False]}
+                    conceptAnswers={FORM_ANSWERS.trueFalse}
                     path="vl-lower-than-detectable-limits"
                   />
                 </Col>
                 <span
-                  style={{ display: (typeof this.props.vlLowerthanDetectableLimitsFieldName !== 'undefined') && (this.props.vlLowerthanDetectableLimitsFieldName === CONCEPTS.True.uuid) ? 'block' : 'none' }}
+                  style={{ display: (typeof this.props.vlLowerthanDetectableLimits !== 'undefined') && (this.props.vlLowerthanDetectableLimits === CONCEPTS.True.uuid) ? 'block' : 'none' }}
                 >
                   <Col xs={2}>
                     <ControlLabel style={LargeSizedNoPaddingWithMarginTop}>
@@ -277,13 +284,12 @@ export default connect((state, props) => {
   const selector = formValueSelector(props.formInstanceId);
   const bled = selector(state, formUtil.obsFieldName(['vl-test-set', 'vl-bled'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.Bled.uuid]));
   const vlResultFieldName = selector(state, formUtil.obsFieldName(['vl-test-set', 'vl-result'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.HIVViralLoadStatus.uuid]));
-  const vlLowerthanDetectableLimitsFieldName = selector(state, formUtil.obsFieldName(['vl-test-set', 'vl-lower-than-detectable-limits'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid]));
-
+  const vlLowerthanDetectableLimits = selector(state, formUtil.obsFieldName(['vl-test-set', 'vl-lower-than-detectable-limits'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid]));
 
   return {
     bled,
     vlResultFieldName,
-    vlLowerthanDetectableLimitsFieldName,
+    vlLowerthanDetectableLimits,
     patient: selectors.getSelectedPatientFromStore(state)
   };
 })(VLForm);
