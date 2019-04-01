@@ -40,7 +40,7 @@ class DnaPcrForm extends React.PureComponent {
     const formContent = (
       <Grid>
         <Row>
-          <div className="eid-form-section-title">Sample Infromation</div>
+          <div className="eid-form-section-title">Sample Information</div>
         </Row>
         
         <Row>
@@ -115,7 +115,7 @@ class DnaPcrForm extends React.PureComponent {
         <span
           style={{ display: (typeof this.props.sampleCollected !== 'undefined') && (this.props.sampleCollected === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}>
           <Row>
-            <div className="eid-form-section-title">Result Infromation</div>
+            <div className="eid-form-section-title">Result Information</div>
           </Row>
 
           <Row>
