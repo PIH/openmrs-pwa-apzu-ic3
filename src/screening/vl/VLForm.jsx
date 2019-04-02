@@ -171,7 +171,6 @@ class VLForm extends React.PureComponent {
 
           <FormContext.Consumer>
             {formContext => {
-              console.log('---formContext', formContext);
               if (formContext.mode === 'edit') {
                 return (<Row>
                   <Button
