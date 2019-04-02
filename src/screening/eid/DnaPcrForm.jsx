@@ -126,8 +126,7 @@ class DnaPcrForm extends React.PureComponent {
             if (formContext.mode === 'edit') {
               return (<Button
                 active={isAddDnaPCRResults}
-                onClick={this.handleIsAddDnaPCRResults}
-              >Add VL Results</Button>); 
+              >Add DNA PCR Results</Button>); 
             }
           }}
         </FormContext.Consumer>
