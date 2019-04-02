@@ -57,11 +57,10 @@ class VLForm extends React.PureComponent {
   }
 
   render() {
-    const { vlNumericFieldName, vlDetectableLowerLimitFieldName, vlResultFieldName, vlLowerthanDetectableLimitsFieldName, vlResult, vlDetectableLowerLimit, vlLowerthanDetectableLimits } = this.props;
+    const { vlNumericFieldName, vlDetectableLowerLimitFieldName, vlResultFieldName, vlLowerthanDetectableLimitsFieldName, vlResult, vlDetectableLowerLimit, vlLowerthanDetectableLimits, reasonForTesting, labLocation } = this.props;
     const { isAddVLResults, isAddVLResultsClicked } = this.state;
 
-    if (isAddVLResultsClicked || (this.props.bled === CONCEPTS.True.uuid && typeof this.props.reasonForTesting !== 'undefined' && typeof this.props.labLocation !== 'undefined') ||
-      vlResult || vlDetectableLowerLimit || vlLowerthanDetectableLimits === CONCEPTS.True.uuid) {
+    if (isAddVLResultsClicked || (this.props.bled === CONCEPTS.True.uuid && reasonForTesting && labLocation) || vlResult || vlDetectableLowerLimit || vlLowerthanDetectableLimits === CONCEPTS.True.uuid) {
       this.setState({ isAddVLResults: true });
     } else {
       this.setState({ isAddVLResults: false });
