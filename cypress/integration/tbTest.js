@@ -105,6 +105,9 @@ describe('tbTest station', () => {
         cy.get('#neno_genexpert')
           .click();
 
+        cy.get('#AddTbTestResults')
+          .click();
+
         // Select "Satiisfactory" on Sample quality
         cy.get('#satisfactory')
           .click();
@@ -172,6 +175,9 @@ describe('tbTest station', () => {
 
         // Select "Lisungwi Genexpert" on Laboratory location
         cy.get('#lisungwi_genexpert')
+          .click();
+
+        cy.get('#AddTbTestResults')
           .click();
 
         // Select "Satisfactory" on Sample quality

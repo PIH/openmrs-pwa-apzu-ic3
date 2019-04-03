@@ -205,6 +205,7 @@ class TbTestForm extends React.PureComponent {
                   return (<Row>
                     <Button
                       active={isAddTbTestResultsActive}
+                      id='AddTbTestResults'
                       onClick={this.handleIsAddTbTestResults}
                     >Add TB test Results</Button>
                   </Row>); 
