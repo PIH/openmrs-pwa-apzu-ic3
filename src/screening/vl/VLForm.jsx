@@ -14,6 +14,7 @@ class VLForm extends React.PureComponent {
     this.state = {
       isAddVLResults: false,
       isAddVLResultsClicked: false,
+      isAddVLResultsActive: false,
     };
 
     this.handleAddVLResults = this.handleAddVLResults.bind(this);
@@ -67,16 +68,23 @@ class VLForm extends React.PureComponent {
     if (!this.state.isAddVLResultsClicked) {
       this.setState({ isAddVLResultsClicked: true });
     }
+    if (!this.state.isAddVLResultsActive) {
+      this.setState({ isAddVLResultsActive: true });
+    }
   }
 
   render() {
-    const { vlResult, vlLowerthanDetectableLimits, reasonForTesting, labLocation, bled } = this.props;
-    const { isAddVLResults, isAddVLResultsClicked } = this.state;
+    const { vlResult, vlLowerthanDetectableLimits, reasonForTesting, labLocation, bled, reasonForNoResult, vlDetectableLowerLimit, vlNumeric } = this.props;
+    const { isAddVLResults, isAddVLResultsClicked, isAddVLResultsActive } = this.state;
 
     if (bled.value === CONCEPTS.True.uuid && reasonForTesting.value && labLocation.value) {
       this.setState({ isAddVLResults: true });
     } else {
-      this.setState({ isAddVLResults: false, isAddVLResultsClicked: false });
+      this.setState({ isAddVLResults: false, isAddVLResultsClicked: false, isAddVLResultsActive: false });
+    }
+    
+    if (vlNumeric.value || vlDetectableLowerLimit.value || reasonForNoResult.value || vlLowerthanDetectableLimits.value || vlResult.value) {
+      this.setState({ isAddVLResultsActive: true });
     }
 
     const formContent = (
@@ -181,7 +189,7 @@ class VLForm extends React.PureComponent {
                 if (formContext.mode === 'edit') {
                   return (<Row>
                     <Button
-                      active={isAddVLResultsClicked}
+                      active={isAddVLResultsActive}
                       onClick={this.handleAddVLResults}
                     >Add VL Results</Button>
                   </Row>); 
@@ -191,7 +199,7 @@ class VLForm extends React.PureComponent {
             <br />
           </span>}
 
-          { isAddVLResultsClicked && <span>
+          { (isAddVLResultsClicked || isAddVLResultsActive) && <span>
             <span>
               <Row>
                 <Col>
