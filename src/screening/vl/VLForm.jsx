@@ -190,6 +190,7 @@ class VLForm extends React.PureComponent {
                   return (<Row>
                     <Button
                       active={isAddVLResultsActive}
+                      id='AddVLResults'
                       onClick={this.handleAddVLResults}
                     >Add VL Results</Button>
                   </Row>); 
