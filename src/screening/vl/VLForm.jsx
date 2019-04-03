@@ -9,9 +9,15 @@ import { noPaddingLeftAndRight, flexBaseline, noPaddingWithMarginTop, LargeSized
 import './styles/vl-form.css';
 
 class VLForm extends React.PureComponent {
-  state = {
-    isAddVLResults: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isAddVLResults: false,
+      isAddVLResultsClicked: false,
+    };
+
+    this.handleAddVLResults = this.handleAddVLResults.bind(this);
+  }
 
   componentDidUpdate(prevProps) {
     const { reasonNoSample, reasonForTesting, labLocation, reasonForNoResult, vlNumeric, vlDetectableLowerLimit, bled, vlResult, vlLowerthanDetectableLimits } = this.props;
@@ -33,10 +39,21 @@ class VLForm extends React.PureComponent {
         this.clearField(vlNumeric.fieldName);
       }
     }
-
+    
     if (typeof vlLowerthanDetectableLimits.value !== 'undefined' && vlLowerthanDetectableLimits.value !== prevProps.vlLowerthanDetectableLimits.value) {
       if (vlLowerthanDetectableLimits === CONCEPTS.False.uuid) {
         this.clearField(vlDetectableLowerLimit.fieldName);
+      }
+    }
+    
+    if ((typeof bled.value !== 'undefined' && bled.value !== prevProps.bled.value) || (typeof reasonForTesting.value !== 'undefined' && reasonForTesting.value !== prevProps.reasonForTesting.value) ||
+      (typeof labLocation.value !== 'undefined' && labLocation.value !== prevProps.labLocation.value)) {
+      if (bled.value !== CONCEPTS.True.uuid || !reasonForTesting.value || !labLocation.value) {
+        this.clearField(vlNumeric.fieldName);
+        this.clearField(vlDetectableLowerLimit.fieldName);
+        this.clearField(reasonForNoResult.fieldName);
+        this.clearField(vlLowerthanDetectableLimits.fieldName);
+        this.clearField(vlResult.fieldName);
       }
     }
   }
@@ -46,14 +63,20 @@ class VLForm extends React.PureComponent {
     this.props.dispatch(untouch(this.props.formInstanceId, field));
   }
 
+  handleAddVLResults() {
+    if (!this.state.isAddVLResultsClicked) {
+      this.setState({ isAddVLResultsClicked: true });
+    }
+  }
+
   render() {
     const { vlResult, vlLowerthanDetectableLimits, reasonForTesting, labLocation, bled } = this.props;
-    const { isAddVLResults } = this.state;
+    const { isAddVLResults, isAddVLResultsClicked } = this.state;
 
-    if (bled.value === CONCEPTS.True.uuid && reasonForTesting && labLocation) {
+    if (bled.value === CONCEPTS.True.uuid && reasonForTesting.value && labLocation.value) {
       this.setState({ isAddVLResults: true });
     } else {
-      this.setState({ isAddVLResults: false });
+      this.setState({ isAddVLResults: false, isAddVLResultsClicked: false });
     }
 
     const formContent = (
@@ -110,7 +133,6 @@ class VLForm extends React.PureComponent {
             </Row>
           </span>
 
-
           <span
             style={{ display: (typeof bled.value !== 'undefined') && (bled.value === CONCEPTS.True.uuid) ? 'block' : 'none' }}
           >
@@ -159,13 +181,17 @@ class VLForm extends React.PureComponent {
                 if (formContext.mode === 'edit') {
                   return (<Row>
                     <Button
-                      active={isAddVLResults}
+                      active={isAddVLResultsClicked}
+                      onClick={this.handleAddVLResults}
                     >Add VL Results</Button>
                   </Row>); 
                 }
               }}
             </FormContext.Consumer>
             <br />
+          </span>}
+
+          { isAddVLResultsClicked && <span>
             <span>
               <Row>
                 <Col>
