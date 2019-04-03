@@ -28,70 +28,72 @@ class TbTestForm extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
 
+    const { labLocation, sputumSampleQuality, testType, tbSmearResult, genexpertResult, tbRifampinResistance, tbNoResultGeneexpert, tbNoResultSmear, sputumReceived } = this.props;
+
     // this clears out form values when the "Sputum received" question is changed
     if (this.hasChanged('sputumReceived', this.props, prevProps)) {
 
-      if (this.props.sputumReceived.value === CONCEPTS.No.uuid) {
-        this.clearField(this.props.sputumLaboratoryLocation.fieldName);
-        this.clearField(this.props.sputumSampleQuality.fieldName);
-        this.clearField(this.props.testType.fieldName);
-        this.clearField(this.props.tbSmearResult.fieldName);
-        this.clearField(this.props.genexpertResult.fieldName);
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
-        this.clearField(this.props.tbNoResultSmear.fieldName);
+      if (sputumReceived.value === CONCEPTS.No.uuid) {
+        this.clearField(labLocation.fieldName);
+        this.clearField(sputumSampleQuality.fieldName);
+        this.clearField(testType.fieldName);
+        this.clearField(tbSmearResult.fieldName);
+        this.clearField(genexpertResult.fieldName);
+        this.clearField(tbRifampinResistance.fieldName);
+        this.clearField(tbNoResultGeneexpert.fieldName);
+        this.clearField(tbNoResultSmear.fieldName);
       }
     }
 
-    if (this.hasChanged('sputumLaboratoryLocation', this.props, prevProps)) {
-      this.clearField(this.props.sputumSampleQuality.fieldName);
-      this.clearField(this.props.testType.fieldName);
-      this.clearField(this.props.tbSmearResult.fieldName);
-      this.clearField(this.props.genexpertResult.fieldName);
-      this.clearField(this.props.tbRifampinResistance.fieldName);
-      this.clearField(this.props.tbNoResultGeneexpert.fieldName);
-      this.clearField(this.props.tbRifampinResistance.fieldName);
-      this.clearField(this.props.tbNoResultSmear.fieldName);
+    if (this.hasChanged('labLocation', this.props, prevProps)) {
+      this.clearField(sputumSampleQuality.fieldName);
+      this.clearField(testType.fieldName);
+      this.clearField(tbSmearResult.fieldName);
+      this.clearField(genexpertResult.fieldName);
+      this.clearField(tbRifampinResistance.fieldName);
+      this.clearField(tbNoResultGeneexpert.fieldName);
+      this.clearField(tbRifampinResistance.fieldName);
+      this.clearField(tbNoResultSmear.fieldName);
     }
 
     if (this.hasChanged('sputumSampleQuality', this.props, prevProps)) {
-      if (this.props.sputumSampleQuality.value === CONCEPTS.unsatisfactorySampleQuality.uuid) {
-        this.clearField(this.props.testType.fieldName);
-        this.clearField(this.props.tbSmearResult.fieldName);
-        this.clearField(this.props.genexpertResult.fieldName);
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultSmear.fieldName);
-      } else if (this.props.sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid) {
-        if (this.props.sputumLaboratoryLocation.value === CONCEPTS.LisungwiGeneXpert.uuid
-          || this.props.sputumLaboratoryLocation.value === CONCEPTS.NenoGeneXpert.uuid) {
-          this.setField(this.props.testType.fieldName, CONCEPTS.GeneXpert.uuid);
-        } else if (this.props.sputumLaboratoryLocation.value === CONCEPTS.microscopy.uuid) {
-          this.setField(this.props.testType.fieldName, CONCEPTS.Smear.uuid);
+      if (sputumSampleQuality.value === CONCEPTS.unsatisfactorySampleQuality.uuid) {
+        this.clearField(testType.fieldName);
+        this.clearField(tbSmearResult.fieldName);
+        this.clearField(genexpertResult.fieldName);
+        this.clearField(tbRifampinResistance.fieldName);
+        this.clearField(tbNoResultGeneexpert.fieldName);
+        this.clearField(tbRifampinResistance.fieldName);
+        this.clearField(tbNoResultSmear.fieldName);
+      } else if (sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid) {
+        if (labLocation.value === CONCEPTS.LisungwiGeneXpert.uuid
+          || labLocation.value === CONCEPTS.NenoGeneXpert.uuid) {
+          this.setField(testType.fieldName, CONCEPTS.GeneXpert.uuid);
+        } else if (labLocation.value === CONCEPTS.microscopy.uuid) {
+          this.setField(testType.fieldName, CONCEPTS.Smear.uuid);
         }
       }
     }
 
     if (this.hasChanged('testType', this.props, prevProps)) {
-      if (this.props.testType.value === CONCEPTS.GeneXpert.uuid) {
-        this.clearField(this.props.tbSmearResult.fieldName);
-        this.clearField(this.props.tbNoResultSmear.fieldName);
-      } else if (this.props.testType.value === CONCEPTS.Smear.uuid) {
-        this.clearField(this.props.genexpertResult.fieldName);
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
+      if (testType.value === CONCEPTS.GeneXpert.uuid) {
+        this.clearField(tbSmearResult.fieldName);
+        this.clearField(tbNoResultSmear.fieldName);
+      } else if (testType.value === CONCEPTS.Smear.uuid) {
+        this.clearField(genexpertResult.fieldName);
+        this.clearField(tbRifampinResistance.fieldName);
+        this.clearField(tbNoResultGeneexpert.fieldName);
       }
     }
 
     if (this.hasChanged('genexpertResult', this.props, prevProps)) {
-      if (this.props.genexpertResult.value === CONCEPTS.TBDetected) {
-        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
-      } else if (this.props.genexpertResult.value === CONCEPTS.TBUndetected.uuid) {
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
-      } else if (this.props.genexpertResult.value === CONCEPTS.ReasonForNoResult.uuid) {
-        this.clearField(this.props.tbRifampinResistance.fieldName);
+      if (genexpertResult.value === CONCEPTS.TBDetected) {
+        this.clearField(tbNoResultGeneexpert.fieldName);
+      } else if (genexpertResult.value === CONCEPTS.TBUndetected.uuid) {
+        this.clearField(tbRifampinResistance.fieldName);
+        this.clearField(tbNoResultGeneexpert.fieldName);
+      } else if (genexpertResult.value === CONCEPTS.ReasonForNoResult.uuid) {
+        this.clearField(tbRifampinResistance.fieldName);
       }
     }
 
@@ -99,22 +101,12 @@ class TbTestForm extends React.PureComponent {
 
   render() {
     const { isAddTbTestResults } = this.state;
-    const { sputumReceived, labLocation, sputumSampleQuality, testType, genexpertResult, tbSmearResult, sputumLaboratoryLocation, tbNoResultSmear, tbRifampinResistance, tbNoResultGeneexpert } = this.props;
+    const { sputumReceived, sputumSampleQuality, testType, genexpertResult, tbSmearResult, labLocation, formInstanceId } = this.props;
 
     if (sputumReceived.value === CONCEPTS.Yes.uuid && labLocation.value) {
       this.setState({ isAddTbTestResults: true });
     } else {
       this.setState({ isAddTbTestResults: false });
-      // this.clearField('jed');
-      // this.clearField(this.props.sputumSampleQuality.fieldName);
-      // this.clearField(testType.fieldName);
-      // this.clearField(genexpertResult);
-      // this.clearField(genexpertResult.fieldName);
-      // this.clearField(tbSmearResult.fieldName);
-      // this.clearField(sputumLaboratoryLocation.fieldName);
-      // this.clearField(tbNoResultSmear.fieldName);
-      // this.clearField(tbRifampinResistance.fieldName);
-      // this.clearField(tbNoResultGeneexpert.fieldName);
     }
 
     const formContent = (
@@ -152,7 +144,7 @@ class TbTestForm extends React.PureComponent {
 
           <span
             style={{
-              display: (this.props.sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none'
+              display: (sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none'
             }}
           >
             <Row>
@@ -175,22 +167,21 @@ class TbTestForm extends React.PureComponent {
 
           <br />
 
-          <FormContext.Consumer>
-            {formContext => {
-              if (formContext.mode === 'edit') {
-                return (<Row>
-                  <Button
-                    active={isAddTbTestResults}
-                  >Add TB test Results</Button>
-                </Row>); 
-              }
-            }}
-          </FormContext.Consumer>
-          <br />
-
           {isAddTbTestResults && <span>
+            <FormContext.Consumer>
+              {formContext => {
+                if (formContext.mode === 'edit') {
+                  return (<Row>
+                    <Button
+                      active={isAddTbTestResults}
+                    >Add TB test Results</Button>
+                  </Row>); 
+                }
+              }}
+            </FormContext.Consumer>
+            <br />
             <span
-              style={{ display: (typeof this.props.sputumLaboratoryLocation.value !== 'undefined') && (this.props.sputumLaboratoryLocation.value) ? 'block' : 'none' }}
+              style={{ display: (typeof labLocation.value !== 'undefined') && (labLocation.value) ? 'block' : 'none' }}
             >
               <Row>
                 <Col>
@@ -201,7 +192,7 @@ class TbTestForm extends React.PureComponent {
             <br />
 
             <span
-              style={{ display: (typeof this.props.sputumLaboratoryLocation.value !== 'undefined') && (this.props.sputumLaboratoryLocation.value) ? 'block' : 'none' }}
+              style={{ display: (typeof labLocation.value !== 'undefined') && (labLocation.value) ? 'block' : 'none' }}
             >
               <Row>
                 <Col componentClass={ControlLabel}>
@@ -222,8 +213,8 @@ class TbTestForm extends React.PureComponent {
             </span>
 
             <span
-              style={{ display: ((this.props.sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid
-                && this.props.sputumReceived.value === CONCEPTS.Yes.uuid)) ? 'block' : 'none' }}
+              style={{ display: ((sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid
+                && sputumReceived.value === CONCEPTS.Yes.uuid)) ? 'block' : 'none' }}
             >
               <Row>
                 <Col
@@ -245,7 +236,7 @@ class TbTestForm extends React.PureComponent {
               </Row>
 
               <span
-                style={{ display: (typeof this.props.testType.value !== 'undefined') && (this.props.testType.value === CONCEPTS.GeneXpert.uuid) ? 'block' : 'none' }}
+                style={{ display: (typeof testType.value !== 'undefined') && (testType.value === CONCEPTS.GeneXpert.uuid) ? 'block' : 'none' }}
               >
                 <Row>
                   <Col componentClass={ControlLabel}>
@@ -266,7 +257,7 @@ class TbTestForm extends React.PureComponent {
               </span>
 
               <span
-                style={{ display: (typeof this.props.testType.value !== 'undefined') && (this.props.testType.value === CONCEPTS.Smear.uuid) ? 'block' : 'none' }}
+                style={{ display: (typeof testType.value !== 'undefined') && (testType.value === CONCEPTS.Smear.uuid) ? 'block' : 'none' }}
               >
                 <Row>
                   <Col componentClass={ControlLabel}>
@@ -287,7 +278,7 @@ class TbTestForm extends React.PureComponent {
               </span>
 
               <span
-                style={{ display: (typeof this.props.genexpertResult.value !== 'undefined') && (this.props.genexpertResult.value === CONCEPTS.TBDetected.uuid) ? 'block' : 'none' }}
+                style={{ display: (typeof genexpertResult.value !== 'undefined') && (genexpertResult.value === CONCEPTS.TBDetected.uuid) ? 'block' : 'none' }}
               >
                 <Row>
                   <Col componentClass={ControlLabel}>
@@ -308,7 +299,7 @@ class TbTestForm extends React.PureComponent {
               </span>
 
               <span
-                style={{ display: (typeof this.props.genexpertResult.value !== 'undefined') && (this.props.genexpertResult.value === CONCEPTS.ReasonForNoResult.uuid) ? 'block' : 'none' }}
+                style={{ display: (typeof genexpertResult.value !== 'undefined') && (genexpertResult.value === CONCEPTS.ReasonForNoResult.uuid) ? 'block' : 'none' }}
               >
                 <Row>
                   <Col componentClass={ControlLabel}>
@@ -332,7 +323,7 @@ class TbTestForm extends React.PureComponent {
               </span>
 
               <span
-                style={{ display: (typeof this.props.tbSmearResult.value !== 'undefined') && (this.props.tbSmearResult.value === CONCEPTS.TBSmearResult.NoResult.uuid) ? 'block' : 'none' }}
+                style={{ display: (typeof tbSmearResult.value !== 'undefined') && (tbSmearResult.value === CONCEPTS.TBSmearResult.NoResult.uuid) ? 'block' : 'none' }}
               >
                 <Row>
                   <Col componentClass={ControlLabel}>
@@ -367,7 +358,7 @@ class TbTestForm extends React.PureComponent {
         encounterType={ENCOUNTER_TYPES.TBTestResults}
         formContent={formContent}
         formId="tb-test-type-form"
-        formInstanceId={this.props.formInstanceId}
+        formInstanceId={formInstanceId}
         toastMessage="TB TEST RESULT RECORDED"
       />
     );
@@ -386,7 +377,6 @@ export default connect((state, props) => {
   const genexpertResultField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-genexpert-result'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.GeneXpert]);
   const tbNoResultGeneexpertField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-no-result-genexpert'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoResult]);
   const tbSmearResultField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-smear-result'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.Smear]);
-  const sputumLaboratoryLocationField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-sputum-laboratory-location'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.LabLocation]);
   const tbNoResultSmearField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-no-result-smear'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoResult]);
   const tbRifampinResistanceField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-rifampin-resistance'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.RifampinResistance]);
 
@@ -414,10 +404,6 @@ export default connect((state, props) => {
     tbSmearResult: {
       fieldName: tbSmearResultField,
       value: selector(state, tbSmearResultField)
-    },
-    sputumLaboratoryLocation: {
-      fieldName: sputumLaboratoryLocationField,
-      value: selector(state, sputumLaboratoryLocationField)
     },
     tbNoResultSmear: {
       fieldName: tbNoResultSmearField,
