@@ -546,7 +546,7 @@ export const CONCEPTS = {
     },
     'QualitativeTimePM': {
       uuid: '656f9cc6-977f-11e1-8993-905e29aff6c1',
-      display: 'In the evening'
+      display: 'In the afternoon'
     },
     'TransferFacility': {
       uuid: '65624b3e-977f-11e1-8993-905e29aff6c1',
