@@ -12,6 +12,7 @@ class DnaPcrForm extends React.PureComponent {
     this.state = {
       isAddDnaPCRResults: false,
       isAddDnaPCRResultsClicked: false,
+      isAddDnaPCRResultsActive: false,
     };
 
     this.handleIsAddDnaPCRResults = this.handleIsAddDnaPCRResults.bind(this);
@@ -39,9 +40,9 @@ class DnaPcrForm extends React.PureComponent {
       }
     }
 
-    if ((typeof testType.value !== 'undefined' && testType.value !== prevProps.testType.value) || (typeof sampleCollected.value !== 'undefined' && sampleCollected.value !== prevProps.sampleCollected.value) ||
+    if ((typeof testType.value !== 'undefined' && testType.value !== prevProps.testType.value) || (typeof reasonForTesting.value !== 'undefined' && reasonForTesting.value !== prevProps.reasonForTesting.value) ||
       (typeof labLocation.value !== 'undefined' && labLocation.value !== prevProps.labLocation.value)) {
-      if (testType.value !== CONCEPTS.True.uuid || !sampleCollected.value || !labLocation.value) {
+      if (testType.value !== CONCEPTS.True.uuid || !reasonForTesting.value || !labLocation.value) {
         this.clearField(reasonForNoTestResult.fieldName);
         this.clearField(dnaPcrTestResult.fieldName);
       }
@@ -52,16 +53,23 @@ class DnaPcrForm extends React.PureComponent {
     if (!this.state.isAddDnaPCRResultsClicked) {
       this.setState({ isAddDnaPCRResultsClicked: true });
     }
+    if (!this.state.isAddDnaPCRResultsActive) {
+      this.setState({ isAddDnaPCRResultsActive: true });
+    }
   }
 
   render() {
-    const { isAddDnaPCRResults, isAddDnaPCRResultsClicked } = this.state;
-    const { reasonForTesting, testType, labLocation, dnaPcrTestResult, sampleCollected } = this.props;
+    const { isAddDnaPCRResults, isAddDnaPCRResultsClicked, isAddDnaPCRResultsActive } = this.state;
+    const { reasonForTesting, testType, labLocation, dnaPcrTestResult, sampleCollected, reasonForNoTestResult } = this.props;
 
     if (testType.value === CONCEPTS.HIV_DNA_PCR_TEST.uuid && sampleCollected.value === CONCEPTS.Yes.uuid && reasonForTesting.value && labLocation.value) {
       this.setState({ isAddDnaPCRResults: true });
     } else {
-      this.setState({ isAddDnaPCRResults: false, isAddDnaPCRResultsClicked: false });
+      this.setState({ isAddDnaPCRResults: false, isAddDnaPCRResultsClicked: false, isAddDnaPCRResultsActive: false });
+    }
+    
+    if (reasonForNoTestResult.value || dnaPcrTestResult.value) {
+      this.setState({ isAddDnaPCRResultsActive: true });
     }
 
     const formContent = (
@@ -144,7 +152,7 @@ class DnaPcrForm extends React.PureComponent {
             {formContext => {
               if (formContext.mode === 'edit') {
                 return (<Button
-                  active={isAddDnaPCRResultsClicked}
+                  active={isAddDnaPCRResultsActive}
                   onClick={this.handleIsAddDnaPCRResults}
                 >Add DNA PCR Results</Button>); 
               }
@@ -154,7 +162,7 @@ class DnaPcrForm extends React.PureComponent {
           <br />
         </span>}
 
-        { isAddDnaPCRResultsClicked && <span>
+        { (isAddDnaPCRResultsClicked || isAddDnaPCRResultsActive) && <span>
           <span
             style={{ display: (typeof sampleCollected.value !== 'undefined') && (sampleCollected.value === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}>
             <Row>

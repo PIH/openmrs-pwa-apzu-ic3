@@ -13,6 +13,7 @@ class TbTestForm extends React.PureComponent {
     this.state = {
       isAddTbTestResults: false,
       isAddTbTestResultsClicked: false,
+      isAddTbTestResultsActive: false,
     };
 
     this.handleIsAddTbTestResults = this.handleIsAddTbTestResults.bind(this);
@@ -105,7 +106,6 @@ class TbTestForm extends React.PureComponent {
 
     if ((typeof sputumReceived.value !== 'undefined' && sputumReceived.value !== prevProps.sputumReceived.value) || (typeof labLocation.value !== 'undefined' && labLocation.value !== prevProps.labLocation.value)) {
       if (sputumReceived.value !== CONCEPTS.Yes.uuid || !labLocation.value) { 
-        console.log('------fff')
         this.clearField(sputumSampleQuality.fieldName);
         this.clearField(testType.fieldName);
         this.clearField(tbSmearResult.fieldName);
@@ -121,16 +121,23 @@ class TbTestForm extends React.PureComponent {
     if (!this.state.isAddTbTestResultsClicked) {
       this.setState({ isAddTbTestResultsClicked: true });
     }
+    if (!this.state.isAddTbTestResultsActive) {
+      this.setState({ isAddTbTestResultsActive: true });
+    }
   }
 
   render() {
-    const { isAddTbTestResults, isAddTbTestResultsClicked } = this.state;
-    const { sputumReceived, sputumSampleQuality, testType, genexpertResult, tbSmearResult, labLocation, formInstanceId } = this.props;
+    const { isAddTbTestResults, isAddTbTestResultsClicked, isAddTbTestResultsActive } = this.state;
+    const { sputumReceived, sputumSampleQuality, testType, genexpertResult, tbSmearResult, labLocation, formInstanceId, tbNoResultGeneexpert, tbNoResultSmear, tbRifampinResistance } = this.props;
 
     if (sputumReceived.value === CONCEPTS.Yes.uuid && labLocation.value) {
       this.setState({ isAddTbTestResults: true });
     } else {
-      this.setState({ isAddTbTestResults: false, isAddTbTestResultsClicked: false });
+      this.setState({ isAddTbTestResults: false, isAddTbTestResultsClicked: false, isAddTbTestResultsActive: false });
+    }
+
+    if (sputumSampleQuality.value || testType.value || genexpertResult.value|| tbNoResultGeneexpert.value || tbSmearResult.value || tbNoResultSmear.value || tbRifampinResistance.value) {
+      this.setState({ isAddTbTestResultsActive: true });
     }
 
     const formContent = (
@@ -197,7 +204,7 @@ class TbTestForm extends React.PureComponent {
                 if (formContext.mode === 'edit') {
                   return (<Row>
                     <Button
-                      active={isAddTbTestResultsClicked}
+                      active={isAddTbTestResultsActive}
                       onClick={this.handleIsAddTbTestResults}
                     >Add TB test Results</Button>
                   </Row>); 
@@ -206,7 +213,7 @@ class TbTestForm extends React.PureComponent {
             </FormContext.Consumer>
             <br />
           </span>}
-          {isAddTbTestResultsClicked && <span>
+          { (isAddTbTestResultsClicked || isAddTbTestResultsActive) && <span>
             <span
               style={{ display: (typeof labLocation.value !== 'undefined') && (labLocation.value) ? 'block' : 'none' }}
             >
