@@ -13,36 +13,47 @@ class VLForm extends React.PureComponent {
     super(props);
     this.state = {
       isAddVLResults: false,
-      isAddVLResultsClicked: false
+      isAddVLResultsClicked: false,
     };
 
-    this.handleIsAddVLResults = this.handleIsAddVLResults.bind(this);
+    this.handleAddVLResults = this.handleAddVLResults.bind(this);
   }
 
   componentDidUpdate(prevProps) {
-    const { reasonNoSampleFieldName, reasonForTestingFieldName, labLocationFieldName, reasonForNoResultFieldName, vlNumericFieldName, vlDetectableLowerLimitFieldName } = this.state;
-    if (typeof this.props.bled !== 'undefined' && this.props.bled !== prevProps.bled) {
-      if (this.props.bled === CONCEPTS.True.uuid) {
-        this.clearField(reasonNoSampleFieldName);
+    const { reasonNoSample, reasonForTesting, labLocation, reasonForNoResult, vlNumeric, vlDetectableLowerLimit, bled, vlResult, vlLowerthanDetectableLimits } = this.props;
+    if (typeof bled.value !== 'undefined' && bled.value !== prevProps.bled.value) {
+      if (bled.value === CONCEPTS.True.uuid) {
+        this.clearField(reasonNoSample.fieldName);
       }
       else {
-        this.clearField(reasonForTestingFieldName);
-        this.clearField(labLocationFieldName);
+        this.clearField(reasonForTesting.fieldName);
+        this.clearField(labLocation.fieldName);
       }
     }
 
-    if (typeof this.props.vlResultFieldName !== 'undefined' && this.props.vlResultFieldName !== prevProps.vlResultFieldName) {
-      if (this.props.vlResultFieldName === CONCEPTS.ViralLoadResultCompleted.uuid) {
-        this.clearField(reasonForNoResultFieldName);
+    if (typeof vlResult.value !== 'undefined' && vlResult.value !== prevProps.vlResult.value) {
+      if (vlResult.value === CONCEPTS.ViralLoadResultCompleted.uuid) {
+        this.clearField(reasonForNoResult.fieldName);
       }
       else {
-        this.clearField(vlNumericFieldName);
+        this.clearField(vlNumeric.fieldName);
       }
     }
-
-    if (typeof this.props.vlLowerthanDetectableLimits !== 'undefined' && this.props.vlLowerthanDetectableLimits !== prevProps.vlLowerthanDetectableLimits) {
-      if (this.props.vlLowerthanDetectableLimits === CONCEPTS.False.uuid) {
-        this.clearField(vlDetectableLowerLimitFieldName);
+    
+    if (typeof vlLowerthanDetectableLimits.value !== 'undefined' && vlLowerthanDetectableLimits.value !== prevProps.vlLowerthanDetectableLimits.value) {
+      if (vlLowerthanDetectableLimits === CONCEPTS.False.uuid) {
+        this.clearField(vlDetectableLowerLimit.fieldName);
+      }
+    }
+    
+    if ((typeof bled.value !== 'undefined' && bled.value !== prevProps.bled.value) || (typeof reasonForTesting.value !== 'undefined' && reasonForTesting.value !== prevProps.reasonForTesting.value) ||
+      (typeof labLocation.value !== 'undefined' && labLocation.value !== prevProps.labLocation.value)) {
+      if (bled.value !== CONCEPTS.True.uuid || !reasonForTesting.value || !labLocation.value) {
+        this.clearField(vlNumeric.fieldName);
+        this.clearField(vlDetectableLowerLimit.fieldName);
+        this.clearField(reasonForNoResult.fieldName);
+        this.clearField(vlLowerthanDetectableLimits.fieldName);
+        this.clearField(vlResult.fieldName);
       }
     }
   }
@@ -52,22 +63,20 @@ class VLForm extends React.PureComponent {
     this.props.dispatch(untouch(this.props.formInstanceId, field));
   }
 
-  handleIsAddVLResults() {
-    this.setState({ isAddVLResultsClicked: !this.state.isAddVLResultsClicked });
+  handleAddVLResults() {
+    if (!this.state.isAddVLResultsClicked) {
+      this.setState({ isAddVLResultsClicked: true });
+    }
   }
 
   render() {
-    const { vlNumericFieldName, vlDetectableLowerLimitFieldName, vlResultFieldName, vlLowerthanDetectableLimitsFieldName, vlResult, vlDetectableLowerLimit, vlLowerthanDetectableLimits, reasonForTesting, labLocation } = this.props;
+    const { vlResult, vlLowerthanDetectableLimits, reasonForTesting, labLocation, bled } = this.props;
     const { isAddVLResults, isAddVLResultsClicked } = this.state;
 
-    if (isAddVLResultsClicked || (this.props.bled === CONCEPTS.True.uuid && reasonForTesting && labLocation) || vlResult || vlDetectableLowerLimit || vlLowerthanDetectableLimits === CONCEPTS.True.uuid) {
+    if (bled.value === CONCEPTS.True.uuid && reasonForTesting.value && labLocation.value) {
       this.setState({ isAddVLResults: true });
     } else {
-      this.setState({ isAddVLResults: false });
-      this.clearField(vlResultFieldName);
-      this.clearField(vlNumericFieldName);
-      this.clearField(vlDetectableLowerLimitFieldName);
-      this.clearField(vlLowerthanDetectableLimitsFieldName);
+      this.setState({ isAddVLResults: false, isAddVLResultsClicked: false });
     }
 
     const formContent = (
@@ -104,7 +113,7 @@ class VLForm extends React.PureComponent {
           </Row>
 
           <span
-            style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.False.uuid) ? 'block' : 'none' }}
+            style={{ display: (typeof bled.value !== 'undefined') && (bled.value === CONCEPTS.False.uuid) ? 'block' : 'none' }}
           >
             <Row>
               <Col componentClass={ControlLabel}>
@@ -124,9 +133,8 @@ class VLForm extends React.PureComponent {
             </Row>
           </span>
 
-
           <span
-            style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}
+            style={{ display: (typeof bled.value !== 'undefined') && (bled.value === CONCEPTS.True.uuid) ? 'block' : 'none' }}
           >
             <Row>
               <Col componentClass={ControlLabel}>
@@ -147,7 +155,7 @@ class VLForm extends React.PureComponent {
           </span>
 
           <span
-            style={{ display: (typeof this.props.bled !== 'undefined') && (this.props.bled === CONCEPTS.True.uuid) ? 'block' : 'none' }}
+            style={{ display: (typeof bled.value !== 'undefined') && (bled.value === CONCEPTS.True.uuid) ? 'block' : 'none' }}
           >
             <Row>
               <Col componentClass={ControlLabel}>
@@ -167,24 +175,23 @@ class VLForm extends React.PureComponent {
             </Row>
           </span>
 
-
-          <FormContext.Consumer>
-            {formContext => {
-              if (formContext.mode === 'edit') {
-                return (<Row>
-                  <Button
-                    active={isAddVLResults}
-                    onClick={this.handleIsAddVLResults}
-                  >Add VL Results</Button>
-                </Row>); 
-              }
-            }}
-          </FormContext.Consumer>
-          <br />
-
-
-
           { isAddVLResults && <span>
+            <FormContext.Consumer>
+              {formContext => {
+                if (formContext.mode === 'edit') {
+                  return (<Row>
+                    <Button
+                      active={isAddVLResultsClicked}
+                      onClick={this.handleAddVLResults}
+                    >Add VL Results</Button>
+                  </Row>); 
+                }
+              }}
+            </FormContext.Consumer>
+            <br />
+          </span>}
+
+          { isAddVLResultsClicked && <span>
             <span>
               <Row>
                 <Col>
@@ -212,7 +219,7 @@ class VLForm extends React.PureComponent {
             </Row>
 
             <span
-              style={{ display: (typeof this.props.vlResult !== 'undefined') && (this.props.vlResult === CONCEPTS.ViralLoadResultCompleted.uuid) ? 'block' : 'none' }}
+              style={{ display: (typeof vlResult.value !== 'undefined') && (vlResult.value === CONCEPTS.ViralLoadResultCompleted.uuid) ? 'block' : 'none' }}
             >
               <Row>
                 <div>
@@ -239,7 +246,7 @@ class VLForm extends React.PureComponent {
             </span>
 
             <span
-              style={{ display: (typeof this.props.vlResult !== 'undefined') && (this.props.vlResult === CONCEPTS.ViralLoadResultCompleted.uuid) ? 'block' : 'none' }}
+              style={{ display: (typeof vlResult.value !== 'undefined') && (vlResult.value === CONCEPTS.ViralLoadResultCompleted.uuid) ? 'block' : 'none' }}
             >
               <Row>
                 <Col componentClass={ControlLabel}>
@@ -256,7 +263,7 @@ class VLForm extends React.PureComponent {
                     />
                   </Col>
                   <span
-                    style={{ display: (typeof this.props.vlLowerthanDetectableLimits !== 'undefined') && (this.props.vlLowerthanDetectableLimits === CONCEPTS.True.uuid) ? 'block' : 'none' }}
+                    style={{ display: (typeof vlLowerthanDetectableLimits.value !== 'undefined') && (vlLowerthanDetectableLimits.value === CONCEPTS.True.uuid) ? 'block' : 'none' }}
                   >
                     <Col xs={2}>
                       <ControlLabel style={LargeSizedNoPaddingWithMarginTop}>
@@ -281,7 +288,7 @@ class VLForm extends React.PureComponent {
             </span>
 
             <span
-              style={{ display: (typeof this.props.vlResult !== 'undefined') && (this.props.vlResult === CONCEPTS.ViralLoadResultUnableToProcess.uuid) ? 'block' : 'none' }}
+              style={{ display: (typeof vlResult.value !== 'undefined') && (vlResult.value === CONCEPTS.ViralLoadResultUnableToProcess.uuid) ? 'block' : 'none' }}
             >
               <Row>
                 <Col componentClass={ControlLabel}>
@@ -317,19 +324,13 @@ class VLForm extends React.PureComponent {
         toastMessage="Viral Load Saved"
       />
     );
-
   }
 }
 
 
 export default connect((state, props) => {
   const selector = formValueSelector(props.formInstanceId);
-  const bled = selector(state, formUtil.obsFieldName(['vl-test-set', 'vl-bled'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.Bled.uuid]));
-  const vlResult = selector(state, formUtil.obsFieldName(['vl-test-set', 'vl-result'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.HIVViralLoadStatus.uuid]));
-  const reasonForTesting = selector(state, formUtil.obsFieldName(['vl-test-set', 'vl-reason-for-testing'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ReasonForTesting.uuid]));
-  const vlLowerthanDetectableLimits = selector(state, formUtil.obsFieldName(['vl-test-set', 'vl-lower-than-detectable-limits'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid]));
-  const vlDetectableLowerLimit  = selector(state, formUtil.obsFieldName(['vl-test-set', 'vl-detectable-lower-limit'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoadDetectablelowerLimit.uuid]));
-  const labLocation = selector(state, formUtil.obsFieldName(['vl-test-set', 'vl-lab-location'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.LabLocation.uuid]));
+  const bledFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-bled'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.Bled.uuid]);
   const reasonNoSampleFieldName  = formUtil.obsFieldName(['vl-test-set', 'vl-reason-no-sample'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ReasonForNoSample.uuid]);
   const reasonForTestingFieldName  = formUtil.obsFieldName(['vl-test-set', 'vl-reason-for-testing'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ReasonForTesting.uuid]);
   const labLocationFieldName  = formUtil.obsFieldName(['vl-test-set', 'vl-lab-location'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.LabLocation.uuid]);
@@ -340,20 +341,42 @@ export default connect((state, props) => {
   const vlResultFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-result'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.HIVViralLoadStatus.uuid]);
 
   return {
-    bled,
-    labLocation,
-    reasonForTesting,
-    vlResult,
-    vlDetectableLowerLimit,
-    vlResultFieldName,
-    vlLowerthanDetectableLimits,
-    reasonNoSampleFieldName,
-    reasonForTestingFieldName,
-    labLocationFieldName,
-    reasonForNoResultFieldName,
-    vlNumericFieldName,
-    vlDetectableLowerLimitFieldName,
-    vlLowerthanDetectableLimitsFieldName,
+    bled: {
+      fieldName: bledFieldName,
+      value: selector(state, bledFieldName)
+    },
+    vlResult: {
+      fieldName: vlResultFieldName,
+      value: selector(state, vlResultFieldName)
+    },
+    reasonNoSample: {
+      fieldName: reasonNoSampleFieldName,
+      value: selector(state, reasonNoSampleFieldName)
+    },
+    reasonForTesting: {
+      fieldName: reasonForTestingFieldName,
+      value: selector(state, reasonForTestingFieldName)
+    },
+    labLocation: {
+      fieldName: labLocationFieldName,
+      value: selector(state, labLocationFieldName)
+    },
+    reasonForNoResult: {
+      fieldName: reasonForNoResultFieldName,
+      value: selector(state, reasonForNoResultFieldName)
+    },
+    vlNumeric: {
+      fieldName: vlNumericFieldName,
+      value: selector(state, vlNumericFieldName)
+    },
+    vlDetectableLowerLimit: {
+      fieldName: vlDetectableLowerLimitFieldName,
+      value: selector(state, vlDetectableLowerLimitFieldName)
+    },
+    vlLowerthanDetectableLimits: {
+      fieldName: vlLowerthanDetectableLimitsFieldName,
+      value: selector(state, vlLowerthanDetectableLimitsFieldName)
+    },
     patient: selectors.getSelectedPatientFromStore(state)
   };
 })(VLForm);

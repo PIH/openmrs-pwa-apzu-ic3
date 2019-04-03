@@ -1,13 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formValueSelector, change, untouch } from 'redux-form';
-import { Obs, ObsGroup, formUtil, selectors } from '@openmrs/react-components';
-import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
+import { Obs, ObsGroup, formUtil, selectors, FormContext } from '@openmrs/react-components';
+import { Grid, Row, FormGroup, ControlLabel, Col, Button } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
 import "./styles/tb-test-result-form.css";
 
 class TbTestForm extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isAddTbTestResults: false,
+      isAddTbTestResultsClicked: false,
+    };
+
+    this.handleIsAddTbTestResults = this.handleIsAddTbTestResults.bind(this);
+  }
 
   clearField(field) {
     this.props.dispatch(change(this.props.formInstanceId, field, null));
@@ -25,76 +34,104 @@ class TbTestForm extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
 
+    const { labLocation, sputumSampleQuality, testType, tbSmearResult, genexpertResult, tbRifampinResistance, tbNoResultGeneexpert, tbNoResultSmear, sputumReceived } = this.props;
+
     // this clears out form values when the "Sputum received" question is changed
     if (this.hasChanged('sputumReceived', this.props, prevProps)) {
 
-      if (this.props.sputumReceived.value === CONCEPTS.No.uuid) {
-        this.clearField(this.props.sputumLaboratoryLocation.fieldName);
-        this.clearField(this.props.sputumSampleQuality.fieldName);
-        this.clearField(this.props.testType.fieldName);
-        this.clearField(this.props.tbSmearResult.fieldName);
-        this.clearField(this.props.genexpertResult.fieldName);
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
-        this.clearField(this.props.tbNoResultSmear.fieldName);
+      if (sputumReceived.value === CONCEPTS.No.uuid) {
+        this.clearField(labLocation.fieldName);
+        this.clearField(sputumSampleQuality.fieldName);
+        this.clearField(testType.fieldName);
+        this.clearField(tbSmearResult.fieldName);
+        this.clearField(genexpertResult.fieldName);
+        this.clearField(tbRifampinResistance.fieldName);
+        this.clearField(tbNoResultGeneexpert.fieldName);
+        this.clearField(tbNoResultSmear.fieldName);
       }
     }
 
-    if (this.hasChanged('sputumLaboratoryLocation', this.props, prevProps)) {
-      this.clearField(this.props.sputumSampleQuality.fieldName);
-      this.clearField(this.props.testType.fieldName);
-      this.clearField(this.props.tbSmearResult.fieldName);
-      this.clearField(this.props.genexpertResult.fieldName);
-      this.clearField(this.props.tbRifampinResistance.fieldName);
-      this.clearField(this.props.tbNoResultGeneexpert.fieldName);
-      this.clearField(this.props.tbRifampinResistance.fieldName);
-      this.clearField(this.props.tbNoResultSmear.fieldName);
+    if (this.hasChanged('labLocation', this.props, prevProps)) {
+      this.clearField(sputumSampleQuality.fieldName);
+      this.clearField(testType.fieldName);
+      this.clearField(tbSmearResult.fieldName);
+      this.clearField(genexpertResult.fieldName);
+      this.clearField(tbRifampinResistance.fieldName);
+      this.clearField(tbNoResultGeneexpert.fieldName);
+      this.clearField(tbRifampinResistance.fieldName);
+      this.clearField(tbNoResultSmear.fieldName);
     }
 
     if (this.hasChanged('sputumSampleQuality', this.props, prevProps)) {
-      if (this.props.sputumSampleQuality.value === CONCEPTS.unsatisfactorySampleQuality.uuid) {
-        this.clearField(this.props.testType.fieldName);
-        this.clearField(this.props.tbSmearResult.fieldName);
-        this.clearField(this.props.genexpertResult.fieldName);
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultSmear.fieldName);
-      } else if (this.props.sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid) {
-        if (this.props.sputumLaboratoryLocation.value === CONCEPTS.LisungwiGeneXpert.uuid
-          || this.props.sputumLaboratoryLocation.value === CONCEPTS.NenoGeneXpert.uuid) {
-          this.setField(this.props.testType.fieldName, CONCEPTS.GeneXpert.uuid);
-        } else if (this.props.sputumLaboratoryLocation.value === CONCEPTS.microscopy.uuid) {
-          this.setField(this.props.testType.fieldName, CONCEPTS.Smear.uuid);
+      if (sputumSampleQuality.value === CONCEPTS.unsatisfactorySampleQuality.uuid) {
+        this.clearField(testType.fieldName);
+        this.clearField(tbSmearResult.fieldName);
+        this.clearField(genexpertResult.fieldName);
+        this.clearField(tbRifampinResistance.fieldName);
+        this.clearField(tbNoResultGeneexpert.fieldName);
+        this.clearField(tbRifampinResistance.fieldName);
+        this.clearField(tbNoResultSmear.fieldName);
+      } else if (sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid) {
+        if (labLocation.value === CONCEPTS.LisungwiGeneXpert.uuid
+          || labLocation.value === CONCEPTS.NenoGeneXpert.uuid) {
+          this.setField(testType.fieldName, CONCEPTS.GeneXpert.uuid);
+        } else if (labLocation.value === CONCEPTS.microscopy.uuid) {
+          this.setField(testType.fieldName, CONCEPTS.Smear.uuid);
         }
       }
     }
 
     if (this.hasChanged('testType', this.props, prevProps)) {
-      if (this.props.testType.value === CONCEPTS.GeneXpert.uuid) {
-        this.clearField(this.props.tbSmearResult.fieldName);
-        this.clearField(this.props.tbNoResultSmear.fieldName);
-      } else if (this.props.testType.value === CONCEPTS.Smear.uuid) {
-        this.clearField(this.props.genexpertResult.fieldName);
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
+      if (testType.value === CONCEPTS.GeneXpert.uuid) {
+        this.clearField(tbSmearResult.fieldName);
+        this.clearField(tbNoResultSmear.fieldName);
+      } else if (testType.value === CONCEPTS.Smear.uuid) {
+        this.clearField(genexpertResult.fieldName);
+        this.clearField(tbRifampinResistance.fieldName);
+        this.clearField(tbNoResultGeneexpert.fieldName);
       }
     }
 
     if (this.hasChanged('genexpertResult', this.props, prevProps)) {
-      if (this.props.genexpertResult.value === CONCEPTS.TBDetected) {
-        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
-      } else if (this.props.genexpertResult.value === CONCEPTS.TBUndetected.uuid) {
-        this.clearField(this.props.tbRifampinResistance.fieldName);
-        this.clearField(this.props.tbNoResultGeneexpert.fieldName);
-      } else if (this.props.genexpertResult.value === CONCEPTS.ReasonForNoResult.uuid) {
-        this.clearField(this.props.tbRifampinResistance.fieldName);
+      if (genexpertResult.value === CONCEPTS.TBDetected) {
+        this.clearField(tbNoResultGeneexpert.fieldName);
+      } else if (genexpertResult.value === CONCEPTS.TBUndetected.uuid) {
+        this.clearField(tbRifampinResistance.fieldName);
+        this.clearField(tbNoResultGeneexpert.fieldName);
+      } else if (genexpertResult.value === CONCEPTS.ReasonForNoResult.uuid) {
+        this.clearField(tbRifampinResistance.fieldName);
       }
     }
 
+    if ((typeof sputumReceived.value !== 'undefined' && sputumReceived.value !== prevProps.sputumReceived.value) || (typeof labLocation.value !== 'undefined' && labLocation.value !== prevProps.labLocation.value)) {
+      if (sputumReceived.value !== CONCEPTS.Yes.uuid || !labLocation.value) { 
+        console.log('------fff')
+        this.clearField(sputumSampleQuality.fieldName);
+        this.clearField(testType.fieldName);
+        this.clearField(tbSmearResult.fieldName);
+        this.clearField(genexpertResult.fieldName);
+        this.clearField(tbRifampinResistance.fieldName);
+        this.clearField(tbNoResultGeneexpert.fieldName);
+        this.clearField(tbNoResultSmear.fieldName);
+      }
+    }
+  }
+
+  handleIsAddTbTestResults() {
+    if (!this.state.isAddTbTestResultsClicked) {
+      this.setState({ isAddTbTestResultsClicked: true });
+    }
   }
 
   render() {
+    const { isAddTbTestResults, isAddTbTestResultsClicked } = this.state;
+    const { sputumReceived, sputumSampleQuality, testType, genexpertResult, tbSmearResult, labLocation, formInstanceId } = this.props;
+
+    if (sputumReceived.value === CONCEPTS.Yes.uuid && labLocation.value) {
+      this.setState({ isAddTbTestResults: true });
+    } else {
+      this.setState({ isAddTbTestResults: false, isAddTbTestResultsClicked: false });
+    }
 
     const formContent = (
       <Grid>
@@ -131,7 +168,7 @@ class TbTestForm extends React.PureComponent {
 
           <span
             style={{
-              display: (this.props.sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none'
+              display: (sputumReceived.value === CONCEPTS.Yes.uuid) ? 'block' : 'none'
             }}
           >
             <Row>
@@ -154,172 +191,189 @@ class TbTestForm extends React.PureComponent {
 
           <br />
 
-          <span
-            style={{ display: (typeof this.props.sputumLaboratoryLocation.value !== 'undefined') && (this.props.sputumLaboratoryLocation.value) ? 'block' : 'none' }}
-          >
-            <Row>
-              <Col>
-                <h4 className="form-subheading" >Result Information</h4>
-              </Col>
-            </Row>
-          </span>
-          <br />
+          { isAddTbTestResults && <span>
+            <FormContext.Consumer>
+              {formContext => {
+                if (formContext.mode === 'edit') {
+                  return (<Row>
+                    <Button
+                      active={isAddTbTestResultsClicked}
+                      onClick={this.handleIsAddTbTestResults}
+                    >Add TB test Results</Button>
+                  </Row>); 
+                }
+              }}
+            </FormContext.Consumer>
+            <br />
+          </span>}
+          {isAddTbTestResultsClicked && <span>
+            <span
+              style={{ display: (typeof labLocation.value !== 'undefined') && (labLocation.value) ? 'block' : 'none' }}
+            >
+              <Row>
+                <Col>
+                  <h4 className="form-subheading" >Result Information</h4>
+                </Col>
+              </Row>
+            </span>
+            <br />
 
-          <span
-            style={{ display: (typeof this.props.sputumLaboratoryLocation.value !== 'undefined') && (this.props.sputumLaboratoryLocation.value) ? 'block' : 'none' }}
-          >
-            <Row>
-              <Col componentClass={ControlLabel}>
-              Sample Quality
-              </Col>
-            </Row>
-            <Row>
-              <FormGroup controlId="formReasonForNoSample">
+            <span
+              style={{ display: (typeof labLocation.value !== 'undefined') && (labLocation.value) ? 'block' : 'none' }}
+            >
+              <Row>
+                <Col componentClass={ControlLabel}>
+                Sample Quality
+                </Col>
+              </Row>
+              <Row>
+                <FormGroup controlId="formReasonForNoSample">
+                  <Col sm={12}>
+                    <Obs
+                      concept={CONCEPTS.SampleQuality.uuid}
+                      conceptAnswers={FORM_ANSWERS.sampleQualityAnswers}
+                      path="tb-sputum-sample-quality"
+                    />
+                  </Col>
+                </FormGroup>
+              </Row>
+            </span>
+
+            <span
+              style={{ display: ((sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid
+                && sputumReceived.value === CONCEPTS.Yes.uuid)) ? 'block' : 'none' }}
+            >
+              <Row>
+                <Col
+                  componentClass={ControlLabel}
+                >
+                TB Test Type
+                </Col>
+              </Row>
+              <Row>
                 <Col sm={12}>
-                  <Obs
-                    concept={CONCEPTS.SampleQuality.uuid}
-                    conceptAnswers={FORM_ANSWERS.sampleQualityAnswers}
-                    path="tb-sputum-sample-quality"
-                  />
+                  <FormGroup controlId="form-tb-test-type">
+                    <Obs
+                      concept={CONCEPTS.TBTestType.uuid}
+                      conceptAnswers={FORM_ANSWERS.tbTestTypeanswers}
+                      path="tb-test-type"
+                    />
+                  </FormGroup>
                 </Col>
-              </FormGroup>
-            </Row>
-          </span>
+              </Row>
 
-          <span
-            style={{ display: ((this.props.sputumSampleQuality.value === CONCEPTS.satisfactorySampleQuality.uuid
-              && this.props.sputumReceived.value === CONCEPTS.Yes.uuid)) ? 'block' : 'none' }}
-          >
-            <Row>
-              <Col
-                componentClass={ControlLabel}
+              <span
+                style={{ display: (typeof testType.value !== 'undefined') && (testType.value === CONCEPTS.GeneXpert.uuid) ? 'block' : 'none' }}
               >
-              TB Test Type
-              </Col>
-            </Row>
-            <Row>
-              <Col sm={12}>
-                <FormGroup controlId="form-tb-test-type">
-                  <Obs
-                    concept={CONCEPTS.TBTestType.uuid}
-                    conceptAnswers={FORM_ANSWERS.tbTestTypeanswers}
-                    path="tb-test-type"
-                  />
-                </FormGroup>
-              </Col>
-            </Row>
-
-            <span
-              style={{ display: (typeof this.props.testType.value !== 'undefined') && (this.props.testType.value === CONCEPTS.GeneXpert.uuid) ? 'block' : 'none' }}
-            >
-              <Row>
-                <Col componentClass={ControlLabel}>
-                GeneXpert Result
-                </Col>
-              </Row>
-              <Row>
-                <FormGroup controlId="formGeneXpert">
-                  <Col sm={12}>
-                    <Obs
-                      concept={CONCEPTS.GeneXpert.uuid}
-                      conceptAnswers={FORM_ANSWERS.GeneXpertAnswers}
-                      path="tb-genexpert-result"
-                    />
+                <Row>
+                  <Col componentClass={ControlLabel}>
+                  GeneXpert Result
                   </Col>
-                </FormGroup>
-              </Row>
-            </span>
+                </Row>
+                <Row>
+                  <FormGroup controlId="formGeneXpert">
+                    <Col sm={12}>
+                      <Obs
+                        concept={CONCEPTS.GeneXpert.uuid}
+                        conceptAnswers={FORM_ANSWERS.GeneXpertAnswers}
+                        path="tb-genexpert-result"
+                      />
+                    </Col>
+                  </FormGroup>
+                </Row>
+              </span>
 
-            <span
-              style={{ display: (typeof this.props.testType.value !== 'undefined') && (this.props.testType.value === CONCEPTS.Smear.uuid) ? 'block' : 'none' }}
-            >
-              <Row>
-                <Col componentClass={ControlLabel}>
-              TB Smear Result
-                </Col>
-              </Row>
-              <Row>
-                <FormGroup controlId="formReasonForTesting">
-                  <Col sm={12}>
-                    <Obs
-                      concept={CONCEPTS.Smear.uuid}
-                      conceptAnswers={FORM_ANSWERS.SmearAnswers}
-                      path="tb-smear-result"
-                    />
+              <span
+                style={{ display: (typeof testType.value !== 'undefined') && (testType.value === CONCEPTS.Smear.uuid) ? 'block' : 'none' }}
+              >
+                <Row>
+                  <Col componentClass={ControlLabel}>
+                TB Smear Result
                   </Col>
-                </FormGroup>
-              </Row>
-            </span>
+                </Row>
+                <Row>
+                  <FormGroup controlId="formReasonForTesting">
+                    <Col sm={12}>
+                      <Obs
+                        concept={CONCEPTS.Smear.uuid}
+                        conceptAnswers={FORM_ANSWERS.SmearAnswers}
+                        path="tb-smear-result"
+                      />
+                    </Col>
+                  </FormGroup>
+                </Row>
+              </span>
 
-            <span
-              style={{ display: (typeof this.props.genexpertResult.value !== 'undefined') && (this.props.genexpertResult.value === CONCEPTS.TBDetected.uuid) ? 'block' : 'none' }}
-            >
-              <Row>
-                <Col componentClass={ControlLabel}>
-                Rifampin Resistance
-                </Col>
-              </Row>
-              <Row>
-                <FormGroup controlId="formTBDetected">
-                  <Col sm={12}>
-                    <Obs
-                      concept={CONCEPTS.RifampinResistance.uuid}
-                      conceptAnswers={FORM_ANSWERS.RifampinResistanceAnswers}
-                      path="tb-rifampin-resistance"
-                    />
+              <span
+                style={{ display: (typeof genexpertResult.value !== 'undefined') && (genexpertResult.value === CONCEPTS.TBDetected.uuid) ? 'block' : 'none' }}
+              >
+                <Row>
+                  <Col componentClass={ControlLabel}>
+                  Rifampin Resistance
                   </Col>
-                </FormGroup>
-              </Row>
-            </span>
+                </Row>
+                <Row>
+                  <FormGroup controlId="formTBDetected">
+                    <Col sm={12}>
+                      <Obs
+                        concept={CONCEPTS.RifampinResistance.uuid}
+                        conceptAnswers={FORM_ANSWERS.RifampinResistanceAnswers}
+                        path="tb-rifampin-resistance"
+                      />
+                    </Col>
+                  </FormGroup>
+                </Row>
+              </span>
 
-            <span
-              style={{ display: (typeof this.props.genexpertResult.value !== 'undefined') && (this.props.genexpertResult.value === CONCEPTS.ReasonForNoResult.uuid) ? 'block' : 'none' }}
-            >
-              <Row>
-                <Col componentClass={ControlLabel}>
-                Reason for No Result
-                </Col>
-              </Row>
-              <Row>
-                <FormGroup controlId="formReasonForNoResult">
-                  <Col
-                    bsClass="no-reason-form"
-                    sm={12}
-                  >
-                    <Obs
-                      concept={CONCEPTS.ReasonForNoResult.uuid}
-                      conceptAnswers={FORM_ANSWERS.ReasonForNoResult}
-                      path="tb-no-result-genexpert"
-                    />
+              <span
+                style={{ display: (typeof genexpertResult.value !== 'undefined') && (genexpertResult.value === CONCEPTS.ReasonForNoResult.uuid) ? 'block' : 'none' }}
+              >
+                <Row>
+                  <Col componentClass={ControlLabel}>
+                  Reason for No Result
                   </Col>
-                </FormGroup>
-              </Row>
-            </span>
+                </Row>
+                <Row>
+                  <FormGroup controlId="formReasonForNoResult">
+                    <Col
+                      bsClass="no-reason-form"
+                      sm={12}
+                    >
+                      <Obs
+                        concept={CONCEPTS.ReasonForNoResult.uuid}
+                        conceptAnswers={FORM_ANSWERS.ReasonForNoResult}
+                        path="tb-no-result-genexpert"
+                      />
+                    </Col>
+                  </FormGroup>
+                </Row>
+              </span>
 
-            <span
-              style={{ display: (typeof this.props.tbSmearResult.value !== 'undefined') && (this.props.tbSmearResult.value === CONCEPTS.TBSmearResult.NoResult.uuid) ? 'block' : 'none' }}
-            >
-              <Row>
-                <Col componentClass={ControlLabel}>
-                Reason for No Result
-                </Col>
-              </Row>
-              <Row>
-                <FormGroup controlId="formReasonForNoResult">
-                  <Col
-                    bsClass="no-reason-form"
-                    sm={12}
-                  >
-                    <Obs
-                      concept={CONCEPTS.ReasonForNoResult.uuid}
-                      conceptAnswers={FORM_ANSWERS.ReasonForNoResult}
-                      path="tb-no-result-smear"
-                    />
+              <span
+                style={{ display: (typeof tbSmearResult.value !== 'undefined') && (tbSmearResult.value === CONCEPTS.TBSmearResult.NoResult.uuid) ? 'block' : 'none' }}
+              >
+                <Row>
+                  <Col componentClass={ControlLabel}>
+                  Reason for No Result
                   </Col>
-                </FormGroup>
-              </Row>
+                </Row>
+                <Row>
+                  <FormGroup controlId="formReasonForNoResult">
+                    <Col
+                      bsClass="no-reason-form"
+                      sm={12}
+                    >
+                      <Obs
+                        concept={CONCEPTS.ReasonForNoResult.uuid}
+                        conceptAnswers={FORM_ANSWERS.ReasonForNoResult}
+                        path="tb-no-result-smear"
+                      />
+                    </Col>
+                  </FormGroup>
+                </Row>
+              </span>
             </span>
-          </span>
+          </span>}
         </ObsGroup>
 
       </Grid>
@@ -331,7 +385,7 @@ class TbTestForm extends React.PureComponent {
         encounterType={ENCOUNTER_TYPES.TBTestResults}
         formContent={formContent}
         formId="tb-test-type-form"
-        formInstanceId={this.props.formInstanceId}
+        formInstanceId={formInstanceId}
         toastMessage="TB TEST RESULT RECORDED"
       />
     );
@@ -343,29 +397,24 @@ class TbTestForm extends React.PureComponent {
 export default connect((state, props) => {
   const selector = formValueSelector(props.formInstanceId);
 
-  const sputumReceivedField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-sputum-received'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.SampleCollected]);
-  const sputumSampleQualityField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-sputum-sample-quality'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.SampleQuality]);
-  const testTypeField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-test-type'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.TBTestType]);
-  const genexpertResultField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-genexpert-result'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.GeneXpert]);
-  const tbNoResultGeneexpertField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-no-result-genexpert'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoResult]);
-  const tbSmearResultField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-smear-result'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.Smear]);
-  const sputumLaboratoryLocationField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-sputum-laboratory-location'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.LabLocation]);
-  const tbNoResultSmearField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-no-result-smear'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoResult]);
-  const tbRifampinResistanceField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-rifampin-resistance'],
-    [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.RifampinResistance]);
+  const sputumReceivedField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-sputum-received'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.SampleCollected]);
+  const labLocationField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-sputum-laboratory-location'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.LabLocation]);
+  const sputumSampleQualityField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-sputum-sample-quality'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.SampleQuality]);
+  const testTypeField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-test-type'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.TBTestType]);
+  const genexpertResultField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-genexpert-result'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.GeneXpert]);
+  const tbNoResultGeneexpertField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-no-result-genexpert'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoResult]);
+  const tbSmearResultField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-smear-result'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.Smear]);
+  const tbNoResultSmearField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-no-result-smear'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoResult]);
+  const tbRifampinResistanceField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-rifampin-resistance'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.RifampinResistance]);
 
   return {
     sputumReceived: {
       fieldName: sputumReceivedField,
       value: selector(state, sputumReceivedField)
+    },
+    labLocation: {
+      fieldName: labLocationField,
+      value: selector(state, labLocationField)
     },
     sputumSampleQuality: {
       fieldName: sputumSampleQualityField,
@@ -382,10 +431,6 @@ export default connect((state, props) => {
     tbSmearResult: {
       fieldName: tbSmearResultField,
       value: selector(state, tbSmearResultField)
-    },
-    sputumLaboratoryLocation: {
-      fieldName: sputumLaboratoryLocationField,
-      value: selector(state, sputumLaboratoryLocationField)
     },
     tbNoResultSmear: {
       fieldName: tbNoResultSmearField,

@@ -7,9 +7,15 @@ import {CONCEPTS, FORM_ANSWERS} from "../../constants";
 import './styles/dna-pcr-form.css';
 
 class DnaPcrForm extends React.PureComponent {
-  state = {
-    isAddDnaPCRResults: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isAddDnaPCRResults: false,
+      isAddDnaPCRResultsClicked: false,
+    };
+
+    this.handleIsAddDnaPCRResults = this.handleIsAddDnaPCRResults.bind(this);
+  }
 
   clearField(field) {
     this.props.dispatch(change(this.props.formInstanceId, field, null));
@@ -18,32 +24,44 @@ class DnaPcrForm extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
 
-    const { reasonNoSampleFieldName, reasonForTestingFieldName, labLocationFieldName, reasonForNoTestResultFieldName, dnaPcrTestResultFieldName } = this.props;
+    const { sampleCollected, reasonNoSample, reasonForTesting, labLocation, reasonForNoTestResult, dnaPcrTestResult, testType } = this.props;
 
     // this clears out form values when the "bled" question is changed
-    if (typeof this.props.sampleCollected !== 'undefined' && this.props.sampleCollected !== prevProps.sampleCollected) {
-      if (this.props.sampleCollected === CONCEPTS.Yes.uuid) {
-        this.clearField(reasonNoSampleFieldName);
+    if (typeof sampleCollected.value !== 'undefined' && sampleCollected.value !== prevProps.sampleCollected.value) {
+      if (sampleCollected.value === CONCEPTS.Yes.uuid) {
+        this.clearField(reasonNoSample.fieldName);
       }
       else {
-        this.clearField(reasonForNoTestResultFieldName);
-        this.clearField(dnaPcrTestResultFieldName);
-        this.clearField(reasonForTestingFieldName);
-        this.clearField(labLocationFieldName);
+        this.clearField(reasonForNoTestResult.fieldName);
+        this.clearField(dnaPcrTestResult.fieldName);
+        this.clearField(reasonForTesting.fieldName);
+        this.clearField(labLocation.fieldName);
+      }
+    }
+
+    if ((typeof testType.value !== 'undefined' && testType.value !== prevProps.testType.value) || (typeof sampleCollected.value !== 'undefined' && sampleCollected.value !== prevProps.sampleCollected.value) ||
+      (typeof labLocation.value !== 'undefined' && labLocation.value !== prevProps.labLocation.value)) {
+      if (testType.value !== CONCEPTS.True.uuid || !sampleCollected.value || !labLocation.value) {
+        this.clearField(reasonForNoTestResult.fieldName);
+        this.clearField(dnaPcrTestResult.fieldName);
       }
     }
   }
 
-  render() {
-    const { isAddDnaPCRResults } = this.state;
-    const { reasonForTesting, testType, labLocation, dnaPcrTestResultFieldName, reasonForNoTestResultFieldName } = this.props;
+  handleIsAddDnaPCRResults() {
+    if (!this.state.isAddDnaPCRResultsClicked) {
+      this.setState({ isAddDnaPCRResultsClicked: true });
+    }
+  }
 
-    if (testType === CONCEPTS.HIV_DNA_PCR_TEST.uuid && reasonForTesting && labLocation) {
+  render() {
+    const { isAddDnaPCRResults, isAddDnaPCRResultsClicked } = this.state;
+    const { reasonForTesting, testType, labLocation, dnaPcrTestResult, sampleCollected } = this.props;
+
+    if (testType.value === CONCEPTS.HIV_DNA_PCR_TEST.uuid && sampleCollected.value === CONCEPTS.Yes.uuid && reasonForTesting.value && labLocation.value) {
       this.setState({ isAddDnaPCRResults: true });
     } else {
-      this.setState({ isAddDnaPCRResults: false });
-      this.clearField(reasonForNoTestResultFieldName);
-      this.clearField(dnaPcrTestResultFieldName);
+      this.setState({ isAddDnaPCRResults: false, isAddDnaPCRResultsClicked: false });
     }
 
     const formContent = (
@@ -68,7 +86,7 @@ class DnaPcrForm extends React.PureComponent {
         </Row>
 
         <span
-          style={{ display: (typeof this.props.sampleCollected !== 'undefined') && (this.props.sampleCollected === CONCEPTS.No.uuid) ? 'block' : 'none' }}>
+          style={{ display: (typeof sampleCollected.value !== 'undefined') && (sampleCollected.value === CONCEPTS.No.uuid) ? 'block' : 'none' }}>
           <Row>
             <FormGroup controlId="formReasonForNoSample">
               <Col componentClass={ControlLabel} sm={2}>
@@ -86,7 +104,7 @@ class DnaPcrForm extends React.PureComponent {
         </span>
 
         <span
-          style={{ display: (typeof this.props.sampleCollected !== 'undefined') && (this.props.sampleCollected === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}>
+          style={{ display: (sampleCollected.value !== 'undefined') && (sampleCollected.value === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}>
           <Row>
             <FormGroup controlId="formReasonForTesting">
               <Col componentClass={ControlLabel} sm={2}>
@@ -104,7 +122,7 @@ class DnaPcrForm extends React.PureComponent {
         </span>
 
         <span
-          style={{ display: (typeof this.props.sampleCollected !== 'undefined') && (this.props.sampleCollected === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}>
+          style={{ display: (sampleCollected.value !== 'undefined') && (sampleCollected.value === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}>
           <Row>
             <FormGroup controlId="formLabLocation">
               <Col componentClass={ControlLabel} sm={2}>
@@ -121,22 +139,24 @@ class DnaPcrForm extends React.PureComponent {
           </Row>
         </span>
 
-        <FormContext.Consumer>
-          {formContext => {
-            if (formContext.mode === 'edit') {
-              return (<Button
-                active={isAddDnaPCRResults}
-                onClick={this.handleIsAddDnaPCRResults}
-              >Add VL Results</Button>); 
-            }
-          }}
-        </FormContext.Consumer>
-        <br />
-        <br />
+        { isAddDnaPCRResults && <span>
+          <FormContext.Consumer>
+            {formContext => {
+              if (formContext.mode === 'edit') {
+                return (<Button
+                  active={isAddDnaPCRResultsClicked}
+                  onClick={this.handleIsAddDnaPCRResults}
+                >Add DNA PCR Results</Button>); 
+              }
+            }}
+          </FormContext.Consumer>
+          <br />
+          <br />
+        </span>}
 
-        {isAddDnaPCRResults && <span>
+        { isAddDnaPCRResultsClicked && <span>
           <span
-            style={{ display: (typeof this.props.sampleCollected !== 'undefined') && (this.props.sampleCollected === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}>
+            style={{ display: (typeof sampleCollected.value !== 'undefined') && (sampleCollected.value === CONCEPTS.Yes.uuid) ? 'block' : 'none' }}>
             <Row>
               <div className="eid-form-section-title">Result Information</div>
             </Row>
@@ -158,7 +178,7 @@ class DnaPcrForm extends React.PureComponent {
           </span>
 
           <span
-            style={{ display: (typeof this.props.dnaPcrTestResult !== 'undefined') && (this.props.dnaPcrTestResult === CONCEPTS.DNA_PCR_TEST_RESULT_NO_RESULT.uuid) ? 'block' : 'none' }}>
+            style={{ display: (typeof dnaPcrTestResult.value !== 'undefined') && (dnaPcrTestResult.value === CONCEPTS.DNA_PCR_TEST_RESULT_NO_RESULT.uuid) ? 'block' : 'none' }}>
             <Row>
               <FormGroup controlId="formDnaPcrResult">
                 <Col componentClass={ControlLabel} sm={2}>
@@ -194,26 +214,36 @@ export default connect((state, props) => {
   const labLocationFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-lab-location'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.LabLocation.uuid]);
   const reasonForNoTestResultFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-reason-for-no-result'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.ReasonForNoResult.uuid]);
   const dnaPcrTestResultFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-test-result'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.DNA_PCR_TEST_RESULT.uuid]);
-
-  const sampleCollected = selector(state, formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-bled'], [CONCEPTS.HIV_TEST_CONSTRUCT, CONCEPTS.SampleCollected]));
-  const dnaPcrTestResult = selector(state, formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-test-result'], [CONCEPTS.HIV_TEST_CONSTRUCT, CONCEPTS.DNA_PCR_TEST_RESULT]));
-  const testType = selector(state, formUtil.obsFieldName(['hiv-test-construct', 'hiv-test-type'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.HIV_TEST_TYPE.uuid]));
-  const reasonForTesting = selector(state, formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-reason-for-testing'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.ReasonForTesting.uuid]));
-  const labLocation = selector(state, formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-lab-location'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.LabLocation.uuid]));
-
+  const sampleCollectedFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-bled'], [CONCEPTS.HIV_TEST_CONSTRUCT, CONCEPTS.SampleCollected]);
+  const testTypeFieldName = formUtil.obsFieldName(['hiv-test-construct', 'hiv-test-type'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.HIV_TEST_TYPE.uuid]);
 
   return {
-    reasonNoSampleFieldName,
-    reasonForTestingFieldName,
-    labLocationFieldName,
-    reasonForNoTestResultFieldName,
-    dnaPcrTestResultFieldName,
-
-    sampleCollected,
-    dnaPcrTestResult,
-    reasonForTesting,
-    labLocation,
-    testType,
+    reasonNoSample: {
+      fieldName: reasonNoSampleFieldName,
+      value: selector(state, reasonNoSampleFieldName)
+    },
+    reasonForTesting: {
+      fieldName: reasonForTestingFieldName,
+      value: selector(state, reasonForTestingFieldName)
+    },
+    labLocation: {
+      fieldName: labLocationFieldName,
+      value: selector(state, labLocationFieldName)
+    },
+    reasonForNoTestResult: {
+      fieldName: reasonForNoTestResultFieldName,
+      value: selector(state, reasonForNoTestResultFieldName)
+    },
+    dnaPcrTestResult: {
+      fieldName: dnaPcrTestResultFieldName,
+      value: selector(state, dnaPcrTestResultFieldName)
+    },
+    sampleCollected: {
+      value: selector(state, sampleCollectedFieldName)
+    },
+    testType: {
+      value: selector(state, testTypeFieldName)
+    },
     patient: selectors.getSelectedPatientFromStore(state)
   };
 })(DnaPcrForm);
