@@ -5,7 +5,7 @@ import { Obs, formUtil, selectors, ObsGroup, FormContext } from '@openmrs/react-
 import { Grid, Row, FormGroup, ControlLabel, Col, Button } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
-import { noPaddingLeftAndRight, flexBaseline, noPaddingWithMarginTop, LargeSizedNoPaddingWithMarginTop } from "../../pwaStyles";
+import { noPaddingLeftAndRight, noPaddingWithMarginTop, LargeSizedNoPaddingWithMarginTop, boldLabel, flexBaselineNoBottomMargin, flexBaselineNoBottomMarginQuaterWidth } from "../../pwaStyles";
 import './styles/vl-form.css';
 
 class VLForm extends React.PureComponent {
@@ -21,7 +21,7 @@ class VLForm extends React.PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    const { reasonNoSample, reasonForTesting, labLocation, reasonForNoResult, vlNumeric, vlDetectableLowerLimit, bled, vlResult, vlLowerthanDetectableLimits } = this.props;
+    const { reasonNoSample, reasonForTesting, labLocation, reasonForNoResult, vlNumeric, vlDetectableLowerLimit, bled, vlResult, vlLowerthanDetectableLimits, vlLessThanLimit } = this.props;
     if (typeof bled.value !== 'undefined' && bled.value !== prevProps.bled.value) {
       if (bled.value === CONCEPTS.True.uuid) {
         this.clearField(reasonNoSample.fieldName);
@@ -41,12 +41,6 @@ class VLForm extends React.PureComponent {
       }
     }
     
-    if (typeof vlLowerthanDetectableLimits.value !== 'undefined' && vlLowerthanDetectableLimits.value !== prevProps.vlLowerthanDetectableLimits.value) {
-      if (vlLowerthanDetectableLimits === CONCEPTS.False.uuid) {
-        this.clearField(vlDetectableLowerLimit.fieldName);
-      }
-    }
-    
     if ((typeof bled.value !== 'undefined' && bled.value !== prevProps.bled.value) || (typeof reasonForTesting.value !== 'undefined' && reasonForTesting.value !== prevProps.reasonForTesting.value) ||
       (typeof labLocation.value !== 'undefined' && labLocation.value !== prevProps.labLocation.value)) {
       if (bled.value !== CONCEPTS.True.uuid || !reasonForTesting.value || !labLocation.value) {
@@ -55,7 +49,19 @@ class VLForm extends React.PureComponent {
         this.clearField(reasonForNoResult.fieldName);
         this.clearField(vlLowerthanDetectableLimits.fieldName);
         this.clearField(vlResult.fieldName);
+        this.clearField(vlLessThanLimit.fieldName);
       }
+    }
+
+    if (typeof vlNumeric.value !== 'undefined' && vlNumeric.value !== prevProps.vlNumeric.value) {
+      this.clearField(vlLowerthanDetectableLimits.fieldName);
+      // this.clearField(vlLessThanLimit.fieldName);
+    } else if (typeof vlLowerthanDetectableLimits.value !== 'undefined' && vlLowerthanDetectableLimits.value !== prevProps.vlLowerthanDetectableLimits.value) {
+      this.clearField(vlNumeric.fieldName);
+      this.clearField(vlLessThanLimit.fieldName);
+    } else if (typeof vlLessThanLimit.value !== 'undefined' && vlLessThanLimit.value !== prevProps.vlLessThanLimit.value) {
+      // this.clearField(vlNumeric.fieldName);
+      this.clearField(vlLowerthanDetectableLimits.fieldName);
     }
   }
 
@@ -230,13 +236,13 @@ class VLForm extends React.PureComponent {
             <span
               style={{ display: (typeof vlResult.value !== 'undefined') && (vlResult.value === CONCEPTS.ViralLoadResultCompleted.uuid) ? 'block' : 'none' }}
             >
-              <Row>
+              <Row style={{ marginBottom: '15px' }}>
                 <div>
                   <ControlLabel sm={6}>
                   Viral Load
                   </ControlLabel>
                 </div>
-                <FormGroup style={flexBaseline}>
+                <FormGroup style={flexBaselineNoBottomMargin}>
                   <Col sm={2}>
                     <Obs
                       concept={CONCEPTS.ViralLoad}
@@ -251,47 +257,38 @@ class VLForm extends React.PureComponent {
                   copies/ml
                   </ControlLabel>
                 </FormGroup>
-              </Row>
-            </span>
-
-            <span
-              style={{ display: (typeof vlResult.value !== 'undefined') && (vlResult.value === CONCEPTS.ViralLoadResultCompleted.uuid) ? 'block' : 'none' }}
-            >
-              <Row>
-                <Col componentClass={ControlLabel}>
-                Lower than Detectable Limit
-                </Col>
-              </Row>
-              <Row>
-                <FormGroup controlId="formLabLocation">
-                  <Col xs={3} >
+                <span>or</span>
+                <FormGroup style={flexBaselineNoBottomMargin}>
+                  <Col 
+                    sm={1}
+                    style={boldLabel}
+                  >
+                    &lt;
+                  </Col>
+                  <Col
+                    sm={2}
+                    style={{ paddingLeft: '0px' }}
+                  >
                     <Obs
-                      concept={CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid}
-                      conceptAnswers={FORM_ANSWERS.trueFalse}
-                      path="vl-lower-than-detectable-limits"
+                      concept={CONCEPTS.ViralLoadLessThanLimit}
+                      path="vl-less-than-limit"
+                      placeholder="value"
                     />
                   </Col>
-                  <span
-                    style={{ display: (typeof vlLowerthanDetectableLimits.value !== 'undefined') && (vlLowerthanDetectableLimits.value === CONCEPTS.True.uuid) ? 'block' : 'none' }}
+                  <ControlLabel
+                    sm={1}
+                    style={noPaddingLeftAndRight}
                   >
-                    <Col xs={2}>
-                      <ControlLabel style={LargeSizedNoPaddingWithMarginTop}>
-                      less than
-                      </ControlLabel>
-                    </Col>
-                    <Col xs={3}>
-                      <Obs
-                        concept={CONCEPTS.ViralLoadDetectablelowerLimit}
-                        path="vl-detectable-lower-limit"
-                        placeholder="value"
-                      />
-                    </Col>
-                    <Col xs={2}>
-                      <ControlLabel style={noPaddingWithMarginTop}>
-                      copies/ml
-                      </ControlLabel>
-                    </Col>
-                  </span>
+                  copies/ml Add VL here only if LESS THAN (&lt;) sign prior to the number
+                  </ControlLabel>
+                </FormGroup>
+                <span>or</span>
+                <FormGroup style={flexBaselineNoBottomMarginQuaterWidth}>
+                  <Obs
+                    concept={CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid}
+                    conceptAnswers={FORM_ANSWERS.ViralLoadLDL}
+                    path="vl-lower-than-detectable-limits"
+                  />
                 </FormGroup>
               </Row>
             </span>
@@ -348,6 +345,7 @@ export default connect((state, props) => {
   const vlDetectableLowerLimitFieldName  = formUtil.obsFieldName(['vl-test-set', 'vl-detectable-lower-limit'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoadDetectablelowerLimit.uuid]);
   const vlLowerthanDetectableLimitsFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-lower-than-detectable-limits'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid]);
   const vlResultFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-result'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.HIVViralLoadStatus.uuid]);
+  const vlLessThanLimitFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-less-than-limit'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoadLessThanLimit.uuid]);
 
   return {
     bled: {
@@ -385,6 +383,10 @@ export default connect((state, props) => {
     vlLowerthanDetectableLimits: {
       fieldName: vlLowerthanDetectableLimitsFieldName,
       value: selector(state, vlLowerthanDetectableLimitsFieldName)
+    },
+    vlLessThanLimit: {
+      fieldName: vlLessThanLimitFieldName,
+      value: selector(state, vlLessThanLimitFieldName)
     },
     patient: selectors.getSelectedPatientFromStore(state)
   };
