@@ -271,6 +271,9 @@ export const CONCEPTS = {
   'ViralLoad': {
     uuid: '654a7694-977f-11e1-8993-905e29aff6c1'
   },
+  'ViralLoadLessThanLimit': {
+    uuid: '69e87644-5562-11e9-8647-d663bd873d93'
+  },
   'ViralLoadResultCompleted': {
     uuid: '6558b0c4-977f-11e1-8993-905e29aff6c1',
     display: 'Completed'
@@ -283,7 +286,11 @@ export const CONCEPTS = {
     uuid: '163310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
   },
   'ViralLoadLowerThanDetectionLimit': {
-    uuid: 'e97b36a2-16f5-11e6-b6ba-3e1d05defe78',
+    uuid: 'e97b36a2-16f5-11e6-b6ba-3e1d05defe78'
+  },
+  'ViralLoadLowerThanDetectionLimitTrue': {
+    uuid: '655e2f90-977f-11e1-8993-905e29aff6c1',
+    display: '< LDL'
   },
   'ViralLoadDetectablelowerLimit': {
     uuid: '53cb83ed-5d55-4b63-922f-d6b8fc67a5f8',
@@ -666,6 +673,9 @@ export const FORM_ANSWERS = {
   'ViralLoadResult' : [
     { uuid: CONCEPTS.ViralLoadResultCompleted.uuid, display: CONCEPTS.ViralLoadResultCompleted.display },
     { uuid: CONCEPTS.ViralLoadResultUnableToProcess.uuid, display: CONCEPTS.ViralLoadResultUnableToProcess.display },
+  ],
+  'ViralLoadLDL' : [
+    { uuid: CONCEPTS.ViralLoadLowerThanDetectionLimitTrue.uuid, display: CONCEPTS.ViralLoadLowerThanDetectionLimitTrue.display },
   ],
   'trueFalse' : [
     { uuid: CONCEPTS.True.uuid, display: CONCEPTS.True.display },

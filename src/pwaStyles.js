@@ -2,6 +2,11 @@ export const leftTextAlign = {
   textAlign: "left"
 };
 
+export const boldLabel = {
+  fontSize: '20px',
+  fontWeight: 'bold'
+};
+
 export const centerTextAlign = {
   textAlign: "center"
 };
@@ -33,19 +38,6 @@ export const noPaddingLeftAndRight = {
   paddingRight: '0px'
 };
 
-export const noPaddingWithMarginTop = {
-  paddingLeft: '0px',
-  paddingRight: '0px',
-  marginTop: '10px'
-};
-
-export const LargeSizedNoPaddingWithMarginTop = {
-  paddingLeft: '0px',
-  paddingRight: '0px',
-  marginTop: '10px',
-  fontSize: '15px'
-};
-
 export const divContainer = {
   paddingLeft: '0px',
   paddingRight: '0px'
@@ -75,4 +67,18 @@ export const setFlex = {
 export const flexBaseline = {
   display: 'flex',
   alignItems: 'baseline',
+};
+
+export const flexBaselineNoBottomMargin = {
+  display: 'flex',
+  alignItems: 'baseline',
+  marginBottom: '0px'
+};
+
+export const flexBaselineNoBottomMarginQuaterWidth = {
+  display: 'flex',
+  alignItems: 'baseline',
+  marginBottom: '0px',
+  marginLeft: '0px',
+  width: '25%'
 };
