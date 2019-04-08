@@ -38,19 +38,6 @@ export const noPaddingLeftAndRight = {
   paddingRight: '0px'
 };
 
-export const noPaddingWithMarginTop = {
-  paddingLeft: '0px',
-  paddingRight: '0px',
-  marginTop: '10px'
-};
-
-export const LargeSizedNoPaddingWithMarginTop = {
-  paddingLeft: '0px',
-  paddingRight: '0px',
-  marginTop: '10px',
-  fontSize: '15px'
-};
-
 export const divContainer = {
   paddingLeft: '0px',
   paddingRight: '0px'

@@ -5,7 +5,7 @@ import { Obs, formUtil, selectors, ObsGroup, FormContext } from '@openmrs/react-
 import { Grid, Row, FormGroup, ControlLabel, Col, Button } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
-import { noPaddingLeftAndRight, noPaddingWithMarginTop, LargeSizedNoPaddingWithMarginTop, boldLabel, flexBaselineNoBottomMargin, flexBaselineNoBottomMarginQuaterWidth } from "../../pwaStyles";
+import { noPaddingLeftAndRight, boldLabel, flexBaselineNoBottomMargin, flexBaselineNoBottomMarginQuaterWidth } from "../../pwaStyles";
 import './styles/vl-form.css';
 
 class VLForm extends React.PureComponent {
@@ -53,14 +53,14 @@ class VLForm extends React.PureComponent {
       }
     }
 
-    if (typeof vlNumeric.value !== 'undefined' && vlNumeric.value !== prevProps.vlNumeric.value) {
+    if (vlNumeric.value && vlNumeric.value !== prevProps.vlNumeric.value) {
       this.clearField(vlLowerthanDetectableLimits.fieldName);
-      // this.clearField(vlLessThanLimit.fieldName);
-    } else if (typeof vlLowerthanDetectableLimits.value !== 'undefined' && vlLowerthanDetectableLimits.value !== prevProps.vlLowerthanDetectableLimits.value) {
+      this.clearField(vlLessThanLimit.fieldName);
+    } else if (vlLowerthanDetectableLimits.value && vlLowerthanDetectableLimits.value !== prevProps.vlLowerthanDetectableLimits.value) {
       this.clearField(vlNumeric.fieldName);
       this.clearField(vlLessThanLimit.fieldName);
-    } else if (typeof vlLessThanLimit.value !== 'undefined' && vlLessThanLimit.value !== prevProps.vlLessThanLimit.value) {
-      // this.clearField(vlNumeric.fieldName);
+    } else if (vlLessThanLimit.value && vlLessThanLimit.value !== prevProps.vlLessThanLimit.value) {
+      this.clearField(vlNumeric.fieldName);
       this.clearField(vlLowerthanDetectableLimits.fieldName);
     }
   }
@@ -279,7 +279,14 @@ class VLForm extends React.PureComponent {
                     sm={1}
                     style={noPaddingLeftAndRight}
                   >
-                  copies/ml Add VL here only if LESS THAN (&lt;) sign prior to the number
+                    copies/ml &nbsp;&nbsp;&nbsp;&nbsp;
+                    <FormContext.Consumer>
+                      {formContext => {
+                        if (formContext.mode === 'edit') {
+                          return (<span>Add VL here only if LESS THAN (&lt;) sign prior to the number</span>); 
+                        }
+                      }}
+                    </FormContext.Consumer>
                   </ControlLabel>
                 </FormGroup>
                 <span>or</span>
