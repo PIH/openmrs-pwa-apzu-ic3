@@ -31,8 +31,7 @@ class DnaPcrForm extends React.PureComponent {
     if (typeof sampleCollected.value !== 'undefined' && sampleCollected.value !== prevProps.sampleCollected.value) {
       if (sampleCollected.value === CONCEPTS.Yes.uuid) {
         this.clearField(reasonNoSample.fieldName);
-      }
-      else {
+      } else {
         this.clearField(reasonForNoTestResult.fieldName);
         this.clearField(dnaPcrTestResult.fieldName);
         this.clearField(reasonForTesting.fieldName);
@@ -42,7 +41,7 @@ class DnaPcrForm extends React.PureComponent {
 
     if ((typeof testType.value !== 'undefined' && testType.value !== prevProps.testType.value) || (typeof reasonForTesting.value !== 'undefined' && reasonForTesting.value !== prevProps.reasonForTesting.value) ||
       (typeof labLocation.value !== 'undefined' && labLocation.value !== prevProps.labLocation.value)) {
-      if (testType.value !== CONCEPTS.True.uuid || !reasonForTesting.value || !labLocation.value) {
+      if (testType.value !== CONCEPTS.HIV_DNA_PCR_TEST.uuid || !reasonForTesting.value || !labLocation.value) {
         this.clearField(reasonForNoTestResult.fieldName);
         this.clearField(dnaPcrTestResult.fieldName);
       }
