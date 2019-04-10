@@ -329,7 +329,7 @@ class VLForm extends React.PureComponent {
 
     return (
       <ScreeningForm
-        backLink="/screening/vl/queue"
+        backLink={this.props.backLink}
         encounterType={ENCOUNTER_TYPES.VLEncounterType}
         formContent={formContent}
         formId="vl-form"

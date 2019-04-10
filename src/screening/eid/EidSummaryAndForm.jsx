@@ -11,7 +11,6 @@ const EidSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
-      backLink="/screening/eid/queue"
       completed={eidFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.EidEncounterType}
       form={<EidForm />}

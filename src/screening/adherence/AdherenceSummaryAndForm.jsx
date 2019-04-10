@@ -12,7 +12,6 @@ const AdherenceSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
-      backLink="/screening/adherence/queue"
       completed={adherenceFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.AdherenceCounselingEncounterType}
       form={<AdherenceForm/>}

@@ -248,7 +248,7 @@ export class SummaryAndForm extends React.Component {
                 </div>
                 <div className="form-summary">
                   <Form
-                    backLink={this.props.backLink}
+                    backLink={this.gotoSummary}
                     form={this.props.form}
                     formInstanceId={this.formInstanceId}
                   />

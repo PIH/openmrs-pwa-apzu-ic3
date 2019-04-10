@@ -11,7 +11,6 @@ const TbSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
-      backLink="/screening/tb/queue"
       completed={tbFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.TBScreeningEncounterType}
       form={<TbForm />}
