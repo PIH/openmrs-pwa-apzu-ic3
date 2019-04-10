@@ -11,7 +11,6 @@ const HtcSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
-      backLink="/screening/htc/queue"
       completed={htcFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.HTCEncounterType}
       form={<HtcForm/>}

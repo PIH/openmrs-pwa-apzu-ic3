@@ -160,7 +160,7 @@ class EidForm extends React.PureComponent {
       <div className="dna-pcr-form">
         <ScreeningForm
           afterSubmitLink="/screening/eid/queue"
-          backLink="/screening/eid/queue"
+          backLink={this.props.backLink}
           encounterType={ ENCOUNTER_TYPES.EidEncounterType }
           defaultValues={ this.state.test_type !== null ? [{
             type: "obs",

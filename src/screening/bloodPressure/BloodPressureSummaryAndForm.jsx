@@ -11,7 +11,6 @@ const BloodPressureSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
-      backLink="/screening/bloodPressure/queue"
       completed={bloodPressureFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       form={<BloodPressureForm />}

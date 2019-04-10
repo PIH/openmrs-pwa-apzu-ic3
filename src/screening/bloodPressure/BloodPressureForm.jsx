@@ -54,7 +54,7 @@ let BloodPressureForm = props => {
 
   return (
     <ScreeningForm
-      backLink="/screening/bloodPressure/queue"
+      backLink={props.backLink}
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       formContent={formContent}
       toastMessage="Blood Pressure Saved"

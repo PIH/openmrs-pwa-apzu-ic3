@@ -43,7 +43,7 @@ let HtcForm = (props) => {
 
   return (
     <ScreeningForm
-      backLink={props.backLink ? props.backLink : "/screening/htc/queue"}
+      backLink={props.backLink}
       defaultValues={[{
         type: "obs",
         path: ["htc-test-construct", "htc-test-type"],

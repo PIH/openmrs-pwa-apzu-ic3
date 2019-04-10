@@ -11,7 +11,6 @@ const NutritionSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
-      backLink="/screening/nutrition/queue"
       completed={nutritionFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.NutritionEncounterType}
       form={<NutritionForm/>}

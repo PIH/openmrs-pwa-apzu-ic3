@@ -234,8 +234,7 @@ class TbForm extends React.Component {
 
     return (
       <ScreeningForm
-        // TODO Implement Queue for TB then update the link
-        backLink="/screening/tb/queue"
+        backLink={this.props.backLink}
         encounterType={ENCOUNTER_TYPES.TBScreeningEncounterType}
         formContent={formContent}
         formId="tb-form"

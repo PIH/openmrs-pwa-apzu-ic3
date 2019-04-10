@@ -11,7 +11,6 @@ const CheckInPage = (props) =>  {
   return (
     <div>
       <SummaryAndForm
-        backLink="/checkin/checkInTabs"
         afterSubmitLink="/checkin/checkInPage"
         completed={checkInFilters.completed(props.patient)}
         encounterType={ENCOUNTER_TYPES.CheckInEncounterType}

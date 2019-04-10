@@ -11,7 +11,6 @@ const TbTestSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
-      backLink="/screening"
       completed={tbTestResultFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.TBTestResults}
       form={<TbTestResultForm displayResultsSection={true}/>}

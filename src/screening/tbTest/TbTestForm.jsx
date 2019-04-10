@@ -389,7 +389,7 @@ class TbTestForm extends React.PureComponent {
 
     return (
       <ScreeningForm
-        backLink="/screening/tb-test/queue"
+        backLink={this.props.backLink}
         encounterType={ENCOUNTER_TYPES.TBTestResults}
         formContent={formContent}
         formId="tb-test-type-form"

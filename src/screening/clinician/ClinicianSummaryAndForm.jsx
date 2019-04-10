@@ -11,7 +11,6 @@ const ClinicianSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
-      backLink="/screening/clinician/form"
       completed={cliniicianFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.ClinicalPlan}
       form={<ClinicianForm/>}

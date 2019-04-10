@@ -198,7 +198,7 @@ class ClinicianForm extends React.Component {
 
     return (
       <ScreeningForm
-        backLink="/screening/clinician/queue"
+        backLink={this.props.backLink}
         encounterType={ENCOUNTER_TYPES.ClinicalPlan}
         formContent={formContent}
         formId="clinician-form"

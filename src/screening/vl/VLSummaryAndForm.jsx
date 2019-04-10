@@ -11,7 +11,6 @@ const VLSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
-      backLink="/screening/vl/tabs"
       completed={vlFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.VLEncounterType}
       form={<VLForm/>}
