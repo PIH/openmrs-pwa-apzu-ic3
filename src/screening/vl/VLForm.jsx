@@ -323,6 +323,14 @@ class VLForm extends React.PureComponent {
               </Row>
             </span>
           </span>}
+          {/* HACK: extra vertical spaces added to prevent the keyboard from overlappting the  '<LDL' button #IS-322 */}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </ObsGroup>
       </Grid>
     );
