@@ -72,12 +72,12 @@ describe('tbTest station', () => {
       .first()
       .click();
   
-    // Navigate to htc summary
+    // Navigate to tbTest summary
     cy.get('[href="#/screening/tb-test/form"]')
       .first()
       .click();
   
-    // Navigate to htc form
+    // Navigate to tbTest form
     cy.get('.summary-swiper-button')
       .click();
   
@@ -112,12 +112,12 @@ describe('tbTest station', () => {
         cy.get('#satisfactory')
           .click();
 
-        // Select "GeneXpert" on TB test type
-        cy.get('#genexpert')
+        // Select "smear" on TB test type
+        cy.get('#smear')
           .click();
 
-        // Select "Detected" on GeneXpert result
-        cy.get('#detected')
+        // Select "negative" on TB smear result
+        cy.get('#negative')
           .click();
 
         cy.wait(3000);
