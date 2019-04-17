@@ -64,7 +64,7 @@ describe('tbTest station', () => {
       });
   });
 
-  it.skip('should complete tb test result form with "satisfactory sample quality"', () => {
+  it('should complete tb test result form with "satisfactory sample quality"', () => {
     cy.searchPatientByID('MGT-0148-CCC');
   
     // Select the patient
