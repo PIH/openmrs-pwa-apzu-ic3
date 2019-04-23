@@ -431,9 +431,9 @@ export const CONCEPTS = {
       uuid: 'B9E98A62-8437-4807-9DF8-37F0046FD0E8',
       display: 'Linkage to care ID'
     },
-    'IC3_appointment': {
+    'Existing_patient': {
       uuid: '5004B09D-16D6-4439-9481-C9EAA2E939B5',
-      display: 'IC3 Appointment'
+      display: 'Existing Patient'
     }
   },
   'TBTestType': {
@@ -657,12 +657,8 @@ export const FORM_ANSWERS = {
       display: CONCEPTS.SOURCE_OF_REFERRAL.Outside_Neno_District.display
     },
     {
-      uuid: CONCEPTS.SOURCE_OF_REFERRAL.IC3_appointment.uuid,
-      display: CONCEPTS.SOURCE_OF_REFERRAL.IC3_appointment.display
-    },
-    {
-      uuid: CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.uuid,
-      display: CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.display
+      uuid: CONCEPTS.SOURCE_OF_REFERRAL.Existing_patient.uuid,
+      display: CONCEPTS.SOURCE_OF_REFERRAL.Existing_patient.display
     },
     { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Other.uuid, display: CONCEPTS.SOURCE_OF_REFERRAL.Other.display }
   ],

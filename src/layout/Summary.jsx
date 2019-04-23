@@ -35,7 +35,10 @@ const Summary = props => {
 };
 
 Summary.propTypes = {
-  backLink: PropTypes.string.isRequired,
+  backLink: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func
+  ]),
   formInstanceId: PropTypes.string.isRequired,
   requireVisitForForm: PropTypes.bool.isRequired,
   sliderButton: PropTypes.func,

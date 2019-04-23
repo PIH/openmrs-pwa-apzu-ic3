@@ -15,7 +15,10 @@ const Form = props => {
 };
 
 Form.propTypes = {
-  backLink: PropTypes.string.isRequired,
+  backLink: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func
+  ]),
   form: PropTypes.object.isRequired,
   formInstanceId: PropTypes.string.isRequired,
   sliderButton: PropTypes.func,
