@@ -42,7 +42,10 @@ class ScreeningForm extends React.Component {
 };
 
 ScreeningForm.propTypes = {
-  backLink: PropTypes.string,
+  backLink: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func
+  ]),
   encounterType: PropTypes.object.isRequired,
   formContent: PropTypes.object.isRequired,
   formId: PropTypes.string.isRequired,

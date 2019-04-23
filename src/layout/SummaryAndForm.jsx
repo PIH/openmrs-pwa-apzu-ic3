@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from "react-redux";
-import {Grid, Row, Glyphicon} from "react-bootstrap";
+import { connect } from "react-redux";
+import { Grid, Row, Glyphicon } from "react-bootstrap";
 import { actions as toastrActions } from 'react-redux-toastr';
 import Swiper from 'react-id-swiper';
 import { withRouter } from 'react-router-dom';
-import {submit, isInvalid, isSubmitting, isPristine } from 'redux-form';
+import { submit, isInvalid, isSubmitting, isPristine } from 'redux-form';
 import uuidv4 from 'uuid/v4';
 import {
   selectors,
@@ -18,7 +18,7 @@ import 'react-id-swiper/src/styles/css/swiper.css';
 import Summary from "./Summary";
 import Form from "./Form";
 import './styles/summary-and-form.css';
-import {ACTIVE_VISITS_REP, ENCOUNTER_ROLES, ENCOUNTER_TYPES, CONCEPTS} from "../constants";
+import { ACTIVE_VISITS_REP, ENCOUNTER_ROLES, ENCOUNTER_TYPES, CONCEPTS } from "../constants";
 import patientActions from "../patient/patientActions";
 import utils from '../utils';
 
@@ -75,7 +75,7 @@ export class SummaryAndForm extends React.Component {
   checkIn() {
     let valuesPath = 'obs|path=referral|conceptPath=' + CONCEPTS.SOURCE_OF_REFERRAL.uuid;
     let valuesObj = {};
-    valuesObj[valuesPath] = CONCEPTS.SOURCE_OF_REFERRAL.IC3_appointment.uuid;
+    valuesObj[valuesPath] = CONCEPTS.SOURCE_OF_REFERRAL.Existing_patient.uuid;
     this.props.dispatch(formActions.formSubmitted({
       formId: "checkin-form",
       formInstanceId: this.formInstanceId,
@@ -224,9 +224,11 @@ export class SummaryAndForm extends React.Component {
               (
                 <div className="form-action-btns">
                   {this.getFormState() === FORM_STATES.EDITING ?
-                    (<button disabled={isSaveDisabled}
-                      className={isSaveDisabled ? 'disabled-btn' : 'enabled-btn'}
-                      onClick={this.submitForm}>Save</button>) :
+                    (<button
+className={isSaveDisabled ? 'disabled-btn' : 'enabled-btn'}
+                      disabled={isSaveDisabled}
+                      onClick={this.submitForm}
+                    >Save</button>) :
                     (<button onClick={this.enterEditMode}>Edit</button>)
                   }
                 </div>
@@ -235,7 +237,9 @@ export class SummaryAndForm extends React.Component {
           </Row>
           <Row>
             <div className="swiping-summary-and-form">
-              <Swiper {...params} noSwiping={true} ref={node => { if (node) {this.swiper = node.swiper;}}}>
+              <Swiper {...params}
+noSwiping={true}
+ref={node => { if (node) {this.swiper = node.swiper;}}}>
                 <div className="summary-form">
                   <Summary
                     backLink={this.props.backLink}
@@ -264,7 +268,10 @@ export class SummaryAndForm extends React.Component {
 };
 
 SummaryAndForm.propTypes = {
-  backLink: PropTypes.string.isRequired,
+  backLink: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func
+  ]),
   encounterType: PropTypes.object.isRequired,
   form: PropTypes.object.isRequired,
   patient: PropTypes.object,

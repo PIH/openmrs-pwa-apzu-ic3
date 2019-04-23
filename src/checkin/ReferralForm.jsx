@@ -22,7 +22,7 @@ class ReferralForm extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.hasChanged('referral', this.props, prevProps)) {
-      if (this.props.referral.value !== CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.uuid) {
+      if (this.props.referral.value !== CONCEPTS.SOURCE_OF_REFERRAL.SHARC.uuid || this.props.referral.value !== CONCEPTS.SOURCE_OF_REFERRAL.Inpatient.uuid) {
         this.clearField(this.props.linkageToCare.fieldName);
       }
     }
@@ -44,7 +44,7 @@ class ReferralForm extends React.Component {
         <Grid>
           <Row>
             <Col componentClass={ControlLabel}>
-                Referred From
+              Why is patient here?
             </Col>
           </Row>
           <Row>
@@ -60,7 +60,7 @@ class ReferralForm extends React.Component {
             </Col>
           </Row>
           <span
-            style={{ display: (typeof this.props.referral.value !== 'undefined') && (this.props.referral.value === CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care.uuid) ? 'block' : 'none' }}>
+            style={{ display: (typeof this.props.referral.value !== 'undefined') && (this.props.referral.value === CONCEPTS.SOURCE_OF_REFERRAL.SHARC.uuid || this.props.referral.value === CONCEPTS.SOURCE_OF_REFERRAL.Inpatient.uuid) ? 'block' : 'none' }}>
             <Row>
               <Col componentClass={ControlLabel}>
                 {CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care_ID.display}
