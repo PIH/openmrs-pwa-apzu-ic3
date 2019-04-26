@@ -49,7 +49,7 @@ describe('Clinician station', () => {
             
         // Fill the clinician outcome with "Exit from care"
         cy.get('.form-group label')
-          .eq(2)
+          .eq(3)
           .click();
         
         // Fill the reason to stop care
@@ -120,7 +120,7 @@ describe('Clinician station', () => {
     
     // Select Clinical outcome (Other)
     cy.get('.form-group label')
-      .eq(3)
+      .eq(4)
       .click();
   
     // Fill the Other outcome
