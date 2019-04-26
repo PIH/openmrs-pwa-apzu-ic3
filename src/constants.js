@@ -526,11 +526,15 @@ export const CONCEPTS = {
     },
     'FollowUp': {
       uuid: '65700d1e-977f-11e1-8993-905e29aff6c1',
-      display: 'Clinical follow-up'
+      display: 'Follow up appointment'
     },
     'TransferToAnotherFacility': {
-      uuid: '6576ffc0-977f-11e1-8993-905e29aff6c1',
-      display: 'transfer to another facility'
+      uuid: '6577b668-977f-11e1-8993-905e29aff6c1',
+      display: 'Transfer to another facility in Neno'
+    },
+    'TransferOutsideOfDistrict': {
+      uuid: 'e498db2a-04b1-44da-81fd-a2ef86529141',
+      display: 'Transfer out of the district for care'
     },
     'ExitFromCare': {
       uuid: '6566dba4-977f-11e1-8993-905e29aff6c1',
@@ -607,6 +611,10 @@ export const FORM_ANSWERS = {
     {
       uuid: CONCEPTS.Clinical.TransferToAnotherFacility.uuid,
       display: CONCEPTS.Clinical.TransferToAnotherFacility.display
+    },
+    {
+      uuid: CONCEPTS.Clinical.TransferOutsideOfDistrict.uuid,
+      display: CONCEPTS.Clinical.TransferOutsideOfDistrict.display
     },
     { uuid: CONCEPTS.Clinical.ExitFromCare.uuid, display: CONCEPTS.Clinical.ExitFromCare.display },
     { uuid: CONCEPTS.Clinical.Other.uuid, display: CONCEPTS.Clinical.Other.display },
