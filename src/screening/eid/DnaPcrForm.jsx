@@ -175,9 +175,9 @@ class DnaPcrForm extends React.PureComponent {
                 </Col>
                 <Col sm={8}>
                   <Obs
-                    concept={CONCEPTS.DNA_PCR_TEST_RESULT.uuid}
+                    concept={CONCEPTS.HIV_TEST_RESULTS.uuid}
                     path="dna-pcr-test-result"
-                    conceptAnswers={FORM_ANSWERS.dnaPcrTestResults}
+                    conceptAnswers={FORM_ANSWERS.hivTestResultAnswers}
                   />
                 </Col>
               </FormGroup>
@@ -185,7 +185,7 @@ class DnaPcrForm extends React.PureComponent {
           </span>
 
           <span
-            style={{ display: (typeof dnaPcrTestResult.value !== 'undefined') && (dnaPcrTestResult.value === CONCEPTS.DNA_PCR_TEST_RESULT_NO_RESULT.uuid) ? 'block' : 'none' }}>
+            style={{ display: (typeof dnaPcrTestResult.value !== 'undefined') && (dnaPcrTestResult.value === CONCEPTS.HIV_TEST_RESULTS.Not_Done.uuid) ? 'block' : 'none' }}>
             <Row>
               <FormGroup controlId="formDnaPcrResult">
                 <Col componentClass={ControlLabel} sm={2}>
@@ -220,7 +220,7 @@ export default connect((state, props) => {
   const reasonForTestingFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-reason-for-testing'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.ReasonForTesting.uuid]);
   const labLocationFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-lab-location'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.LabLocation.uuid]);
   const reasonForNoTestResultFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-reason-for-no-result'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.ReasonForNoResult.uuid]);
-  const dnaPcrTestResultFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-test-result'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.DNA_PCR_TEST_RESULT.uuid]);
+  const dnaPcrTestResultFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-test-result'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.HIV_TEST_RESULTS.uuid]);
   const sampleCollectedFieldName = formUtil.obsFieldName(['hiv-test-construct', 'dna-pcr-bled'], [CONCEPTS.HIV_TEST_CONSTRUCT, CONCEPTS.SampleCollected]);
   const testTypeFieldName = formUtil.obsFieldName(['hiv-test-construct', 'hiv-test-type'], [CONCEPTS.HIV_TEST_CONSTRUCT.uuid, CONCEPTS.HIV_TEST_TYPE.uuid]);
 
