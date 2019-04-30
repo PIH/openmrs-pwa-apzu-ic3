@@ -35,10 +35,10 @@ const createFromReportingRestRep = (restRep) => {
     fullName: `${restRep.first_name} ${restRep.last_name}`,
     reverseFullName: `${restRep.last_name} ${restRep.first_name}` 
   };
-
+  
   if (restRep.identifiers) {
     restRep.identifiers.forEach((identifier) => {
-      patient = patientUtil.addIdentifier(patient, identifier.identifier, { uuid: identifier.identifierType }, identifier.preferred);
+      patient = patientUtil.addIdentifier(patient, identifier.raw_identifier.replace(' ', '-'), { uuid: identifier.identifierType }, identifier.preferred);
     });
   }
 

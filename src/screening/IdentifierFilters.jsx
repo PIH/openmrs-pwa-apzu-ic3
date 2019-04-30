@@ -65,9 +65,6 @@ class ScreeningFilters extends React.Component {
       });
     } else if (location === 'second') {
       second = this.handleUndefinedValues(value, '');
-      if (second) {
-        second = reformat(second);
-      }
       searchValue = `${firstIdentifierSearchValue}${firstIdentifierSearchValue && '-'}${second}${thirdIdentifierSearchValue && '-'}${thirdIdentifierSearchValue}`;
       this.setState({
         secondIdentifierSearchValue: this.handleUndefinedValues(value, ''),
