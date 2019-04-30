@@ -16,7 +16,7 @@ class ClinicianForm extends React.Component {
       clinicalNextAppointmentDateField,
       clinicalTransferToAnotherFacilityField  } = this.props;
 
-    if (clinicalOutcome === CONCEPTS.Clinical.TransferToAnotherFacility.uuid || clinicalOutcome == CONCEPTS.Clinical.TransferOutsideOfDistrict.uuid) {
+    if (clinicalOutcome === CONCEPTS.Clinical.TransferToAnotherFacility.uuid || clinicalOutcome === CONCEPTS.Clinical.TransferOutsideOfDistrict.uuid) {
       dispatch(change(this.props.formInstanceId, clinicalQualitativeTimeField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalQualitativeTimeField));
 
