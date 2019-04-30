@@ -38,7 +38,7 @@ const createFromReportingRestRep = (restRep) => {
   
   if (restRep.identifiers) {
     restRep.identifiers.forEach((identifier) => {
-      patient = patientUtil.addIdentifier(patient, identifier.raw_identifier.replace(' ', '-'), { uuid: identifier.identifierType }, identifier.preferred);
+      patient = patientUtil.addIdentifier(patient, identifier.raw_identifier.replace(/ /g, '-'), { uuid: identifier.identifierType }, identifier.preferred);
     });
   }
 
