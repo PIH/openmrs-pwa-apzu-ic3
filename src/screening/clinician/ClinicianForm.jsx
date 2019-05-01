@@ -11,8 +11,7 @@ class ClinicianForm extends React.Component {
   componentDidUpdate(prevProps) {
     const { dispatch, clinicalOutcome, 
       clinicalQualitativeTimeField, 
-      clinicalReasonToStopCareField, 
-      clinicalOtherOutcomeField, 
+      clinicalReasonToStopCareField,
       clinicalNextAppointmentDateField,
       clinicalTransferToAnotherFacilityField  } = this.props;
 
@@ -29,8 +28,6 @@ class ClinicianForm extends React.Component {
       dispatch(change(this.props.formInstanceId, clinicalReasonToStopCareField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalReasonToStopCareField));
 
-      dispatch(change(this.props.formInstanceId, clinicalOtherOutcomeField, null));
-      dispatch(untouch(this.props.formInstanceId, clinicalOtherOutcomeField));
     } else if (clinicalOutcome === CONCEPTS.Clinical.ExitFromCare.uuid) {
       dispatch(change(this.props.formInstanceId, clinicalQualitativeTimeField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalQualitativeTimeField));
@@ -44,8 +41,6 @@ class ClinicianForm extends React.Component {
       dispatch(change(this.props.formInstanceId, clinicalTransferToAnotherFacilityField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalTransferToAnotherFacilityField));
 
-      dispatch(change(this.props.formInstanceId, clinicalOtherOutcomeField, null));
-      dispatch(untouch(this.props.formInstanceId, clinicalOtherOutcomeField)); 
     } else if (clinicalOutcome === CONCEPTS.Clinical.Other.uuid) {
       dispatch(change(this.props.formInstanceId, clinicalQualitativeTimeField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalQualitativeTimeField));
@@ -62,8 +57,6 @@ class ClinicianForm extends React.Component {
       dispatch(change(this.props.formInstanceId, clinicalReasonToStopCareField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalReasonToStopCareField)); 
     } else if (clinicalOutcome === CONCEPTS.Clinical.FollowUp.uuid) {
-      dispatch(change(this.props.formInstanceId, clinicalOtherOutcomeField, null));
-      dispatch(untouch(this.props.formInstanceId, clinicalOtherOutcomeField));
 
       dispatch(change(this.props.formInstanceId, clinicalTransferToAnotherFacilityField, null));
       dispatch(untouch(this.props.formInstanceId, clinicalTransferToAnotherFacilityField));
@@ -175,24 +168,6 @@ class ClinicianForm extends React.Component {
           </Row>
         </span>}
 
-        {(typeof clinicalOutcome !== 'undefined' && clinicalOutcome === CONCEPTS.Clinical.Other.uuid) && <span>
-          <Row>
-            <Col componentClass={ControlLabel}>
-            Other outcome
-            </Col>
-          </Row>
-          <Row>
-            <FormGroup controlId="">
-              <Col sm={12}>
-                <Obs
-                  concept={CONCEPTS.Clinical.OtherOutcome}
-                  path="clinical-other-outcome"
-                  widget="textarea"
-                />
-              </Col>
-            </FormGroup>
-          </Row>
-        </span>}
       </Grid>
     );
 
@@ -215,7 +190,6 @@ export default connect((state, props) => {
   const clinicalOutcomeField = formUtil.obsFieldName('clinical-outcome', CONCEPTS.Clinical.Outcome.uuid);
   const clinicalQualitativeTimeField = formUtil.obsFieldName('clinical-qualitative-time', CONCEPTS.Clinical.QualitativeTime.uuid);
   const clinicalReasonToStopCareField = formUtil.obsFieldName('clinical-reason-to-stop-care', CONCEPTS.Clinical.ReasonToStopCare.uuid);
-  const clinicalOtherOutcomeField = formUtil.obsFieldName('clinical-other-outcome', CONCEPTS.Clinical.OtherOutcome.uuid);
   const clinicalTransferToAnotherFacilityField = formUtil.obsFieldName('clinical-transfer-to-another-facility', CONCEPTS.Clinical.TransferFacility.uuid);
   const clinicalNextAppointmentDateField = formUtil.obsFieldName('clinical-next-appointment-date', CONCEPTS.Clinical.NextAppointmentDate.uuid);
 
@@ -226,7 +200,6 @@ export default connect((state, props) => {
     clinicalOutcome,
     clinicalQualitativeTimeField,
     clinicalReasonToStopCareField,
-    clinicalOtherOutcomeField,
     clinicalTransferToAnotherFacilityField,
     clinicalNextAppointmentDate,
     patient: selectors.getSelectedPatientFromStore(state),
