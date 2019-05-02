@@ -10,7 +10,7 @@ describe('Clinician station', () => {
   });
   
   it('Should search for patient and select "Exit from care" clinical outcome', () => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
   
     // Select the patient
     cy.get('.card-list')

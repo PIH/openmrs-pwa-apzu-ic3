@@ -8,7 +8,7 @@ describe('EID form', () => {
   });
   
   it(`Should not display any other question when "Breastfeeding" answer is not "stopped over 6 weeks ago"`, () => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
   
     // Select the patient
     cy.get('.card-list')
@@ -82,7 +82,7 @@ describe('EID form', () => {
   });
 
   it(`Should display "Test-Type" question when "Breastfeeding" answer is "stopped over 6 weeks ago"`, () => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
   
     // Select the patient
     cy.get('.card-list')
@@ -125,7 +125,7 @@ describe('EID form', () => {
   });
 
   it(`Should display "Rapid Test Results" question when "Test-Type" answer is "HIV Rapid Test"`, () => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
   
     // Select the patient
     cy.get('.card-list')
@@ -176,7 +176,7 @@ describe('EID form', () => {
   });
 
   it(`Should display "Bled" question when "Test-Type" answer is "DNA PCR"`, () => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
   
     // Select the patient
     cy.get('.card-list')

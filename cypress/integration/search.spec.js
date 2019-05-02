@@ -9,7 +9,7 @@ describe('Search', () => {
   });
 
   it('Should search for patient by identifier', () => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
   });
 
   after(() => {

@@ -15,6 +15,7 @@ export const RESPONSE = {
       "identifiers":[  
         {  
           "identifier":"MGT 508",
+          "raw_identifier": "MGT 508",
           "identifierType":{  
             "uuid":"66784d84-977f-11e1-8993-905e29aff6c1"
           },
@@ -208,6 +209,7 @@ export const RESPONSE = {
       "identifiers":[  
         {  
           "identifier":"MGT 148 CCC",
+          "raw_identifier":"MGT 148 CCC",
           "identifierType":{  
             "uuid":"11a76c3e-1db8-4d16-9252-9a18b5ed1843"
           },
@@ -252,6 +254,7 @@ export const RESPONSE = {
       "identifiers":[  
         {  
           "identifier":"MGT 508",
+          "raw_identifier": "MGT 508",
           "identifierType":{  
             "uuid":"66784d84-977f-11e1-8993-905e29aff6c1"
           },
@@ -1668,6 +1671,7 @@ export const RESPONSE = {
           {
             "uuid": "7f8e1f36-7fdd-4abc-a56e-5bdca8f44a30",
             "identifier": "MGT 508",
+            "raw_identifier": "MGT 508",
             "identifierType": {
               "uuid": "66784d84-977f-11e1-8993-905e29aff6c1"
             },
@@ -2061,7 +2065,7 @@ export const RESPONSE = {
       ]
     }
   ],
-  IC3_SCREENING_DATA: [{ "today":1550793600000,"location":"3093e2ab-0eee-4bc2-aacf-8d51d77c7698","internal_id":68803,"patient_uuid":"57af6d0c-9f5d-4812-b3d9-5c93aeb64cff","first_name":"Ellen","last_name":"John","village":"Gonthi","traditional_authority":"Mlauli","district":"Neno","phone_number":null,"vhw":null,"gender":"M","birthdate":315532800000,"age_years":39,"age_months":469,"age_days":14297,"deceased":false,"identifiers":[{ "location":"0d414eae-5ab4-11e0-870c-9f6107fee88e","identifierType":"66784d84-977f-11e1-8993-905e29aff6c1","identifier":"MGT-0508","raw_identifier":"MGT 508","preferred":true }],"hcc_number":null,"art_number":null,"ncd_number":null,"cc_treatment_status":null,"last_visit_date":1550836155000,"last_appt_date":1548633600000,"hiv_treatment_status":"6687fa7c-977f-11e1-8993-905e29aff6c1","art_start_date":1523836800000,"eid_start_date":null,"viral_load_tests":null,"last_viral_load_collection_date":null,"last_viral_load_result_date":null,"last_viral_load_date":null,"last_viral_load_type":null,"last_viral_load_numeric":null,"last_viral_load_ldl":null,"last_art_regimen_change_date":1548633600000,"last_adherence_counselling_session_number":null,"last_adherence_counselling_session_date":null,"chronic_care_diagnoses":null,"hiv_tests":null,"last_hiv_dna_pcr_result":null,"last_hiv_dna_pcr_result_date":null,"last_hiv_rapid_test_result":null,"last_hiv_rapid_test_result_date":null,"last_hba1c_result_date":null,"last_blood_sugar_result_date":null,"last_creatinine_result_date":null,"last_creatinine_result":null,"last_bmi":17.301038062283737,"current_weight":null,"last_height":170.0,"current_height":null,"current_muac":null,"family_history_diabetes":null,"last_breastfeeding_status":null,"is_pregnant":null,"current_symptoms":null,"current_diastolic_bp":null,"current_systolic_bp":null,"alerts":[{ "categories":["diabetes"],"alert":"Routine Blood Sugar for high risk population","action":"Routine Blood Sugar for high risk population","name":"routine-blood-sugar-high-risk" },{ "categories":["bp","screening-eligibility"],"alert":"Due for BP Screening","action":"Refer to BP Screening station","name":"eligible-for-bp-screening" },{ "categories":["blood-glucose","screening-eligibility"],"alert":"Enroll if confirmed by clinician meets criteria","action":"Action: Eligible for blood sugar test","name":"eligible-for-blood-glucose-screening-not-enrolled" },{ "categories":["nutrition","screening-eligibility"],"alert":"Due for Nutrition Screening","action":"Refer to Nutrition Screening station","name":"eligible-for-weight" },{ "categories":["tb","screening-eligibility"],"alert":"Eligible for TB screening","action":"Action: Refer to the TB screening station","name":"eligible-for-tb-screening" }] }],
+  IC3_SCREENING_DATA: [{ "today":1550793600000,"location":"3093e2ab-0eee-4bc2-aacf-8d51d77c7698","internal_id":68803,"patient_uuid":"57af6d0c-9f5d-4812-b3d9-5c93aeb64cff","first_name":"Ellen","last_name":"John","village":"Gonthi","traditional_authority":"Mlauli","district":"Neno","phone_number":null,"vhw":null,"gender":"M","birthdate":315532800000,"age_years":39,"age_months":469,"age_days":14297,"deceased":false,"identifiers":[{ "location":"0d414eae-5ab4-11e0-870c-9f6107fee88e","identifierType":"66784d84-977f-11e1-8993-905e29aff6c1","identifier":"MGT 508","raw_identifier":"MGT 508","preferred":true }],"hcc_number":null,"art_number":null,"ncd_number":null,"cc_treatment_status":null,"last_visit_date":1550836155000,"last_appt_date":1548633600000,"hiv_treatment_status":"6687fa7c-977f-11e1-8993-905e29aff6c1","art_start_date":1523836800000,"eid_start_date":null,"viral_load_tests":null,"last_viral_load_collection_date":null,"last_viral_load_result_date":null,"last_viral_load_date":null,"last_viral_load_type":null,"last_viral_load_numeric":null,"last_viral_load_ldl":null,"last_art_regimen_change_date":1548633600000,"last_adherence_counselling_session_number":null,"last_adherence_counselling_session_date":null,"chronic_care_diagnoses":null,"hiv_tests":null,"last_hiv_dna_pcr_result":null,"last_hiv_dna_pcr_result_date":null,"last_hiv_rapid_test_result":null,"last_hiv_rapid_test_result_date":null,"last_hba1c_result_date":null,"last_blood_sugar_result_date":null,"last_creatinine_result_date":null,"last_creatinine_result":null,"last_bmi":17.301038062283737,"current_weight":null,"last_height":170.0,"current_height":null,"current_muac":null,"family_history_diabetes":null,"last_breastfeeding_status":null,"is_pregnant":null,"current_symptoms":null,"current_diastolic_bp":null,"current_systolic_bp":null,"alerts":[{ "categories":["diabetes"],"alert":"Routine Blood Sugar for high risk population","action":"Routine Blood Sugar for high risk population","name":"routine-blood-sugar-high-risk" },{ "categories":["bp","screening-eligibility"],"alert":"Due for BP Screening","action":"Refer to BP Screening station","name":"eligible-for-bp-screening" },{ "categories":["blood-glucose","screening-eligibility"],"alert":"Enroll if confirmed by clinician meets criteria","action":"Action: Eligible for blood sugar test","name":"eligible-for-blood-glucose-screening-not-enrolled" },{ "categories":["nutrition","screening-eligibility"],"alert":"Due for Nutrition Screening","action":"Refer to Nutrition Screening station","name":"eligible-for-weight" },{ "categories":["tb","screening-eligibility"],"alert":"Eligible for TB screening","action":"Action: Refer to the TB screening station","name":"eligible-for-tb-screening" }] }],
 };
 
 export const URL = {

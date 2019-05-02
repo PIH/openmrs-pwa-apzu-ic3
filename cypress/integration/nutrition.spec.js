@@ -9,7 +9,7 @@ describe('Nutrition form', function () {
     
   it.skip('should navigate to the nutrition form and enter valid values for height, weight and muac', function () {
     cy.wait(3000);
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
 
     // Select the patient
     cy.get('.card-list')
@@ -86,7 +86,7 @@ describe('Nutrition form', function () {
 
   it('save button should be disabled for invalid values for height and weight', function () {
     cy.wait(3000);
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
 
     // Select the patient
     cy.get('.card-list')
