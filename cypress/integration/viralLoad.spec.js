@@ -8,7 +8,7 @@ describe('Viral Load station', () => {
   });
   
   it('Should search for patient and select "NO" in "BLED" Obs in the Viral-load form',() => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
   
     // Select the patient
     cy.get('.card-list')

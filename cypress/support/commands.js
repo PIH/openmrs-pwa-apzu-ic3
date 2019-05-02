@@ -201,7 +201,7 @@ Cypress.Commands.add("searchPatientByID", (patientID) => {
       results: RESPONSE.SINGLE_PATIENT
     }
   });
-  const patientIdentifier = patientID.split('-');
+  const patientIdentifier = patientID.split(' ');
 
   cy.visit('/#/searchPatient');
   cy.get('.identifier-filter  select')

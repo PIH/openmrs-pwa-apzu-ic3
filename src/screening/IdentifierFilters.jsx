@@ -10,24 +10,6 @@ import utils from '../utils';
 
 const reformat = (n) => ("0000" + n).slice(-4);
 
-const formatIdentifier = (identifier) => {
-  const terms = identifier.split('-');
-  const filteredTerms = terms.filter((term) => term !== 'undefined' && term !== "");
-  const numberOfTerms = filteredTerms.length;
-  let query = identifier;
-  if (numberOfTerms === 1) {
-    query = `${filteredTerms[0]} `;
-  }
-  if (numberOfTerms === 2) {
-    query = `${filteredTerms[0]} ${filteredTerms[1].replace(/^0+/, '')}`;
-  }
-
-  if (numberOfTerms === 3) {
-    query = `${filteredTerms[0]} ${filteredTerms[1].replace(/^0+/, '')} ${filteredTerms[2]}`;
-  }
-  return query;
-};
-
 class ScreeningFilters extends React.Component {
   constructor(props) {
     super(props);
@@ -79,9 +61,8 @@ class ScreeningFilters extends React.Component {
         searchValue
       });
     }
-    
     if (searchType === 'server') {
-      this.props.handleSearchChange(formatIdentifier(searchValue));
+      this.props.handleSearchChange(searchValue);
     } else {
       this.props.handleSearchChange(searchValue, customMatchSorterConfigs);
     }
