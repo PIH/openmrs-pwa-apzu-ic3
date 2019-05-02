@@ -58,14 +58,14 @@ class ScreeningFilters extends React.Component {
 
     if (location === 'first') {
       first = this.handleUndefinedValues(value, '');
-      searchValue = `${first}${secondIdentifierSearchValue && '-'}${secondIdentifierSearchValue}${thirdIdentifierSearchValue && '-'}${thirdIdentifierSearchValue}`;
+      searchValue = `${first}${secondIdentifierSearchValue && ' '}${secondIdentifierSearchValue}${thirdIdentifierSearchValue && ' '}${thirdIdentifierSearchValue}`;
       this.setState({
         firstIdentifierSearchValue : this.handleUndefinedValues(value, ''),
         searchValue,
       });
     } else if (location === 'second') {
       second = this.handleUndefinedValues(value, '');
-      searchValue = `${firstIdentifierSearchValue}${firstIdentifierSearchValue && '-'}${second}${thirdIdentifierSearchValue && '-'}${thirdIdentifierSearchValue}`;
+      searchValue = `${firstIdentifierSearchValue}${firstIdentifierSearchValue && ' '}${second}${thirdIdentifierSearchValue && ' '}${thirdIdentifierSearchValue}`;
       this.setState({
         secondIdentifierSearchValue: this.handleUndefinedValues(value, ''),
         searchValue,
@@ -73,7 +73,7 @@ class ScreeningFilters extends React.Component {
       
     } else if (location === 'third') {
       third = this.handleUndefinedValues(value, '');
-      searchValue = `${firstIdentifierSearchValue}${secondIdentifierSearchValue && '-'}${secondIdentifierSearchValue}${third && '-'}${third}`;
+      searchValue = `${firstIdentifierSearchValue}${secondIdentifierSearchValue && ' '}${secondIdentifierSearchValue}${third && ' '}${third}`;
       this.setState({
         thirdIdentifierSearchValue: this.handleUndefinedValues(value, ''),
         searchValue
