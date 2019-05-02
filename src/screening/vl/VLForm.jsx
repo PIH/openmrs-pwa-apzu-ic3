@@ -21,7 +21,18 @@ class VLForm extends React.PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    const { reasonNoSample, reasonForTesting, labLocation, reasonForNoResult, vlNumeric, vlDetectableLowerLimit, bled, vlResult, vlLowerthanDetectableLimits, vlLessThanLimit } = this.props;
+    const {
+      reasonNoSample,
+      reasonForTesting,
+      labLocation,
+      reasonForNoResult,
+      vlNumeric,
+      vlDetectableLowerLimit,
+      bled,
+      vlResult,
+      vlLowerthanDetectableLimits,
+      vlLessThanLimit,
+    } = this.props;
     if (typeof bled.value !== 'undefined' && bled.value !== prevProps.bled.value) {
       if (bled.value === CONCEPTS.True.uuid) {
         this.clearField(reasonNoSample.fieldName);
@@ -36,8 +47,10 @@ class VLForm extends React.PureComponent {
       if (vlResult.value === CONCEPTS.ViralLoadResultCompleted.uuid) {
         this.clearField(reasonForNoResult.fieldName);
       }
-      else {
+      else if (vlResult.value === CONCEPTS.ViralLoadResultUnableToProcess.uuid) {
         this.clearField(vlNumeric.fieldName);
+        this.clearField(vlLessThanLimit.fieldName);
+        this.clearField(vlLowerthanDetectableLimits.fieldName);
       }
     }
     
