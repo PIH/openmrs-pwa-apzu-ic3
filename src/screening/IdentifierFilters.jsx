@@ -10,24 +10,6 @@ import utils from '../utils';
 
 const reformat = (n) => ("0000" + n).slice(-4);
 
-const formatIdentifier = (identifier) => {
-  const terms = identifier.split('-');
-  const filteredTerms = terms.filter((term) => term !== 'undefined' && term !== "");
-  const numberOfTerms = filteredTerms.length;
-  let query = identifier;
-  if (numberOfTerms === 1) {
-    query = `${filteredTerms[0]} `;
-  }
-  if (numberOfTerms === 2) {
-    query = `${filteredTerms[0]} ${filteredTerms[1].replace(/^0+/, '')}`;
-  }
-
-  if (numberOfTerms === 3) {
-    query = `${filteredTerms[0]} ${filteredTerms[1].replace(/^0+/, '')} ${filteredTerms[2]}`;
-  }
-  return query;
-};
-
 class ScreeningFilters extends React.Component {
   constructor(props) {
     super(props);
@@ -58,17 +40,14 @@ class ScreeningFilters extends React.Component {
 
     if (location === 'first') {
       first = this.handleUndefinedValues(value, '');
-      searchValue = `${first}${secondIdentifierSearchValue && '-'}${secondIdentifierSearchValue}${thirdIdentifierSearchValue && '-'}${thirdIdentifierSearchValue}`;
+      searchValue = `${first}${secondIdentifierSearchValue && ' '}${secondIdentifierSearchValue}${thirdIdentifierSearchValue && ' '}${thirdIdentifierSearchValue}`;
       this.setState({
         firstIdentifierSearchValue : this.handleUndefinedValues(value, ''),
         searchValue,
       });
     } else if (location === 'second') {
       second = this.handleUndefinedValues(value, '');
-      if (second) {
-        second = reformat(second);
-      }
-      searchValue = `${firstIdentifierSearchValue}${firstIdentifierSearchValue && '-'}${second}${thirdIdentifierSearchValue && '-'}${thirdIdentifierSearchValue}`;
+      searchValue = `${firstIdentifierSearchValue}${firstIdentifierSearchValue && ' '}${second}${thirdIdentifierSearchValue && ' '}${thirdIdentifierSearchValue}`;
       this.setState({
         secondIdentifierSearchValue: this.handleUndefinedValues(value, ''),
         searchValue,
@@ -76,15 +55,14 @@ class ScreeningFilters extends React.Component {
       
     } else if (location === 'third') {
       third = this.handleUndefinedValues(value, '');
-      searchValue = `${firstIdentifierSearchValue}${secondIdentifierSearchValue && '-'}${secondIdentifierSearchValue}${third && '-'}${third}`;
+      searchValue = `${firstIdentifierSearchValue}${secondIdentifierSearchValue && ' '}${secondIdentifierSearchValue}${third && ' '}${third}`;
       this.setState({
         thirdIdentifierSearchValue: this.handleUndefinedValues(value, ''),
         searchValue
       });
     }
-    
     if (searchType === 'server') {
-      this.props.handleSearchChange(formatIdentifier(searchValue));
+      this.props.handleSearchChange(searchValue);
     } else {
       this.props.handleSearchChange(searchValue, customMatchSorterConfigs);
     }

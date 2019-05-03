@@ -7,7 +7,7 @@ describe('Check in', () => {
   });
     
   it('Should search for patient and Check-in patient into NEW location', () => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
 
     // Select the patient
     cy.get('.card-list')

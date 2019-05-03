@@ -9,7 +9,7 @@ describe('Blood Pressure', function () {
     
   it('should navigate to the blood pressure form and enter valid values for systolic and diastolic blood pressure', function () {
 
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
 
     // Select the patient
     cy.get('.card-list')
@@ -89,7 +89,7 @@ describe('Blood Pressure', function () {
 
   it('should navigate to the blood pressure form and enter abnormal values for systolic and diastolic blood pressure', function () {
 
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
 
     // Select the patient
     cy.get('.card-list')
@@ -191,7 +191,7 @@ describe('Blood Pressure', function () {
 
   it('should navigate to the blood pressure form and enter critical values for systolic and diastolic blood pressure', function () {
 
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
 
     // Select the patient
     cy.get('.card-list')
@@ -293,7 +293,7 @@ describe('Blood Pressure', function () {
 
   it('save button should be disabled when there are validation errors', function () {
 
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
 
     // Select the patient
     cy.get('.card-list')

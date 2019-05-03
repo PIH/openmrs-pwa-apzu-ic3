@@ -605,7 +605,6 @@ export const FORM_ANSWERS = {
       display: CONCEPTS.Clinical.TransferOutsideOfDistrict.display
     },
     { uuid: CONCEPTS.Clinical.ExitFromCare.uuid, display: CONCEPTS.Clinical.ExitFromCare.display },
-    { uuid: CONCEPTS.Clinical.Other.uuid, display: CONCEPTS.Clinical.Other.display },
   ],
   'clinicalFollowUp': [
     { uuid: CONCEPTS.Clinical.NextAppointmentDate.uuid, display: CONCEPTS.Clinical.NextAppointmentDate.display },

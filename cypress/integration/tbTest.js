@@ -8,7 +8,7 @@ describe('tbTest station', () => {
   });
   
   it('Should search for patient and select "No" in "Sputum received Obs" in Tb-Test form', () => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
   
     // Select the patient
     cy.get('.card-list')
@@ -65,7 +65,7 @@ describe('tbTest station', () => {
   });
 
   it('should complete tb test result form with "satisfactory sample quality"', () => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
   
     // Select the patient
     cy.get('.card-list')
@@ -137,7 +137,7 @@ describe('tbTest station', () => {
   });
 
   it('should complete tb test result form with "un-satisfactory sample quality"', () => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
   
     // Select the patient
     cy.get('.card-list')

@@ -10,7 +10,7 @@ describe('Clinician station', () => {
   });
   
   it('Should search for patient and select "Exit from care" clinical outcome', () => {
-    cy.searchPatientByID('MGT-0148-CCC');
+    cy.searchPatientByID('MGT 148 CCC');
   
     // Select the patient
     cy.get('.card-list')
@@ -110,41 +110,7 @@ describe('Clinician station', () => {
       .first()
       .should('be.visible');    
   });
-
-  it('should select "Other" clinical outcome', () => {
-    // Put the form in edit mode
-    cy.get('.form-action-btns > button')
-      .first()
-      .click();
-    cy.wait(2000);
-    
-    // Select Clinical outcome (Other)
-    cy.get('.form-group label')
-      .eq(4)
-      .click();
   
-    // Fill the Other outcome
-    cy.get('.form-group textarea')
-      .last()
-      .type('this is a demo other outcome');
-
-    // Assert that the correct form is being populated
-    cy.get('label.control-label')
-      .eq(2)
-      .contains('Other outcome');
-
-    // Click the save form button
-    cy.get('.form-action-btns > button')
-      .first()
-      .click();
-
-    cy.wait(3000);
-
-    // Check that the form attempted to save
-    cy.get('.custom-loader')
-      .first()
-      .should('be.visible');    
-  });
 
   it('should select "Clinical follow-up" clinical outcome', () => {
     // Put the form in edit mode
