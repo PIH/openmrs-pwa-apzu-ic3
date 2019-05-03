@@ -465,6 +465,10 @@ export const CONCEPTS = {
     uuid: '65597a5e-977f-11e1-8993-905e29aff6c1',
     display: 'Contaminated'
   },
+  'Missing': {
+    uuid: 'e0822140-955d-11e7-abc4-cec278b6b50a',
+    display: 'Missing'
+  },
   'EquipmentFailure': {
     uuid: '165179AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
     display: 'Equipment Failure'
@@ -482,7 +486,7 @@ export const CONCEPTS = {
     display: 'Supplies not available'
   },
   'Other': {
-    uuid: '657140f8-977f-11e1-8993-905e29aff6c1',
+    uuid: '656cce7e-977f-11e1-8993-905e29aff6c1',
     display: 'Other'
   },
   'TBSmearResult': {
@@ -632,6 +636,7 @@ export const FORM_ANSWERS = {
   ],
   'ReasonForNoResult': [
     { uuid: CONCEPTS.Contaminated.uuid, display: CONCEPTS.Contaminated.display },
+    { uuid: CONCEPTS.Missing.uuid, display: CONCEPTS.Missing.display },
     { uuid: CONCEPTS.UnsatisfactorySample.uuid, display: CONCEPTS.UnsatisfactorySample.display },
     { uuid: CONCEPTS.EquipmentFailure.uuid, display: CONCEPTS.EquipmentFailure.display },
     { uuid: CONCEPTS.InappropriateSampleContainer.uuid, display: CONCEPTS.InappropriateSampleContainer.display },
