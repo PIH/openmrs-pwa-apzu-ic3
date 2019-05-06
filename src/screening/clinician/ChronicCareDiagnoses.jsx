@@ -36,7 +36,7 @@ class ChronicCareDiagnoses extends React.Component {
     // eslint-disable-next-line
     this.props.selectedPatient.chronic_care_diagnoses && this.props.selectedPatient.chronic_care_diagnoses.map(chronicCareDiagnoses => {
       const concept = this.props.concepts[chronicCareDiagnoses.value];
-      const isChronicCareDiagnosesInState = this.state.chronicCareDiagnoses.find(diagnosis => diagnosis.display === concept.display)
+      const isChronicCareDiagnosesInState = concept && this.state.chronicCareDiagnoses.find(diagnosis => diagnosis.display === concept.display)
       if (concept && concept.display && !isChronicCareDiagnosesInState) {
         this.setState({ chronicCareDiagnoses: [...this.state.chronicCareDiagnoses, {display: concept.display, date: chronicCareDiagnoses.date}] }) 
       }
