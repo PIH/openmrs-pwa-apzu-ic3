@@ -40,6 +40,7 @@ export class SummaryAndForm extends React.Component {
     this.openFormForCurrentVisitButton = this.openFormForCurrentVisitButton.bind(this);
     this.handleFormForCurrentVisitButton = this.handleFormForCurrentVisitButton.bind(this);
     this.checkIn = this.checkIn.bind(this);
+    this.disableCheckIn = false;
     this.swiper = null;
     this.formInstanceId = uuidv4();
     this.state = {
@@ -98,8 +99,12 @@ export class SummaryAndForm extends React.Component {
   formatNavMessage() {
     const { completed } = this.props;
     if (this.props.currentPathname.includes('checkin')) {
-      return completed ?
-        `View/Edit ${this.props.title} information` : 'Check-in Patient';
+      if (completed) {
+        this.disableCheckIn  = false;
+        return `View/Edit ${this.props.title} information`;
+      } else {
+        return 'Check-in Patient';
+      }
     } else {
       return completed ?
         `View/Edit ${this.props.title} information` : `Add ${this.props.title} information`;
@@ -110,6 +115,7 @@ export class SummaryAndForm extends React.Component {
     return (
       <button
         className="summary-swiper-button"
+        disabled={ this.disableCheckIn }
         onClick={this.handleFormForCurrentVisitButton}
       > {this.formatNavMessage()}
       </button>
@@ -122,7 +128,10 @@ export class SummaryAndForm extends React.Component {
       && utils.isSameDay(new Date(), new Date(this.props.patient.lastAppointmentDate))
       &&!completed) {
       //IS-106, If patient has an appointment then just check-in
-      this.checkIn();
+      if (!this.disableCheckIn) {
+        this.disableCheckIn = true;
+        this.checkIn();
+      }
 
     } else {
       const encounter = this.getMatchingEncounterFromActiveVisit(this.props.encounterType);
