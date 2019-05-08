@@ -787,6 +787,7 @@ export const FORM_ANSWERS = {
 export const NAV_MENU_PAGES = {
   '/' : { display : 'Home', icon : 'home' },
   '/searchPatient' : { display : 'Search Patient', icon : 'search' },
+  '/allPatient/allPatientQueue': { display: 'All-Patients', icon: 'notes-medical' },
   '/checkin/checkInQueue': { display: 'Check-In', icon: 'notes-medical' },
   '/screening/vl/queue': { display: 'Viral Load', icon: 'vial' },
   '/screening/tb/queue': { display: 'Tuberculosis', icon: 'vial' },

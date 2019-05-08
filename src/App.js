@@ -30,6 +30,7 @@ import HomePage from './home/HomePage';
 import InfoPatient from './patient/PatientInfo';
 import SearchPatient from './search/SearchPatient';
 import CheckInQueue from './checkin/CheckInQueue';
+import AllPatientQueue from './checkin/AllPatientQueue';
 import CheckInPage from './checkin/CheckInPage';
 import NursePage from './screening/nurse/NursePage';
 import ClinicianSummaryAndForm from './screening/clinician/ClinicianSummaryAndForm';
@@ -94,6 +95,12 @@ const App = props => {
               component={CheckInQueue}
               fullViewHeight
               path="/checkin/checkInQueue"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={AllPatientQueue}
+              fullViewHeight
+              path="/allPatient/allPatientQueue"
               redirectOnLogin="/"
             />
             <Layout

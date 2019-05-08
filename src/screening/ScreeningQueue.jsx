@@ -30,6 +30,8 @@ let ScreeningQueue = props => {
       () => props.dispatch(patientActions.clearSelectedPatient())
     ];
 
+  let filters = props.excludeCheckedInPatients ? [patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'include')] : [];
+
   return (
     <div>
       <CardList
@@ -39,7 +41,7 @@ let ScreeningQueue = props => {
         delayInterval={0}
         dispatch={props.dispatch}
         fetchListActionCreator={fetchListActionCreator}
-        filters={[...props.filters, patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'include')]}
+        filters={[...props.filters, ...filters]}
         getPatientIdentifiers={utils.getPatientIdentifiers}
         loading={props.updating}
         noDataMessage="No patients to display"
@@ -56,6 +58,7 @@ let ScreeningQueue = props => {
 
 ScreeningQueue.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  excludeCheckedInPatients: PropTypes.bool.isRequired,
   filters: PropTypes.array,
   rowData: PropTypes.array.isRequired,
   rowSelectedActionCreators: PropTypes.array,
@@ -63,7 +66,8 @@ ScreeningQueue.propTypes = {
 };
 
 ScreeningQueue.defaultProps = {
-  filters: []
+  filters: [],
+  excludeCheckedInPatients: true
 };
 
 const mapStateToProps = (state) => {
