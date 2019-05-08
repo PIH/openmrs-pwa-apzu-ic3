@@ -282,14 +282,8 @@ const utils = {
 
     for (let i = 0; i < alerts.length; i++) {
       let alertCategories = alerts[i].categories;
-      retValue =  alertCategories.every(
-        alertCategory => categories.every(
-          category => alertCategories.includes(category) && categories.includes(alertCategory)
-        )
-      );
-
-      if (retValue === true) {
-        break;
+      if (categories.every(cat => alertCategories.includes(cat))) {
+        return true;
       }
     }
     return retValue;
