@@ -8,7 +8,7 @@ export const ACTIVE_VISITS_REP =
   'patient:(id,uuid,id,display,identifiers:(uuid,identifier,identifierType:(uuid),preferred),' +
   'person:(id,uuid,display,gender,age,birthdate,birthdateEstimated,dead,deathDate,causeOfDeath,preferredName:(familyName,givenName,middleName,display))),' +
   'encounters:(id,uuid,encounterDatetime,location:(id,uuid,name),encounterType:(id,uuid,name),' +
-  'obs:(uuid,id,value,concept:(uuid),comment,display,encounter:(uuid),obsGroup:(uuid),groupMembers:' +
+  'obs:(uuid,id,value,concept:(uuid),comment,display,encounter:(uuid,encounterType:(name)),obsGroup:(uuid),groupMembers:' +
   '(uuid,id,value,concept:(uuid),comment,display,encounter:(uuid),obsGroup:(uuid),groupMembers:(uuid)))' +
   ')';
 
