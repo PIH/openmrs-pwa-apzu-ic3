@@ -83,6 +83,7 @@ let AdherenceForm = (props) => {
               concept={CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage.uuid}
               path="adherence-percentage"
               placeholder="Enter percentage"
+              required
             />
           </FormGroup>
         </Col>
