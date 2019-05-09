@@ -104,8 +104,6 @@ const ClinicianSummary = props => {
   obs = formUtil.flattenObs(obs)
     .filter((o) => (o.value !== null));
 
-  console.log('obs', obs);
-
   return (
     <div>
       <ProgramEnrollment />
