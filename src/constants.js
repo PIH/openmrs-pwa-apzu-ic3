@@ -245,6 +245,10 @@ export const CONCEPTS = {
       uuid: '20E91F16-BA4F-4058-B17A-998A82F4B803',
       display: 'Drug adherence percentage'
     },
+    'MissedDosesLastWeek': {
+      uuid: '290c1601-a1a7-4a4c-8dc7-d18a17f059a2',
+      display: 'Missed doses in the last 7 days'
+    },
     'CounseledOnViralLoad': {
       uuid: '06b20a2a-b6cc-11e8-96f8-529269fb1459',
       display: 'Counseled on viral load'

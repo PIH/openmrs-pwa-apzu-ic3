@@ -100,6 +100,32 @@ let AdherenceForm = (props) => {
         <Col
           componentClass={ControlLabel}
         >
+          {CONCEPTS.ADHERENCE_COUNSELING.MissedDosesLastWeek.display}
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={1}>
+          <FormGroup controlId="formAdherenceMissedDoses">
+            <Obs
+              concept={CONCEPTS.ADHERENCE_COUNSELING.MissedDosesLastWeek.uuid}
+              path="adherence-missed-doses"
+              placeholder="Enter missed doses"
+            />
+          </FormGroup>
+        </Col>
+        <Col
+          componentClass={ControlLabel}
+          sm={1}
+          style={leftTextAlign}
+        >
+          %
+        </Col>
+      </Row>
+
+      <Row>
+        <Col
+          componentClass={ControlLabel}
+        >
           {CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad.display}
         </Col>
       </Row>
