@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { formValueSelector, change, untouch } from 'redux-form';
-import { Obs, formUtil, selectors, ObsGroup, FormContext } from '@openmrs/react-components';
+import { formValueSelector, change, untouch, Field,  touch } from 'redux-form';
+import { Obs, formUtil, selectors, ObsGroup, FormContext, ButtonGroup } from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col, Button } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import ScreeningForm from "../ScreeningForm";
@@ -29,7 +29,7 @@ class VLForm extends React.PureComponent {
       vlNumeric,
       vlDetectableLowerLimit,
       bled,
-      vlResult,
+      vlResultStatus,
       vlLowerthanDetectableLimits,
       vlLessThanLimit,
     } = this.props;
@@ -43,15 +43,26 @@ class VLForm extends React.PureComponent {
       }
     }
 
-    if (typeof vlResult.value !== 'undefined' && vlResult.value !== prevProps.vlResult.value) {
-      if (vlResult.value === CONCEPTS.ViralLoadResultCompleted.uuid) {
+    if (typeof vlResultStatus.value !== 'undefined' && vlResultStatus.value !== prevProps.vlResultStatus.value) {
+      if (vlResultStatus.value === CONCEPTS.ViralLoadResultCompleted.uuid) {
         this.clearField(reasonForNoResult.fieldName);
       }
-      else if (vlResult.value === CONCEPTS.ViralLoadResultUnableToProcess.uuid) {
+      else if (vlResultStatus.value === CONCEPTS.ViralLoadResultUnableToProcess.uuid) {
         this.clearField(vlNumeric.fieldName);
         this.clearField(vlLessThanLimit.fieldName);
         this.clearField(vlLowerthanDetectableLimits.fieldName);
       }
+    }
+
+    if ((vlNumeric.value && typeof vlNumeric.value !== 'undefined' && vlNumeric.value !== prevProps.vlNumeric.value) ||
+        (vlDetectableLowerLimit.value && typeof vlDetectableLowerLimit.value !== 'undefined' && vlDetectableLowerLimit.value !== prevProps.vlDetectableLowerLimit.value) ||
+        (vlLowerthanDetectableLimits.value && typeof vlLowerthanDetectableLimits.value !== 'undefined' && vlLowerthanDetectableLimits.value !== prevProps.vlLowerthanDetectableLimits.value)
+    ) {
+      this.updateField(vlResultStatus.fieldName,  CONCEPTS.ViralLoadResultCompleted.uuid);
+    }
+
+    if (reasonForNoResult.value && (typeof reasonForNoResult.value !== 'undefined') && reasonForNoResult.value !== prevProps.reasonForNoResult.value) {
+      this.updateField(vlResultStatus.fieldName,  CONCEPTS.ViralLoadResultUnableToProcess.uuid);
     }
     
     if ((typeof bled.value !== 'undefined' && bled.value !== prevProps.bled.value) || (typeof reasonForTesting.value !== 'undefined' && reasonForTesting.value !== prevProps.reasonForTesting.value) ||
@@ -61,7 +72,7 @@ class VLForm extends React.PureComponent {
         this.clearField(vlDetectableLowerLimit.fieldName);
         this.clearField(reasonForNoResult.fieldName);
         this.clearField(vlLowerthanDetectableLimits.fieldName);
-        this.clearField(vlResult.fieldName);
+        this.clearField(vlResultStatus.fieldName);
         this.clearField(vlLessThanLimit.fieldName);
       }
     }
@@ -83,6 +94,11 @@ class VLForm extends React.PureComponent {
     this.props.dispatch(untouch(this.props.formInstanceId, field));
   }
 
+  updateField(field, value) {
+    this.props.dispatch(change(this.props.formInstanceId, field, value));
+    this.props.dispatch(touch(this.props.formInstanceId, field));
+  }
+
   handleAddVLResults() {
     if (!this.state.isAddVLResultsClicked) {
       this.setState({ isAddVLResultsClicked: true });
@@ -93,7 +109,7 @@ class VLForm extends React.PureComponent {
   }
 
   render() {
-    const { vlResult, vlLowerthanDetectableLimits, reasonForTesting, labLocation, bled, reasonForNoResult, vlDetectableLowerLimit, vlNumeric } = this.props;
+    const { vlResultStatus, vlLowerthanDetectableLimits, reasonForTesting, labLocation, bled, reasonForNoResult, vlDetectableLowerLimit, vlNumeric } = this.props;
     const { isAddVLResults, isAddVLResultsClicked, isAddVLResultsActive } = this.state;
 
     if (bled.value === CONCEPTS.True.uuid && reasonForTesting.value && labLocation.value) {
@@ -102,7 +118,7 @@ class VLForm extends React.PureComponent {
       this.setState({ isAddVLResults: false, isAddVLResultsClicked: false, isAddVLResultsActive: false });
     }
     
-    if (vlNumeric.value || vlDetectableLowerLimit.value || reasonForNoResult.value || vlLowerthanDetectableLimits.value || vlResult.value) {
+    if (vlNumeric.value || vlDetectableLowerLimit.value || reasonForNoResult.value || vlLowerthanDetectableLimits.value || vlResultStatus.value) {
       this.setState({ isAddVLResultsActive: true });
     }
 
@@ -237,17 +253,28 @@ class VLForm extends React.PureComponent {
             <Row>
               <FormGroup controlId="formVLResult">
                 <Col sm={12}>
-                  <Obs
-                    concept={CONCEPTS.HIVViralLoadStatus.uuid}
-                    conceptAnswers={FORM_ANSWERS.ViralLoadResult}
-                    path="vl-result"
-                  />
+                  <FormContext.Consumer>
+                    {formContext => {
+                      return (
+                        <Field
+                          component={ButtonGroup}
+                          displayValue={vlResultStatus.value}
+                          mode={formContext.mode}
+                          name='vl-result-status'
+                          onBlur={e => {
+                            e.preventDefault();
+                          }}
+                          options={FORM_ANSWERS.ViralLoadResult}
+                        />
+                      );
+                    }}
+                  </FormContext.Consumer>
                 </Col>
               </FormGroup>
             </Row>
 
             <span
-              style={{ display: (typeof vlResult.value !== 'undefined') && (vlResult.value === CONCEPTS.ViralLoadResultCompleted.uuid) ? 'block' : 'none' }}
+              style={{ display: (typeof vlResultStatus.value !== 'undefined') && (vlResultStatus.value === CONCEPTS.ViralLoadResultCompleted.uuid) ? 'block' : 'none' }}
             >
               <Row style={{ marginBottom: '15px' }}>
                 <div>
@@ -314,7 +341,7 @@ class VLForm extends React.PureComponent {
             </span>
 
             <span
-              style={{ display: (typeof vlResult.value !== 'undefined') && (vlResult.value === CONCEPTS.ViralLoadResultUnableToProcess.uuid) ? 'block' : 'none' }}
+              style={{ display: (typeof vlResultStatus.value !== 'undefined') && (vlResultStatus.value === CONCEPTS.ViralLoadResultUnableToProcess.uuid) ? 'block' : 'none' }}
             >
               <Row>
                 <Col componentClass={ControlLabel}>
@@ -372,7 +399,6 @@ export default connect((state, props) => {
   const vlNumericFieldName  = formUtil.obsFieldName(['vl-test-set', 'vl-numeric'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoad.uuid]);
   const vlDetectableLowerLimitFieldName  = formUtil.obsFieldName(['vl-test-set', 'vl-detectable-lower-limit'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoadDetectablelowerLimit.uuid]);
   const vlLowerthanDetectableLimitsFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-lower-than-detectable-limits'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid]);
-  const vlResultFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-result'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.HIVViralLoadStatus.uuid]);
   const vlLessThanLimitFieldName = formUtil.obsFieldName(['vl-test-set', 'vl-less-than-limit'], [CONCEPTS.ViralLoadTestSet.uuid, CONCEPTS.ViralLoadLessThanLimit.uuid]);
 
   return {
@@ -380,9 +406,9 @@ export default connect((state, props) => {
       fieldName: bledFieldName,
       value: selector(state, bledFieldName)
     },
-    vlResult: {
-      fieldName: vlResultFieldName,
-      value: selector(state, vlResultFieldName)
+    vlResultStatus: {
+      fieldName: 'vl-result-status',
+      value: selector(state, 'vl-result-status')
     },
     reasonNoSample: {
       fieldName: reasonNoSampleFieldName,
