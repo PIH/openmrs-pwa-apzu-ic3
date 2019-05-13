@@ -124,12 +124,16 @@ const ClinicianSummary = props => {
             style={{ paddingBottom: 5 }}
           >
             {!R.isEmpty(obsHistory) && <h4>{summary.screeningType} Information</h4>}
-            <ObsHistory
-              concepts={summary.concepts}
-              key={index}
-              obs={obsHistory}
-              showDates={false}
-            />
+            <span
+              style={{ position: 'relative', left: 20 }}
+            >
+              <ObsHistory
+                concepts={summary.concepts}
+                key={index}
+                obs={obsHistory}
+                showDates={false}
+              />
+            </span>
           </span>
         );
       })
