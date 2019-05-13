@@ -76,7 +76,8 @@ const orderedSummary = [
       CONCEPTS.ADHERENCE_COUNSELING.NameOfCounselor,
       CONCEPTS.ADHERENCE_COUNSELING.CounseledOnPillCounts,
       CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage,
-      CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad
+      CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad,
+      CONCEPTS.ADHERENCE_COUNSELING.MissedDosesLastWeek
     ],
   },
   {
