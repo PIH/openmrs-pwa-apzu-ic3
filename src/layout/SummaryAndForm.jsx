@@ -88,6 +88,7 @@ export class SummaryAndForm extends React.Component {
       formSubmittedActionCreator: [
         () => this.props.patient && this.props.patient.uuid && visitActions.fetchPatientActiveVisit(this.props.patient.uuid, this.props.sessionLocation.uuid, ACTIVE_VISITS_REP),
         () => this.props.patient && this.props.patient.uuid && patientActions.getIC3PatientScreeningData(this.props.patient),
+        () => this.props.patient && this.props.patient.uuid && patientActions.getIC3PatientNutritionHistory(this.props.patient),
         () => toastrActions.add({
           title: this.props.toastMessage ? this.props.toastMessage : "Data Saved",
           type: "success"

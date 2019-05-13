@@ -2,7 +2,6 @@ import React from "react";
 import * as R from "ramda";
 import {ObsHistory, selectors} from "@openmrs/react-components";
 import connect from "react-redux/es/connect/connect";
-import reportingRest from '../../rest/reportingRest';
 import {CONCEPTS} from "../../constants";
 
 class NutritionSummary extends React.PureComponent {
@@ -29,14 +28,11 @@ class NutritionSummary extends React.PureComponent {
 
   // we load the nutrition info from our REST endpoint that calculates BMI on the fly
   updateObs() {
-    // TODO update so this actually gets handled stored in the redux store?
-    reportingRest.getIC3NutritionHistory({ patient: this.props.patient.uuid })
-      .then(data => {
-        this.setState({
-          obs: data,
-          loading: false
-        });
-      });
+    const { obs, isPatientStoreUpdating } = this.props;
+    this.setState({
+      obs,
+      loading: isPatientStoreUpdating
+    });
   }
 
   render() {
@@ -53,7 +49,8 @@ class NutritionSummary extends React.PureComponent {
 const mapStateToProps = (state) => {
   return {
     patient: selectors.getSelectedPatientFromStore(state),
-    isPatientStoreUpdating: selectors.isPatientStoreUpdating(state)
+    isPatientStoreUpdating: selectors.isPatientStoreUpdating(state),
+    obs: state.patientNutrition.history,
   };
 };
 

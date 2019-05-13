@@ -130,6 +130,7 @@ function* getIC3PatientScreeningData(action) {
 // making it easiest to debug in the console, and allows us to add other actions if needed
 function* patientSelected(action) {
   yield put(ic3PatientActions.getIC3PatientScreeningData(action.patient));
+  yield put(ic3PatientActions.getIC3PatientNutritionHistory(action.patient));
 }
 
 // TODO we are bundling other actions we want to do on login here--should these be in another saga?

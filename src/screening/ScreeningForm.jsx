@@ -16,7 +16,8 @@ class ScreeningForm extends React.Component {
     const formSubmittedActionCreators = [
       () => props.patient && props.patient.uuid && visitActions.fetchPatientActiveVisit(props.patient.uuid,
         this.props.sessionLocation ? this.props.sessionLocation.uuid : null, ACTIVE_VISITS_REP),
-      () => props.patient && props.patient.uuid && patientActions.getIC3PatientScreeningData(props.patient)
+      () => props.patient && props.patient.uuid && patientActions.getIC3PatientScreeningData(props.patient),
+      () => props.patient && props.patient.uuid && patientActions.getIC3PatientNutritionHistory(props.patient),
     ];
 
     return (

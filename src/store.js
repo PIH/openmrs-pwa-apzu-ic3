@@ -23,6 +23,8 @@ import { default as screeningReducer } from './screening/actions/reducer';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
 import patientSagas from './patient/patientSagas';
+import nutrionSagas from './screening/nutrition/nutritionSagas';
+import nutritionReducer from './screening/nutrition/nutritionReducer';
 
 
 // fyi, connected-react-router docs:
@@ -58,6 +60,7 @@ const combinedReducer = combineReducers({
   toastr: toastrReducer,
   screening: screeningReducer,
   completedVisits: completedVisitsReducer,
+  patientNutrition: nutritionReducer,
 });
 
 const rootReducer = (state, action) => {
@@ -80,7 +83,8 @@ const rootSagas = function* () {
     openmrsSagas(),
     checkInSagas(),
     checkOutSagas(),
-    patientSagas()
+    patientSagas(),
+    nutrionSagas(),
   ]);
 };
 

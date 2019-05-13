@@ -112,7 +112,11 @@ const ClinicianSummary = props => {
       <h4><u>Visit Summary</u></h4>
       {orderedSummary.map((summary, index) => {
         const mappedObs = summary.concepts.map((concept) => obs.find(o => o.concept.uuid === concept.uuid));
-        const obsHistory = R.filter(R.identity)(mappedObs);
+        let obsHistory = R.filter(R.identity)(mappedObs);
+        if (summary.screeningType === "Nutrition" && obsHistory.length > 0) {
+          const encounterUuid = obsHistory[0].encounter.uuid;
+          obsHistory = props.nutritionHistory.filter(h => h.encounter.uuid === encounterUuid);
+        };
 
         return (
           <span
@@ -136,7 +140,8 @@ const ClinicianSummary = props => {
 
 const mapStateToProps = (state) => {
   return {
-    patient: selectors.getSelectedPatientFromStore(state)
+    patient: selectors.getSelectedPatientFromStore(state),
+    nutritionHistory: state.patientNutrition.history,
   };
 };
 

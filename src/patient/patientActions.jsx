@@ -22,9 +22,15 @@ const getIC3PatientScreeningDataFailed = (message) => ({
   type: PATIENT_TYPES.GET_IC3_PATIENT_SCREENING_DATA_FAILED
 });
 
+const getIC3PatientNutritionHistory = (patient) => ({
+  type: PATIENT_TYPES.GET_NUTRITION_HISTORY,
+  patient,
+});
+
 export default {
   getIC3Patients,
   getIC3PatientsFailed,
   getIC3PatientScreeningData,
-  getIC3PatientScreeningDataFailed
+  getIC3PatientScreeningDataFailed,
+  getIC3PatientNutritionHistory,
 };
