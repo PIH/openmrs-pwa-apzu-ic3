@@ -1,8 +1,8 @@
 import React from 'react';
 import {Col, ControlLabel, Grid, Row} from "react-bootstrap";
-import {ObsHistory, selectors} from "@openmrs/react-components";
+import {formActions, ObsHistory, selectors} from "@openmrs/react-components";
 import {connect} from "react-redux";
-import {CONCEPTS} from "../constants";
+import {CONCEPTS, ENCOUNTER_TYPES} from "../constants";
 
 const CheckInSummary = props => {
 
@@ -76,6 +76,13 @@ const CheckInSummary = props => {
           CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care_ID
         ]}
         labels={labels}
+        editableEncounterTypes={[ENCOUNTER_TYPES.CheckInEncounterType]}
+        onEditEncounterActionCreators={[
+          (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)
+        ]}
+        onEditEncounterCallbacks={[
+          props.gotoForm
+        ]}
       />
     </Grid>
   );

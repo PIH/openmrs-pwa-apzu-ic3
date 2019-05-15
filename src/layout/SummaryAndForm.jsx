@@ -98,37 +98,34 @@ export class SummaryAndForm extends React.Component {
   }
 
   formatNavMessage() {
-    const { completed } = this.props;
     if (this.props.currentPathname.includes('checkin')) {
-      if (completed) {
-        this.disableCheckIn  = false;
-        return `View/Edit ${this.props.title} information`;
-      } else {
-        return 'Check-in Patient';
-      }
+      return 'Check-in Patient';
     } else {
       return `Add ${this.props.title} information`;
     }
   }
 
   addFormButton() {
-    return (
-      <button
-        className="summary-swiper-button"
-        disabled={ this.disableCheckIn }
-        onClick={this.handleAddFormButton}
-      > {this.formatNavMessage()}
-      </button>
-    );
+    const { completed } = this.props;
+    // special case for the check-in encounters... don't allow multiple check-ins
+    if (this.props.currentPathname.includes('checkin') && completed) {
+      return;
+    } else {
+      return (
+        <button
+          className="summary-swiper-button"
+          disabled={this.disableCheckIn}
+          onClick={this.handleAddFormButton}
+        > {this.formatNavMessage()}
+        </button>
+      );
+    }
   }
 
   handleAddFormButton() {
-    const { completed } = this.props;
-
     // special case for the check-in encounters
     if (this.props.currentPathname.includes('checkin')
-      && utils.isSameDay(new Date(), new Date(this.props.patient.lastAppointmentDate))
-      &&!completed) {
+      && utils.isSameDay(new Date(), new Date(this.props.patient.lastAppointmentDate))) {
       //IS-106, If patient has an appointment then just check-in
       if (!this.disableCheckIn) {
         this.disableCheckIn = true;
