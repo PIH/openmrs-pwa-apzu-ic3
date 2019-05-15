@@ -21,7 +21,8 @@ class NutritionSummary extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
     if (R.path(['patient', 'uuid'], prevProps) !== R.path(['patient', 'uuid'], this.props) ||
-      (prevProps.isPatientStoreUpdating && !this.props.isPatientStoreUpdating)) {
+      (prevProps.isPatientStoreUpdating && !this.props.isPatientStoreUpdating) ||
+      (prevProps.obs !== this.props.obs))  {
       this.updateObs();
     }
   }
