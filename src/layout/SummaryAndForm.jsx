@@ -37,8 +37,8 @@ export class SummaryAndForm extends React.Component {
     this.getFormInvalid = this.getFormInvalid.bind(this);
     this.gotoForm = this.gotoForm.bind(this);
     this.gotoSummary = this.gotoSummary.bind(this);
-    this.openFormForCurrentVisitButton = this.openFormForCurrentVisitButton.bind(this);
-    this.handleFormForCurrentVisitButton = this.handleFormForCurrentVisitButton.bind(this);
+    this.addFormButton = this.addFormButton.bind(this);
+    this.handleAddFormButton = this.handleAddFormButton.bind(this);
     this.checkIn = this.checkIn.bind(this);
     this.disableCheckIn = false;
     this.swiper = null;
@@ -107,24 +107,25 @@ export class SummaryAndForm extends React.Component {
         return 'Check-in Patient';
       }
     } else {
-      return completed ?
-        `View/Edit ${this.props.title} information` : `Add ${this.props.title} information`;
+      return `Add ${this.props.title} information`;
     }
   }
 
-  openFormForCurrentVisitButton() {
+  addFormButton() {
     return (
       <button
         className="summary-swiper-button"
         disabled={ this.disableCheckIn }
-        onClick={this.handleFormForCurrentVisitButton}
+        onClick={this.handleAddFormButton}
       > {this.formatNavMessage()}
       </button>
     );
   }
 
-  handleFormForCurrentVisitButton() {
+  handleAddFormButton() {
     const { completed } = this.props;
+
+    // special case for the check-in encounters
     if (this.props.currentPathname.includes('checkin')
       && utils.isSameDay(new Date(), new Date(this.props.patient.lastAppointmentDate))
       &&!completed) {
@@ -135,13 +136,8 @@ export class SummaryAndForm extends React.Component {
       }
 
     } else {
-      const encounter = this.getMatchingEncounterFromActiveVisit(this.props.encounterType);
-      if (encounter && encounter.uuid) {
-        this.props.dispatch(formActions.loadFormBackingEncounter(this.formInstanceId, encounter.uuid));
-      } else {
-        this.props.dispatch(formActions.clearFormBackingEncounter(this.formInstanceId));
-        this.props.dispatch(formActions.setFormState(this.formInstanceId, FORM_STATES.EDITING));
-      }
+      this.props.dispatch(formActions.clearFormBackingEncounter(this.formInstanceId));
+      this.props.dispatch(formActions.setFormState(this.formInstanceId, FORM_STATES.EDITING));
       this.gotoForm();
     }
   }
@@ -258,7 +254,7 @@ ref={node => { if (node) {this.swiper = node.swiper;}}}>
                     backLink={this.props.backLink}
                     formInstanceId={this.formInstanceId}
                     gotoForm={this.gotoForm}
-                    openFormForCurrentVisitButton={this.openFormForCurrentVisitButton}
+                    addFormButton={this.addFormButton}
                     requireVisitForForm={this.props.requireVisitForForm}
                     summary={this.props.summary}
                   />

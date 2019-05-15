@@ -18,7 +18,7 @@ const Summary = props => {
         {(props.patient.visit || !props.requireVisitForForm) &&
         (
           <Row className="swiper-add-new-btn">
-            {props.openFormForCurrentVisitButton && props.openFormForCurrentVisitButton()}
+            {props.addFormButton && props.addFormButton()}
           </Row>
         )
         }
