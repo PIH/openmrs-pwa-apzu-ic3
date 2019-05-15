@@ -1,6 +1,6 @@
 import React from "react";
-import {CONCEPTS} from "../../constants";
-import {ObsHistory} from "@openmrs/react-components";
+import {CONCEPTS, ENCOUNTER_TYPES} from "../../constants";
+import {formActions, ObsHistory} from "@openmrs/react-components";
 
 const AdherenceSummary = props => {
   return (
@@ -13,6 +13,13 @@ const AdherenceSummary = props => {
           CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage,
           CONCEPTS.ADHERENCE_COUNSELING.CounseledOnViralLoad,
           CONCEPTS.ADHERENCE_COUNSELING.MissedDosesLastWeek
+        ]}
+        editableEncounterTypes={[ENCOUNTER_TYPES.AdherenceCounselingEncounterType]}
+        onEditEncounterActionCreators={[
+          (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)
+        ]}
+        onEditEncounterCallbacks={[
+          props.gotoForm
         ]}
       />
     </div>

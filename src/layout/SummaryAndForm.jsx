@@ -138,6 +138,9 @@ export class SummaryAndForm extends React.Component {
       const encounter = this.getMatchingEncounterFromActiveVisit(this.props.encounterType);
       if (encounter && encounter.uuid) {
         this.props.dispatch(formActions.loadFormBackingEncounter(this.formInstanceId, encounter.uuid));
+      } else {
+        this.props.dispatch(formActions.clearFormBackingEncounter(this.formInstanceId));
+        this.props.dispatch(formActions.setFormState(this.formInstanceId, FORM_STATES.EDITING));
       }
       this.gotoForm();
     }
