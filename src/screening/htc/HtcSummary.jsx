@@ -1,6 +1,6 @@
 import React from "react";
-import {ObsHistory} from '@openmrs/react-components';
-import {CONCEPTS} from "../../constants";
+import {formActions, ObsHistory} from '@openmrs/react-components';
+import {CONCEPTS, ENCOUNTER_TYPES} from "../../constants";
 
 const HtcSummary = props => {
   return (
@@ -15,6 +15,13 @@ const HtcSummary = props => {
           CONCEPTS.HIV_TEST_RESULTS
         ]}
         groupingConcepts={[CONCEPTS.HIV_TEST_CONSTRUCT]}
+        editableEncounterTypes={[ENCOUNTER_TYPES.HTCEncounterType]}
+        onEditEncounterActionCreators={[
+          (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)
+        ]}
+        onEditEncounterCallbacks={[
+          props.gotoForm
+        ]}
       />
     </div>
   );
