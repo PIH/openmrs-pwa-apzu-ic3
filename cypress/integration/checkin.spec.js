@@ -5,8 +5,8 @@ describe('Check in', () => {
     cy.init(RESPONSE.GET_PATIENT_ENCOUNTER);
     cy.login();
   });
-    
-  it('Should search for patient and Check-in patient into NEW location', () => {
+
+  it.skip('Should search for patient and Check-in patient into NEW location', () => {
     cy.searchPatientByID('MGT 148 CCC');
 
     // Select the patient

@@ -101,7 +101,7 @@ export class SummaryAndForm extends React.Component {
     if (this.props.currentPathname.includes('checkin')) {
       return 'Check-in Patient';
     } else {
-      return `Add ${this.props.title} information`;
+      return `Add ${this.props.title} Information`;
     }
   }
 
