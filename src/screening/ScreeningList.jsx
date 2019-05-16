@@ -9,7 +9,7 @@ import vlFilters from './vl/vlFilters';
 import eidFilters from './eid/eidFilters';
 import adherenceFilters from './adherence/adherenceFilters';
 import checkInFilters from "../checkin/checkInFilters";
-import cliniicianFilters from "../screening/clinician/cliniicianFilters";
+import clinicianFilters from "./clinician/clinicianFilters";
 import tbFilters from "./tb/tbFilters";
 import tbTestFilters from './tbTest/tbTestFilters';
 
@@ -23,7 +23,7 @@ export class ScreeningList extends React.Component {
       },
       {
         title: "Clinician",
-        completed: cliniicianFilters.completed,
+        completed: clinicianFilters.completed,
         link: '/screening/clinician/form',
       }
     ];

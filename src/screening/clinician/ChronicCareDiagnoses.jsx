@@ -61,7 +61,8 @@ class ChronicCareDiagnoses extends React.Component {
       );
     });
     } else {
-      return (<b>No Chronic Care Diagnosis known</b>)
+      return (<span style={{ position: 'relative', left: 20 }}>
+        <b>No Chronic Care Diagnosis known</b></span>);
     }
   }
 

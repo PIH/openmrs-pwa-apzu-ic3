@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { push } from 'connected-react-router';
 import { selectors } from '@openmrs/react-components';
-import cliniicianFilters from './cliniicianFilters';
+import cliniicianFilters from './clinicianFilters';
 import ScreeningQueue from "../ScreeningQueue";
 
 // TODO can we figure out a better way to do this without passing dispatch all the way through?

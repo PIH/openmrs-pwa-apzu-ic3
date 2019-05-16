@@ -1,23 +1,19 @@
 import React from "react";
 import {connect} from "react-redux";
 import * as R from 'ramda';
-import {ObsHistory, ProgramEnrollment, selectors, formUtil } from '@openmrs/react-components';
+import {parse} from 'date-fns';
+import {
+  EncounterHistory,
+  ObsHistory,
+  ProgramEnrollment,
+  selectors,
+  formUtil,
+  formActions
+} from '@openmrs/react-components';
 import ChronicCareDiagnoses from './ChronicCareDiagnoses';
-import {CONCEPTS} from "../../constants";
+import {CONCEPTS, ENCOUNTER_TYPES} from "../../constants";
 
 const orderedSummary = [
-  {
-    screeningType: "Clinician",
-    concepts: [
-      CONCEPTS.Clinical.ClinicalNotes,
-      CONCEPTS.Clinical.Outcome,
-      CONCEPTS.Clinical.NextAppointmentDate,
-      CONCEPTS.Clinical.QualitativeTime,
-      CONCEPTS.Clinical.TransferFacility,
-      CONCEPTS.Clinical.ReasonToStopCare,
-      CONCEPTS.Clinical.OtherOutcome
-    ]
-  },
   {
     screeningType: "Nutrition",
     concepts: [
@@ -97,9 +93,13 @@ const ClinicianSummary = props => {
 
   let obs = [];
   if (props.patient && props.patient.visit && props.patient.visit.encounters) {
-    obs = props.patient.visit.encounters.reduce((acc, encounter) => {
-      return [...acc, ...encounter.obs];
-    }, []);
+    obs = props.patient.visit.encounters
+      .sort((enc1, enc2) => {
+        return parse(enc2.encounterDatetime) - parse(enc1.encounterDatetime);
+      }) // make sure most recent first
+      .reduce((acc, encounter) => {
+        return [...acc, ...encounter.obs];
+      }, []);
   }
 
   obs = formUtil.flattenObs(obs)
@@ -109,8 +109,38 @@ const ClinicianSummary = props => {
     <div>
       <ProgramEnrollment />
       <ChronicCareDiagnoses />
+
       <h4><u>Visit Summary</u></h4>
+      <span
+        style={{ paddingBottom: 5 }}
+      >
+        <h4>Clinician Information</h4>
+        <span
+          style={{ position: 'relative', left: 20 }}
+        >
+          <EncounterHistory
+            concepts={[CONCEPTS.Clinical.ClinicalNotes,
+              CONCEPTS.Clinical.Outcome,
+              CONCEPTS.Clinical.NextAppointmentDate,
+              CONCEPTS.Clinical.QualitativeTime,
+              CONCEPTS.Clinical.TransferFacility,
+              CONCEPTS.Clinical.ReasonToStopCare,
+              CONCEPTS.Clinical.OtherOutcome
+            ]}
+            encounterType={ENCOUNTER_TYPES.ClinicalPlan}
+            editable
+            onEditActionCreators={[
+              (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)
+            ]}
+            onEditCallbacks={[
+              props.gotoForm
+            ]}
+            maxEncounters={1}
+          />
+        </span>
+      </span>
       {orderedSummary.map((summary, index) => {
+        // note that this will only take the *first* obs mapped to each concept... since we sorting encounters above, this should be the most recent
         const mappedObs = summary.concepts.map((concept) => obs.find(o => o.concept.uuid === concept.uuid));
         let obsHistory = R.filter(R.identity)(mappedObs);
         if (summary.screeningType === "Nutrition" && obsHistory.length > 0) {
@@ -138,6 +168,29 @@ const ClinicianSummary = props => {
         );
       })
       }
+      <h4><u>Clinician History</u></h4>
+      <span
+        style={{ position: 'relative', left: 20 }}
+      >
+        <EncounterHistory
+          concepts={[CONCEPTS.Clinical.ClinicalNotes,
+            CONCEPTS.Clinical.Outcome,
+            CONCEPTS.Clinical.NextAppointmentDate,
+            CONCEPTS.Clinical.QualitativeTime,
+            CONCEPTS.Clinical.TransferFacility,
+            CONCEPTS.Clinical.ReasonToStopCare,
+            CONCEPTS.Clinical.OtherOutcome
+          ]}
+          encounterType={ENCOUNTER_TYPES.ClinicalPlan}
+          editable
+          onEditActionCreators={[
+            (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)
+          ]}
+          onEditCallbacks={[
+            props.gotoForm
+          ]}
+        />
+      </span>
     </div>
   );
 };
