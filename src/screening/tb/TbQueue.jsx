@@ -20,7 +20,7 @@ let TbQueue = props => {
         filters={[tbFilters.required, (patient) => !tbFilters.completed(patient)]}
         rowData={Object.values(props.patients)}
         rowSelectedActionCreators={rowSelectedActionCreators}
-        title="Tb Queue"
+        title="TB Screening Queue"
       />
     </div>
   );
