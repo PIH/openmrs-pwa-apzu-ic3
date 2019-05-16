@@ -11,6 +11,7 @@ const BloodPressureSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
+      allowMultipleForms
       completed={bloodPressureFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.BloodPressureEncounterType}
       form={<BloodPressureForm />}

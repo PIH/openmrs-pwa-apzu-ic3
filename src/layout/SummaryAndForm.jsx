@@ -106,9 +106,12 @@ export class SummaryAndForm extends React.Component {
   }
 
   addFormButton() {
-    const { completed } = this.props;
+    const { allowMultipleForms, completed } = this.props;
     // special case for the check-in encounters... don't allow multiple check-ins
-    if (this.props.currentPathname.includes('checkin') && completed) {
+
+    // this.props.currentPathname.includes('checkin') &&
+
+    if (completed && !allowMultipleForms) {
       return;
     } else {
       return (
@@ -274,6 +277,7 @@ ref={node => { if (node) {this.swiper = node.swiper;}}}>
 };
 
 SummaryAndForm.propTypes = {
+  allowMultipleForms: PropTypes.bool.isRequired,
   backLink: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func
@@ -287,6 +291,7 @@ SummaryAndForm.propTypes = {
 };
 
 SummaryAndForm.defaultProps = {
+  allowMultipleForms: false,
   requireVisitForForm: true
 };
 
