@@ -5,7 +5,7 @@ import {CONCEPTS, ENCOUNTER_TYPES} from "../../constants";
 const BloodPressureSummary = props => {
   return (
     <ObsHistory
-      concepts={[CONCEPTS.DiastolicBloodPressure, CONCEPTS.SystolicBloodPressure]}
+      concepts={[CONCEPTS.SystolicBloodPressure, CONCEPTS.DiastolicBloodPressure]}
       editableEncounterTypes={[ENCOUNTER_TYPES.BloodPressureEncounterType]}
       onEditEncounterActionCreators={[
         (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)

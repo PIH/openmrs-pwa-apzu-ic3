@@ -10,14 +10,14 @@ const VLSummary = props => {
           [
             CONCEPTS.ViralLoad,
             CONCEPTS.ViralLoadLowerThanDetectionLimit,
+            CONCEPTS.ViralLoadLessThanLimit,
+            CONCEPTS.ViralLoadLowerThanDetectionLimit,
             CONCEPTS.Bled,
             CONCEPTS.ReasonForNoSample,
             CONCEPTS.ReasonForTesting,
             CONCEPTS.LabLocation,
-            CONCEPTS.HIVViralLoadStatus,
-            CONCEPTS.ViralLoadDetectablelowerLimit,
-            CONCEPTS.ViralLoadLowerThanDetectionLimit,
-            CONCEPTS.ViralLoadLessThanLimit,
+            CONCEPTS.ReasonForNoResult,
+            CONCEPTS.ViralLoadDetectablelowerLimit
           ]}
         editableEncounterTypes={[ENCOUNTER_TYPES.VLEncounterType]}
         groupingConcepts={[CONCEPTS.ViralLoadTestSet]}
