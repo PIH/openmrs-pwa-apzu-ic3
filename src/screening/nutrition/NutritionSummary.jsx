@@ -1,8 +1,8 @@
 import React from "react";
 import * as R from "ramda";
-import {ObsHistory, selectors} from "@openmrs/react-components";
+import {formActions, ObsHistory, selectors} from "@openmrs/react-components";
 import connect from "react-redux/es/connect/connect";
-import {CONCEPTS} from "../../constants";
+import {CONCEPTS, ENCOUNTER_TYPES} from "../../constants";
 
 class NutritionSummary extends React.PureComponent {
 
@@ -39,9 +39,16 @@ class NutritionSummary extends React.PureComponent {
   render() {
     return (
       <ObsHistory
-        obs={this.state.obs}
-        loading={this.state.loading}
         concepts={[CONCEPTS.Weight, CONCEPTS.Height, CONCEPTS.BMI, CONCEPTS.Pregnant, CONCEPTS.MUAC]}
+        editableEncounterTypes={[ENCOUNTER_TYPES.NutritionEncounterType]}
+        obs={this.state.obs}
+        onEditEncounterActionCreators={[
+          (encounterUuid) => formActions.loadFormBackingEncounter(this.props.formInstanceId, encounterUuid)
+        ]}
+        onEditEncounterCallbacks={[
+          this.props.gotoForm
+        ]}
+        loading={this.state.loading}
       />
     );
   }
