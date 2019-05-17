@@ -15,14 +15,16 @@ import tbTestFilters from './tbTest/tbTestFilters';
 
 export class ScreeningList extends React.Component {
   render() {
-    const CHECK_IN_SCREENING = [
+    const CORE_SCREENING = [
       {
         title: "Check-In",
+        required: (patient) => !checkInFilters.completed(patient),
         completed: checkInFilters.completed,
         link: '/checkin/checkInPage',
       },
       {
         title: "Clinician",
+        required: (patient) => !clinicianFilters.completed(patient),
         completed: clinicianFilters.completed,
         link: '/screening/clinician/form',
       }
@@ -31,91 +33,55 @@ export class ScreeningList extends React.Component {
     const SPECIAL_SCREENINGS = [
       {
         title: "Viral Load",
-        completed: vlFilters.completed,
+        completed: (patient) => vlFilters.completed(patient) && !vlFilters.required(patient),
         link: '/screening/vl/form',
         required: vlFilters.required,
       },
       {
         title: "Adherence",
-        completed: adherenceFilters.completed,
+        completed: (patient) => adherenceFilters.completed(patient) && !adherenceFilters.required(patient),
         link: '/screening/adherence/form',
         required: adherenceFilters.required,
       },
       {
         title: "EID",
-        completed: eidFilters.completed,
+        completed: (patient) => eidFilters.completed(patient) && !eidFilters.required(patient),
         link: '/screening/eid/form',
         required: eidFilters.required,
       },
       {
         title: "TB Test",
-        completed: tbTestFilters.completed,
+        completed: (patient) => tbTestFilters.completed(patient) && !tbTestFilters.required(patient),
         link: '/screening/tb-test/form',
-        required: tbTestFilters.required,
-      },
-    /*    {
-          title: "A1C",
-          completed: vlFilters.completed,
-          link: '/screening/vl/form',
-          required: vlFilters.required,
-        },*/
-    /* {
-       title: "Creatinine",
-       completed: htcFilters.completed,
-       link: '/screening/htc/form',
-       required: htcFilters.required,
-     },*/
-    /*  {
-        title: "Cervical Cancer",
-        completed: vlFilters.completed,
-        link: '/screening/vl/form',
-        required: vlFilters.required,
-      }*/
+        required: tbTestFilters.required
+      }
     ];
 
     const ROUTINE_SCREENINGS = [
       {
         title: "Nutrition",
-        required: nutritionFilters.required,
-        completed: nutritionFilters.completed,
+        completed: (patient) => nutritionFilters.completed(patient) && !nutritionFilters.required(patient),
         link: '/screening/nutrition/form',
+        required: nutritionFilters.required,
       },
       {
         title: "Blood Pressure",
-        completed: bloodPressureFilters.completed,
+        completed: (patient) => bloodPressureFilters.completed(patient) && !bloodPressureFilters.required(patient),
         link: '/screening/bloodPressure/form',
         required: bloodPressureFilters.required,
-      }, /*
-        {
-          title: "Glucose Check",
-          completed: htcFilters.completed,
-          link: '/screening/htc/form',
-          required: htcFilters.required,
-        },*/
+      },
       {
         title: "HTC",
-        completed: htcFilters.completed,
+        completed: (patient) => htcFilters.completed(patient) && !htcFilters.required(patient),
         link: '/screening/htc/form',
         required: htcFilters.required,
       },
       {
         title: "TB Screening",
+        completed: (patient) => tbFilters.completed(patient) && !tbFilters.required(patient),
         link: '/screening/tb/form',
         required: tbFilters.required,
-        completed: tbFilters.completed,
-      },/*
-        {
-          title: "TB",
-          completed: htcFilters.completed,
-          link: '/screening/htc/form',
-          required: htcFilters.required,
-        },
-        {
-          title: "Family Planning",
-          completed: htcFilters.completed,
-          link: '/screening/htc/form',
-          required: htcFilters.required,
-        }*/
+      },
     ];
 
 
@@ -123,7 +89,7 @@ export class ScreeningList extends React.Component {
       {
         key: 1,
         title: "IC3 Screening",
-        tasks: CHECK_IN_SCREENING
+        tasks: CORE_SCREENING
       },
       {
         key: 2,
@@ -137,23 +103,25 @@ export class ScreeningList extends React.Component {
       },
       {
         key: 4,
+        title: "Completed",
+        tasks: [...CORE_SCREENING, ...SPECIAL_SCREENINGS, ...ROUTINE_SCREENINGS].map((screening) => {
+          return {
+            ...screening,
+            required: screening.completed
+          };
+        })
+      },
+      {
+        key: 5,
         title: "Optional",
-        // the list of tasks is the targeted + routine combined but with their "required" function inversed
-        // (... ie all those that are not required)
-        tasks: [
-          ...(SPECIAL_SCREENINGS.map((screening) => {
-            return {
-              ...screening,
-              required: (patient) => screening.required ? !screening.required(patient) : false
-            };
-          })),
-          ...(ROUTINE_SCREENINGS.map((screening) => {
-            return {
-              ...screening,
-              required: (patient) => screening.required ? !screening.required(patient) : false
-            };
-          })),
-        ]
+        // the list of tasks is the targeted + routine combined but with their "required" and "completed" functions inversed
+        // (... ie all those that are not required but not completed)
+        tasks: [...SPECIAL_SCREENINGS, ...ROUTINE_SCREENINGS].map((screening) => {
+          return {
+            ...screening,
+            required: (patient) => !screening.required(patient) && !screening.completed(patient)
+          };
+        })
       }
     ];
 
