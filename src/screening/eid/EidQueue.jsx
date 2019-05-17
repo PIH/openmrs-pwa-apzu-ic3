@@ -13,7 +13,7 @@ const EidQueue = props => {
     <div>
       <ScreeningQueue
         dispatch={props.dispatch}
-        filters={[eidFilters.required, (patient) => !eidFilters.completed(patient)]}
+        filters={[eidFilters.required]}
         rowData={Object.values(props.patients)}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="EID Queue"

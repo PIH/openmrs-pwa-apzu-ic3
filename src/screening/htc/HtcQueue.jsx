@@ -14,7 +14,7 @@ const HtcQueue = props => {
     <div>
       <ScreeningQueue
         dispatch={props.dispatch}
-        filters={[htcFilters.required, (patient) => !htcFilters.completed(patient)]}
+        filters={[htcFilters.required]}
         rowData={Object.values(props.patients)}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="HTC Queue"

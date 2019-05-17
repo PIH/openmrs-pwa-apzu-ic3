@@ -15,7 +15,7 @@ let VLQueue = props => {
     <div>
       <ScreeningQueue
         dispatch={props.dispatch}
-        filters={[vlFilters.required, (patient) => !vlFilters.completed(patient)]}
+        filters={[vlFilters.required]}
         rowData={Object.values(props.patients)}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="Viral Load Queue"

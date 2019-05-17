@@ -3,5 +3,6 @@ import { ENCOUNTER_TYPES } from "../../constants";
 
 
 export default {
-  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.NurseEvaluationEncounterType.uuid, 'include'),
+  required: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.NurseEvaluationEncounterType.uuid, 'exclude'),
+  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.NurseEvaluationEncounterType.uuid, 'include')
 };

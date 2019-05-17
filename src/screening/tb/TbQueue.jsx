@@ -17,7 +17,7 @@ let TbQueue = props => {
     <div>
       <ScreeningQueue
         dispatch={props.dispatch}
-        filters={[tbFilters.required, (patient) => !tbFilters.completed(patient)]}
+        filters={[tbFilters.required]}
         rowData={Object.values(props.patients)}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="TB Screening Queue"

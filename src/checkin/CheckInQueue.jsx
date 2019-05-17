@@ -4,18 +4,18 @@ import React from 'react';
 import {
   patientActions,
   CardList,
-  patientObjByEncounterTypeFilter,
   selectors,
   PatientCard,
 } from '@openmrs/react-components';
 
 import { push } from "connected-react-router";
 import { connect } from "react-redux";
-import { ENCOUNTER_TYPES, LOCATION_TYPES } from '../constants';
+import {LOCATION_TYPES} from '../constants';
 import utils from "../utils";
 import ic3PatientActions from '../patient/patientActions';
-import IdentifierFilters from '../screening/IdentifierFilters'
-import screeningActions from '../screening/actions/actions'
+import IdentifierFilters from '../screening/IdentifierFilters';
+import screeningActions from '../screening/actions/actions';
+import checkInFilters from './checkInFilters';
 
 class CheckInQueue extends React.Component {
 
@@ -103,7 +103,7 @@ class CheckInQueue extends React.Component {
           delayInterval={0}
           dispatch={this.props.dispatch}
           fetchListActionCreator={fetchListActionCreator}
-          filters={[patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CheckInEncounterType.uuid, 'exclude')]}
+          filters={[checkInFilters.required]}
           getPatientIdentifiers={utils.getPatientIdentifiers}
           loading={this.props.updating}
           noDataMessage="No patients to display"
