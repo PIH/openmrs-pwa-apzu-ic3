@@ -14,3 +14,7 @@
 .react-datepicker > button {
     width: 120px;
 }
+
+#nutrition, #blood_pressure, #htc, #viral_load, #tb_screening, #tb_testing, #adherence, #eid, #nursing {
+    width: 25%
+}
