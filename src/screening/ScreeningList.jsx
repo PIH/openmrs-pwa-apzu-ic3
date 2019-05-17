@@ -76,6 +76,7 @@ export class ScreeningList extends React.Component {
     const ROUTINE_SCREENINGS = [
       {
         title: "Nutrition",
+        required: nutritionFilters.required,
         completed: nutritionFilters.completed,
         link: '/screening/nutrition/form',
       },
