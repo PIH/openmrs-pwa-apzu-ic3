@@ -149,6 +149,23 @@ class ClinicianForm extends React.Component {
           </Row>
         </span>}
 
+        <Row>
+          <Col componentClass={ControlLabel}>
+            Refer to station
+          </Col>
+        </Row>
+        <Row>
+          <FormGroup controlId="">
+            <Col sm={12}>
+              <Obs
+                concept={CONCEPTS.ReferToScreeningStation}
+                conceptAnswers={FORM_ANSWERS.ReferToScreeningStation}
+                path="clinical-refer-to-station"
+              />
+            </Col>
+          </FormGroup>
+        </Row>
+
         {(typeof clinicalOutcome !== 'undefined' && clinicalOutcome === CONCEPTS.Clinical.ExitFromCare.uuid) && <span>
           <Row>
             <Col componentClass={ControlLabel}>

@@ -591,6 +591,46 @@ export const CONCEPTS = {
       display: 'Breastfeeding stopped in last 6 weeks',
     },
   },
+  'ReferToScreeningStation': {
+    uuid: '191b3cdc-ec5b-4447-aeb5-4c985e336779',
+    display: 'Refer to screening station'
+  },
+  'NutritionScreeningStation': {
+    uuid: 'a738a3d9-e823-412a-b8c2-a340b25e6186',
+    display: 'Nutrition'
+  },
+  'BloodPressureScreeningStation': {
+    uuid: '7562aeef-42b6-48d8-a693-efd626997822',
+    display: 'Blood Pressure'
+  },
+  'HIVTestingStation': {
+    uuid: '8e0e32cf-756f-4237-b78f-8c4842cce7a5',
+    display: 'HTC'
+  },
+  'ViralLoadTestingStation': {
+    uuid: 'c2316084-596e-4f31-a375-b99ea62c612d',
+    display: 'Viral Load'
+  },
+  'TuberculosisSymptomsScreeningStation': {
+    uuid: '1bb40f5c-a8a2-4a1f-bead-ee8dcfac367b',
+    display: 'TB Screening'
+  },
+  'TuberculosisTestingStation': {
+    uuid: '23d0e9e2-f838-4f90-8d1e-e8e5d1a85ca7',
+    display: 'TB Testing'
+  },
+  'AdherenceCounselingStation': {
+    uuid: '00d0a6aa-a9da-4d26-bffc-ec4753d8e721',
+    display: 'Adherence'
+  },
+  'EIDScreeningStation': {
+    uuid: 'da82a921-fe41-409d-87d0-67eb3e3c2963',
+    display: 'EID'
+  },
+  'NursingScreeningStation': {
+    uuid: 'd74065b8-cecf-4ee9-bbba-07bb962e4164',
+    display: 'Nursing'
+  },
 };
 
 export const FORM_NAMES = {
@@ -598,6 +638,17 @@ export const FORM_NAMES = {
 };
 
 export const FORM_ANSWERS = {
+  'ReferToScreeningStation': [
+    { uuid: CONCEPTS.NutritionScreeningStation.uuid, display: CONCEPTS.NursingScreeningStation.display },
+    { uuid: CONCEPTS.BloodPressureScreeningStation.uuid, display: CONCEPTS.BloodPressureScreeningStation.display },
+    { uuid: CONCEPTS.HIVTestingStation.uuid, display: CONCEPTS.HIVTestingStation.display },
+    { uuid: CONCEPTS.ViralLoadTestingStation.uuid, display: CONCEPTS.ViralLoadTestingStation.display },
+    { uuid: CONCEPTS.TuberculosisSymptomsScreeningStation.uuid, display: CONCEPTS.TuberculosisSymptomsScreeningStation.display },
+    { uuid: CONCEPTS.TuberculosisTestingStation.uuid, display: CONCEPTS.TuberculosisTestingStation.display },
+    { uuid: CONCEPTS.AdherenceCounselingStation.uuid, display: CONCEPTS.AdherenceCounselingStation.display },
+    { uuid: CONCEPTS.EIDScreeningStation.uuid, display: CONCEPTS.EIDScreeningStation.display },
+    { uuid: CONCEPTS.NursingScreeningStation.uuid, display: CONCEPTS.NursingScreeningStation.display },
+  ],
   'clinicalOutcome': [
     { uuid: CONCEPTS.Clinical.FollowUp.uuid, display: CONCEPTS.Clinical.FollowUp.display },
     {
