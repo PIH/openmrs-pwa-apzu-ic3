@@ -639,7 +639,7 @@ export const FORM_NAMES = {
 
 export const FORM_ANSWERS = {
   'ReferToScreeningStation': [
-    { uuid: CONCEPTS.NutritionScreeningStation.uuid, display: CONCEPTS.NursingScreeningStation.display },
+    { uuid: CONCEPTS.NutritionScreeningStation.uuid, display: CONCEPTS.NutritionScreeningStation.display },
     { uuid: CONCEPTS.BloodPressureScreeningStation.uuid, display: CONCEPTS.BloodPressureScreeningStation.display },
     { uuid: CONCEPTS.HIVTestingStation.uuid, display: CONCEPTS.HIVTestingStation.display },
     { uuid: CONCEPTS.ViralLoadTestingStation.uuid, display: CONCEPTS.ViralLoadTestingStation.display },
