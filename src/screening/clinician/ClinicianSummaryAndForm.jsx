@@ -11,7 +11,6 @@ const ClinicianSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
-      allowMultipleForms
       completed={clinicianFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.ClinicalPlan}
       form={<ClinicianForm/>}
