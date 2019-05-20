@@ -15,6 +15,19 @@ import {CONCEPTS, ENCOUNTER_TYPES} from "../../constants";
 
 const orderedSummary = [
   {
+    screeningType: "Clinician",
+    concepts: [
+      CONCEPTS.Clinical.ClinicalNotes,
+      CONCEPTS.Clinical.Outcome,
+      CONCEPTS.Clinical.NextAppointmentDate,
+      CONCEPTS.Clinical.QualitativeTime,
+      CONCEPTS.Clinical.TransferFacility,
+      CONCEPTS.Clinical.ReasonToStopCare,
+      CONCEPTS.Clinical.OtherOutcome,
+      CONCEPTS.ReferToScreeningStation
+    ]
+  },
+  {
     screeningType: "Nutrition",
     concepts: [
       CONCEPTS.Weight,
@@ -53,6 +66,13 @@ const orderedSummary = [
       CONCEPTS.ReasonForNoSample,
       CONCEPTS.ReasonForTesting,
       CONCEPTS.HIV_TEST_RESULTS,
+    ]
+  },
+  {
+    screeningType: "TB Screening",
+    concepts: [
+      CONCEPTS.TB.SymptomPresent,
+      CONCEPTS.TB.SymptomAbsent
     ]
   },
   {
@@ -111,34 +131,6 @@ const ClinicianSummary = props => {
       <ChronicCareDiagnoses />
 
       <h4><u>Visit Summary</u></h4>
-      <span
-        style={{ paddingBottom: 5 }}
-      >
-        <h4>Clinician Information</h4>
-        <span
-          style={{ position: 'relative', left: 20 }}
-        >
-          <EncounterHistory
-            concepts={[CONCEPTS.Clinical.ClinicalNotes,
-              CONCEPTS.Clinical.Outcome,
-              CONCEPTS.Clinical.NextAppointmentDate,
-              CONCEPTS.Clinical.QualitativeTime,
-              CONCEPTS.Clinical.TransferFacility,
-              CONCEPTS.Clinical.ReasonToStopCare,
-              CONCEPTS.Clinical.OtherOutcome
-            ]}
-            encounterType={ENCOUNTER_TYPES.ClinicalPlan}
-            editable
-            onEditActionCreators={[
-              (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)
-            ]}
-            onEditCallbacks={[
-              props.gotoForm
-            ]}
-            maxEncounters={1}
-          />
-        </span>
-      </span>
       {orderedSummary.map((summary, index) => {
         // note that this will only take the *first* obs mapped to each concept... since we sorting encounters above, this should be the most recent
         const mappedObs = summary.concepts.map((concept) => obs.find(o => o.concept.uuid === concept.uuid));
