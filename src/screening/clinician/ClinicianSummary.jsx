@@ -179,7 +179,8 @@ const ClinicianSummary = props => {
             CONCEPTS.Clinical.QualitativeTime,
             CONCEPTS.Clinical.TransferFacility,
             CONCEPTS.Clinical.ReasonToStopCare,
-            CONCEPTS.Clinical.OtherOutcome
+            CONCEPTS.Clinical.OtherOutcome,
+            CONCEPTS.ReferToScreeningStation
           ]}
           encounterType={ENCOUNTER_TYPES.ClinicalPlan}
           editable
