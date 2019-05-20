@@ -15,6 +15,14 @@
     width: 120px;
 }
 
-#nutrition, #blood_pressure, #htc, #viral_load, #tb_screening, #tb_testing, #adherence, #eid, #nursing {
+.refer-to-station-edit-mode {
+    display: flex;
+}
+
+.refer-to-station-view-mode {
+    display: block;
+}
+
+.quater-width {
     width: 25%
 }
