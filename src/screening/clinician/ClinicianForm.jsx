@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { change, formValueSelector, untouch } from 'redux-form';
-import { Obs, selectors, formUtil } from '@openmrs/react-components';
+import { Obs, selectors, formUtil, FormContext } from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from '../../constants';
 import ScreeningForm from "../ScreeningForm";
@@ -168,24 +168,75 @@ class ClinicianForm extends React.Component {
           </Row>
         </span>}
 
-        <Row>
-          <Col componentClass={ControlLabel}>
-            Refer to station
-          </Col>
-        </Row>
-        <Row>
-          <FormGroup controlId="">
-            <Col sm={12}>
-              <Obs
-                concept={CONCEPTS.ReferToScreeningStation}
-                conceptAnswers={FORM_ANSWERS.ReferToScreeningStation}
-                justified={false}
-                path="clinical-refer-to-station"
-              />
-            </Col>
-          </FormGroup>
-        </Row>
+        <FormContext.Consumer>
+          {formContext => (<span>
+            <Row>
+              <Col componentClass={ControlLabel}>
+                    Refer to station
+              </Col>
+            </Row>
+            <Row>
+              <FormGroup controlId="">
+                <Col sm={12}>
+                  <div className={formContext.mode === 'edit' ? "refer-to-station-edit-mode" : "refer-to-station-view-mode"}>
+                    <Obs
+                      concept={CONCEPTS.ReferToScreeningStation}
+                      conceptAnswers={[CONCEPTS.NutritionScreeningStation]}
+                      path="clinical-refer-to-nutrition-station"
+                    />
+                    <Obs
+                      concept={CONCEPTS.ReferToScreeningStation}
+                      conceptAnswers={[CONCEPTS.BloodPressureScreeningStation]}
+                      path="clinical-refer-to-blood-pressure-station"
+                    />
+                    <Obs
+                      concept={CONCEPTS.ReferToScreeningStation}
+                      conceptAnswers={[CONCEPTS.AdherenceCounselingStation]}
+                      path="clinical-refer-to-adherence-station"
+                    />
+                    <Obs
+                      concept={CONCEPTS.ReferToScreeningStation}
+                      conceptAnswers={[CONCEPTS.HIVTestingStation]}
+                      path="clinical-refer-to-hiv-testing-station"
+                    />
+                  </div>
+                  <div className={formContext.mode === 'edit' ? "refer-to-station-edit-mode" : "refer-to-station-view-mode"}>
+                    <Obs
+                      concept={CONCEPTS.ReferToScreeningStation}
+                      conceptAnswers={[CONCEPTS.ViralLoadTestingStation]}
+                      path="clinical-refer-to-viral-load-station"
+                    />
+                    <Obs
+                      concept={CONCEPTS.ReferToScreeningStation}
+                      conceptAnswers={[CONCEPTS.TuberculosisSymptomsScreeningStation]}
+                      path="clinical-refer-to-tb-screening-station"
+                    />
+                    <Obs
+                      concept={CONCEPTS.ReferToScreeningStation}
+                      conceptAnswers={[CONCEPTS.TuberculosisTestingStation]}
+                      path="clinical-refer-to-tb-testing-station"
+                    />
+                    <Obs
+                      concept={CONCEPTS.ReferToScreeningStation}
+                      conceptAnswers={[CONCEPTS.EIDScreeningStation]}
+                      path="clinical-refer-to-eid-station"
+                    />
+                  </div>
+                  <div className={formContext.mode === 'edit' ? "refer-to-station-edit-mode quater-width" : "refer-to-station-view-mode"}>
+                    <Obs
+                      concept={CONCEPTS.ReferToScreeningStation}
+                      conceptAnswers={[CONCEPTS.NursingScreeningStation]}
+                      path="clinical-refer-to-nursing-station"
+                    />
+                  </div>
+                </Col>
+              </FormGroup>
+            </Row></span>
+          )
+          }
 
+        </FormContext.Consumer>
+        
       </Grid>
     );
 

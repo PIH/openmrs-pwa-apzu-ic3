@@ -638,17 +638,6 @@ export const FORM_NAMES = {
 };
 
 export const FORM_ANSWERS = {
-  'ReferToScreeningStation': [
-    { uuid: CONCEPTS.NutritionScreeningStation.uuid, display: CONCEPTS.NutritionScreeningStation.display },
-    { uuid: CONCEPTS.BloodPressureScreeningStation.uuid, display: CONCEPTS.BloodPressureScreeningStation.display },
-    { uuid: CONCEPTS.HIVTestingStation.uuid, display: CONCEPTS.HIVTestingStation.display },
-    { uuid: CONCEPTS.ViralLoadTestingStation.uuid, display: CONCEPTS.ViralLoadTestingStation.display },
-    { uuid: CONCEPTS.TuberculosisSymptomsScreeningStation.uuid, display: CONCEPTS.TuberculosisSymptomsScreeningStation.display },
-    { uuid: CONCEPTS.TuberculosisTestingStation.uuid, display: CONCEPTS.TuberculosisTestingStation.display },
-    { uuid: CONCEPTS.AdherenceCounselingStation.uuid, display: CONCEPTS.AdherenceCounselingStation.display },
-    { uuid: CONCEPTS.EIDScreeningStation.uuid, display: CONCEPTS.EIDScreeningStation.display },
-    { uuid: CONCEPTS.NursingScreeningStation.uuid, display: CONCEPTS.NursingScreeningStation.display },
-  ],
   'clinicalOutcome': [
     { uuid: CONCEPTS.Clinical.FollowUp.uuid, display: CONCEPTS.Clinical.FollowUp.display },
     {
