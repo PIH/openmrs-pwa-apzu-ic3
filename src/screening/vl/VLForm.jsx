@@ -56,7 +56,8 @@ class VLForm extends React.PureComponent {
 
     if ((vlNumeric.value && typeof vlNumeric.value !== 'undefined' && vlNumeric.value !== prevProps.vlNumeric.value) ||
         (vlDetectableLowerLimit.value && typeof vlDetectableLowerLimit.value !== 'undefined' && vlDetectableLowerLimit.value !== prevProps.vlDetectableLowerLimit.value) ||
-        (vlLowerthanDetectableLimits.value && typeof vlLowerthanDetectableLimits.value !== 'undefined' && vlLowerthanDetectableLimits.value !== prevProps.vlLowerthanDetectableLimits.value)
+        (vlLowerthanDetectableLimits.value && typeof vlLowerthanDetectableLimits.value !== 'undefined' && vlLowerthanDetectableLimits.value !== prevProps.vlLowerthanDetectableLimits.value) ||
+        (vlLessThanLimit.value && typeof vlLessThanLimit.value !== 'undefined' && vlLessThanLimit.value !== prevProps.vlLessThanLimit.value)
     ) {
       this.updateField(vlResultStatus.fieldName,  CONCEPTS.ViralLoadResultCompleted.uuid);
     }
@@ -235,7 +236,7 @@ class VLForm extends React.PureComponent {
             <br />
           </span>}
 
-          { (isAddVLResultsClicked || isAddVLResultsActive) && <span>
+          {(isAddVLResultsClicked || isAddVLResultsActive) && <span>
             <span>
               <Row>
                 <Col>
