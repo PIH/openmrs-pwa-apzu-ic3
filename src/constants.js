@@ -275,7 +275,8 @@ export const CONCEPTS = {
     uuid: '163310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
   },
   'ViralLoadLowerThanDetectionLimit': {
-    uuid: 'e97b36a2-16f5-11e6-b6ba-3e1d05defe78'
+    uuid: 'e97b36a2-16f5-11e6-b6ba-3e1d05defe78',
+    display: 'LDL'
   },
   'ViralLoadLowerThanDetectionLimitTrue': {
     uuid: '655e2f90-977f-11e1-8993-905e29aff6c1',
