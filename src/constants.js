@@ -393,6 +393,7 @@ export const CONCEPTS = {
   },
   'SOURCE_OF_REFERRAL' : {
     uuid: '65664fc2-977f-11e1-8993-905e29aff6c1',
+    display: 'Referred from',
     'SHARC': {
       uuid: '6f48dfac-9ffa-11e8-98d0-529269fb1459',
       display: 'SHARC'

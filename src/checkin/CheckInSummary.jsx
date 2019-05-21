@@ -6,10 +6,6 @@ import {CONCEPTS, ENCOUNTER_TYPES} from "../constants";
 
 const CheckInSummary = props => {
 
-  const labels = {
-    [CONCEPTS.SOURCE_OF_REFERRAL.uuid]: 'Referred from'
-  };
-
   return (
     <Grid>
       <Row>
@@ -75,7 +71,6 @@ const CheckInSummary = props => {
           CONCEPTS.SOURCE_OF_REFERRAL,
           CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care_ID
         ]}
-        labels={labels}
         editableEncounterTypes={[ENCOUNTER_TYPES.CheckInEncounterType]}
         onEditEncounterActionCreators={[
           (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)
