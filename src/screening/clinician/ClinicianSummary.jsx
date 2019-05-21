@@ -79,6 +79,8 @@ const orderedSummary = [
     screeningType: "TB Test",
     concepts: [
       CONCEPTS.TBTestType,
+      CONCEPTS.TB.SymptomPresent,
+      CONCEPTS.TB.SymptomAbsent,
       CONCEPTS.GeneXpert,
       CONCEPTS.Smear,
       CONCEPTS.RifampinResistance,
@@ -133,7 +135,11 @@ const ClinicianSummary = props => {
       <h4><u>Visit Summary</u></h4>
       {orderedSummary.map((summary, index) => {
         // note that this will only take the *first* obs mapped to each concept... since we sorting encounters above, this should be the most recent
-        const mappedObs = summary.concepts.map((concept) => obs.find(o => o.concept.uuid === concept.uuid));
+        let mappedObs = [];
+        summary.concepts.forEach((concept) => {
+          const matchedObs = obs.filter(o => o.concept.uuid === concept.uuid);
+          mappedObs = mappedObs.concat(matchedObs);
+        });
         let obsHistory = R.filter(R.identity)(mappedObs);
         if (summary.screeningType === "Nutrition" && obsHistory.length > 0) {
           const encounterUuid = obsHistory[0].encounter.uuid;
