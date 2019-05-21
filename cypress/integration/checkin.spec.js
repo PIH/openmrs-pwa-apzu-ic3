@@ -6,7 +6,7 @@ describe('Check in', () => {
     cy.login();
   });
 
-  it.skip('Should search for patient and Check-in patient into NEW location', () => {
+  it('Should search for patient and Check-in patient into NEW location', () => {
     cy.searchPatientByID('MGT 148 CCC');
 
     // Select the patient
@@ -20,7 +20,8 @@ describe('Check in', () => {
       .click();
 
     // Navigate to check-in form
-    cy.get('.summary-swiper-button')
+    cy.get('u')
+      .first()
       .click();
 
     cy.wait(3000);
@@ -52,10 +53,10 @@ describe('Check in', () => {
 
         cy.wait(3000);
   
-        // Check that the new location was saved properly
-        cy.get('.form-group .button-group-view')
+        // Check that the form is in edit mode
+        cy.get('.form-action-btns > button')
           .first()
-          .should('not.contain', 'OPD at health center');
+          .should('contain', 'Edit');
       });
   });
 
