@@ -143,7 +143,7 @@ const ClinicianSummary = props => {
         let obsHistory = R.filter(R.identity)(mappedObs);
         if (summary.screeningType === "Nutrition" && obsHistory.length > 0) {
           const encounterUuid = obsHistory[0].encounter.uuid;
-          obsHistory = props.nutritionHistory.filter(h => h.encounter.uuid === encounterUuid);
+          obsHistory = props.nutritionHistory.filter(h => h.encounter && h.encounter.uuid === encounterUuid);
         };
 
         return (

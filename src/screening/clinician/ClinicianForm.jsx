@@ -213,11 +213,6 @@ class ClinicianForm extends React.Component {
                     />
                     <Obs
                       concept={CONCEPTS.ReferToScreeningStation}
-                      conceptAnswers={[CONCEPTS.TuberculosisTestingStation]}
-                      path="clinical-refer-to-tb-testing-station"
-                    />
-                    <Obs
-                      concept={CONCEPTS.ReferToScreeningStation}
                       conceptAnswers={[CONCEPTS.EIDScreeningStation]}
                       path="clinical-refer-to-eid-station"
                     />
