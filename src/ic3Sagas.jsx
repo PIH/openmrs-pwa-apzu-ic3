@@ -10,14 +10,14 @@ import {
   selectors,
   conceptActions
 } from '@openmrs/react-components';
-import { history } from '../store';
-import ic3PatientActions from './patientActions';
-import IC3_PATIENT_TYPES from './patientTypes';
-import { ACTIVE_VISITS_REP } from '../constants';
-import reportingRest from '../rest/reportingRest';
+import {history} from './store';
+import ic3PatientActions from './patient/patientActions';
+import IC3_PATIENT_TYPES from './patient/patientTypes';
+import {ACTIVE_VISITS_REP} from './constants';
+import reportingRest from './rest/reportingRest';
 import * as R from "ramda";
-import utils from "../utils";
-import { CONCEPTS } from "../constants";
+import utils from "./utils";
+import {CONCEPTS} from "./constants";
 
 const createFromReportingRestRep = (restRep) => {
   let patient = {};

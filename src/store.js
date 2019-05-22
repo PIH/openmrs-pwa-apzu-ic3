@@ -22,7 +22,7 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import { default as screeningReducer } from './screening/actions/reducer';
 import checkInSagas from './checkin/checkInSagas';
 import checkOutSagas from './checkin/checkOutSagas';
-import patientSagas from './patient/patientSagas';
+import ic3Sagas from './ic3Sagas';
 import nutrionSagas from './screening/nutrition/nutritionSagas';
 import nutritionReducer from './screening/nutrition/nutritionReducer';
 
@@ -83,7 +83,7 @@ const rootSagas = function* () {
     openmrsSagas(),
     checkInSagas(),
     checkOutSagas(),
-    patientSagas(),
+    ic3Sagas(),
     nutrionSagas(),
   ]);
 };
