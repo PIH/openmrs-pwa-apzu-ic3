@@ -872,6 +872,7 @@ export const ALERTS_CATEGORIES = {
   EID_ALERT: "eid",
   ADHERENCE_ALERT: "adherence",
   SPUTUM_ALERT: "sputum",
+  NURSE_ALERT: "nurse",
   SCREENING_ELIGIBILITY_ALERT: "screening-eligibility"
 };
 
