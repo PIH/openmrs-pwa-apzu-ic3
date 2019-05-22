@@ -6,9 +6,12 @@ import {
   PATIENT_TYPES,
   visitActions,
   locationActions,
+  sessionActions,
   patientIdentifierTypesActions,
   selectors,
-  conceptActions
+  conceptActions,
+  providerRest,
+  sessionRest
 } from '@openmrs/react-components';
 import {history} from './store';
 import ic3PatientActions from './patient/patientActions';
@@ -133,8 +136,9 @@ function* patientSelected(action) {
   yield put(ic3PatientActions.getIC3PatientNutritionHistory(action.patient));
 }
 
-// TODO we are bundling other actions we want to do on login here--should these be in another saga?
+// trigger everything that needs to happen on a login
 function* initiateLoginActions(action) {
+  yield createProviderAccountIfNecessary();
   yield put(locationActions.fetchAllLocations());
   // TODO we should consider fetching *all* concepts at this point--now just fetching the concept answers we want to set "display" values for
   yield put(conceptActions.fetchConcepts([
@@ -162,6 +166,23 @@ function* initiateIC3PatientsAction(action) {
       true));  // loadExpectedPatients = true
   }
 
+}
+
+function* createProviderAccountIfNecessary() {
+  const session = yield select(selectors.getSession);
+  const currentProvider = session.currentProvider;
+  if (!currentProvider || !currentProvider.uuid) {
+    const user = session.user;
+    // OpenMRS by default users the userId as the provider identifier if none specified, so we do the same here until we come up with something better
+    yield call(providerRest.createProvider, {
+      person: user.person.uuid,
+      identifier: user.systemId
+    });
+    // we need to re-fetch the session after (and yield until this is complete)
+    // not quite sure why, but we also need to set the session location again
+    let sessionResponse = yield call(sessionRest.setCurrentSessionLocation, { location: session.sessionLocation.uuid });
+    yield put(sessionActions.fetchSessionSucceeded(sessionResponse, { authorization: session.authorization }));
+  }
 }
 
 
