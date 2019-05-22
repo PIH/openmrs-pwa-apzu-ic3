@@ -110,8 +110,22 @@ class VLForm extends React.PureComponent {
   }
 
   render() {
-    const { vlResultStatus, vlLowerthanDetectableLimits, reasonForTesting, labLocation, bled, reasonForNoResult, vlDetectableLowerLimit, vlNumeric } = this.props;
+    const {
+      vlResultStatus,
+      vlLowerthanDetectableLimits,
+      reasonForTesting,
+      labLocation,
+      bled,
+      reasonForNoResult,
+      vlDetectableLowerLimit,
+      vlNumeric,
+      vlLessThanLimit,
+    } = this.props;
     const { isAddVLResults, isAddVLResultsClicked, isAddVLResultsActive } = this.state;
+
+    const showVlResultValidations =  !((vlResultStatus.value === CONCEPTS.ViralLoadResultCompleted.uuid || vlResultStatus.value === CONCEPTS.ViralLoadResultUnableToProcess.uuid)  &&
+      (vlNumeric.value || vlLowerthanDetectableLimits.value || vlLessThanLimit.value || reasonForNoResult.value));
+
 
     if (bled.value === CONCEPTS.True.uuid && reasonForTesting.value && labLocation.value) {
       this.setState({ isAddVLResults: true });
@@ -289,6 +303,7 @@ class VLForm extends React.PureComponent {
                       concept={CONCEPTS.ViralLoad}
                       path="vl-numeric"
                       placeholder="value"
+                      required={showVlResultValidations}
                     />
                   </Col>
                   <ControlLabel
@@ -314,6 +329,7 @@ class VLForm extends React.PureComponent {
                       concept={CONCEPTS.ViralLoadLessThanLimit}
                       path="vl-less-than-limit"
                       placeholder="value"
+                      required={showVlResultValidations}
                     />
                   </Col>
                   <ControlLabel
@@ -336,6 +352,7 @@ class VLForm extends React.PureComponent {
                     concept={CONCEPTS.ViralLoadLowerThanDetectionLimit.uuid}
                     conceptAnswers={FORM_ANSWERS.ViralLoadLDL}
                     path="vl-lower-than-detectable-limits"
+                    required={showVlResultValidations}
                   />
                 </FormGroup>
               </Row>
@@ -358,6 +375,7 @@ class VLForm extends React.PureComponent {
                       concept={CONCEPTS.ReasonForNoResult.uuid}
                       conceptAnswers={FORM_ANSWERS.ReasonForNoResult}
                       path="vl-reason-for-no-result"
+                      required={showVlResultValidations}
                     />
                   </Col>
                 </FormGroup>
