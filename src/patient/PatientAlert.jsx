@@ -16,9 +16,9 @@ const formatEnrollmentText = (text) => {
   return formattedText;
 }
 
-const getAlertStatus = (alertName) => {
-  if (alertName.includes('critical')) return 'critical';
-  if (alertName.includes('abnormal')) return 'abnormal';
+const getAlertStatus = (alertCategories) => {
+  if (alertCategories.includes('critical')) return 'critical';
+  if (alertCategories.includes('abnormal')) return 'abnormal';
 };
 
 const orderAlerts = (patientAlerts) => {
