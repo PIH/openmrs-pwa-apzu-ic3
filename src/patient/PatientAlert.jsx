@@ -17,18 +17,18 @@ const formatEnrollmentText = (text) => {
 }
 
 const getAlertStatus = (alertName) => {
-  if (alertName.includes('critical')) return 'critical';
-  if (alertName.includes('abnormal')) return 'abnormal';
+  if (alertName.includes('critical-result')) return 'critical';
+  if (alertName.includes('abnormal-result')) return 'abnormal';
 };
 
 const orderAlerts = (patientAlerts) => {
-  const criticalAlerts = patientAlerts.filter(alert => alert.name.includes('critical'));
-  const abnormalAlerts = patientAlerts.filter(alert => alert.name.includes('abnormal'));
+  const criticalAlerts = patientAlerts.filter(alert => alert.categories.includes('critical-result'));
+  const abnormalAlerts = patientAlerts.filter(alert => alert.categories.includes('abnormal-result'));
   const validAlerts = criticalAlerts.concat(abnormalAlerts);
   const alerts = validAlerts.map((alert) => {
     return {
       ...alert,
-      status: getAlertStatus(alert.name)
+      status: getAlertStatus(alert.categories)
     };
   })
   
