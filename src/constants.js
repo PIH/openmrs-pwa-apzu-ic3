@@ -116,6 +116,8 @@ export const LOCATION_TYPES = {
   }
 };
 
+// *** NOTE: we are now dynamically loading all these concepts on log-in, so it's important that we mantain the
+// basic structure of this file, and if we add fields that we wish to override, we update "flattenConcepts" in ic3Sagas accordingly. ***
 // annoyingly we use both "True/False" and "Yes/No" in Malawi behind the scenes, separate concepts with separate uuids
 export const CONCEPTS = {
   'True': {
@@ -395,8 +397,7 @@ export const CONCEPTS = {
     uuid: '65664fc2-977f-11e1-8993-905e29aff6c1',
     display: 'Referred from',
     'SHARC': {
-      uuid: '6f48dfac-9ffa-11e8-98d0-529269fb1459',
-      display: 'SHARC'
+      uuid: '6f48dfac-9ffa-11e8-98d0-529269fb1459'
     },
     'OPD_at_health_center': {
       uuid: '655ac68e-977f-11e1-8993-905e29aff6c1',

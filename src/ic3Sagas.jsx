@@ -68,6 +68,52 @@ const createFromReportingRestRep = (restRep) => {
   return patient;
 };
 
+
+function flattenConcepts(concepts) {
+
+  return Object.values(concepts).reduce(function (acc, concept) {
+
+    // pull out the uuid and other props defined as custom overrides from the "others" (which assumedly are nested concepts)
+    var { uuid, display, hiNormal, hiAbsolute, hiCritical, lowNormal, lowCritical, lowAbsolute, ...others } = concept;
+
+    var conceptWithNestedConceptsRemoved = {
+      uuid,
+      display,
+      hiNormal,
+      hiCritical,
+      hiAbsolute,
+      lowNormal,
+      lowCritical,
+      lowAbsolute,
+    };
+
+    // script out any of the above that are "undefined" (is there a better way to do this)
+    Object.keys(conceptWithNestedConceptsRemoved).forEach(key => conceptWithNestedConceptsRemoved[key] === undefined && delete conceptWithNestedConceptsRemoved[key]);
+
+    // if there are any "others", call flatten recursively and add to the list
+    if (Object.values(others).length) {
+      acc = [
+        ...acc,
+        ...flattenConcepts(others)
+      ];
+    }
+
+    // add this concept to the list, assuming that we've found a uuid
+    if (uuid) {
+      return [
+        ...acc,
+        {
+          ...conceptWithNestedConceptsRemoved
+        }
+      ];
+    } else {
+      return acc;
+    }
+  });
+}
+
+
+
 function* getIC3Patients(action) {
 
   try {
@@ -140,11 +186,7 @@ function* patientSelected(action) {
 function* initiateLoginActions(action) {
   yield createProviderAccountIfNecessary();
   yield put(locationActions.fetchAllLocations());
-  // TODO we should consider fetching *all* concepts at this point--now just fetching the concept answers we want to set "display" values for
-  yield put(conceptActions.fetchConcepts([
-    CONCEPTS.Clinical.QualitativeTimeAM,
-    CONCEPTS.Clinical.QualitativeTimePM,
-  ]));
+  yield put(conceptActions.fetchConcepts(flattenConcepts(CONCEPTS)));
   yield put(patientIdentifierTypesActions.fetchPatientIdentifierTypes());
   yield initiateIC3PatientsAction(action);
 }
