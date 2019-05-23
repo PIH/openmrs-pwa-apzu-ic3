@@ -92,24 +92,27 @@ function flattenConcepts(concepts) {
 
     // if there are any "others", call flatten recursively and add to the list
     if (Object.values(others).length) {
+
+      const flattened = flattenConcepts(others);
+
       acc = [
         ...acc,
-        ...flattenConcepts(others)
+        ...flattened
       ];
     }
 
     // add this concept to the list, assuming that we've found a uuid
     if (uuid) {
-      return [
+      acc = [
         ...acc,
         {
           ...conceptWithNestedConceptsRemoved
         }
       ];
-    } else {
-      return acc;
     }
-  });
+
+    return acc;
+  }, []);
 }
 
 
