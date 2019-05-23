@@ -10,6 +10,7 @@ import eidFilters from './eid/eidFilters';
 import adherenceFilters from './adherence/adherenceFilters';
 import checkInFilters from "../checkin/checkInFilters";
 import clinicianFilters from "./clinician/clinicianFilters";
+import nurseFilters from "./nurse/nurseFilters";
 import tbFilters from "./tb/tbFilters";
 import tbTestFilters from './tbTest/tbTestFilters';
 
@@ -27,6 +28,12 @@ export class ScreeningList extends React.Component {
         required: (patient) => !clinicianFilters.completed(patient),
         completed: clinicianFilters.completed,
         link: '/screening/clinician/form',
+      },
+      {
+        title: "Nursing",
+        required: (patient) => !nurseFilters.completed(patient),
+        completed: nurseFilters.completed,
+        link: '/screening/nurse/nursePage',
       }
     ];
 
