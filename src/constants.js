@@ -382,7 +382,7 @@ export const CONCEPTS = {
     },
     'PainfulNeckAndArmpitLymphNodes': {
       uuid: '974d5caf-2db6-4d5d-b509-11c6f5340ea5',
-      display: 'Painful nexk and armpit lymph nodes'
+      display: 'Painful neck and armpit lymph nodes'
     },
     'SymptomPresent': {
       uuid: '6558d3ba-977f-11e1-8993-905e29aff6c1',
