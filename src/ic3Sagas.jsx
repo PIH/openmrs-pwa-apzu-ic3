@@ -87,8 +87,6 @@ function flattenConcepts(concepts) {
       lowAbsolute,
     };
 
-    // script out any of the above that are "undefined" (is there a better way to do this)
-    Object.keys(conceptWithNestedConceptsRemoved).forEach(key => conceptWithNestedConceptsRemoved[key] === undefined && delete conceptWithNestedConceptsRemoved[key]);
 
     // if there are any "others", call flatten recursively and add to the list
     if (Object.values(others).length) {
@@ -106,7 +104,7 @@ function flattenConcepts(concepts) {
       acc = [
         ...acc,
         {
-          ...conceptWithNestedConceptsRemoved
+          ...R.filter(prop => prop !== undefined, conceptWithNestedConceptsRemoved)  // strip out any undefined object properties
         }
       ];
     }
