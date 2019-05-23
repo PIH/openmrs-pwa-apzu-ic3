@@ -113,7 +113,7 @@ export class SummaryAndForm extends React.Component {
 
     if (completed && !allowMultipleForms) {
       return;
-    } else {
+    } else if (this.props.form) {
       return (
         <button
           className="summary-swiper-button"
@@ -123,6 +123,7 @@ export class SummaryAndForm extends React.Component {
         </button>
       );
     }
+    return null;
   }
 
   handleAddFormButton() {
@@ -234,7 +235,7 @@ export class SummaryAndForm extends React.Component {
                 <div className="form-action-btns">
                   {this.getFormState() === FORM_STATES.EDITING ?
                     (<button
-className={isSaveDisabled ? 'disabled-btn' : 'enabled-btn'}
+                      className={isSaveDisabled ? 'disabled-btn' : 'enabled-btn'}
                       disabled={isSaveDisabled}
                       onClick={this.submitForm}
                     >Save</button>) :
@@ -247,8 +248,8 @@ className={isSaveDisabled ? 'disabled-btn' : 'enabled-btn'}
           <Row>
             <div className="swiping-summary-and-form">
               <Swiper {...params}
-noSwiping={true}
-ref={node => { if (node) {this.swiper = node.swiper;}}}>
+                noSwiping={true}
+                ref={node => { if (node) {this.swiper = node.swiper;}}}>
                 <div className="summary-form">
                   <Summary
                     backLink={this.props.backLink}
@@ -260,11 +261,13 @@ ref={node => { if (node) {this.swiper = node.swiper;}}}>
                   />
                 </div>
                 <div className="form-summary">
+                  {this.props.form &&
                   <Form
                     backLink={this.gotoSummary}
                     form={this.props.form}
                     formInstanceId={this.formInstanceId}
                   />
+                  }
                 </div>
               </Swiper>
             </div>

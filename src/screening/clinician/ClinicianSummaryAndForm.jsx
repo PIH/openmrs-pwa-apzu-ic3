@@ -18,7 +18,7 @@ const ClinicianSummaryAndForm = props => {
       title="Clinician"
     />
   );
-
+  
 };
 
 const mapStateToProps = (state) => {
