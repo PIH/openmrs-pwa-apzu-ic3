@@ -126,6 +126,10 @@ const VisitSummary = props => {
       {orderedSummary.map((summary, index) => {
         // note that this will only take the *first* obs mapped to each concept... since we sorting encounters above, this should be the most recent
         let mappedObs = [];
+
+        // just incase we need to add more types with reversed labels, we just put it in the array
+        const reversedScreeningTypes = ['TB Screening'];
+
         summary.concepts.forEach((concept) => {
           const matchedObs = obs.filter(o => o.concept.uuid === concept.uuid);
           mappedObs = mappedObs.concat(matchedObs);
@@ -135,6 +139,7 @@ const VisitSummary = props => {
           const encounterUuid = obsHistory[0].encounter.uuid;
           obsHistory = props.nutritionHistory.filter(h => h.encounter && h.encounter.uuid === encounterUuid);
         };
+
 
         return (
           <span
@@ -149,6 +154,7 @@ const VisitSummary = props => {
                 concepts={summary.concepts}
                 key={index}
                 obs={obsHistory}
+                reverseLabelAndValue={reversedScreeningTypes.includes(summary.screeningType)}
                 showDates={false}
               />
             </span>
