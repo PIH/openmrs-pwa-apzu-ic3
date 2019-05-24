@@ -78,19 +78,22 @@ let AdherenceForm = (props) => {
       </Row>
       <Row>
         <Col sm={1}>
-          <FormGroup controlId="formAdherencePercentage">
+          <FormGroup
+            controlId="formAdherencePercentage" 
+            style={{ width:50 }}
+          >
             <Obs
               concept={CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage.uuid}
               path="adherence-percentage"
-              placeholder="Enter percentage"
+              placeholder="%"
               required
             />
           </FormGroup>
         </Col>
         <Col
-          componentClass={ControlLabel}
+          className="obs-unit"
+          componentClass="span"
           sm={1}
-          style={leftTextAlign}
         >
           %
         </Col>
@@ -105,20 +108,16 @@ let AdherenceForm = (props) => {
       </Row>
       <Row>
         <Col sm={1}>
-          <FormGroup controlId="formAdherenceMissedDoses">
+          <FormGroup
+            controlId="formAdherenceMissedDoses"
+            style={{ width: 50 }}
+          >
             <Obs
               concept={CONCEPTS.ADHERENCE_COUNSELING.MissedDosesLastWeek.uuid}
               path="adherence-missed-doses"
               placeholder="Enter missed doses"
             />
           </FormGroup>
-        </Col>
-        <Col
-          componentClass={ControlLabel}
-          sm={1}
-          style={leftTextAlign}
-        >
-          %
         </Col>
       </Row>
 
