@@ -116,3 +116,10 @@
 .glyph-back-button {
   width: 120%;
 }
+
+.obs-unit {
+    position: relative;
+    right: 25px;
+    top: 12px;
+}
+
