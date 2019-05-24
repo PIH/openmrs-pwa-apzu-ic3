@@ -119,21 +119,25 @@ class PatientAlert extends PureComponent {
                 }
               </div>
               {isOpen &&
-                <div className="alert-items">
-                  {patientAlerts.alerts.map((alert, index) => {
-                    return (
-                      <div
-                        className="alert-item"
-                        key={index}
-                      >
-                        <span className={`${alert.status}-alert`}>{alert.status}: </span>
-                        <span className="alert-description">{alert.alert} </span>
-                        <span>{formatEnrollmentText(alert.action)} </span>
-                      </div>
-                    )
-                  })
-                  }
-                </div>
+                <ul>
+                  <div className="alert-items">
+                    {patientAlerts.alerts.map((alert, index) => {
+                      return (
+                        <li>
+                          <div
+                            className="alert-item"
+                            key={index}
+                          >
+                            {alert.status && <span className={`${alert.status}-alert`}>{alert.status}: </span>}
+                            <span className="alert-description">{alert.alert} </span>
+                            <span>{formatEnrollmentText(alert.action)} </span>
+                          </div>
+                        </li>
+                      )
+                    })
+                    }
+                  </div>
+                </ul>
               }
             </Well>
           </div>
