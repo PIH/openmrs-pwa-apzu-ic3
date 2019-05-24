@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-bottom: 20px;
+  height: 40px;
 }
 
 .patient-alert.closed {
@@ -54,6 +54,7 @@
 .critical-alert, .abnormal-alert, .alert-description {
   font-weight: 800;
   text-transform: capitalize;
+  width: 240px;
 }
 
 .critical-alert{

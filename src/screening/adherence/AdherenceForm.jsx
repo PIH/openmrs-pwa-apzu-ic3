@@ -4,7 +4,6 @@ import {Obs, selectors} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import '../../assets/css/tabs.css';
-import { leftTextAlign } from "../../pwaStyles";
 import ScreeningForm from "../ScreeningForm";
 
 let AdherenceForm = (props) => {
