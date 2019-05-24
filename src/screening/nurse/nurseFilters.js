@@ -6,7 +6,7 @@ const nurseFilter = patient => {
   return utils.hasAlert(patient.alert, [
     ALERTS_CATEGORIES.NURSE_ALERT,
     ALERTS_CATEGORIES.SCREENING_ELIGIBILITY_ALERT
-  ]) && !utils.hasAlert(patient.alert, [ALERTS_CATEGORIES.VIRAL_LOAD_ALERT]);
+  ]);
 };
 
 export default {
