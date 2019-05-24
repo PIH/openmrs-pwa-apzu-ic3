@@ -44,7 +44,6 @@ const orderedSummary = [
     screeningType: "Viral Load",
     concepts: [
       CONCEPTS.ViralLoad,
-      CONCEPTS.ViralLoadLowerThanDetectionLimit,
       CONCEPTS.Bled,
       CONCEPTS.ReasonForNoSample,
       CONCEPTS.ReasonForTesting,
