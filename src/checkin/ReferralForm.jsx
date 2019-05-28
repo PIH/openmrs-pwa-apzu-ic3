@@ -90,6 +90,7 @@ class ReferralForm extends React.Component {
         formContent={formContent}
         formId="checkin-form"
         formInstanceId={this.props.formInstanceId}
+        hideSubmitActionButtons={patient.deceased}
       />
     );
   }
