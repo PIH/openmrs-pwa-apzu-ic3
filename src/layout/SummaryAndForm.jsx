@@ -60,7 +60,7 @@ export class SummaryAndForm extends React.Component {
       this.setState({
         currentView: 'form'
       });
-      this.summaryAndFormRef.current.scrollTo(0, 0);
+      this.scrollToTop();
       this.swiper.slideNext();
     }
   }
@@ -70,10 +70,15 @@ export class SummaryAndForm extends React.Component {
       this.setState({
         currentView: 'summary'
       });
-      this.summaryAndFormRef.current.scrollTo(0, 0);
+      this.scrollToTop();
       this.swiper.slidePrev();
     }
-    ;
+  }
+
+  scrollToTop() {
+    if (this.summaryAndFormRef) {
+      this.summaryAndFormRef.current.scrollTo(0, 0);
+    }
   }
 
   checkIn() {
