@@ -32,6 +32,7 @@ class ScreeningForm extends React.Component {
           formInstanceId={props.formInstanceId}
           formSubmittedActionCreators={formSubmittedActionCreators}
           // hideActionButtons={true}
+          hideSubmitActionButtons={props.hideSubmitActionButtons}
           showDate={true}
           title={props.title}
           toastMessage={props.toastMessage ? props.toastMessage : "Screening Form Saved"}
