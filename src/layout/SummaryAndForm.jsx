@@ -42,6 +42,7 @@ export class SummaryAndForm extends React.Component {
     this.checkIn = this.checkIn.bind(this);
     this.disableCheckIn = false;
     this.swiper = null;
+    this.summaryAndFormRef = React.createRef();
     this.formInstanceId = uuidv4();
     this.state = {
       currentView: ''
@@ -59,6 +60,7 @@ export class SummaryAndForm extends React.Component {
       this.setState({
         currentView: 'form'
       });
+      this.summaryAndFormRef.current.scrollTo(0, 0);
       this.swiper.slideNext();
     }
   }
@@ -68,6 +70,7 @@ export class SummaryAndForm extends React.Component {
       this.setState({
         currentView: 'summary'
       });
+      this.summaryAndFormRef.current.scrollTo(0, 0);
       this.swiper.slidePrev();
     }
     ;
@@ -246,10 +249,15 @@ export class SummaryAndForm extends React.Component {
             }
           </Row>
           <Row>
-            <div className="swiping-summary-and-form">
-              <Swiper {...params}
+            <div
+              className="swiping-summary-and-form"
+              ref={this.summaryAndFormRef}
+            >
+              <Swiper
+                {...params}
                 noSwiping={true}
-                ref={node => { if (node) {this.swiper = node.swiper;}}}>
+                ref={node => { if (node) {this.swiper = node.swiper;}}}
+              >
                 <div className="summary-form">
                   <Summary
                     backLink={this.props.backLink}
