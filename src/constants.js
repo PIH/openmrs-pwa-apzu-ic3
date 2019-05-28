@@ -435,7 +435,7 @@ export const CONCEPTS = {
   },
   'GeneXpert': {
     uuid: '162202AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    display: 'GeneXpert'
+    display: 'GeneXpert Result'
   },
   'Smear': {
     uuid: '65628568-977f-11e1-8993-905e29aff6c1',
