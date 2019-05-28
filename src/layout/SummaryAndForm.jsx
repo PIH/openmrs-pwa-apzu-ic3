@@ -76,7 +76,8 @@ export class SummaryAndForm extends React.Component {
   }
 
   scrollToTop() {
-    if (this.summaryAndFormRef) {
+    // TODO: running cypress tests in headless mode does not recognize refs: would need to figure out an alternative way to do this
+    if (this.summaryAndFormRef && typeof this.summaryAndFormRef.current.scrollTo  === 'function') {
       this.summaryAndFormRef.current.scrollTo(0, 0);
     }
   }
