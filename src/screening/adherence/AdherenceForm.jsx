@@ -4,6 +4,7 @@ import {Obs, selectors} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from "../../constants";
 import '../../assets/css/tabs.css';
+import './styles/adherence.css';
 import ScreeningForm from "../ScreeningForm";
 
 let AdherenceForm = (props) => {
@@ -76,10 +77,10 @@ let AdherenceForm = (props) => {
         </Col>
       </Row>
       <Row>
-        <Col sm={1}>
+        <Col xs={1}>
           <FormGroup
             controlId="formAdherencePercentage" 
-            style={{ width:50 }}
+            style={{ width: 75 }}
           >
             <Obs
               concept={CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage.uuid}
@@ -92,7 +93,7 @@ let AdherenceForm = (props) => {
         <Col
           className="obs-unit"
           componentClass="span"
-          sm={1}
+          xs={1}
         >
           %
         </Col>
@@ -109,7 +110,7 @@ let AdherenceForm = (props) => {
         <Col sm={1}>
           <FormGroup
             controlId="formAdherenceMissedDoses"
-            style={{ width: 50 }}
+            style={{ width: 150 }}
           >
             <Obs
               concept={CONCEPTS.ADHERENCE_COUNSELING.MissedDosesLastWeek.uuid}
