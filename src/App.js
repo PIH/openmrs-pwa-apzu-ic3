@@ -229,6 +229,7 @@ const App = props => {
             />
             <Layout
               component={NursePage}
+              fullViewHeight
               path="/screening/nurse/nursePage"
               redirectOnLogin="/"
             />
