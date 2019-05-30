@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { endOfDay, addMonths } from 'date-fns';
 import { change, formValueSelector, untouch } from 'redux-form';
-import { Obs, selectors, formUtil, FormContext } from '@openmrs/react-components';
+import { Obs, selectors, formUtil, FormContext, formValidations } from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from '../../constants';
 import ScreeningForm from "../ScreeningForm";
@@ -67,7 +68,9 @@ class ClinicianForm extends React.Component {
   }
 
   render() {
-    const { clinicalOutcome } = this.props;
+    const yesterday = formValidations.minDateValue(endOfDay(new Date() - 1));
+    const next12Months = formValidations.maxDateValue(endOfDay(addMonths(new Date(), 12)));
+    const { clinicalOutcome, clinicalNextAppointmentDate } = this.props;
     const formContent = (
       <Grid>
         <Row>
@@ -119,11 +122,13 @@ class ClinicianForm extends React.Component {
               defaultDate={undefined}
               path="clinical-next-appointment-date"
               usePortalMode
+              validate={[yesterday, next12Months]}
             />
             <span style={{ marginLeft: '20px', marginTop: '1px' }}>
               <Obs
                 concept={CONCEPTS.Clinical.QualitativeTime.uuid}
                 conceptAnswers={FORM_ANSWERS.clinicalQualitativeTime}
+                disabled={(yesterday(clinicalNextAppointmentDate) || next12Months(clinicalNextAppointmentDate)) ? true : false}
                 path="clinical-qualitative-time"
               />
             </span>
