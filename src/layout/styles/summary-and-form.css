@@ -18,7 +18,7 @@
 }
 
 .swiper-slide {
-  background: lightgray;
+  background: #e8e6e6;
 }
 
 .summary-swiper-button {
@@ -79,7 +79,7 @@
   min-height: 100vh;
   padding: 20px;
   font-size: 120%;
-  background: lightgray;
+  background: #e8e6e6;
 }
 
 .summary-and-form .list-group-item-heading {
@@ -101,7 +101,7 @@
   height: auto;
   min-height: 100vh;
   padding-left: 10px;
-  background: lightgray;
+  background: #e8e6e6;
 }
 
 .swiper-add-new-btn {
