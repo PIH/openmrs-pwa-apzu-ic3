@@ -85,7 +85,6 @@ let AdherenceForm = (props) => {
             <Obs
               concept={CONCEPTS.ADHERENCE_COUNSELING.DrugAdherencePercentage.uuid}
               path="adherence-percentage"
-              placeholder="%"
               required
             />
           </FormGroup>
