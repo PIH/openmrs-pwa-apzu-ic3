@@ -68,8 +68,8 @@ class ClinicianForm extends React.Component {
   }
 
   render() {
-    const yesterday = formValidations.minDateValue(endOfDay(new Date() - 1));
-    const next12Months = formValidations.maxDateValue(endOfDay(addMonths(new Date(), 12)), "Date cannot be more than a year in the future");
+    const yesterday = formValidations.minDateValue(endOfDay(new Date() - 1), "today's");
+    const next12Months = formValidations.maxDateValue(endOfDay(addMonths(new Date(), 12)), null, "Date cannot be more than a year in the future");
     const { clinicalOutcome, clinicalNextAppointmentDate } = this.props;
     const formContent = (
       <Grid>
