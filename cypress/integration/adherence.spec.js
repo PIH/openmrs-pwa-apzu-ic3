@@ -7,7 +7,7 @@ describe('Adherence station', () => {
     cy.init();
   });
   
-  it.skip('Should search for patient and select YES/NO in the form', () => {
+  it('Should search for patient and select YES/NO in the form', () => {
     cy.searchPatientByID('MGT 148 CCC');
   
     // Select the patient

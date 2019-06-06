@@ -128,7 +128,7 @@ class ClinicianForm extends React.Component {
               <Obs
                 concept={CONCEPTS.Clinical.QualitativeTime.uuid}
                 conceptAnswers={FORM_ANSWERS.clinicalQualitativeTime}
-                disabled={(yesterday(clinicalNextAppointmentDate) || next12Months(clinicalNextAppointmentDate)) ? true : false}
+                disabled={(yesterday(clinicalNextAppointmentDate) || next12Months(clinicalNextAppointmentDate)) || !clinicalNextAppointmentDate ? true : false}
                 path="clinical-qualitative-time"
               />
             </span>
