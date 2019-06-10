@@ -273,9 +273,6 @@ export const CONCEPTS = {
     uuid: '3cd75550-26fe-102b-80cb-0017a47871b2',
     display: 'Unable to process'
   },
-  'HIVViralLoadStatus': {
-    uuid: '163310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
-  },
   'ViralLoadLowerThanDetectionLimit': {
     uuid: 'e97b36a2-16f5-11e6-b6ba-3e1d05defe78',
     display: 'LDL'

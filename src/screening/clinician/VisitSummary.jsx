@@ -47,7 +47,6 @@ const orderedSummary = [
       CONCEPTS.Bled,
       CONCEPTS.ReasonForNoSample,
       CONCEPTS.ReasonForTesting,
-      CONCEPTS.HIVViralLoadStatus,
       CONCEPTS.ViralLoadDetectablelowerLimit,
       CONCEPTS.ViralLoadLowerThanDetectionLimit,
       CONCEPTS.ViralLoadLessThanLimit,
