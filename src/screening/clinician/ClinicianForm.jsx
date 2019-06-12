@@ -123,6 +123,7 @@ class ClinicianForm extends React.Component {
               path="clinical-next-appointment-date"
               usePortalMode
               validate={[yesterday, next12Months]}
+              minDate={new Date()}
             />
             <span style={{ marginLeft: '20px', marginTop: '1px' }}>
               <Obs
