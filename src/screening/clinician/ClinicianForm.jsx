@@ -124,6 +124,7 @@ class ClinicianForm extends React.Component {
               usePortalMode
               validate={[yesterday, next12Months]}
               minDate={new Date()}
+              maxDate={ addMonths(new Date(), 12) }
             />
             <span style={{ marginLeft: '20px', marginTop: '1px' }}>
               <Obs
