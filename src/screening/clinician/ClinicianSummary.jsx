@@ -28,6 +28,7 @@ const ClinicianSummary = props => {
             CONCEPTS.Clinical.TransferFacility,
             CONCEPTS.Clinical.ReasonToStopCare,
             CONCEPTS.Clinical.OtherOutcome,
+            CONCEPTS.PersonPresentAtVisit,
             CONCEPTS.ReferToScreeningStation
           ]}
           editable
