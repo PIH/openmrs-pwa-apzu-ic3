@@ -6,7 +6,7 @@ describe('Check in', () => {
     cy.login();
   });
 
-  it('Should search for patient and Check-in patient into NEW location', () => {
+  it('Should search for patient and Check-in patient into NEW location, and check if perso present at visit', () => {
     cy.searchPatientByID('MGT 148 CCC');
 
     // Select the patient
@@ -41,8 +41,11 @@ describe('Check in', () => {
         }
 
         // Select a check-in location
-        cy.get('.form-group label')
-          .eq(1)
+        cy.get('#existing_patient')
+          .click();
+
+        // Select a person present at visit answer?
+        cy.get('#guardian')
           .click();
           
         cy.wait(2000);

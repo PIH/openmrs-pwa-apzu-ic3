@@ -426,6 +426,22 @@ export const CONCEPTS = {
       display: 'Existing Patient'
     }
   },
+  'PersonPresentAtVisit' : {
+    uuid: 'd0d91980-6788-4325-80d3-3bd7b54e705a',
+    display: 'Person present at visit'
+  },
+  'Patient' : {
+    uuid: '1249F550-FF24-4F3E-A743-B37232E9E1C3',
+    display: 'Patient'
+  },
+  'CommunityHealthWorkerPresent' : {
+    uuid: 'bf997029-a496-41a2-a7e7-7981e82d2dd0',
+    display: 'CHW (Community Health Worker)'
+  },
+  'GuardianPresent' : {
+    uuid: '65668f5a-977f-11e1-8993-905e29aff6c1',
+    display: 'Guardian'
+  },
   'TBTestType': {
     uuid: '38c4512a-5aef-487d-a450-ecea4bc5df7e',
     display: 'Tuberculosis test type'
@@ -746,6 +762,11 @@ export const FORM_ANSWERS = {
       display: CONCEPTS.SOURCE_OF_REFERRAL.Existing_patient.display
     },
     { uuid: CONCEPTS.SOURCE_OF_REFERRAL.Other.uuid, display: CONCEPTS.SOURCE_OF_REFERRAL.Other.display }
+  ],
+  'personPresentAtVisitAnswers': [
+    { uuid: CONCEPTS.Patient.uuid, display: CONCEPTS.Patient.display },
+    { uuid: CONCEPTS.CommunityHealthWorkerPresent.uuid, display: CONCEPTS.CommunityHealthWorkerPresent.display },
+    { uuid: CONCEPTS.GuardianPresent.uuid, display: CONCEPTS.GuardianPresent.display }
   ],
   'sampleQualityAnswers': [
     { uuid: CONCEPTS.satisfactorySampleQuality.uuid, display: CONCEPTS.satisfactorySampleQuality.display },

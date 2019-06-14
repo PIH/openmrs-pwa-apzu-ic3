@@ -69,7 +69,8 @@ const CheckInSummary = props => {
       <ObsHistory
         concepts={[
           CONCEPTS.SOURCE_OF_REFERRAL,
-          CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care_ID
+          CONCEPTS.SOURCE_OF_REFERRAL.Linkage_to_care_ID,
+          CONCEPTS.PersonPresentAtVisit,
         ]}
         editableEncounterTypes={[ENCOUNTER_TYPES.CheckInEncounterType]}
         onEditEncounterActionCreators={[

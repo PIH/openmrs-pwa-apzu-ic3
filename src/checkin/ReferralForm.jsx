@@ -59,6 +59,23 @@ class ReferralForm extends React.Component {
               </FormGroup>
             </Col>
           </Row>
+
+          <Row>
+            <Col componentClass={ControlLabel}>
+              Person present at visit?
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12}>
+              <FormGroup controlId="patientPresentAtVisit">
+                <Obs
+                  concept={CONCEPTS.PersonPresentAtVisit.uuid}
+                  conceptAnswers={FORM_ANSWERS.personPresentAtVisitAnswers}
+                  path="patientPresentAtVisit"
+                />
+              </FormGroup>
+            </Col>
+          </Row>
           <span
             style={{ display: (typeof this.props.referral.value !== 'undefined') && (this.props.referral.value === CONCEPTS.SOURCE_OF_REFERRAL.SHARC.uuid || this.props.referral.value === CONCEPTS.SOURCE_OF_REFERRAL.Inpatient.uuid) ? 'block' : 'none' }}>
             <Row>
