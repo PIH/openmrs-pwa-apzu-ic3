@@ -632,6 +632,42 @@ export const CONCEPTS = {
     uuid: 'd74065b8-cecf-4ee9-bbba-07bb962e4164',
     display: 'Nursing'
   },
+  'UnableToProduceSputum' : {
+    uuid: '10330319-287f-44b1-ac49-3a80515ef7fd',
+    display: 'Unable to produce sputum'
+  },
+  'SuspectNonPulmonaryTB' : {
+    uuid: 'adcd6686-7847-46ff-8368-f8a976c4fc07',
+    display: 'Suspect non-pulmonary TB'
+  },
+  'EquipmentUnavailable' : {
+    uuid: '35903754-cbd1-42b9-b1bd-78590982d916',
+    display: 'Material, supply, or equipment unavailable'
+  },
+  'Ultrasound' : {
+    uuid: '6572c32e-977f-11e1-8993-905e29aff6c1',
+    display: 'Ultrasound'
+  },
+  'Xray' : {
+    uuid: '6572c432-977f-11e1-8993-905e29aff6c1',
+    display: 'Xray'
+  },
+  'ReferToClinician' : {
+    uuid: '6578ea56-977f-11e1-8993-905e29aff6c1',
+    display: 'Refer to clinician'
+  },
+  'None' : {
+    uuid: '6557987e-977f-11e1-8993-905e29aff6c1',
+    display: 'None'
+  },
+  'AnyOtherDiagnosticTestOrProcedure' : {
+    uuid: '6572c540-977f-11e1-8993-905e29aff6c1',
+    display: 'Any other diagnostic test or procedure'
+  }, 
+  'NextSteps': {
+    uuid: '3ee10e6b-ee68-4238-99ee-1f132551e70e',
+    display: 'Next steps'
+  }
 };
 
 export const FORM_NAMES = {
@@ -639,6 +675,13 @@ export const FORM_NAMES = {
 };
 
 export const FORM_ANSWERS = {
+  'NextSteps': [
+    { uuid: CONCEPTS.Ultrasound.uuid, display: CONCEPTS.Ultrasound.display },
+    { uuid: CONCEPTS.Xray.uuid, display: CONCEPTS.Xray.display },
+    { uuid: CONCEPTS.ReferToClinician.uuid, display: CONCEPTS.ReferToClinician.display },
+    { uuid: CONCEPTS.None.uuid, display: CONCEPTS.None.display },
+    { uuid: CONCEPTS.AnyOtherDiagnosticTestOrProcedure.uuid, display: CONCEPTS.AnyOtherDiagnosticTestOrProcedure.display },
+  ],
   'clinicalOutcome': [
     { uuid: CONCEPTS.Clinical.FollowUp.uuid, display: CONCEPTS.Clinical.FollowUp.display },
     {
@@ -753,6 +796,12 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.EquipmentFailure.uuid, display: CONCEPTS.EquipmentFailure.display },
     { uuid: CONCEPTS.InappropriateSampleContainer.uuid, display: CONCEPTS.InappropriateSampleContainer.display },
     { uuid: CONCEPTS.UnavailableSupplies.uuid, display: CONCEPTS.UnavailableSupplies.display },
+    { uuid: CONCEPTS.Other.uuid, display: CONCEPTS.Other.display },
+  ],
+  'ReasonForNoSputumReceived': [
+    { uuid: CONCEPTS.UnableToProduceSputum.uuid, display: CONCEPTS.UnableToProduceSputum.display },
+    { uuid: CONCEPTS.SuspectNonPulmonaryTB.uuid, display: CONCEPTS.SuspectNonPulmonaryTB.display },
+    { uuid: CONCEPTS.EquipmentUnavailable.uuid, display: CONCEPTS.EquipmentUnavailable.display },
     { uuid: CONCEPTS.Other.uuid, display: CONCEPTS.Other.display },
   ],
   'labLocation': [

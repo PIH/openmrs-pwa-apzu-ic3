@@ -35,7 +35,7 @@ class TbTestForm extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
 
-    const { labLocation, testType, tbSmearResult, genexpertResult, tbRifampinResistance, tbNoResultGeneexpert, tbNoResultSmear, sputumReceived } = this.props;
+    const { labLocation, testType, tbSmearResult, genexpertResult, tbRifampinResistance, tbNoResultGeneexpert, tbNoResultSmear, sputumReceived, tbReasonForNoSample, nextSteps } = this.props;
 
     // this clears out form values when the "Sputum received" question is changed
     if (this.hasChanged('sputumReceived', this.props, prevProps)) {
@@ -48,6 +48,14 @@ class TbTestForm extends React.PureComponent {
         this.clearField(tbRifampinResistance.fieldName);
         this.clearField(tbNoResultGeneexpert.fieldName);
         this.clearField(tbNoResultSmear.fieldName);
+        this.clearField(tbReasonForNoSample.fieldName);
+      }
+    }
+
+    if (this.hasChanged('tbReasonForNoSample', this.props, prevProps)) {
+
+      if (tbReasonForNoSample.value !== CONCEPTS.UnableToProduceSputum.uuid || tbReasonForNoSample !== CONCEPTS.SuspectNonPulmonaryTB.uuid) {
+        this.clearField(nextSteps.fieldName);
       }
     }
 
@@ -106,7 +114,7 @@ class TbTestForm extends React.PureComponent {
 
   render() {
     const { isAddTbTestResults, isAddTbTestResultsClicked, isAddTbTestResultsActive } = this.state;
-    const { sputumReceived, testType, genexpertResult, tbSmearResult, labLocation, formInstanceId, tbNoResultGeneexpert, tbNoResultSmear, tbRifampinResistance } = this.props;
+    const { sputumReceived, testType, genexpertResult, tbSmearResult, labLocation, formInstanceId, tbNoResultGeneexpert, tbNoResultSmear, tbRifampinResistance, tbReasonForNoSample } = this.props;
 
     if (sputumReceived.value === CONCEPTS.Yes.uuid && labLocation.value) {
       this.setState({ isAddTbTestResults: true });
@@ -150,6 +158,53 @@ class TbTestForm extends React.PureComponent {
               </FormGroup>
             </Col>
           </Row>
+
+          <span
+            style={{
+              display: (sputumReceived.value === CONCEPTS.No.uuid) ? 'block' : 'none'
+            }}
+          >
+            <Row>
+              <Col componentClass={ControlLabel}>
+             Reason for no sputum
+              </Col>
+            </Row>
+            <Row>
+              <FormGroup controlId="formReasonForNoSample">
+                <Col sm={12}>
+                  <Obs
+                    concept={CONCEPTS.ReasonForNoSample.uuid}
+                    conceptAnswers={FORM_ANSWERS.ReasonForNoSputumReceived}
+                    path="tb-reason-for-no-sputum"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+          </span>
+
+          <span
+            style={{
+              display: (tbReasonForNoSample.value === CONCEPTS.UnableToProduceSputum.uuid) || (tbReasonForNoSample.value === CONCEPTS.SuspectNonPulmonaryTB.uuid) ? 'block' : 'none'
+            }}
+          >
+            <Row>
+              <Col componentClass={ControlLabel}>
+             Next steps
+              </Col>
+            </Row>
+            <Row>
+              <FormGroup controlId="formNextSteps">
+                <Col sm={12}>
+                  <Obs
+                    concept={CONCEPTS.NextSteps.uuid}
+                    conceptAnswers={FORM_ANSWERS.NextSteps}
+                    path="tb-sputum-next-steps"
+                  />
+                </Col>
+              </FormGroup>
+            </Row>
+          </span>
+
 
           <span
             style={{
@@ -369,6 +424,8 @@ export default connect((state, props) => {
   const tbSmearResultField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-smear-result'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.Smear]);
   const tbNoResultSmearField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-no-result-smear'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoResult]);
   const tbRifampinResistanceField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-rifampin-resistance'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.RifampinResistance]);
+  const reasonForNoSampleField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-reason-for-no-sputum'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.ReasonForNoSample]);
+  const nextStepsField = formUtil.obsFieldName(['tb-test-screening-set', 'tb-sputum-next-steps'], [CONCEPTS.TbTest.TuberculosisTestScreeningSet, CONCEPTS.NextSteps]);
 
   return {
     sputumReceived: {
@@ -402,6 +459,14 @@ export default connect((state, props) => {
     tbNoResultGeneexpert: {
       fieldName: tbNoResultGeneexpertField,
       value: selector(state, tbNoResultGeneexpertField)
+    },
+    tbReasonForNoSample: {
+      fieldName: reasonForNoSampleField,
+      value: selector(state, reasonForNoSampleField)
+    },
+    nextSteps: {
+      fieldName: nextStepsField,
+      value: selector(state, nextStepsField)
     },
     patient: selectors.getSelectedPatientFromStore(state)
 
