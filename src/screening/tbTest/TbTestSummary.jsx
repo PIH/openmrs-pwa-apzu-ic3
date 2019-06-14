@@ -11,7 +11,9 @@ const TbTestSummary = props => {
           CONCEPTS.GeneXpert,
           CONCEPTS.Smear,
           CONCEPTS.RifampinResistance,
-          CONCEPTS.ReasonForNoResult
+          CONCEPTS.ReasonForNoResult,
+          CONCEPTS.ReasonForNoSample,
+          CONCEPTS.NextSteps
         ]}
         encounterType={ENCOUNTER_TYPES.TBTestResults}
         editable={true}
