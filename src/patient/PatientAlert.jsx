@@ -112,7 +112,7 @@ class PatientAlert extends PureComponent {
                     onClick={this.handleCloseAlert}
                   >
                     <FontAwesomeIcon
-                      icon="times"
+                      icon="caret-up"
                       size="lg"
                     />
                   </span>
