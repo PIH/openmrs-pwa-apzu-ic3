@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { endOfDay, addMonths } from 'date-fns';
+import {addDays, addMonths} from 'date-fns';
 import { change, formValueSelector, untouch } from 'redux-form';
-import { Obs, selectors, formUtil, FormContext, formValidations } from '@openmrs/react-components';
+import {Obs, selectors, formUtil, FormContext} from '@openmrs/react-components';
 import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS } from '../../constants';
 import ScreeningForm from "../ScreeningForm";
@@ -10,8 +10,8 @@ import '../../../src/assets/css/ClinicianForm.css';
 
 class ClinicianForm extends React.Component {
   componentDidUpdate(prevProps) {
-    const { dispatch, clinicalOutcome, 
-      clinicalQualitativeTimeField, 
+    const { dispatch, clinicalOutcome,
+      clinicalQualitativeTimeField,
       clinicalReasonToStopCareField,
       clinicalNextAppointmentDateField,
       clinicalTransferToAnotherFacilityField  } = this.props;
@@ -68,8 +68,7 @@ class ClinicianForm extends React.Component {
   }
 
   render() {
-    const yesterday = formValidations.minDateValue(endOfDay(new Date() - 1), "today's");
-    const next12Months = formValidations.maxDateValue(endOfDay(addMonths(new Date(), 12)), null, "Date cannot be more than a year in the future");
+
     const { clinicalOutcome, clinicalNextAppointmentDate } = this.props;
     const formContent = (
       <Grid>
@@ -122,15 +121,14 @@ class ClinicianForm extends React.Component {
               defaultDate={undefined}
               path="clinical-next-appointment-date"
               usePortalMode
-              validate={[yesterday, next12Months]}
-              minDate={new Date()}
+              minDate={addDays(new Date(), 1)}
               maxDate={ addMonths(new Date(), 12) }
             />
             <span style={{ marginLeft: '20px', marginTop: '1px' }}>
               <Obs
                 concept={CONCEPTS.Clinical.QualitativeTime.uuid}
                 conceptAnswers={FORM_ANSWERS.clinicalQualitativeTime}
-                disabled={(yesterday(clinicalNextAppointmentDate) || next12Months(clinicalNextAppointmentDate)) || !clinicalNextAppointmentDate ? true : false}
+                disabled={!clinicalNextAppointmentDate}
                 path="clinical-qualitative-time"
               />
             </span>
@@ -272,6 +270,7 @@ export default connect((state, props) => {
     clinicalQualitativeTimeField,
     clinicalReasonToStopCareField,
     clinicalTransferToAnotherFacilityField,
+    clinicalNextAppointmentDateField,
     clinicalNextAppointmentDate,
     patient: selectors.getSelectedPatientFromStore(state),
   };
