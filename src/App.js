@@ -5,6 +5,7 @@ import {Logout, LoadingView} from '@openmrs/react-components';
 import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core';
 import {
   faBars,
+  faCaretUp,
   faEdit,
   faUser,
   faPills,
@@ -61,7 +62,7 @@ import ScreeningList from './screening/ScreeningList';
 
 const { store, persistor } = reduxStore;
 
-fontAwesomeLibrary.add(faBars, faEdit, faPills, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome);
+fontAwesomeLibrary.add(faBars, faCaretUp, faEdit, faPills, faUser, faMapMarker, faCog, faKey, faSignOutAlt, faRibbon, faVial, faChild, faSearch, faNotesMedical, faHeart, faUserMd, faLemon, faHome);
 
 const App = props => {
 
