@@ -11,6 +11,7 @@ const TbTestSummaryAndForm = props => {
 
   return (
     <SummaryAndForm
+      allowMultipleForms
       completed={tbTestResultFilters.completed(props.patient)}
       encounterType={ENCOUNTER_TYPES.TBTestResults}
       form={<TbTestResultForm displayResultsSection={true}/>}
