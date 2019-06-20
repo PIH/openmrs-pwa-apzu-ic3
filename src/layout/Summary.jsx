@@ -1,20 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Grid, Row } from "react-bootstrap";
-import { centerTextAlign } from "../pwaStyles";
 import connect from "react-redux/es/connect/connect";
-import {selectors} from "@openmrs/react-components";
+import { selectors } from "@openmrs/react-components";
 
 const Summary = props => {
 
   return (
     <Col className="summary-layout">
       <Grid>
-        <Row>
-          <Col sm={12}>
-            <span style={centerTextAlign}><h2>Summary</h2></span>
-          </Col>
-        </Row>
         {(props.patient.visit || !props.requireVisitForForm) &&
         (
           <Row className="swiper-add-new-btn">

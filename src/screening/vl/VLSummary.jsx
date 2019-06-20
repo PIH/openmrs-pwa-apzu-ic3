@@ -4,7 +4,7 @@ import {formActions, ObsHistory, formUtil} from "@openmrs/react-components";
 
 const VLSummary = props => {
   return (
-    <div>
+    <div className="single-summary-content">
       <ObsHistory
         concepts={
           [
