@@ -4,7 +4,7 @@ import {formActions, ObsHistory} from "@openmrs/react-components";
 
 const AdherenceSummary = props => {
   return (
-    <div>
+    <div className="single-summary-content">
       {/* <PatientLabTests test_type={ "viral_load_tests" }/>*/}
       <ObsHistory
         concepts={[CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession,
