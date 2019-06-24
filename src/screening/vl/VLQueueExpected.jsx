@@ -12,6 +12,7 @@ import { push } from "connected-react-router";
 import utils from "../../utils";
 import ic3PatientActions from '../../patient/patientActions';
 
+// TODO: not in use, can we remove?
 class VLQueueExpected extends React.Component {
 
   constructor(props) {

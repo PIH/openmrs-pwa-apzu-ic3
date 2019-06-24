@@ -5,6 +5,7 @@ import VLQueueComplete from './VLQueueComplete';
 import VLQueueExpected from './VLQueueExpected';
 import '../../assets/css/tabs.css';
 
+// TODO: not in use, can we remove?
 const VLQueueTabs = () => (
   <div>
     <h3><Label>Viral Load Queue</Label></h3>

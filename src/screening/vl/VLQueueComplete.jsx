@@ -5,6 +5,7 @@ import {selectors} from '@openmrs/react-components';
 import ScreeningQueue from "../ScreeningQueue";
 import vlFilters from './vlFilters';
 
+// TODO: not in use, can we remove?
 let VLQueueComplete = props => {
 
   const rowSelectedActionCreators = [
