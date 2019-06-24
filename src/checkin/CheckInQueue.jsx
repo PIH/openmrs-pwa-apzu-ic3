@@ -102,6 +102,8 @@ class CheckInQueue extends React.Component {
           card={PatientCard}
           delayInterval={0}
           dispatch={this.props.dispatch}
+          error={this.props.error}
+          errorMessage="Error loading queue"
           fetchListActionCreator={fetchListActionCreator}
           filters={[checkInFilters.required]}
           getPatientIdentifiers={utils.getPatientIdentifiers}
@@ -124,6 +126,7 @@ class CheckInQueue extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+    error: selectors.isPatientStoreInErrorState(state),
     location: state.openmrs.session.sessionLocation ? state.openmrs.session.sessionLocation.uuid : LOCATION_TYPES.UnknownLocation,
     patients: selectors.getPatientStore(state),
     updating: selectors.isPatientStoreUpdating(state),
