@@ -125,11 +125,12 @@ function* getIC3Patients(action) {
     // if "loadExpectedAppointments" = true, set cohort to null, which means load both expected, and patients with visits
     // if false, explicitly ask for only patients with visits
     // we break this up because the load expected appointment is the slow part of the query and never changes,
-    // so we can just call in on initial login, location change, or date change
+    // so we can just call it on initial login, location change, or date change (see initiateIC3PatientsAction) or error (see below)
+    const error = yield select(selectors.isPatientStoreInErrorState);
     let apptRestResponse = yield call(reportingRest.getIC3Patients, {
       location: action.location,
       endDate: action.endDate,
-      cohorts: action.loadExpectedAppointments ? null : 'patientsWithVisit'
+      cohorts: action.loadExpectedAppointments || error ? null : 'patientsWithVisit'
     });
 
     let patients = apptRestResponse.map((result) => {
@@ -144,6 +145,7 @@ function* getIC3Patients(action) {
 
   } catch (e) {
     yield put(ic3PatientActions.getIC3PatientsFailed(e.message));
+    yield put(patientActions.setPatientStoreError());
     yield put(patientActions.setPatientStoreNotUpdating());
   }
 }

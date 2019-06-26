@@ -40,6 +40,8 @@ let ScreeningQueue = props => {
         card={PatientCard}
         delayInterval={0}
         dispatch={props.dispatch}
+        error={props.error}
+        errorMessage="Error loading queue"
         fetchListActionCreator={fetchListActionCreator}
         filters={[...props.filters, ...filters]}
         getPatientIdentifiers={utils.getPatientIdentifiers}
@@ -73,6 +75,7 @@ ScreeningQueue.defaultProps = {
 const mapStateToProps = (state) => {
   return {
     session: state.openmrs.session,
+    error: selectors.isPatientStoreInErrorState(state),
     updating: selectors.isPatientStoreUpdating(state),
     location: state.router.location.pathname
   };
