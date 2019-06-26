@@ -6,9 +6,6 @@ import { Provider } from 'react-redux';
 import { CardList, patientActions } from '@openmrs/react-components';
 import BloodPressureQueue from '../BloodPressureQueue';
 import { VISIT_REPRESENTATION } from "../../../constants";
-import ic3PatientActions from "../../../patient/patientActions";
-import utils from "../../../utils";
-
 
 jest.mock('@openmrs/react-components', () => {
   return {
@@ -19,7 +16,8 @@ jest.mock('@openmrs/react-components', () => {
           name: 'somePatient'
         }
       })),
-      isPatientStoreUpdating: jest.fn()
+      isPatientStoreUpdating: jest.fn(),
+      isPatientStoreInErrorState: jest.fn()
     },
     patientActions: {
       clearSelectedPatient: jest.fn(),

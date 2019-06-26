@@ -1,13 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import {CardList, patientActions} from '@openmrs/react-components';
 import NutritionQueue from '../NutritionQueue';
 import {VISIT_REPRESENTATION} from "../../../constants";
-import ic3PatientActions from "../../../patient/patientActions";
-import utils from "../../../utils";
 
 
 jest.mock('@openmrs/react-components', () => {
@@ -19,7 +16,8 @@ jest.mock('@openmrs/react-components', () => {
           name: 'somePatient'
         }
       })),
-      isPatientStoreUpdating: jest.fn()
+      isPatientStoreUpdating: jest.fn(),
+      isPatientStoreInErrorState: jest.fn()
     },
     patientActions: {
       clearSelectedPatient: jest.fn(),
