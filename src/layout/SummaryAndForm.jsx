@@ -52,6 +52,8 @@ export class SummaryAndForm extends React.Component {
   componentDidMount() {
     const location = this.props.sessionLocation ? this.props.sessionLocation.uuid : null;
     this.props.dispatch(visitActions.fetchPatientActiveVisit(this.props.patient.uuid, location, ACTIVE_VISITS_REP));
+    this.props.dispatch(patientActions.getIC3PatientScreeningData(this.props.patient));
+    this.props.dispatch(patientActions.getIC3PatientNutritionHistory(this.props.patient));
     this.swiper.updateSize();
   }
 
