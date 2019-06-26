@@ -178,11 +178,13 @@ function* getIC3PatientScreeningData(action) {
 
 }
 
-// we should just have the patient selected action trigger the getIC3PatientScreeningData directly, but this will trigger a new action,
+// we could just have the patient selected action trigger the getIC3PatientScreeningData directly, but this will trigger a new action,
 // making it easiest to debug in the console, and allows us to add other actions if needed
 function* patientSelected(action) {
+  const sessionLocation = yield select(selectors.getSessionLocation);
   yield put(ic3PatientActions.getIC3PatientScreeningData(action.patient));
   yield put(ic3PatientActions.getIC3PatientNutritionHistory(action.patient));
+  yield put(visitActions.fetchPatientActiveVisit(action.patient.uuid, sessionLocation.uuid, ACTIVE_VISITS_REP));
 }
 
 // trigger everything that needs to happen on a login
