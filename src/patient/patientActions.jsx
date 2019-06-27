@@ -12,8 +12,9 @@ const getIC3PatientsFailed = (message) => ({
   message: message
 });
 
-const getIC3PatientScreeningData = (patient) => ({
+const getIC3PatientScreeningData = (patient, formInstanceId) => ({
   patient: patient,
+  formInstanceId: formInstanceId,
   type: PATIENT_TYPES.GET_IC3_PATIENT_SCREENING_DATA
 });
 

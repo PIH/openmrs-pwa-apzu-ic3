@@ -16,7 +16,7 @@ class ScreeningForm extends React.Component {
     const formSubmittedActionCreators = [
       () => props.patient && props.patient.uuid && visitActions.fetchPatientActiveVisit(props.patient.uuid,
         this.props.sessionLocation ? this.props.sessionLocation.uuid : null, ACTIVE_VISITS_REP),
-      () => props.patient && props.patient.uuid && patientActions.getIC3PatientScreeningData(props.patient),
+      () => props.patient && props.patient.uuid && patientActions.getIC3PatientScreeningData(props.patient, props.formInstanceId),
       () => props.patient && props.patient.uuid && patientActions.getIC3PatientNutritionHistory(props.patient),
     ];
 
@@ -33,6 +33,7 @@ class ScreeningForm extends React.Component {
           formSubmittedActionCreators={formSubmittedActionCreators}
           // hideActionButtons={true}
           hideSubmitActionButtons={props.hideSubmitActionButtons}
+          manuallyExitSubmitMode={true}
           showDate={true}
           title={props.title}
           toastMessage={props.toastMessage ? props.toastMessage : "Screening Form Saved"}

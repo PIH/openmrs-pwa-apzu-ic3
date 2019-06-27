@@ -1,5 +1,6 @@
 import { call, put, takeLatest, select } from 'redux-saga/effects';
 import {
+  FORM_STATES,
   LOGIN_TYPES,
   patientActions,
   patientUtil, SESSION_TYPES,
@@ -7,6 +8,7 @@ import {
   visitActions,
   locationActions,
   sessionActions,
+  formActions,
   patientIdentifierTypesActions,
   selectors,
   conceptActions,
@@ -119,6 +121,7 @@ function* getIC3Patients(action) {
 
   try {
 
+    // note that this flag is not thread-safe, so it's usefulness might be limited in this case
     yield put(patientActions.setPatientStoreUpdating());
 
     // get IC3 patients
@@ -156,6 +159,10 @@ function* getIC3PatientScreeningData(action) {
   const sessionLocation = yield select(selectors.getSessionLocation);
 
   try {
+
+    // note that this flag is not thread-safe, so it's usefulness might be limited in this case
+    yield put(patientActions.setPatientStoreUpdating());
+
     // get patient appointment info
     let apptRestResponse = yield call(reportingRest.getScreeningData, {
       location: sessionLocation ? sessionLocation.uuid : null,
@@ -167,8 +174,13 @@ function* getIC3PatientScreeningData(action) {
     let patients = apptRestResponse.map((result) => {
       return createFromReportingRestRep(result);
     });
+
     if (patients && patients.length > 0) {
       yield put(patientActions.updatePatientInStore(patients[0]));
+    }
+
+    if (action.formInstanceId) {
+      yield put(formActions.setFormState(action.formInstanceId, FORM_STATES.VIEWING));
     }
 
   } catch (e) {
