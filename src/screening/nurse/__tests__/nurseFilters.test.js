@@ -3,7 +3,7 @@ import { ENCOUNTER_TYPES } from "../../../constants";
 
 describe('nurseFilters', () => {
 
-  it('completed: should filter out patients with nurse encounter', () => {
+  it.skip('completed: should filter out patients with nurse encounter', () => {
 
     const results = [
       {
