@@ -33,7 +33,7 @@ class NutritionForm extends React.Component {
     // measure at each visit for less than 19 y.o., use previous height for >19 years
     if (this.props.patient.age > 19) {
       obsRest.fetchObsByPatient(
-        this.props.patient.uuid, CONCEPTS.Height.uuid, [], [], 1
+        this.props.patient.uuid, CONCEPTS.Height.uuid, null, null, null, 1
       ).then(data => {
         this.setState({
           lastHeight: data.results[0] ? data.results[0].value : null,
@@ -194,11 +194,17 @@ class NutritionForm extends React.Component {
         formContent={formContent}
         formId="nutrition-form"
         formInstanceId={this.props.formInstanceId}
-        defaultValues={ this.state.lastHeight !== null ? [{
-          type: "obs",
-          path: "height",
-          concept: CONCEPTS.Height.uuid,
-        }] : null
+        defaultValues={
+          this.state.lastHeight !== null
+            ? [
+                {
+                  type: "obs",
+                  path: "height",
+                  concept: CONCEPTS.Height.uuid,
+                    value: this.state.lastHeight
+                }
+              ]
+            : null
         }
         toastMessage="Nutrition Saved"
       />

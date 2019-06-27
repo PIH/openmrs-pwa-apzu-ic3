@@ -11,7 +11,6 @@ class NutritionSummary extends React.PureComponent {
 
     this.state = {
       obs: [],
-      loading: true
     };
   }
 
@@ -21,7 +20,6 @@ class NutritionSummary extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
     if (R.path(['patient', 'uuid'], prevProps) !== R.path(['patient', 'uuid'], this.props) ||
-      (prevProps.isPatientStoreUpdating && !this.props.isPatientStoreUpdating) ||
       (prevProps.obs !== this.props.obs))  {
       this.updateObs();
     }
@@ -29,10 +27,9 @@ class NutritionSummary extends React.PureComponent {
 
   // we load the nutrition info from our REST endpoint that calculates BMI on the fly
   updateObs() {
-    const { obs, isPatientStoreUpdating } = this.props;
+    const { obs } = this.props;
     this.setState({
-      obs,
-      loading: isPatientStoreUpdating
+      obs
     });
   }
 
@@ -43,7 +40,6 @@ class NutritionSummary extends React.PureComponent {
         <ObsHistory
           concepts={[CONCEPTS.Weight, CONCEPTS.Height, CONCEPTS.BMI, CONCEPTS.Pregnant, CONCEPTS.MUAC]}
           editableEncounterTypes={[ENCOUNTER_TYPES.NutritionEncounterType]}
-          loading={this.state.loading}
           obs={this.state.obs}
           onEditEncounterActionCreators={[
             (encounterUuid) => formActions.loadFormBackingEncounter(this.props.formInstanceId, encounterUuid)
