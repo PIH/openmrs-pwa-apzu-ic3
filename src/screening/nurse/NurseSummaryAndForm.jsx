@@ -3,15 +3,17 @@ import { connect } from "react-redux";
 import { selectors } from '@openmrs/react-components';
 import SummaryAndForm from "../../layout/SummaryAndForm";
 import NurseSummary from "./NurseSummary";
+import NurseForm from "./NurseForm";
 import nurseFilters from "./nurseFilters";
 import { ENCOUNTER_TYPES } from "../../constants";
 
 
-const NursePage = props => {
+const NurseSummaryAndForm = props => {
   return (
     <SummaryAndForm
       completed={nurseFilters.completed(props.patient)}
-      encounterType={ENCOUNTER_TYPES.NurseEvaluationEncounterType}
+      encounterType={ENCOUNTER_TYPES.ClinicalPlan}
+      form={<NurseForm />}
       summary={<NurseSummary />}
       title="Nursing"
     />
@@ -24,4 +26,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(NursePage);
+export default connect(mapStateToProps)(NurseSummaryAndForm);

@@ -107,8 +107,8 @@ class ClinicianForm extends React.Component {
             </Col>
           </FormGroup>
         </Row>
-
-        {(typeof clinicalOutcome !== 'undefined' && clinicalOutcome === CONCEPTS.Clinical.FollowUp.uuid) && <span>
+        
+        {((typeof clinicalOutcome !== 'undefined' && clinicalOutcome === CONCEPTS.Clinical.FollowUp.uuid) || (clinicalNextAppointmentDate)) && <span>
           <Row>
             <Col componentClass={ControlLabel}>
               Appointment time

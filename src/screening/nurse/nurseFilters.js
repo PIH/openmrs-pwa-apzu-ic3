@@ -11,5 +11,5 @@ const nurseFilter = patient => {
 
 export default {
   required: nurseFilter,
-  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.NurseEvaluationEncounterType.uuid, 'include')
+  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.ClinicalPlan.uuid, 'include')
 };

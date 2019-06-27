@@ -33,7 +33,7 @@ export class ScreeningList extends React.Component {
         title: "Nursing",
         required: (patient) => !nurseFilters.completed(patient),
         completed: nurseFilters.completed,
-        link: '/screening/nurse/nursePage',
+        link: '/screening/nurse/form',
       }
     ];
 

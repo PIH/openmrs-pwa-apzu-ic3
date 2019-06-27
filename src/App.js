@@ -33,7 +33,7 @@ import SearchPatient from './search/SearchPatient';
 import CheckInQueue from './checkin/CheckInQueue';
 import AllPatientQueue from './checkin/AllPatientQueue';
 import CheckInPage from './checkin/CheckInPage';
-import NursePage from './screening/nurse/NursePage';
+import NurseSummaryAndForm from './screening/nurse/NurseSummaryAndForm';
 import ClinicianSummaryAndForm from './screening/clinician/ClinicianSummaryAndForm';
 import ClinicianQueue from './screening/clinician/ClinicianQueue';
 import CheckInComplete from './checkin/CheckInComplete';
@@ -229,9 +229,9 @@ const App = props => {
               redirectOnLogin="/"
             />
             <Layout
-              component={NursePage}
+              component={NurseSummaryAndForm}
               fullViewHeight
-              path="/screening/nurse/nursePage"
+              path="/screening/nurse/form"
               redirectOnLogin="/"
             />
             <Layout
