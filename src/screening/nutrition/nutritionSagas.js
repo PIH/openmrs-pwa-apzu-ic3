@@ -6,6 +6,8 @@ import reportingRest from '../../rest/reportingRest';
 function* fetAndSetNutritionHistory(action) {
 
   try {
+
+    // note that this flag is not thread-safe, so it's usefulness might be limited in this case
     yield put(patientActions.setPatientStoreUpdating());
 
     let results = yield call(reportingRest.getIC3NutritionHistory, {
