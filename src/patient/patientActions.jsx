@@ -12,6 +12,8 @@ const getIC3PatientsFailed = (message) => ({
   message: message
 });
 
+// if a value is passed in for "formInstanceId", that form will be set back to "VIEW" mode after the patient data is fetched
+// this is a bit of a hack so that form submission is not "complete" until the alerts have been updated, see: https://pihemr.atlassian.net/browse/IS-484
 const getIC3PatientScreeningData = (patient, formInstanceId) => ({
   patient: patient,
   formInstanceId: formInstanceId,

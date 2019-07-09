@@ -179,6 +179,8 @@ function* getIC3PatientScreeningData(action) {
       yield put(patientActions.updatePatientInStore(patients[0]));
     }
 
+    // if a value is passed in for "formInstanceId", that form will be set back to "VIEW" mode after the patient data is fetched
+    // this is a bit of a hack so that form submission is not "complete" until the alerts have been updated, see: https://pihemr.atlassian.net/browse/IS-484
     if (action.formInstanceId) {
       yield put(formActions.setFormState(action.formInstanceId, FORM_STATES.VIEWING));
     }

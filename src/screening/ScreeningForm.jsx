@@ -33,7 +33,7 @@ class ScreeningForm extends React.Component {
           formSubmittedActionCreators={formSubmittedActionCreators}
           // hideActionButtons={true}
           hideSubmitActionButtons={props.hideSubmitActionButtons}
-          manuallyExitSubmitMode={true}
+          manuallyExitSubmitMode={true}     // see: https://pihemr.atlassian.net/browse/IS-484
           showDate={true}
           title={props.title}
           toastMessage={props.toastMessage ? props.toastMessage : "Screening Form Saved"}
