@@ -43,6 +43,7 @@ import TbQueue from "./screening/tb/TbQueue";
 import AdherenceQueue from "./screening/adherence/AdherenceQueue";
 import AdherenceSummaryAndForm from "./screening/adherence/AdherenceSummaryAndForm";
 import HtcQueue from "./screening/htc/HtcQueue";
+import CervicalQueue from "./screening/cervical/CervicalQueue";
 import VLQueue from "./screening/vl/VLQueue";
 import VLSummaryAndForm from "./screening/vl/VLSummaryAndForm";
 import EidQueue from './screening/eid/EidQueue';
@@ -179,6 +180,12 @@ const App = props => {
               component={HtcSummaryAndForm}
               noScroll
               path="/screening/htc/form"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={CervicalQueue}
+              fullViewHeight
+              path="/screening/cervical/queue"
               redirectOnLogin="/"
             />
             <Layout

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import bloodPressureFilters from './bloodPressure/bloodPressureFilters';
 import nutritionFilters from './nutrition/nutritionFilters';
 import htcFilters from './htc/htcFilters';
+import cervicalFilters from './cervical/cervicalFilters';
 import vlFilters from './vl/vlFilters';
 import eidFilters from './eid/eidFilters';
 import adherenceFilters from './adherence/adherenceFilters';
@@ -82,6 +83,12 @@ export class ScreeningList extends React.Component {
         completed: (patient) => htcFilters.completed(patient) && !htcFilters.required(patient),
         link: '/screening/htc/form',
         required: htcFilters.required,
+      },
+      {
+        title: "Cervical Cancer",
+        completed: (patient) => cervicalFilters.completed(patient) && !cervicalFilters.required(patient),
+        link: '/screening/cervical/form',
+        required: cervicalFilters.required,
       },
       {
         title: "TB Screening",

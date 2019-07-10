@@ -28,6 +28,9 @@ export const ENCOUNTER_TYPES = {
   'HTCEncounterType': {
     uuid: '5B7238C1-23C6-4214-957F-7912A5BE87A9'
   },
+  'CervicalCancerScreeningEncounterType': {
+    uuid: 'AA2C2B86-1A59-49A3-905B-41D318E94FFE'
+  },
   'VLEncounterType': {
     uuid: '9959A261-2122-4AE1-A89D-1CA444B712EA'
   },
@@ -911,6 +914,7 @@ export const NAV_MENU_PAGES = {
   '/screening/nutrition/queue' : { display : 'Nutrition', icon : 'lemon' },
   '/screening/bloodPressure/queue' : { display : 'Blood Pressure', icon : 'heart' },
   '/screening/htc/queue' : { display : 'HTC', icon : 'ribbon' },
+  '/screening/cervical/queue' : { display : 'Cervical', icon : 'ribbon' },
   '/screening/nurse/queue' : { display : 'Nurse', icon : 'user-md' },
   '/screening/clinician/queue': { display : 'Clinician' }
 };
@@ -934,6 +938,7 @@ export const VIRAL_LOAD_ALERTS = [
 export const ALERTS_CATEGORIES = {
   VIRAL_LOAD_ALERT: "viral-load",
   HTC_ALERT: "htc",
+  CERVICAL_ALERT: "cervical",
   BP_ALERT: "bp",
   NUTRITION_ALERT: "nutrition",
   TB_ALERT: "tb",
