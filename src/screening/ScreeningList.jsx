@@ -86,7 +86,7 @@ export class ScreeningList extends React.Component {
       },
       {
         title: "Cervical Cancer",
-        completed: (patient) => cervicalFilters.completed(patient) && !cervicalFilters.required(patient),
+        completed: (patient) => cervicalFilters.completed(patient),
         link: '/screening/cervical/form',
         required: cervicalFilters.required,
       },

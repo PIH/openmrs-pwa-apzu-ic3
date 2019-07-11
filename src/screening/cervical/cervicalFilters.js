@@ -10,7 +10,7 @@ import utils from "../../utils";
  */
 
 // only patients due for Cervical Cancer Screening
-const cervicalFilter = patient => {
+const cervicalFilters = patient => {
   return utils.hasAlert(patient.alert, [
     ALERTS_CATEGORIES.CERVICAL_ALERT,
     ALERTS_CATEGORIES.SCREENING_ELIGIBILITY_ALERT
@@ -19,6 +19,6 @@ const cervicalFilter = patient => {
 
 
 export default {
-  required: cervicalFilter,
+  required: cervicalFilters,
   completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CervicalCancerScreeningEncounterType.uuid, 'include')
 };

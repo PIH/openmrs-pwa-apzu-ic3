@@ -58,6 +58,7 @@ import NutritionSummaryAndForm from "./screening/nutrition/NutritionSummaryAndFo
 import TbTestResultSummaryAndForm from "./screening/tbTest/TbTestSummaryAndForm";
 import TbSummaryAndForm from "./screening/tb/TbSummaryAndForm";
 import HtcSummaryAndForm from "./screening/htc/HtcSummaryAndForm";
+import CervicalCancerSummaryAndForm from "./screening/cervical/CervicalCancerSummaryAndForm";
 import UserSession from "./login/UserSession";
 import ScreeningList from './screening/ScreeningList';
 
@@ -186,6 +187,12 @@ const App = props => {
               component={CervicalQueue}
               fullViewHeight
               path="/screening/cervical/queue"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={CervicalCancerSummaryAndForm}
+              noScroll
+              path="/screening/cervical/form"
               redirectOnLogin="/"
             />
             <Layout

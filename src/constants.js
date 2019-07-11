@@ -191,6 +191,24 @@ export const CONCEPTS = {
     lowNormal: 18.4,
     lowCritical: 16
   },
+  'CERVICAL_CANCER_SCREENING_CONSTRUCT': {
+    uuid: '4508D9EC-1355-461A-AB1D-74CF5A9C6F6F'
+  },
+  'CERVICAL_CANCER_SCREENING_RESULTS': {
+    uuid: '162816AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+  },
+  'VIA_NEGATIVE': {
+    uuid: '6557a15c-977f-11e1-8993-905e29aff6c1',
+    display: 'VIA negative'
+  },
+  'VIA_POSITIVE': {
+    uuid: '6557a274-977f-11e1-8993-905e29aff6c1',
+    display: 'VIA positive'
+  },
+  'NEOPLASM_CANCER': {
+    uuid: '6545e2aa-977f-11e1-8993-905e29aff6c1',
+    display: 'Suspect cancer'
+  },
   'HIV_TEST_CONSTRUCT': {
     uuid: '655dca78-977f-11e1-8993-905e29aff6c1'
   },
@@ -842,6 +860,12 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.HIV_TEST_RESULTS.Reactive.uuid, display: CONCEPTS.HIV_TEST_RESULTS.Reactive.display },
     { uuid: CONCEPTS.HIV_TEST_RESULTS.Non_Reactive.uuid, display: CONCEPTS.HIV_TEST_RESULTS.Non_Reactive.display },
     { uuid: CONCEPTS.HIV_TEST_RESULTS.Not_Done.uuid, display: CONCEPTS.HIV_TEST_RESULTS.Not_Done.display },
+  ],
+  "cervicalCancerResultAnswers": [
+    { uuid: CONCEPTS.VIA_NEGATIVE.uuid, display: CONCEPTS.VIA_NEGATIVE.display },
+    { uuid: CONCEPTS.VIA_POSITIVE.uuid, display: CONCEPTS.VIA_POSITIVE.display },
+    { uuid: CONCEPTS.NEOPLASM_CANCER.uuid, display: CONCEPTS.NEOPLASM_CANCER.display },
+    { uuid: CONCEPTS.Other.uuid, display: 'Other gyn' },
   ],
   'adherenceSession': [
     {
