@@ -4,7 +4,7 @@ import { CONCEPTS, ENCOUNTER_TYPES } from "../../constants";
 
 const CervicalCancerSummary = props => {
   return (
-    <div>
+    <div className="single-summary-content">
       <ObsHistory
         concepts={[
           CONCEPTS.CERVICAL_CANCER_SCREENING_RESULTS,
