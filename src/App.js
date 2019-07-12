@@ -59,6 +59,7 @@ import TbTestResultSummaryAndForm from "./screening/tbTest/TbTestSummaryAndForm"
 import TbSummaryAndForm from "./screening/tb/TbSummaryAndForm";
 import HtcSummaryAndForm from "./screening/htc/HtcSummaryAndForm";
 import CervicalCancerSummaryAndForm from "./screening/cervical/CervicalCancerSummaryAndForm";
+import BloodSugarTestSummaryAndForm from "./screening/bloodSugar/BloodSugarTestSummaryAndForm";
 import UserSession from "./login/UserSession";
 import ScreeningList from './screening/ScreeningList';
 
@@ -193,6 +194,12 @@ const App = props => {
               component={CervicalCancerSummaryAndForm}
               noScroll
               path="/screening/cervical/form"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={ BloodSugarTestSummaryAndForm }
+              noScroll
+              path="/screening/bloodSugar/form"
               redirectOnLogin="/"
             />
             <Layout

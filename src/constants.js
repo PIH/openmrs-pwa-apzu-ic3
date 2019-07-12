@@ -31,6 +31,9 @@ export const ENCOUNTER_TYPES = {
   'CervicalCancerScreeningEncounterType': {
     uuid: 'AA2C2B86-1A59-49A3-905B-41D318E94FFE'
   },
+  'BloodSugarScreeningEncounterType': {
+    uuid: 'D8D67095-0AAC-4B61-87B3-A2B32B7E1FEE'
+  },
   'VLEncounterType': {
     uuid: '9959A261-2122-4AE1-A89D-1CA444B712EA'
   },
@@ -190,6 +193,39 @@ export const CONCEPTS = {
     hiNormal: 24.9,
     lowNormal: 18.4,
     lowCritical: 16
+  },
+
+  'BLOOD_SUGAR_TEST_SET': {
+    uuid: '65711f4c-977f-11e1-8993-905e29aff6c1'
+  },
+  'FS_BLOOD_SUGAR_TEST_TYPE': {
+    uuid: '65711e3e-977f-11e1-8993-905e29aff6c1'
+  },
+  'FASTING_BLOOD_SUGAR_TEST': {
+    uuid: '65711c2c-977f-11e1-8993-905e29aff6c1',
+    display: "Fasting"
+  },
+  'RANDOM_BLOOD_SUGAR_TEST': {
+    uuid: '65711d3a-977f-11e1-8993-905e29aff6c1',
+    display: "Random"
+  },
+  'RANDOM_BLOOD_GLUCOSE': {
+    uuid: '654a98b8-977f-11e1-8993-905e29aff6c1',
+    display: "Random Blood Glucose",
+    hiNormal: 200,
+    hiAbsolute: 499,
+    lowAbsolute: 40,
+    hiCritical: 400,
+    lowCritical: 70
+  },
+  'FASTING_BLOOD_GLUCOSE': {
+    uuid: '160912AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+    display: "Fasting blood glucose",
+    hiNormal: 126,
+    hiAbsolute: 499,
+    lowAbsolute: 40,
+    hiCritical: 400,
+    lowCritical: 70
   },
   'CERVICAL_CANCER_SCREENING_CONSTRUCT': {
     uuid: '4508D9EC-1355-461A-AB1D-74CF5A9C6F6F'
@@ -870,6 +906,10 @@ export const FORM_ANSWERS = {
     { uuid: CONCEPTS.NEOPLASM_CANCER.uuid, display: CONCEPTS.NEOPLASM_CANCER.display },
     { uuid: CONCEPTS.Other.uuid, display: 'Other gyn' },
   ],
+  "fsBloodSugarTestTypeAnswers": [
+    { uuid: CONCEPTS.FASTING_BLOOD_SUGAR_TEST.uuid, display: CONCEPTS.FASTING_BLOOD_SUGAR_TEST.display },
+    { uuid: CONCEPTS.RANDOM_BLOOD_SUGAR_TEST.uuid, display: CONCEPTS.RANDOM_BLOOD_SUGAR_TEST.display }
+  ],
   'adherenceSession': [
     {
       uuid: CONCEPTS.ADHERENCE_COUNSELING.AdherenceSession.FirstSession.uuid,
@@ -966,6 +1006,7 @@ export const ALERTS_CATEGORIES = {
   VIRAL_LOAD_ALERT: "viral-load",
   HTC_ALERT: "htc",
   CERVICAL_ALERT: "cervical",
+  DIABETES_ALERT: "diabetes",
   BP_ALERT: "bp",
   NUTRITION_ALERT: "nutrition",
   TB_ALERT: "tb",
