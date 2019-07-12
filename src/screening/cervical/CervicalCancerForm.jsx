@@ -12,12 +12,14 @@ class CervicalCancerForm extends React.PureComponent {
   componentDidUpdate(prevProps) {
     const {
       cervicalScreenningResults,
-      biopsyNotDone
+      biopsyDone
 
     } = this.props;
 
     if (typeof cervicalScreenningResults.value !== 'undefined' && cervicalScreenningResults.value !== prevProps.cervicalScreenningResults.value) {
-        this.clearField(biopsyNotDone.fieldName);
+      if (cervicalScreenningResults.value === CONCEPTS.VIA_NEGATIVE.uuid) {
+        this.clearField(biopsyDone.fieldName);
+      }
     }
   }
 
@@ -95,7 +97,7 @@ class CervicalCancerForm extends React.PureComponent {
             <FormGroup controlId="formBiopsy">
               <Obs
                 concept={CONCEPTS.BIOPSY_DONE.uuid}
-                conceptAnswers={FORM_ANSWERS.yesNo}
+                conceptAnswers={FORM_ANSWERS.trueFalse}
                 path="cervical-cancer-biopsy"
               />
             </FormGroup>
@@ -125,16 +127,16 @@ export default connect((state, props) => {
 
   const cervicalScreenningResultsFieldName = formUtil.obsFieldName(['cervical-cancer-screening-construct', 'cervical-cancer-results'], [CONCEPTS.CERVICAL_CANCER_SCREENING_CONSTRUCT.uuid, CONCEPTS.CERVICAL_CANCER_SCREENING_RESULTS.uuid]);
 
-  const biopsyNotDoneFieldName  = formUtil.obsFieldName(['cervical-cancer-screening-construct', 'cervical-cancer-biopsy'], [CONCEPTS.CERVICAL_CANCER_SCREENING_CONSTRUCT.uuid, CONCEPTS.BIOPSY_DONE.uuid]);
+  const biopsyDone = formUtil.obsFieldName(['cervical-cancer-screening-construct', 'cervical-cancer-biopsy'], [CONCEPTS.CERVICAL_CANCER_SCREENING_CONSTRUCT.uuid, CONCEPTS.BIOPSY_DONE.uuid]);
 
   return {
     cervicalScreenningResults: {
       fieldName: cervicalScreenningResultsFieldName,
       value: selector(state, cervicalScreenningResultsFieldName)
     },
-    biopsyNotDone: {
-      fieldName: biopsyNotDoneFieldName,
-      value: selector(state, biopsyNotDoneFieldName)
+    biopsyDone: {
+      fieldName: biopsyDone,
+      value: selector(state, biopsyDone)
     },
     patient: selectors.getSelectedPatientFromStore(state)
   };
