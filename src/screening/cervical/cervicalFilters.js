@@ -20,5 +20,6 @@ const cervicalFilters = patient => {
 
 export default {
   required: cervicalFilters,
-  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CervicalCancerScreeningEncounterType.uuid, 'include')
+  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CervicalCancerScreeningEncounterType.uuid, 'include'),
+  notCompleted: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.CervicalCancerScreeningEncounterType.uuid, 'exclude')
 };

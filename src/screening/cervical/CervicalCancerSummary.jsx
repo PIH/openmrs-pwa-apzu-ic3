@@ -7,7 +7,9 @@ const CervicalCancerSummary = props => {
     <div>
       <ObsHistory
         concepts={[
-          CONCEPTS.CERVICAL_CANCER_SCREENING_RESULTS
+          CONCEPTS.CERVICAL_CANCER_SCREENING_RESULTS,
+          CONCEPTS.BIOPSY_DONE,
+          CONCEPTS.Clinical.ClinicalNotes
         ]}
         groupingConcepts={[CONCEPTS.CERVICAL_CANCER_SCREENING_CONSTRUCT]}
         editableEncounterTypes={[ENCOUNTER_TYPES.CervicalCancerScreeningEncounterType]}

@@ -209,6 +209,9 @@ export const CONCEPTS = {
     uuid: '6545e2aa-977f-11e1-8993-905e29aff6c1',
     display: 'Suspect cancer'
   },
+  'BIOPSY_DONE': {
+    uuid: '1BCB4919-3FD2-4A2F-8F60-684CA797E0A2'
+  },
   'HIV_TEST_CONSTRUCT': {
     uuid: '655dca78-977f-11e1-8993-905e29aff6c1'
   },

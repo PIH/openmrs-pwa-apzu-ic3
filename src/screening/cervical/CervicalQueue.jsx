@@ -14,7 +14,7 @@ const CervicalQueue = props => {
     <div>
       <ScreeningQueue
         dispatch={props.dispatch}
-        filters={[cervicalFilters.required]}
+        filters={[cervicalFilters.required, cervicalFilters.notCompleted]}
         rowData={Object.values(props.patients)}
         rowSelectedActionCreators={rowSelectedActionCreators}
         title="Cervical Cancer Screening Queue"
