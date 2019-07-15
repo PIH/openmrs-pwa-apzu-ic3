@@ -22,10 +22,8 @@ class BloodSugarTestForm extends React.PureComponent {
     if (typeof fsTestType.value !== 'undefined' && fsTestType.value !== prevProps.fsTestType.value) {
       if (fsTestType.value !== CONCEPTS.FASTING_BLOOD_SUGAR_TEST.uuid) {
         this.clearField(fastingGlucose.fieldName);
-        console.log("FASTING_BLOOD_SUGAR_TEST was clicked away");
       } else if (fsTestType.value !== CONCEPTS.RANDOM_BLOOD_SUGAR_TEST.uuid) {
         this.clearField(randomGlucose.fieldName);
-        console.log("RANDOM_BLOOD_SUGAR_TEST was clicked away");
       }
     }
   }
@@ -80,6 +78,7 @@ class BloodSugarTestForm extends React.PureComponent {
                       concept={CONCEPTS.FASTING_BLOOD_GLUCOSE}
                       placeholder="value"
                       path="fasting-glucose"
+                      required={ (typeof fsTestType.value !== 'undefined') && (fsTestType.value === CONCEPTS.FASTING_BLOOD_SUGAR_TEST.uuid) ? true : false}
                     />
                   </Col>
                   <ControlLabel sm={1} style={noPaddingLeftAndRight}>
@@ -106,6 +105,7 @@ class BloodSugarTestForm extends React.PureComponent {
                       concept={CONCEPTS.RANDOM_BLOOD_GLUCOSE}
                       placeholder="value"
                       path="random-glucose"
+                      required={ (typeof fsTestType.value !== 'undefined') && (fsTestType.value === CONCEPTS.RANDOM_BLOOD_SUGAR_TEST.uuid) ? true : false }
                     />
                   </Col>
                   <ControlLabel sm={1} style={noPaddingLeftAndRight}>
