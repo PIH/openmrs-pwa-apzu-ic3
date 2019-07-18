@@ -17,9 +17,9 @@ const NurseSummary = (props) => {
     <div className="summary-content">
       <div className="left-summary-content">
         <span className="patient-alert">
-          {uniqBy(prop('alert'))(props.patient.alert).map((alert) => (
+          { (props.patient != null && (typeof props.patient !== 'undefined') && props.patient.alert != null && (typeof props.patient.alert !== 'undefined')) ? uniqBy(prop('alert'))(props.patient.alert).map((alert) => (
             <span key={alert.name}>{alert.alert}</span>
-          ))}
+          )) : <span></span> }
         </span>
       </div>
       <div className="right-summary-content nursing-summary-right-content">
