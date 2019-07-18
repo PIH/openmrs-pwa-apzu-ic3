@@ -49,6 +49,26 @@ let BloodPressureForm = props => {
           </ControlLabel>
         </FormGroup>
       </Col>
+
+      <Col sm={12}>
+        <div>
+          <ControlLabel sm={6}>
+            Pulse
+          </ControlLabel>
+        </div>
+        <FormGroup controlId="formPulse" style={flexBaseline}>
+          <Col sm={2}>
+            <Obs
+              concept={ CONCEPTS.Pulse }
+              placeholder="value"
+              path="pulse"
+            />
+          </Col>
+          <ControlLabel sm={1} style={noPaddingLeftAndRight}>
+            rate/min
+          </ControlLabel>
+        </FormGroup>
+      </Col>
     </Grid>
   );
 

@@ -6,7 +6,7 @@ const BloodPressureSummary = props => {
   return (
     <div className="single-summary-content">
       <ObsHistory
-        concepts={[CONCEPTS.SystolicBloodPressure, CONCEPTS.DiastolicBloodPressure]}
+        concepts={[CONCEPTS.SystolicBloodPressure, CONCEPTS.DiastolicBloodPressure, CONCEPTS.Pulse]}
         editableEncounterTypes={[ENCOUNTER_TYPES.BloodPressureEncounterType]}
         onEditEncounterActionCreators={[
           (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)

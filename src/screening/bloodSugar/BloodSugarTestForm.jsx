@@ -26,7 +26,7 @@ class BloodSugarTestForm extends React.PureComponent {
         concept={ CONCEPTS.RANDOM_BLOOD_GLUCOSE }
         placeholder="value"
         path="random-glucose"
-        required
+        required={ true }
       />
     );
 
@@ -35,7 +35,7 @@ class BloodSugarTestForm extends React.PureComponent {
         concept={ fastingConcept }
         placeholder="value"
         path="fasting-glucose"
-        required
+        required={ true }
       />
     );
 
@@ -57,7 +57,7 @@ class BloodSugarTestForm extends React.PureComponent {
                   concept={CONCEPTS.FS_BLOOD_SUGAR_TEST_TYPE.uuid}
                   conceptAnswers={FORM_ANSWERS.fsBloodSugarTestTypeAnswers}
                   path="fs-test-type"
-                  required
+                  required={ true }
                 />
               </FormGroup>
             </Col>

@@ -176,7 +176,10 @@ export const CONCEPTS = {
   },
   'Pulse' : {
     uuid: '6569c224-977f-11e1-8993-905e29aff6c1',
-    hiCritical: 230
+    lowCritical: 50,
+    lowNormal: 60,
+    hiNormal: 100,
+    hiCritical: 120
   },
   'Height': {
     uuid: '6569c562-977f-11e1-8993-905e29aff6c1'
@@ -219,7 +222,7 @@ export const CONCEPTS = {
     hiNormal: 200,
     hiAbsolute: 499,
     lowAbsolute: 40,
-    hiCritical: 400,
+    hiCritical: 300,
     lowCritical: 70
   },
   'FASTING_BLOOD_GLUCOSE': {
@@ -228,7 +231,7 @@ export const CONCEPTS = {
     hiNormal: 126,
     hiAbsolute: 499,
     lowAbsolute: 40,
-    hiCritical: 400,
+    hiCritical: 300,
     lowCritical: 70
   },
   'CERVICAL_CANCER_SCREENING_CONSTRUCT': {
