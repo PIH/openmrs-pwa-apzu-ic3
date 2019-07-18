@@ -5,39 +5,39 @@ import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS} from "../../constants";
 import '../../assets/css/tabs.css';
 import ScreeningForm from "../ScreeningForm";
-import {change, formValueSelector, untouch} from "redux-form";
+import { formValueSelector } from "redux-form";
 import { noPaddingLeftAndRight, flexBaseline } from "../../pwaStyles";
 
 
 class BloodSugarTestForm extends React.PureComponent {
-
-  componentDidUpdate(prevProps) {
-    const {
-      fsTestType,
-      fastingGlucose,
-      randomGlucose
-
-    } = this.props;
-
-    if (typeof fsTestType.value !== 'undefined' && fsTestType.value !== prevProps.fsTestType.value) {
-      if (fsTestType.value !== CONCEPTS.FASTING_BLOOD_SUGAR_TEST.uuid) {
-        this.clearField(fastingGlucose.fieldName);
-      } else if (fsTestType.value !== CONCEPTS.RANDOM_BLOOD_SUGAR_TEST.uuid) {
-        this.clearField(randomGlucose.fieldName);
-      }
-    }
-  }
-
-  clearField(field) {
-    this.props.dispatch(change(this.props.formInstanceId, field, null));
-    this.props.dispatch(untouch(this.props.formInstanceId, field));
-  }
 
   render() {
 
     const {
       fsTestType
     } = this.props;
+
+
+    let fastingConcept = Object.assign({}, CONCEPTS.RANDOM_BLOOD_GLUCOSE, { hiNormal: 126 });
+
+
+    const randomObs = (
+      <Obs
+        concept={ CONCEPTS.RANDOM_BLOOD_GLUCOSE }
+        placeholder="value"
+        path="random-glucose"
+        required
+      />
+    );
+
+    const fastingObs = (
+      <Obs
+        concept={ fastingConcept }
+        placeholder="value"
+        path="fasting-glucose"
+        required
+      />
+    );
 
     const formContent = (
       <Grid>
@@ -57,56 +57,25 @@ class BloodSugarTestForm extends React.PureComponent {
                   concept={CONCEPTS.FS_BLOOD_SUGAR_TEST_TYPE.uuid}
                   conceptAnswers={FORM_ANSWERS.fsBloodSugarTestTypeAnswers}
                   path="fs-test-type"
+                  required
                 />
               </FormGroup>
             </Col>
           </Row>
 
           <span
-            style={{display: (typeof fsTestType.value !== 'undefined') && (fsTestType.value === CONCEPTS.FASTING_BLOOD_SUGAR_TEST.uuid) ? 'block' : 'none'}}
+            style={{display: (typeof fsTestType.value !== 'undefined') ? 'block' : 'none'}}
           >
             <Row>
               <Col sm={12}>
                 <div>
                   <ControlLabel sm={6}>
-                    Fasting Blood Glucose
-                  </ControlLabel>
-                </div>
-                <FormGroup controlId="formFastingGlucose" style={flexBaseline}>
-                  <Col sm={2}>
-                    <Obs
-                      concept={CONCEPTS.FASTING_BLOOD_GLUCOSE}
-                      placeholder="value"
-                      path="fasting-glucose"
-                      required={ (typeof fsTestType.value !== 'undefined') && (fsTestType.value === CONCEPTS.FASTING_BLOOD_SUGAR_TEST.uuid) ? true : false}
-                    />
-                  </Col>
-                  <ControlLabel sm={1} style={noPaddingLeftAndRight}>
-                    mg/dL
-                  </ControlLabel>
-                </FormGroup>
-              </Col>
-            </Row>
-          </span>
-
-          <span
-            style={{display: (typeof fsTestType.value !== 'undefined') && (fsTestType.value === CONCEPTS.RANDOM_BLOOD_SUGAR_TEST.uuid) ? 'block' : 'none'}}
-          >
-            <Row>
-              <Col sm={12}>
-                <div>
-                  <ControlLabel sm={6}>
-                    Random Blood Glucose
+                    Blood Glucose
                   </ControlLabel>
                 </div>
                 <FormGroup controlId="formRandomGlucose" style={flexBaseline}>
                   <Col sm={2}>
-                    <Obs
-                      concept={CONCEPTS.RANDOM_BLOOD_GLUCOSE}
-                      placeholder="value"
-                      path="random-glucose"
-                      required={ (typeof fsTestType.value !== 'undefined') && (fsTestType.value === CONCEPTS.RANDOM_BLOOD_SUGAR_TEST.uuid) ? true : false }
-                    />
+                    {(typeof fsTestType.value !== 'undefined') && (fsTestType.value === CONCEPTS.RANDOM_BLOOD_SUGAR_TEST.uuid) ? randomObs : fastingObs }
                   </Col>
                   <ControlLabel sm={1} style={noPaddingLeftAndRight}>
                     mg/dL
@@ -115,7 +84,6 @@ class BloodSugarTestForm extends React.PureComponent {
               </Col>
             </Row>
           </span>
-
         </ObsGroup>
       </Grid>
     );
@@ -137,7 +105,6 @@ export default connect((state, props) => {
   const selector = formValueSelector(props.formInstanceId);
 
   const fsTestTypeFieldName = formUtil.obsFieldName(['blood-sugar-test-set', 'fs-test-type'], [CONCEPTS.BLOOD_SUGAR_TEST_SET.uuid, CONCEPTS.FS_BLOOD_SUGAR_TEST_TYPE.uuid]);
-  const fastingGlucoseFieldName = formUtil.obsFieldName(['blood-sugar-test-set', 'fasting-glucose'], [CONCEPTS.BLOOD_SUGAR_TEST_SET.uuid, CONCEPTS.FASTING_BLOOD_GLUCOSE.uuid]);
   const randomGlucoseFieldName = formUtil.obsFieldName(['blood-sugar-test-set', 'random-glucose'], [CONCEPTS.BLOOD_SUGAR_TEST_SET.uuid, CONCEPTS.RANDOM_BLOOD_GLUCOSE.uuid]);
 
 
@@ -145,10 +112,6 @@ export default connect((state, props) => {
     fsTestType: {
       fieldName: fsTestTypeFieldName,
       value: selector(state, fsTestTypeFieldName)
-    },
-    fastingGlucose: {
-      fieldName: fastingGlucoseFieldName,
-      value: selector(state, fastingGlucoseFieldName)
     },
     randomGlucose: {
       fieldName: randomGlucoseFieldName,
