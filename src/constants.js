@@ -203,7 +203,8 @@ export const CONCEPTS = {
   },
 
   'BLOOD_SUGAR_TEST_SET': {
-    uuid: '65711f4c-977f-11e1-8993-905e29aff6c1'
+    uuid: '65711f4c-977f-11e1-8993-905e29aff6c1',
+    display: "Blood Glucose Test Type"
   },
   'FS_BLOOD_SUGAR_TEST_TYPE': {
     uuid: '65711e3e-977f-11e1-8993-905e29aff6c1'
@@ -216,19 +217,10 @@ export const CONCEPTS = {
     uuid: '65711d3a-977f-11e1-8993-905e29aff6c1',
     display: "Random"
   },
-  'RANDOM_BLOOD_GLUCOSE': {
+  'BLOOD_GLUCOSE': {
     uuid: '654a98b8-977f-11e1-8993-905e29aff6c1',
-    display: "Random Blood Glucose",
+    display: "Blood Glucose",
     hiNormal: 200,
-    hiAbsolute: 499,
-    lowAbsolute: 40,
-    hiCritical: 300,
-    lowCritical: 70
-  },
-  'FASTING_BLOOD_GLUCOSE': {
-    uuid: '160912AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-    display: "Fasting blood glucose",
-    hiNormal: 126,
     hiAbsolute: 499,
     lowAbsolute: 40,
     hiCritical: 300,
