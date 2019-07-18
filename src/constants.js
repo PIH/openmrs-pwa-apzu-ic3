@@ -174,6 +174,10 @@ export const CONCEPTS = {
     hiCritical: 120,
     lowCritical: 50
   },
+  'Pulse' : {
+    uuid: '6569c224-977f-11e1-8993-905e29aff6c1',
+    hiCritical: 230
+  },
   'Height': {
     uuid: '6569c562-977f-11e1-8993-905e29aff6c1'
   },
