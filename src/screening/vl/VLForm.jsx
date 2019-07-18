@@ -165,6 +165,7 @@ class VLForm extends React.PureComponent {
                   concept={CONCEPTS.Bled.uuid}
                   conceptAnswers={FORM_ANSWERS.trueFalse}
                   path="vl-bled"
+                  required={true}
                 />
               </FormGroup>
             </Col>
