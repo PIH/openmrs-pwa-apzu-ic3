@@ -8,7 +8,7 @@ const BloodSugarTestSummary = props => {
       <ObsHistory
         concepts={[
           CONCEPTS.FS_BLOOD_SUGAR_TEST_TYPE,
-          CONCEPTS.RANDOM_BLOOD_GLUCOSE
+          CONCEPTS.BLOOD_GLUCOSE
         ]}
         editableEncounterTypes={[ENCOUNTER_TYPES.BloodSugarScreeningEncounterType]}
         onEditEncounterActionCreators={[

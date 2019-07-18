@@ -5,11 +5,24 @@ import { Grid, Row, FormGroup, ControlLabel, Col } from 'react-bootstrap';
 import { ENCOUNTER_TYPES, CONCEPTS, FORM_ANSWERS} from "../../constants";
 import '../../assets/css/tabs.css';
 import ScreeningForm from "../ScreeningForm";
-import { formValueSelector } from "redux-form";
+import {change, formValueSelector, untouch} from "redux-form";
 import { noPaddingLeftAndRight, flexBaseline } from "../../pwaStyles";
 
 
 class BloodSugarTestForm extends React.PureComponent {
+
+  componentDidUpdate(prevProps) {
+    if (typeof this.props.fsTestType.value !== 'undefined' &&
+      typeof prevProps.fsTestType.value !== 'undefined' &&
+      this.props.fsTestType.value !== prevProps.fsTestType.value) {
+      this.clearField(this.props.bloodGlucose.fieldName);
+    }
+  }
+
+  clearField(field) {
+    this.props.dispatch(change(this.props.formInstanceId, field, null));
+    this.props.dispatch(untouch(this.props.formInstanceId, field));
+  }
 
   render() {
 
@@ -17,27 +30,11 @@ class BloodSugarTestForm extends React.PureComponent {
       fsTestType
     } = this.props;
 
+    let glucoseConcept = Object.assign({}, CONCEPTS.BLOOD_GLUCOSE);
 
-    let fastingConcept = Object.assign({}, CONCEPTS.RANDOM_BLOOD_GLUCOSE, { hiNormal: 126 });
-
-
-    const randomObs = (
-      <Obs
-        concept={ CONCEPTS.RANDOM_BLOOD_GLUCOSE }
-        placeholder="value"
-        path="random-glucose"
-        required={ true }
-      />
-    );
-
-    const fastingObs = (
-      <Obs
-        concept={ fastingConcept }
-        placeholder="value"
-        path="fasting-glucose"
-        required={ true }
-      />
-    );
+    if ((typeof fsTestType.value !== 'undefined') && (fsTestType.value === CONCEPTS.FASTING_BLOOD_SUGAR_TEST.uuid)) {
+      glucoseConcept.hiNormal = 126;
+    }
 
     const formContent = (
       <Grid>
@@ -54,10 +51,10 @@ class BloodSugarTestForm extends React.PureComponent {
             <Col sm={12}>
               <FormGroup controlId="formBloodSugarTestType">
                 <Obs
-                  concept={CONCEPTS.FS_BLOOD_SUGAR_TEST_TYPE.uuid}
+                  concept={CONCEPTS.FS_BLOOD_SUGAR_TEST_TYPE}
                   conceptAnswers={FORM_ANSWERS.fsBloodSugarTestTypeAnswers}
                   path="fs-test-type"
-                  required={ true }
+                  required
                 />
               </FormGroup>
             </Col>
@@ -73,9 +70,14 @@ class BloodSugarTestForm extends React.PureComponent {
                     Blood Glucose
                   </ControlLabel>
                 </div>
-                <FormGroup controlId="formRandomGlucose" style={flexBaseline}>
+                <FormGroup controlId="formGlucose" style={flexBaseline}>
                   <Col sm={2}>
-                    {(typeof fsTestType.value !== 'undefined') && (fsTestType.value === CONCEPTS.RANDOM_BLOOD_SUGAR_TEST.uuid) ? randomObs : fastingObs }
+                    <Obs
+                      concept={glucoseConcept}
+                      placeholder="value"
+                      path="glucose"
+                      required
+                    />
                   </Col>
                   <ControlLabel sm={1} style={noPaddingLeftAndRight}>
                     mg/dL
@@ -105,7 +107,8 @@ export default connect((state, props) => {
   const selector = formValueSelector(props.formInstanceId);
 
   const fsTestTypeFieldName = formUtil.obsFieldName(['blood-sugar-test-set', 'fs-test-type'], [CONCEPTS.BLOOD_SUGAR_TEST_SET.uuid, CONCEPTS.FS_BLOOD_SUGAR_TEST_TYPE.uuid]);
-  const randomGlucoseFieldName = formUtil.obsFieldName(['blood-sugar-test-set', 'random-glucose'], [CONCEPTS.BLOOD_SUGAR_TEST_SET.uuid, CONCEPTS.RANDOM_BLOOD_GLUCOSE.uuid]);
+
+  const bloodGlucoseFieldName = formUtil.obsFieldName(['blood-sugar-test-set', 'glucose'], [CONCEPTS.BLOOD_SUGAR_TEST_SET.uuid, CONCEPTS.BLOOD_GLUCOSE.uuid]);
 
 
   return {
@@ -113,9 +116,9 @@ export default connect((state, props) => {
       fieldName: fsTestTypeFieldName,
       value: selector(state, fsTestTypeFieldName)
     },
-    randomGlucose: {
-      fieldName: randomGlucoseFieldName,
-      value: selector(state, randomGlucoseFieldName)
+    bloodGlucose: {
+      fieldName: bloodGlucoseFieldName,
+      value: selector(state, bloodGlucoseFieldName)
     },
     patient: selectors.getSelectedPatientFromStore(state)
   };
