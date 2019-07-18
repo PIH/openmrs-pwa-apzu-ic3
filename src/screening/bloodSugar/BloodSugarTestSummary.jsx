@@ -10,7 +10,6 @@ const BloodSugarTestSummary = props => {
           CONCEPTS.FS_BLOOD_SUGAR_TEST_TYPE,
           CONCEPTS.RANDOM_BLOOD_GLUCOSE
         ]}
-        groupingConcepts={[CONCEPTS.BLOOD_SUGAR_TEST_SET]}
         editableEncounterTypes={[ENCOUNTER_TYPES.BloodSugarScreeningEncounterType]}
         onEditEncounterActionCreators={[
           (encounterUuid) => formActions.loadFormBackingEncounter(props.formInstanceId, encounterUuid)
