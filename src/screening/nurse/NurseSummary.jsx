@@ -10,6 +10,7 @@ import { uniqBy, prop } from "ramda";
 
 import { CONCEPTS, ENCOUNTER_TYPES  } from "../../constants";
 import ChronicCareDiagnoses from '../clinician/ChronicCareDiagnoses';
+import VisitSummary from '../clinician/VisitSummary';
 
 const NurseSummary = (props) => {
 
@@ -25,6 +26,7 @@ const NurseSummary = (props) => {
       <div className="right-summary-content nursing-summary-right-content">
         <ProgramEnrollment />
         <ChronicCareDiagnoses />
+        <VisitSummary />
         <h4><u>Clinician History</u></h4>
         <span
           style={{ position: 'relative', left: 20 }}

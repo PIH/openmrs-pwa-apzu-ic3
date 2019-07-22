@@ -41,6 +41,28 @@ const orderedSummary = [
     ]
   },
   {
+    screeningType: "Diabetes FS",
+    concepts: [
+      CONCEPTS.FS_BLOOD_SUGAR_TEST_TYPE,
+      CONCEPTS.BLOOD_GLUCOSE
+    ]
+  },
+  {
+    screeningType: "Lab Results",
+    concepts: [
+      CONCEPTS.HbA1c,
+      CONCEPTS.CREATININE
+    ]
+  },
+  {
+    screeningType: "Cervical Cancer Screening",
+    concepts: [
+      CONCEPTS.CERVICAL_CANCER_SCREENING_RESULTS,
+      CONCEPTS.BIOPSY_DONE,
+      CONCEPTS.Clinical.ClinicalNotes
+    ]
+  },
+  {
     screeningType: "Viral Load",
     concepts: [
       CONCEPTS.ViralLoad,
