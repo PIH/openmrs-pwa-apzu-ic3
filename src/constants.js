@@ -34,6 +34,9 @@ export const ENCOUNTER_TYPES = {
   'BloodSugarScreeningEncounterType': {
     uuid: 'D8D67095-0AAC-4B61-87B3-A2B32B7E1FEE'
   },
+  'LabStationResultsEncounterType': {
+    uuid: '6D29EEC4-6FEE-497C-9352-CA8081543FD6'
+  },
   'VLEncounterType': {
     uuid: '9959A261-2122-4AE1-A89D-1CA444B712EA'
   },
@@ -225,6 +228,14 @@ export const CONCEPTS = {
     lowAbsolute: 40,
     hiCritical: 300,
     lowCritical: 70
+  },
+  "CREATININE": {
+    uuid: '657170a0-977f-11e1-8993-905e29aff6c1',
+    display: 'Creatinine'
+  },
+  "HbA1c": {
+    uuid: '65714f76-977f-11e1-8993-905e29aff6c1',
+    display: 'HbA1c'
   },
   'CERVICAL_CANCER_SCREENING_CONSTRUCT': {
     uuid: '4508D9EC-1355-461A-AB1D-74CF5A9C6F6F'
@@ -1007,6 +1018,7 @@ export const ALERTS_CATEGORIES = {
   HTC_ALERT: "htc",
   CERVICAL_ALERT: "cervical",
   DIABETES_ALERT: "diabetes",
+  LAB_STATION_ALERT: "lab-station",
   BP_ALERT: "bp",
   NUTRITION_ALERT: "nutrition",
   TB_ALERT: "tb",

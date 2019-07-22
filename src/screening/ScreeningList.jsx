@@ -7,6 +7,7 @@ import nutritionFilters from './nutrition/nutritionFilters';
 import htcFilters from './htc/htcFilters';
 import cervicalFilters from './cervical/cervicalFilters';
 import bloodSugarFilters from './bloodSugar/bloodSugarFilters';
+import labStationFilters from './labStation/labStationFilters';
 import vlFilters from './vl/vlFilters';
 import eidFilters from './eid/eidFilters';
 import adherenceFilters from './adherence/adherenceFilters';
@@ -84,6 +85,12 @@ export class ScreeningList extends React.Component {
         completed: (patient) => bloodSugarFilters.completed(patient),
         link: '/screening/bloodSugar/form',
         required: bloodSugarFilters.required,
+      },
+      {
+        title: "Lab Station",
+        completed: (patient) => labStationFilters.completed(patient),
+        link: '/screening/labStation/form',
+        required: labStationFilters.required,
       },
       {
         title: "HTC",

@@ -60,8 +60,10 @@ import TbSummaryAndForm from "./screening/tb/TbSummaryAndForm";
 import HtcSummaryAndForm from "./screening/htc/HtcSummaryAndForm";
 import CervicalCancerSummaryAndForm from "./screening/cervical/CervicalCancerSummaryAndForm";
 import BloodSugarTestSummaryAndForm from "./screening/bloodSugar/BloodSugarTestSummaryAndForm";
+import LabStationResultsSummaryAndForm from "./screening/labStation/LabStationResultsSummaryAndForm";
 import UserSession from "./login/UserSession";
 import ScreeningList from './screening/ScreeningList';
+
 
 const { store, persistor } = reduxStore;
 
@@ -200,6 +202,12 @@ const App = props => {
               component={ BloodSugarTestSummaryAndForm }
               noScroll
               path="/screening/bloodSugar/form"
+              redirectOnLogin="/"
+            />
+            <Layout
+              component={ LabStationResultsSummaryAndForm }
+              noScroll
+              path="/screening/labStation/form"
               redirectOnLogin="/"
             />
             <Layout
