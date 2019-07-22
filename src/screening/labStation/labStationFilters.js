@@ -13,6 +13,6 @@ const labStationFilters = patient => {
 
 export default {
   required: labStationFilters,
-  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.BloodSugarScreeningEncounterType.uuid, 'include'),
-  notCompleted: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.BloodSugarScreeningEncounterType.uuid, 'exclude')
+  completed: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.LabStationResultsEncounterType.uuid, 'include'),
+  notCompleted: patientObjByEncounterTypeFilter(ENCOUNTER_TYPES.LabStationResultsEncounterType.uuid, 'exclude')
 };
