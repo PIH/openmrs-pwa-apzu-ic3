@@ -235,7 +235,10 @@ export const CONCEPTS = {
   },
   "HbA1c": {
     uuid: '65714f76-977f-11e1-8993-905e29aff6c1',
-    display: 'HbA1c'
+    display: 'HbA1c',
+    hiNormal: 8,
+    hiAbsolute: 16,
+    lowAbsolute: 2
   },
   'CERVICAL_CANCER_SCREENING_CONSTRUCT': {
     uuid: '4508D9EC-1355-461A-AB1D-74CF5A9C6F6F'
