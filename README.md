@@ -1,5 +1,5 @@
 
-# Development Enviroment Setup
+# Development Environment Setup
 
 ## Building and starting the PWA
 
