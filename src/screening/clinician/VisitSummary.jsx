@@ -37,7 +37,8 @@ const orderedSummary = [
     screeningType: "Blood Pressure",
     concepts: [
       CONCEPTS.SystolicBloodPressure,
-      CONCEPTS.DiastolicBloodPressure
+      CONCEPTS.DiastolicBloodPressure,
+      CONCEPTS.Pulse
     ]
   },
   {
