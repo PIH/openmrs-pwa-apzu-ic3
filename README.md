@@ -89,6 +89,16 @@ $ /Applications/Chromium.app/Contents/MacOS/Chromium --disable-web-security --us
 ```
 * Navigate to http://localhost:3000
 
+## Building against latest snapshot of React-Components
+
+By default, the Bamboo job APZU IC3 builds against the most-recently built version of React Components.  To disable this and have APZU IC3 build against a released version of React Components, disable the following tasks in the APZU IC3 Bamboo build:
+
+* "Grab the latest openmrs-react-components build..."
+* "Rename openmrs-react-components
+* "Install latests openmrs-react-components"
+
+It's best practice to build against a released version before cutting a gold (see below)
+
 ## Deploying a new version to CI and promoting to gold
 * Upon each build new version will be deployed to bwenzi.pih-emr.org (though bwenzi polls for the latest every five minutes, so it might not immediately be avaiable)
 * Upon each build this new version is also deployed to the "unstable" directory of the PWA-REPO (http://bamboo.pih-emr.org/pwa-repo/), overriding any previous version deployed there, but tagged with the version and build number
