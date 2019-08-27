@@ -144,12 +144,12 @@ describe('Nutrition form', function () {
           .type('12.5');
 
         // assert that validations are shown when form values exceed valid limits
-        cy.get('#formWeight + div.div-error > span.field-error > span')
-          .contains('Must be less than 101')
+        cy.get('#formWeight + div.div-error > span.field-error > span > span')
+          .contains('Must be less than')
           .should('exist');
 
-        cy.get('#formHeight + div.div-error > span.field-error > span')
-          .contains('Must be less than 216')
+        cy.get('#formHeight + div.div-error > span.field-error > span > span')
+          .contains('Must be less than')
           .should('exist');
 
         // asser that the save buttonn is disabled

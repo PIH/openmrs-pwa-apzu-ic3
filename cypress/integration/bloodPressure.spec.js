@@ -368,12 +368,12 @@ describe('Blood Pressure', function () {
           .type('200');
 
         // assert that validation errors are shown when value exceed their limits
-        cy.get('#formSystolic + div.div-error > span.field-error > span')
-          .contains('Must be less than 261')
+        cy.get('#formSystolic + div.div-error > span.field-error > span > span')
+          .contains('Must be less than')
           .should('exist');
 
-        cy.get('#formDiastolic + div.div-error > span.field-error > span')
-          .contains('Must be less than 141')
+        cy.get('#formDiastolic + div.div-error > span.field-error > span > span')
+          .contains('Must be less than')
           .should('exist');
 
         cy.wait(2000);
