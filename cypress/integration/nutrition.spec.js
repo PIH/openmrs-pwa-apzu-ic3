@@ -131,7 +131,7 @@ describe('Nutrition form', function () {
         }
 
 
-        // Input value for height
+        // Input value for weight
         cy.get('#formWeight')
           .type('120');
         
@@ -144,11 +144,11 @@ describe('Nutrition form', function () {
           .type('12.5');
 
         // assert that validations are shown when form values exceed valid limits
-        cy.get('#formWeight + div.div-error > span.field-error')
+        cy.get('#formWeight + div.div-error > span.field-error > span')
           .contains('Must be less than 101')
           .should('exist');
 
-        cy.get('#formHeight + div.div-error > span.field-error')
+        cy.get('#formHeight + div.div-error > span.field-error > span')
           .contains('Must be less than 216')
           .should('exist');
 
