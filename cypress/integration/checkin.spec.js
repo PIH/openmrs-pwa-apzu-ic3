@@ -40,8 +40,8 @@ describe('Check in', () => {
           cy.wait(2000);
         }
 
-        // Select a check-in location
-        cy.get('#existing_patient')
+        // Select a check-in reason
+        cy.get('#sharc')
           .click();
 
         // Select a person present at visit answer?
