@@ -44,7 +44,7 @@ Cypress.Commands.overwrite('request', (originalFn, ...options) => {
 
 Cypress.Commands.add('init', (EncounterResponseStub, Ic3ScreeningResponseStub) => {
   cy.server();
-  cy.viewport(800, 1280); // Galaxy E tablet in portrait mode
+  cy.viewport(1280, 800);
   cy.route({
     method: 'GET',
     url: URL.GET_PATIENT_BY_NAME,
