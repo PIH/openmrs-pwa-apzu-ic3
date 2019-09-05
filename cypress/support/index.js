@@ -20,5 +20,4 @@ import './commands';
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-// resolution of Galaxy Tablet E in landscape mode
-cy.viewport(800, 1280);
+
