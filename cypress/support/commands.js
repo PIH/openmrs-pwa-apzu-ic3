@@ -45,16 +45,6 @@ Cypress.Commands.overwrite('request', (originalFn, ...options) => {
 Cypress.Commands.add('init', (EncounterResponseStub, Ic3ScreeningResponseStub) => {
   cy.server();
   cy.viewport(1280, 800);
-
-  // this (should?) disable scrolling when elements are clicked or otherwise interacted with, see:
-  // https://github.com/cypress-io/cypress/issues/871
-  Cypress.on('scrolled', $el => {
-    $el.get(0).scrollIntoView({
-      block: 'center',
-      inline: 'center'
-    });
-  });
-
   cy.route({
     method: 'GET',
     url: URL.GET_PATIENT_BY_NAME,
