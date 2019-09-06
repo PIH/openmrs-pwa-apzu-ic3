@@ -42,7 +42,7 @@ describe('Check in', () => {
 
         // Select a check-in reason
         cy.get('#sharc')
-          .click();
+          .click({ force: true });
 
         // Select a person present at visit answer?
         cy.get('#guardian')
