@@ -41,11 +41,10 @@ describe('Check in', () => {
         }
 
         // hack to try to fix stupid Cypress scrolling issue
-        // cy.get('.swiper-container').scrollTo(0, 0);
+        cy.get('.swiping-summary-and-form').scrollTo(0, 0);
 
         // Select a check-in reason
         cy.get('#sharc')
-          .scrollIntoView()
           .click({ force: true });
 
         // Select a person present at visit answer?
