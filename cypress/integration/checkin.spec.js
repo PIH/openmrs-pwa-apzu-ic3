@@ -40,6 +40,9 @@ describe('Check in', () => {
           cy.wait(2000);
         }
 
+        // hack to try to fix stupid Cypress scrolling issue
+        cy.get('.swiper-container').scrollTo(0, 0);
+
         // Select a check-in reason
         cy.get('#sharc')
           .click({ force: true });
