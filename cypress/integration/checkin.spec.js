@@ -24,6 +24,9 @@ describe('Check in', () => {
       .first()
       .click();
 
+    // hack to try to fix stupid Cypress scrolling issue
+    cy.get('.swiping-summary-and-form').scrollTo(0, 0);
+
     cy.wait(3000);
     // Check if form is in edit mode
     cy.get('.form-action-btns > button')
