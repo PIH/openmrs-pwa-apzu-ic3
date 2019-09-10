@@ -20,7 +20,7 @@ describe('Check in', () => {
       .click();
 
     // Navigate to check-in form
-    cy.get('u')
+    cy.get('.summary-swiper-button')
       .first()
       .click();
 
