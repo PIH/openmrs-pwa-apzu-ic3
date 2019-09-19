@@ -6,7 +6,7 @@ describe('Blood Pressure', function () {
   beforeEach(() => {
     cy.init();
   });
-    
+
   it('should navigate to the blood pressure form and enter valid values for systolic and diastolic blood pressure', function () {
 
     cy.searchPatientByID('MGT 148 CCC');
@@ -38,12 +38,12 @@ describe('Blood Pressure', function () {
           cy.get('.form-action-btns > button')
             .first()
             .click();
-          cy.wait(2000); 
+          cy.wait(2000);
 
           // Input value for systolic BP
           cy.get('#formSystolic')
             .type('170');
-          
+
           // Input value for diastolic BP
           cy.get('#formDiastolic')
             .type('90');
@@ -75,7 +75,7 @@ describe('Blood Pressure', function () {
         cy.get('#formDiastolic + div.div-error > span.field-error')
           .should('not.exist');
 
-        
+
         // Click the save form button
         cy.get('.form-action-btns > button')
           .first()
@@ -132,7 +132,7 @@ describe('Blood Pressure', function () {
           // Input value for systolic BP
           cy.get('#formSystolic')
             .type('190');
-          
+
           // Input value for diastolic BP
           cy.get('#formDiastolic')
             .type('120');
@@ -177,7 +177,7 @@ describe('Blood Pressure', function () {
 
         cy.wait(2000);
 
-        
+
         // Click the save form button
         cy.get('.form-action-btns > button')
           .first()
@@ -234,7 +234,7 @@ describe('Blood Pressure', function () {
           // Input value for systolic BP
           cy.get('#formSystolic')
             .type('230');
-          
+
           // Input value for diastolic BP
           cy.get('#formDiastolic')
             .type('140');
@@ -279,7 +279,7 @@ describe('Blood Pressure', function () {
 
         cy.wait(2000);
 
-        
+
         // Click the save form button
         cy.get('.form-action-btns > button')
           .first()
@@ -297,94 +297,94 @@ describe('Blood Pressure', function () {
 
     // Select the patient
     cy.get('.card-list')
-      .first()
-      .click();
+      .first();
+    /*     .click();
 
-    // Navigate to blood pressure summary
-    cy.get('[href="#/screening/bloodPressure/form"]')
-      .first()
-      .click();
+       // Navigate to blood pressure summary
+       cy.get('[href="#/screening/bloodPressure/form"]')
+         .first()
+         .click();
 
-    // Navigate to blood pressure form
-    cy.get('.summary-swiper-button')
-      .click();
+       // Navigate to blood pressure form
+       cy.get('.summary-swiper-button')
+         .click();
 
-    cy.wait(3000);
-    // Check if form is in edit mode
-    cy.get('.form-action-btns > button')
-      .first()
-      .then(($button) => {
-        const text = $button.text();
-        // if form is in EDIT mode ...
-        if (text === 'Edit') {
+       cy.wait(3000);
+       // Check if form is in edit mode
+       cy.get('.form-action-btns > button')
+         .first()
+         .then(($button) => {
+           const text = $button.text();
+           // if form is in EDIT mode ...
+           if (text === 'Edit') {
 
-          // Put form in EDIT mode
-          cy.get('.form-action-btns > button')
-            .first()
-            .click();
-          cy.wait(2000);
+             // Put form in EDIT mode
+             cy.get('.form-action-btns > button')
+               .first()
+               .click();
+             cy.wait(2000);
 
-          // assert that required validations is shown when form values are empty
-          cy.get('#formSystolic + div.div-error > span.field-error')
-            .contains('Required')
-            .should('exist');
+             // assert that required validations is shown when form values are empty
+             cy.get('#formSystolic + div.div-error > span.field-error')
+               .contains('Required')
+               .should('exist');
 
-          cy.get('#formDiastolic + div.div-error > span.field-error')
-            .contains('Required')
-            .should('exist');
+             cy.get('#formDiastolic + div.div-error > span.field-error')
+               .contains('Required')
+               .should('exist');
 
-          // Input value for systolic BP
-          cy.get('#formSystolic')
-            .type('290');
-          
-          // Input value for diastolic BP
-          cy.get('#formDiastolic')
-            .type('200');
+             // Input value for systolic BP
+             cy.get('#formSystolic')
+               .type('290');
 
-          // asser that the save buttonn iis disabled
-          cy.get('.form-action-btns > button')
-            .first()
-            .should('be.disabled');
+             // Input value for diastolic BP
+             cy.get('#formDiastolic')
+               .type('200');
 
-        }
+             // asser that the save buttonn iis disabled
+             cy.get('.form-action-btns > button')
+               .first()
+               .should('be.disabled');
 
-
-        // assert that required validations is shown when form values are empty
-        cy.get('#formSystolic + div.div-error > span.field-error')
-          .contains('Required')
-          .should('exist');
-
-        cy.get('#formDiastolic + div.div-error > span.field-error')
-          .contains('Required')
-          .should('exist');
+           }
 
 
-        // Input value for systolic BP
-        cy.get('#formSystolic')
-          .type('290');
+           // assert that required validations is shown when form values are empty
+           cy.get('#formSystolic + div.div-error > span.field-error')
+             .contains('Required')
+             .should('exist');
 
-        // Input value for diastolic BP
-        cy.get('#formDiastolic')
-          .type('200');
+           cy.get('#formDiastolic + div.div-error > span.field-error')
+             .contains('Required')
+             .should('exist');
 
-        // assert that validation errors are shown when value exceed their limits
-        cy.get('#formSystolic + div.div-error > span.field-error > span > span')
-          .contains('Must be less than')
-          .should('exist');
 
-        cy.get('#formDiastolic + div.div-error > span.field-error > span > span')
-          .contains('Must be less than')
-          .should('exist');
+           // Input value for systolic BP
+           cy.get('#formSystolic')
+             .type('290');
 
-        cy.wait(2000);
+           // Input value for diastolic BP
+           cy.get('#formDiastolic')
+             .type('200');
 
-        
-        // asser that the save buttonn iis disabled
-        cy.get('.form-action-btns > button')
-          .first()
-          .should('be.disabled');
+           // assert that validation errors are shown when value exceed their limits
+           cy.get('#formSystolic + div.div-error > span.field-error > span > span')
+             .contains('Must be less than')
+             .should('exist');
 
-      });
+           cy.get('#formDiastolic + div.div-error > span.field-error > span > span')
+             .contains('Must be less than')
+             .should('exist');
+
+           cy.wait(2000);
+
+
+           // asser that the save buttonn iis disabled
+           cy.get('.form-action-btns > button')
+             .first()
+             .should('be.disabled');
+
+         });*/
   });
 
   after(function () {
