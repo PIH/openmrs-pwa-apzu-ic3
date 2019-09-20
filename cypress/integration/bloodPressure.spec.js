@@ -13,7 +13,7 @@ describe('Blood Pressure', function () {
 
     // Select the patient
     cy.get('.card-list')
-      .first()
+      .first();
     /*      .click();
 
         // Navigate to blood pressure summary
@@ -84,7 +84,7 @@ describe('Blood Pressure', function () {
             cy.get('.custom-loader')
               .first()
               .should('be.visible');*/
-      });
+    // });
   });
 
   it('should navigate to the blood pressure form and enter abnormal values for systolic and diastolic blood pressure', function () {
