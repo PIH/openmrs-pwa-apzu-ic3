@@ -12,6 +12,7 @@ describe('Adherence station', () => {
 
     // Select the patient
     cy.get('.card-list')
+      .first()
       .click();
 
     // Navigate to clinician summary
