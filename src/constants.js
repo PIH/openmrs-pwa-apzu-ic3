@@ -358,6 +358,10 @@ export const CONCEPTS = {
   'ViralLoadDetectablelowerLimit': {
     uuid: '53cb83ed-5d55-4b63-922f-d6b8fc67a5f8',
   },
+  'ViralLoadSampleId': {
+    uuid: 'a8a56930-6b16-11ea-b6dd-8f1bd7e7fd41',
+    display: 'Sample ID'
+  },
   'Bled': {
     uuid: 'f792f2f9-9c24-4d6e-98fd-caffa8f2383f',
     display: 'Bled'

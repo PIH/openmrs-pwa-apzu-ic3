@@ -357,6 +357,25 @@ class VLForm extends React.PureComponent {
                   />
                 </FormGroup>
               </Row>
+              <Row>
+                <Col
+                  componentClass={ControlLabel}
+                >
+                  {CONCEPTS.ViralLoadSampleId.display}
+                </Col>
+              </Row>
+              <Row>
+                <Col sm={8}>
+                  <FormGroup controlId="formVlSampleId">
+                    <Obs
+                      concept={CONCEPTS.ViralLoadSampleId.uuid}
+                      datatype="text"
+                      path="sample-id"
+                      placeholder="Enter the sample ID"
+                    />
+                  </FormGroup>
+                </Col>
+              </Row>
             </span>
 
             <span

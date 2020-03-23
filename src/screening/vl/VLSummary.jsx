@@ -17,7 +17,8 @@ const VLSummary = props => {
             CONCEPTS.ReasonForTesting,
             CONCEPTS.LabLocation,
             CONCEPTS.ReasonForNoResult,
-            CONCEPTS.ViralLoadDetectablelowerLimit
+            CONCEPTS.ViralLoadDetectablelowerLimit,
+            CONCEPTS.ViralLoadSampleId
           ]}
         editableEncounterTypes={[ENCOUNTER_TYPES.VLEncounterType]}
         // hack: some of the VL encounters are entered via the flowsheets, and currently uneditable here because they don't include the form and path; need to make sure we don't show an edit link
