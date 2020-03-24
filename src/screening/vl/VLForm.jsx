@@ -365,7 +365,7 @@ class VLForm extends React.PureComponent {
                 </Col>
               </Row>
               <Row>
-                <Col sm={8}>
+                <Col sm={2}>
                   <FormGroup controlId="formVlSampleId">
                     <Obs
                       concept={CONCEPTS.ViralLoadSampleId.uuid}
