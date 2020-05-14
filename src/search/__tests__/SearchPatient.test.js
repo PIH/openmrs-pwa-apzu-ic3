@@ -1,8 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import {mount} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
-import { Provider } from 'react-redux';
-import { PatientSearch, patientActions } from '@openmrs/react-components';
+import {Provider} from 'react-redux';
+import {IntlProvider} from 'react-intl';
+import {PatientSearch} from '@openmrs/react-components';
 import SearchPatient from '../SearchPatient';
 
 let props, store;
@@ -14,7 +15,9 @@ const searchPatient = () => {
   if (!mountedComponent) {
     mountedComponent = mount(
       <Provider store={store}>
-        <SearchPatient {...props} />
+        <IntlProvider locale="en">
+          <SearchPatient {...props} />
+        </IntlProvider>
       </Provider>);
   }
   return mountedComponent;
@@ -39,7 +42,7 @@ describe('Component: SearchPatient', () => {
                     preferred: true,
                     identifierType: {
                       uuid: '1234'
-                    } 
+                    }
                   }
                 ],
               }

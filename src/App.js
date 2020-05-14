@@ -73,17 +73,18 @@ const App = props => {
 
   return (
     <Provider store={store}>
-      <PersistGate loading={<LoadingView />} persistor={persistor}>
-        <UserSession/>
-        <ConnectedRouter history={history}>
-          <Switch>
-            <Route
-              component={LoginPage}
-              path="/login"
-            />
-            <Route
-              component={Logout}
-              path="/logout"
+      <IntlProvider locale="en">
+        <PersistGate loading={<LoadingView/>} persistor={persistor}>
+          <UserSession/>
+          <ConnectedRouter history={history}>
+            <Switch>
+              <Route
+                component={LoginPage}
+                path="/login"
+              />
+              <Route
+                component={Logout}
+                path="/logout"
             />
             <Layout
               component={HomePage}
@@ -275,14 +276,15 @@ const App = props => {
               path="/screening/clinician/queue"
               redirectOnLogin="/"
             />
-            <Layout
-              component={ScreeningList}
-              path="/screening"
-              redirectOnLogin="/"
-            />
-          </Switch>
-        </ConnectedRouter>
-      </PersistGate>
+              <Layout
+                component={ScreeningList}
+                path="/screening"
+                redirectOnLogin="/"
+              />
+            </Switch>
+          </ConnectedRouter>
+        </PersistGate>
+      </IntlProvider>
     </Provider>
   );
 
