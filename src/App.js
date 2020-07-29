@@ -23,6 +23,7 @@ import {
   faLemon,
   faHome
 } from '@fortawesome/free-solid-svg-icons';
+import { IntlProvider } from 'react-intl'; 
 import './App.css';
 import reduxStore, { history } from './store';
 import Layout from './layout/Layout';
