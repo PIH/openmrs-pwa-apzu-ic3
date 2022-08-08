@@ -21,7 +21,7 @@ npmtest() {
   docker run --rm \
     -v $(pwd):/data \
     -w="/data" \
-    -e "CI=true" \
+    -e CI=true \
     node:14 \
     npm run test
 }
@@ -30,7 +30,10 @@ npmcypresstest() {
   docker run --rm \
     -v $(pwd):/data \
     -w="/data" \
-    -e "cypress_username=$2 cypress_password=$3 REACT_APP_SERVER_ADDRESS=$4 REACT_APP_SERVER_CONTEXT_PATH=/openmrs" \
+    -e cypress_username=$2 \
+    -e cypress_password=$3 \
+    -e REACT_APP_SERVER_ADDRESS=$4 \
+    -e REACT_APP_SERVER_CONTEXT_PATH=/openmrs \
     cypress/base:14.17.3 \
     npm run test-cypress
 }
@@ -39,7 +42,11 @@ npmbuild() {
   docker run --rm \
     -v $(pwd):/data \
     -w="/data" \
-    -e "CI=true REACT_APP_SERVER_ADDRESS= REACT_APP_SERVER_CONTEXT_PATH=/openmrs REACT_APP_CONTEXT_PATH=/workflow REACT_APP_BUILD_NUMBER=$2" \
+    -e CI=true \
+    -e REACT_APP_SERVER_ADDRESS= \
+    -e REACT_APP_SERVER_CONTEXT_PATH=/openmrs \
+    -e REACT_APP_CONTEXT_PATH=/workflow \
+    -e REACT_APP_BUILD_NUMBER=$2 \
     node:14 \
     npm run build
 }
