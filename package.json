@@ -6,7 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "@fortawesome/react-fontawesome": "^0.1.2",
-    "@openmrs/react-components": "next",
+    "@openmrs/react-components": "^1.5.3-pre.5",
     "ag-grid": "^18.1.2",
     "ag-grid-react": "^18.1.0",
     "babel-polyfill": "^6.26.0",
