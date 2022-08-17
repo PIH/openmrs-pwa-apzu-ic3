@@ -9,6 +9,14 @@ usage () {
     echo -e "If no argument is passed, executes ci, followed by test, followed by build"
 }
 
+npminstall() {
+  docker run --rm \
+    -v $(pwd):/data \
+    -w="/data" \
+    node:14 \
+    npm install
+}
+
 npmci() {
   docker run --rm \
     -v $(pwd):/data \
@@ -59,7 +67,10 @@ elif [ "$1" = "cypress-test" ]; then
   npmcypresstest
 elif [ "$1" = "build" ]; then
   npmbuild
+elif [ "$1" = "install" ]; then
+  npminstall
 else
+  npminstall
   npmci
   npmtest
   npmbuild
