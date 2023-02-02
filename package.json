@@ -16,7 +16,7 @@
     "date-fns": "^1.29.0",
     "history": "^4.7.2",
     "i": "^0.3.6",
-    "npm": "^6.4.0",
+    "npm": "^9.4.1",
     "ramda": "^0.25.0",
     "react": "^16.3.2",
     "react-16-bootstrap-date-picker": "^5.1.2",
