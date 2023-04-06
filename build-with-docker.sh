@@ -59,6 +59,19 @@ npmbuild() {
     npm run build
 }
 
+npmstart() {
+  docker run --rm \
+    -v $(pwd):/data \
+    -w="/data" \
+    -e CI=true \
+    -e REACT_APP_SERVER_ADDRESS=http://localhost:8080 \
+    -e REACT_APP_SERVER_CONTEXT_PATH=/openmrs \
+    -e REACT_APP_CONTEXT_PATH=/workflow \
+    -e REACT_APP_BUILD_NUMBER=$2 \
+    node:14 \
+    npm start
+}
+
 if [ "$1" = "ci" ]; then
   npmci
 elif [ "$1" = "test" ]; then
@@ -69,6 +82,8 @@ elif [ "$1" = "build" ]; then
   npmbuild
 elif [ "$1" = "install" ]; then
   npminstall
+elif [ "$1" = "start" ]; then
+  npmstart
 else
   npminstall
   npmci
