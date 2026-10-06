@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import {Logout, LoadingView} from '@openmrs/react-components';
+import { LoadingView } from '@openmrs/react-components';
 import { library as fontAwesomeLibrary } from '@fortawesome/fontawesome-svg-core';
 import {
   faBars,
@@ -28,6 +28,8 @@ import './App.css';
 import reduxStore, { history } from './store';
 import Layout from './layout/Layout';
 import LoginPage from './login/LoginPage';
+import LogoutPage from './login/LogoutPage';
+import SessionGate from './login/SessionGate';
 import HomePage from './home/HomePage';
 import InfoPatient from './patient/PatientInfo';
 import SearchPatient from './search/SearchPatient';
@@ -76,6 +78,7 @@ const App = props => {
     <Provider store={store}>
       <IntlProvider locale="en">
         <PersistGate loading={<LoadingView/>} persistor={persistor}>
+          <SessionGate>
           <UserSession/>
           <ConnectedRouter history={history}>
             <Switch>
@@ -84,7 +87,7 @@ const App = props => {
                 path="/login"
               />
               <Route
-                component={Logout}
+                component={LogoutPage}
                 path="/logout"
             />
             <Layout
@@ -284,6 +287,7 @@ const App = props => {
               />
             </Switch>
           </ConnectedRouter>
+          </SessionGate>
         </PersistGate>
       </IntlProvider>
     </Provider>
