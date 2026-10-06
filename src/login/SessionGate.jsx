@@ -1,41 +1,62 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { LoadingView, sessionActions } from '@openmrs/react-components';
+import { Button } from 'react-bootstrap';
+import { axiosInstance, LoadingView, loginActions, sessionActions, sessionRest } from '@openmrs/react-components';
 import { redirectToServerLogin } from './serverLogin';
 
-// Loads the server session before rendering the app, replacing whatever session was persisted from before.
-// Without an authenticated session, goes to the server's login page.
-class SessionGate extends React.Component {
+// Loads the server session before rendering the app.  Without an authenticated session, goes to the server's
+// login page, which the authentication module gives with a 401 from the session endpoint.
+export class SessionGate extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { checked: false };
+    this.state = { status: 'checking' };
+    this.checkSession = this.checkSession.bind(this);
   }
 
   componentDidMount() {
-    this.initialSession = this.props.session;
-    this.props.dispatch(sessionActions.fetchSession());
+    this.checkSession();
   }
 
-  componentDidUpdate() {
-    if (!this.state.checked && this.props.session !== this.initialSession) {
-      if (this.props.session.authenticated === true) {
-        this.setState({ checked: true });
-      } else {
-        redirectToServerLogin();
-      }
-    }
+  checkSession() {
+    this.setState({ status: 'checking' });
+    // credentials persisted from the PWA's former login page must not be sent
+    delete axiosInstance.defaults.headers.common['Authorization'];
+    sessionRest.fetchCurrentSession()
+      .then(session => {
+        if (session.authenticated === true) {
+          // as react-components' login does, which starts loading the app's data (see ic3Sagas)
+          this.props.dispatch(sessionActions.fetchSessionSucceeded(session));
+          this.props.dispatch(loginActions.loginSucceeded());
+          this.setState({ status: 'authenticated' });
+        } else {
+          redirectToServerLogin();
+        }
+      })
+      .catch(error => {
+        if (error.response && error.response.status === 401) {
+          redirectToServerLogin(error.response.headers.location);
+        } else {
+          // eg. offline or a server error: don't send the user away, as they may well still be logged in
+          this.setState({ status: 'unavailable' });
+        }
+      });
   }
 
   render() {
-    return this.state.checked ? this.props.children : <LoadingView/>;
+    if (this.state.status === 'authenticated') {
+      return this.props.children;
+    }
+    if (this.state.status === 'unavailable') {
+      return (
+        <div style={{ padding: '20px' }}>
+          <p>The server could not be reached.</p>
+          <Button onClick={this.checkSession}>Retry</Button>
+        </div>
+      );
+    }
+    return <LoadingView/>;
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    session: state.openmrs.session
-  };
-};
-
-export default connect(mapStateToProps)(SessionGate);
+export default connect()(SessionGate);
