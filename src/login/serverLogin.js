@@ -22,7 +22,14 @@ const fetchLoginPage = () =>
     .then(response => response.headers.location)
     .catch(error => error.response && error.response.headers.location);
 
+// The authentication module can only return the user to a page within OpenMRS.  Served outside it (eg. by Tomcat
+// at /workflow on legacy servers), the PWA can't ask to be returned to, so the user lands on the EMR home page.
+export const isWithinServer = (path) =>
+  path.indexOf(new URL(serverRoot(), window.location.origin).pathname) === 0;
+
 export const redirectToServerLogin = (loginPage) =>
   Promise.resolve(loginPage || fetchLoginPage()).then(page => {
-    window.location.replace(withRedirect(page || serverRoot(), pwaReturnPath(window.location)));
+    const returnPath = pwaReturnPath(window.location);
+    const target = page || serverRoot();
+    window.location.replace(isWithinServer(returnPath) ? withRedirect(target, returnPath) : target);
   });

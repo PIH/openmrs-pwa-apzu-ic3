@@ -3,11 +3,12 @@ jest.mock('@openmrs/react-components', () => ({
 }));
 
 import { axiosInstance } from '@openmrs/react-components';
-import { pwaReturnPath, redirectToServerLogin, withRedirect } from '../serverLogin';
+import { isWithinServer, pwaReturnPath, redirectToServerLogin, withRedirect } from '../serverLogin';
 
 describe('server login', () => {
 
   beforeEach(() => {
+    window.history.pushState({}, '', '/openmrs/owa/app/index.html');
     window.location.replace = jest.fn();
     axiosInstance.get.mockReset();
   });
@@ -46,6 +47,15 @@ describe('server login', () => {
     axiosInstance.get.mockReturnValue(Promise.resolve({ headers: {} }));
     return redirectToServerLogin().then(() => {
       expect(window.location.replace).toHaveBeenCalledWith(withRedirect("/openmrs/", pwaReturnPath(window.location)));
+    });
+  });
+
+  it('should not ask to return to a PWA served outside the server, which the login page cannot do', () => {
+    window.history.pushState({}, '', '/workflow/index.html');
+    expect(isWithinServer('/workflow/index.html')).toBe(false);
+    expect(isWithinServer('/openmrs/owa/app/index.html')).toBe(true);
+    return redirectToServerLogin("/openmrs/authenticationui/login/login.page").then(() => {
+      expect(window.location.replace).toHaveBeenCalledWith("/openmrs/authenticationui/login/login.page");
     });
   });
 });
