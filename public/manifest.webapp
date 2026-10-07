@@ -1,7 +1,8 @@
 {
-  "name": "Screening APZU I3",
-  "description": "PIH APZU I3 OWA.",
+  "name": "APZU IC3 Screening",
+  "description": "APZU IC3 Screening",
   "launch_path": "index.html",
+  "deployed.owa.name": "ic3",
   "icons": {
     "48": "/img/omrs-button.png"
   },
