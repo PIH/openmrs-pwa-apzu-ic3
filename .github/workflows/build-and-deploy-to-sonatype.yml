@@ -15,8 +15,6 @@ jobs:
     uses: PIH/openmrs-contrib-distro-tools/.github/workflows/build-and-deploy-to-sonatype.yml@main
     secrets: inherit
 
-  # The Malawi distribution includes this app, so rather than deploying it directly, build and publish the
-  # distribution, which bundles the newly published app and deploys it (to neno-ci, including /workflow there)
   trigger-downstream-builds:
     if: github.repository_owner == 'PIH'
     needs: build-and-publish
