@@ -15,14 +15,14 @@ jobs:
     uses: PIH/openmrs-contrib-distro-tools/.github/workflows/build-and-deploy-to-sonatype.yml@main
     secrets: inherit
 
-  deploy-to-nenoci:
+  trigger-downstream-builds:
     if: github.repository_owner == 'PIH'
     needs: build-and-publish
-    concurrency:
-      group: deploy-to-nenoci-${{ github.ref }}
-      cancel-in-progress: true
-    uses: PIH/openmrs-contrib-distro-tools/.github/workflows/deploy-via-runner.yml@main
-    with:
-      runner-label: mw-his-neno-ci
-      notify_ci_dashboard: true
-    secrets: inherit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger build of pihmalawi-emr
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.GHA_WRITE_TOKEN }}
+          repository: PIH/pihmalawi-emr
+          event-type: dependency-trigger
