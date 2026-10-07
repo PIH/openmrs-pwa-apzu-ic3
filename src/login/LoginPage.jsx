@@ -1,25 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {LoginPage as ReactComponentsLoginPage} from '@openmrs/react-components';
-import homeImage from "../assets/images/Malawi_hut.jpg";
-import logo from "../assets/images/pih_apzu_logo_white.png";
+import { LoadingView } from '@openmrs/react-components';
+import { redirectToServerLogin } from './serverLogin';
 
+class LoginPage extends React.Component {
 
-const LoginPage = props => {
-  return (
-    <ReactComponentsLoginPage
-      homeImage={homeImage}
-      location={props.location}
-      logo={logo}
-    />
-  );
-};
+  componentDidMount() {
+    redirectToServerLogin();
+  }
 
-LoginPage.propTypes = {
-  location: PropTypes.object.isRequired,
-};
-
+  render() {
+    return <LoadingView/>;
+  }
+}
 
 export default LoginPage;
-
-
