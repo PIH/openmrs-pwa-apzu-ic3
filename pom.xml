@@ -8,6 +8,20 @@
     <packaging>pom</packaging>
     <name>openmrs-pwa-apzu-ic3</name>
     <description>APZU IC3 Application</description>
+    <url>https://github.com/PIH/openmrs-pwa-apzu-ic3</url>
+
+    <developers>
+        <developer>
+            <name>Partners In Health</name>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Mozilla Public License 2.0 with Healthcare Disclaimer</name>
+            <url>http://openmrs.org/license</url>
+        </license>
+    </licenses>
 
     <scm>
         <connection>scm:git:https://github.com/PIH/openmrs-pwa-apzu-ic3.git</connection>
